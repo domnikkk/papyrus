@@ -18,6 +18,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.RunnableWithResult;
@@ -63,12 +64,15 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.ILabelEditorDialog;
 import org.eclipse.papyrus.extensionpoints.editors.ui.IPopupEditorHelper;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
+import org.eclipse.papyrus.infra.emf.appearance.helper.AppearanceHelper;
+import org.eclipse.papyrus.infra.emf.appearance.helper.VisualInformationPapyrusConstants;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IControlParserForDirectEdit;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
+import org.eclipse.papyrus.uml.diagram.common.util.DiagramEditPartsUtil;
 import org.eclipse.papyrus.uml.diagram.profile.edit.policies.EnumerationLiteralItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.profile.edit.policies.UMLTextNonResizableEditPolicy;
 import org.eclipse.papyrus.uml.diagram.profile.edit.policies.UMLTextSelectionEditPolicy;
@@ -258,6 +262,16 @@ public class EnumerationLiteralEditPart extends CompartmentEditPart implements I
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
+		EObject parserElement = getParserElement();
+		if (parserElement == null) {
+			return null;
+		}
+		List<View> views = DiagramEditPartsUtil.findViews(parserElement, getViewer());
+		for (View view : views) {
+			if (AppearanceHelper.showElementIcon(view)) {
+				return UMLElementTypes.getImage(parserElement.eClass());
+			}
+		}
 		return null;
 	}
 
@@ -823,6 +837,9 @@ public class EnumerationLiteralEditPart extends CompartmentEditPart implements I
 					refreshLabel();
 				}
 			}
+		}
+		if (event.getNewValue() instanceof EAnnotation && VisualInformationPapyrusConstants.DISPLAY_NAMELABELICON.equals(((EAnnotation) event.getNewValue()).getSource())) {
+			refreshLabel();
 		}
 		if (UMLPackage.eINSTANCE.getFeature_IsStatic().equals(feature)) {
 			refreshUnderline();

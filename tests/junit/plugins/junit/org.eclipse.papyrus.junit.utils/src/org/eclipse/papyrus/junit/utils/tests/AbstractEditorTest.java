@@ -58,6 +58,7 @@ public abstract class AbstractEditorTest extends AbstractPapyrusTest {
 
 	protected ModelExplorerView modelExplorerView;
 
+	protected IFile diModelFile;
 	/**
 	 *
 	 * @return
@@ -80,7 +81,7 @@ public abstract class AbstractEditorTest extends AbstractPapyrusTest {
 	 */
 	protected void initModel(String projectName, String modelName, Bundle bundle) throws Exception {
 		project = ProjectUtils.createProject(projectName);
-		final IFile diModelFile = PapyrusProjectUtils.copyPapyrusModel(project, bundle, getSourcePath(), modelName);
+		this.diModelFile = PapyrusProjectUtils.copyPapyrusModel(project, bundle, getSourcePath(), modelName);
 		Display.getDefault().syncExec(new Runnable() {
 
 			public void run() {

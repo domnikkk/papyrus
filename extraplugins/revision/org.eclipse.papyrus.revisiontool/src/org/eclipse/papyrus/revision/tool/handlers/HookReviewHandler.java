@@ -31,9 +31,7 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
- * Our sample handler extends AbstractHandler, an IHandler base class.
- * @see org.eclipse.core.commands.IHandler
- * @see org.eclipse.core.commands.AbstractHandler
+ * This handler is used to connect a review to an element of the working model.
  */
 public class HookReviewHandler extends RevisionAbstractHandler {
 	protected static final String CHOOSE_ELEMENT_TO_COMMENT = "Choose Element to comment";

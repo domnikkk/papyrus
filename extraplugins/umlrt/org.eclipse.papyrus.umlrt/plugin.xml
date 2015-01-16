@@ -53,5 +53,60 @@
             provider="Eclipse Modeling Project">
       </profile>
    </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.diagram.common.paletteDefinition">
+      <paletteDefinition
+            ID="UML-RT-Composite-PE"
+            class="org.eclipse.papyrus.uml.diagram.common.service.PluginPaletteProvider"
+            icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+            name="UML-RT-CompositeDiagramPaletteExtension"
+            path="palettes/UML-RT.CapsuleDiagram.Palette.xml">
+         <Priority
+               name="Medium">
+         </Priority>
+         <editor
+               id="org.eclipse.papyrus.uml.diagram.composite">
+         </editor>
+      </paletteDefinition>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.diagram.common.paletteDefinition">
+      <paletteDefinition
+            ID="UML-RT-Class-PE"
+            class="org.eclipse.papyrus.uml.diagram.common.service.PluginPaletteProvider"
+            icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+            name="UML-RT-ClassDiagramPaletteExtension"
+            path="palettes/UML-RT.ProtocolDiagram.Palette.xml">
+         <Priority
+               name="Medium">
+         </Priority>
+         <editor
+               id="org.eclipse.papyrus.uml.diagram.clazz">
+         </editor>
+      </paletteDefinition>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.diagram.common.paletteDefinition">
+      <paletteDefinition
+            ID="UML-RT-StateMachine-PE"
+            class="org.eclipse.papyrus.uml.diagram.common.service.PluginPaletteProvider"
+            icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+            name="UML-RT-StateMachineDiagramPaletteExtension"
+            path="palettes/UML-RT.StateMachineDiagram.Palette.xml">
+         <Priority
+               name="Medium">
+         </Priority>
+         <editor
+               id="org.eclipse.papyrus.uml.diagram.statemachine">
+         </editor>
+      </paletteDefinition>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.viewpoints.policy.custom">
+      <configuration
+            file="configuration/UMLRT.configuration"
+            priority="100">
+      </configuration>
+   </extension>
 
 </plugin>

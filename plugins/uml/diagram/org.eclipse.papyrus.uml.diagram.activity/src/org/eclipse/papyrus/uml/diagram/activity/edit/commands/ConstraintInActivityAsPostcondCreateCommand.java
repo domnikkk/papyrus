@@ -48,27 +48,6 @@ public class ConstraintInActivityAsPostcondCreateCommand extends EditElementComm
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public ConstraintInActivityAsPostcondCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static ConstraintInActivityAsPostcondCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new ConstraintInActivityAsPostcondCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public ConstraintInActivityAsPostcondCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -85,10 +64,7 @@ public class ConstraintInActivityAsPostcondCreateCommand extends EditElementComm
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

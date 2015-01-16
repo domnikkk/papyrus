@@ -83,14 +83,7 @@ public class UMLEdgeFigure extends CommonEdgeFigure implements IPapyrusUMLElemen
 	 */
 	@Override
 	public void setStereotypeDisplay(String stereotypes, Image image) {
-
-		// Set stereotype text on figure
-		if (!"".equals(stereotypes)) {
-			appliedStereotypeLabel.setText(stereotypes);
-		} else {
-			appliedStereotypeLabel.setText("");
-		}
-
+		appliedStereotypeLabel.setText(stereotypes == null ? "" : stereotypes);
 		appliedStereotypeLabel.setIcon(image);
 	}
 }

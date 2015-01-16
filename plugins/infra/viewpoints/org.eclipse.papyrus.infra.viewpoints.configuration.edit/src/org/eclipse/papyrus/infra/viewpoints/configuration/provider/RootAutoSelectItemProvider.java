@@ -100,11 +100,11 @@ public class RootAutoSelectItemProvider
 	 * This returns RootAutoSelect.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT - Custom Image
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RootAutoSelect"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RootAutoSelect.png"));
 	}
 
 	/**

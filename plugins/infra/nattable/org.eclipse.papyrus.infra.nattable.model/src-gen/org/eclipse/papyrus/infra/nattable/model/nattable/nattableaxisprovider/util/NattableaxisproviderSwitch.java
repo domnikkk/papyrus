@@ -24,6 +24,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.Ma
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.NattableaxisproviderPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.SlaveObjectAxisProvider;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableNamedElement;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.StyledElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +40,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.T
  * @generated
  */
 public class NattableaxisproviderSwitch<T> extends Switch<T> {
-
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -94,6 +94,9 @@ public class NattableaxisproviderSwitch<T> extends Switch<T> {
 				result = caseTableNamedElement(abstractAxisProvider);
 			}
 			if (result == null) {
+				result = caseStyledElement(abstractAxisProvider);
+			}
+			if (result == null) {
 				result = caseEModelElement(abstractAxisProvider);
 			}
 			if (result == null) {
@@ -112,6 +115,9 @@ public class NattableaxisproviderSwitch<T> extends Switch<T> {
 			}
 			if (result == null) {
 				result = caseTableNamedElement(iMasterAxisProvider);
+			}
+			if (result == null) {
+				result = caseStyledElement(iMasterAxisProvider);
 			}
 			if (result == null) {
 				result = caseEModelElement(iMasterAxisProvider);
@@ -134,6 +140,9 @@ public class NattableaxisproviderSwitch<T> extends Switch<T> {
 				result = caseTableNamedElement(iSlaveAxisProvider);
 			}
 			if (result == null) {
+				result = caseStyledElement(iSlaveAxisProvider);
+			}
+			if (result == null) {
 				result = caseEModelElement(iSlaveAxisProvider);
 			}
 			if (result == null) {
@@ -149,6 +158,9 @@ public class NattableaxisproviderSwitch<T> extends Switch<T> {
 			}
 			if (result == null) {
 				result = caseTableNamedElement(axisProvider);
+			}
+			if (result == null) {
+				result = caseStyledElement(axisProvider);
 			}
 			if (result == null) {
 				result = caseEModelElement(axisProvider);
@@ -174,6 +186,9 @@ public class NattableaxisproviderSwitch<T> extends Switch<T> {
 				result = caseTableNamedElement(slaveObjectAxisProvider);
 			}
 			if (result == null) {
+				result = caseStyledElement(slaveObjectAxisProvider);
+			}
+			if (result == null) {
 				result = caseEModelElement(slaveObjectAxisProvider);
 			}
 			if (result == null) {
@@ -195,6 +210,9 @@ public class NattableaxisproviderSwitch<T> extends Switch<T> {
 			}
 			if (result == null) {
 				result = caseTableNamedElement(masterObjectAxisProvider);
+			}
+			if (result == null) {
+				result = caseStyledElement(masterObjectAxisProvider);
 			}
 			if (result == null) {
 				result = caseEModelElement(masterObjectAxisProvider);
@@ -325,6 +343,23 @@ public class NattableaxisproviderSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEModelElement(EModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Styled Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Styled Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStyledElement(StyledElement object) {
 		return null;
 	}
 

@@ -25,6 +25,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.Ma
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.NattableaxisproviderPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.SlaveObjectAxisProvider;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableNamedElement;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.StyledElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +37,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.T
  * @generated
  */
 public class NattableaxisproviderAdapterFactory extends AdapterFactoryImpl {
-
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
@@ -86,53 +86,58 @@ public class NattableaxisproviderAdapterFactory extends AdapterFactoryImpl {
 	 *
 	 * @generated
 	 */
-	protected NattableaxisproviderSwitch<Adapter> modelSwitch = new NattableaxisproviderSwitch<Adapter>() {
+	protected NattableaxisproviderSwitch<Adapter> modelSwitch =
+			new NattableaxisproviderSwitch<Adapter>() {
+				@Override
+				public Adapter caseAbstractAxisProvider(AbstractAxisProvider object) {
+					return createAbstractAxisProviderAdapter();
+				}
 
-		@Override
-		public Adapter caseAbstractAxisProvider(AbstractAxisProvider object) {
-			return createAbstractAxisProviderAdapter();
-		}
+				@Override
+				public Adapter caseIMasterAxisProvider(IMasterAxisProvider object) {
+					return createIMasterAxisProviderAdapter();
+				}
 
-		@Override
-		public Adapter caseIMasterAxisProvider(IMasterAxisProvider object) {
-			return createIMasterAxisProviderAdapter();
-		}
+				@Override
+				public Adapter caseISlaveAxisProvider(ISlaveAxisProvider object) {
+					return createISlaveAxisProviderAdapter();
+				}
 
-		@Override
-		public Adapter caseISlaveAxisProvider(ISlaveAxisProvider object) {
-			return createISlaveAxisProviderAdapter();
-		}
+				@Override
+				public Adapter caseAxisProvider(AxisProvider object) {
+					return createAxisProviderAdapter();
+				}
 
-		@Override
-		public Adapter caseAxisProvider(AxisProvider object) {
-			return createAxisProviderAdapter();
-		}
+				@Override
+				public Adapter caseSlaveObjectAxisProvider(SlaveObjectAxisProvider object) {
+					return createSlaveObjectAxisProviderAdapter();
+				}
 
-		@Override
-		public Adapter caseSlaveObjectAxisProvider(SlaveObjectAxisProvider object) {
-			return createSlaveObjectAxisProviderAdapter();
-		}
+				@Override
+				public Adapter caseMasterObjectAxisProvider(MasterObjectAxisProvider object) {
+					return createMasterObjectAxisProviderAdapter();
+				}
 
-		@Override
-		public Adapter caseMasterObjectAxisProvider(MasterObjectAxisProvider object) {
-			return createMasterObjectAxisProviderAdapter();
-		}
+				@Override
+				public Adapter caseEModelElement(EModelElement object) {
+					return createEModelElementAdapter();
+				}
 
-		@Override
-		public Adapter caseEModelElement(EModelElement object) {
-			return createEModelElementAdapter();
-		}
+				@Override
+				public Adapter caseStyledElement(StyledElement object) {
+					return createStyledElementAdapter();
+				}
 
-		@Override
-		public Adapter caseTableNamedElement(TableNamedElement object) {
-			return createTableNamedElementAdapter();
-		}
+				@Override
+				public Adapter caseTableNamedElement(TableNamedElement object) {
+					return createTableNamedElementAdapter();
+				}
 
-		@Override
-		public Adapter defaultCase(EObject object) {
-			return createEObjectAdapter();
-		}
-	};
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -151,7 +156,7 @@ public class NattableaxisproviderAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.AbstractAxisProvider <em>Abstract Axis Provider</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.AbstractAxisProvider <em>Abstract Axis Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
@@ -166,7 +171,7 @@ public class NattableaxisproviderAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.IMasterAxisProvider <em>IMaster Axis Provider</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.IMasterAxisProvider <em>IMaster Axis Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
@@ -181,8 +186,7 @@ public class NattableaxisproviderAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.ISlaveAxisProvider
-	 * <em>ISlave Axis Provider</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.ISlaveAxisProvider <em>ISlave Axis Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
@@ -197,8 +201,7 @@ public class NattableaxisproviderAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.AxisProvider
-	 * <em>Axis Provider</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.AxisProvider <em>Axis Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
@@ -213,7 +216,7 @@ public class NattableaxisproviderAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.SlaveObjectAxisProvider <em>Slave Object Axis Provider</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.SlaveObjectAxisProvider <em>Slave Object Axis Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
@@ -228,7 +231,7 @@ public class NattableaxisproviderAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.MasterObjectAxisProvider <em>Master Object Axis Provider</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.MasterObjectAxisProvider <em>Master Object Axis Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
@@ -258,8 +261,22 @@ public class NattableaxisproviderAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableNamedElement
-	 * <em>Table Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.StyledElement <em>Styled Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.StyledElement
+	 * @generated
+	 */
+	public Adapter createStyledElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableNamedElement <em>Table Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.

@@ -10,23 +10,32 @@
  * Contributors:
  *  Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 433371
+ *  Céline Janssens (ALL4TEC) celine.janssens@all4tec.net - Bug 415638
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 440754
  *****************************************************************************/
 
 package org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.internal;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.service.ILocalPageService;
 import org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.Activator;
 import org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.IOpenable;
+import org.eclipse.papyrus.infra.core.sashwindows.di.DiFactory;
+import org.eclipse.papyrus.infra.core.sashwindows.di.PageRef;
+import org.eclipse.papyrus.infra.core.sashwindows.di.SashModel;
 import org.eclipse.papyrus.infra.core.sashwindows.di.SashWindowsMngr;
+import org.eclipse.papyrus.infra.core.sashwindows.di.TabFolder;
 import org.eclipse.swt.widgets.Display;
 import org.osgi.framework.FrameworkUtil;
 
@@ -95,6 +104,44 @@ public class PageManagerImpl extends PageMngrImpl implements IPageManager {
 	}
 
 	/**
+	 * Reload the Diagram
+	 * This used when a resource is reloaded, the related diagrams are reloaded as well
+	 * 
+	 * @see org.eclipse.papyrus.infra.services.controlmode.listener.LoadResourceSnippet
+	 * 
+	 * @param diagramProxy
+	 *            Identifier of the page to reload
+	 */
+	@Override
+	public void reloadPage(Object diagramProxy) {
+
+		if (diagramProxy instanceof EObject) {
+
+			PageRef proxyRef = diSashModel.getSashModel().lookupPage(diagramProxy);
+
+			if (proxyRef.eContainer() instanceof TabFolder) {
+				TabFolder folder = (TabFolder) proxyRef.eContainer();
+
+
+				if (folder != null) {
+					if (folder.getChildren() != null) {
+						// get the initial index of the Diagram Tab
+						int i = folder.getChildren().indexOf(proxyRef);
+
+						if (i >= 0) {
+							// Create a new Page
+							PageRef newRef = DiFactory.eINSTANCE.createPageRef();
+							newRef.setEmfPageIdentifier((EObject) diagramProxy);
+							// Replace the previous by the new one
+							folder.getChildren().set(i, newRef);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/**
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.internal.PageMngrImpl#allPages()
 	 *
 	 * @return
@@ -136,17 +183,58 @@ public class PageManagerImpl extends PageMngrImpl implements IPageManager {
 					if (service.isLocalPage(content)) {
 						result.add(content);
 					}
-
-
-
 				}
 			}
 		}
 
-
 		return result;
 	}
 
+
+	/**
+	 * 
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager#getAssociatedPages(org.eclipse.emf.common.util.URI)
+	 *
+	 * @param uriTrim
+	 * @return
+	 */
+	public List<Object> getAssociatedPages(Object uriTrim) {
+
+		List<Object> list = new ArrayList<Object>();
+
+		SashModel sashModel = diSashModel.getSashModel();
+		Iterator<?> iter = sashModel.eAllContents();
+
+		while (iter.hasNext()) {
+			Object next = iter.next();
+			if (next instanceof PageRef) {
+				PageRef pageRef = (PageRef) next;
+
+				// pageRef is one of the pages referred into the sash resource
+				if (pageRef != null) {
+					EObject pageID = pageRef.getEmfPageIdentifier();
+					if (pageID != null) {
+						URI uriContainer;
+						if (pageID.eIsProxy()) {
+							InternalEObject internal = (InternalEObject) pageID;
+							uriContainer = internal.eProxyURI().trimFragment().trimFileExtension();
+
+						} else {
+							uriContainer = pageID.eResource().getURI().trimFileExtension();
+						}
+						if (uriTrim instanceof URI) {
+							if (uriContainer.equals((URI) uriTrim)) {
+								list.add(pageID);
+							}
+						}
+					}
+				}
+
+			}
+
+		}
+		return list;
+	}
 
 	/**
 	 * Gets the resources.
@@ -165,7 +253,7 @@ public class PageManagerImpl extends PageMngrImpl implements IPageManager {
 
 			// Verify if the resource exist and is loaded
 			if (resource != null && resource.isLoaded()) {
-				// Verify if its extension corresppnd
+				// Verify if its extension correspond
 				if (fileExtension.equals(resource.getURI().fileExtension())) {
 					resourcesList.add(resource);
 				}
@@ -286,4 +374,5 @@ public class PageManagerImpl extends PageMngrImpl implements IPageManager {
 		 */
 		T execute(SashWindowsMngr sashWindowsManager);
 	}
+
 }

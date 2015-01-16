@@ -48,27 +48,6 @@ public class ConstraintInActivityAsPrecondCreateCommand extends EditElementComma
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public ConstraintInActivityAsPrecondCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static ConstraintInActivityAsPrecondCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new ConstraintInActivityAsPrecondCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public ConstraintInActivityAsPrecondCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -85,10 +64,7 @@ public class ConstraintInActivityAsPrecondCreateCommand extends EditElementComma
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

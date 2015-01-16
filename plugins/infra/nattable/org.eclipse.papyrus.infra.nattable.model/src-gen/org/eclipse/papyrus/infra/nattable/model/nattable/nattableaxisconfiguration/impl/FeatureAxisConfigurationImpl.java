@@ -15,9 +15,9 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurat
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.FeatureAxisConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.impl.StyledElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,15 +26,13 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.FeatureAxisConfigurationImpl#isShowOnlyCommonFeature
- * <em>Show Only Common Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.FeatureAxisConfigurationImpl#isShowOnlyCommonFeature <em>Show Only Common Feature</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FeatureAxisConfigurationImpl extends MinimalEObjectImpl.Container implements FeatureAxisConfiguration {
-
+public class FeatureAxisConfigurationImpl extends StyledElementImpl implements FeatureAxisConfiguration {
 	/**
 	 * The default value of the '{@link #isShowOnlyCommonFeature() <em>Show Only Common Feature</em>}' attribute.
 	 * <!-- begin-user-doc -->

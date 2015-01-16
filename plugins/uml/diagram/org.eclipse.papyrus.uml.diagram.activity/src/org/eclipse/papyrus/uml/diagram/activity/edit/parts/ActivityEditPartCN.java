@@ -1,14 +1,8 @@
 package org.eclipse.papyrus.uml.diagram.activity.edit.parts;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
-import org.eclipse.draw2d.StackLayout;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -25,27 +19,21 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
-import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper;
-import org.eclipse.papyrus.infra.gmfdiag.preferences.utils.GradientPreferenceConverter;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityCanonicalEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityItemSemanticEditPolicyCN;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.figures.ActivityFigure;
 import org.eclipse.papyrus.uml.diagram.activity.locator.ParameterNodeLocator;
-import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.BorderItemResizableEditPolicy;
@@ -53,13 +41,12 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.ChangeStereotypedShap
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.PapyrusCreationEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideCompartmentEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper;
 import org.eclipse.swt.graphics.Color;
 
 /**
  * @generated
  */
-public class ActivityEditPartCN extends NamedElementEditPart {
+public class ActivityEditPartCN extends RoundedCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -296,11 +283,7 @@ public class ActivityEditPartCN extends NamedElementEditPart {
 	 */
 	@Override
 	protected NodeFigure createNodePlate() {
-		String prefElementId = "Activity";
-		IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
-		String preferenceConstantWitdh = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.WIDTH);
-		String preferenceConstantHeight = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.HEIGHT);
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(store.getInt(preferenceConstantWitdh), store.getInt(preferenceConstantHeight));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(200, 100);
 		return result;
 	}
 
@@ -314,12 +297,7 @@ public class ActivityEditPartCN extends NamedElementEditPart {
 	 */
 	@Override
 	protected NodeFigure createMainFigure() {
-		NodeFigure figure = createNodePlate();
-		figure.setLayoutManager(new StackLayout());
-		IFigure shape = createNodeShape();
-		figure.add(shape);
-		contentPane = setupContentPane(shape);
-		return figure;
+		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
 	}
 
 	/**
@@ -366,9 +344,7 @@ public class ActivityEditPartCN extends NamedElementEditPart {
 	 */
 	@Override
 	protected void setLineWidth(int width) {
-		if (primaryShape instanceof IPapyrusNodeFigure) { // Manually replaced, waiting for next generation
-			((IPapyrusNodeFigure) primaryShape).setLineWidth(width);
-		}
+		super.setLineWidth(width);
 	}
 
 	/**
@@ -376,7 +352,7 @@ public class ActivityEditPartCN extends NamedElementEditPart {
 	 */
 	@Override
 	protected void setLineType(int style) {
-		if (primaryShape instanceof IPapyrusNodeFigure) { // Manually replaced, waiting for next generation
+		if (primaryShape instanceof IPapyrusNodeFigure) {
 			((IPapyrusNodeFigure) primaryShape).setLineStyle(style);
 		}
 	}
@@ -387,37 +363,6 @@ public class ActivityEditPartCN extends NamedElementEditPart {
 	@Override
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityNameEditPartCN.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(UMLElementTypes.CommentAnnotatedElement_4006);
-		types.add(UMLElementTypes.ConstraintConstrainedElement_4007);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
-			types.add(UMLElementTypes.Comment_3080);
-		} else if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4007) {
-			types.add(UMLElementTypes.DurationConstraint_3034);
-			types.add(UMLElementTypes.DurationConstraint_3035);
-			types.add(UMLElementTypes.TimeConstraint_3036);
-			types.add(UMLElementTypes.TimeConstraint_3037);
-			types.add(UMLElementTypes.IntervalConstraint_3032);
-			types.add(UMLElementTypes.IntervalConstraint_3033);
-			types.add(UMLElementTypes.Constraint_3011);
-			types.add(UMLElementTypes.Constraint_3012);
-			types.add(UMLElementTypes.Constraint_3112);
-		}
-		return types;
 	}
 
 	/**
@@ -439,37 +384,5 @@ public class ActivityEditPartCN extends NamedElementEditPart {
 			}
 		}
 		return super.getTargetEditPart(request);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public Object getPreferredValue(EStructuralFeature feature) {
-		IPreferenceStore preferenceStore = (IPreferenceStore) getDiagramPreferencesHint().getPreferenceStore();
-		Object result = null;
-		if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
-			String prefColor = null;
-			if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
-				prefColor = PreferencesConstantsHelper.getElementConstant("Activity", PreferencesConstantsHelper.COLOR_LINE);
-			} else if (feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
-				prefColor = PreferencesConstantsHelper.getElementConstant("Activity", PreferencesConstantsHelper.COLOR_FONT);
-			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
-				prefColor = PreferencesConstantsHelper.getElementConstant("Activity", PreferencesConstantsHelper.COLOR_FILL);
-			}
-			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor(preferenceStore, prefColor));
-		} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
-			String prefGradient = PreferencesConstantsHelper.getElementConstant("Activity", PreferencesConstantsHelper.COLOR_GRADIENT);
-			GradientPreferenceConverter gradientPreferenceConverter = new GradientPreferenceConverter(preferenceStore.getString(prefGradient));
-			if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
-				result = new Integer(gradientPreferenceConverter.getTransparency());
-			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
-				result = gradientPreferenceConverter.getGradientData();
-			}
-		}
-		if (result == null) {
-			result = getStructuralFeatureValue(feature);
-		}
-		return result;
 	}
 }

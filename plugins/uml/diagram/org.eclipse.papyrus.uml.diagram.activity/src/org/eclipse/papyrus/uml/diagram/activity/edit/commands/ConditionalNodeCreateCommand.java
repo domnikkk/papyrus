@@ -47,27 +47,6 @@ public class ConditionalNodeCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public ConditionalNodeCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static ConditionalNodeCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new ConditionalNodeCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public ConditionalNodeCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class ConditionalNodeCreateCommand extends EditElementCommand {
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**
@@ -115,11 +91,13 @@ public class ConditionalNodeCreateCommand extends EditElementCommand {
 				}
 			} else {
 				Activity qualifiedTarget = (Activity) target;
-				qualifiedTarget.getStructuredNodes().add(newElement);
+				qualifiedTarget.getOwnedGroups().add(newElement);
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
 		}
+		Activity childHolder = (Activity) getElementToEdit();
+		childHolder.getStructuredNodes().add(newElement);
 		ElementInitializers.getInstance().init_ConditionalNode_3069(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

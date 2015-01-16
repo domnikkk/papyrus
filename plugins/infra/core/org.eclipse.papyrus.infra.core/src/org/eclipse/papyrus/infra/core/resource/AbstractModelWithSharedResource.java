@@ -190,6 +190,21 @@ public abstract class AbstractModelWithSharedResource<T extends EObject> extends
 	}
 
 	/**
+	 * @see org.eclipse.papyrus.infra.core.resource.EMFLogicalModel#isModelFor(java.lang.Object)
+	 *
+	 * @param element
+	 * @return
+	 */
+	@Override
+	public boolean isModelFor(Object element) {
+		if (modelKind == ModelKind.slave) {
+			// I'm not the main model for this resource/object
+			return false;
+		}
+		return super.isModelFor(element);
+	}
+
+	/**
 	 * Return true if the provided object is a root of the model, false
 	 * otherwise. This method should be implemented by subclasses.
 	 *

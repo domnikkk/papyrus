@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - bug 455305
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.modelexplorer.handler;
@@ -39,13 +40,13 @@ public class RedoHandler extends AbstractModelExplorerHandler {
 	}
 
 	/**
+	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
 	 *
-	 * @see org.eclipse.core.commands.AbstractHandler#isEnabled()
-	 *
-	 * @return
+	 * @param evaluationContext
 	 */
 	@Override
-	public boolean isEnabled() {
-		return getEditingDomain().getCommandStack().canRedo();
+	public void setEnabled(Object evaluationContext) {
+		setBaseEnabled(getEditingDomain().getCommandStack().canRedo());
 	}
+
 }

@@ -47,27 +47,6 @@ public class ExpansionRegionCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public ExpansionRegionCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static ExpansionRegionCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new ExpansionRegionCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public ExpansionRegionCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class ExpansionRegionCreateCommand extends EditElementCommand {
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**
@@ -115,11 +91,13 @@ public class ExpansionRegionCreateCommand extends EditElementCommand {
 				}
 			} else {
 				Activity qualifiedTarget = (Activity) target;
-				qualifiedTarget.getStructuredNodes().add(newElement);
+				qualifiedTarget.getOwnedGroups().add(newElement);
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
 		}
+		Activity childHolder = (Activity) getElementToEdit();
+		childHolder.getStructuredNodes().add(newElement);
 		ElementInitializers.getInstance().init_ExpansionRegion_3070(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

@@ -16,6 +16,7 @@ import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "org.eclipse.papyrus.views.modelexplorer.messages"; //$NON-NLS-1$
+	public static String DiagramOrderChangeCommand_Label;
 	public static String DoubleClickListener_Error_NoLoadManagerToOpen;
 	public static String MoDiscoLabelProvider_ProxyLabel;
 	static {

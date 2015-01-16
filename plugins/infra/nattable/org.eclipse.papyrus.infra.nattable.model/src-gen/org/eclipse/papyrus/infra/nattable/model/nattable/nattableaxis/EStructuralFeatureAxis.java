@@ -35,7 +35,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  * @generated
  */
 public interface EStructuralFeatureAxis extends FeatureAxis {
-
 	/**
 	 * Returns the value of the '<em><b>Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -54,8 +53,7 @@ public interface EStructuralFeatureAxis extends FeatureAxis {
 	EStructuralFeature getElement();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.EStructuralFeatureAxis#getElement
-	 * <em>Element</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.EStructuralFeatureAxis#getElement <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *

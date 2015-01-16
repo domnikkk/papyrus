@@ -296,11 +296,6 @@ public class ShowHideLabelsAction extends AbstractGraphicalParametricAction {
 					if (oldStatus == newStatus) {
 						// do nothing
 					} else {
-						if (oldStatus) {
-							EditPart ep = DiagramEditPartsUtil.getEditPartFromView(view, getSelection().get(0));
-							int dummy = 0;
-							dummy++;
-						}
 						ShowHideLabelsRequest request = new ShowHideLabelsRequest(newStatus, view);
 						// EditPart ep = DiagramEditPartsUtil.getEditPartFromView(view, getConnections().get(0));
 						EditPart ep = DiagramEditPartsUtil.getEditPartFromView(view, getSelection().get(0));

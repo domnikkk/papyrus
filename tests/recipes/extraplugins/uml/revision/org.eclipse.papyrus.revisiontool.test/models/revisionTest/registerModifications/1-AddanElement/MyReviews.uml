@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PapyrusVersioningExtensions="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0" xmlns:ReviewProfile="http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0" xmlns:compare="http://www.eclipse.org/emf/compare" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g">
+  <ReviewProfile:ReviewRepository xmi:id="_T58E8IUQEeSDAN4sQjBA6Q" base_Model="_T58E8YUQEeSDAN4sQjBA6Q"/>
+  <uml:Model xmi:id="_T58E8YUQEeSDAN4sQjBA6Q" name="MyReviews">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_T8nlgIUQEeSDAN4sQjBA6Q">
+      <body>Your review</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_T58E8oUQEeSDAN4sQjBA6Q" name="WorkingModelDependency" client="_T58E8YUQEeSDAN4sQjBA6Q">
+      <supplier xmi:type="uml:Model" href="WorkingModel.uml#_bOVDIHGJEeS3EdgtJYAZRQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_T8K5kIUQEeSDAN4sQjBA6Q" name="Tom"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_T58E84UQEeSDAN4sQjBA6Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_T58E9IUQEeSDAN4sQjBA6Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Review_PROFILES/Review.profile.uml#_Tr7GcGAWEeS-2dbNdHDnFw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_T58E9YUQEeSDAN4sQjBA6Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_T58E9oUQEeSDAN4sQjBA6Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Review_PROFILES/Versioning.profile.uml#_oQIXkM7dEeOUWOjBbvvZ9Q"/>
+    </profileApplication>
+  </uml:Model>
+  <compare:Comparison xmi:id="_T58E94UQEeSDAN4sQjBA6Q"/>
+  <PapyrusVersioningExtensions:Author xmi:id="_T8K5kYUQEeSDAN4sQjBA6Q" language="Eng" color="205:254:169" base_Actor="_T8K5kIUQEeSDAN4sQjBA6Q" versioningElements="_T8nlgYUQEeSDAN4sQjBA6Q"/>
+  <ReviewProfile:Review xmi:id="_T8nlgYUQEeSDAN4sQjBA6Q" base_Element="_T8nlgIUQEeSDAN4sQjBA6Q" date="16/12/14 11:43" author="_T8K5kYUQEeSDAN4sQjBA6Q" base_Comment="_T8nlgIUQEeSDAN4sQjBA6Q" subject="subject"/>
+</xmi:XMI>

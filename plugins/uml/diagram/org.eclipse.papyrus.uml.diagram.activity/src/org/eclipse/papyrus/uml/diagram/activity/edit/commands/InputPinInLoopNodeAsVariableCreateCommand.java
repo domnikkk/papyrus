@@ -47,27 +47,6 @@ public class InputPinInLoopNodeAsVariableCreateCommand extends EditElementComman
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public InputPinInLoopNodeAsVariableCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static InputPinInLoopNodeAsVariableCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new InputPinInLoopNodeAsVariableCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public InputPinInLoopNodeAsVariableCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class InputPinInLoopNodeAsVariableCreateCommand extends EditElementComman
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

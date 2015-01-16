@@ -13,6 +13,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.revision.tool.handlers;
 
+import java.util.ArrayList;
+
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -22,9 +24,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Element;
 
 /**
- * Our sample handler extends AbstractHandler, an IHandler base class.
- * @see org.eclipse.core.commands.IHandler
- * @see org.eclipse.core.commands.AbstractHandler
+ * This handler is used to remove a review from the review editor.
  */
 public class DeleteReviewHandler extends RevisionAbstractHandler {
 	/**
@@ -38,15 +38,18 @@ public class DeleteReviewHandler extends RevisionAbstractHandler {
 	 * from the application context.
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		final Element element=getSelection();
+		final ArrayList<Element> elements=getSelectionSet();
 		IWorkbenchPart part=PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
 		if( part instanceof ReviewsEditor){
-			if( element!=null){
+			if( elements.size()!=0){
 				
 				RecordingCommand cmd= new RecordingCommand(((ReviewsEditor)part).getReviewResourceManager().getDomain(), "Delete currentReview") {
 					@Override
 					protected void doExecute() {
-						((Element)element.eContainer()).getOwnedComments().remove(element);
+						for (Element element : elements) {
+							((Element)element.eContainer()).getOwnedComments().remove(element);
+						}
+						
 					}
 				};
 				((ReviewsEditor)part).getReviewResourceManager().getDomain().getCommandStack().execute(cmd);

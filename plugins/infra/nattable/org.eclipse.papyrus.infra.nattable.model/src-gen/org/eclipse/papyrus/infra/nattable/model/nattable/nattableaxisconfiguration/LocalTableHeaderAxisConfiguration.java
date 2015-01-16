@@ -26,9 +26,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>
- * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.LocalTableHeaderAxisConfiguration#getAxisManagerConfigurations
- * <em>Axis Manager Configurations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.LocalTableHeaderAxisConfiguration#getAxisManagerConfigurations <em>Axis Manager Configurations</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,7 +35,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface LocalTableHeaderAxisConfiguration extends AbstractHeaderAxisConfiguration {
-
 	/**
 	 * Returns the value of the '<em><b>Axis Manager Configurations</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerConfiguration}.

@@ -54,8 +54,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case FinalStateEditPart.VISUAL_ID:
 				return new FinalStateEditPart(view);
 
-			case FinalStateNameEditPart.VISUAL_ID:
-				return new FinalStateNameEditPart(view);
+			case FinalStateFloatingLabelEditPart.VISUAL_ID:
+				return new FinalStateFloatingLabelEditPart(view);
 
 			case FinalStateStereotypeEditPart.VISUAL_ID:
 				return new FinalStateStereotypeEditPart(view);
@@ -66,11 +66,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StateNameEditPart.VISUAL_ID:
 				return new StateNameEditPart(view);
 
+			case StateFloatingLabelEditPart.VISUAL_ID:
+				return new StateFloatingLabelEditPart(view);
+
 			case PseudostateInitialEditPart.VISUAL_ID:
 				return new PseudostateInitialEditPart(view);
 
-			case PseudostateInitialNameEditPart.VISUAL_ID:
-				return new PseudostateInitialNameEditPart(view);
+			case PseudostateInitialFloatingLabelEditPart.VISUAL_ID:
+				return new PseudostateInitialFloatingLabelEditPart(view);
 
 			case PseudostateInitialStereotypeEditPart.VISUAL_ID:
 				return new PseudostateInitialStereotypeEditPart(view);
@@ -78,8 +81,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PseudostateJoinEditPart.VISUAL_ID:
 				return new PseudostateJoinEditPart(view);
 
-			case PseudostateJoinNameEditPart.VISUAL_ID:
-				return new PseudostateJoinNameEditPart(view);
+			case PseudostateJoinFloatingLabelEditPart.VISUAL_ID:
+				return new PseudostateJoinFloatingLabelEditPart(view);
 
 			case PseudostateJoinStereotypeEditPart.VISUAL_ID:
 				return new PseudostateJoinStereotypeEditPart(view);
@@ -96,8 +99,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PseudostateChoiceEditPart.VISUAL_ID:
 				return new PseudostateChoiceEditPart(view);
 
-			case PseudostateChoiceNameEditPart.VISUAL_ID:
-				return new PseudostateChoiceNameEditPart(view);
+			case PseudostateChoiceFloatingLabelEditPart.VISUAL_ID:
+				return new PseudostateChoiceFloatingLabelEditPart(view);
 
 			case PseudostateChoiceStereotypeEditPart.VISUAL_ID:
 				return new PseudostateChoiceStereotypeEditPart(view);
@@ -105,8 +108,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PseudostateJunctionEditPart.VISUAL_ID:
 				return new PseudostateJunctionEditPart(view);
 
-			case PseudostateJunctionNameEditPart.VISUAL_ID:
-				return new PseudostateJunctionNameEditPart(view);
+			case PseudostateJunctionFloatingLabelEditPart.VISUAL_ID:
+				return new PseudostateJunctionFloatingLabelEditPart(view);
 
 			case PseudostateJunctionStereotypeEditPart.VISUAL_ID:
 				return new PseudostateJunctionStereotypeEditPart(view);
@@ -114,8 +117,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PseudostateShallowHistoryEditPart.VISUAL_ID:
 				return new PseudostateShallowHistoryEditPart(view);
 
-			case PseudostateShallowHistoryNameEditPart.VISUAL_ID:
-				return new PseudostateShallowHistoryNameEditPart(view);
+			case PseudostateShallowHistoryFloatingLabelEditPart.VISUAL_ID:
+				return new PseudostateShallowHistoryFloatingLabelEditPart(view);
 
 			case PseudostateShallowHistoryStereotypeEditPart.VISUAL_ID:
 				return new PseudostateShallowHistoryStereotypeEditPart(view);
@@ -123,8 +126,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PseudostateDeepHistoryEditPart.VISUAL_ID:
 				return new PseudostateDeepHistoryEditPart(view);
 
-			case PseudostateDeepHistoryNameEditPart.VISUAL_ID:
-				return new PseudostateDeepHistoryNameEditPart(view);
+			case PseudostateDeepHistoryFloatingLabelEditPart.VISUAL_ID:
+				return new PseudostateDeepHistoryFloatingLabelEditPart(view);
 
 			case PseudostateDeepHistoryStereotypeEditPart.VISUAL_ID:
 				return new PseudostateDeepHistoryStereotypeEditPart(view);
@@ -132,8 +135,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PseudostateTerminateEditPart.VISUAL_ID:
 				return new PseudostateTerminateEditPart(view);
 
-			case PseudostateTerminateNameEditPart.VISUAL_ID:
-				return new PseudostateTerminateNameEditPart(view);
+			case PseudostateTerminateFloatingLabelEditPart.VISUAL_ID:
+				return new PseudostateTerminateFloatingLabelEditPart(view);
 
 			case PseudostateTerminateStereotypeEditPart.VISUAL_ID:
 				return new PseudostateTerminateStereotypeEditPart(view);
@@ -141,8 +144,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PseudostateEntryPointEditPart.VISUAL_ID:
 				return new PseudostateEntryPointEditPart(view);
 
-			case PseudostateEntryPointNameEditPart.VISUAL_ID:
-				return new PseudostateEntryPointNameEditPart(view);
+			case PseudostateEntryPointFloatingLabelEditPart.VISUAL_ID:
+				return new PseudostateEntryPointFloatingLabelEditPart(view);
 
 			case PseudostateEntryPointStereotypeEditPart.VISUAL_ID:
 				return new PseudostateEntryPointStereotypeEditPart(view);
@@ -150,8 +153,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PseudostateExitPointEditPart.VISUAL_ID:
 				return new PseudostateExitPointEditPart(view);
 
-			case PseudostateExitPointNameEditPart.VISUAL_ID:
-				return new PseudostateExitPointNameEditPart(view);
+			case PseudostateExitPointFloatingLabelEditPart.VISUAL_ID:
+				return new PseudostateExitPointFloatingLabelEditPart(view);
 
 			case PseudostateExitPointStereotypeEditPart.VISUAL_ID:
 				return new PseudostateExitPointStereotypeEditPart(view);

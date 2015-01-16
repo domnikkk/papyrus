@@ -56,7 +56,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.i
  * @generated
  */
 public class TableImpl extends TableNamedElementImpl implements Table {
-
 	/**
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -157,8 +156,7 @@ public class TableImpl extends TableNamedElementImpl implements Table {
 	protected LocalTableHeaderAxisConfiguration localRowHeaderAxisConfiguration;
 
 	/**
-	 * The cached value of the '{@link #getLocalColumnHeaderAxisConfiguration() <em>Local Column Header Axis Configuration</em>}' containment
-	 * reference.
+	 * The cached value of the '{@link #getLocalColumnHeaderAxisConfiguration() <em>Local Column Header Axis Configuration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -507,7 +505,8 @@ public class TableImpl extends TableNamedElementImpl implements Table {
 			if (msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		}
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattablePackage.TABLE__LOCAL_ROW_HEADER_AXIS_CONFIGURATION, newLocalRowHeaderAxisConfiguration, newLocalRowHeaderAxisConfiguration));
 		}
 	}
@@ -563,7 +562,8 @@ public class TableImpl extends TableNamedElementImpl implements Table {
 			if (msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		}
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattablePackage.TABLE__LOCAL_COLUMN_HEADER_AXIS_CONFIGURATION, newLocalColumnHeaderAxisConfiguration, newLocalColumnHeaderAxisConfiguration));
 		}
 	}

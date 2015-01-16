@@ -1,9 +1,20 @@
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     CEA LIST - initial API and implementation
+ */
 package org.eclipse.papyrus.cpp.codegen.xtend;
 
 import com.google.common.base.Objects;
+import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.papyrus.C_Cpp.Const;
-import org.eclipse.papyrus.acceleo.GenUtils;
+import org.eclipse.papyrus.codegen.base.GenUtils;
 import org.eclipse.papyrus.cpp.codegen.utils.CppGenUtils;
 import org.eclipse.papyrus.cpp.codegen.utils.Modifier;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppDocumentation;
@@ -15,6 +26,7 @@ import org.eclipse.uml2.uml.Signal;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 
 /**
  * @author Önder GÜRCAN (onder.gurcan@cea.fr)
@@ -26,7 +38,7 @@ public class CppAttribute {
     _builder.append("// static attributes (if any)");
     _builder.newLine();
     {
-      EList<Property> _ownedAttributes = CppAttribute.getOwnedAttributes(classifier);
+      Collection<Property> _ownedAttributes = CppAttribute.getOwnedAttributes(classifier);
       for(final Property ownedAttribute : _ownedAttributes) {
         {
           boolean _and = false;
@@ -50,7 +62,23 @@ public class CppAttribute {
     return code;
   }
   
-  public static EList<Property> getOwnedAttributes(final Classifier cl) {
+  public static Collection<Property> getOwnedAttributes(final Classifier cl) {
+    Collection<Property> _xblockexpression = null;
+    {
+      final EList<Property> attributes = CppAttribute.getOwnedAttributesWNull(cl);
+      Collection<Property> _xifexpression = null;
+      boolean _equals = Objects.equal(attributes, null);
+      if (_equals) {
+        _xifexpression = CollectionLiterals.<Property>emptySet();
+      } else {
+        _xifexpression = attributes;
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
+  }
+  
+  public static EList<Property> getOwnedAttributesWNull(final Classifier cl) {
     EList<Property> _xifexpression = null;
     if ((cl instanceof org.eclipse.uml2.uml.Class)) {
       _xifexpression = ((org.eclipse.uml2.uml.Class) cl).getOwnedAttributes();

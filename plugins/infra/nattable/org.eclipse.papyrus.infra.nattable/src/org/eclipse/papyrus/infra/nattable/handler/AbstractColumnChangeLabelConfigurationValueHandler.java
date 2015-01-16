@@ -63,7 +63,7 @@ public abstract class AbstractColumnChangeLabelConfigurationValueHandler extends
 	 */
 	@Override
 	protected AbstractHeaderAxisConfiguration getHeaderAxisConfiguration() {
-		return HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisUsedInTable(getCurrentNattableModelManager().getTable());
+		return HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisConfigurationUsedInTable(getCurrentNattableModelManager().getTable());
 	}
 
 

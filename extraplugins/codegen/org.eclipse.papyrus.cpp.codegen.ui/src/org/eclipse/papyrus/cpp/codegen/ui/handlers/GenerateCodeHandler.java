@@ -14,19 +14,14 @@ package org.eclipse.papyrus.cpp.codegen.ui.handlers;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.papyrus.acceleo.AcceleoDriver;
 import org.eclipse.papyrus.cpp.codegen.transformation.CppModelElementsCreator;
-import org.eclipse.papyrus.cpp.codegen.ui.Activator;
 import org.eclipse.papyrus.cpp.codegen.utils.ClassUtils;
 import org.eclipse.papyrus.cpp.codegen.utils.LocateCppProject;
 import org.eclipse.papyrus.uml.diagram.common.handlers.CmdHandler;
@@ -78,22 +73,10 @@ public class GenerateCodeHandler extends CmdHandler {
 	 *            if the passed packageableElement is a package, generate code for its contents (recursively).
 	 */
 	public void generate(CppModelElementsCreator mec, PackageableElement pe, EList<PackageableElement> alreadyHandled, boolean recurse) {
-		IContainer srcPkg = mec.getContainer(pe);
-		try {
-			alreadyHandled.add(pe);
-			mec.createPackageableElement(srcPkg, null, pe, false);
-		} catch (CoreException coreException) {
-			Activator.log.error(coreException);
-		} finally {
-			// Refresh the container for the newly created files. This needs to be done even
-			// during error because of the possibility for partial results.
-			try {
-				srcPkg.refreshLocal(IResource.DEPTH_INFINITE, null);
-			} catch (CoreException e) {
-				Activator.log.error(e);
-			}
-		}
-
+		alreadyHandled.add(pe);
+		mec.createPackageableElement(pe, null, recurse);
+		// Eventual refresh is done in createPackageableElement
+	
 		if (pe instanceof Classifier) {
 			EList<Classifier> requiredClassifiers = ClassUtils.includedClassifiers((Classifier) pe);
 			for (Classifier requiredClassifier : requiredClassifiers) {
@@ -107,12 +90,6 @@ public class GenerateCodeHandler extends CmdHandler {
 		if ((owningPackage != null) && (owningPackage != pe)) {
 			if (!alreadyHandled.contains(owningPackage)) {
 				generate(mec, owningPackage, alreadyHandled, false);
-			}
-		}
-		if ((pe instanceof Package) && recurse) {
-			// Continue generation parsing package contents
-			for (PackageableElement currentElement : ((Package) pe).getPackagedElements()) {
-				generate(mec, currentElement, alreadyHandled, recurse);
 			}
 		}
 	}
@@ -129,11 +106,11 @@ public class GenerateCodeHandler extends CmdHandler {
 			}
 
 			// get the container for the current element
-			AcceleoDriver.clearErrors();
 			CppModelElementsCreator mec = new CppModelElementsCreator(modelProject);
 			generate(mec, pe, new BasicEList<PackageableElement>(), true);
 
-			if (AcceleoDriver.hasErrors() && !Headless) {
+			// TODO: need a way to get error messages
+			if (false && !Headless) {
 				Display.getDefault().syncExec(new Runnable() {
 					@Override
 					public void run() {

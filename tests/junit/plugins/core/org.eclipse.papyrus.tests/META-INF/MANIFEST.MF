@@ -37,6 +37,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.uml.tools.tests;bundle-version="1.1.0",
  org.eclipse.papyrus.uml.tools.utils.tests;bundle-version="1.1.0",
  org.eclipse.papyrus.uml.nattable.tests;bundle-version="1.1.0",
+ org.eclipse.papyrus.uml.nattable.clazz.config.tests;bundle-version="1.1.0",
  org.eclipse.papyrus.infra.nattable.model.editor.tests;bundle-version="1.1.0",
  org.eclipse.papyrus.uml.diagram.sequence.tests;bundle-version="1.1.0",
  org.eclipse.papyrus.uml.diagram.interactionoverview.tests;bundle-version="1.1.0",
@@ -64,7 +65,9 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.uml.textedit.property.tests;bundle-version="1.1.0",
  org.eclipse.papyrus.uml.textedit.parameter.tests;bundle-version="1.1.0",
  org.eclipse.papyrus.uml.decoratormodel.tests;bundle-version="1.1.0",
- org.eclipse.papyrus.uml.decoratormodel.controlmode.tests;bundle-version="1.1.0"
+ org.eclipse.papyrus.uml.decoratormodel.controlmode.tests;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.gmfdiag.menu.tests;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.nattable.model.tests;bundle-version="1.1.0"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.1.0.qualifier

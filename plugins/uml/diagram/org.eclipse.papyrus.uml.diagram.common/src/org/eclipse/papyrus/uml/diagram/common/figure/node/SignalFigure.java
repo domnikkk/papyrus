@@ -21,7 +21,7 @@ import org.eclipse.draw2d.IFigure;
 /**
  * Represents a signal.
  */
-public class SignalFigure extends CompartmentFigure {
+public class SignalFigure extends RoundedCompartmentFigure {
 
 	/** Attribute Compartment */
 	private final static String ATTRIBUTE_COMPARTMENT = "attributeCompartment";

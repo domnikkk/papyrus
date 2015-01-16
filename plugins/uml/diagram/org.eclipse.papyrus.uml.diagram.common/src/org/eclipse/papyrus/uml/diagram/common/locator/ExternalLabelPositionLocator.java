@@ -35,6 +35,9 @@ import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.locator.IPapyrusBorderItemLocator;
+import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.NamedStyleProperties;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 
 /**
  * This class is used to constrain the position of ExternalNodeLabel. The
@@ -53,7 +56,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	private boolean isConstrained = false;
 
 	/** The margin. */
-	private Point margin;
+	private Point margin = new Point();
 
 	/** The offset. */
 	private Dimension offset = new Dimension();
@@ -99,7 +102,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	 */
 	@Override
 	public int getCurrentSideOfParent() {
-		return position;
+		return getPosition();
 	}
 
 	/**
@@ -119,6 +122,27 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	 */
 	@Override
 	public int getPosition() {
+		// Get the forced value(CSS, Notation)
+		String ForcedPosition = NotationUtils.getStringValue(view, NamedStyleProperties.POSITION, NamedStyleProperties.PositionAsString.AUTO);
+		// if there is a forced position
+		if (!NamedStyleProperties.PositionAsString.AUTO.equals(ForcedPosition)) {
+			if (NamedStyleProperties.PositionAsString.EAST.equals(ForcedPosition)) {
+				position = PositionConstants.EAST;
+			}
+			if (NamedStyleProperties.PositionAsString.WEST.equals(ForcedPosition)) {
+				position = PositionConstants.WEST;
+			}
+			if (NamedStyleProperties.PositionAsString.NORTH.equals(ForcedPosition)) {
+				position = PositionConstants.NORTH;
+			}
+			if (NamedStyleProperties.PositionAsString.SOUTH.equals(ForcedPosition)) {
+				position = PositionConstants.SOUTH;
+			}
+		} else {
+			// Return the position on parent
+			position = getPositionOnParent();
+		}
+
 		return position;
 	}
 
@@ -128,7 +152,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	 * @return the position on parent
 	 */
 	public int getPositionOnParent() {
-		Rectangle portBounds = null;
+		Rectangle bounds = null;
 		Rectangle parentBounds = null;
 		int position = this.position;
 
@@ -137,24 +161,43 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 			EditPart parent = editPart.getParent();
 			if (parent instanceof IPapyrusEditPart) {
 				IFigure portPrimaryShape = ((IPapyrusEditPart) parent).getPrimaryShape();
-				portBounds = portPrimaryShape.getBounds();
+				bounds = portPrimaryShape.getBounds();
 
 				// Get the port's parent figure
 				// if it's a papyrus edit part and the figure is paint(width !=0)
-				if (parent.getParent() instanceof IPapyrusEditPart && portBounds.width != 0) {
+				if (parent.getParent() instanceof IPapyrusEditPart && bounds.width != 0) {
 					IFigure parentPrimaryShape = ((IPapyrusEditPart) parent.getParent()).getPrimaryShape();
 					parentBounds = parentPrimaryShape.getBounds();
 
-					if (portBounds.x + portBounds.width / 2 == parentBounds.x) {
+					if (bounds.x + bounds.width / 2 == parentBounds.x) {
 						// West position
 						position = PositionConstants.WEST;
-					} else if (portBounds.x + portBounds.width / 2 == parentBounds.getBottomRight().x) {
+					} else if (bounds.x + bounds.width / 2 == parentBounds.getBottomRight().x) {
 						// East Position
 						position = PositionConstants.EAST;
-					} else if (portBounds.y + portBounds.height / 2 == parentBounds.y) {
+					} else if (bounds.y + bounds.height / 2 == parentBounds.y) {
+						// North Position
 						position = PositionConstants.NORTH;
-					} else if (portBounds.y + portBounds.height / 2 == parentBounds.getBottomRight().y) {
+					} else if (bounds.y + bounds.height / 2 == parentBounds.getBottomRight().y) {
+						// South Position
 						position = PositionConstants.SOUTH;
+					} else
+
+					// Take into account of rounded corner
+					if (parent.getParent() instanceof RoundedCompartmentEditPart && bounds.width != 0) {
+						// West position
+						if (bounds.x + bounds.width / 2 < parentBounds.x + parentBounds.width / 4) {
+							position = PositionConstants.WEST;
+							// East Position
+						} else if (bounds.x + bounds.width / 2 > parentBounds.x + parentBounds.width / 4 * 3) {
+							position = PositionConstants.EAST;
+							// North Position
+						} else if (bounds.y + bounds.height / 2 < parentBounds.y + parentBounds.height / 2) {
+							position = PositionConstants.NORTH;
+							// South Position
+						} else if (bounds.y + bounds.height / 2 > parentBounds.y + parentBounds.height / 2) {
+							position = PositionConstants.SOUTH;
+						}
 					}
 				}
 			}
@@ -227,10 +270,10 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 			Point newConstraint;
 			// The new Offset to be saved one the resource
 			Point newOffset;
-			// get the nummber of labels and set the number of this label
+			// get the number of labels and set the number of this label
 			int numberOfLabel = getNumberOfVisibleLabels();
 			// Set the translation when alignment is auto
-			switch (getPositionOnParent()) {
+			switch (getPosition()) {
 			case PositionConstants.WEST:
 				// alignRight:
 				newConstraint = new Point(-proposedBounds.width - offset.width, offset.height);
@@ -261,7 +304,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 			proposedBounds.setLocation(newConstraint.translate(parentFigure.getBounds().getTopLeft()));
 
 			// translate the label in case of multiple label
-			switch (getPositionOnParent()) {
+			switch (getPosition()) {
 			case PositionConstants.WEST:
 				proposedBounds.translate(0, (numLabel - 1) * proposedBounds.height + margin.y - (numberOfLabel - 1) * (proposedBounds.height + margin.y) / 2);
 				break;
@@ -290,7 +333,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 				req.setLocation(offset);
 				Command command = editPart.getCommand(req);
 				if (command != null && command.canExecute()) {
-					command.setLabel(RequestConstants.REQ_MOVE + ": " + offset.toString());
+					command.setLabel(RequestConstants.REQ_MOVE + ": " + offset.toString()); //$NON-NLS-1$
 					TransactionUtil.getEditingDomain(view).getCommandStack().execute(GEFtoEMFCommandWrapper.wrap(command));
 				}
 			}

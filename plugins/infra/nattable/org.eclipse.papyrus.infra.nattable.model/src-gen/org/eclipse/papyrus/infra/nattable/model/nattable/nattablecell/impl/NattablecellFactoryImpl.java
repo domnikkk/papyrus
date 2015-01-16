@@ -31,7 +31,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Nattablece
  * @generated
  */
 public class NattablecellFactoryImpl extends EFactoryImpl implements NattablecellFactory {
-
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->

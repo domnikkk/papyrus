@@ -15,6 +15,7 @@ package org.eclipse.papyrus.migration.rsa.tests.qvt;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -41,6 +42,7 @@ import org.eclipse.papyrus.infra.core.services.ExtensionServicesRegistry;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.junit.utils.EditorUtils;
 import org.eclipse.papyrus.junit.utils.FilesUtils;
 import org.eclipse.papyrus.junit.utils.ProjectUtils;
@@ -63,7 +65,7 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ImportDiagramTest {
+public class ImportDiagramTest extends AbstractPapyrusTest {
 
 	private static IProject targetProject;
 
@@ -92,35 +94,16 @@ public class ImportDiagramTest {
 		FilesUtils.copyFiles(targetProject, "Profile.epx", new URL(rsaProfileModelUri.toString()));
 
 		fileDiagram = URI.createPlatformResourceURI(Activator.PLUGIN_ID + ".testProject" + "/ModelTestClass.emx", true);
+		ImportTransformation transfoDiagram = new ImportTransformation(fileDiagram);
 
-		ImportTransformation transfoDiagram = new ImportTransformation(fileDiagram) {
-
-			/**
-			 * @see org.eclipse.papyrus.migration.rsa.transformation.ImportTransformation#run()
-			 *
-			 */
-
-			@Override
-			public void run() {
-				this.run(new NullProgressMonitor());
-			}
-		};
 		fileProfile = URI.createPlatformResourceURI(Activator.PLUGIN_ID + ".testProject" + "/Profile.epx", true);
-		ImportTransformation transfoProfile = new ImportTransformation(fileProfile) {
+		ImportTransformation transfoProfile = new ImportTransformation(fileProfile);
 
-			/**
-			 * @see org.eclipse.papyrus.migration.rsa.transformation.ImportTransformation#run()
-			 *
-			 */
+		transfoDiagram.run(false);
+		transfoProfile.run(false);
 
-			@Override
-			public void run() {
-				this.run(new NullProgressMonitor());
-			}
-		};
-
-		transfoDiagram.run();
-		transfoProfile.run();
+		transfoDiagram.waitForCompletion();
+		transfoProfile.waitForCompletion();
 	}
 
 
@@ -172,6 +155,7 @@ public class ImportDiagramTest {
 			}
 		}
 
+		final AtomicReference<Exception> exception = new AtomicReference<Exception>();
 		Display.getDefault().syncExec(new Runnable() {
 
 			public void run() {
@@ -179,20 +163,25 @@ public class ImportDiagramTest {
 					IFile fileToOpen = (IFile) ResourcesPlugin.getWorkspace().getRoot().findMember(fileDiagram.trimFileExtension().appendFileExtension("di").toPlatformString(true));
 					editor = EditorUtils.openPapyrusEditor(fileToOpen);
 				} catch (Exception ex) {
-					Activator.log.error(ex);
-					Assert.fail(ex.getMessage());
+					exception.set(ex);
 				}
 			}
 		});
+
+		// Throw exception to get a proper JUnit report
+		if (exception.get() != null) {
+			throw exception.get();
+		}
+
 		Assert.assertNotNull("Cannot open the Papyrus editor", editor);
 
 		Resource notationResource = NotationUtils.getNotationModel(editor.getServicesRegistry().getService(ModelSet.class)).getResource();
 		List<EObject> listcontent = notationResource.getContents();
-		
+
 		// Expected is 7 valid migrated diagrams.
 		// FIXME: Sequence Diagram import is currently disabled, so 6 is the new expected number
 		Assert.assertEquals(6, listcontent.size()); // Expected is 7 valid migrated diagrams
-		
+
 		for (EObject cont : listcontent) {
 			Assert.assertTrue(cont instanceof Diagram);
 
@@ -200,7 +189,7 @@ public class ImportDiagramTest {
 			editingDomain.getCommandStack().execute(new GMFtoEMFCommandWrapper(new OpenDiagramCommand(editingDomain, currentDia)));
 			IEditorPart currentEditor = editor.getActiveEditor();
 			Assert.assertNotNull("could not open the  diagram editor", currentEditor);
-			Assert.assertTrue("The active editor should be a GMF Diagram Editor", editor.getActiveEditor() instanceof IDiagramWorkbenchPart);
+			Assert.assertTrue("The active editor should be a GMF Diagram Editor. Received " + editor.getActiveEditor().getClass().getCanonicalName(), editor.getActiveEditor() instanceof IDiagramWorkbenchPart);
 			Object temp = currentEditor.getAdapter(EditPart.class);
 			Assert.assertNotNull(temp);
 			EditPart editPart = (EditPart) temp;

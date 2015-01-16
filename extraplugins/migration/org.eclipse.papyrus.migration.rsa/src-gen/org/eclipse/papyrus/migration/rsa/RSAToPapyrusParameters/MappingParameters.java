@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters#getUriMappings <em>Uri Mappings</em>}</li>
+ * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters#getProfileUriMappings <em>Profile Uri Mappings</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,5 +48,21 @@ public interface MappingParameters extends EObject {
 	 * @generated
 	 */
 	EList<URIMapping> getUriMappings();
+
+	/**
+	 * Returns the value of the '<em><b>Profile Uri Mappings</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Profile Uri Mappings</em>' containment reference list isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Profile Uri Mappings</em>' containment reference list.
+	 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersPackage#getMappingParameters_ProfileUriMappings()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<URIMapping> getProfileUriMappings();
 
 } // MappingParameters

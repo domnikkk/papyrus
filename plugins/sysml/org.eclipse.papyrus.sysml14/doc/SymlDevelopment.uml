@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Requirements="http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:structure="http://DeveloperProcess/schemas/structure/_rpmLUHVxEeSZ-fQGFkyJeQ/6" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements http://DeveloperProcess/schemas/structure/_rpmLUHVxEeSZ-fQGFkyJeQ/6 pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml">
+  <uml:Model xmi:id="_Py6ZoJsTEeSu6pfLknKE4A" name="SysMLDeveloppment">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_Py6ZoZsTEeSu6pfLknKE4A">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Model" xmi:id="_Py6ZopsTEeSu6pfLknKE4A" name="Requirements">
+      <packagedElement xmi:type="uml:Class" xmi:id="_PTiQ0JslEeSu6pfLknKE4A" name="DerivedProperties"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ngV8oJsxEeSYaIZuWOBlYQ" name="ServiceRegistryCall"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Kl7pgJs2EeSYaIZuWOBlYQ" name="Association">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_SI8vAJs2EeSYaIZuWOBlYQ" name="Association must have 2 association ends"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_gQ_nwJs2EeSYaIZuWOBlYQ" name="OptionalName "/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_EUOlcJs3EeSYaIZuWOBlYQ" name="A property must reference a property"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_zxkO8Js3EeSYaIZuWOBlYQ" name="connector end of bindingconnector"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_p8VYwJtDEeSYaIZuWOBlYQ" name="ConnectorEnd">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_BWfykJtDEeSYaIZuWOBlYQ" name="NestedConnector automatically created"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_DlXBYJtEEeS5lMkaDojPJg" name="First property in propertyPath"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_NWLbMJtEEeS5lMkaDojPJg" name="Last property of property path"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_n3sgIJtGEeS5lMkaDojPJg" name="take in account property is encapsulated of the block"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_HlOKIJv9EeS1Sc9sg-ntVw" name="DisplayOrientedIconPort"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_Py6Zo5sTEeSu6pfLknKE4A" name="UseCases">
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_Py6ZpJsTEeSu6pfLknKE4A" name="useCasesAbstraction" client="_Py6Zo5sTEeSu6pfLknKE4A" supplier="_Py6ZopsTEeSu6pfLknKE4A"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_Py6ZpZsTEeSu6pfLknKE4A" name="MySystem"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_Py6ZppsTEeSu6pfLknKE4A" name="Design">
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_Py6Zp5sTEeSu6pfLknKE4A" name="DesignAbstraction" client="_Py6ZppsTEeSu6pfLknKE4A" supplier="_Py6Zo5sTEeSu6pfLknKE4A"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_Py6ZqJsTEeSu6pfLknKE4A" name="Test">
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_Py6ZqZsTEeSu6pfLknKE4A" name="Dependency1" client="_Py6ZqJsTEeSu6pfLknKE4A" supplier="_Py6Zo5sTEeSu6pfLknKE4A"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_Py6ZqpsTEeSu6pfLknKE4A" name="Dependency2" client="_Py6ZqJsTEeSu6pfLknKE4A" supplier="_Py6ZppsTEeSu6pfLknKE4A"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Py6Zq5sTEeSu6pfLknKE4A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QphRgJsTEeSu6pfLknKE4A" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QphRgZsTEeSu6pfLknKE4A" key="Version" value="0.0.7"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QphRgpsTEeSu6pfLknKE4A" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QphRg5sTEeSu6pfLknKE4A" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QphRhJsTEeSu6pfLknKE4A" key="Date" value="2014-11-26"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QphRhZsTEeSu6pfLknKE4A" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Py6ZrJsTEeSu6pfLknKE4A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_rplkQXVxEeSZ-fQGFkyJeQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_kWqjAMbXEeO09JBvNFZRNw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Py6ZrZsTEeSu6pfLknKE4A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QtPT4JsTEeSu6pfLknKE4A" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QtPT4ZsTEeSu6pfLknKE4A" key="Version" value="0.0.7"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QtPT4psTEeSu6pfLknKE4A" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QtPT45sTEeSu6pfLknKE4A" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QtPT5JsTEeSu6pfLknKE4A" key="Date" value="2014-11-26"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QtPT5ZsTEeSu6pfLknKE4A" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Py6ZrpsTEeSu6pfLknKE4A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_rpmyYHVxEeSZ-fQGFkyJeQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_qCT3MMbXEeO09JBvNFZRNw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Py6Zr5sTEeSu6pfLknKE4A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QtPT5psTEeSu6pfLknKE4A" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QtPT55sTEeSu6pfLknKE4A" key="Version" value="0.0.7"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QtPT6JsTEeSu6pfLknKE4A" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QtPT6ZsTEeSu6pfLknKE4A" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QtPT6psTEeSu6pfLknKE4A" key="Date" value="2014-11-26"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QtPT65sTEeSu6pfLknKE4A" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Py6ZsJsTEeSu6pfLknKE4A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_rpnZcXVxEeSZ-fQGFkyJeQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_2LNtQMbYEeO09JBvNFZRNw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Py6ZsZsTEeSu6pfLknKE4A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Py6ZspsTEeSu6pfLknKE4A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_OOJC4LX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Py6Zs5sTEeSu6pfLknKE4A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QtYd0JsTEeSu6pfLknKE4A" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QtYd0ZsTEeSu6pfLknKE4A" key="Version" value="0.0.11"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QtYd0psTEeSu6pfLknKE4A" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QtYd05sTEeSu6pfLknKE4A" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QtYd1JsTEeSu6pfLknKE4A" key="Date" value="2014-11-14"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QtYd1ZsTEeSu6pfLknKE4A" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Py6ZtJsTEeSu6pfLknKE4A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_RQrLoWwBEeSIYu1Ih2FYyQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_D0JcUMnzEeO9CYUoXDRplw"/>
+    </profileApplication>
+  </uml:Model>
+  <structure:Project xmi:id="_Py6ZtZsTEeSu6pfLknKE4A" author="P. Tessier" version="1.1.0" base_Model="_Py6ZoJsTEeSu6pfLknKE4A" title="SysML development"/>
+  <structure:Requirements xmi:id="_Py6ZtpsTEeSu6pfLknKE4A" base_Model="_Py6ZopsTEeSu6pfLknKE4A"/>
+  <structure:UseCases xmi:id="_Py6Zt5sTEeSu6pfLknKE4A" base_Model="_Py6Zo5sTEeSu6pfLknKE4A"/>
+  <structure:Design xmi:id="_Py6ZuJsTEeSu6pfLknKE4A" base_Model="_Py6ZppsTEeSu6pfLknKE4A"/>
+  <structure:Tests xmi:id="_Py6ZuZsTEeSu6pfLknKE4A" base_Model="_Py6ZqJsTEeSu6pfLknKE4A"/>
+  <Requirements:Requirement xmi:id="_PTrawJslEeSu6pfLknKE4A" text="All derived properties must be calculated and updated. concern, method viewpoint&#xD;&#xA;viewpoint and stakeholder for View&#xD;&#xA;concern from stakeholder&#xD;&#xA;criterion size, member from Element group&#xD;&#xA;bindingpath from BoundReference&#xD;&#xA;derived,derivedfrom, satisfyby, refinedby, tracedto, verifiedby master form requirement&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;isatomic from FlowPort" id="Req0010" base_Class="_PTiQ0JslEeSu6pfLknKE4A"/>
+  <Requirements:Requirement xmi:id="_ngftoJsxEeSYaIZuWOBlYQ" text="testif the service registry of SysML can be cal for all SysMLElement" id="Req0020" base_Class="_ngV8oJsxEeSYaIZuWOBlYQ"/>
+  <Requirements:Requirement xmi:id="_Kl7pgZs2EeSYaIZuWOBlYQ" text="Association in sysML are specific" id="Req0030" base_Class="_Kl7pgJs2EeSYaIZuWOBlYQ"/>
+  <Requirements:Requirement xmi:id="_SJF48Js2EeSYaIZuWOBlYQ" text="For an association in which both ends are typed by blocks, the number of ends must be exactly two. (p50)" id="Req0031" base_Class="_SI8vAJs2EeSYaIZuWOBlYQ"/>
+  <Requirements:Requirement xmi:id="_gQ_nwZs2EeSYaIZuWOBlYQ" text="In the UML metamodel on which SysML is built, any instance of the Property metaclass that is typed by a block (a Class with the «block» stereotype applied) and which is owned by an Association may not have a name and may not be defined as a navigable owned end of the association. p50" id="Req0032" base_Class="_gQ_nwJs2EeSYaIZuWOBlYQ"/>
+  <Requirements:Requirement xmi:id="_EUOlcZs3EeSYaIZuWOBlYQ" text="In the UML metamodel on which SysML is built, a Property that is typed by a block must be defined as an end of an association" id="Req0033" base_Class="_EUOlcJs3EeSYaIZuWOBlYQ"/>
+  <Requirements:Requirement xmi:id="_zxkO8Zs3EeSYaIZuWOBlYQ" text="The two ends of a binding connector must have either the same type or types that are compatible so that equality of their values can be defined. p48" id="Req0040" base_Class="_zxkO8Js3EeSYaIZuWOBlYQ"/>
+  <Requirements:Requirement xmi:id="_BWfykZtDEeSYaIZuWOBlYQ" text="Connectors may be drawn that cross the boundaries of nested properties to connect to properties within them. The connector is owned by the most immediate block that owns both ends of the connector. A NestedConnectorEnd stereotype of a UML ConnectorEnd is automatically applied to any connector end that is nested more than one level deep within a containing context." id="Req0051" base_Class="_BWfykJtDEeSYaIZuWOBlYQ"/>
+  <Requirements:Requirement xmi:id="_p8VYwZtDEeSYaIZuWOBlYQ" text="Papyrus must manage SysML connector ends" id="Req0050" base_Class="_p8VYwJtDEeSYaIZuWOBlYQ"/>
+  <Requirements:Requirement xmi:id="_DlgyYJtEEeS5lMkaDojPJg" text="The first property in propertyPath must be owned by the block that owns the connector, or one of the block’s generalizations." id="Req0052" base_Class="_DlXBYJtEEeS5lMkaDojPJg"/>
+  <Requirements:Requirement xmi:id="_NWLbMZtEEeS5lMkaDojPJg" text="The type of the property at the last position of the propertyPath list must own or inherit the role property of the stereotyped" id="Req0053" base_Class="_NWLbMJtEEeS5lMkaDojPJg"/>
+  <Requirements:Requirement xmi:id="_n3sgIZtGEeS5lMkaDojPJg" text="isEncapsulated: Boolean [0..1], If true, then the block is treated as a black box; a part typed by this black box can only be connected via its ports or directly to its outer boundary. If false, or if a value is not present, then connections can be established to . p50elements of its internal structure via deep-nested connector ends." id="Req0053" base_Class="_n3sgIJtGEeS5lMkaDojPJg"/>
+  <Requirements:Requirement xmi:id="_HlRNcJv9EeS1Sc9sg-ntVw" text="Papyrus should change the icon to always have the arrow of a port orthogonal to its block" id="Req0060" base_Class="_HlOKIJv9EeS1Sc9sg-ntVw"/>
+</xmi:XMI>

@@ -119,7 +119,12 @@ public enum CellEditorDeclaration implements Enumerator {
 	 *
 	 * @generated
 	 */
-	private static final CellEditorDeclaration[] VALUES_ARRAY = new CellEditorDeclaration[] { COLUMN, ROW, CELL, };
+	private static final CellEditorDeclaration[] VALUES_ARRAY =
+			new CellEditorDeclaration[] {
+					COLUMN,
+					ROW,
+					CELL,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Cell Editor Declaration</b></em>' enumerators.

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,10 +30,12 @@ public class TestActivityDiagramLink extends TestLink {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	@Override
 	public DiagramUpdater getDiagramUpdater() {
-		return UMLDiagramUpdater.TYPED_INSTANCE;
+		return UMLDiagramUpdater.INSTANCE;
 	}
+
 	@Override
 	protected String getProjectName() {
 		return IActivityDiagramTestsConstants.PROJECT_NAME;

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_AipZ0IHTEeSQAc7KMA100g" name="model">
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_B49sgIHTEeSQAc7KMA100g" name="Color">
+    <ownedLiteral xmi:id="_F73hQIHTEeSQAc7KMA100g" name="black"/>
+    <ownedLiteral xmi:id="_Gu9yIIHTEeSQAc7KMA100g" name="red"/>
+    <ownedLiteral xmi:id="_HVBskIHTEeSQAc7KMA100g" name="blue"/>
+  </packagedElement>
+</uml:Model>

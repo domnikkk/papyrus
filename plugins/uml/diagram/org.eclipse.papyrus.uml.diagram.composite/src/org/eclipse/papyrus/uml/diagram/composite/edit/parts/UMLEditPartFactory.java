@@ -48,11 +48,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityCompositeNameEditPart.VISUAL_ID:
 				return new ActivityCompositeNameEditPart(view);
 
+			case ActivityCompositeFloatingLabelEditPart.VISUAL_ID:
+				return new ActivityCompositeFloatingLabelEditPart(view);
+
 			case InteractionCompositeEditPart.VISUAL_ID:
 				return new InteractionCompositeEditPart(view);
 
 			case InteractionCompositeNameEditPart.VISUAL_ID:
 				return new InteractionCompositeNameEditPart(view);
+
+			case InteractionCompositeFloatingLabelEditPart.VISUAL_ID:
+				return new InteractionCompositeFloatingLabelEditPart(view);
 
 			case ProtocolStateMachineCompositeEditPart.VISUAL_ID:
 				return new ProtocolStateMachineCompositeEditPart(view);
@@ -60,11 +66,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ProtocolStateMachineCompositeNameEditPart.VISUAL_ID:
 				return new ProtocolStateMachineCompositeNameEditPart(view);
 
+			case ProtocolStateMachineCompositeFloatingLabelEditPart.VISUAL_ID:
+				return new ProtocolStateMachineCompositeFloatingLabelEditPart(view);
+
 			case StateMachineCompositeEditPart.VISUAL_ID:
 				return new StateMachineCompositeEditPart(view);
 
 			case StateMachineCompositeNameEditPart.VISUAL_ID:
 				return new StateMachineCompositeNameEditPart(view);
+
+			case StateMachineCompositeFloatingLabelEditPart.VISUAL_ID:
+				return new StateMachineCompositeFloatingLabelEditPart(view);
 
 			case FunctionBehaviorCompositeEditPart.VISUAL_ID:
 				return new FunctionBehaviorCompositeEditPart(view);
@@ -72,11 +84,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case FunctionBehaviorCompositeNameEditPart.VISUAL_ID:
 				return new FunctionBehaviorCompositeNameEditPart(view);
 
+			case FunctionBehaviorCompositeFloatingLabelEditPart.VISUAL_ID:
+				return new FunctionBehaviorCompositeFloatingLabelEditPart(view);
+
 			case OpaqueBehaviorCompositeEditPart.VISUAL_ID:
 				return new OpaqueBehaviorCompositeEditPart(view);
 
 			case OpaqueBehaviorCompositeNameEditPart.VISUAL_ID:
 				return new OpaqueBehaviorCompositeNameEditPart(view);
+
+			case OpaqueBehaviorCompositeFloatingLabelEditPart.VISUAL_ID:
+				return new OpaqueBehaviorCompositeFloatingLabelEditPart(view);
 
 			case ComponentCompositeEditPart.VISUAL_ID:
 				return new ComponentCompositeEditPart(view);
@@ -84,11 +102,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ComponentCompositeNameEditPart.VISUAL_ID:
 				return new ComponentCompositeNameEditPart(view);
 
+			case ComponentCompositeFloatingLabelEditPart.VISUAL_ID:
+				return new ComponentCompositeFloatingLabelEditPart(view);
+
 			case DeviceCompositeEditPart.VISUAL_ID:
 				return new DeviceCompositeEditPart(view);
 
 			case DeviceCompositeNameEditPart.VISUAL_ID:
 				return new DeviceCompositeNameEditPart(view);
+
+			case DeviceCompositeFloatingLabelEditPart.VISUAL_ID:
+				return new DeviceCompositeFloatingLabelEditPart(view);
 
 			case ExecutionEnvironmentCompositeEditPart.VISUAL_ID:
 				return new ExecutionEnvironmentCompositeEditPart(view);
@@ -96,11 +120,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ExecutionEnvironmentCompositeNameEditPart.VISUAL_ID:
 				return new ExecutionEnvironmentCompositeNameEditPart(view);
 
+			case ExecutionEnvironmentCompositeFloatingLabelEditPart.VISUAL_ID:
+				return new ExecutionEnvironmentCompositeFloatingLabelEditPart(view);
+
 			case NodeCompositeEditPart.VISUAL_ID:
 				return new NodeCompositeEditPart(view);
 
 			case NodeCompositeNameEditPart.VISUAL_ID:
 				return new NodeCompositeNameEditPart(view);
+
+			case NodeCompositeFloatingLabelEditPart.VISUAL_ID:
+				return new NodeCompositeFloatingLabelEditPart(view);
 
 			case ClassCompositeEditPart.VISUAL_ID:
 				return new ClassCompositeEditPart(view);
@@ -108,11 +138,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ClassCompositeNameEditPart.VISUAL_ID:
 				return new ClassCompositeNameEditPart(view);
 
+			case ClassCompositeFloatingLabelEditPart.VISUAL_ID:
+				return new ClassCompositeFloatingLabelEditPart(view);
+
 			case CollaborationCompositeEditPart.VISUAL_ID:
 				return new CollaborationCompositeEditPart(view);
 
 			case CollaborationCompositeNameEditPart.VISUAL_ID:
 				return new CollaborationCompositeNameEditPart(view);
+
+			case CollaborationCompositeFloatingLabelEditPart.VISUAL_ID:
+				return new CollaborationCompositeFloatingLabelEditPart(view);
 
 			case InterfaceEditPart.VISUAL_ID:
 				return new InterfaceEditPart(view);
@@ -120,11 +156,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case InterfaceNameEditPart.VISUAL_ID:
 				return new InterfaceNameEditPart(view);
 
+			case InterfaceFloatingLabelEditPart.VISUAL_ID:
+				return new InterfaceFloatingLabelEditPart(view);
+
 			case PrimitiveTypeEditPart.VISUAL_ID:
 				return new PrimitiveTypeEditPart(view);
 
 			case PrimitiveTypeNameEditPart.VISUAL_ID:
 				return new PrimitiveTypeNameEditPart(view);
+
+			case PrimitiveTypeFloatingLabelEditPart.VISUAL_ID:
+				return new PrimitiveTypeFloatingLabelEditPart(view);
 
 			case EnumerationEditPart.VISUAL_ID:
 				return new EnumerationEditPart(view);
@@ -132,11 +174,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case EnumerationNameEditPart.VISUAL_ID:
 				return new EnumerationNameEditPart(view);
 
+			case EnumerationFloatingLabelEditPart.VISUAL_ID:
+				return new EnumerationFloatingLabelEditPart(view);
+
 			case DataTypeEditPart.VISUAL_ID:
 				return new DataTypeEditPart(view);
 
 			case DataTypeNameEditPart.VISUAL_ID:
 				return new DataTypeNameEditPart(view);
+
+			case DataTypeFloatingLabelEditPart.VISUAL_ID:
+				return new DataTypeFloatingLabelEditPart(view);
 
 			case ActorEditPart.VISUAL_ID:
 				return new ActorEditPart(view);
@@ -144,11 +192,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActorNameEditPart.VISUAL_ID:
 				return new ActorNameEditPart(view);
 
+			case ActorFloatingLabelEditPart.VISUAL_ID:
+				return new ActorFloatingLabelEditPart(view);
+
 			case DeploymentSpecificationEditPart.VISUAL_ID:
 				return new DeploymentSpecificationEditPart(view);
 
 			case DeploymentSpecificationNameEditPart.VISUAL_ID:
 				return new DeploymentSpecificationNameEditPart(view);
+
+			case DeploymentSpecificationFloatingLabelEditPart.VISUAL_ID:
+				return new DeploymentSpecificationFloatingLabelEditPart(view);
 
 			case ArtifactEditPart.VISUAL_ID:
 				return new ArtifactEditPart(view);
@@ -156,11 +210,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ArtifactNameEditPart.VISUAL_ID:
 				return new ArtifactNameEditPart(view);
 
+			case ArtifactFloatingLabelEditPart.VISUAL_ID:
+				return new ArtifactFloatingLabelEditPart(view);
+
 			case InformationItemEditPart.VISUAL_ID:
 				return new InformationItemEditPart(view);
 
 			case InformationItemNameEditPart.VISUAL_ID:
 				return new InformationItemNameEditPart(view);
+
+			case InformationItemFloatingLabelEditPart.VISUAL_ID:
+				return new InformationItemFloatingLabelEditPart(view);
 
 			case SignalEditPart.VISUAL_ID:
 				return new SignalEditPart(view);
@@ -168,11 +228,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case SignalNameEditPart.VISUAL_ID:
 				return new SignalNameEditPart(view);
 
+			case SignalFloatingLabelEditPart.VISUAL_ID:
+				return new SignalFloatingLabelEditPart(view);
+
 			case UseCaseEditPart.VISUAL_ID:
 				return new UseCaseEditPart(view);
 
 			case UseCaseNameEditPart.VISUAL_ID:
 				return new UseCaseNameEditPart(view);
+
+			case UseCaseFloatingLabelEditPart.VISUAL_ID:
+				return new UseCaseFloatingLabelEditPart(view);
 
 			case SignalEventEditPart.VISUAL_ID:
 				return new SignalEventEditPart(view);
@@ -180,11 +246,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case SignalEventNameEditPart.VISUAL_ID:
 				return new SignalEventNameEditPart(view);
 
+			case SignalEventFloatingLabelEditPart.VISUAL_ID:
+				return new SignalEventFloatingLabelEditPart(view);
+
 			case CallEventEditPart.VISUAL_ID:
 				return new CallEventEditPart(view);
 
 			case CallEventNameEditPart.VISUAL_ID:
 				return new CallEventNameEditPart(view);
+
+			case CallEventFloatingLabelEditPart.VISUAL_ID:
+				return new CallEventFloatingLabelEditPart(view);
 
 			case AnyReceiveEventEditPart.VISUAL_ID:
 				return new AnyReceiveEventEditPart(view);
@@ -192,17 +264,26 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case AnyReceiveEventNameEditPart.VISUAL_ID:
 				return new AnyReceiveEventNameEditPart(view);
 
+			case AnyReceiveEventFloatingLabelEditPart.VISUAL_ID:
+				return new AnyReceiveEventFloatingLabelEditPart(view);
+
 			case ChangeEventEditPart.VISUAL_ID:
 				return new ChangeEventEditPart(view);
 
 			case ChangeEventNameEditPart.VISUAL_ID:
 				return new ChangeEventNameEditPart(view);
 
+			case ChangeEventFloatingLabelEditPart.VISUAL_ID:
+				return new ChangeEventFloatingLabelEditPart(view);
+
 			case TimeEventEditPart.VISUAL_ID:
 				return new TimeEventEditPart(view);
 
 			case TimeEventNameEditPart.VISUAL_ID:
 				return new TimeEventNameEditPart(view);
+
+			case TimeEventFloatingLabelEditPart.VISUAL_ID:
+				return new TimeEventFloatingLabelEditPart(view);
 
 			case DurationObservationEditPart.VISUAL_ID:
 				return new DurationObservationEditPart(view);
@@ -228,11 +309,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case LiteralBooleanNameEditPart.VISUAL_ID:
 				return new LiteralBooleanNameEditPart(view);
 
+			case LiteralBooleanFloatingLabelEditPart.VISUAL_ID:
+				return new LiteralBooleanFloatingLabelEditPart(view);
+
 			case LiteralIntegerEditPart.VISUAL_ID:
 				return new LiteralIntegerEditPart(view);
 
 			case LiteralIntegerNameEditPart.VISUAL_ID:
 				return new LiteralIntegerNameEditPart(view);
+
+			case LiteralIntegerFloatingLabelEditPart.VISUAL_ID:
+				return new LiteralIntegerFloatingLabelEditPart(view);
 
 			case LiteralNullEditPart.VISUAL_ID:
 				return new LiteralNullEditPart(view);
@@ -240,11 +327,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case LiteralNullNameEditPart.VISUAL_ID:
 				return new LiteralNullNameEditPart(view);
 
+			case LiteralNullFloatingLabelEditPart.VISUAL_ID:
+				return new LiteralNullFloatingLabelEditPart(view);
+
 			case LiteralStringEditPart.VISUAL_ID:
 				return new LiteralStringEditPart(view);
 
 			case LiteralStringNameEditPart.VISUAL_ID:
 				return new LiteralStringNameEditPart(view);
+
+			case LiteralStringFloatingLabelEditPart.VISUAL_ID:
+				return new LiteralStringFloatingLabelEditPart(view);
 
 			case LiteralUnlimitedNaturalEditPart.VISUAL_ID:
 				return new LiteralUnlimitedNaturalEditPart(view);
@@ -252,11 +345,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case LiteralUnlimitedNaturalNameEditPart.VISUAL_ID:
 				return new LiteralUnlimitedNaturalNameEditPart(view);
 
+			case LiteralUnlimitedNaturalFloatingLabelEditPart.VISUAL_ID:
+				return new LiteralUnlimitedNaturalFloatingLabelEditPart(view);
+
 			case StringExpressionEditPart.VISUAL_ID:
 				return new StringExpressionEditPart(view);
 
 			case StringExpressionNameEditPart.VISUAL_ID:
 				return new StringExpressionNameEditPart(view);
+
+			case StringExpressionFloatingLabelEditPart.VISUAL_ID:
+				return new StringExpressionFloatingLabelEditPart(view);
 
 			case OpaqueExpressionEditPart.VISUAL_ID:
 				return new OpaqueExpressionEditPart(view);
@@ -264,11 +363,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case OpaqueExpressionNameEditPart.VISUAL_ID:
 				return new OpaqueExpressionNameEditPart(view);
 
+			case OpaqueExpressionFloatingLabelEditPart.VISUAL_ID:
+				return new OpaqueExpressionFloatingLabelEditPart(view);
+
 			case TimeExpressionEditPart.VISUAL_ID:
 				return new TimeExpressionEditPart(view);
 
 			case TimeExpressionNameEditPart.VISUAL_ID:
 				return new TimeExpressionNameEditPart(view);
+
+			case TimeExpressionFloatingLabelEditPart.VISUAL_ID:
+				return new TimeExpressionFloatingLabelEditPart(view);
 
 			case ExpressionEditPart.VISUAL_ID:
 				return new ExpressionEditPart(view);
@@ -276,11 +381,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ExpressionNameEditPart.VISUAL_ID:
 				return new ExpressionNameEditPart(view);
 
+			case ExpressionFloatingLabelEditPart.VISUAL_ID:
+				return new ExpressionFloatingLabelEditPart(view);
+
 			case DurationEditPart.VISUAL_ID:
 				return new DurationEditPart(view);
 
 			case DurationNameEditPart.VISUAL_ID:
 				return new DurationNameEditPart(view);
+
+			case DurationFloatingLabelEditPart.VISUAL_ID:
+				return new DurationFloatingLabelEditPart(view);
 
 			case TimeIntervalEditPart.VISUAL_ID:
 				return new TimeIntervalEditPart(view);
@@ -288,11 +399,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case TimeIntervalNameEditPart.VISUAL_ID:
 				return new TimeIntervalNameEditPart(view);
 
+			case TimeIntervalFloatingLabelEditPart.VISUAL_ID:
+				return new TimeIntervalFloatingLabelEditPart(view);
+
 			case DurationIntervalEditPart.VISUAL_ID:
 				return new DurationIntervalEditPart(view);
 
 			case DurationIntervalNameEditPart.VISUAL_ID:
 				return new DurationIntervalNameEditPart(view);
+
+			case DurationIntervalFloatingLabelEditPart.VISUAL_ID:
+				return new DurationIntervalFloatingLabelEditPart(view);
 
 			case IntervalEditPart.VISUAL_ID:
 				return new IntervalEditPart(view);
@@ -300,11 +417,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case IntervalNameEditPart.VISUAL_ID:
 				return new IntervalNameEditPart(view);
 
+			case IntervalFloatingLabelEditPart.VISUAL_ID:
+				return new IntervalFloatingLabelEditPart(view);
+
 			case InstanceValueEditPart.VISUAL_ID:
 				return new InstanceValueEditPart(view);
 
 			case InstanceValueNameEditPart.VISUAL_ID:
 				return new InstanceValueNameEditPart(view);
+
+			case InstanceValueFloatingLabelEditPart.VISUAL_ID:
+				return new InstanceValueFloatingLabelEditPart(view);
 
 			case CommentEditPart.VISUAL_ID:
 				return new CommentEditPart(view);
@@ -360,6 +483,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case BehaviorPortEditPart.VISUAL_ID:
 				return new BehaviorPortEditPart(view);
 
+			case BehaviorPortFloatingLabelEditPart.VISUAL_ID:
+				return new BehaviorPortFloatingLabelEditPart(view);
+
 			case PortEditPart.VISUAL_ID:
 				return new PortEditPart(view);
 
@@ -384,11 +510,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PropertyPartNameEditPartCN.VISUAL_ID:
 				return new PropertyPartNameEditPartCN(view);
 
+			case PropertyPartFloatingLabelEditPartCN.VISUAL_ID:
+				return new PropertyPartFloatingLabelEditPartCN(view);
+
 			case CollaborationRoleEditPartCN.VISUAL_ID:
 				return new CollaborationRoleEditPartCN(view);
 
 			case CollaborationRoleNameEditPartCN.VISUAL_ID:
 				return new CollaborationRoleNameEditPartCN(view);
+
+			case CollaborationRoleFloatingLabelEditPartCN.VISUAL_ID:
+				return new CollaborationRoleFloatingLabelEditPartCN(view);
 
 			case CollaborationUseEditPartCN.VISUAL_ID:
 				return new CollaborationUseEditPartCN(view);
@@ -396,11 +528,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case CollaborationUseNameEditPart.VISUAL_ID:
 				return new CollaborationUseNameEditPart(view);
 
+			case CollaborationUseFloatingLabelEditPartCN.VISUAL_ID:
+				return new CollaborationUseFloatingLabelEditPartCN(view);
+
 			case ActivityCompositeEditPartCN.VISUAL_ID:
 				return new ActivityCompositeEditPartCN(view);
 
 			case ActivityCompositeNameEditPartCN.VISUAL_ID:
 				return new ActivityCompositeNameEditPartCN(view);
+
+			case ActivityCompositeFloatingLabelEditPartCN.VISUAL_ID:
+				return new ActivityCompositeFloatingLabelEditPartCN(view);
 
 			case InteractionCompositeEditPartCN.VISUAL_ID:
 				return new InteractionCompositeEditPartCN(view);
@@ -408,11 +546,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case InteractionCompositeNameEditPartCN.VISUAL_ID:
 				return new InteractionCompositeNameEditPartCN(view);
 
+			case InteractionCompositeFloatingLabelEditPartCN.VISUAL_ID:
+				return new InteractionCompositeFloatingLabelEditPartCN(view);
+
 			case ProtocolStateMachineCompositeEditPartCN.VISUAL_ID:
 				return new ProtocolStateMachineCompositeEditPartCN(view);
 
 			case ProtocolStateMachineCompositeNameEditPartCN.VISUAL_ID:
 				return new ProtocolStateMachineCompositeNameEditPartCN(view);
+
+			case ProtocolStateMachineCompositeFloatingLabelEditPartCN.VISUAL_ID:
+				return new ProtocolStateMachineCompositeFloatingLabelEditPartCN(view);
 
 			case StateMachineCompositeEditPartCN.VISUAL_ID:
 				return new StateMachineCompositeEditPartCN(view);
@@ -420,11 +564,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StateMachineCompositeNameEditPartCN.VISUAL_ID:
 				return new StateMachineCompositeNameEditPartCN(view);
 
+			case StateMachineCompositeFloatingLabelEditPartCN.VISUAL_ID:
+				return new StateMachineCompositeFloatingLabelEditPartCN(view);
+
 			case FunctionBehaviorCompositeEditPartCN.VISUAL_ID:
 				return new FunctionBehaviorCompositeEditPartCN(view);
 
 			case FunctionBehaviorCompositeNameEditPartCN.VISUAL_ID:
 				return new FunctionBehaviorCompositeNameEditPartCN(view);
+
+			case FunctionBehaviorCompositeFloatingLabelEditPartCN.VISUAL_ID:
+				return new FunctionBehaviorCompositeFloatingLabelEditPartCN(view);
 
 			case OpaqueBehaviorCompositeEditPartCN.VISUAL_ID:
 				return new OpaqueBehaviorCompositeEditPartCN(view);
@@ -432,11 +582,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case OpaqueBehaviorCompositeNameEditPartCN.VISUAL_ID:
 				return new OpaqueBehaviorCompositeNameEditPartCN(view);
 
+			case OpaqueBehaviorCompositeFloatingLabelEditPartCN.VISUAL_ID:
+				return new OpaqueBehaviorCompositeFloatingLabelEditPartCN(view);
+
 			case ComponentCompositeEditPartCN.VISUAL_ID:
 				return new ComponentCompositeEditPartCN(view);
 
 			case ComponentCompositeNameEditPartCN.VISUAL_ID:
 				return new ComponentCompositeNameEditPartCN(view);
+
+			case ComponentCompositeFloatingLabelEditPartCN.VISUAL_ID:
+				return new ComponentCompositeFloatingLabelEditPartCN(view);
 
 			case DeviceCompositeEditPartCN.VISUAL_ID:
 				return new DeviceCompositeEditPartCN(view);
@@ -444,11 +600,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case DeviceCompositeNameEditPartCN.VISUAL_ID:
 				return new DeviceCompositeNameEditPartCN(view);
 
+			case DeviceCompositeFloatingLabelEditPartCN.VISUAL_ID:
+				return new DeviceCompositeFloatingLabelEditPartCN(view);
+
 			case ExecutionEnvironmentCompositeEditPartCN.VISUAL_ID:
 				return new ExecutionEnvironmentCompositeEditPartCN(view);
 
 			case ExecutionEnvironmentCompositeNameEditPartCN.VISUAL_ID:
 				return new ExecutionEnvironmentCompositeNameEditPartCN(view);
+
+			case ExecutionEnvironmentCompositeFloatingLabelEditPartCN.VISUAL_ID:
+				return new ExecutionEnvironmentCompositeFloatingLabelEditPartCN(view);
 
 			case NodeCompositeEditPartCN.VISUAL_ID:
 				return new NodeCompositeEditPartCN(view);
@@ -456,11 +618,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case NodeCompositeNameEditPartCN.VISUAL_ID:
 				return new NodeCompositeNameEditPartCN(view);
 
+			case NodeCompositeFloatingLabelEditPartCN.VISUAL_ID:
+				return new NodeCompositeFloatingLabelEditPartCN(view);
+
 			case ClassCompositeEditPartCN.VISUAL_ID:
 				return new ClassCompositeEditPartCN(view);
 
 			case ClassCompositeNameEditPartCN.VISUAL_ID:
 				return new ClassCompositeNameEditPartCN(view);
+
+			case ClassCompositeFloatingLabelEditPartCN.VISUAL_ID:
+				return new ClassCompositeFloatingLabelEditPartCN(view);
 
 			case CollaborationCompositeEditPartCN.VISUAL_ID:
 				return new CollaborationCompositeEditPartCN(view);
@@ -468,11 +636,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case CollaborationCompositeNameEditPartCN.VISUAL_ID:
 				return new CollaborationCompositeNameEditPartCN(view);
 
+			case CollaborationCompositeFloatingLabelEditPartCN.VISUAL_ID:
+				return new CollaborationCompositeFloatingLabelEditPartCN(view);
+
 			case InterfaceEditPartCN.VISUAL_ID:
 				return new InterfaceEditPartCN(view);
 
 			case InterfaceNameEditPartCN.VISUAL_ID:
 				return new InterfaceNameEditPartCN(view);
+
+			case InterfaceFloatingLabelEditPartCN.VISUAL_ID:
+				return new InterfaceFloatingLabelEditPartCN(view);
 
 			case PrimitiveTypeEditPartCN.VISUAL_ID:
 				return new PrimitiveTypeEditPartCN(view);
@@ -480,11 +654,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PrimitiveTypeNameEditPartCN.VISUAL_ID:
 				return new PrimitiveTypeNameEditPartCN(view);
 
+			case PrimitiveTypeFloatingLabelEditPartCN.VISUAL_ID:
+				return new PrimitiveTypeFloatingLabelEditPartCN(view);
+
 			case EnumerationEditPartCN.VISUAL_ID:
 				return new EnumerationEditPartCN(view);
 
 			case EnumerationNameEditPartCN.VISUAL_ID:
 				return new EnumerationNameEditPartCN(view);
+
+			case EnumerationFloatingLabelEditPartCN.VISUAL_ID:
+				return new EnumerationFloatingLabelEditPartCN(view);
 
 			case DataTypeEditPartCN.VISUAL_ID:
 				return new DataTypeEditPartCN(view);
@@ -492,11 +672,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case DataTypeNameEditPartCN.VISUAL_ID:
 				return new DataTypeNameEditPartCN(view);
 
+			case DataTypeFloatingLabelEditPartCN.VISUAL_ID:
+				return new DataTypeFloatingLabelEditPartCN(view);
+
 			case ActorEditPartCN.VISUAL_ID:
 				return new ActorEditPartCN(view);
 
 			case ActorNameEditPartCN.VISUAL_ID:
 				return new ActorNameEditPartCN(view);
+
+			case ActorFloatingLabelEditPartCN.VISUAL_ID:
+				return new ActorFloatingLabelEditPartCN(view);
 
 			case DeploymentSpecificationEditPartCN.VISUAL_ID:
 				return new DeploymentSpecificationEditPartCN(view);
@@ -504,11 +690,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case DeploymentSpecificationNameEditPartCN.VISUAL_ID:
 				return new DeploymentSpecificationNameEditPartCN(view);
 
+			case DeploymentSpecificationFloatingLabelEditPartCN.VISUAL_ID:
+				return new DeploymentSpecificationFloatingLabelEditPartCN(view);
+
 			case ArtifactEditPartCN.VISUAL_ID:
 				return new ArtifactEditPartCN(view);
 
 			case ArtifactNameEditPartCN.VISUAL_ID:
 				return new ArtifactNameEditPartCN(view);
+
+			case ArtifactFloatingLabelEditPartCN.VISUAL_ID:
+				return new ArtifactFloatingLabelEditPartCN(view);
 
 			case InformationItemEditPartCN.VISUAL_ID:
 				return new InformationItemEditPartCN(view);
@@ -516,17 +708,26 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case InformationItemNameEditPartCN.VISUAL_ID:
 				return new InformationItemNameEditPartCN(view);
 
+			case InformationItemFloatingLabelEditPartCN.VISUAL_ID:
+				return new InformationItemFloatingLabelEditPartCN(view);
+
 			case SignalEditPartCN.VISUAL_ID:
 				return new SignalEditPartCN(view);
 
 			case SignalNameEditPartCN.VISUAL_ID:
 				return new SignalNameEditPartCN(view);
 
+			case SignalFloatingLabelEditPartCN.VISUAL_ID:
+				return new SignalFloatingLabelEditPartCN(view);
+
 			case UseCaseEditPartCN.VISUAL_ID:
 				return new UseCaseEditPartCN(view);
 
 			case UseCaseNameEditPartCN.VISUAL_ID:
 				return new UseCaseNameEditPartCN(view);
+
+			case UseCaseFloatingLabelEditPartCN.VISUAL_ID:
+				return new UseCaseFloatingLabelEditPartCN(view);
 
 			case CommentEditPartCN.VISUAL_ID:
 				return new CommentEditPartCN(view);

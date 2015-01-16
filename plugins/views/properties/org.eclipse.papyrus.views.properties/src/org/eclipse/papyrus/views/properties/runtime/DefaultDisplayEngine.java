@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2014 CEA LIST and others.
+ * Copyright (c) 2010, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -11,6 +11,8 @@
  *  Christian W. Damus (CEA) - Use URIs to support non-URL-compatible storage (CDO)
  *  Christian W. Damus (CEA) - bug 417409
  *  Christian W. Damus (CEA) - bug 444227
+ *  Christian W. Damus - bug 450478
+ *  Christian W. Damus - bug 454536
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.runtime;
@@ -19,6 +21,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +30,8 @@ import java.util.Set;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.views.properties.Activator;
 import org.eclipse.papyrus.views.properties.catalog.PropertiesURIHandler;
 import org.eclipse.papyrus.views.properties.contexts.Context;
@@ -36,10 +41,6 @@ import org.eclipse.papyrus.views.properties.contexts.View;
 import org.eclipse.papyrus.views.properties.modelelement.DataSource;
 import org.eclipse.papyrus.views.properties.util.EMFURLStreamHandler;
 import org.eclipse.papyrus.views.properties.xwt.XWTTabDescriptor;
-import org.eclipse.papyrus.xwt.DefaultLoadingContext;
-import org.eclipse.papyrus.xwt.ILoadingContext;
-import org.eclipse.papyrus.xwt.IXWTLoader;
-import org.eclipse.papyrus.xwt.XWT;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
@@ -48,6 +49,10 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.views.properties.tabbed.ITabDescriptor;
+import org.eclipse.xwt.DefaultLoadingContext;
+import org.eclipse.xwt.ILoadingContext;
+import org.eclipse.xwt.IXWTLoader;
+import org.eclipse.xwt.XWT;
 
 /**
  * A default implementation for {@link DisplayEngine}
@@ -134,6 +139,22 @@ public class DefaultDisplayEngine implements DisplayEngine {
 	}
 
 	/**
+	 * Disposes the controls created by this DisplayEngine for the specified section.
+	 * This should not dispose the engine itself, which can be reused.
+	 */
+	protected void disposeControls(Section section) {
+		Control control = controls.remove(section);
+		if (control != null) {
+			control.dispose();
+		}
+
+		DataSource dataSource = displayedSections.remove(section);
+		if (dataSource != null) {
+			dataSource.dispose();
+		}
+	}
+
+	/**
 	 * Disposes the controls created by this DisplayEngine for the specified tab ID.
 	 * This should not dispose the engine itself, which can be reused.
 	 */
@@ -176,10 +197,18 @@ public class DefaultDisplayEngine implements DisplayEngine {
 
 		DataSource existing = getDataSource(section);
 		if (!allowDuplicate && (existing != null)) {
-			// Update the data source and fire the bindings
-			existing.setSelection(source.getSelection());
+			if (isUnloaded(existing) || conflictingArity(existing.getSelection(), source.getSelection())) {
+				// If it's a left-over from an unloaded resource, then rebuild the properties UI because
+				// element-browser widgets and other things may remember the previous (now invalid)
+				// resource-set context. Also, cannot reuse a multiple-selection data source for
+				// single-selection and vice-versa
+				disposeControls(section);
+			} else {
+				// Update the data source and fire the bindings
+				existing.setSelection(source.getSelection());
 
-			return null;
+				return null;
+			}
 		}
 
 		Control control = createSection(parent, section, loadXWTFile(section), source);
@@ -195,6 +224,28 @@ public class DefaultDisplayEngine implements DisplayEngine {
 
 	protected DataSource getDataSource(Section section) {
 		return displayedSections.get(section);
+	}
+
+	/**
+	 * Queries whether any object selected in a data source is unloaded (now an EMF proxy object).
+	 *
+	 * @param dataSource
+	 *            a data source
+	 * @return whether it contains an unloaded model element
+	 */
+	protected boolean isUnloaded(DataSource dataSource) {
+		boolean result = false;
+
+		for (Iterator<?> iter = dataSource.getSelection().iterator(); !result && iter.hasNext();) {
+			EObject next = EMFHelper.getEObject(iter.next());
+			result = (next != null) && next.eIsProxy();
+		}
+
+		return result;
+	}
+
+	protected boolean conflictingArity(IStructuredSelection selection1, IStructuredSelection selection2) {
+		return (selection1.size() <= 1) != (selection2.size() <= 1);
 	}
 
 	/**
@@ -309,12 +360,12 @@ public class DefaultDisplayEngine implements DisplayEngine {
 	/**
 	 * Creates a proxy for a {@code section} that makes it distinct from other occurrences of the same section, according to some
 	 * arbitrary {@code disciminator}.
-	 * 
+	 *
 	 * @param section
 	 *            a section to be repeated with unique discriminators
 	 * @param discriminator
 	 *            this {@code section}'s discriminator value
-	 * 
+	 *
 	 * @return the proxy instance combining the identity of the {@code section} with its unique {@code discriminator}
 	 */
 	public static Section discriminate(Section section, Object discriminator) {
@@ -333,7 +384,7 @@ public class DefaultDisplayEngine implements DisplayEngine {
 
 	/**
 	 * Obtains the discriminator for a {@code section} proxy, if it is a proxy.
-	 * 
+	 *
 	 * @param section
 	 *            a section that is repeated with unique discriminators
 	 * @return this {@code section}'s discriminator value, or {@code null} if it is a singleton (non-proxy) section

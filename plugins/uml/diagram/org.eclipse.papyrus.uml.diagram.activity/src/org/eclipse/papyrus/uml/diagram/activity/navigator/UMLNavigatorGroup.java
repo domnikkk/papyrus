@@ -34,7 +34,7 @@ public class UMLNavigatorGroup extends UMLAbstractNavigatorItem {
 	/**
 	 * @generated
 	 */
-	private Collection myChildren = new LinkedList();
+	private Collection<java.lang.Object> myChildren = new LinkedList<java.lang.Object>();
 
 	/**
 	 * @generated
@@ -69,7 +69,7 @@ public class UMLNavigatorGroup extends UMLAbstractNavigatorItem {
 	/**
 	 * @generated
 	 */
-	public void addChildren(Collection children) {
+	public void addChildren(Collection<java.lang.Object> children) {
 		myChildren.addAll(children);
 	}
 

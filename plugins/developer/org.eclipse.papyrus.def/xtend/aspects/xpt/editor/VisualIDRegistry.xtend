@@ -163,4 +163,18 @@ import org.eclipse.gmf.codegen.gmfgen.GenConstraint
 		};
 	'''
 
+	override getModelID(GenDiagram it) '''
+		«generatedMemberComment()»
+		public static String «getModelIDMethodName(it)»(org.eclipse.gmf.runtime.notation.View view) {
+			org.eclipse.gmf.runtime.notation.View diagram = view.getDiagram();
+			while (view != diagram) {
+				org.eclipse.emf.ecore.EAnnotation annotation = view.getEAnnotation("Shortcut"); «nonNLS(1)»
+				if (annotation != null) {
+					return annotation.getDetails().get("modelID"); «nonNLS(1)»
+				}
+				view = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+			}
+			return diagram != null ? diagram.getType() : null;
+		}
+	'''
 }

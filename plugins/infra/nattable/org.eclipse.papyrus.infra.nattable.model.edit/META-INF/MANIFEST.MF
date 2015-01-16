@@ -11,6 +11,7 @@ Export-Package: org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.p
  org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.provider,
  org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.provider,
  org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.provider,
+ org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.provider,
  org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.provider,
  org.eclipse.papyrus.infra.nattable.model.nattable.provider
 Bundle-Vendor: %providerName

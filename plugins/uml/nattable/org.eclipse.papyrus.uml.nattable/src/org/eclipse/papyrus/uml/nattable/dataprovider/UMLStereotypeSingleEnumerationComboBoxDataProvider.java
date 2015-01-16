@@ -17,6 +17,9 @@ package org.eclipse.papyrus.uml.nattable.dataprovider;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.nebula.widgets.nattable.edit.editor.IComboBoxDataProvider;
@@ -49,12 +52,12 @@ public class UMLStereotypeSingleEnumerationComboBoxDataProvider implements IComb
 	 * Constructor.
 	 *
 	 * @param axisElement
-	 *            the obejct represented by the axis
+	 *            the object represented by the axis
 	 * @param elementProvider
 	 *            The table axis element provider
 	 */
 	public UMLStereotypeSingleEnumerationComboBoxDataProvider(final Object axisElement, final ITableAxisElementProvider elementProvider) {
-		this.axisElement = axisElement;
+		this.axisElement = AxisUtils.getRepresentedElement(axisElement);
 		this.elementProvider = elementProvider;
 	}
 
@@ -87,9 +90,27 @@ public class UMLStereotypeSingleEnumerationComboBoxDataProvider implements IComb
 			final List<Stereotype> ste = UMLTableUtils.getApplicableStereotypesWithThisProperty(modelElement, id);
 			if (ste.size() == 1) {
 				final Stereotype current = ste.get(0);
-				final EEnum eenum = (EEnum) current.getProfile().getDefinition(property.getType());
-				for (final EEnumLiteral instances : eenum.getELiterals()) {
-					literals.add(instances.getInstance());
+				EEnum eenum = (EEnum) current.getProfile().getDefinition(property.getType());
+				if (eenum == null) {
+					// the enum is declared in an other file (external library)
+					EClass stereotypeDef = (EClass) current.getProfile().getDefinition(current);
+					List<EAttribute> attributes = stereotypeDef.getEAllAttributes();
+					int i = 0;
+					while (eenum == null && i < attributes.size()) {
+						EAttribute attr = attributes.get(i);
+						if (property.getName().equals(attr.getName())) {
+							EClassifier tmp = attr.getEType();
+							if (tmp instanceof EEnum) {
+								eenum = (EEnum) tmp;
+							}
+						}
+						i++;
+					}
+				}
+				if (eenum != null) {
+					for (final EEnumLiteral instances : eenum.getELiterals()) {
+						literals.add(instances.getInstance());
+					}
 				}
 			}
 		}

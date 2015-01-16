@@ -26,7 +26,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.Sl
  * @generated
  */
 public class SlaveObjectAxisProviderImpl extends AxisProviderImpl implements SlaveObjectAxisProvider {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

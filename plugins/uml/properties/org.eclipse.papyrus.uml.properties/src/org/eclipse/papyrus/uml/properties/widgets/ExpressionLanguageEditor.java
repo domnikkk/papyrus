@@ -39,7 +39,6 @@ public class ExpressionLanguageEditor extends MultipleValueEditor {
 	 */
 	public ExpressionLanguageEditor(Composite parent, int style) {
 		super(parent, style, new LanguageSelector(), true, true, null);
-		this.selector = super.selector;
 	}
 
 	@Override

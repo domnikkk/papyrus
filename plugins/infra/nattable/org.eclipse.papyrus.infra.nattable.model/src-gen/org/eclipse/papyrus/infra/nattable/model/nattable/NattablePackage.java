@@ -39,7 +39,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.N
  * @generated
  */
 public interface NattablePackage extends EPackage {
-
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -96,6 +95,16 @@ public interface NattablePackage extends EPackage {
 	 * @ordered
 	 */
 	int TABLE__EANNOTATIONS = NattableconfigurationPackage.TABLE_NAMED_ELEMENT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE__STYLES = NattableconfigurationPackage.TABLE_NAMED_ELEMENT__STYLES;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -258,6 +267,36 @@ public interface NattablePackage extends EPackage {
 	int TABLE___GET_EANNOTATION__STRING = NattableconfigurationPackage.TABLE_NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE___GET_NAMED_STYLE__ECLASS_STRING = NattableconfigurationPackage.TABLE_NAMED_ELEMENT___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE___GET_STYLE__ECLASS = NattableconfigurationPackage.TABLE_NAMED_ELEMENT___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE___CREATE_STYLE__ECLASS = NattableconfigurationPackage.TABLE_NAMED_ELEMENT___CREATE_STYLE__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Table</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -340,7 +379,7 @@ public interface NattablePackage extends EPackage {
 	EAttribute getTable_InvertAxis();
 
 	/**
-	 * Returns the meta object for the containment reference list ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getColumnAxisProvidersHistory <em>Column Axis Providers History</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getColumnAxisProvidersHistory <em>Column Axis Providers History</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -352,7 +391,7 @@ public interface NattablePackage extends EPackage {
 	EReference getTable_ColumnAxisProvidersHistory();
 
 	/**
-	 * Returns the meta object for the containment reference list ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getRowAxisProvidersHistory <em>Row Axis Providers History</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getRowAxisProvidersHistory <em>Row Axis Providers History</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -364,7 +403,7 @@ public interface NattablePackage extends EPackage {
 	EReference getTable_RowAxisProvidersHistory();
 
 	/**
-	 * Returns the meta object for the containment reference ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getLocalRowHeaderAxisConfiguration <em>Local Row Header Axis Configuration</em>} '.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getLocalRowHeaderAxisConfiguration <em>Local Row Header Axis Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -376,8 +415,7 @@ public interface NattablePackage extends EPackage {
 	EReference getTable_LocalRowHeaderAxisConfiguration();
 
 	/**
-	 * Returns the meta object for the containment reference ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getLocalColumnHeaderAxisConfiguration
-	 * <em>Local Column Header Axis Configuration</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getLocalColumnHeaderAxisConfiguration <em>Local Column Header Axis Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -389,8 +427,7 @@ public interface NattablePackage extends EPackage {
 	EReference getTable_LocalColumnHeaderAxisConfiguration();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getCurrentRowAxisProvider
-	 * <em>Current Row Axis Provider</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getCurrentRowAxisProvider <em>Current Row Axis Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -402,8 +439,7 @@ public interface NattablePackage extends EPackage {
 	EReference getTable_CurrentRowAxisProvider();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getCurrentColumnAxisProvider
-	 * <em>Current Column Axis Provider</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getCurrentColumnAxisProvider <em>Current Column Axis Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -415,8 +451,7 @@ public interface NattablePackage extends EPackage {
 	EReference getTable_CurrentColumnAxisProvider();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getCells
-	 * <em>Cells</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getCells <em>Cells</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -452,7 +487,6 @@ public interface NattablePackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.impl.TableImpl <em>Table</em>}' class.
 		 * <!-- begin-user-doc -->

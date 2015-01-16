@@ -51,13 +51,9 @@ public class CustomMessage6CreateCommand extends Message6CreateCommand {
 	 */
 	@Override
 	public boolean canExecute() {
+		// #445271: we don't care about CommandHelper.hasValidContainer() 
 		if (!super.canExecute()) {
 			return false;
-		}
-		if (getSource() != null && getTarget() != null) {
-			if (!CommandHelper.hasValidContainer(getRequest())) {
-				return false;
-			}
 		}
 		return MessageConnectionHelper.canExist(MessageSort.ASYNCH_SIGNAL_LITERAL, getSource(), null);
 	}

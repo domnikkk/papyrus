@@ -20,14 +20,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.ecore.provider.EModelElementItemProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Cell;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.NattablecellFactory;
@@ -42,8 +36,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.provider.NattableEditPl
  *
  * @generated
  */
-public class CellItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
-
+public class CellItemProvider extends EModelElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -83,7 +76,6 @@ public class CellItemProvider extends ItemProviderAdapter implements IEditingDom
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EcorePackage.Literals.EMODEL_ELEMENT__EANNOTATIONS);
 			childrenFeatures.add(NattablecellPackage.Literals.CELL__COLUMN_WRAPPER);
 			childrenFeatures.add(NattablecellPackage.Literals.CELL__ROW_WRAPPER);
 			childrenFeatures.add(NattablecellPackage.Literals.CELL__PROBLEMS);
@@ -129,6 +121,7 @@ public class CellItemProvider extends ItemProviderAdapter implements IEditingDom
 		return getString("_UI_Cell_type"); //$NON-NLS-1$
 	}
 
+
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
@@ -142,7 +135,6 @@ public class CellItemProvider extends ItemProviderAdapter implements IEditingDom
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Cell.class)) {
-		case NattablecellPackage.CELL__EANNOTATIONS:
 		case NattablecellPackage.CELL__COLUMN_WRAPPER:
 		case NattablecellPackage.CELL__ROW_WRAPPER:
 		case NattablecellPackage.CELL__PROBLEMS:
@@ -164,17 +156,35 @@ public class CellItemProvider extends ItemProviderAdapter implements IEditingDom
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(NattablecellPackage.Literals.CELL__COLUMN_WRAPPER, NattablecellFactory.eINSTANCE.createEObjectAxisWrapper()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattablecellPackage.Literals.CELL__COLUMN_WRAPPER,
+						NattablecellFactory.eINSTANCE.createEObjectAxisWrapper()));
 
-		newChildDescriptors.add(createChildParameter(NattablecellPackage.Literals.CELL__COLUMN_WRAPPER, NattablecellFactory.eINSTANCE.createIdAxisWrapper()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattablecellPackage.Literals.CELL__COLUMN_WRAPPER,
+						NattablecellFactory.eINSTANCE.createIdAxisWrapper()));
 
-		newChildDescriptors.add(createChildParameter(NattablecellPackage.Literals.CELL__ROW_WRAPPER, NattablecellFactory.eINSTANCE.createEObjectAxisWrapper()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattablecellPackage.Literals.CELL__ROW_WRAPPER,
+						NattablecellFactory.eINSTANCE.createEObjectAxisWrapper()));
 
-		newChildDescriptors.add(createChildParameter(NattablecellPackage.Literals.CELL__ROW_WRAPPER, NattablecellFactory.eINSTANCE.createIdAxisWrapper()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattablecellPackage.Literals.CELL__ROW_WRAPPER,
+						NattablecellFactory.eINSTANCE.createIdAxisWrapper()));
 
-		newChildDescriptors.add(createChildParameter(NattablecellPackage.Literals.CELL__PROBLEMS, NattableproblemFactory.eINSTANCE.createProblem()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattablecellPackage.Literals.CELL__PROBLEMS,
+						NattableproblemFactory.eINSTANCE.createProblem()));
 
-		newChildDescriptors.add(createChildParameter(NattablecellPackage.Literals.CELL__PROBLEMS, NattableproblemFactory.eINSTANCE.createStringResolutionProblem()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattablecellPackage.Literals.CELL__PROBLEMS,
+						NattableproblemFactory.eINSTANCE.createStringResolutionProblem()));
 	}
 
 	/**
@@ -189,7 +199,9 @@ public class CellItemProvider extends ItemProviderAdapter implements IEditingDom
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == NattablecellPackage.Literals.CELL__COLUMN_WRAPPER || childFeature == NattablecellPackage.Literals.CELL__ROW_WRAPPER;
+		boolean qualify =
+				childFeature == NattablecellPackage.Literals.CELL__COLUMN_WRAPPER ||
+						childFeature == NattablecellPackage.Literals.CELL__ROW_WRAPPER;
 
 		if (qualify) {
 			return getString("_UI_CreateChild_text2", //$NON-NLS-1$

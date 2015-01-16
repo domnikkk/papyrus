@@ -24,7 +24,7 @@ import org.eclipse.swt.graphics.Image;
  * Figure for Affixed NamedElement representation. The name label is shown as an
  * external label.
  */
-public class AffixedNamedElementFigure extends NodeNamedElementFigure {
+public class AffixedNamedElementFigure extends RoundedCompartmentFigure {
 
 	/** Container for icon (stereotype icon) */
 	// protected ScalableImageFigure icon;

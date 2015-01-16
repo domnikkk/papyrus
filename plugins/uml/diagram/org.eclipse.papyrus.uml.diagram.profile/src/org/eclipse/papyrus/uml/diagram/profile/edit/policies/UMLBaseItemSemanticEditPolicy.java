@@ -544,14 +544,16 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistExtension_1013(Package container, Extension linkInstance, Property source, Class target) {
 			try {
-				//ExtensionSource
-				/**we can't make a test here, because, the source must be a Property (ExtensionEnd) and it's a Stereotype
+				// ExtensionSource
+				/**
+				 * we can't make a test here, because, the source must be a Property (ExtensionEnd) and it's a Stereotype
 				 *
 				 * @see org.eclipse.papyrus.uml.diagram.profile.custom.policies.CUMLBaseItemSemanticEditPolicy for the good test!
 				 */
-				//ExtensionTarget
+				// ExtensionTarget
 
-				/**we can't make a test here, because, the source must be a Property (ExtensionEnd) and it's a Stereotype
+				/**
+				 * we can't make a test here, because, the source must be a Property (ExtensionEnd) and it's a Stereotype
 				 *
 				 * @see org.eclipse.papyrus.uml.diagram.profile.custom.policies.CUMLBaseItemSemanticEditPolicy for the good test!
 				 */
@@ -567,14 +569,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistAssociation_4001(Package container, Association linkInstance, Type source, Type target) {
 			try {
-				//AssociationSource
+				// AssociationSource
 				if ((source instanceof Type) && Util.isMetaclass(source)) {
 					return false;
 				}
 				if (source instanceof Extension) {
 					return false;
 				}
-				//AssociationTarget
+				// AssociationTarget
 				if (target != null) {
 					if (target instanceof Extension) {
 						return false;
@@ -599,14 +601,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistAssociation_4019(Package container, Association linkInstance, Type source, Type target) {
 			try {
-				//AssociationSource
+				// AssociationSource
 				if ((source instanceof Type) && Util.isMetaclass(source)) {
 					return false;
 				}
 				if (source instanceof Extension) {
 					return false;
 				}
-				//AssociationTarget
+				// AssociationTarget
 				if (target != null) {
 					if (target instanceof Extension) {
 						return false;
@@ -624,7 +626,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistGeneralization_4002(Generalization linkInstance, Classifier source, Classifier target) {
 			try {
-				//GeneralizationSource
+				// GeneralizationSource
 				if (!(source instanceof Classifier)) {
 					return false;
 				}
@@ -632,9 +634,9 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 				if (source instanceof Extension) {
-					return false; //meaningless
+					return false; // meaningless
 				}
-				//GeneralizationTarget
+				// GeneralizationTarget
 				if (target != null) {
 					if (!(target instanceof Classifier)) {
 						return false;
@@ -643,7 +645,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 						return false;
 					}
 					if (target instanceof Extension) {
-						return false;//meaningless
+						return false;// meaningless
 					}
 				}
 				return true;
@@ -658,14 +660,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistDependency_4008(Package container, Dependency linkInstance, NamedElement source, NamedElement target) {
 			try {
-				//DependencySource
+				// DependencySource
 				if ((source instanceof Type) && Util.isMetaclass((Type) source)) {
 					return false;
 				}
 				if (source instanceof Extension) {
 					return false;
 				}
-				//DependencyTarget
+				// DependencyTarget
 				if (target != null) {
 					if (target instanceof Extension) {
 						return false;
@@ -683,14 +685,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistDependency_4018(Package container, Dependency linkInstance, NamedElement source, NamedElement target) {
 			try {
-				//DependencySource
+				// DependencySource
 				if ((source instanceof Type) && Util.isMetaclass((Type) source)) {
 					return false;
 				}
 				if (source instanceof Extension) {
 					return false;
 				}
-				//DependencyTarget
+				// DependencyTarget
 				if (target != null) {
 					if (target instanceof Extension) {
 						return false;
@@ -708,14 +710,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistElementImport_1064(Namespace container, ElementImport linkInstance, Namespace source, PackageableElement target) {
 			try {
-				//ElementImportSource
+				// ElementImportSource
 				if ((source instanceof Type) && Util.isMetaclass((Type) source)) {
 					return false;
 				}
 				if (source instanceof Extension) {
 					return false;
 				}
-				//ElementImportTarget
+				// ElementImportTarget
 				if (target != null) {
 					if (target instanceof Extension) {
 						return false;
@@ -733,7 +735,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistPackageImport_1065(Namespace container, PackageImport linkInstance, Namespace source, Package target) {
 			try {
-				//PackageImportSource
+				// PackageImportSource
 				if ((source instanceof Type) && Util.isMetaclass((Type) source)) {
 					return false;
 				}
@@ -752,7 +754,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistCommentAnnotatedElement_1022(Comment source, Element target) {
 			try {
-				//AnnotatedElementLink target
+				// AnnotatedElementLink target
 				if ((target instanceof Type) && Util.isMetaclass((Type) target)) {
 					return false;
 				}
@@ -768,7 +770,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistConstraintConstrainedElement_4014(Constraint source, Element target) {
 			try {
-				//ConstraintedElementLink
+				// ConstraintedElementLink
 				if ((target instanceof Type) && Util.isMetaclass((Type) target)) {
 					return false;
 				}

@@ -34,7 +34,7 @@ public abstract class AbstractRowChangeHeaderConfigurationHandler extends Abstra
 	 */
 	@Override
 	protected AbstractHeaderAxisConfiguration getEditedAxisConfiguration() {
-		AbstractHeaderAxisConfiguration conf = HeaderAxisConfigurationManagementUtils.getAbstractHeaderAxisConfigurationUsedInTable(getCurrentNattableModelManager().getTable());
+		AbstractHeaderAxisConfiguration conf = HeaderAxisConfigurationManagementUtils.getRowAbstractHeaderAxisConfigurationUsedInTable(getCurrentNattableModelManager().getTable());
 		return conf;
 	}
 

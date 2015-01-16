@@ -17,10 +17,17 @@ import com.google.inject.Singleton
 import org.eclipse.gmf.codegen.gmfgen.GenDiagram
 import xpt.Common
 import xpt.editor.DiagramEditorUtil
+import xpt.CodeStyle
+import plugin.Activator
+import xpt.providers.ValidationProvider
 
 @Singleton class ValidateAction extends xpt.editor.ValidateAction {
 	@Inject extension Common;
+	@Inject extension CodeStyle
+	
 	@Inject DiagramEditorUtil xptDiagramEditorUtil;
+	@Inject Activator xptActivator
+	@Inject ValidationProvider xptValidationProvider
 
 	override runNonUIValidation(GenDiagram it) '''
 		
@@ -85,7 +92,7 @@ import xpt.editor.DiagramEditorUtil
 				diagramEditPart.getDiagramView(),
 				collectTargetElements(rootStatus, new java.util.HashSet<org.eclipse.emf.ecore.EObject>(), allDiagnostics));
 			for (java.util.Iterator<org.eclipse.emf.common.util.Diagnostic> it = emfValidationStatus.getChildren().iterator(); it.hasNext();) {
-			org.eclipse.emf.common.util.Diagnostic nextDiagnostic = (org.eclipse.emf.common.util.Diagnostic) it.next();
+			org.eclipse.emf.common.util.Diagnostic nextDiagnostic = it.next();
 			java.util.List<?> data = nextDiagnostic.getData();
 			if (data != null && !data.isEmpty() && data.get(0) instanceof org.eclipse.emf.ecore.EObject) {
 			org.eclipse.emf.ecore.EObject element = (org.eclipse.emf.ecore.EObject) data.get(0);
@@ -126,18 +133,81 @@ import xpt.editor.DiagramEditorUtil
 			java.util.List<?> data = diagnostic.getData();
 			org.eclipse.emf.ecore.EObject target = null;
 			if (data != null && !data.isEmpty() && data.get(0) instanceof org.eclipse.emf.ecore.EObject) {
-			target = (org.eclipse.emf.ecore.EObject) data.get(0);
-			targetElementCollector.add(target);	
-			allDiagnostics.add(diagnostic);
+				target = (org.eclipse.emf.ecore.EObject) data.get(0);
+				targetElementCollector.add(target);	
+				allDiagnostics.add(diagnostic);
 			}
 			if (diagnostic.getChildren() != null && !diagnostic.getChildren().isEmpty()) {
-			for (java.util.Iterator<org.eclipse.emf.common.util.Diagnostic> it = diagnostic.getChildren().iterator(); it.hasNext();) {
-			collectTargetElements((org.eclipse.emf.common.util.Diagnostic) it.next(),
-				targetElementCollector, allDiagnostics);
-			}
+				for (java.util.Iterator<org.eclipse.emf.common.util.Diagnostic> it = diagnostic.getChildren().iterator(); it.hasNext();) {
+					collectTargetElements(it.next(), targetElementCollector, allDiagnostics);
+				}
 			}
 			return targetElementCollector;
 		}
 	'''
 
+	override run(GenDiagram it) '''
+		
+		«generatedMemberComment»
+		public void run() {
+			org.eclipse.ui.IWorkbenchPart workbenchPart = page.getActivePart();
+			if (workbenchPart instanceof org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart) {
+				final org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart part =	(org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart) workbenchPart;
+				try {
+					«IF editorGen.application == null»
+					new org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation(
+					«ENDIF»
+					new org.eclipse.jface.operation.IRunnableWithProgress() {
+		
+						«overrideI»
+						public void run(org.eclipse.core.runtime.IProgressMonitor monitor)
+							throws InterruptedException, java.lang.reflect.InvocationTargetException {
+							runValidation(part.getDiagramEditPart(), part.getDiagram());
+						}
+					}
+					«IF editorGen.application == null»
+					)
+					«ENDIF»
+					.run(new org.eclipse.core.runtime.NullProgressMonitor());			
+				} catch (Exception e) {
+					«xptActivator.qualifiedClassName(editorGen.plugin)».getInstance().logError("Validation action failed", e); «nonNLS(1)»
+				}
+			}
+		}
+	'''	
+	
+	override runValidationWithEP(GenDiagram it) '''
+		
+		«generatedMemberComment»
+		public static void runValidation(org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart diagramEditPart, org.eclipse.gmf.runtime.notation.View view) {
+			final org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart fpart = diagramEditPart;
+			final org.eclipse.gmf.runtime.notation.View fview = view;
+			org.eclipse.emf.transaction.TransactionalEditingDomain txDomain = org.eclipse.emf.transaction.util.TransactionUtil.getEditingDomain(view);
+			«xptValidationProvider.qualifiedClassName(it)».runWithConstraints(txDomain, new Runnable() {
+		
+			«overrideI»
+			public void run() {
+				validate(fpart, fview);
+			}
+			});
+		}
+	'''
+	
+	override runEMFValidator(GenDiagram it) '''
+		
+		«generatedMemberComment»
+		private static org.eclipse.emf.common.util.Diagnostic runEMFValidator(
+				org.eclipse.gmf.runtime.notation.View target) {
+			if (target.isSetElement() && target.getElement() != null) {
+			return new org.eclipse.emf.ecore.util.Diagnostician() {
+		
+			«overrideC»
+			public String getObjectLabel(org.eclipse.emf.ecore.EObject eObject) {
+				return org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil.getQualifiedName(eObject, true);
+			}
+				}.validate(target.getElement());
+			}
+			return org.eclipse.emf.common.util.Diagnostic.OK_INSTANCE;
+		}
+	'''
 }

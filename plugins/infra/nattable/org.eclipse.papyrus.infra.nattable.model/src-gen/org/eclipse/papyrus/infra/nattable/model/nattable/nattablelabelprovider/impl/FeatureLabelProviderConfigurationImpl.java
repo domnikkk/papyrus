@@ -25,20 +25,16 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.N
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl#isDisplayIsDerived
- * <em>Display Is Derived</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl#isDisplayType <em> Display Type</em>}</li>
- * <li>
- * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl#isDisplayMultiplicity
- * <em>Display Multiplicity</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl#isDisplayName <em> Display Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl#isDisplayIsDerived <em>Display Is Derived</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl#isDisplayType <em>Display Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl#isDisplayMultiplicity <em>Display Multiplicity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl#isDisplayName <em>Display Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderConfigurationImpl implements FeatureLabelProviderConfiguration {
-
 	/**
 	 * The default value of the '{@link #isDisplayIsDerived() <em>Display Is Derived</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -35,7 +35,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Nattablece
  * @generated
  */
 public class EObjectAxisWrapperImpl extends EModelElementImpl implements EObjectAxisWrapper {
-
 	/**
 	 * The cached value of the '{@link #getElement() <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->

@@ -36,7 +36,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Nattablece
  * @generated
  */
 public class NattablecellSwitch<T> extends Switch<T> {
-
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->

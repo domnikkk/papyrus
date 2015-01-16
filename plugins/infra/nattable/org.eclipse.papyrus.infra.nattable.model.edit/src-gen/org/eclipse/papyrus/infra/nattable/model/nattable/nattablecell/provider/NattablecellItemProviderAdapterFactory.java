@@ -42,7 +42,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.util.Natta
  * @generated
  */
 public class NattablecellItemProviderAdapterFactory extends NattablecellAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
-
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->

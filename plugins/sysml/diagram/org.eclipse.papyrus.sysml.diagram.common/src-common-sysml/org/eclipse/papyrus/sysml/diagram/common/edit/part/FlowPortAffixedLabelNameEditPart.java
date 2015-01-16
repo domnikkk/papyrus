@@ -16,15 +16,16 @@ package org.eclipse.papyrus.sysml.diagram.common.edit.part;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ILabelProvider;
-import org.eclipse.papyrus.infra.emf.appearance.helper.NameLabelIconHelper;
+import org.eclipse.papyrus.infra.emf.appearance.helper.AppearanceHelper;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.sysml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.edit.part.AbstractElementLabelEditPart;
-import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.util.DiagramEditPartsUtil;
 import org.eclipse.swt.graphics.Image;
 
@@ -74,7 +75,7 @@ public class FlowPortAffixedLabelNameEditPart extends AbstractElementLabelEditPa
 
 		List<View> views = DiagramEditPartsUtil.findViews(parserElement, getViewer());
 		for (View view : views) {
-			if (NameLabelIconHelper.showLabelIcon(view)) {
+			if (AppearanceHelper.showElementIcon(view)) {
 				return labelProvider.getImage(parserElement);
 			}
 		}
@@ -96,6 +97,16 @@ public class FlowPortAffixedLabelNameEditPart extends AbstractElementLabelEditPa
 		return new PapyrusWrappingLabel();
 	}
 
+	
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart#getDefaultTextAlignment()
+	 *
+	 * @return
+	 */
+	@Override
+	protected int getDefaultTextAlignment() {
+		return PositionConstants.LEFT;
+	}
 	/**
 	 * {@inheritDoc}
 	 */

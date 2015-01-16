@@ -11,6 +11,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.service.types.utils;
 
+import java.util.Map;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 
@@ -23,6 +25,7 @@ public class CommandContext implements ICommandContext {
 
 	private EReference reference;
 
+	private Map<Object, Object> parameters;
 	/** Constructor */
 	public CommandContext(EObject container) {
 		this.container = container;
@@ -33,18 +36,32 @@ public class CommandContext implements ICommandContext {
 		this.container = container;
 		this.reference = reference;
 	}
+	
+	/** Constructor */
+	public CommandContext(EObject container, EReference reference, Map<Object, Object> parameters) {
+		this.container = container;
+		this.reference = reference;
+		this.parameters = parameters;
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public EObject getContainer() {
-		return container;
+		return this.container;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public EReference getReference() {
-		return reference;
+		return this.reference;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public Map<Object, Object> getParameters() {
+		return this.parameters;
 	}
 }

@@ -30,7 +30,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.Sl
  * @generated
  */
 public class NattableaxisproviderFactoryImpl extends EFactoryImpl implements NattableaxisproviderFactory {
-
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->

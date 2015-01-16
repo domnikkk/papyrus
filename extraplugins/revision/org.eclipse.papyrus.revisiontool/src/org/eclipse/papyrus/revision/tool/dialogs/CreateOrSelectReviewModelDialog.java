@@ -41,7 +41,8 @@ import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Profile;
 
-/** this dialog is used to select or create a profile**/
+/**  This dialog is used to select or create a review model
+ * **/
 public class CreateOrSelectReviewModelDialog extends FormDialog {
 
 
@@ -282,7 +283,9 @@ public class CreateOrSelectReviewModelDialog extends FormDialog {
 			//creation
 			if (!(newTypeNameText.getText().trim().equals(""))){
 				resultReviewName=newTypeNameText.getText().trim();
+			
 				reviewResourceManager.createReviewModel(resultReviewName);
+				
 			}
 		}
 		super.okPressed();

@@ -15,12 +15,10 @@ package org.eclipse.papyrus.infra.nattable.wizard;
 
 import java.io.File;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.papyrus.infra.nattable.Activator;
 import org.eclipse.papyrus.infra.nattable.manager.ImportAxisInNattableManager;
-import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
 import org.eclipse.papyrus.infra.nattable.messages.Messages;
 import org.eclipse.papyrus.infra.nattable.paste.PasteSeparator;
 import org.eclipse.papyrus.infra.nattable.paste.TextDelimiter;
@@ -30,16 +28,14 @@ import org.eclipse.papyrus.infra.nattable.wizard.pages.ImportFilePage;
 import org.eclipse.papyrus.infra.nattable.wizard.pages.ImportInvertedTableErrorPage;
 import org.eclipse.papyrus.infra.nattable.wizard.pages.ImportTableErrorPage;
 import org.eclipse.papyrus.infra.widgets.util.FileUtil;
-import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IImportWizard;
-import org.eclipse.ui.IWorkbench;
 
 /**
  *
  * This wizard allows to import a table in the Papyrus nattable editor
  *
  */
-public class ImportTableWizard extends Wizard implements IImportWizard {
+public class ImportTableWizard extends AbstractTableWizard implements IImportWizard {
 
 	/**
 	 * the import page
@@ -50,11 +46,6 @@ public class ImportTableWizard extends Wizard implements IImportWizard {
 	 * the page used to configure the CSV import
 	 */
 	private ImportCSVConfigurationPage csvConfigurationPage;
-
-	/**
-	 * the nattable model manager to use for the import
-	 */
-	private INattableModelManager manager;
 
 
 	/**
@@ -70,17 +61,6 @@ public class ImportTableWizard extends Wizard implements IImportWizard {
 		setDefaultPageImageDescriptor(desc);
 	}
 
-	/**
-	 *
-	 * @see org.eclipse.ui.IWorkbenchWizard#init(org.eclipse.ui.IWorkbench, org.eclipse.jface.viewers.IStructuredSelection)
-	 *
-	 * @param workbench
-	 * @param selection
-	 */
-	@Override
-	public void init(final IWorkbench workbench, final IStructuredSelection selection) {
-		this.manager = getNattableModelManager(workbench, selection);
-	}
 
 	/**
 	 *
@@ -89,6 +69,7 @@ public class ImportTableWizard extends Wizard implements IImportWizard {
 	 */
 	@Override
 	public void addPages() {
+		super.addPages();
 		final String pageTitle = Messages.ImportTableWizard_ImportTable;
 		final ImageDescriptor desc = null;
 		if (manager != null) {
@@ -118,25 +99,8 @@ public class ImportTableWizard extends Wizard implements IImportWizard {
 		final File file = FileUtil.getFile(this.importPage.getFilePath());
 		final CSVPasteHelper pasteHelper = new CSVPasteHelper(this.csvConfigurationPage.getSeparator(), this.csvConfigurationPage.getTextDelimiter(), ","); //$NON-NLS-1$
 		final ImportAxisInNattableManager pasteManager = new ImportAxisInNattableManager(this.manager, pasteHelper, file, true);
-		return pasteManager.doPaste();
+		IStatus status = pasteManager.doPaste();
+		// TODO : do something with the status
+		return true;
 	}
-
-	/**
-	 *
-	 * @param workbench
-	 *            the current workbench
-	 * @param selection
-	 *            the current selection
-	 * @return
-	 *         the nattable manager to use to do the import
-	 */
-	private INattableModelManager getNattableModelManager(final IWorkbench workbench, final IStructuredSelection selection) {
-		final IEditorPart editorPart = workbench.getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		if (editorPart != null) {
-			return (INattableModelManager) editorPart.getAdapter(INattableModelManager.class);
-		}
-		return null;
-	}
-
-
 }

@@ -21,10 +21,11 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
-import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.papyrus.uml.diagram.sequence.util.MessageConnectionHelper;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.Message;
+import org.eclipse.uml2.uml.MessageSort;
 
 /**
  * @generated
@@ -74,36 +75,31 @@ public class MessageReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT special handling of SyncMessages due to #425666
 	 */
 	protected boolean canReorientSource() {
 		if (!(oldEnd instanceof Element && newEnd instanceof Element)) {
 			return false;
 		}
-		if (getLink().getOwnedElements().size() != 1) {
-			return false;
-		}
-		Element target = getLink().getOwnedElements().get(0);
+		Element target = getLink().getReceiveEvent();
 		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}
-		Interaction container = (Interaction) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistMessage_4003(container, getLink(), getNewSource(), target);
+		return MessageConnectionHelper.canExist(getLink(), MessageSort.SYNCH_CALL_LITERAL, getNewSource(), target);
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT special handling of SyncMessages due to #425666
 	 */
 	protected boolean canReorientTarget() {
 		if (!(oldEnd instanceof Element && newEnd instanceof Element)) {
 			return false;
 		}
-		Element source = getLink().getOwner();
+		Element source = getLink().getSendEvent();
 		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}
-		Interaction container = (Interaction) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistMessage_4003(container, getLink(), source, getNewTarget());
+		return MessageConnectionHelper.canExist(getLink(), MessageSort.SYNCH_CALL_LITERAL, source, getNewTarget());
 	}
 
 	/**

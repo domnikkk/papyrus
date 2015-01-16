@@ -20,6 +20,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.F
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ILabelProviderConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.NattablelabelproviderPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.StyledElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +36,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.O
  * @generated
  */
 public class NattablelabelproviderSwitch<T> extends Switch<T> {
-
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -87,6 +87,9 @@ public class NattablelabelproviderSwitch<T> extends Switch<T> {
 			ILabelProviderConfiguration iLabelProviderConfiguration = (ILabelProviderConfiguration) theEObject;
 			T result = caseILabelProviderConfiguration(iLabelProviderConfiguration);
 			if (result == null) {
+				result = caseStyledElement(iLabelProviderConfiguration);
+			}
+			if (result == null) {
 				result = caseEModelElement(iLabelProviderConfiguration);
 			}
 			if (result == null) {
@@ -104,6 +107,9 @@ public class NattablelabelproviderSwitch<T> extends Switch<T> {
 				result = caseILabelProviderConfiguration(featureLabelProviderConfiguration);
 			}
 			if (result == null) {
+				result = caseStyledElement(featureLabelProviderConfiguration);
+			}
+			if (result == null) {
 				result = caseEModelElement(featureLabelProviderConfiguration);
 			}
 			if (result == null) {
@@ -116,6 +122,9 @@ public class NattablelabelproviderSwitch<T> extends Switch<T> {
 			T result = caseObjectLabelProviderConfiguration(objectLabelProviderConfiguration);
 			if (result == null) {
 				result = caseILabelProviderConfiguration(objectLabelProviderConfiguration);
+			}
+			if (result == null) {
+				result = caseStyledElement(objectLabelProviderConfiguration);
 			}
 			if (result == null) {
 				result = caseEModelElement(objectLabelProviderConfiguration);
@@ -195,6 +204,23 @@ public class NattablelabelproviderSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEModelElement(EModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Styled Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Styled Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStyledElement(StyledElement object) {
 		return null;
 	}
 

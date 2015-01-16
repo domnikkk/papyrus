@@ -22,7 +22,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
- * this handler is used to launch the revision mode
+ * This handler is used to launch the revision mode
  *
  */
 public class LaunchRevisionMode extends RevisionAbstractHandler {

@@ -92,7 +92,8 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-public class OperationForInterfaceEditPart extends UMLCompartmentEditPart implements ITextAwareEditPart, IPrimaryEditPart, IControlParserForDirectEdit {
+public class OperationForInterfaceEditPart extends UMLCompartmentEditPart implements ITextAwareEditPart,
+		IPrimaryEditPart, IControlParserForDirectEdit {
 
 	/**
 	 * @generated

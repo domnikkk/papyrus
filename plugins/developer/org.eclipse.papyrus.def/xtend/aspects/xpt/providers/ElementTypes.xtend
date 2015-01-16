@@ -37,7 +37,7 @@ import xpt.Common
 					«IF link.modelFacet != null»«bindUniqueIdentifierToNamedElement(link.modelFacet, link.getUniqueIdentifier())»«ENDIF»
 				«ENDFOR»
 			}
-			return (org.eclipse.emf.ecore.ENamedElement) elements.get(type);
+			return elements.get(type);
 		}
 	'''
 	

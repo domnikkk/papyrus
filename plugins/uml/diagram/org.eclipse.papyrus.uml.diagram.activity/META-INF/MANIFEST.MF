@@ -8,7 +8,7 @@ Export-Package: org.eclipse.papyrus.uml.diagram.activity,
  org.eclipse.papyrus.uml.diagram.activity.edit.dialogs,
  org.eclipse.papyrus.uml.diagram.activity.edit.helpers,
  org.eclipse.papyrus.uml.diagram.activity.edit.part,
- org.eclipse.papyrus.uml.diagram.activity.edit.part.ActivityGroup;x-friends:="org.eclipse.papyrus.uml.diagram.activity.tests",
+ org.eclipse.papyrus.uml.diagram.activity.edit.part.ActivityGroup;x-friends:=org.eclipse.papyrus.uml.diagram.activity.tests,
  org.eclipse.papyrus.uml.diagram.activity.edit.parts,
  org.eclipse.papyrus.uml.diagram.activity.edit.policies,
  org.eclipse.papyrus.uml.diagram.activity.expressions,
@@ -90,9 +90,6 @@ Require-Bundle: org.eclipse.core.expressions,
 Bundle-Vendor: %providerName
 Eclipse-LazyStart: true
 Bundle-Version: 1.1.0.qualifier
-Bundle-Activator: org.eclipse.papyrus.uml.diagram.activity.part.UMLDia
- gramEditorPlugin
+Bundle-Activator: org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.activity;singleto
- n:=true
-
+Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.activity; singleton:=true

@@ -2,7 +2,7 @@
 <?eclipse version="3.0"?>
 <!--
  Copyright (c) 2010, 2014 CEA and others.
- 
+
  All rights reserved. This program and the accompanying materials
  are made available under the terms of the Eclipse Public License v1.0
  which accompanies this distribution, and is available at
@@ -262,61 +262,61 @@
 		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
 		      path="/"
 		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-		      <expand
-		             force="true">
-		      </expand>
-			</entry>
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
 		<predefinedEntry
 		        id="createClass6CreationTool"
-		        path="/createNodes1Group">
+				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createComment2CreationTool"
-		        path="/createNodes1Group">
+				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createConstraint3CreationTool"
-		        path="/createNodes1Group">
+				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createDataType4CreationTool"
-		        path="/createNodes1Group">
+				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createEnumeration5CreationTool"
-		        path="/createNodes1Group">
+				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createEnumerationLiteral6CreationTool"
-		        path="/createNodes1Group">
+				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createImportMetaclass7CreationTool"
-		        path="/createNodes1Group">
+				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createOperation8CreationTool"
-		        path="/createNodes1Group">
+				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createPackage9CreationTool"
-		        path="/createNodes1Group">
+				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createProfile10CreationTool"
-		        path="/createNodes1Group">
+				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createPrimitiveType11CreationTool"
-		        path="/createNodes1Group">
+				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createProperty12CreationTool"
-		        path="/createNodes1Group">
+				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createStereotype13CreationTool"
-		        path="/createNodes1Group">
+				path="/createNodes1Group">
 		  </predefinedEntry>
 		<entry
 		      description="Edges"
@@ -326,33 +326,33 @@
 		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
 		      path="/"
 		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-		      <expand
-		             force="true">
-		      </expand>
-			</entry>
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
 		<predefinedEntry
 		        id="createAssociation1CreationTool"
-		        path="/createEdges2Group">
+				path="/createEdges2Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createContextLink6CreationTool"
-		        path="/createEdges2Group">
+				path="/createEdges2Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createExtension3CreationTool"
-		        path="/createEdges2Group">
+				path="/createEdges2Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createGeneralization4CreationTool"
-		        path="/createEdges2Group">
+				path="/createEdges2Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createLink5CreationTool"
-		        path="/createEdges2Group">
+				path="/createEdges2Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createProfileApplication6CreationTool"
-		        path="/createEdges2Group">
+				path="/createEdges2Group">
 		  </predefinedEntry>
 		</contribution>
 		<editor id="org.eclipse.papyrus.uml.diagram.profile"/>

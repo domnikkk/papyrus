@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_Wn-FQFz_EeSXB5lObuMx0Q" name="model">
+  <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dzUMcF-CEeSiC_8vQsLcmQ"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ktkuAFz_EeSXB5lObuMx0Q" name="Class1">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_p8tFUFz_EeSXB5lObuMx0Q" name="Attribute1"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_VJ8yoF0AEeSXB5lObuMx0Q" name="Attribute2"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_XXDPIF57EeSGEoSIn-CQ9A" name="Attribute3"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_oZr90F6IEeSkFutaog6joA" name="Attribute4"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_qi0NgF6IEeSkFutaog6joA" name="Attribute5"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_u_YfoF6tEeSX9eTjVyEyYw" name="Attribute6"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_60blkF6uEeSX9eTjVyEyYw" name="Attribute7"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_RCjl0F95EeS5UN4qxUcpWg" name="Attribute8"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_e_FLEF95EeS5UN4qxUcpWg" name="Attribute9"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_kDQ2oF95EeS5UN4qxUcpWg" name="Attribute10"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_SWCQ0F-CEeSiC_8vQsLcmQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_XZqygF0AEeSXB5lObuMx0Q" name="Operation1">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y_LXwF0AEeSXB5lObuMx0Q" name="Parameter1"/>
+    </ownedOperation>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_m6Uc0F6IEeSkFutaog6joA" name="Class1"/>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_6Gzf0F6IEeSkFutaog6joA" name="Class2"/>
+    <nestedClassifier xmi:type="uml:UseCase" xmi:id="_c1Gq4F6JEeSkFutaog6joA" name="UseCase1"/>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_sRfWAF6tEeSX9eTjVyEyYw" name="Class3"/>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_uHgccF6tEeSX9eTjVyEyYw" name="Class4"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_r-4YcFz_EeSXB5lObuMx0Q" name="Class2sdfsdfsdf&#xD;&#xA;sdfsdf&#xD;&#xA;qsdfsdf&#xD;&#xA;"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_VddQQF57EeSGEoSIn-CQ9A" name="Class3"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_u6xpEF6EEeSMz8JhP-zl5g" name="Class4"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_7Lw5kF6EEeSMz8JhP-zl5g" name="Class5"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_OvWYgF6GEeSMz8JhP-zl5g" name="Class6"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_XX8rgF-CEeSiC_8vQsLcmQ"/>
+</uml:Model>

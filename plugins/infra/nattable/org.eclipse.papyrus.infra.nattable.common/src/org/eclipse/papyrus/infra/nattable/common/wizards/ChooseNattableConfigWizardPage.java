@@ -99,7 +99,7 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 		viewer.setContentProvider(new ArrayContentProvider());
 		final Table table = viewer.getTable();
 		table.setHeaderVisible(true);
-		ViewerColumn colCheckbox = createTableViewerColumn("", 20, viewer); //$NON-NLS-1$
+		ViewerColumn colCheckbox = createTableViewerColumn("", 23, viewer); //$NON-NLS-1$
 		Collection<TableConfiguration> configs = loadConfigs();
 		colCheckbox.setLabelProvider(new ColumnLabelProvider() {
 
@@ -148,7 +148,7 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 				return true;
 			}
 		});
-		TableViewerColumn colType = createTableViewerColumn(Messages.ChooseNattableConfigWizardPage_6, 200, viewer);
+		TableViewerColumn colType = createTableViewerColumn(Messages.ChooseNattableConfigWizardPage_6, 250, viewer);
 		colType.setLabelProvider(new ColumnLabelProvider() {
 
 			@Override
@@ -167,7 +167,7 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 
 		});
 
-		TableViewerColumn colName = createTableViewerColumn(Messages.ChooseNattableConfigWizardPage_7, 100, viewer);
+		TableViewerColumn colName = createTableViewerColumn(Messages.ChooseNattableConfigWizardPage_7, 200, viewer);
 		colName.setEditingSupport(new EditingSupport(viewer) {
 
 			@Override
@@ -202,7 +202,7 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 			}
 		});
 
-		TableViewerColumn colQuantity = createTableViewerColumn(Messages.ChooseNattableConfigWizardPage_9, 70, viewer);
+		TableViewerColumn colQuantity = createTableViewerColumn(Messages.ChooseNattableConfigWizardPage_9, 30, viewer);
 		colQuantity.setEditingSupport(new EditingSupport(viewer) {
 
 			@Override
@@ -295,7 +295,7 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 		final TableColumn column = viewerColumn.getColumn();
 		column.setText(title);
 		column.setWidth(bound);
-		column.setResizable(false);
+		column.setResizable(true);
 		column.setMoveable(false);
 		return viewerColumn;
 	}

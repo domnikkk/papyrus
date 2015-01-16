@@ -13,6 +13,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.revision.tool.ui;
 
+import java.util.List;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.StyledCellLabelProvider;
 import org.eclipse.jface.viewers.StyledString;
@@ -32,7 +34,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * 
- * the label provider for the review editor
+ * This is the label provider to display reviews for the review editor
  *
  */
 public class ReviewsTreeLabelProvider extends StyledCellLabelProvider  {
@@ -99,7 +101,16 @@ public class ReviewsTreeLabelProvider extends StyledCellLabelProvider  {
 
 		if(obj instanceof Comment) {
 			Comment cmt=(Comment)obj;
-			Stereotype reviewStereotype=cmt.getAppliedStereotype(I_ReviewStereotype.REVIEW_STEREOTYPE);
+			Stereotype theReviewStereotype=cmt.getApplicableStereotype(I_ReviewStereotype.COMMENT_STEREOTYPE);
+			Stereotype reviewStereotype=null;
+			List<Stereotype> stereotypes= cmt.getAppliedStereotypes();
+			System.out.println(cmt);
+			for (Stereotype stereotype : stereotypes) {
+				if(stereotype.getGenerals().contains(theReviewStereotype)){
+					reviewStereotype=stereotype;
+				}
+			}
+			
 			if(reviewStereotype!=null){
 				StyledString styledString = new StyledString("");
 				EObject stereotypeApplicationAuthor=(EObject)cmt.getValue(reviewStereotype, I_VersioningStereotype.VERSIONINGELEMENT_AUTHOR_ATT);

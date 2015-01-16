@@ -1,0 +1,3 @@
+id1	Requirement1	text1	hight	black	public
+id2	Requirement2	text2	medium	red	protected
+id3	Requirement3	text3	low	blue	private

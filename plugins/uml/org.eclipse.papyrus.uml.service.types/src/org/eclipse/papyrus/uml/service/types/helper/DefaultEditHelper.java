@@ -19,7 +19,9 @@ import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.workspace.CompositeEMFOperation;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.common.core.command.ICompositeCommand;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelper;
@@ -31,24 +33,26 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.papyrus.commands.DestroyElementPapyrusCommand;
 import org.eclipse.papyrus.infra.emf.commands.UnsetValueCommand;
 import org.eclipse.papyrus.infra.emf.requests.UnsetRequest;
+import org.eclipse.papyrus.infra.services.edit.utils.RequestParameterConstants;
 import org.eclipse.papyrus.uml.service.types.command.CreateEditBasedElementCommand;
+
 
 /**
  * <pre>
  * This is a default Helper for UML element.
- *
+ * 
  * The only reason to override getDestroyElementWithDependentsCommand and getDestroyElementCommand
  * method here is to propagate the shared IClientContext used by Papyrus during the request creation.
  * Without this changes, the command to destroy dependent element won't be correctly created,
  * in EditHelper(s) the getDestroyDependentsCommand will only be called with default element type
  * (null command) and in AdviceHelper the getBeforeDestroyDependentsCommand will work but will
  * not retrieve command to destroy elements that themselves depend on dependent element to destroy.
- *
+ * 
  * The changes are replacing:
  * ElementTypeRegistry.getInstance().getElementType(req.getElementToDestroy());
  * by
  * ElementTypeRegistry.getInstance().getElementType(req.getElementToDestroy(), req.getClientContext());
- *
+ * 
  * See:
  * - Bug328232 (https://bugs.eclipse.org/bugs/show_bug.cgi?id=328232)
  * - Bug328506 (https://bugs.eclipse.org/bugs/show_bug.cgi?id=328506)
@@ -284,5 +288,26 @@ public class DefaultEditHelper extends AbstractEditHelper {
 		}
 
 		return result;
+	}
+
+	/**
+	 * @see org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelper#createCommand(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest)
+	 *
+	 * @param req
+	 * @return
+	 */
+	@Override
+	protected ICompositeCommand createCommand(IEditCommandRequest req) {
+		ICompositeCommand compositeCommand = super.createCommand(req);
+
+		Object parameter = req.getParameter(RequestParameterConstants.TRANSACTIONAL_NESTING);
+
+		if (parameter != null && compositeCommand instanceof CompositeEMFOperation) {
+			((CompositeEMFOperation) compositeCommand).setTransactionNestingEnabled((Boolean) parameter);
+		}
+
+
+
+		return compositeCommand;
 	}
 }

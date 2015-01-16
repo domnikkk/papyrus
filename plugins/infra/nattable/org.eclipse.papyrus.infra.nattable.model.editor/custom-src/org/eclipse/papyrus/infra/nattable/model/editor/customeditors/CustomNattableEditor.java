@@ -1,3 +1,16 @@
+/*****************************************************************************
+ * Copyright (c) 2014 CEA LIST.
+ *
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.infra.nattable.model.editor.customeditors;
 
 import java.util.HashMap;
@@ -20,7 +33,6 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
  *
  */
 public class CustomNattableEditor extends NattableEditor {
-
 
 	/**
 	 * This is for implementing {@link IEditorPart} and simply saves the model file.
@@ -64,13 +76,11 @@ public class CustomNattableEditor extends NattableEditor {
 				}
 			}
 		};
-
 		this.updateProblemIndication = false;
 		try {
 			// This runs the options, and shows progress.
 			//
 			new ProgressMonitorDialog(getSite().getShell()).run(true, false, operation);
-
 			// Refresh the necessary state.
 			//
 			((BasicCommandStack) this.editingDomain.getCommandStack()).saveIsDone();

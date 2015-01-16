@@ -23,14 +23,17 @@ import xpt.Common
 import xpt.Common_qvto
 import xpt.GenAuditRoot_qvto
 import xpt.editor.VisualIDRegistry
+import plugin.Activator
+import xpt.CodeStyle
 
 @Singleton class ValidationProvider extends xpt.providers.ValidationProvider {
 	@Inject extension Common;
 	@Inject extension Common_qvto;
 	@Inject extension GenAuditRoot_qvto; 
+	@Inject extension CodeStyle
 	
 	@Inject VisualIDRegistry xptVisualIDRegistry;
-
+	@Inject Activator xptActivator
 
 
 	override selectors(GenAuditRoot it) '''
@@ -74,5 +77,32 @@ import xpt.editor.VisualIDRegistry
 		«ENDIF»
 		«ENDIF»
 		«ENDIF»
+	'''
+	
+	override runWithActiveConstraints(GenDiagram it) '''
+	«generatedMemberComment»
+	public static void runWithConstraints(org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain, Runnable operation) {
+		final Runnable op = operation;
+		Runnable task = new Runnable() {
+			«overrideI»
+			public void run() {
+				try {
+					constraintsActive = true;
+					op.run();
+				} finally {
+					constraintsActive = false;
+				}
+			}
+		};
+		if(editingDomain != null) {
+			try {
+				editingDomain.runExclusive(task);
+			} catch (Exception e) {
+				«xptActivator.qualifiedClassName(editorGen.plugin)».getInstance().logError("Validation failed", e); «nonNLS(1)»
+			}
+		} else {
+			task.run();
+		}
+	}
 	'''
 }

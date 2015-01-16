@@ -14,7 +14,7 @@
 package org.eclipse.papyrus.revision.tool.preference;
 
 /**
- * Constant definitions for plug-in preferences
+ * Constant definitions for  the revision plug-in preferences
  */
 public class RevisionPreferenceConstants {
 

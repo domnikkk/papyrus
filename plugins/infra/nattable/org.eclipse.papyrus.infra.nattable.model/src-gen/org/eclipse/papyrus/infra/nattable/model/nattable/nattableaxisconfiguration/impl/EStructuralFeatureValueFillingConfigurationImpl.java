@@ -17,9 +17,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.EStructuralFeatureValueFillingConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.impl.StyledElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,16 +28,13 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>
- * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.EStructuralFeatureValueFillingConfigurationImpl#getListenFeature
- * <em>Listen Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.EStructuralFeatureValueFillingConfigurationImpl#getListenFeature <em>Listen Feature</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EStructuralFeatureValueFillingConfigurationImpl extends MinimalEObjectImpl.Container implements EStructuralFeatureValueFillingConfiguration {
-
+public class EStructuralFeatureValueFillingConfigurationImpl extends StyledElementImpl implements EStructuralFeatureValueFillingConfiguration {
 	/**
 	 * The cached value of the '{@link #getListenFeature() <em>Listen Feature</em>}' reference.
 	 * <!-- begin-user-doc -->

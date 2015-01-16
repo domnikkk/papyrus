@@ -11,32 +11,44 @@
  */
 package org.eclipse.papyrus.uml.diagram.usecase.edit.parts;
 
+import java.util.Collections;
+import java.util.List;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+import org.eclipse.gmf.runtime.notation.Edge;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.GetChildLayoutEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.RoundedRectangleNodePlateFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
-import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.PapyrusCreationEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideCompartmentEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.locator.RoundedRectangleLabelPositionLocator;
+import org.eclipse.papyrus.uml.diagram.usecase.custom.edit.parts.UseCaseNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.policies.CreateExtensionPointEditPolicy;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.policies.UseCaseItemSemanticEditPolicyTN;
 import org.eclipse.papyrus.uml.diagram.usecase.figure.UseCaseFigure;
@@ -47,7 +59,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class UseCaseEditPartTN extends NamedElementEditPart {
+public class UseCaseEditPartTN extends UseCaseNodeEditPart {
 
 	/**
 	 * @generated
@@ -84,6 +96,7 @@ public class UseCaseEditPartTN extends NamedElementEditPart {
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new CreateExtensionPointEditPolicy());
 		installEditPolicy(ShowHideCompartmentEditPolicy.SHOW_HIDE_COMPARTMENT_POLICY, new ShowHideCompartmentEditPolicy());
 		installEditPolicy(QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY, new QualifiedNameDisplayEditPolicy());
+		installEditPolicy(EditPolicy.LAYOUT_ROLE, new GetChildLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
@@ -96,6 +109,20 @@ public class UseCaseEditPartTN extends NamedElementEditPart {
 
 			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
+				View childView = (View) child.getModel();
+				switch (UMLVisualIDRegistry.getVisualID(childView)) {
+				case UseCaseFloatingLabelEditPartTN.VISUAL_ID:
+					return new BorderItemSelectionEditPolicy() {
+
+						@Override
+						protected List<?> createSelectionHandles() {
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
+							mh.setBorder(null);
+							return Collections.singletonList(mh);
+						}
+					}
+					;
+				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
@@ -123,6 +150,19 @@ public class UseCaseEditPartTN extends NamedElementEditPart {
 	 **/
 	@Override
 	protected void handleNotificationEvent(Notification event) {
+		/*
+		 * when a node have external node labels, the methods refreshChildren() remove the EditPart corresponding to the Label from the EditPart
+		 * Registry. After that, we can't reset the visibility to true (using the Show/Hide Label Action)!
+		 */
+		if (NotationPackage.eINSTANCE.getView_Visible().equals(event.getFeature())) {
+			Object notifier = event.getNotifier();
+			List<?> modelChildren = ((View) getModel()).getChildren();
+			if (!(notifier instanceof Edge)) {
+				if (modelChildren.contains(event.getNotifier())) {
+					return;
+				}
+			}
+		}
 		super.handleNotificationEvent(event);
 
 	}
@@ -210,6 +250,9 @@ public class UseCaseEditPartTN extends NamedElementEditPart {
 		if (editPart instanceof UseCasePointsEditPartTN) {
 			return getPrimaryShape().getExtensionPointContainerFigure();
 		}
+		if (editPart instanceof IBorderItemEditPart) {
+			return getBorderedFigure().getBorderItemContainer();
+		}
 		return getContentPane();
 	}
 
@@ -217,8 +260,22 @@ public class UseCaseEditPartTN extends NamedElementEditPart {
 	 * @generated
 	 */
 	@Override
+	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof UseCaseFloatingLabelEditPartTN) {
+			IBorderItemLocator locator = new RoundedRectangleLabelPositionLocator(getMainFigure());
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+		} else
+		{
+			super.addBorderItem(borderItemContainer, borderItemEditPart);
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(140, 60);
+		RoundedRectangleNodePlateFigure result = new RoundedRectangleNodePlateFigure(140, 60);
 		return result;
 	}
 
@@ -231,7 +288,7 @@ public class UseCaseEditPartTN extends NamedElementEditPart {
 	 * @generated
 	 */
 	@Override
-	protected NodeFigure createNodeFigure() {
+	protected NodeFigure createMainFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
 
 	}

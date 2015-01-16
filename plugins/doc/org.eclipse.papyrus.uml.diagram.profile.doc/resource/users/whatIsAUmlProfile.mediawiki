@@ -1,0 +1,17 @@
+= What is a UML Profile =
+'''Contents'''
+__TOC__
+
+
+The purpose of this chapter is to provide the Papyrus users all the documentation needed in order to be able to use UML profiles. It includes the information for modeling and defining a profile using the Papyrus UML profile editor, but also the information for the usage of a profile within a user application model.
+
+The basic premise of profiles is that all domain-specific concepts are derived as extensions or refinements of existing UML concepts, called UML metaclasses. These extensions are called stereotypes. A stereotype definition must be consistent with the abstract syntax and semantics of standard UML meta-classes it extends. Consequently, a profile-based model can be created and manipulated by any tool that supports standard UML. Moreover, because the concepts underlying a profile are specializations of existing UML concepts, it is more easily learned by anyone with knowledge of UML.
+
+A stereotype is defined either as an extension of a UML base metaclass or as a specialization of an existing stereotype. The extension relationship of UML is not an association but a kind of association directed from the stereotype to the extended metaclass. Consequently, the metadata conveyed by the associated the attributes of the stereotype are associated to the extended metaclass in a transparent manner for the metaclass itself. This allows profiles owning the stereotypes to be applied and removed dynamically without modifying the underlying models — a fundamental feature of the profile mechanism.
+
+A stereotype may have attributes and may be associated with other stereotypes or existing UML metaclasses.
+
+Constraints, such as OCL constraints, can also be defined in a profile. They can apply to stereotypes defined in the profile or those imported by the profile. They can also be used to further constrain elements of the UML metamodel. For instance, one could define an OCL constraint that all instances of Class in a model are active, or that all instances of Class must have at least one Operation (regardless of whether the Class is extended by a stereotype or not). However, not all constraints can be written in OCL. In that case, it is common to denote those latter in natural language. The drawback is that such constraints are no more automatically interpretable and need to be first rewritten in some language the UML tool will understand. In the context of Papyrus, it is then usual to use Java.
+
+
+

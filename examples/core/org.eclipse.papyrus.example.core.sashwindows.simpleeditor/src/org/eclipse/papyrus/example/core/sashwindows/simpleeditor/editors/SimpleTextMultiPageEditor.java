@@ -127,6 +127,11 @@ public class SimpleTextMultiPageEditor extends MultiPageEditor implements IResou
 		public EditorActionBarContributor getActionBarContributor() {
 			return null;
 		}
+
+		@Override
+		public void dispose() {
+			// Pass
+		}
 	}
 
 	/**
@@ -170,6 +175,11 @@ public class SimpleTextMultiPageEditor extends MultiPageEditor implements IResou
 			return this;
 		}
 
+		@Override
+		public void dispose() {
+			// Pass
+		}
+
 	}
 
 	public class Page2 implements IComponentModel {
@@ -194,6 +204,11 @@ public class SimpleTextMultiPageEditor extends MultiPageEditor implements IResou
 
 		public Object getRawModel() {
 			return this;
+		}
+
+		@Override
+		public void dispose() {
+			// Pass
 		}
 
 	}

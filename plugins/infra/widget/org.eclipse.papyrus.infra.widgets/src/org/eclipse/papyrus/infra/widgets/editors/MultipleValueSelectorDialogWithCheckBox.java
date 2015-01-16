@@ -24,8 +24,11 @@ import org.eclipse.swt.widgets.Shell;
  * This dialog adds a checkbox at the end of the {@link MultipleValueSelectorDialog}
  *
  * @author vl222926
- *
+ * 
+ *  @deprecated use {@link MultipleValueSelectionWithCheckBoxDialog} instead
+ *  @since Papyrus 1.1.0
  */
+@Deprecated 
 public class MultipleValueSelectorDialogWithCheckBox extends MultipleValueSelectorDialog {
 
 	/** boolean indicating if the checkbox is checked */

@@ -16,14 +16,14 @@ package org.eclipse.papyrus.uml.diagram.composite.custom.edit.parts;
 import org.eclipse.gef.DragTracker;
 import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.infra.gmfdiag.common.editpart.NodeEditPart;
 import org.eclipse.papyrus.uml.diagram.common.dragtracker.NoScrollDragEditPartsTrackerEx;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 
 /**
  * this is an abstract edit part to prevent the behavior port to got out of the composite
  *
  */
-public abstract class AbstractBehaviorPortEditPart extends NodeEditPart {
+public abstract class AbstractBehaviorPortEditPart extends RoundedCompartmentEditPart {
 	public AbstractBehaviorPortEditPart(View view) {
 		super(view);
 	}
@@ -31,5 +31,25 @@ public abstract class AbstractBehaviorPortEditPart extends NodeEditPart {
 	@Override
 	public DragTracker getDragTracker(Request request) {
 		return new NoScrollDragEditPartsTrackerEx(this);
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart#getDefaultCornerHeight()
+	 *
+	 * @return
+	 */
+	@Override
+	protected int getDefaultCornerHeight() {
+		return 10;
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart#getDefaultCornerWidth()
+	 *
+	 * @return
+	 */
+	@Override
+	protected int getDefaultCornerWidth() {
+		return 10;
 	}
 }

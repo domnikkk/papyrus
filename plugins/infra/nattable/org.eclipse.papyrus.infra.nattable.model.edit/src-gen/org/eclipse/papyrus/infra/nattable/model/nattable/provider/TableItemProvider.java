@@ -21,12 +21,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.nattable.model.nattable.NattablePackage;
@@ -43,8 +38,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.p
  *
  * @generated
  */
-public class TableItemProvider extends TableNamedElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
-
+public class TableItemProvider extends TableNamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -69,6 +63,8 @@ public class TableItemProvider extends TableNamedElementItemProvider implements 
 			super.getPropertyDescriptors(object);
 
 			addContextPropertyDescriptor(object);
+			addOwnerPropertyDescriptor(object);
+			addPrototypePropertyDescriptor(object);
 			addTableConfigurationPropertyDescriptor(object);
 			addInvertAxisPropertyDescriptor(object);
 			addCurrentRowAxisProviderPropertyDescriptor(object);
@@ -85,9 +81,65 @@ public class TableItemProvider extends TableNamedElementItemProvider implements 
 	 * @generated
 	 */
 	protected void addContextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Table_context_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_Table_context_feature", "_UI_Table_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattablePackage.Literals.TABLE__CONTEXT, true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Table_context_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_Table_context_feature", "_UI_Table_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattablePackage.Literals.TABLE__CONTEXT,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Owner feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addOwnerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Table_owner_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_Table_owner_feature", "_UI_Table_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattablePackage.Literals.TABLE__OWNER,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Prototype feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addPrototypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Table_prototype_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_Table_prototype_feature", "_UI_Table_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattablePackage.Literals.TABLE__PROTOTYPE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
@@ -98,9 +150,19 @@ public class TableItemProvider extends TableNamedElementItemProvider implements 
 	 * @generated
 	 */
 	protected void addTableConfigurationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Table_tableConfiguration_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_Table_tableConfiguration_feature", "_UI_Table_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattablePackage.Literals.TABLE__TABLE_CONFIGURATION, true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Table_tableConfiguration_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_Table_tableConfiguration_feature", "_UI_Table_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattablePackage.Literals.TABLE__TABLE_CONFIGURATION,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
@@ -111,9 +173,19 @@ public class TableItemProvider extends TableNamedElementItemProvider implements 
 	 * @generated
 	 */
 	protected void addInvertAxisPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Table_invertAxis_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_Table_invertAxis_feature", "_UI_Table_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattablePackage.Literals.TABLE__INVERT_AXIS, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Table_invertAxis_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_Table_invertAxis_feature", "_UI_Table_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattablePackage.Literals.TABLE__INVERT_AXIS,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -124,9 +196,19 @@ public class TableItemProvider extends TableNamedElementItemProvider implements 
 	 * @generated
 	 */
 	protected void addCurrentRowAxisProviderPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Table_currentRowAxisProvider_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_Table_currentRowAxisProvider_feature", "_UI_Table_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattablePackage.Literals.TABLE__CURRENT_ROW_AXIS_PROVIDER, true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Table_currentRowAxisProvider_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_Table_currentRowAxisProvider_feature", "_UI_Table_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattablePackage.Literals.TABLE__CURRENT_ROW_AXIS_PROVIDER,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
@@ -137,9 +219,19 @@ public class TableItemProvider extends TableNamedElementItemProvider implements 
 	 * @generated
 	 */
 	protected void addCurrentColumnAxisProviderPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Table_currentColumnAxisProvider_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_Table_currentColumnAxisProvider_feature", "_UI_Table_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattablePackage.Literals.TABLE__CURRENT_COLUMN_AXIS_PROVIDER, true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Table_currentColumnAxisProvider_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_Table_currentColumnAxisProvider_feature", "_UI_Table_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattablePackage.Literals.TABLE__CURRENT_COLUMN_AXIS_PROVIDER,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
@@ -199,9 +291,11 @@ public class TableItemProvider extends TableNamedElementItemProvider implements 
 	@Override
 	public String getText(Object object) {
 		String label = ((Table) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Table_type") : //$NON-NLS-1$
+		return label == null || label.length() == 0 ?
+				getString("_UI_Table_type") : //$NON-NLS-1$
 				getString("_UI_Table_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -242,19 +336,40 @@ public class TableItemProvider extends TableNamedElementItemProvider implements 
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(NattablePackage.Literals.TABLE__COLUMN_AXIS_PROVIDERS_HISTORY, NattableaxisproviderFactory.eINSTANCE.createSlaveObjectAxisProvider()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattablePackage.Literals.TABLE__COLUMN_AXIS_PROVIDERS_HISTORY,
+						NattableaxisproviderFactory.eINSTANCE.createSlaveObjectAxisProvider()));
 
-		newChildDescriptors.add(createChildParameter(NattablePackage.Literals.TABLE__COLUMN_AXIS_PROVIDERS_HISTORY, NattableaxisproviderFactory.eINSTANCE.createMasterObjectAxisProvider()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattablePackage.Literals.TABLE__COLUMN_AXIS_PROVIDERS_HISTORY,
+						NattableaxisproviderFactory.eINSTANCE.createMasterObjectAxisProvider()));
 
-		newChildDescriptors.add(createChildParameter(NattablePackage.Literals.TABLE__ROW_AXIS_PROVIDERS_HISTORY, NattableaxisproviderFactory.eINSTANCE.createSlaveObjectAxisProvider()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattablePackage.Literals.TABLE__ROW_AXIS_PROVIDERS_HISTORY,
+						NattableaxisproviderFactory.eINSTANCE.createSlaveObjectAxisProvider()));
 
-		newChildDescriptors.add(createChildParameter(NattablePackage.Literals.TABLE__ROW_AXIS_PROVIDERS_HISTORY, NattableaxisproviderFactory.eINSTANCE.createMasterObjectAxisProvider()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattablePackage.Literals.TABLE__ROW_AXIS_PROVIDERS_HISTORY,
+						NattableaxisproviderFactory.eINSTANCE.createMasterObjectAxisProvider()));
 
-		newChildDescriptors.add(createChildParameter(NattablePackage.Literals.TABLE__LOCAL_ROW_HEADER_AXIS_CONFIGURATION, NattableaxisconfigurationFactory.eINSTANCE.createLocalTableHeaderAxisConfiguration()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattablePackage.Literals.TABLE__LOCAL_ROW_HEADER_AXIS_CONFIGURATION,
+						NattableaxisconfigurationFactory.eINSTANCE.createLocalTableHeaderAxisConfiguration()));
 
-		newChildDescriptors.add(createChildParameter(NattablePackage.Literals.TABLE__LOCAL_COLUMN_HEADER_AXIS_CONFIGURATION, NattableaxisconfigurationFactory.eINSTANCE.createLocalTableHeaderAxisConfiguration()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattablePackage.Literals.TABLE__LOCAL_COLUMN_HEADER_AXIS_CONFIGURATION,
+						NattableaxisconfigurationFactory.eINSTANCE.createLocalTableHeaderAxisConfiguration()));
 
-		newChildDescriptors.add(createChildParameter(NattablePackage.Literals.TABLE__CELLS, NattablecellFactory.eINSTANCE.createCell()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattablePackage.Literals.TABLE__CELLS,
+						NattablecellFactory.eINSTANCE.createCell()));
 	}
 
 	/**
@@ -269,8 +384,11 @@ public class TableItemProvider extends TableNamedElementItemProvider implements 
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == NattablePackage.Literals.TABLE__COLUMN_AXIS_PROVIDERS_HISTORY || childFeature == NattablePackage.Literals.TABLE__ROW_AXIS_PROVIDERS_HISTORY
-				|| childFeature == NattablePackage.Literals.TABLE__LOCAL_ROW_HEADER_AXIS_CONFIGURATION || childFeature == NattablePackage.Literals.TABLE__LOCAL_COLUMN_HEADER_AXIS_CONFIGURATION;
+		boolean qualify =
+				childFeature == NattablePackage.Literals.TABLE__COLUMN_AXIS_PROVIDERS_HISTORY ||
+						childFeature == NattablePackage.Literals.TABLE__ROW_AXIS_PROVIDERS_HISTORY ||
+						childFeature == NattablePackage.Literals.TABLE__LOCAL_ROW_HEADER_AXIS_CONFIGURATION ||
+						childFeature == NattablePackage.Literals.TABLE__LOCAL_COLUMN_HEADER_AXIS_CONFIGURATION;
 
 		if (qualify) {
 			return getString("_UI_CreateChild_text2", //$NON-NLS-1$

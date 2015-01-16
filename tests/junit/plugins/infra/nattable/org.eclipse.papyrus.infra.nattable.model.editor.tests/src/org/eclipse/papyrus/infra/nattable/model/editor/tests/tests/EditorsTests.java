@@ -27,6 +27,7 @@ import org.eclipse.papyrus.infra.nattable.model.editor.customeditors.CustomNatta
 import org.eclipse.papyrus.infra.nattable.model.editor.customeditors.CustomNattableconfigurationEditor;
 import org.eclipse.papyrus.infra.nattable.model.editor.customeditors.CustomNattablelabelproviderEditor;
 import org.eclipse.papyrus.infra.nattable.model.editor.customeditors.CustomNattableproblemEditor;
+import org.eclipse.papyrus.infra.nattable.model.editor.customeditors.CustomNattablestyleEditor;
 import org.eclipse.papyrus.infra.nattable.model.editor.customeditors.CustomNattabletesterEditor;
 import org.eclipse.papyrus.infra.nattable.model.editor.tests.Activator;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
@@ -156,6 +157,12 @@ public class EditorsTests extends AbstractPapyrusTest {
 	public void testOpenNattableTesterProblemEditor() throws Exception {
 		IEditorPart editor = openFile("testTableConfiguration", "My.nattableproblem", getBundle()); //$NON-NLS-1$ //$NON-NLS-2$
 		Assert.assertTrue(editor instanceof CustomNattableproblemEditor);
+	}
+
+	@Test
+	public void testOpenNattableStyleEditor() throws Exception {
+		IEditorPart editor = openFile("testTableConfiguration", "My.nattablestyle", getBundle()); //$NON-NLS-1$ //$NON-NLS-2$
+		Assert.assertTrue(editor instanceof CustomNattablestyleEditor);
 	}
 
 	protected String getSourcePath() {

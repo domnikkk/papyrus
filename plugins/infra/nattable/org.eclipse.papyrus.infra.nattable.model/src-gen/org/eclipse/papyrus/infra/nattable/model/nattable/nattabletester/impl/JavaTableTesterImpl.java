@@ -32,7 +32,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.Nattable
  * @generated
  */
 public class JavaTableTesterImpl extends AbstractTableTesterImpl implements JavaTableTester {
-
 	/**
 	 * The default value of the '{@link #getTester() <em>Tester</em>}' attribute.
 	 * <!-- begin-user-doc -->

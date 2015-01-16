@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.nebula.widgets.nattable.config.IConfigRegistry;
 import org.eclipse.papyrus.infra.emf.nattable.registry.EStructuralFeatureImageRegistry;
+import org.eclipse.papyrus.infra.nattable.Activator;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.EStructuralFeatureAxis;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ILabelProviderConfiguration;
@@ -78,7 +79,7 @@ public class EMFFeatureHeaderLabelProvider extends EMFEObjectHeaderLabelProvider
 		try {
 			displayName = featureConf.isDisplayName();
 		} catch (Exception e) {
-			e.printStackTrace();
+			Activator.log.error(e);
 		}
 		boolean displayMultiplicity = featureConf.isDisplayMultiplicity();
 		boolean displayType = featureConf.isDisplayType();
@@ -149,7 +150,7 @@ public class EMFFeatureHeaderLabelProvider extends EMFEObjectHeaderLabelProvider
 		final ILabelProviderContextElementWrapper wrapper = (ILabelProviderContextElementWrapper) element;
 		final IConfigRegistry configRegistry = wrapper.getConfigRegistry();
 
-		final Object value = wrapper.getObject();
+		final Object value = getWrappedValue(wrapper);
 		EStructuralFeature feature = null;
 		String alias = "";//$NON-NLS-1$
 		if (value instanceof EStructuralFeatureAxis) {
@@ -196,7 +197,7 @@ public class EMFFeatureHeaderLabelProvider extends EMFEObjectHeaderLabelProvider
 			return null;
 		}
 
-		final Object object = ((ILabelProviderContextElementWrapper) element).getObject();
+		final Object object = getWrappedValue((ILabelProviderContextElementWrapper) element);
 		EStructuralFeature feature = null;
 		if (object instanceof EStructuralFeatureAxis) {
 			feature = ((EStructuralFeatureAxis) object).getElement();
@@ -241,6 +242,15 @@ public class EMFFeatureHeaderLabelProvider extends EMFEObjectHeaderLabelProvider
 			return EStructuralFeatureImageRegistry.getUnidirectionalLinkIcon();
 		}
 		return EStructuralFeatureImageRegistry.getLinkIcon();
+	}
+
+	/**
+	 * @param wrapper
+	 * @return
+	 *         the wrapped value to use to calculate the label
+	 */
+	protected Object getWrappedValue(final ILabelProviderContextElementWrapper wrapper) {
+		return wrapper.getObject();
 	}
 
 }

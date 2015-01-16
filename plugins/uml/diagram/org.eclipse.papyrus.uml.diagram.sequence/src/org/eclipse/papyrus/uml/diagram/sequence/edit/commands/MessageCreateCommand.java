@@ -24,10 +24,11 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
-import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.papyrus.uml.diagram.sequence.util.MessageConnectionHelper;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.Message;
+import org.eclipse.uml2.uml.MessageSort;
 
 /**
  * @generated
@@ -62,7 +63,7 @@ public class MessageCreateCommand extends EditElementCommand {
 	/**
 	 * Add a condition on the MOS container
 	 *
-	 * @generated
+	 * @generated NOT special handling of SyncMessages due to #425666
 	 */
 	@Override
 	public boolean canExecute() {
@@ -82,7 +83,7 @@ public class MessageCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateMessage_4003(getContainer(), getSource(), getTarget());
+		return MessageConnectionHelper.canExist(MessageSort.SYNCH_CALL_LITERAL, (Element) source, (Element) target);
 	}
 
 	/**

@@ -24,6 +24,7 @@ import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.papyrus.infra.tools.Activator;
 import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandImageService;
 import org.eclipse.ui.commands.ICommandService;
@@ -92,7 +93,6 @@ public class EclipseCommandUtils {
 	 * @param newValue
 	 *            the new boolean value to set to the state of this command
 	 */
-	// TODO : the nattable integration must use me
 	public static final void updateToggleCommandState(final org.eclipse.core.commands.Command command, final boolean newValue) {
 		if (command != null) {
 			final State state = command.getState(TOGGLE_STATE);
@@ -109,7 +109,6 @@ public class EclipseCommandUtils {
 	 * @param newValue
 	 *            the new value to set to the state of this command
 	 */
-	// TODO : the nattable integration must use me
 	public static final void updateRadioCommandState(final org.eclipse.core.commands.Command command, final Object newValue) {
 		if (command != null) {
 			final State state = command.getState(RADIO_STATE);
@@ -117,5 +116,21 @@ public class EclipseCommandUtils {
 				state.setValue(newValue);
 			}
 		}
+	}
+	
+	/**
+	 * 
+	 * @return
+	 * the eclipse command service
+	 */
+	public static final ICommandService getCommandService() {
+		IWorkbench wb = PlatformUI.getWorkbench();
+		if (wb != null) {
+			IWorkbenchWindow ww = wb.getActiveWorkbenchWindow();
+			if (ww != null) {
+				return (ICommandService) ww.getService(ICommandService.class);
+			}
+		}
+		return null;
 	}
 }

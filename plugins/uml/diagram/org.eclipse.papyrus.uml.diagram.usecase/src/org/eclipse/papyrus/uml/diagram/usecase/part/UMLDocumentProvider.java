@@ -554,7 +554,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 			info.stopResourceListening();
 			fireElementStateChanging(element);
 			try {
-				monitor.beginTask(Messages.UMLDocumentProvider_SaveDiagramTask, info.getResourceSet().getResources().size() + 1); //"Saving diagram"
+				monitor.beginTask(Messages.UMLDocumentProvider_SaveDiagramTask, info.getResourceSet().getResources().size() + 1); // "Saving diagram"
 				for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
 					Resource nextResource = it.next();
 					monitor.setTaskName(NLS.bind(

@@ -141,7 +141,7 @@ public class ValidationPluginGenerator {
 		editor.getManifestEditor().addDependency(EMF_VALIDATION_PLUGIN);
 		editor.getManifestEditor().addDependency(UML_VALIDATION_PLUGIN);
 		editor.getManifestEditor().addDependency(UML_PLUGIN);
-
+		
 		Element constraintProviderExtension =
 				createOrCleanExtension(editor, EMF_VALIDATION_CONSTRAINT_PROVIDERS_EXTENSIONPOINT);
 
@@ -178,12 +178,10 @@ public class ValidationPluginGenerator {
 
 		generateBindings(pluginID, editor, this.constraintsManager);
 
-		editor.getProject().refreshLocal(0, null);
-
 		try {
 			editor.save();
+			editor.getProject().refreshLocal(0, null);
 		} catch (Throwable ex) {
-
 			return;
 		}
 	}
@@ -273,8 +271,7 @@ public class ValidationPluginGenerator {
 		}
 
 		if (validation.getDescription() != null) {
-			Element description = editor.addChild(extElForConstraint,
-					"description");
+			Element description = editor.addChild(extElForConstraint, "description"); //$NON-NLS-1$
 			description.setTextContent(validation.getDescription());
 		}
 

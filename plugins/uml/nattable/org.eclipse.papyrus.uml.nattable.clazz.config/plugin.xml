@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.papyrus.infra.nattable.configuration">
+      <configuration
+            file="configs/class_synchronized_tree.nattableconfiguration"
+            type="PapyrusClassTreeTable">
+      </configuration>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.nattable.axismanager">
+      <axisManager
+            id="org.eclipse.papyrus.infra.uml.nattable.class.tree.axis.manager"
+            manager="org.eclipse.papyrus.uml.nattable.clazz.config.manager.axis.UMLClassTreeAxisManagerForEventList">
+      </axisManager>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.viewpoints.policy.custom">
+      <contribution
+            file="configs/classTreeTable.configuration"
+            original="platform:/plugin/org.eclipse.papyrus.infra.viewpoints.policy/builtin/default.configuration">
+      </contribution>
+   </extension>
+
+</plugin>

@@ -75,49 +75,49 @@
       <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="UMLRealTime::RTPort"/>
     </constraints>
   </views>
-  <views name="Single Capsule" sections="//@tabs.0/@sections.4" automaticContext="true" datacontexts="//@dataContexts.0/@elements.6">
+  <views name="Single Capsule" sections="//@tabs.0/@sections.4" automaticContext="true" datacontexts="//@dataContexts.0/@elements.5">
     <constraints xsi:type="constraints:SimpleConstraint" name="isSingleCapsule">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
       <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="UMLRealTime::Capsule"/>
     </constraints>
   </views>
-  <views elementMultiplicity="-1" name="Multiple Capsule" sections="//@tabs.0/@sections.5" automaticContext="true" datacontexts="//@dataContexts.0/@elements.6">
+  <views elementMultiplicity="-1" name="Multiple Capsule" sections="//@tabs.0/@sections.5" automaticContext="true" datacontexts="//@dataContexts.0/@elements.5">
     <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleCapsule">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
       <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="UMLRealTime::Capsule"/>
     </constraints>
   </views>
-  <views name="Single Protocol" sections="//@tabs.0/@sections.6" automaticContext="true" datacontexts="//@dataContexts.0/@elements.3">
+  <views name="Single Protocol" sections="//@tabs.0/@sections.6" automaticContext="true" datacontexts="//@dataContexts.1/@elements.0">
     <constraints xsi:type="constraints:SimpleConstraint" name="isSingleProtocol">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
       <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="UMLRealTime::Protocol"/>
     </constraints>
   </views>
-  <views elementMultiplicity="-1" name="Multiple Protocol" sections="//@tabs.0/@sections.7" automaticContext="true" datacontexts="//@dataContexts.0/@elements.3">
+  <views elementMultiplicity="-1" name="Multiple Protocol" sections="//@tabs.0/@sections.7" automaticContext="true" datacontexts="//@dataContexts.1/@elements.0">
     <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleProtocol">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
       <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="UMLRealTime::Protocol"/>
     </constraints>
   </views>
-  <views name="Single RTMessageSet" sections="//@tabs.0/@sections.8" automaticContext="true" datacontexts="//@dataContexts.0/@elements.7">
+  <views name="Single RTMessageSet" sections="//@tabs.0/@sections.8" automaticContext="true" datacontexts="//@dataContexts.0/@elements.6">
     <constraints xsi:type="constraints:SimpleConstraint" name="isSingleRTMessageSet">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
       <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="UMLRealTime::RTMessageSet"/>
     </constraints>
   </views>
-  <views elementMultiplicity="-1" name="Multiple RTMessageSet" sections="//@tabs.0/@sections.9" automaticContext="true" datacontexts="//@dataContexts.0/@elements.7">
+  <views elementMultiplicity="-1" name="Multiple RTMessageSet" sections="//@tabs.0/@sections.9" automaticContext="true" datacontexts="//@dataContexts.0/@elements.6">
     <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleRTMessageSet">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
       <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="UMLRealTime::RTMessageSet"/>
     </constraints>
   </views>
-  <views name="Single ProtocolContainer" sections="//@tabs.0/@sections.10" automaticContext="true" datacontexts="//@dataContexts.0/@elements.4">
+  <views name="Single ProtocolContainer" sections="//@tabs.0/@sections.10" automaticContext="true" datacontexts="//@dataContexts.0/@elements.3">
     <constraints xsi:type="constraints:SimpleConstraint" name="isSingleProtocolContainer">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
       <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="UMLRealTime::ProtocolContainer"/>
     </constraints>
   </views>
-  <views elementMultiplicity="-1" name="Multiple ProtocolContainer" sections="//@tabs.0/@sections.11" automaticContext="true" datacontexts="//@dataContexts.0/@elements.4">
+  <views elementMultiplicity="-1" name="Multiple ProtocolContainer" sections="//@tabs.0/@sections.11" automaticContext="true" datacontexts="//@dataContexts.0/@elements.3">
     <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleProtocolContainer">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
       <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="UMLRealTime::ProtocolContainer"/>
@@ -135,13 +135,13 @@
       <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="UMLRealTime::CapsulePart"/>
     </constraints>
   </views>
-  <views name="Single RTRExcludedElement" sections="//@tabs.0/@sections.14" automaticContext="true" datacontexts="//@dataContexts.0/@elements.5">
+  <views name="Single RTRExcludedElement" sections="//@tabs.0/@sections.14" automaticContext="true" datacontexts="//@dataContexts.0/@elements.4">
     <constraints xsi:type="constraints:SimpleConstraint" name="isSingleRTRExcludedElement">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
       <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="UMLRealTime::RTRExcludedElement"/>
     </constraints>
   </views>
-  <views elementMultiplicity="-1" name="Multiple RTRExcludedElement" sections="//@tabs.0/@sections.15" automaticContext="true" datacontexts="//@dataContexts.0/@elements.5">
+  <views elementMultiplicity="-1" name="Multiple RTRExcludedElement" sections="//@tabs.0/@sections.15" automaticContext="true" datacontexts="//@dataContexts.0/@elements.4">
     <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleRTRExcludedElement">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
       <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="UMLRealTime::RTRExcludedElement"/>
@@ -162,9 +162,6 @@
     <elements name="CapsulePart">
       <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.35"/>
     </elements>
-    <elements name="Protocol">
-      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.78"/>
-    </elements>
     <elements name="ProtocolContainer">
       <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.2"/>
     </elements>
@@ -179,5 +176,14 @@
       <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.48"/>
     </elements>
     <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@modelElementFactories.2"/>
+  </dataContexts>
+  <dataContexts name="UMLRealTimeExt">
+    <elements name="Protocol">
+      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.78"/>
+      <properties name="provides" type="Reference"/>
+      <properties name="required" type="Reference"/>
+      <properties name="provreq" type="Reference"/>
+    </elements>
+      <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.umlrt.properties/propertyView/UML-RT/Environment.xmi#//@modelElementFactories.0"/>
   </dataContexts>
 </contexts:Context>

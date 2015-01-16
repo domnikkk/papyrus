@@ -22,10 +22,12 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.editparts.AbstractConnectionEditPart;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gef.editpolicies.ResizableEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.internal.figures.ResizableLabelLocator;
@@ -40,46 +42,16 @@ import org.eclipse.papyrus.infra.gmfdiag.common.figure.IPapyrusWrappingLabel;
 import org.eclipse.papyrus.infra.gmfdiag.common.locator.IPapyrusBorderItemLocator;
 import org.eclipse.papyrus.infra.gmfdiag.common.locator.PapyrusLabelLocator;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.NamedStyleProperties;
 
 
-public abstract class PapyrusLabelEditPart extends LabelEditPart {
+public abstract class PapyrusLabelEditPart extends LabelEditPart implements NamedStyleProperties {
 
 	/**
 	 * Default Margin when not present in CSS
 	 */
 	public static final int DEFAULT_MARGIN = 0;
 
-	/**
-	 * CSS Integer property to define the horizontal Label Margin
-	 */
-	public static final String TOP_MARGIN_PROPERTY = "topMarginLabel"; // $NON-NLS$
-
-	/**
-	 * CSS Integer property to define the vertical Label Margin
-	 */
-	public static final String LEFT_MARGIN_PROPERTY = "leftMarginLabel"; // $NON-NLS$
-
-	/**
-	 * CSS Integer property to define the horizontal Label Margin
-	 */
-	public static final String BOTTOM_MARGIN_PROPERTY = "bottomMarginLabel"; // $NON-NLS$
-
-	/**
-	 * CSS Integer property to define the vertical Label Margin
-	 */
-	public static final String RIGHT_MARGIN_PROPERTY = "rightMarginLabel"; // $NON-NLS$
-
-	/** The Constant TEXT_ALIGNMENT. */
-	public static final String TEXT_ALIGNMENT = "textAlignment"; // $NON-NLS$
-
-	/** The Constant LABEL_OFFSET_Y. */
-	public static final String LABEL_OFFSET_Y = "labelOffsetY"; // $NON-NLS$
-
-	/** The Constant LABEL_OFFSET_X. */
-	public static final String LABEL_OFFSET_X = "labelOffsetX"; // $NON-NLS$
-
-	/** The Constant LABEL_CONSTRAINED. */
-	public static final String LABEL_CONSTRAINED = "labelConstrained"; // $NON-NLS$
 
 	/** The external label locator. */
 	protected PapyrusLabelLocator papyrusLabelLocator = null;
@@ -208,13 +180,13 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 
 		int textAlignment = 0;
 		if (labelAlignment != null) {
-			if ("left".equals(labelAlignment.getStringValue())) {
+			if ("left".equals(labelAlignment.getStringValue())) { //$NON-NLS-1$
 				textAlignment = PositionConstants.LEFT;
 			}
-			if ("right".equals(labelAlignment.getStringValue())) {
+			if ("right".equals(labelAlignment.getStringValue())) {//$NON-NLS-1$
 				textAlignment = PositionConstants.RIGHT;
 			}
-			if ("center".equals(labelAlignment.getStringValue())) {
+			if ("center".equals(labelAlignment.getStringValue())) {//$NON-NLS-1$
 				textAlignment = PositionConstants.CENTER;
 			}
 		} else {
@@ -339,6 +311,12 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 	 * @return the default text alignment
 	 */
 	protected int getDefaultTextAlignment() {
+		EditPart parent = getParent();
+		if (parent instanceof NodeEditPart || parent instanceof AbstractBorderItemEditPart) {
+			return PositionConstants.LEFT;
+		} else if (parent instanceof ConnectionEditPart) {
+			return PositionConstants.CENTER;
+		}
 		return PositionConstants.CENTER;
 	}
 
@@ -376,4 +354,5 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 		}
 
 	}
+
 }

@@ -39,7 +39,6 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
@@ -49,7 +48,6 @@ import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
-import org.eclipse.gmf.runtime.gef.ui.internal.figures.DiamondFigure;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
@@ -64,7 +62,11 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.ExtendedDirectEditionDialo
 import org.eclipse.papyrus.extensionpoints.editors.ui.ILabelEditorDialog;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalLabelPrimaryDragRoleEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SVGNodePlateFigure;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.BehaviorPropertyNodeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.figures.WrappedLabel;
@@ -89,7 +91,7 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class DecisionInputEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
+public class DecisionInputEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	 * @generated
@@ -144,6 +146,7 @@ public class DecisionInputEditPart extends LabelEditPart implements ITextAwareEd
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new BehaviorPropertyNodeEditPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ExternalLabelPrimaryDragRoleEditPolicy());
 	}
 
 	/**
@@ -247,7 +250,7 @@ public class DecisionInputEditPart extends LabelEditPart implements ITextAwareEd
 	 */
 	@Override
 	@SuppressWarnings("rawtypes")
-	protected List getModelChildren() {
+	protected List<?> getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -257,6 +260,13 @@ public class DecisionInputEditPart extends LabelEditPart implements ITextAwareEd
 	@Override
 	public IGraphicalEditPart getChildBySemanticHint(String semanticHint) {
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setParser(IParser parser) {
+		this.parser = parser;
 	}
 
 	/**
@@ -343,7 +353,7 @@ public class DecisionInputEditPart extends LabelEditPart implements ITextAwareEd
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<java.lang.Object>() {
 
 							@Override
 							public void run() {
@@ -521,6 +531,31 @@ public class DecisionInputEditPart extends LabelEditPart implements ITextAwareEd
 	/**
 	 * @generated
 	 */
+	protected void initializeDirectEditManager(final Request request) {
+		// initialize the direct edit manager
+		try {
+			getEditingDomain().runExclusive(new Runnable() {
+
+				@Override
+				public void run() {
+					if (isActive() && isEditable()) {
+						if (request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
+							Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+							performDirectEdit(initialChar.charValue());
+						} else {
+							performDirectEdit();
+						}
+					}
+				}
+			});
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
@@ -556,8 +591,17 @@ public class DecisionInputEditPart extends LabelEditPart implements ITextAwareEd
 	protected void refreshLabel() {
 		EditPolicy maskLabelPolicy = getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
 		if (maskLabelPolicy == null) {
-			setLabelTextHelper(getFigure(), getLabelText());
-			setLabelIconHelper(getFigure(), getLabelIcon());
+			maskLabelPolicy = getEditPolicy(IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL);
+		}
+		if (maskLabelPolicy == null) {
+			View view = (View) getModel();
+			if (view.isVisible()) {
+				setLabelTextHelper(getFigure(), getLabelText());
+				setLabelIconHelper(getFigure(), getLabelIcon());
+			} else {
+				setLabelTextHelper(getFigure(), ""); //$NON-NLS-1$
+				setLabelIconHelper(getFigure(), null);
+			}
 		}
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
@@ -889,7 +933,8 @@ public class DecisionInputEditPart extends LabelEditPart implements ITextAwareEd
 				BorderedNodeFigure gParent = (BorderedNodeFigure) getParent().getParent();
 				Rectangle parentBounds = gParent.getHandleBounds().getCopy();
 				Point parentCenter = parentBounds.getCenter();
-				DiamondFigure diamond = (DiamondFigure) gParent.getMainFigure();
+				// DiamondFigure diamond = (DiamondFigure) gParent.getMainFigure();
+				SVGNodePlateFigure diamond = (SVGNodePlateFigure) gParent.getMainFigure();
 				Rectangle currentBounds = ((LinkedBehaviorLocator) getBorderItemLocator()).getCorrectItemLocation(this);
 				Point end = BehaviorPropertyNodeEditPolicy.getAppropriateBorderPoint(parentCenter, currentBounds);
 				Point start = BehaviorPropertyNodeEditPolicy.getIntersectionPoint(diamond.getPolygonPoints(), parentCenter, end);

@@ -42,7 +42,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
  * @generated
  */
 public class NattableaxisconfigurationItemProviderAdapterFactory extends NattableaxisconfigurationAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
-
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -286,6 +285,31 @@ public class NattableaxisconfigurationItemProviderAdapterFactory extends Nattabl
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected TreeFillingConfigurationItemProvider treeFillingConfigurationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createTreeFillingConfigurationAdapter() {
+		if (treeFillingConfigurationItemProvider == null) {
+			treeFillingConfigurationItemProvider = new TreeFillingConfigurationItemProvider(this);
+		}
+
+		return treeFillingConfigurationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -422,6 +446,9 @@ public class NattableaxisconfigurationItemProviderAdapterFactory extends Nattabl
 		}
 		if (pasteEObjectConfigurationItemProvider != null) {
 			pasteEObjectConfigurationItemProvider.dispose();
+		}
+		if (treeFillingConfigurationItemProvider != null) {
+			treeFillingConfigurationItemProvider.dispose();
 		}
 	}
 

@@ -1,0 +1,33 @@
+Class								
+	Class0				Class0	public	false	N/A
+		Operation0			Operation0	package	false	N/A
+			ownedParameter					
+				Param0	Param0	public	N/A	in
+				Param1	Param1	public	N/A	out
+				Param2	Param2	public	N/A	return
+		Operation1			Operation1	package	false	
+			ownedParameter					
+				Param0	Param0	private	N/A	in
+				Param1	Param1	private	N/A	out
+				Param2	Param2	private	N/A	return
+		Operation2			Operation2	package	false	
+			ownedParameter					
+				Param0	Param0	package	N/A	in
+				Param1	Param1	package	N/A	out
+				Param2	Param2	package	N/A	return
+	Class1				Class1	public	false	N/A
+		Operation0			Operation0	package	false	N/A
+			ownedParameter					
+				Param0	Param0	public	N/A	in
+				Param1	Param1	public	N/A	out
+				Param2	Param2	public	N/A	return
+		Operation1			Operation1	package	false	
+			ownedParameter					
+				Param0	Param0	private	N/A	in
+				Param1	Param1	private	N/A	out
+				Param2	Param2	private	N/A	return
+		Operation2			Operation2	package	false	
+			ownedParameter					
+				Param0	Param0	package	N/A	in
+				Param1	Param1	package	N/A	out
+				Param2	Param2	package	N/A	return

@@ -34,7 +34,7 @@ import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 /**
- * this dialog is used to create an author
+ * This dialog is used to create an author that will add review or make revision.
  *
  */
 public class CreateAuthorDialog  extends FormDialog {

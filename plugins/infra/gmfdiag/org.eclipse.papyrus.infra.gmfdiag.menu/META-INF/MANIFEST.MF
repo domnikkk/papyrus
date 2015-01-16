@@ -10,16 +10,18 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.infra.tools;bundle-version="1.1.0",
  org.eclipse.papyrus.infra.core;bundle-version="1.1.0",
  org.eclipse.papyrus.infra.emf;bundle-version="1.1.0",
- org.eclipse.gmf.runtime.diagram.ui.render;bundle-version="1.7.0"
+ org.eclipse.gmf.runtime.diagram.ui.render;bundle-version="1.7.0",
+ com.google.guava;bundle-version="11.0.0",
+ org.eclipse.papyrus.infra.emf.readonly;bundle-version="1.1.0"
 Export-Package: org.eclipse.papyrus.infra.gmfdiag.menu,
- org.eclipse.papyrus.infra.gmfdiag.menu.handlers
+ org.eclipse.papyrus.infra.gmfdiag.menu.handlers,
+ org.eclipse.papyrus.infra.gmfdiag.menu.utils
 Bundle-Vendor: %Bundle-Vendor
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %Bundle-Name
 Bundle-Activator: org.eclipse.papyrus.infra.gmfdiag.menu.Activator
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.menu;singleton:
- =true
+Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.menu;singleton:=true
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 

@@ -16,23 +16,16 @@ package org.eclipse.papyrus.uml.diagram.activity.figures;
 import java.util.Collections;
 import java.util.List;
 
-import org.eclipse.draw2d.Graphics;
-import org.eclipse.draw2d.LineBorder;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.CompartmentFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 
 /**
  * Figure an activity partition
  */
-public class ActivityPartitionFigure extends CompartmentFigure {
-
-	/**
-	 * TODO set those to constants into preference store
-	 */
-	private static final int TRANSPARENCY = 50;
-
-	private static final int APLPHA = 50;
+public class ActivityPartitionFigure extends RoundedCompartmentFigure {
 
 	private static final String ACTIVITY_CONTENT_COMPARTMENT = "ActivityContentCompartment";
 
@@ -42,16 +35,7 @@ public class ActivityPartitionFigure extends CompartmentFigure {
 
 	public ActivityPartitionFigure() {
 		super(Collections.singletonList(ACTIVITY_CONTENT_COMPARTMENT));
-		this.setOpaque(false);
-		getActivityPartitionCompartment().setOpaque(false);
-		getActivityPartitionCompartment().setBorder(new LineBorder());
-	}
-
-	@Override
-	public void paintFigure(Graphics graphics) {
-		setTransparency(TRANSPARENCY);
-		graphics.setAlpha(APLPHA);
-		super.paintFigure(graphics);
+		getActivityPartitionCompartment().setBorder(new OneLineBorder(1, PositionConstants.TOP));
 	}
 
 	public RectangleFigure getActivityPartitionCompartment() {

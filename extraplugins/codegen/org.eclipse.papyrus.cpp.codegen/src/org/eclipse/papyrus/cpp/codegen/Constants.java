@@ -40,4 +40,6 @@ public class Constants {
 	
 	// support the languages "C++", "C/C++" as well as "cpp". The '+' needs to be escaped in a regular epression
 	public static final Pattern supportedLanguages = Pattern.compile("C\\+\\+|C/C\\+\\+|cpp"); //$NON-NLS-1$
+	
+	public static final String DOT = "."; //$NON-NLS-1$
 }

@@ -15,13 +15,12 @@ package org.eclipse.papyrus.uml.diagram.composite.test.canonical;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.List;
-
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.uml.diagram.composite.CreateCompositeDiagramCommand;
@@ -38,11 +37,11 @@ import org.junit.Test;
  */
 public class TestCompositeDiagramElementWithDifferentParentLink extends TestLinkWithParent {
 
-@Override
-public DiagramUpdater getDiagramUpdater() {
-	return UMLDiagramUpdater.INSTANCE;
-}
-	
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return UMLDiagramUpdater.INSTANCE;
+	}
+
 	/** The target parent. */
 	private GraphicalEditPart targetParent;
 
@@ -87,7 +86,7 @@ public DiagramUpdater getDiagramUpdater() {
 	 * Sets the up.
 	 *
 	 * @throws Exception
-	 *         the exception
+	 *             the exception
 	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.AbstractPapyrusTestCase#setUp()
 	 */
 	@Before
@@ -121,35 +120,36 @@ public DiagramUpdater getDiagramUpdater() {
 	 * Install environment.
 	 *
 	 * @param sourceType
-	 *        the source type
+	 *            the source type
 	 * @param targetType
-	 *        the target type
-	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.TestLinkWithParent#installEnvironment(org.eclipse.gmf.runtime.emf.type.core.IElementType,
-	 *      org.eclipse.gmf.runtime.emf.type.core.IElementType)
+	 *            the target type
+	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.TestLinkWithParent#installEnvironment(org.eclipse.gmf.runtime.emf.type.core.IElementType, org.eclipse.gmf.runtime.emf.type.core.IElementType)
 	 */
 
 	@Override
 	public void installEnvironment(IElementType sourceType, IElementType targetType) {
 		super.installEnvironment(sourceType, targetType);
 
-		//create the parent source
+		// create the parent source
 		CreateViewRequest requestcreation = CreateViewRequestFactory.getCreateShapeRequest(parentType, getDiagramEditPart().getDiagramPreferencesHint());
 		requestcreation.setLocation(DEFAULT_PARENT_LOCATION);
 		Command command = getDiagramEditPart().getCommand(requestcreation);
 		assertTrue(command.canExecute());
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
-		targetParent = (GraphicalEditPart)getDiagramEditPart().getChildren().get(1);
+		targetParent = (GraphicalEditPart) getDiagramEditPart().getChildren().get(1);
 
-		//create the target
+		// create the target
 		requestcreation = CreateViewRequestFactory.getCreateShapeRequest(targetType, getDiagramEditPart().getDiagramPreferencesHint());
 		requestcreation.setLocation(DEFAULT_SOURCE_LOCATION);
 		command = targetParent.getCommand(requestcreation);
 		assertTrue(command.canExecute());
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 
-		// FIXME : get(0) : header; get(1) : container
-		List<GraphicalEditPart> children = targetParent.getChildren();
-		target = children.get(2);
+		// FIXME : get(0) : header; get(1) : floatingLabel; get(2) : container
+		// List<GraphicalEditPart> children = targetParent.getChildren();
+		// target = children.get(3);
+
+		target = (GraphicalEditPart) targetParent.getChildBySemanticHint(((IHintedType) targetType).getSemanticHint());
 	}
 
 	/**

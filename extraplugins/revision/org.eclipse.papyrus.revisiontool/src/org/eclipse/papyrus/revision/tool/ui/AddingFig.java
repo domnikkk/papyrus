@@ -20,7 +20,7 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * 
- * figure about the add of element
+ * This figure is about the adding of an element.
  *
  */
 public class AddingFig extends Figure{
@@ -34,7 +34,6 @@ public class AddingFig extends Figure{
 		graphics.setForegroundColor(new org.eclipse.swt.graphics.Color(device, 0, 250, 0));
 		graphics.setBackgroundColor(new org.eclipse.swt.graphics.Color(device, 0, 250, 0));
 		graphics.drawRectangle(getBounds().x,getBounds().y, getBounds().width, getBounds().height);
-		System.out.println("draw rectangle"+getBounds().x+" "+getBounds().y+" "+ getBounds().width+" "+ getBounds().height);
 		graphics.popState();
 	}
 

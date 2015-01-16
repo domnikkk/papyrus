@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc topic="resource/users/definingProfilesAndStereotypes.html" label="definingProfilesAndStereotypes">
+	<topic href="resource/users/definingProfilesAndStereotypes.html" label="Defining Profiles and Stereotypes">
+		<topic href="resource/users/definingProfilesAndStereotypes.html#Creating_a_Profile_Resource" label="Creating a Profile Resource"></topic>
+		<topic href="resource/users/definingProfilesAndStereotypes.html#Defining_a_Stereotype" label="Defining a Stereotype">
+			<topic href="resource/users/definingProfilesAndStereotypes.html#Creating_a_Stereotype" label="Creating a Stereotype"></topic>
+			<topic href="resource/users/definingProfilesAndStereotypes.html#Importing_Metaclass" label="Importing Metaclass"></topic>
+			<topic href="resource/users/definingProfilesAndStereotypes.html#Linking_Stereotype_to_Metaclass_:_Extension_Creation" label="Linking Stereotype to Metaclass : Extension Creation"></topic>
+		</topic>
+		<topic href="resource/users/definingProfilesAndStereotypes.html#Creating_a_Subprofile" label="Creating a Subprofile"></topic>
+		<topic href="resource/users/definingProfilesAndStereotypes.html#Generalizing_Stereotype" label="Generalizing Stereotype"></topic>
+		<topic href="resource/users/definingProfilesAndStereotypes.html#Displaying_Stereotype_Options" label="Displaying Stereotype Options"></topic>
+	</topic>
+</toc>

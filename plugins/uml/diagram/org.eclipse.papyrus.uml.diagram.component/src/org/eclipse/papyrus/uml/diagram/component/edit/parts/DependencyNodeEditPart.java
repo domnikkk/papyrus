@@ -28,15 +28,17 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
-import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.NodeEditPart;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.GetChildLayoutEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.RoundedRectangleNodePlateFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideLabelEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.DependencyNodeFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.papyrus.uml.diagram.common.locator.ExternalLabelPositionLocator;
+import org.eclipse.papyrus.uml.diagram.common.locator.RoundedRectangleLabelPositionLocator;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.policies.CustomGraphicalNodeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.component.edit.policies.DependencyNodeItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.component.part.UMLVisualIDRegistry;
@@ -79,6 +81,7 @@ public class DependencyNodeEditPart extends NodeEditPart {
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new CustomGraphicalNodeEditPolicy());
 		installEditPolicy(ShowHideLabelEditPolicy.SHOW_HIDE_LABEL_ROLE, new ShowHideLabelEditPolicy());
+		installEditPolicy(EditPolicy.LAYOUT_ROLE, new GetChildLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
@@ -94,6 +97,7 @@ public class DependencyNodeEditPart extends NodeEditPart {
 				View childView = (View) child.getModel();
 				switch (UMLVisualIDRegistry.getVisualID(childView)) {
 				case MultiDependencyLabelEditPart.VISUAL_ID:
+				case DependencyNodeFloatingLabelEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
 						@Override
@@ -130,7 +134,7 @@ public class DependencyNodeEditPart extends NodeEditPart {
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		return primaryShape = new DependencyNodeFigure();
+		return primaryShape = new RoundedCompartmentFigure();
 	}
 
 	/**
@@ -139,8 +143,8 @@ public class DependencyNodeEditPart extends NodeEditPart {
 	 * @generated
 	 */
 	@Override
-	public DependencyNodeFigure getPrimaryShape() {
-		return (DependencyNodeFigure) primaryShape;
+	public RoundedCompartmentFigure getPrimaryShape() {
+		return (RoundedCompartmentFigure) primaryShape;
 	}
 
 	/**
@@ -150,6 +154,9 @@ public class DependencyNodeEditPart extends NodeEditPart {
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
 		if (borderItemEditPart instanceof MultiDependencyLabelEditPart) {
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+		} else if (borderItemEditPart instanceof DependencyNodeFloatingLabelEditPart) {
+			IBorderItemLocator locator = new RoundedRectangleLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else
 		{
@@ -162,7 +169,7 @@ public class DependencyNodeEditPart extends NodeEditPart {
 	 */
 	@Override
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(10, 10);
+		RoundedRectangleNodePlateFigure result = new RoundedRectangleNodePlateFigure(10, 10);
 		return result;
 	}
 

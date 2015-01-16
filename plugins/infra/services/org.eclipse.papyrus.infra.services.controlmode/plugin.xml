@@ -18,5 +18,105 @@
             class="org.eclipse.papyrus.infra.services.controlmode.participants.SashControlParticipant">
       </participant>
    </extension>
-
+   <extension
+         point="org.eclipse.papyrus.infra.core.model">
+      <modelSetSnippet
+            classname="org.eclipse.papyrus.infra.services.controlmode.listener.LoadResourceSnippet"
+            description="Snippet to attach listener on the resourceSet">
+      </modelSetSnippet>
+   </extension>
+     <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.eclipse.papyrus.infra.services.handler.ControlCommandHandler"
+            description="Move this submodel into its own resource (file)"
+            id="org.eclipse.papyrus.infra.services.controlmode.createsubmodel"
+            name="Create submodel unit">
+         <commandParameter
+               id="org.eclipse.papyrus.infra.services.controlmode.useDialogParameter"
+               name="Show control mode dialog"
+               optional="true">
+            <values
+                  class="org.eclipse.papyrus.infra.services.controlmode.commands.ControlModeCommandParameterValues">
+            </values>
+         </commandParameter>
+      </command>
+      <command
+            defaultHandler="org.eclipse.papyrus.infra.services.handler.UncontrolCommandHandler"
+            description="Reintegrate this submodel into the resource (file) of the parent model"
+            id="org.eclipse.papyrus.infra.services.controlmode.reintegratesubmodel"
+            name="Reintegrate submodel unit into parent model">
+      </command>
+   </extension>
+ <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.papyrus.views.modelexplorer.modelexplorer.popup?after=tools">
+         <command
+               commandId="org.eclipse.papyrus.infra.services.controlmode.createsubmodel"
+               icon="icons/CreateSubModel_16.png"
+               label="Create Submodel"
+               style="push"
+               tooltip="Move this submodel into its own resource (file)">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                 <test
+                       forcePluginActivation="true"
+                       property="org.eclipse.papyrus.infra.services.controlmode.isFragmentModel"
+                       value="false">
+                 </test>
+               </with>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.eclipse.papyrus.infra.services.controlmode.reintegratesubmodel"
+               icon="icons/ReintegrateSubModel_16.png"
+               label="Reintegrate Submodel"
+               style="push"
+               tooltip="Reintegrate this submodel into the resource (file) of the parent model">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                 <and>
+                    <test
+                          forcePluginActivation="true"
+                          property="org.eclipse.papyrus.infra.services.controlmode.isFragmentModel"
+                          value="true">
+                    </test>
+                    <test
+                          forcePluginActivation="true"
+                          property="org.eclipse.papyrus.infra.services.controlmode.isParentLoaded"
+                          value="true">
+                    </test>
+                 </and>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+ <extension
+       point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+    <binding
+          context="org.eclipse.papyrus.infra.services.edit.TypeContext">
+       <advice
+             ref="org.eclipse.papyrus.infra.services.controlmode.advice.ControlModeAdviceHelper">
+       </advice>
+    </binding>
+ </extension>
+ <extension
+       point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+    <metamodel
+          nsURI="http://www.eclipse.org/emf/2002/Ecore">
+       <adviceBinding
+             class="org.eclipse.papyrus.infra.services.controlmode.helper.advice.ControlModeEditHelperAdvice"
+             id="org.eclipse.papyrus.infra.services.controlmode.advice.ControlModeAdviceHelper"
+             inheritance="all"
+             typeId="*">
+       </adviceBinding>
+    </metamodel>
+ </extension>
 </plugin>

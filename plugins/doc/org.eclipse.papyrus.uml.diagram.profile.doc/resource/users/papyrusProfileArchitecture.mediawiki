@@ -1,0 +1,30 @@
+= Papyrus Profile Architecture =
+'''Contents'''
+__TOC__
+
+
+This section describes the architecture used to define uml Profiles in Papyrus. 
+
+Papyrus Profiles and Stereotypes implementation is made of two different parts:
+* The Profile and Stereotype '''definitions''' - This part is used to handle the stereotype and profile definitions.
+* The Profile and Stereotype '''applications''' - This part is used to apply an existing stereotype or profile to an UML element.
+
+
+== Profile and Stereotype Definitions Architecture ==
+
+Papyrus allows to create Profiles and Sterotypes in any kind of models. But, if you want to define Profiles and Stereotypes in order to apply them to UML elements, '''you need to define a Profile in a 'Papyrus profile resource'''' (i.e. a file).
+
+The definitions of Profiles and Stereoptypes is made of two parts: the UML definitions, and the corresponding dynamic model. User define profiles and stereotypes in UML. The corresponding dynamic model is computed by Papyrus when the resource is saved.
+
+UML definition of profile follows UML standard: Stereotypes must be defined in a uml::Profile.
+
+The dynamic model is defined by Papyrus using the EMF/UML framework. This dynamic model is associated to a version number. The version number is incremented each time the dynamic model is re-created, so each time the profile resource is saved.
+
+== Profile and Stereotype applications Architecture ==
+
+When Profile or a Stereotype is applied to an UML element, this create a Application object referencing both the uml element, and the profile or stereotype definition. 
+Thus, an uml element is not directly linked to an Application object.
+
+Application objects are normally stored in the resource file containing the uml element they reference. They are not stored inside the UML model. Rather, they are stored alongside of the uml model. 
+
+

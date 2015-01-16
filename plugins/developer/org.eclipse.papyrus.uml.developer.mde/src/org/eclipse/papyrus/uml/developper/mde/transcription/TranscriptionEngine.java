@@ -235,7 +235,9 @@ public class TranscriptionEngine {
 				Package subSectionDocElt = IDMAbstractHandler.Toc2DocElt.get(subSection);
 				String URI = ((XMIResource)subSectionDocElt.eResource()).getID(subSectionDocElt);
 				transcription.writeTOCSubSection(out, subSection.getName(), URI);
+				transcription.writeBeginTOC(out);
 				writeSubSectionTOC(out, subSection);
+				transcription.writeEndTOC(out);
 			}
 		}
 	}
@@ -294,12 +296,13 @@ public class TranscriptionEngine {
 								}
 
 								if (cellSize > 1 && cddRefContentComment.hasNext()) {
-									text = refContentComment.getBody() + ", ";
+									text = refContentComment.getBody() + ", \n";
 								} else {
 									text = refContentComment.getBody();
 								}
 								// Write the content of the cell in the table
 								transcription.writeLine(out, referentURI, referenceName, text);
+								transcription.writeNewLine(out);
 							}
 						}
 						transcription.writeEndTDTag(out);

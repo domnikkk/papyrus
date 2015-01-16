@@ -42,7 +42,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.util.NattableAdapterFac
  * @generated
  */
 public class NattableItemProviderAdapterFactory extends NattableAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
-
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->

@@ -31,16 +31,13 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>
- * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.LocalTableHeaderAxisConfigurationImpl#getAxisManagerConfigurations
- * <em>Axis Manager Configurations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.LocalTableHeaderAxisConfigurationImpl#getAxisManagerConfigurations <em>Axis Manager Configurations</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class LocalTableHeaderAxisConfigurationImpl extends AbstractHeaderAxisConfigurationImpl implements LocalTableHeaderAxisConfiguration {
-
 	/**
 	 * The cached value of the '{@link #getAxisManagerConfigurations() <em>Axis Manager Configurations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

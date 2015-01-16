@@ -1,94 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001"
-    xmlns:xmi="http://www.omg.org/spec/XMI/20131001"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:PapyrusVersioningExtensions="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0"
-    xmlns:ReviewProfile="http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0"
-    xmlns:compare="http://www.eclipse.org/emf/compare"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML"
-    xsi:schemaLocation="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g">
-  <ReviewProfile:ReviewRepository
-      xmi:id="_jJI5YHGQEeS3--5UptsX7w"
-      base_Model="_jJI5YXGQEeS3--5UptsX7w"/>
-  <uml:Model
-      xmi:id="_jJI5YXGQEeS3--5UptsX7w"
-      name="MyReview">
-    <ownedComment
-        xmi:id="_jLXuAnGQEeS3--5UptsX7w">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PapyrusVersioningExtensions="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0" xmlns:ReviewProfile="http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0" xmlns:compare="http://www.eclipse.org/emf/compare" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g">
+  <ReviewProfile:ReviewRepository xmi:id="_jJI5YHGQEeS3--5UptsX7w" base_Model="_jJI5YXGQEeS3--5UptsX7w"/>
+  <uml:Model xmi:id="_jJI5YXGQEeS3--5UptsX7w" name="MyReview">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_jLXuAnGQEeS3--5UptsX7w">
       <body>Your review</body>
     </ownedComment>
-    <packagedElement
-        xmi:type="uml:Dependency"
-        xmi:id="_jJI5YnGQEeS3--5UptsX7w"
-        name="WorkingModelDependency"
-        client="_jJI5YXGQEeS3--5UptsX7w">
-      <supplier
-          xmi:type="uml:Model"
-          href="WorkingModel.uml#_bOVDIHGJEeS3EdgtJYAZRQ"/>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_fIgEkIUPEeSDAN4sQjBA6Q">
+      <body>Tom has done Remove Engine</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_jJI5YnGQEeS3--5UptsX7w" name="WorkingModelDependency" client="_jJI5YXGQEeS3--5UptsX7w">
+      <supplier xmi:type="uml:Model" href="WorkingModel.uml#_bOVDIHGJEeS3EdgtJYAZRQ"/>
     </packagedElement>
-    <packagedElement
-        xmi:type="uml:Actor"
-        xmi:id="_jLXuAHGQEeS3--5UptsX7w"
-        name="Titi "/>
-    <profileApplication
-        xmi:id="_jJI5Y3GQEeS3--5UptsX7w">
-      <eAnnotations
-          xmi:id="_jJI5ZHGQEeS3--5UptsX7w"
-          source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references
-            xmi:type="ecore:EPackage"
-            href="pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g"/>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_jLXuAHGQEeS3--5UptsX7w" name="Titi "/>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_fIWTkIUPEeSDAN4sQjBA6Q" name="Tom"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_jJI5Y3GQEeS3--5UptsX7w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jJI5ZHGQEeS3--5UptsX7w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g"/>
       </eAnnotations>
-      <appliedProfile
-          href="pathmap://Review_PROFILES/Review.profile.uml#_Tr7GcGAWEeS-2dbNdHDnFw"/>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Review_PROFILES/Review.profile.uml#_Tr7GcGAWEeS-2dbNdHDnFw"/>
     </profileApplication>
-    <profileApplication
-        xmi:id="_jJI5ZXGQEeS3--5UptsX7w">
-      <eAnnotations
-          xmi:id="_jJI5ZnGQEeS3--5UptsX7w"
-          source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references
-            xmi:type="ecore:EPackage"
-            href="pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_jJI5ZXGQEeS3--5UptsX7w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jJI5ZnGQEeS3--5UptsX7w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g"/>
       </eAnnotations>
-      <appliedProfile
-          href="pathmap://Review_PROFILES/Versioning.profile.uml#_oQIXkM7dEeOUWOjBbvvZ9Q"/>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Review_PROFILES/Versioning.profile.uml#_oQIXkM7dEeOUWOjBbvvZ9Q"/>
     </profileApplication>
   </uml:Model>
-  <compare:Comparison
-      xmi:id="_jJI5Z3GQEeS3--5UptsX7w"/>
-  <PapyrusVersioningExtensions:Author
-      xmi:id="_jLXuAXGQEeS3--5UptsX7w"
-      language="Eng"
-      color="255:128:255"
-      base_Actor="_jLXuAHGQEeS3--5UptsX7w"
-      versioningElements="_jLXuA3GQEeS3--5UptsX7w _nx1i0XGQEeS3--5UptsX7w _nyIdwXGQEeS3--5UptsX7w _pxDokXGQEeS3--5UptsX7w _pxgUgXGQEeS3--5UptsX7w"/>
-  <ReviewProfile:Review
-      xmi:id="_jLXuA3GQEeS3--5UptsX7w"
-      base_Element="_jLXuAnGQEeS3--5UptsX7w"
-      date="21/11/14 16:10"
-      author="_jLXuAXGQEeS3--5UptsX7w"
-      base_Comment="_jLXuAnGQEeS3--5UptsX7w"
-      subject="subject"/>
-  <ReviewProfile:Review
-      xmi:id="_nx1i0XGQEeS3--5UptsX7w"
-      date="21/11/14 16:11"
-      author="_jLXuAXGQEeS3--5UptsX7w"
-      subject="Remove Engine"/>
-  <ReviewProfile:Review
-      xmi:id="_nyIdwXGQEeS3--5UptsX7w"
-      date="21/11/14 16:11"
-      author="_jLXuAXGQEeS3--5UptsX7w"
-      subject="Remove Engine"/>
-  <ReviewProfile:Review
-      xmi:id="_pxDokXGQEeS3--5UptsX7w"
-      date="21/11/14 16:11"
-      author="_jLXuAXGQEeS3--5UptsX7w"
-      subject="Remove engine"/>
-  <ReviewProfile:Review
-      xmi:id="_pxgUgXGQEeS3--5UptsX7w"
-      date="21/11/14 16:11"
-      author="_jLXuAXGQEeS3--5UptsX7w"
-      subject="Remove null"/>
+  <compare:Comparison xmi:id="_jJI5Z3GQEeS3--5UptsX7w"/>
+  <PapyrusVersioningExtensions:Author xmi:id="_jLXuAXGQEeS3--5UptsX7w" language="Eng" color="255:128:255" base_Actor="_jLXuAHGQEeS3--5UptsX7w" versioningElements="_jLXuA3GQEeS3--5UptsX7w _nx1i0XGQEeS3--5UptsX7w _nyIdwXGQEeS3--5UptsX7w _pxDokXGQEeS3--5UptsX7w _pxgUgXGQEeS3--5UptsX7w"/>
+  <ReviewProfile:Review xmi:id="_jLXuA3GQEeS3--5UptsX7w" base_Element="_jLXuAnGQEeS3--5UptsX7w" date="21/11/14 16:10" author="_jLXuAXGQEeS3--5UptsX7w" base_Comment="_jLXuAnGQEeS3--5UptsX7w" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_nx1i0XGQEeS3--5UptsX7w" date="21/11/14 16:11" author="_jLXuAXGQEeS3--5UptsX7w" subject="Remove Engine"/>
+  <ReviewProfile:Review xmi:id="_nyIdwXGQEeS3--5UptsX7w" date="21/11/14 16:11" author="_jLXuAXGQEeS3--5UptsX7w" subject="Remove Engine"/>
+  <ReviewProfile:Review xmi:id="_pxDokXGQEeS3--5UptsX7w" date="21/11/14 16:11" author="_jLXuAXGQEeS3--5UptsX7w" subject="Remove engine"/>
+  <ReviewProfile:Review xmi:id="_pxgUgXGQEeS3--5UptsX7w" date="21/11/14 16:11" author="_jLXuAXGQEeS3--5UptsX7w" subject="Remove null"/>
+  <PapyrusVersioningExtensions:Author xmi:id="_fIWTkYUPEeSDAN4sQjBA6Q" language="Eng" color="205:254:169" base_Actor="_fIWTkIUPEeSDAN4sQjBA6Q" versioningElements="_fIgEkYUPEeSDAN4sQjBA6Q"/>
+  <ReviewProfile:Todo xmi:id="_fIgEkYUPEeSDAN4sQjBA6Q" base_Element="_fIgEkIUPEeSDAN4sQjBA6Q" date="16/12/14 11:37" author="_fIWTkYUPEeSDAN4sQjBA6Q" base_Comment="_fIgEkIUPEeSDAN4sQjBA6Q" diffRef="_fIDYoIUPEeSDAN4sQjBA6Q" subject="Remove Engine"/>
 </xmi:XMI>

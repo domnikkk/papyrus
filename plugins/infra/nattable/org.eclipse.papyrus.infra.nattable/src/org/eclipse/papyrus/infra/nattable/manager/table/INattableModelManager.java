@@ -15,6 +15,7 @@ package org.eclipse.papyrus.infra.nattable.manager.table;
 
 import java.util.Collection;
 
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.jface.preference.PreferenceStore;
 import org.eclipse.nebula.widgets.nattable.NatTable;
@@ -31,7 +32,7 @@ import org.eclipse.ui.IWorkbenchPartSite;
 import org.eclipse.ui.services.IDisposable;
 
 
-public interface INattableModelManager extends ITableAxisElementProvider, IDisposable, IDataProvider {
+public interface INattableModelManager extends ITableAxisElementProvider, IDisposable, IDataProvider, IAdaptable {
 
 
 	@Override

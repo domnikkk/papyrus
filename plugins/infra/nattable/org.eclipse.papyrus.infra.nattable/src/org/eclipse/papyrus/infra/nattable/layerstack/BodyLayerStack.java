@@ -14,10 +14,12 @@
 package org.eclipse.papyrus.infra.nattable.layerstack;
 
 import org.eclipse.nebula.widgets.nattable.config.ConfigRegistry;
+import org.eclipse.nebula.widgets.nattable.data.AutomaticSpanningDataProvider;
 import org.eclipse.nebula.widgets.nattable.data.IDataProvider;
 import org.eclipse.nebula.widgets.nattable.edit.action.KeyEditAction;
 import org.eclipse.nebula.widgets.nattable.grid.GridRegion;
 import org.eclipse.nebula.widgets.nattable.hideshow.ColumnHideShowLayer;
+import org.eclipse.nebula.widgets.nattable.hideshow.RowHideShowLayer;
 import org.eclipse.nebula.widgets.nattable.layer.AbstractLayerTransform;
 import org.eclipse.nebula.widgets.nattable.layer.DataLayer;
 import org.eclipse.nebula.widgets.nattable.reorder.ColumnReorderLayer;
@@ -27,13 +29,20 @@ import org.eclipse.nebula.widgets.nattable.ui.matcher.KeyEventMatcher;
 import org.eclipse.nebula.widgets.nattable.viewport.ViewportLayer;
 import org.eclipse.papyrus.infra.nattable.configuration.StyleConfiguration;
 import org.eclipse.papyrus.infra.nattable.layer.PapyrusSelectionLayer;
+import org.eclipse.papyrus.infra.nattable.layer.PapyrusSpanningDataLayer;
 import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
 import org.eclipse.papyrus.infra.nattable.reorder.CustomDefaultColumnReorderBindings;
 import org.eclipse.papyrus.infra.nattable.utils.DefaultSizeUtils;
+import org.eclipse.papyrus.infra.nattable.utils.TableEditingDomainUtils;
 import org.eclipse.swt.SWT;
 
 
-
+/**
+ * The BodyLayer stack used in Papyrus TableF
+ *
+ * @author VL222926
+ *
+ */
 public class BodyLayerStack extends AbstractLayerTransform {
 
 	private final SelectionLayer selectionLayer;
@@ -46,10 +55,33 @@ public class BodyLayerStack extends AbstractLayerTransform {
 
 	private final ColumnReorderLayer columnReorderLayer;
 
+	private final RowHideShowLayer rowHideShowLayer;
+
 	// private final RowReorderLayer rowReoderLayer;
 
+	private AutomaticSpanningDataProvider spanProvider;
+
 	public BodyLayerStack(final IDataProvider dataProvider, final INattableModelManager manager) {
-		this.bodyDataLayer = new DataLayer(dataProvider, DefaultSizeUtils.getDefaultCellWidth(), DefaultSizeUtils.getDefaultCellHeight());
+		// this.bodyDataLayer = new DataLayer(dataProvider, DefaultSizeUtils.getDefaultCellWidth(), DefaultSizeUtils.getDefaultCellHeight());
+
+		// this method is used to merge the cells of same value inside a table
+		spanProvider = new AutomaticSpanningDataProvider(dataProvider, false, false) {
+
+			@Override
+			protected boolean valuesNotEqual(Object value1, Object value2) {
+				if (value1 == value2) { // works for both null and not
+					return false;
+				}
+				if ((value1 == null && value2 != null) || (value1 != null && value2 == null)) {
+					return true;
+				}
+				return !value1.equals(value2);
+			}
+		};
+
+		this.bodyDataLayer = new PapyrusSpanningDataLayer(TableEditingDomainUtils.
+				getTableEditingDomain(manager.getTable()), manager, spanProvider, DefaultSizeUtils.getDefaultCellWidth(), DefaultSizeUtils.getDefaultCellHeight());
+
 		this.bodyDataLayer.addConfiguration(new StyleConfiguration());
 
 		this.columnReorderLayer = new ColumnReorderLayer(this.bodyDataLayer, false);
@@ -64,10 +96,10 @@ public class BodyLayerStack extends AbstractLayerTransform {
 		// this.columnHideShowLayer = new ColumnHideShowLayer(this.rowReoderLayer);
 
 		this.columnHideShowLayer = new ColumnHideShowLayer(this.columnReorderLayer);
+		this.rowHideShowLayer = new RowHideShowLayer(columnHideShowLayer);
 
-
-
-		this.selectionLayer = new PapyrusSelectionLayer(this.columnHideShowLayer);
+		// /this.selectionLayer = new PapyrusSelectionLayer(this.columnHideShowLayer);
+		this.selectionLayer = new PapyrusSelectionLayer(rowHideShowLayer);
 		// CopyDataCommandHandler handler = new CopyDataCommandHandler(this.selectionLayer);
 		// // handler.setCopyFormattedText(true);//to do the paste using the label provider
 		// this.selectionLayer.registerCommandHandler(handler);
@@ -76,7 +108,6 @@ public class BodyLayerStack extends AbstractLayerTransform {
 		setUnderlyingLayer(this.viewportLayer);
 		setRegionName(GridRegion.BODY);
 	}
-
 
 	public SelectionLayer getSelectionLayer() {
 		return this.selectionLayer;
@@ -98,6 +129,10 @@ public class BodyLayerStack extends AbstractLayerTransform {
 		return this.columnReorderLayer;
 	}
 
+	public RowHideShowLayer getRowHideShowLayer() {
+		return this.rowHideShowLayer;
+	}
+
 	@Override
 	public void configure(ConfigRegistry configRegistry, UiBindingRegistry uiBindingRegistry) {
 		super.configure(configRegistry, uiBindingRegistry);
@@ -109,7 +144,8 @@ public class BodyLayerStack extends AbstractLayerTransform {
 	}
 
 
-	// public RowReorderLayer getRowReoderLayer() {
-	// return this.rowReoderLayer;
-	// }
+	public AutomaticSpanningDataProvider getBodyLayerSpanProvider() {
+		return this.spanProvider;
+
+	}
 }

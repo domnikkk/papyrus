@@ -161,6 +161,17 @@ public class WikiTranscription implements ITranscription {
 		}	
 		
 	}
+	
+	/**
+	 * @see org.eclipse.papyrus.uml.developper.mde.transcription.ITranscription#writeNewLine(java.lang.StringBuffer)
+	 *
+	 * @param out
+	 */
+	@Override
+	public void writeNewLine(StringBuffer out) {
+		out.append("\n");
+		
+	}
 
 
 	/**

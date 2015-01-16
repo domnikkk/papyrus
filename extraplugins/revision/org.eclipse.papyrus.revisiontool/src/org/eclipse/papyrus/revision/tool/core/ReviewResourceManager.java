@@ -78,8 +78,11 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
- * this class is used to manage the resource about Review
- *
+ * This class is used to manage the resource about the reviews and revisions.
+ * It contains several important methods:
+ *- load or get the current review model
+ *- start and stop revision the connect or disconnect listener to register modification in the working model
+ *- method to access to the ServiceRegistry
  */
 public class ReviewResourceManager {
 
@@ -88,6 +91,7 @@ public class ReviewResourceManager {
 	protected Model reviewModel;
 	protected Actor currentAuthor;
 	protected AddingDiffListener addingDiffListener=null;
+	protected RefreshFigureListener refreshFigureListener=null;
 	protected Comparison diffModel=null;
 	protected boolean modeRevisionRunning=false;
 
@@ -97,6 +101,7 @@ public class ReviewResourceManager {
 	 */
 	public ReviewResourceManager(){
 		this.addingDiffListener= new AddingDiffListener(this);
+		this.refreshFigureListener= new RefreshFigureListener(this);
 	}
 
 	/**
@@ -106,7 +111,11 @@ public class ReviewResourceManager {
 		if(addingDiffListener!=null){
 			getDomain().removeResourceSetListener(addingDiffListener);
 		}
+		if(refreshFigureListener!=null){
+			getDomain().removeResourceSetListener(refreshFigureListener);
+		}
 		modeRevisionRunning=false;
+		refreshFigureListener=null;
 		diffModel=null;
 		reviewModel=null;
 		currentAuthor=null;
@@ -155,7 +164,7 @@ public class ReviewResourceManager {
 		if( reviewModel==null){
 			CreateOrSelectReviewModelDialog dialog=new CreateOrSelectReviewModelDialog(new Shell(), this);
 			dialog.open();
-
+			getDomain().addResourceSetListener(refreshFigureListener);
 		}
 
 		return reviewModel;
@@ -180,6 +189,7 @@ public class ReviewResourceManager {
 				match.setLeft(getWorkingModel());
 				reviewResource.getContents().add(diffModel);
 			}
+			
 		}
 		return diffModel;
 	}
@@ -239,7 +249,7 @@ public class ReviewResourceManager {
 				CreateAuthorDialog authorDialog= new CreateAuthorDialog(new Shell());
 				authorDialog.open();
 			}
-			final String  authorName=store.getString(RevisionPreferenceConstants.AUTHOR_NAME);
+			final String  authorName=store.getString(RevisionPreferenceConstants.AUTHOR_NAME).trim();
 			final Model reviewModel=getCurrentReviewModel();
 			NamedElement author=reviewModel.getPackagedElement(authorName);
 			if( author==null||!(author instanceof Actor)){
@@ -247,7 +257,7 @@ public class ReviewResourceManager {
 					@Override
 					protected void doExecute() {
 						currentAuthor=UMLFactory.eINSTANCE.createActor();
-						currentAuthor.setName(authorName);
+						currentAuthor.setName(authorName.trim());
 						reviewModel.getPackagedElements().add(currentAuthor);
 						Stereotype authorStereotype= currentAuthor.getApplicableStereotype(I_VersioningStereotype.AUTHOR_STEREOTYPE);
 						currentAuthor.applyStereotype(authorStereotype);
@@ -291,12 +301,13 @@ public class ReviewResourceManager {
 					IFile aReviewModel=((IFile)object);
 					Resource tmpResource =  getCurrentModelSet().getResource(URI.createPlatformResourceURI(aReviewModel.getFullPath().toOSString(), true),true);
 					for (EObject contentEObject : tmpResource.getContents()) {
-						if( contentEObject instanceof Model){
+						if( contentEObject instanceof Model && (((Model)contentEObject).getAppliedStereotype(I_ReviewStereotype.REVIEWREPOSITORY_STEREOTYPE))!=null){
 							reviewModel=(Model)contentEObject;
 						}
 					}
 				}
 			}
+			getDomain().addResourceSetListener(refreshFigureListener);
 			return reviewModel;
 	}
 	/**
@@ -349,6 +360,7 @@ public class ReviewResourceManager {
 			}
 		};
 		getDomain().getCommandStack().execute(cmd);
+		getDomain().addResourceSetListener(refreshFigureListener);
 
 		return reviewModel;
 	}
@@ -503,6 +515,7 @@ public class ReviewResourceManager {
 				//getDiffModel().getConflicts().clear();
 				//getDiffModel().getDifferences().clear();
 				//getDiffModel().getMatches().clear();
+				
 				if( getDiffModel().getMatches().size()==0){
 					Match match= CompareFactory.eINSTANCE.createMatch();
 					match.setLeft(getWorkingModel());

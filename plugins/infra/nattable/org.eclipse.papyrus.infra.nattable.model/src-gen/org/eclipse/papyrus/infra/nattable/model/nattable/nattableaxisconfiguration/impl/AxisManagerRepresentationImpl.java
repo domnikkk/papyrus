@@ -19,12 +19,12 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IAxisConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ILabelProviderConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.impl.StyledElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,21 +34,15 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.I
  * The following features are implemented:
  * <ul>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerRepresentationImpl#getAxisManagerId <em>Axis Manager Id</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerRepresentationImpl#getLabelProviderContext
- * <em>Label Provider Context</em>}</li>
- * <li>
- * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerRepresentationImpl#getHeaderLabelConfiguration
- * <em>Header Label Configuration</em>}</li>
- * <li>
- * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerRepresentationImpl#getSpecificAxisConfigurations
- * <em>Specific Axis Configurations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerRepresentationImpl#getLabelProviderContext <em>Label Provider Context</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerRepresentationImpl#getHeaderLabelConfiguration <em>Header Label Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerRepresentationImpl#getSpecificAxisConfigurations <em>Specific Axis Configurations</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class AxisManagerRepresentationImpl extends MinimalEObjectImpl.Container implements AxisManagerRepresentation {
-
+public class AxisManagerRepresentationImpl extends StyledElementImpl implements AxisManagerRepresentation {
 	/**
 	 * The default value of the '{@link #getAxisManagerId() <em>Axis Manager Id</em>}' attribute.
 	 * <!-- begin-user-doc -->

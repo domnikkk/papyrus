@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.eclipse.uml2.uml.diagram; singleton:=true
-Bundle-Version: 0.8.0.qualifier
+Bundle-SymbolicName: org.eclipse.papyrus.example.diagram.simplediagram;singleton:=true
+Bundle-Version: 1.0.1.qualifier
 Bundle-Activator: org.eclipse.papyrus.example.diagram.simplediagram.part.UMLDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.ui,
@@ -33,11 +33,14 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.eclipse.gef,
- org.eclipse.papyrus.preferences,
  org.eclipse.papyrus.extensionpoints.editors,
- org.eclipse.papyrus.core,
- org.eclipse.papyrus.diagram.common,
- org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport
+ org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,
+ org.eclipse.papyrus.infra.gmfdiag.common;bundle-version="1.0.1",
+ org.eclipse.gmf.tooling.runtime;visibility:=reexport,
+ org.eclipse.gmf.codegen.xtend,
+ org.eclipse.papyrus.infra.gmfdiag.commands;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.viewpoints.policy;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.core;bundle-version="1.0.1"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
@@ -46,7 +49,3 @@ Export-Package: org.eclipse.papyrus.example.diagram.simplediagram.edit.parts,
  org.eclipse.papyrus.example.diagram.simplediagram.part,
  org.eclipse.papyrus.example.diagram.simplediagram.providers
 Eclipse-LazyStart: true
-Import-Package: org.eclipse.papyrus.core.adaptor.gmf,
- org.eclipse.papyrus.core.editor,
- org.eclipse.papyrus.diagram.common.listeners,
- org.eclipse.papyrus.example.diagram.simplediagram.edit.parts

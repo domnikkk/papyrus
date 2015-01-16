@@ -56,8 +56,8 @@ public class RowDestroyAxisElementHandler extends AbstractTableHandler {
 		final IAxisManager axisManager = getRowAxisManager();
 		if (axisManager != null) {
 			this.eventData = getNatEventData(evaluationContext);
-			final List<Integer> col = getFullSelectedRowsIndex(this.eventData);
-			enabled = axisManager.canDestroyAxisElement(col);
+			final List<Integer> rows = getFullSelectedRowsIndex(this.eventData);
+			enabled = axisManager.canDestroyAxisElement(rows);
 		}
 		setBaseEnabled(enabled);
 	}

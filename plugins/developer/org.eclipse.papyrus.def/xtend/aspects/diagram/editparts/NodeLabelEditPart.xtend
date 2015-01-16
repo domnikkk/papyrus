@@ -55,7 +55,7 @@ override extendsList (GenNodeLabel it) '''extends org.eclipse.papyrus.infra.gmfd
 	
 		«generatedMemberComment»
 		protected void addOwnerElementListeners() {
-			addListenerFilter(ADD_PARENT_MODEL, this, ((org.eclipse.gmf.runtime.notation.View) getParent().getModel())); //$NON-NLS-1$
+			addListenerFilter(ADD_PARENT_MODEL, this, ((org.eclipse.gmf.runtime.notation.View) getParent().getModel()));
 	
 		}
 	

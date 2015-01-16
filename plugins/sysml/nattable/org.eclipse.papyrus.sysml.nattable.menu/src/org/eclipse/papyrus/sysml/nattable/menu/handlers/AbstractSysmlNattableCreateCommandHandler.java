@@ -51,7 +51,7 @@ public abstract class AbstractSysmlNattableCreateCommandHandler extends Abstract
 	 */
 	@Override
 	protected ICommandContext getCommandContext() {
-		return TableMenuUtils.getTableCommandContext(INattableModelManagerUtils.getTableManagerFromWorkbenchPart(getActiveWorkbenchPart()));
+		return TableMenuUtils.getTableCreateElementCommandContext(INattableModelManagerUtils.getTableManagerFromWorkbenchPart(getActiveWorkbenchPart()));
 
 	}
 

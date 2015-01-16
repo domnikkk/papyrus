@@ -11,6 +11,7 @@
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 430701
  *  Christian W. Damus (CEA) - bug 433320
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 454891
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.menu.handlers;
@@ -34,6 +35,7 @@ import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForHandlers;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.ServiceUtilsForEditPart;
+import org.eclipse.ui.ISources;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
@@ -113,12 +115,14 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractHandler {
 	@Override
 	public void setEnabled(Object evaluationContext) {
 		if (evaluationContext instanceof IEvaluationContext) {
-			Object selection = ((IEvaluationContext) evaluationContext).getDefaultVariable();
+			Object selection = ((IEvaluationContext) evaluationContext).getVariable(ISources.ACTIVE_CURRENT_SELECTION_NAME);
 			if (selection instanceof Collection<?>) {
 				this.selection = (selection instanceof List<?>) ? (List<?>) selection : new java.util.ArrayList<Object>((Collection<?>) selection);
-				setBaseEnabled(computeEnabled());
-				this.selection = Collections.EMPTY_LIST;
+			} else if (selection instanceof IStructuredSelection) {
+				this.selection = ((IStructuredSelection) selection).toList();
 			}
+			setBaseEnabled(computeEnabled());
+			this.selection = Collections.EMPTY_LIST;
 		}
 		super.setEnabled(evaluationContext);
 	}
@@ -130,7 +134,7 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractHandler {
 		if ((domain != null) && !TransactionHelper.isDisposed(domain)) {
 			Command command = getCommand();
 			if (command != null) {
-				result = getCommand().canExecute();
+				result = command.canExecute();
 				command.dispose();
 			}
 		}

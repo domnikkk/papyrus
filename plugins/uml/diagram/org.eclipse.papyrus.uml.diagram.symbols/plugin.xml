@@ -28,17 +28,6 @@
             provider="CEA LIST">
       </profile>
    </extension>
-    <extension
-         point="org.eclipse.papyrus.infra.gmfdiag.common.shapeProvider">
-      <shapeProvider
-            class="org.eclipse.papyrus.uml.diagram.symbols.provider.ActorShapeProvider"
-            description="Provides the shapes for UML::Actors or elements typed by an Actor"
-            id="org.eclipse.papyrus.uml.diagram.symbols.actorshapeprovider"
-            name="Actor Shape Provider">
-         <Priority
-               name="Lowest"></Priority>
-      </shapeProvider>
-   </extension>
    <extension
          point="org.eclipse.papyrus.infra.gmfdiag.common.shapeProvider">
       <shapeProvider
@@ -83,6 +72,18 @@
          description="Provides the shapes based on the type of the element represented by the lifeline. Relies on TypedElementShapeProvider"
          id="org.eclipse.papyrus.uml.diagram.symbols.lifelineshapeprovider"
          name="Lifeline Shape Provider">
+      <Priority
+            name="Lowest">
+      </Priority>
+   </shapeProvider>
+</extension>
+<extension
+      point="org.eclipse.papyrus.infra.gmfdiag.common.shapeProvider">
+   <shapeProvider
+         class="org.eclipse.papyrus.uml.diagram.symbols.provider.AcceptEventActionShapeProvider"
+         description="Provides the shapes for UMLElement  or elements typed by"
+         id="org.eclipse.papyrus.uml.diagram.symbols.umlshapeprovider"
+         name="UML Element Shape Provider">
       <Priority
             name="Lowest">
       </Priority>

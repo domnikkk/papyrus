@@ -80,7 +80,7 @@ public class ValueSpecificationUtil {
 			case UMLPackage.EXPRESSION:
 				Expression expr = (Expression) specification;
 				if (!expr.getOperands().isEmpty()) {
-					StringBuffer operandsBuff = new StringBuffer(expr.getSymbol());
+					StringBuffer operandsBuff = new StringBuffer(expr.getSymbol() == null ? "" : expr.getSymbol());
 					operandsBuff.append("(");
 					int initialLength = operandsBuff.length();
 					for (ValueSpecification operand : expr.getOperands()) {

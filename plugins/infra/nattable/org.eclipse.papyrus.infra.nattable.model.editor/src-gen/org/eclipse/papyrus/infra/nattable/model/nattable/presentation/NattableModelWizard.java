@@ -78,7 +78,6 @@ import org.eclipse.ui.part.ISetSelectionTarget;
  * @generated
  */
 public class NattableModelWizard extends Wizard implements INewWizard {
-
 	/**
 	 * The supported extensions for created files.
 	 * <!-- begin-user-doc -->
@@ -86,7 +85,8 @@ public class NattableModelWizard extends Wizard implements INewWizard {
 	 *
 	 * @generated
 	 */
-	public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays.asList(NattableEditorPlugin.INSTANCE.getString("_UI_NattableEditorFilenameExtensions").split("\\s*,\\s*"))); //$NON-NLS-1$ //$NON-NLS-2$
+	public static final List<String> FILE_EXTENSIONS =
+			Collections.unmodifiableList(Arrays.asList(NattableEditorPlugin.INSTANCE.getString("_UI_NattableEditorFilenameExtensions").split("\\s*,\\s*"))); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
@@ -95,7 +95,8 @@ public class NattableModelWizard extends Wizard implements INewWizard {
 	 *
 	 * @generated
 	 */
-	public static final String FORMATTED_FILE_EXTENSIONS = NattableEditorPlugin.INSTANCE.getString("_UI_NattableEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", "); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+	public static final String FORMATTED_FILE_EXTENSIONS =
+			NattableEditorPlugin.INSTANCE.getString("_UI_NattableEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", "); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
 	/**
 	 * This caches an instance of the model package.
@@ -227,42 +228,44 @@ public class NattableModelWizard extends Wizard implements INewWizard {
 
 			// Do the work within an operation.
 			//
-			WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
+			WorkspaceModifyOperation operation =
+					new WorkspaceModifyOperation() {
+						@Override
+						protected void execute(IProgressMonitor progressMonitor) {
+							try {
+								// Create a resource set
+								//
+								ResourceSet resourceSet = new ResourceSetImpl();
 
-				@Override
-				protected void execute(IProgressMonitor progressMonitor) {
-					try {
-						// Create a resource set
-						//
-						ResourceSet resourceSet = new ResourceSetImpl();
+								// Get the URI of the model file.
+								//
+								URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 
-						// Get the URI of the model file.
-						//
-						URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+								// Create a resource for this file.
+								//
+								Resource resource = resourceSet.createResource(fileURI);
 
-						// Create a resource for this file.
-						//
-						Resource resource = resourceSet.createResource(fileURI);
+								// Add the initial model object to the contents.
+								//
+								EObject rootObject = createInitialModel();
+								if (rootObject != null) {
+									resource.getContents().add(rootObject);
+								}
 
-						// Add the initial model object to the contents.
-						//
-						EObject rootObject = createInitialModel();
-						if (rootObject != null) {
-							resource.getContents().add(rootObject);
+								// Save the contents of the resource to the file system.
+								//
+								Map<Object, Object> options = new HashMap<Object, Object>();
+								options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
+								resource.save(options);
+							}
+							catch (Exception exception) {
+								NattableEditorPlugin.INSTANCE.log(exception);
+							}
+							finally {
+								progressMonitor.done();
+							}
 						}
-
-						// Save the contents of the resource to the file system.
-						//
-						Map<Object, Object> options = new HashMap<Object, Object>();
-						options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
-						resource.save(options);
-					} catch (Exception exception) {
-						NattableEditorPlugin.INSTANCE.log(exception);
-					} finally {
-						progressMonitor.done();
-					}
-				}
-			};
+					};
 
 			getContainer().run(false, false, operation);
 
@@ -273,19 +276,21 @@ public class NattableModelWizard extends Wizard implements INewWizard {
 			final IWorkbenchPart activePart = page.getActivePart();
 			if (activePart instanceof ISetSelectionTarget) {
 				final ISelection targetSelection = new StructuredSelection(modelFile);
-				getShell().getDisplay().asyncExec(new Runnable() {
-
-					@Override
-					public void run() {
-						((ISetSelectionTarget) activePart).selectReveal(targetSelection);
-					}
-				});
+				getShell().getDisplay().asyncExec
+						(new Runnable() {
+							@Override
+							public void run() {
+								((ISetSelectionTarget) activePart).selectReveal(targetSelection);
+							}
+						});
 			}
 
 			// Open an editor on the new file.
 			//
 			try {
-				page.openEditor(new FileEditorInput(modelFile), workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
+				page.openEditor
+						(new FileEditorInput(modelFile),
+								workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
 			} catch (PartInitException exception) {
 				MessageDialog.openError(workbenchWindow.getShell(), NattableEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage()); //$NON-NLS-1$
 				return false;
@@ -306,7 +311,6 @@ public class NattableModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public class NattableModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
-
 		/**
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
@@ -358,7 +362,6 @@ public class NattableModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public class NattableModelWizardInitialObjectCreationPage extends WizardPage {
-
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -474,13 +477,13 @@ public class NattableModelWizard extends Wizard implements INewWizard {
 		 *
 		 * @generated
 		 */
-		protected ModifyListener validator = new ModifyListener() {
-
-			@Override
-			public void modifyText(ModifyEvent e) {
-				setPageComplete(validatePage());
-			}
-		};
+		protected ModifyListener validator =
+				new ModifyListener() {
+					@Override
+					public void modifyText(ModifyEvent e) {
+						setPageComplete(validatePage());
+					}
+				};
 
 		/**
 		 * <!-- begin-user-doc -->
@@ -505,7 +508,8 @@ public class NattableModelWizard extends Wizard implements INewWizard {
 				if (initialObjectField.getItemCount() == 1) {
 					initialObjectField.clearSelection();
 					encodingField.setFocus();
-				} else {
+				}
+				else {
 					encodingField.clearSelection();
 					initialObjectField.setFocus();
 				}

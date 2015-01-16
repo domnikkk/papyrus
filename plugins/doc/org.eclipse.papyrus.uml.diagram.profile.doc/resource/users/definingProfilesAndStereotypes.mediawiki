@@ -1,0 +1,113 @@
+= Defining Profiles and Stereotypes =
+'''Contents'''
+__TOC__
+
+
+In UML, Stereotypes should be defined in a UML Profile. A UML Profile is a kind of uml::Package.
+
+Papyrus allows to create Profiles and Sterotypes in any kind of models. But, if you want to define Profiles and Stereotypes in order to apply them to UML elements, '''you need to define a Profile in a Papyrus profile resource (file)'''.
+
+Defining Stereotypes with Papyrus required the following:
+* A '''profile resource''' - The resource (file) containing the profile (uml+di+notation files)
+* A '''uml::Profile''' - The uml element containing the Stereotypes
+* The '''Stereotype''' - The uml::Stereotype element defining the Stereotype
+
+
+== Creating a Profile Resource ==
+
+To create a new Profile, select File > New > Papyrus Project (Or Papyrus model, if you already have an opened project). When asked for a Diagram Language, Select "Profile":
+
+[[Image:images/newProfile.png|New Profile]]<br>
+
+[[Image:images/newProfileDiagram.png|New Profile Diagram]]<br>
+
+[[Image:images/profileEditor.png|Profile Editor]]<br>
+
+This creates a Resource containing a uml::Profile as root element.
+
+== Defining a Stereotype ==
+
+Once a profile is created, it is now time to populate this latter with UML extensions, i.e. stereotypes, and their related concepts such as properties, extensions, and metaclasses.
+
+=== Creating a Stereotype ===
+
+A stereotype is created as any other UML model elements in Papyrus: select the related tool in the palette of the profile diagram editor, and then click in the place you want to create this element on the background of the diagram. If the palette is not open, just click on the small arrow on the upper right corner of the diagram editor. Papyrus will then ask you to provide a name. Once done, hit the return key and that all.
+
+[[Image:images/stereotypePalette.png|Stereotype Palette]]<br>
+
+[[Image:images/stereotypeName.png|Stereotype Name]]<br>
+
+=== Importing Metaclass ===
+
+Once you have created a stereotype, you need to import the UML2 metaclasses you want to extend. First, you have to select the tool â€œImport Metaclassâ€� within the palette of the profile diagram editor. Then, letâ€™s click on the profile diagram where you want to drop the imported metaclass. A Papyrus dialog box is then opened in order to ask you to specify which metaclasses you want to import. Select the metaclasses in the left list and either drag and drop these latter in the right list or press the button with arrow directed from left to right and located between both aforementioned lists. Then, letâ€™s press the button â€œokâ€� and it is done. The imported metaclasses are then shown in the diagram as illustrated.
+
+[[Image:images/importMetaclassDialog.png|Import Metaclass]]<br>
+
+[[Image:images/importedMetaclass.png|Imported Metaclass]]<br>
+
+Note: When you import UML2 metaclasses, Papyrus is creating ImportElement model element referent to the metaclasses of the UML2 metamodel itself. Those so-called specific model elements, the ImportElement, are indeed a kind of proxy to the model elements contained in another model, in the UML2 metamodel. If a metaclass has already be imported, you do not need to import it again to use it in another context. You can select the imported meta-class from the model browser and drag and drop this latter on the diagram you want to use it.
+
+=== Linking Stereotype to Metaclass : Extension Creation ===
+
+Once the stereotype is created and the meta-class is imported, you may then model the extension relation from the stereotype to the meta-class as shown in the following figure. The extension relationship is modeled using the extension tool in the profile diagram palette, [[Image:images/Extension.gif|Extension]]. Within the diagram shown in next figure, both stereotypes Â«RequirementÂ» and Â«RefinementÂ» extend respectively both meta-classes Class and Dependency:
+
+[[Image:images/metaclassExtension.png|Metaclass Extension]]<br>
+
+== Creating a Subprofile ==
+
+Some profile may be complex due as for example to their scope that may be large. In order to cope with this complexity, it is then possible to decompose a profile into a hierarchy of subprofiles. A subprofile behaves such as a sub-package; it is a container of stereotypes.
+
+To create a sub profile, select the profile tool in the profile diagram palette ([[Image:images/Profile.gif|Profile]]) and then click on the profile diagram where you want to create your new profile.
+
+In the example denoted below, we have created two sub-profiles of the SimplifiedReqML profile in order to gather in one hand the extensions that apply to node elements of the models and in the other hand the extension defined in the DSML for modeling relationships between those nodes:
+
+[[Image:images/subProfiles.png|Sub Profiles]]<br>
+
+== Generalizing Stereotype  ==
+
+When designing a profile, it is possible to reuse existing stereotypes defined in other existing profiles. Stereotypes can indeed be generalized enabling to create child stereotypes that inherit features of one or more generalized stereotype define either locally in the profile or externally other profiles.
+
+To create a stereotype generalization using the profile diagram editor, letâ€™s draw a generalization relationship using the tool [[Image:images/Generalization.gif|Generalization]] from the palette. As any relationship within Papyrus, you need to click first on the source and then on the target of the relationship you want to model.
+
+In our example, there exists in the UML predefined profile a stereotype extending the dependency relationship in order to introduce the concept of refinement: Â«RefineÂ». Consequently, we will redesign our sub-profile SRMLRelationship in order our stereotype Â«RefinementÂ» to be a specialization of this UML stereotype instead of directly extending the UML dependency meta-class.
+
+As previously mentioned, you may extend a stereotype defined in your profile or a stereotype defined in another external profile. In the latter case, the first thing to do is to import the profile where the stereotype has been defined, as denoted in the following example:
+
+[[Image:images/importProfile.png|Import Profile]]<br>
+
+[[Image:images/selectProfile.png|Select Profile]]<br>
+
+Once the profile has been imported, you can select the stereotype you want to generalize from the imported profile (In the Model Explorer) and drop this latter in the diagram of profile description: 
+
+[[Image:images/dropStereotype.png|Drop Stereotype]]<br>
+
+Now, letâ€™s draw the generalization relationship from your stereotype (e.g., Â«RefinementÂ» in the figure below) to the generalized stereotype (e.g., Â«RefineÂ» in the figure below). 
+
+[[Image:images/generalizeStereotype.png|Generalize Stereotype]]<br>
+
+At this point, your diagram should look like something like the one shown here:
+
+[[Image:images/resultProfile.png|Result Profile]]<br>
+
+== Displaying Stereotype Options ==
+
+When a stereotype application is shown in a diagram, the by-default way to show it within diagrams is using a string where the name of the stereotype is shown within a pair of French guillemets above or before the name of the model element. However, it is also possible to modify the graphical appearance of the annotated model element using icons. If the graphical representation of the model element is something like a box (including ellipse of the use cases), the icons can be displayed inside and on top of the figures, or it may replace this latter. In that latter case, the property of the element cannot be shown and the name of the model element appears within a label displayed near the icon. If the model element is graphically denoted by a line, the icon is shown in front of the name of the link.
+
+In order to specify the icons you want to attach to a stereotype, select the stereotype and the tab UML of the property view. In the right-upper corner of the widget named â€œiconsâ€�, press the button [[Image:images/Add.gif|Add]] to add a new icon as shown in step 1. Once done, the dialog box shown at step 2 is open. Within this latter, letâ€™s fill in a name and select an image file using the button [[Image:images/Add.gif|Add]] defining the content of the icon. Next, you have to define the kind value: icon or shape. Using this property, you can choose to associate the selected image either as an icon or as a shape.
+
+[[Image:images/iconsForStereotype.png|Step 1: Icons for Stereotypes]]<br>
+
+[[Image:images/selectIcon.png|Step 2: Select Icon]]<br>
+
+It is possible to associate only one shape to a stereotype, but you can associate different icons to a same stereotype. In that latter case, there is a description property that is used to select which one to display. By default, if no expression is defined, the first one is the list is chosen for displaying. The expression has to be on a property of the stereotype which type is an enumeration type.
+In our example, we can set different icons to the stereotype Â«RequirementÂ» depending on the value of its importance property. This latter is indeed typed by the ImportanceLevel enumeration which values may be High, Medium of Low (figure shown below). For this example, we will then associate the three following images [[Image:images/high.png|High]], [[Image:images/medium.png|Medium]], and [[Image:images/low.png|Low]], to the stereotype Â«RequirementÂ» and their related expression will be respectively importance=High (e.g. figure shown below), importance=Medium and importance=Low.
+
+[[Image:images/manyStereotypeIcons.png|Many Stereotype Icons]]<br>
+
+[[Image:images/iconKind.png|Icon Kind]]<br>
+
+[[Image:images/iconExpressions.png|Icon Expressions]]<br>
+
+[[Image:images/highReqIcon.png|High Req. Icon]]<br>
+
+

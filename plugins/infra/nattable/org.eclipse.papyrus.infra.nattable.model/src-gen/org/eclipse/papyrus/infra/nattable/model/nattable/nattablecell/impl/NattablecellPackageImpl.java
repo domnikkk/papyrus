@@ -39,6 +39,8 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.N
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.NattablelabelproviderPackageImpl;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.NattableproblemPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.impl.NattableproblemPackageImpl;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.NattablestylePackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.impl.NattablestylePackageImpl;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.NattabletesterPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl.NattabletesterPackageImpl;
 
@@ -50,7 +52,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl.Nat
  * @generated
  */
 public class NattablecellPackageImpl extends EPackageImpl implements NattablecellPackage {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -84,8 +85,7 @@ public class NattablecellPackageImpl extends EPackageImpl implements Nattablecel
 	private EClass idAxisWrapperEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
-	 * package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -136,19 +136,24 @@ public class NattablecellPackageImpl extends EPackageImpl implements Nattablecel
 		NattablePackageImpl theNattablePackage = (NattablePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattablePackage.eNS_URI) instanceof NattablePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NattablePackage.eNS_URI)
 				: NattablePackage.eINSTANCE);
 		NattableconfigurationPackageImpl theNattableconfigurationPackage = (NattableconfigurationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattableconfigurationPackage.eNS_URI) instanceof NattableconfigurationPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(NattableconfigurationPackage.eNS_URI) : NattableconfigurationPackage.eINSTANCE);
+				.getEPackage(NattableconfigurationPackage.eNS_URI)
+				: NattableconfigurationPackage.eINSTANCE);
 		NattableaxisproviderPackageImpl theNattableaxisproviderPackage = (NattableaxisproviderPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattableaxisproviderPackage.eNS_URI) instanceof NattableaxisproviderPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(NattableaxisproviderPackage.eNS_URI) : NattableaxisproviderPackage.eINSTANCE);
 		NattablelabelproviderPackageImpl theNattablelabelproviderPackage = (NattablelabelproviderPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattablelabelproviderPackage.eNS_URI) instanceof NattablelabelproviderPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(NattablelabelproviderPackage.eNS_URI) : NattablelabelproviderPackage.eINSTANCE);
+				.getEPackage(NattablelabelproviderPackage.eNS_URI)
+				: NattablelabelproviderPackage.eINSTANCE);
 		NattableaxisconfigurationPackageImpl theNattableaxisconfigurationPackage = (NattableaxisconfigurationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattableaxisconfigurationPackage.eNS_URI) instanceof NattableaxisconfigurationPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(NattableaxisconfigurationPackage.eNS_URI) : NattableaxisconfigurationPackage.eINSTANCE);
+				.getEPackage(NattableaxisconfigurationPackage.eNS_URI)
+				: NattableaxisconfigurationPackage.eINSTANCE);
 		NattabletesterPackageImpl theNattabletesterPackage = (NattabletesterPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattabletesterPackage.eNS_URI) instanceof NattabletesterPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(NattabletesterPackage.eNS_URI) : NattabletesterPackage.eINSTANCE);
 		NattableaxisPackageImpl theNattableaxisPackage = (NattableaxisPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattableaxisPackage.eNS_URI) instanceof NattableaxisPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NattableaxisPackage.eNS_URI)
 				: NattableaxisPackage.eINSTANCE);
 		NattableproblemPackageImpl theNattableproblemPackage = (NattableproblemPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattableproblemPackage.eNS_URI) instanceof NattableproblemPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(NattableproblemPackage.eNS_URI) : NattableproblemPackage.eINSTANCE);
+		NattablestylePackageImpl theNattablestylePackage = (NattablestylePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattablestylePackage.eNS_URI) instanceof NattablestylePackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(NattablestylePackage.eNS_URI) : NattablestylePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theNattablecellPackage.createPackageContents();
@@ -160,6 +165,7 @@ public class NattablecellPackageImpl extends EPackageImpl implements Nattablecel
 		theNattabletesterPackage.createPackageContents();
 		theNattableaxisPackage.createPackageContents();
 		theNattableproblemPackage.createPackageContents();
+		theNattablestylePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theNattablecellPackage.initializePackageContents();
@@ -171,6 +177,7 @@ public class NattablecellPackageImpl extends EPackageImpl implements Nattablecel
 		theNattabletesterPackage.initializePackageContents();
 		theNattableaxisPackage.initializePackageContents();
 		theNattableproblemPackage.initializePackageContents();
+		theNattablestylePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theNattablecellPackage.freeze();
@@ -368,6 +375,7 @@ public class NattablecellPackageImpl extends EPackageImpl implements Nattablecel
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		NattableproblemPackage theNattableproblemPackage = (NattableproblemPackage) EPackage.Registry.INSTANCE.getEPackage(NattableproblemPackage.eNS_URI);
 
 		// Create type parameters
@@ -375,8 +383,8 @@ public class NattablecellPackageImpl extends EPackageImpl implements Nattablecel
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		cellEClass.getESuperTypes().add(ecorePackage.getEModelElement());
-		iCellAxisWrapperEClass.getESuperTypes().add(ecorePackage.getEModelElement());
+		cellEClass.getESuperTypes().add(theEcorePackage.getEModelElement());
+		iCellAxisWrapperEClass.getESuperTypes().add(theEcorePackage.getEModelElement());
 		eObjectAxisWrapperEClass.getESuperTypes().add(this.getICellAxisWrapper());
 		idAxisWrapperEClass.getESuperTypes().add(this.getICellAxisWrapper());
 

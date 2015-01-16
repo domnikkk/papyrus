@@ -12,17 +12,21 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.figure.node;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
+import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.text.BlockFlow;
 import org.eclipse.draw2d.text.FlowPage;
-import org.eclipse.gmf.runtime.common.ui.util.DisplayUtils;
+import org.eclipse.draw2d.text.TextFlow;
 import org.eclipse.gmf.runtime.draw2d.ui.text.TextFlowEx;
 import org.eclipse.jface.resource.FontDescriptor;
 import org.eclipse.jface.resource.JFaceResources;
@@ -32,7 +36,6 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.widgets.Display;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -49,7 +52,13 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 	static final Color THIS_BACK = new Color(null, 248, 249, 214);
 
 	/** font used by default by this figure */
-	static final Font FCORNERBENTCONTENTLABEL_FONT = new Font(Display.getCurrent(), "Arial", 8, SWT.NORMAL);
+	private static final FontData DEFAULT_FONT = new FontData("Arial", 8, SWT.NORMAL);
+
+	/** font used for sampleCode by this figure */
+	private static final FontData CODE_SAMPLE_FONT = new FontData("Lucida Console", 8, SWT.NORMAL);
+
+	/** font used for quote by this figure */
+	private static final FontData QUOTE_FONT = new FontData("Monotype Corsiva", 10, SWT.NORMAL);
 
 	/** key for the font style, corresponding to the type of font */
 	private static final String FONT_NAME = "face";
@@ -60,8 +69,8 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 	/** main flow page */
 	protected FlowPage page;
 
-	/** properties stack to store which format to apply */
-	protected Stack<Styles> textProperties = new Stack<Styles>();
+	/** text styles stack */
+	private final List<List<Styles>> myStyles = new ArrayList<List<Styles>>();
 
 	/** font used for the figure */
 	private FontData currentFontData;
@@ -81,7 +90,6 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 		super();
 		this.setBackgroundColor(THIS_BACK);
 		createContents();
-
 	}
 
 	/**
@@ -204,17 +212,16 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 		// parse the HMTL text and transforms it into a tree. "Body" tags
 		// enforce the character chain to be a valid xml chain
 		NodeList nodeList = generateNodeList("<body>" + text + "</body>");
-
+		myStyles.clear();
 		// generate blocks from this list and adds it to the flow page children
 		if (nodeList.getLength() > 0) {
-			generateBlocksFromNodeList(nodeList, page);
+			generateBlocksFromNodeList(nodeList, page, new Stack<Styles>());
 		} else {
 			// problem during parsing
 			// return only one text flow with the content of the text
 			TextFlowEx textFlow = new TextFlowEx(text);
 			page.add(textFlow);
 		}
-
 	}
 
 	/**
@@ -223,7 +230,7 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 	 * @param nodeList
 	 *            the list of nodes from which to generates the blockflows
 	 */
-	protected void generateBlocksFromNodeList(NodeList nodeList, BlockFlow parentFlow) {
+	protected void generateBlocksFromNodeList(NodeList nodeList, BlockFlow parentFlow, Stack<Styles> stylesStack) {
 		// for each element in the list, generates the corresponding blocks
 		for (int i = 0; i < nodeList.getLength(); i++) {
 			Node node = nodeList.item(i);
@@ -232,32 +239,38 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 
 			short nodeType = node.getNodeType();
 			if (nodeType == Node.TEXT_NODE) {
-				generateTextFromTextNode(node, parentFlow);
+				String text = HTMLCleaner.cleanHTMLTags(node.getNodeValue());
+				if (text == null || text.trim().isEmpty()) {
+					continue;
+				}
+				List<Styles> styles = Collections.list(stylesStack.elements());
+				myStyles.add(styles);
+				generateTextFromTextNode(text, parentFlow, styles);
 			} else {
 				try {
 					switch (HTMLTags.valueOf(nodeName)) {
 					case body: // main tag for the comment body
 						// create a block for the body
-						generateBlocksFromBodyNode(node, parentFlow);
+						generateBlocksFromBodyNode(node, parentFlow, stylesStack);
 						break;
 					case h3:
-						generateBlocksFromH3Node(node, parentFlow);
+						generateBlocksFromH3Node(node, parentFlow, stylesStack);
 						break;
 					case h4: // sub section heading
-						generateBlocksFromH4Node(node, parentFlow);
+						generateBlocksFromH4Node(node, parentFlow, stylesStack);
 						break;
 					case h5: // sub sub section heading
-						generateBlocksFromH5Node(node, parentFlow);
+						generateBlocksFromH5Node(node, parentFlow, stylesStack);
 						break;
 					case strong: // bold character
 					case b:
-						generateBlocksFromStrongNode(node, parentFlow);
+						generateBlocksFromStrongNode(node, parentFlow, stylesStack);
 						break;
 					case em: // italic
-						generateBlocksFromItalicNode(node, parentFlow);
+						generateBlocksFromItalicNode(node, parentFlow, stylesStack);
 						break;
 					case u: // underline
-						generateBlocksFromUnderlineNode(node, parentFlow);
+						generateBlocksFromUnderlineNode(node, parentFlow, stylesStack);
 						break;
 					case sub: // subscript
 						break;
@@ -268,13 +281,13 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 					case table: // table
 						break;
 					case p: // paragraph
-						generateBlocksFromParagraphNode(node, parentFlow);
+						generateBlocksFromParagraphNode(node, parentFlow, stylesStack);
 						break;
 					case br:
 						generateBlocksFromBRNode(node, parentFlow);
 						break;
 					case font:
-						generateBlocksForFontNode(node, parentFlow);
+						generateBlocksForFontNode(node, parentFlow, stylesStack);
 						break;
 					default:
 						break;
@@ -295,46 +308,152 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 	 * @param parentFlow
 	 *            the parent block flow which will contain the block created
 	 */
-	protected void generateBlocksFromUnderlineNode(Node node, BlockFlow parentFlow) {
+	protected void generateBlocksFromUnderlineNode(Node node, BlockFlow parentFlow, Stack<Styles> styles) {
 		NodeList childrenNodes = node.getChildNodes();
 
-		textProperties.push(Styles.underline);
-		generateBlocksFromNodeList(childrenNodes, parentFlow);
-		textProperties.pop();
+		styles.push(Styles.underline);
+		generateBlocksFromNodeList(childrenNodes, parentFlow, styles);
+		styles.pop();
+	}
+
+	/**
+	 * Overides Figure.setFont() method
+	 * setup font for all TextFlow childes of this figure
+	 * 
+	 */
+	@Override
+	public void setFont(Font f) {
+		super.setFont(f);
+		List<TextFlow> textFlowList = findTextFlowChildList(page);
+		int i = 0;
+		for (TextFlow nextTextFlow : textFlowList) {
+			nextTextFlow.setFont(calculateCurrentFont(myStyles.get(i)));
+			i++;
+		}
+	}
+
+	/**
+	 * @see HTMLCornerBentFigure.setFont() for using
+	 * 
+	 * @param parent
+	 * @return TextFlow childs list
+	 */
+	private List<TextFlow> findTextFlowChildList(IFigure parent) {
+		List<TextFlow> result = new ArrayList<TextFlow>();
+		for (Object nextFigure : parent.getChildren()) {
+			if (!(nextFigure instanceof TextFlow)) {
+				result.addAll(findTextFlowChildList((IFigure) nextFigure));
+				continue;
+			}
+			result.add((TextFlow) nextFigure);
+		}
+		return result;
 	}
 
 	/**
 	 * Generates code from a node representing a text.
-	 *
+	 * IFigure default font value will setup if styles list is empty.
+	 * 
 	 * @param node
 	 *            the node from which to generate belowk flows
 	 * @param parentFlow
 	 *            the parent block flow which will contain the block created
 	 */
-	protected void generateTextFromTextNode(Node node, BlockFlow parentFlow) {
-		// node has type: TEXT_NODE
-		String text = HTMLCleaner.cleanHTMLTags(node.getNodeValue());
+	protected void generateTextFromTextNode(String text, BlockFlow parentFlow, List<Styles> styles) {
 		TextFlowEx textFlow = new TextFlowEx(text);
-		textFlow.setTextUnderline(false);
+		textFlow.setTextUnderline(getUnderLineFromStyles(styles));
+		textFlow.setFont(calculateCurrentFont(styles));
+		parentFlow.add(textFlow);
+	}
 
-		boolean italic = false;
-		boolean strong = false;
+	/**
+	 * Calculates current font as default figure font + styles
+	 * styles has overrides default font
+	 * It's main method for getting font value by this figure
+	 * 
+	 * @return
+	 */
+	private Font calculateCurrentFont(List<Styles> styles) {
+		return composeFontWithStyles(getDefaultFontData(), styles);
+	}
+
+	/**
+	 * Extracts underLine value from styles
+	 * 
+	 * @see generateTextFromTextNode() for using
+	 * @return
+	 */
+	private boolean getUnderLineFromStyles(List<Styles> styles) {
+		boolean result = false;
+		for (Styles style : styles) {
+			switch (style) {
+			case underline:
+				result = true;
+				break;
+			default:
+				break;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * Clculates default fontData without styles
+	 * 
+	 * @return
+	 */
+	private FontData getDefaultFontData() {
 		boolean quote = false;
 		boolean codeSample = false;
-		String fontName = "Arial";
-		int fontSize = 2;
+		if (codeSample) {
+			return CODE_SAMPLE_FONT;
+		}
+		if (quote) {
+			return QUOTE_FONT;
+		}
+		FontData fromDefaultFigure = getCurrentFigureFontData();
+		if (fromDefaultFigure == null) {
+			return DEFAULT_FONT;
+		}
+		return fromDefaultFigure;
+	}
 
+	/**
+	 * Font -> FontData converter
+	 * 
+	 * @return Current Figure FonData value
+	 */
+	private FontData getCurrentFigureFontData() {
+		if (getFont() == null) {
+			return null;
+		}
+		if (getFont().getFontData() == null || getFont().getFontData().length == 0) {
+			return null;
+		}
+		return getFont().getFontData()[0];
+	}
+
+	/**
+	 * Compose figure font with styles
+	 * 
+	 * @param defaultFontData
+	 * @return
+	 */
+	private Font composeFontWithStyles(FontData defaultFontData, List<Styles> styles) {
+		if (styles == null || styles.isEmpty()) {
+			return (Font) JFaceResources.getResources().get(FontDescriptor.createFrom(defaultFontData));
+		}
+		int defaultStyle = defaultFontData.getStyle();
+		boolean quote = false;
+		boolean codeSample = false;
 		// calculate the font to apply
-		for (Styles style : textProperties) {
+		for (Styles style : styles) {
 			switch (style) {
 			case italic:
-				italic = true;
+				defaultStyle = defaultStyle | SWT.ITALIC;
 				break;
 			case strong:
-				strong = true;
-				break;
-			case underline:
-				textFlow.setTextUnderline(true);
+				defaultStyle = defaultStyle | SWT.BOLD;
 				break;
 			case quote:
 				quote = true;
@@ -343,42 +462,27 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 				codeSample = true;
 				break;
 			case font:
-				fontName = (Styles.font.getData().get(FONT_NAME) != null) ? (String) Styles.font.getData().get(FONT_NAME) : "Arial";
-				fontSize = (Styles.font.getData().get(FONT_SIZE) != null) ? ((Integer) Styles.font.getData().get(FONT_SIZE)) : 2;
+				if (Styles.font.getData().get(FONT_NAME) != null) {
+					defaultFontData.setName((String) Styles.font.getData().get(FONT_NAME));
+				}
+				if (Styles.font.getData().get(FONT_SIZE) != null) {
+					// font size = [1..7] in html, but does not correspond to system
+					// size... 2 by default => 8 in real size.
+					// so: real size = (html font size)+6
+					defaultFontData.setHeight(((Integer) Styles.font.getData().get(FONT_SIZE)) * 2 + 4);
+				}
 				break;
 			default:
 				break;
 			}
-
 		}
-
-		int style = SWT.NORMAL;
-
-		if (italic) {
-			style = style | SWT.ITALIC;
-		}
-
-		if (strong) {
-			style = style | SWT.BOLD;
-		}
-
-		FontData fontData;
+		defaultFontData.setStyle(defaultStyle);
 		if (codeSample) {
-			fontData = new FontData("Lucida Console", 8, style);
+			defaultFontData = CODE_SAMPLE_FONT;
 		} else if (quote) {
-			fontData = new FontData("Monotype Corsiva", 10, style);
-			textFlow.setBackgroundColor(DisplayUtils.getDisplay().getSystemColor(SWT.COLOR_RED));
-		} else {
-			// font size = [1..7] in html, but does not correspond to system
-			// size... 2 by default => 8 in real size.
-			// so: real size = (html font size)+6
-			fontData = new FontData(fontName, 2 * fontSize + 4, style);
+			defaultFontData = QUOTE_FONT;
 		}
-
-		Font font = (Font) JFaceResources.getResources().get(FontDescriptor.createFrom(fontData));
-		textFlow.setFont(font);
-
-		parentFlow.add(textFlow);
+		return (Font) JFaceResources.getResources().get(FontDescriptor.createFrom(defaultFontData));
 	}
 
 	/**
@@ -389,12 +493,12 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 	 * @param parentFlow
 	 *            the parent block flow which will contain the block created
 	 */
-	protected void generateBlocksFromStrongNode(Node node, BlockFlow parentFlow) {
+	protected void generateBlocksFromStrongNode(Node node, BlockFlow parentFlow, Stack<Styles> styles) {
 		NodeList childrenNodes = node.getChildNodes();
 
-		textProperties.push(Styles.strong);
-		generateBlocksFromNodeList(childrenNodes, parentFlow);
-		textProperties.pop();
+		styles.push(Styles.strong);
+		generateBlocksFromNodeList(childrenNodes, parentFlow, styles);
+		styles.pop();
 	}
 
 	/**
@@ -405,12 +509,12 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 	 * @param parentFlow
 	 *            the parent block flow which will contain the block created
 	 */
-	protected void generateBlocksFromItalicNode(Node node, BlockFlow parentFlow) {
+	protected void generateBlocksFromItalicNode(Node node, BlockFlow parentFlow, Stack<Styles> styles) {
 		NodeList childrenNodes = node.getChildNodes();
 
-		textProperties.push(Styles.italic);
-		generateBlocksFromNodeList(childrenNodes, parentFlow);
-		textProperties.pop();
+		styles.push(Styles.italic);
+		generateBlocksFromNodeList(childrenNodes, parentFlow, styles);
+		styles.pop();
 	}
 
 	/**
@@ -421,7 +525,7 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 	 * @param parentFlow
 	 *            the parent block flow which will contain the block created
 	 */
-	protected void generateBlocksForFontNode(Node node, BlockFlow parentFlow) {
+	protected void generateBlocksForFontNode(Node node, BlockFlow parentFlow, Stack<Styles> styles) {
 		// retrieves the font to apply
 		Node fontNameNode = node.getAttributes().getNamedItem("face");
 		Node fontSizeNode = node.getAttributes().getNamedItem("size");
@@ -432,26 +536,26 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 			String fontName = fontNameNode.getNodeValue();
 			oldFont = (Styles.font.getData().get(FONT_NAME) != null) ? (String) Styles.font.getData().get(FONT_NAME) : "Arial";
 			Styles.font.getData().put(FONT_NAME, fontName);
-			textProperties.push(Styles.font);
+			styles.push(Styles.font);
 		}
 		if (fontSizeNode != null) {
 			int fontSize = Integer.parseInt(fontSizeNode.getNodeValue());
 			oldSize = (Styles.font.getData().get(FONT_SIZE) != null) ? ((Integer) Styles.font.getData().get(FONT_SIZE)) : 2;
 			Styles.font.getData().put(FONT_SIZE, fontSize);
-			textProperties.push(Styles.font);
+			styles.push(Styles.font);
 		}
 
 		NodeList childrenNodes = node.getChildNodes();
 
-		generateBlocksFromNodeList(childrenNodes, parentFlow);
+		generateBlocksFromNodeList(childrenNodes, parentFlow, styles);
 
 		if (fontNameNode != null) {
 			Styles.font.getData().put(FONT_NAME, oldFont);
-			textProperties.pop();
+			styles.pop();
 		}
 		if (fontSizeNode != null) {
 			Styles.font.getData().put(FONT_SIZE, oldSize);
-			textProperties.pop();
+			styles.pop();
 		}
 	}
 
@@ -463,13 +567,13 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 	 * @param parentFlow
 	 *            the parent block flow which will contain the block created
 	 */
-	protected void generateBlocksFromH3Node(Node node, BlockFlow parentFlow) {
+	protected void generateBlocksFromH3Node(Node node, BlockFlow parentFlow, Stack<Styles> styles) {
 		BlockFlow blockFlow = new BlockFlow();
 		NodeList childrenNodes = node.getChildNodes();
 
-		textProperties.push(Styles.header3);
-		generateBlocksFromNodeList(childrenNodes, blockFlow);
-		textProperties.pop();
+		styles.push(Styles.header3);
+		generateBlocksFromNodeList(childrenNodes, blockFlow, styles);
+		styles.pop();
 		parentFlow.add(blockFlow);
 	}
 
@@ -481,13 +585,13 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 	 * @param parentFlow
 	 *            the parent block flow which will contain the block created
 	 */
-	protected void generateBlocksFromH4Node(Node node, BlockFlow parentFlow) {
+	protected void generateBlocksFromH4Node(Node node, BlockFlow parentFlow, Stack<Styles> styles) {
 		BlockFlow blockFlow = new BlockFlow();
 		NodeList childrenNodes = node.getChildNodes();
 
-		textProperties.push(Styles.header4);
-		generateBlocksFromNodeList(childrenNodes, blockFlow);
-		textProperties.pop();
+		styles.push(Styles.header4);
+		generateBlocksFromNodeList(childrenNodes, blockFlow, styles);
+		styles.pop();
 		parentFlow.add(blockFlow);
 	}
 
@@ -499,13 +603,13 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 	 * @param parentFlow
 	 *            the parent block flow which will contain the block created
 	 */
-	protected void generateBlocksFromH5Node(Node node, BlockFlow parentFlow) {
+	protected void generateBlocksFromH5Node(Node node, BlockFlow parentFlow, Stack<Styles> styles) {
 		BlockFlow blockFlow = new BlockFlow();
 		NodeList childrenNodes = node.getChildNodes();
 
-		textProperties.push(Styles.header5);
-		generateBlocksFromNodeList(childrenNodes, blockFlow);
-		textProperties.pop();
+		styles.push(Styles.header5);
+		generateBlocksFromNodeList(childrenNodes, blockFlow, styles);
+		styles.pop();
 		parentFlow.add(blockFlow);
 	}
 
@@ -529,11 +633,11 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 	 * @param parentFlow
 	 *            the parent block flow which will contain the block created
 	 */
-	protected void generateBlocksFromBodyNode(Node node, BlockFlow parentFlow) {
+	protected void generateBlocksFromBodyNode(Node node, BlockFlow parentFlow, Stack<Styles> styles) {
 		BlockFlow blockFlow = new BlockFlow();
 		NodeList childrenNodes = node.getChildNodes();
 
-		generateBlocksFromNodeList(childrenNodes, blockFlow);
+		generateBlocksFromNodeList(childrenNodes, blockFlow, styles);
 
 		parentFlow.add(blockFlow);
 	}
@@ -546,7 +650,7 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 	 * @param parentFlow
 	 *            the parent block flow which will contain the block created
 	 */
-	protected void generateBlocksFromParagraphNode(Node node, BlockFlow parentFlow) {
+	protected void generateBlocksFromParagraphNode(Node node, BlockFlow parentFlow, Stack<Styles> styles) {
 		BlockFlow blockFlow = new BlockFlow();
 
 		// perhaps a style is associated to the paragraph (class="code sample"
@@ -559,19 +663,19 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 
 			if ("codeSample".equals(classNodeValue)) {
 				hasToPop = true;
-				textProperties.push(Styles.code);
+				styles.push(Styles.code);
 			} else if ("quote".equals(classNodeValue)) {
-				textProperties.push(Styles.quote);
+				styles.push(Styles.quote);
 				hasToPop = true;
 			}
 		}
 
 		NodeList childrenNodes = node.getChildNodes();
 
-		generateBlocksFromNodeList(childrenNodes, blockFlow);
+		generateBlocksFromNodeList(childrenNodes, blockFlow, styles);
 
 		if (hasToPop) {
-			textProperties.pop();
+			styles.pop();
 		}
 		parentFlow.add(blockFlow);
 	}

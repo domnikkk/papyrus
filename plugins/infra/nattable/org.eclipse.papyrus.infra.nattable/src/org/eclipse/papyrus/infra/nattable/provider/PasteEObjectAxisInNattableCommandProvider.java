@@ -229,7 +229,7 @@ public class PasteEObjectAxisInNattableCommandProvider {
 		if (configuration != null) {
 			this.containmentFeature = configuration.getPasteElementContainementFeature();
 			this.typeToCreate = ElementTypeRegistry.getInstance().getType(configuration.getPastedElementId());
-			this.postActions = configuration.getPostActions();
+			this.postActions = new ArrayList<String>(configuration.getPostActions());
 			this.detachedMode = configuration.isDetachedMode();
 		}
 	}

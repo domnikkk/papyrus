@@ -12,16 +12,14 @@
  *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - refactor common behavior between diagrams
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - add the line 	ViewServiceUtil.forceLoad();
  *  Christian W. Damus (CEA) - bug 430726
- *
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - bug 450341 
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.editpolicies;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.commands.operations.IUndoableOperation;
@@ -63,6 +61,7 @@ import org.eclipse.papyrus.commands.wrappers.CommandProxyWithResult;
 import org.eclipse.papyrus.uml.diagram.common.commands.CommonDeferredCreateConnectionViewCommand;
 import org.eclipse.papyrus.uml.diagram.common.commands.DeferredCreateCommand;
 import org.eclipse.papyrus.uml.diagram.common.commands.SemanticAdapter;
+import org.eclipse.papyrus.uml.diagram.common.helper.Element2IAdaptableRegistryHelper;
 import org.eclipse.papyrus.uml.diagram.common.helper.ILinkMappingHelper;
 import org.eclipse.papyrus.uml.diagram.common.listeners.DropTargetListener;
 import org.eclipse.papyrus.uml.diagram.common.util.DiagramEditPartsUtil;
@@ -78,7 +77,7 @@ import org.eclipse.uml2.uml.Element;
  */
 public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEditPolicy {
 
-	private CompositeCommandRegistryHelper myCompositeCommandRegistryHelper;
+	private Element2IAdaptableRegistryHelper myElement2IAdaptableRegistryHelper;
 
 	/** The specific drop. */
 	private Set<Integer> specificDrop = null;
@@ -128,11 +127,11 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 	/**
 	 * Gets composite command adapters
 	 */
-	protected CompositeCommandRegistryHelper getCompositeCommandRegistry() {
-		if (myCompositeCommandRegistryHelper == null) {
-			myCompositeCommandRegistryHelper = new CompositeCommandRegistryHelper();
+	protected Element2IAdaptableRegistryHelper getElement2IAdaptableRegistryHelper() {
+		if (myElement2IAdaptableRegistryHelper == null) {
+			myElement2IAdaptableRegistryHelper = new Element2IAdaptableRegistryHelper();
 		}
-		return myCompositeCommandRegistryHelper;
+		return myElement2IAdaptableRegistryHelper;
 	}
 
 	/**
@@ -261,12 +260,12 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 
 		while (iter.hasNext()) {
 			EObject droppedObject = (EObject) iter.next();
-			if (getCompositeCommandRegistry().findAdapter((Element) droppedObject) != null) {
+			if (droppedObject instanceof Element && getElement2IAdaptableRegistryHelper().findAdapter((Element) droppedObject) != null) {
 				continue;
 			}
 			cc.add(getDropObjectCommand(dropRequest, droppedObject));
 		}
-		getCompositeCommandRegistry().clear();
+		getElement2IAdaptableRegistryHelper().clear();
 		return new ICommandProxy(cc);
 	}
 
@@ -569,11 +568,10 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 		// set the viewdescriptor as result
 		// it then can be used as an adaptable to retrieve the View
 		ICommand result = new CommandProxyWithResult(command, descriptor);
-		getCompositeCommandRegistry().registerAdapter((Element) droppedObject, (IAdaptable) result.getCommandResult().getReturnValue());
+		if (droppedObject instanceof Element){
+			getElement2IAdaptableRegistryHelper().registerAdapter((Element) droppedObject, (IAdaptable) result.getCommandResult().getReturnValue());
+		}
 		return result;
-		// }
-
-		// return org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE;
 	}
 
 	/**
@@ -875,7 +873,7 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 	 *            source/target node location
 	 */
 	private IAdaptable findAdapter(CompositeCommand cc, Element source, Point dropLocation) {
-		IAdaptable result = getCompositeCommandRegistry().findAdapter(source);
+		IAdaptable result = getElement2IAdaptableRegistryHelper().findAdapter(source);
 		if (result != null) {
 			return result;
 		}
@@ -890,46 +888,6 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 		}
 	}
 
-	/**
-	 * Composite command items registry before adding to the diagram view
-	 * 
-	 * @see CommonDiagramDragDropEditPolicy.findAdapter(CompositeCommand cc, Element source, Point dropLocation)
-	 * @see MultiDependencyHelper.findOrCreateEndAdapter(CompositeCommand cc, Element source, Point dropLocation)
-	 * @author
-	 */
-	public static class CompositeCommandRegistryHelper {
 
-		private final Map<Element, IAdaptable> myElement2Adapter;
-
-		/**
-		 * public constructor
-		 */
-		public CompositeCommandRegistryHelper() {
-			myElement2Adapter = new HashMap<Element, IAdaptable>();
-		}
-
-		/**
-		 * {@inheritDoc}
-		 */
-		public void clear() {
-			myElement2Adapter.clear();
-		}
-
-		/**
-		 * {@inheritDoc}
-		 */
-		public IAdaptable findAdapter(Element element) {
-			return myElement2Adapter.get(element);
-		}
-
-		/**
-		 * {@inheritDoc}
-		 */
-		public void registerAdapter(Element element, IAdaptable adapter) {
-			if (myElement2Adapter.get(element) == null) {
-				myElement2Adapter.put(element, adapter);
-			}
-		}
-	}
 
 }

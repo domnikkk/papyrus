@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.NattablestylePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +36,6 @@ import org.eclipse.emf.ecore.EcorePackage;
  * @generated
  */
 public interface NattabletesterPackage extends EPackage {
-
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -74,8 +73,7 @@ public interface NattabletesterPackage extends EPackage {
 	NattabletesterPackage eINSTANCE = org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl.NattabletesterPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl.AbstractTableTesterImpl
-	 * <em>Abstract Table Tester</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl.AbstractTableTesterImpl <em>Abstract Table Tester</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -93,7 +91,17 @@ public interface NattabletesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_TABLE_TESTER__EANNOTATIONS = EcorePackage.EMODEL_ELEMENT__EANNOTATIONS;
+	int ABSTRACT_TABLE_TESTER__EANNOTATIONS = NattablestylePackage.STYLED_ELEMENT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_TABLE_TESTER__STYLES = NattablestylePackage.STYLED_ELEMENT__STYLES;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Table Tester</em>' class.
@@ -103,7 +111,7 @@ public interface NattabletesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_TABLE_TESTER_FEATURE_COUNT = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 0;
+	int ABSTRACT_TABLE_TESTER_FEATURE_COUNT = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -113,7 +121,37 @@ public interface NattabletesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_TABLE_TESTER___GET_EANNOTATION__STRING = EcorePackage.EMODEL_ELEMENT___GET_EANNOTATION__STRING;
+	int ABSTRACT_TABLE_TESTER___GET_EANNOTATION__STRING = NattablestylePackage.STYLED_ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_TABLE_TESTER___GET_NAMED_STYLE__ECLASS_STRING = NattablestylePackage.STYLED_ELEMENT___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_TABLE_TESTER___GET_STYLE__ECLASS = NattablestylePackage.STYLED_ELEMENT___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_TABLE_TESTER___CREATE_STYLE__ECLASS = NattablestylePackage.STYLED_ELEMENT___CREATE_STYLE__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Tester</em>' operation.
@@ -123,7 +161,7 @@ public interface NattabletesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_TABLE_TESTER___GET_TESTER = EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 0;
+	int ABSTRACT_TABLE_TESTER___GET_TESTER = NattablestylePackage.STYLED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Abstract Table Tester</em>' class.
@@ -133,11 +171,10 @@ public interface NattabletesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_TABLE_TESTER_OPERATION_COUNT = EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 1;
+	int ABSTRACT_TABLE_TESTER_OPERATION_COUNT = NattablestylePackage.STYLED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl.JavaTableTesterImpl
-	 * <em>Java Table Tester</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl.JavaTableTesterImpl <em>Java Table Tester</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -156,6 +193,16 @@ public interface NattabletesterPackage extends EPackage {
 	 * @ordered
 	 */
 	int JAVA_TABLE_TESTER__EANNOTATIONS = ABSTRACT_TABLE_TESTER__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TABLE_TESTER__STYLES = ABSTRACT_TABLE_TESTER__STYLES;
 
 	/**
 	 * The feature id for the '<em><b>Tester</b></em>' attribute.
@@ -188,6 +235,36 @@ public interface NattabletesterPackage extends EPackage {
 	int JAVA_TABLE_TESTER___GET_EANNOTATION__STRING = ABSTRACT_TABLE_TESTER___GET_EANNOTATION__STRING;
 
 	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TABLE_TESTER___GET_NAMED_STYLE__ECLASS_STRING = ABSTRACT_TABLE_TESTER___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TABLE_TESTER___GET_STYLE__ECLASS = ABSTRACT_TABLE_TESTER___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TABLE_TESTER___CREATE_STYLE__ECLASS = ABSTRACT_TABLE_TESTER___CREATE_STYLE__ECLASS;
+
+	/**
 	 * The operation id for the '<em>Get Tester</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -209,8 +286,7 @@ public interface NattabletesterPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.AbstractTableTester
-	 * <em>Abstract Table Tester</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.AbstractTableTester <em>Abstract Table Tester</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -221,8 +297,7 @@ public interface NattabletesterPackage extends EPackage {
 	EClass getAbstractTableTester();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.AbstractTableTester#getTester()
-	 * <em>Get Tester</em>}' operation.
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.AbstractTableTester#getTester() <em>Get Tester</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -233,8 +308,7 @@ public interface NattabletesterPackage extends EPackage {
 	EOperation getAbstractTableTester__GetTester();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.JavaTableTester
-	 * <em>Java Table Tester</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.JavaTableTester <em>Java Table Tester</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -245,8 +319,7 @@ public interface NattabletesterPackage extends EPackage {
 	EClass getJavaTableTester();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.JavaTableTester#getTester
-	 * <em>Tester</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.JavaTableTester#getTester <em>Tester</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -282,10 +355,8 @@ public interface NattabletesterPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl.AbstractTableTesterImpl
-		 * <em>Abstract Table Tester</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl.AbstractTableTesterImpl <em>Abstract Table Tester</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
@@ -305,8 +376,7 @@ public interface NattabletesterPackage extends EPackage {
 		EOperation ABSTRACT_TABLE_TESTER___GET_TESTER = eINSTANCE.getAbstractTableTester__GetTester();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl.JavaTableTesterImpl
-		 * <em>Java Table Tester</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl.JavaTableTesterImpl <em>Java Table Tester</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *

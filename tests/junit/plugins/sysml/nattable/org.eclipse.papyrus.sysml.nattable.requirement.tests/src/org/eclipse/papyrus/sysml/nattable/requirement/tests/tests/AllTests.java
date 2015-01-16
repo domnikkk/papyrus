@@ -12,13 +12,14 @@
 package org.eclipse.papyrus.sysml.nattable.requirement.tests.tests;
 
 
+import org.eclipse.papyrus.sysml.nattable.requirement.tests.paste.without.service.edit.Bug443814_Enumeration;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 
 @RunWith(Suite.class)
-@SuiteClasses({ TableCreationInSysMLModelTest.class, OpenTableTest.class, TableCreationInUMLModel.class, RevealRequirementTableTest.class
+@SuiteClasses({  Bug443814_Enumeration.class, TableCreationInSysMLModelTest.class, OpenTableTest.class, TableCreationInUMLModel.class, RevealRequirementTableTest.class,
 
 })
 public class AllTests {

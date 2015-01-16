@@ -2,7 +2,7 @@ package org.eclipse.papyrus.cpp.codegen.xtend;
 
 import com.google.common.base.Objects;
 import org.eclipse.papyrus.C_Cpp.Include;
-import org.eclipse.papyrus.acceleo.GenUtils;
+import org.eclipse.papyrus.codegen.base.GenUtils;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.util.UMLUtil;
 import org.eclipse.xtend2.lib.StringConcatenation;

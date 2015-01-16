@@ -1,0 +1,10 @@
+= Papyrus Profile Limitations =
+'''Contents'''
+__TOC__
+
+
+== Cyclic Profile Definitions ==
+
+Due to the way the Dynamic ECore model is built, Papyrus does not support Definition of Profiles with cyclic references.
+
+See [[https://bugs.eclipse.org/bugs/show_bug.cgi?id=451613|Bug 451613]]: ClassCastException when updating hierarchical profile with datatype

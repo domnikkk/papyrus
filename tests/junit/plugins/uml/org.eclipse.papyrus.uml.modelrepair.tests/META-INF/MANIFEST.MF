@@ -5,12 +5,11 @@ Require-Bundle: org.junit;bundle-version="4.10.0",
 Export-Package: org.eclipse.papyrus.uml.modelrepair.internal.stereotypes,
  org.eclipse.papyrus.uml.modelrepair.tests
 Bundle-Vendor: %providerName
-Fragment-Host: org.eclipse.papyrus.uml.modelrepair;bundle-version="1.0
- .0"
+Fragment-Host: org.eclipse.papyrus.uml.modelrepair;bundle-version="1.1.0"
 Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: fragment
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: org.eclipse.papyrus.uml.modelrepair.tests
+Bundle-SymbolicName: org.eclipse.papyrus.uml.modelrepair.tests;singleton:=true
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 

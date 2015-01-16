@@ -13,9 +13,11 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.nattable.dialog;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.infra.nattable.messages.Messages;
+import org.eclipse.papyrus.infra.widgets.util.ImageConstants;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.graphics.Image;
@@ -40,6 +42,28 @@ public class PasteImportStatusDialog extends MessageDialog {
 	 * Title for all dialog used by this class
 	 */
 	public static final String DIALOG_TITLE = Messages.PasteImportStatusDialog_ImportPasteDialogTitle;
+
+	public PasteImportStatusDialog(final Shell parentShell, final IStatus status) {
+		super(parentShell, DIALOG_TITLE, getPapyrusIcon(), status.getMessage(), getDialogImageType(status), new String[] { IDialogConstants.OK_LABEL }, 0);
+	}
+
+	protected static int getDialogImageType(final IStatus status) {
+		switch (status.getSeverity()) {
+		case IStatus.ERROR:
+			return MessageDialog.ERROR;
+		case IStatus.INFO:
+			return MessageDialog.INFORMATION;
+		case IStatus.WARNING:
+			return MessageDialog.WARNING;
+		case IStatus.CANCEL:
+			break;
+		case IStatus.OK:
+			break;
+		default:
+			break;
+		}
+		return 0;
+	}
 
 	/**
 	 *
@@ -91,7 +115,7 @@ public class PasteImportStatusDialog extends MessageDialog {
 	 *         the papyrus icon
 	 */
 	private static final Image getPapyrusIcon() {
-		return org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("icons/papyrus.png"); //$NON-NLS-1$
+		return org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(ImageConstants.PAPYRUS_ICON_PATH);
 	}
 
 }

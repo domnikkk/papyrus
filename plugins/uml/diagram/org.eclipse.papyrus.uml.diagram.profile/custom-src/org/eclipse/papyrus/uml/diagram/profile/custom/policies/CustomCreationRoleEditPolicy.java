@@ -300,7 +300,7 @@ public class CustomCreationRoleEditPolicy extends org.eclipse.gmf.runtime.diagra
 		CompositeCommand deleteViewCmd = new CompositeCommand("Reparent one metaclass view and delete the others"); //$NON-NLS-1$
 		/*
 		 * If a metaclass (ElementImport) has dropped many times, we need to reparent the selected view and delete the others!
-		 *
+		 * 
 		 * The RemoveOrphanViewEditPolicy can't make it, because it runs too early and short-circuits the AddCommand
 		 */
 		/**

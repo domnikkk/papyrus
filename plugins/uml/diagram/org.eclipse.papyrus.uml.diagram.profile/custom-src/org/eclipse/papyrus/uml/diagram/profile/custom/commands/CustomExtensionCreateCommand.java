@@ -96,7 +96,7 @@ public class CustomExtensionCreateCommand extends ExtensionCreateCommand {
 	/**
 	 * <pre>
 	 * Checks if the Extension can be created or not.
-	 *
+	 * 
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -123,7 +123,7 @@ public class CustomExtensionCreateCommand extends ExtensionCreateCommand {
 	/**
 	 * <pre>
 	 * Creates the new Connector.
-	 *
+	 * 
 	 * {@inheritDoc}
 	 * </pre>
 	 */

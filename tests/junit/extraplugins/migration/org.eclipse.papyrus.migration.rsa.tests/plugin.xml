@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            name="Model Import Test Profile"
+            path="platform:/plugin/org.eclipse.papyrus.migration.rsa.tests/deployedProfile/ProfileUpdate.profile.uml">
+      </profile>
+   </extension>
+
+</plugin>

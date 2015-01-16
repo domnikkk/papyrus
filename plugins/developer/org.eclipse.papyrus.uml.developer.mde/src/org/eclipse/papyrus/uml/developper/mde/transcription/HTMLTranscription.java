@@ -158,6 +158,17 @@ public class HTMLTranscription implements ITranscription {
 	}
 	
 	/**
+	 * @see org.eclipse.papyrus.uml.developper.mde.transcription.ITranscription#writeNewLine(java.lang.StringBuffer)
+	 *
+	 * @param out
+	 */
+	@Override
+	public void writeNewLine(StringBuffer out) {
+		out.append("</BR>");
+		
+	}
+	
+	/**
 	 * 
 	 * @see org.eclipse.papyrus.uml.developper.mde.transcription.ITranscription#writeBeginTDTag(java.lang.StringBuffer)
 	 *

@@ -36,7 +36,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.IAxis;
  * @generated
  */
 public interface AxisProvider extends AbstractAxisProvider {
-
 	/**
 	 * Returns the value of the '<em><b>Axis</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.IAxis}.

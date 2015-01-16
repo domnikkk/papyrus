@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *
+ *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,6 +23,7 @@ import org.eclipse.emf.compare.DifferenceKind;
 import org.eclipse.emf.compare.ReferenceChange;
 import org.eclipse.emf.compare.diagram.internal.extensions.NodeChange;
 import org.eclipse.emf.compare.postprocessor.IPostProcessor;
+import org.eclipse.emf.compare.uml2.internal.DirectedRelationshipChange;
 import org.eclipse.papyrus.uml.compare.utils.GeneralizationChangesHelper;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Feature;
@@ -125,7 +126,7 @@ public class PapyrusPostProcessor implements IPostProcessor {
 			Set<Feature> features = helper.getInheritedFeaturesWithNodeChange(c);
 			for (Feature f : features) {
 				for (Generalization generalization : helper.getGeneralizationPath(c, f)) {
-					ReferenceChange generalizationAdded = helper.getGeneralizationChange(generalization);
+					DirectedRelationshipChange generalizationAdded = helper.getGeneralizationChange(generalization);
 					if (generalizationAdded != null) {
 						NodeChange nodeAdded = helper.getFeatureNodeChange(f);
 						if (nodeAdded != null) {
@@ -143,7 +144,7 @@ public class PapyrusPostProcessor implements IPostProcessor {
 			Set<Feature> features = helper.getInheritedFeaturesWithNodeChange(c);
 			for (Feature f : features) {
 				for (Generalization generalization : helper.getGeneralizationPath(c, f)) {
-					ReferenceChange generalizationDeleted = helper.getGeneralizationChange(generalization);
+					DirectedRelationshipChange generalizationDeleted = helper.getGeneralizationChange(generalization);
 					if (generalizationDeleted != null) {
 						NodeChange nodeDeleted = helper.getFeatureNodeChange(f);
 						if (nodeDeleted != null) {

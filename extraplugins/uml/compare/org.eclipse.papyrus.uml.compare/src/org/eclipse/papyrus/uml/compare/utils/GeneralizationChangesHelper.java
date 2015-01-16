@@ -23,15 +23,14 @@ import java.util.Set;
 import org.eclipse.emf.compare.Comparison;
 import org.eclipse.emf.compare.Diff;
 import org.eclipse.emf.compare.DifferenceKind;
-import org.eclipse.emf.compare.ReferenceChange;
 import org.eclipse.emf.compare.diagram.internal.extensions.NodeChange;
+import org.eclipse.emf.compare.uml2.internal.DirectedRelationshipChange;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Feature;
 import org.eclipse.uml2.uml.Generalization;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Helper for extracting information used by the ComparePapyrusDiagramPostProcessor,
@@ -57,7 +56,7 @@ public class GeneralizationChangesHelper {
 	/**
 	 * A mapping between Generalizations and Diffs representing addition or deletion of this generalization.
 	 */
-	protected Map<Generalization, ReferenceChange> generalizationToReferenceChange = new HashMap<Generalization, ReferenceChange>();
+	protected Map<Generalization, DirectedRelationshipChange> generalizationToReferenceChange = new HashMap<Generalization, DirectedRelationshipChange>();
 
 	/**
 	 * A mapping between pairings of Classifier/Feature to Generalization path, where a path is a List<Generalization>,
@@ -79,7 +78,7 @@ public class GeneralizationChangesHelper {
 
 	/**
 	 * Constructor for this helper. Instantiation of this helper implies classification of Diffs associated with the given comparison.
-	 *
+	 * 
 	 * @param comparison
 	 */
 	public GeneralizationChangesHelper(Comparison comparison) {
@@ -97,13 +96,14 @@ public class GeneralizationChangesHelper {
 	 * classesWithNodeForInheritedFeature_ADDED, classesWithNodeForInheritedFeature_DELETED)
 	 */
 	protected void classifyDiffs() {
-		for (Diff difference : this.comparison.getDifferences()) {
-			if (difference instanceof ReferenceChange) {
-				// TODO Changes may be required in connection with the following bug:
-				// Bug 406405 - A macroscopic change has to be created for UML DirectedRelationship elements
-				this.evaluateGeneralizationChange((ReferenceChange) difference);
+		for(Diff difference : this.comparison.getDifferences()) {
+			if (difference instanceof DirectedRelationshipChange) {
+			// if(difference instanceof ReferenceChange) {
+				// Changes done according to the following bug:
+				// Bug 406405 - A macroscopic change has to be created for UML DirectedRelationship elements 
+				this.evaluateGeneralizationChange((DirectedRelationshipChange)difference);
 			} else if (difference instanceof NodeChange) {
-				this.evaluateNodeForInheritedFeatureChange((NodeChange) difference);
+				this.evaluateNodeForInheritedFeatureChange((NodeChange)difference);
 			}
 		}
 	}
@@ -115,10 +115,10 @@ public class GeneralizationChangesHelper {
 	 * @param difference
 	 *            The difference being evaluated
 	 */
-	protected void evaluateGeneralizationChange(ReferenceChange difference) {
-		// difference is a generalization if the associated eReference is Classifier.generalization
-		if (difference.getReference().equals(UMLPackage.eINSTANCE.getClassifier_Generalization())) {
-			this.generalizationToReferenceChange.put((Generalization) difference.getValue(), difference);
+	protected void evaluateGeneralizationChange(DirectedRelationshipChange difference) {
+		// difference is a generalization if the discriminant is a generalization
+		if (difference.getDiscriminant() instanceof Generalization) {
+			this.generalizationToReferenceChange.put((Generalization)difference.getDiscriminant(), difference);
 		}
 	}
 
@@ -295,9 +295,9 @@ public class GeneralizationChangesHelper {
 	 * returns the ReferenceChange diff corresponding to the given Generalization, if any.
 	 *
 	 * @param generalization
-	 * @return the ReferenceChange diff corresponding to the given Generalization, if any.
+	 * @return the DirectedRelationshipChange diff corresponding to the given Generalization, if any.
 	 */
-	public ReferenceChange getGeneralizationChange(Generalization generalization) {
+	public DirectedRelationshipChange getGeneralizationChange(Generalization generalization) {
 		return this.generalizationToReferenceChange.get(generalization);
 	}
 

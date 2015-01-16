@@ -24,6 +24,9 @@ import org.eclipse.gmf.codegen.gmfgen.Viewmap
 import parsers.ParserProvider
 import xpt.Common
 import xpt.diagram.ViewmapAttributesUtils_qvto
+import xpt.Common_qvto
+import org.eclipse.gmf.codegen.gmfgen.GenLinkLabel
+import xpt.CodeStyle
 
 //DOCUMENTATION: PapyrusGencode
 //This template has been modified to take in account the possibility to have extended direct editors
@@ -31,11 +34,14 @@ import xpt.diagram.ViewmapAttributesUtils_qvto
 @Singleton class TextAware extends impl.diagram.editparts.TextAware {
 	@Inject extension Common
 
+	@Inject extension CodeStyle
+
 	@Inject extension ViewmapAttributesUtils_qvto
 
 	@Inject extension ParserProvider
 
-
+	@Inject extension Common_qvto 
+	
 	override fields(GenCommonBase it)'''
 	«generatedMemberComment»
 	private org.eclipse.gef.tools.DirectEditManager manager;
@@ -58,8 +64,7 @@ import xpt.diagram.ViewmapAttributesUtils_qvto
 	protected org.eclipse.papyrus.extensionpoints.editors.configuration.IDirectEditorConfiguration configuration;
 	«««	END: BEGIN: PapyrusGenCode
 	
-'''
-
+''' 
 	override methods(GenCommonBase it, boolean needsRefreshBounds, boolean readOnly, boolean useElementIcon, Viewmap viewmap,
 		LabelModelFacet modelFacet, GenCommonBase host, GenDiagram diagram) '''
 		
@@ -353,6 +358,7 @@ override getEditTextValidator (GenCommonBase it)'''
 	public org.eclipse.jface.viewers.ICellEditorValidator getEditTextValidator() {
 		return new org.eclipse.jface.viewers.ICellEditorValidator() {
 
+			«overrideI»
 			public String isValid(final Object value) {
 				if (value instanceof String) {
 					final org.eclipse.emf.ecore.EObject element = getParserElement();
@@ -362,11 +368,12 @@ override getEditTextValidator (GenCommonBase it)'''
 							(org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus) getEditingDomain().runExclusive(
 								new org.eclipse.emf.transaction.RunnableWithResult.Impl<java.lang.Object>() {
 
+							«overrideI»
 							public void run() {
 								setResult(parser.isValidEditString(new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(element), (String) value));
 							}
 						});
-						return valid.getCode() == org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus.EDITABLE ? null : valid.getMessage();
+						return valid.getCode() == org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus.EDITABLE ? null : valid.getMessage();
 					} catch (InterruptedException ie) {
 						ie.printStackTrace();
 					}
@@ -430,6 +437,7 @@ override performDirectEdit (GenCommonBase it)'''
 	protected void performDirectEdit() {
 		org.eclipse.swt.custom.BusyIndicator.showWhile(org.eclipse.swt.widgets.Display.getDefault(), new java.lang.Runnable() {
 					
+			«overrideI»
 			public void run() {
 				getManager().show();
 			}
@@ -493,7 +501,7 @@ def performDirectEditRequest(GenCommonBase it, GenDiagram diagram ) '''
 				else if(configuration instanceof org.eclipse.papyrus.extensionpoints.editors.configuration.IAdvancedEditorConfiguration) {
 					dialog = ((org.eclipse.papyrus.extensionpoints.editors.configuration.IAdvancedEditorConfiguration)configuration).createDialog(org.eclipse.ui.PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()));
 				} else if(configuration instanceof org.eclipse.papyrus.extensionpoints.editors.configuration.IDirectEditorConfiguration) {
-					dialog = new org.eclipse.papyrus.extensionpoints.editors.ui.ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), ((org.eclipse.papyrus.extensionpoints.editors.configuration.IDirectEditorConfiguration)configuration).getTextToEdit(resolveSemanticElement()), (org.eclipse.papyrus.extensionpoints.editors.configuration.IDirectEditorConfiguration)configuration);
+					dialog = new org.eclipse.papyrus.extensionpoints.editors.ui.ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()), configuration);
 				} else {
 					return;
 				}
@@ -528,6 +536,7 @@ def initializeDirectEditManager (GenCommonBase it)'''
 		// initialize the direct edit manager
 		try {
 			getEditingDomain().runExclusive(new Runnable() {
+				«overrideI»
 				public void run() {
 					if (isActive() && isEditable()) {
 						if (request.getExtendedData().get(
@@ -570,6 +579,10 @@ override refreshLabel(GenCommonBase it , GenDiagram diagram )'''
 			 maskLabelPolicy = getEditPolicy(org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL);
 		}
 		if (maskLabelPolicy == null) {
+		«IF it.oclIsKindOf(typeof(GenLinkLabel))»
+			setLabelTextHelper(getFigure(), getLabelText());
+			setLabelIconHelper(getFigure(), getLabelIcon());
+		«ELSE»
 			org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View)getModel();
 			if(view.isVisible()) {
 				setLabelTextHelper(getFigure(), getLabelText());
@@ -578,7 +591,8 @@ override refreshLabel(GenCommonBase it , GenDiagram diagram )'''
 			else {
 				setLabelTextHelper(getFigure(), ""); //$NON-NLS-1$
 				setLabelIconHelper(getFigure(), null);
-			}
+			}	
+		«ENDIF»
 		}
 		Object pdEditPolicy = getEditPolicy(org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE);
 		if (pdEditPolicy instanceof «diagram.getTextSelectionEditPolicyQualifiedClassName()») {
@@ -678,6 +692,7 @@ override getAccessibleEditPart (GenCommonBase it)'''
 		if (accessibleEP == null) {
 			accessibleEP = new AccessibleGraphicalEditPart() {
 
+				«overrideC»
 				public void getName(org.eclipse.swt.accessibility.AccessibleEvent e) {
 					e.result = getLabelTextHelper(getFigure());
 				}
@@ -800,6 +815,7 @@ def performDefaultDirectEditorEdit (GenCommonBase it)'''
 		try {
 			getEditingDomain().runExclusive(new Runnable() {
 
+				«overrideI»
 				public void run() {
 					if (isActive() && isEditable()) {
 						if (theRequest.getExtendedData().get(org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {

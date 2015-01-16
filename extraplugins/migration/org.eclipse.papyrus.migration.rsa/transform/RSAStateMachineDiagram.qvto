@@ -115,8 +115,9 @@ mapping Node::toNode() : Node disjuncts
 ;
 
 mapping Edge::toEdge() : Edge disjuncts
-	UMLConnector::toPapyrusConnector,
-	UMLConnector::toCommentLink
+	UMLConnector::toCommentLink,
+	UMLConnector::toConstraintLink,
+	UMLConnector::toPapyrusConnector
 	//TODO: Disjunct edges mapping
 ;
 
@@ -231,9 +232,21 @@ mapping UMLConnector::toCommentLink() : Connector inherits Connector::toCommentL
 	self.type='Reference'
 }{	
 	result.type :='667';
-	result.bendpoints := self.bendpoints.toBendpoint(self.diagram);
+	result.bendpoints := self.bendpoints.map toBendpoint(self.diagram);
 	result.sourceAnchor := object IdentityAnchor{};		
 }
+
+mapping UMLConnector::toConstraintLink() : Connector inherits Connector::toPapyrusConnector when{
+	self.type='Reference' and ( 
+	 	self.source.element.oclIsTypeOf(Constraint) or 
+	 	self.target.element.oclIsKindOf(Constraint)
+	)
+}{	
+	result.type :='670';
+	result.bendpoints := self.bendpoints.map toBendpoint(self.diagram);
+	result.sourceAnchor := object IdentityAnchor{};		
+}
+
 
 /****** Element Type queries ******/
 
@@ -371,7 +384,8 @@ query View::doGetDecorationType(element : Element) : String{
 
 query View::getEdgeType(element : Element) : String {
 	return
-		if element.oclIsTypeOf(Transition) then '7000'
+		if self.type = 'Reference' then '' /* Constraint/Comment links handled separately */
+		elif element.oclIsTypeOf(Transition) then '7000'
 		elif element.oclIsTypeOf(Generalization) then '19000'
 		else self.fail()
 	endif;

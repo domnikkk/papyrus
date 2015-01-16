@@ -707,7 +707,7 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	}
 
 	public void updateBoutons() {
-		/* Disable the bouton 'add' if the upperBound is reached */
+		/* Disable the button 'add' if the upperBound is reached */
 		if (this.upperBound != MANY) {
 			if (modelProperty.size() >= this.upperBound) {
 				add.setEnabled(false);
@@ -719,7 +719,7 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 
 	@Override
 	public void changeColorField() {
-		// TODO Auto-generated method stub
+		 //nothing to do here
 
 	}
 }

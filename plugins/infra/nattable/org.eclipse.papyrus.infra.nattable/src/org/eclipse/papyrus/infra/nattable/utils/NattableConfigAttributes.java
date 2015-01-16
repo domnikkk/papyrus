@@ -53,10 +53,11 @@ public class NattableConfigAttributes {
 	/**
 	 * Id used to register the label provider service
 	 */
-	public static final String LABEL_PROVIDER_SERVICE_ID = "label_provider_service_id";
+	public static final String LABEL_PROVIDER_SERVICE_ID = "label_provider_service_id"; //$NON-NLS-1$
 
 	/**
-	 * Id used to registrer the table model manager
+	 * Id used to register the table model manager
 	 */
-	public static final String NATTABLE_MODEL_MANAGER_ID = "nattable_model_manager_id";
+	public static final String NATTABLE_MODEL_MANAGER_ID = "nattable_model_manager_id"; //$NON-NLS-1$
+
 }

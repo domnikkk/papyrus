@@ -1,10 +1,12 @@
 Manifest-Version: 1.0
 Export-Package: org.eclipse.papyrus.infra.emf.nattable,
  org.eclipse.papyrus.infra.emf.nattable.celleditor.config,
+ org.eclipse.papyrus.infra.emf.nattable.dataprovider,
  org.eclipse.papyrus.infra.emf.nattable.manager.axis,
  org.eclipse.papyrus.infra.emf.nattable.manager.cell,
  org.eclipse.papyrus.infra.emf.nattable.provider,
  org.eclipse.papyrus.infra.emf.nattable.registry,
+ org.eclipse.papyrus.infra.emf.nattable.selection,
  org.eclipse.papyrus.infra.emf.nattable.validator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -21,7 +23,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.infra.services.edit;bundle-version="1.1.0",
  org.eclipse.gmf.runtime.emf.type.core,
  org.eclipse.papyrus.infra.gmfdiag.commands;bundle-version="1.1.0",
- org.eclipse.papyrus.infra.tools;bundle-version="1.1.0"
+ org.eclipse.papyrus.infra.tools;bundle-version="1.1.0",
+ ca.odell.glazedlists;bundle-version="1.9.0"
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.1.0.qualifier

@@ -30,6 +30,9 @@ import org.eclipse.papyrus.uml.diagram.component.edit.parts.AbstractionAppliedSt
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.AbstractionNameEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.CommentBodyEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.CommentBodyEditPartPCN;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentFloatingLabelEditPart;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentFloatingLabelEditPartCN;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentFloatingLabelEditPartPCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentNameEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentNameEditPartCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentNameEditPartPCN;
@@ -44,7 +47,10 @@ import org.eclipse.papyrus.uml.diagram.component.edit.parts.ConstraintSpecificat
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.DefaultNamedElementNameEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.DependencyAppliedStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.DependencyNameEditPart;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.DependencyNodeFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.GeneralizationAppliedStereotypeEditPart;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.InterfaceFloatingLabelEditPart;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.InterfaceFloatingLabelEditPartPCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.InterfaceNameEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.InterfaceNameEditPartPCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.ManifestationAppliedStereotypeEditPart;
@@ -60,6 +66,8 @@ import org.eclipse.papyrus.uml.diagram.component.edit.parts.PortNameEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.PropertyForInterfaceEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.PropertyPartNameEditPartCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.ReceptionInInterfaceEditPart;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.RectangleInterfaceFloatingLabelEditPart;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.RectangleInterfaceFloatingLabelEditPartCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.RectangleInterfaceNameEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.RectangleInterfaceNameEditPartCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.SubstitutionAppliedStereotypeEditPart;
@@ -95,6 +103,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser dependencyName_6029Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDependencyName_6029Parser() {
+		if (dependencyName_6029Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			dependencyName_6029Parser = parser;
+		}
+		return dependencyName_6029Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser componentName_5004Parser;
 
 	/**
@@ -109,6 +136,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			componentName_5004Parser = parser;
 		}
 		return componentName_5004Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser componentName_6030Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getComponentName_6030Parser() {
+		if (componentName_6030Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			componentName_6030Parser = parser;
+		}
+		return componentName_6030Parser;
 	}
 
 	/**
@@ -166,6 +212,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			interfaceName_5266Parser = parser;
 		}
 		return interfaceName_5266Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser interfaceName_6031Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInterfaceName_6031Parser() {
+		if (interfaceName_6031Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			interfaceName_6031Parser = parser;
+		}
+		return interfaceName_6031Parser;
 	}
 
 	/**
@@ -253,6 +318,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			interfaceName_5005Parser = parser;
 		}
 		return interfaceName_5005Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser interfaceName_6032Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInterfaceName_6032Parser() {
+		if (interfaceName_6032Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			interfaceName_6032Parser = parser;
+		}
+		return interfaceName_6032Parser;
 	}
 
 	/**
@@ -349,6 +433,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser interfaceName_6033Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInterfaceName_6033Parser() {
+		if (interfaceName_6033Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			interfaceName_6033Parser = parser;
+		}
+		return interfaceName_6033Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser componentName_5256Parser;
 
 	/**
@@ -371,6 +474,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser componentName_6026Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getComponentName_6026Parser() {
+		if (componentName_6026Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			componentName_6026Parser = parser;
+		}
+		return componentName_6026Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser componentName_5257Parser;
 
 	/**
@@ -388,6 +510,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			componentName_5257Parser = parser;
 		}
 		return componentName_5257Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser componentName_6027Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getComponentName_6027Parser() {
+		if (componentName_6027Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			componentName_6027Parser = parser;
+		}
+		return componentName_6027Parser;
 	}
 
 	/**
@@ -516,6 +657,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			interfaceName_0Parser = parser;
 		}
 		return interfaceName_0Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser interfaceName_6028Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInterfaceName_6028Parser() {
+		if (interfaceName_6028Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			interfaceName_6028Parser = parser;
+		}
+		return interfaceName_6028Parser;
 	}
 
 	/**
@@ -766,9 +926,13 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		switch (visualID) {
 		case MultiDependencyLabelEditPart.VISUAL_ID:
 			return getDependencyName_5008Parser();
+		case DependencyNodeFloatingLabelEditPart.VISUAL_ID:
+			return getDependencyName_6029Parser();
 
 		case ComponentNameEditPart.VISUAL_ID:
 			return getComponentName_5004Parser();
+		case ComponentFloatingLabelEditPart.VISUAL_ID:
+			return getComponentName_6030Parser();
 
 		case ModelNameEditPart.VISUAL_ID:
 			return getModelName_5262Parser();
@@ -778,6 +942,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 
 		case RectangleInterfaceNameEditPart.VISUAL_ID:
 			return getInterfaceName_5266Parser();
+		case RectangleInterfaceFloatingLabelEditPart.VISUAL_ID:
+			return getInterfaceName_6031Parser();
 
 		case CommentBodyEditPart.VISUAL_ID:
 			return getCommentBody_5255Parser();
@@ -792,6 +958,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 
 		case InterfaceNameEditPart.VISUAL_ID:
 			return getInterfaceName_5005Parser();
+		case InterfaceFloatingLabelEditPart.VISUAL_ID:
+			return getInterfaceName_6032Parser();
 
 		case PortNameEditPart.VISUAL_ID:
 			return getPortName_5006Parser();
@@ -806,12 +974,18 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 
 		case RectangleInterfaceNameEditPartCN.VISUAL_ID:
 			return getInterfaceName_5267Parser();
+		case RectangleInterfaceFloatingLabelEditPartCN.VISUAL_ID:
+			return getInterfaceName_6033Parser();
 
 		case ComponentNameEditPartCN.VISUAL_ID:
 			return getComponentName_5256Parser();
+		case ComponentFloatingLabelEditPartCN.VISUAL_ID:
+			return getComponentName_6026Parser();
 
 		case ComponentNameEditPartPCN.VISUAL_ID:
 			return getComponentName_5257Parser();
+		case ComponentFloatingLabelEditPartPCN.VISUAL_ID:
+			return getComponentName_6027Parser();
 
 		case CommentBodyEditPartPCN.VISUAL_ID:
 			return getCommentBody_5258Parser();
@@ -829,6 +1003,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getReception_6Parser();
 		case InterfaceNameEditPartPCN.VISUAL_ID:
 			return getInterfaceName_0Parser();
+		case InterfaceFloatingLabelEditPartPCN.VISUAL_ID:
+			return getInterfaceName_6028Parser();
 
 		case PropertyPartNameEditPartCN.VISUAL_ID:
 			return getPropertyName_5268Parser();

@@ -36,6 +36,7 @@ import org.eclipse.papyrus.cdo.internal.ui.Activator;
 import org.eclipse.papyrus.cdo.internal.ui.l10n.Messages;
 import org.eclipse.papyrus.infra.services.labelprovider.service.IFilteredLabelProvider;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Display;
 
 
 /**
@@ -43,7 +44,7 @@ import org.eclipse.swt.graphics.Image;
  */
 public class CDOResourceLabelProvider extends LabelProvider implements IFilteredLabelProvider {
 
-	private final ResourceManager images = new LocalResourceManager(JFaceResources.getResources());
+	private final ResourceManager images = new LocalResourceManager(JFaceResources.getResources(Display.getDefault()));
 
 	private final EresourceSwitch<String> nodeTypeSwitch = createNodeTypeSwitch();
 

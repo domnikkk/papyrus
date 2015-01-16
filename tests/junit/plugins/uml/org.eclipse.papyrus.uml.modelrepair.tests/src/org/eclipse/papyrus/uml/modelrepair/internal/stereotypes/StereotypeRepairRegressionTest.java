@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014 CEA, Christian W. Damus, and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Christian W. Damus - bug 455248
+ *   Christian W. Damus - bug 455329
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -17,7 +19,13 @@ import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.fail;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.lang.reflect.Method;
 import java.util.Collection;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
@@ -37,6 +45,7 @@ import org.junit.Test;
 
 import com.google.common.base.Function;
 import com.google.common.base.Functions;
+import com.google.common.collect.ImmutableSet;
 
 
 /**
@@ -148,6 +157,7 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 	 * @see https://bugs.eclipse.org/bugs/show_bug.cgi?id=436666
 	 */
 	@Test
+	@Bug("436666")
 	@PluginResource("/resources/regression/bug436666/model2.uml")
 	public void nestedPackageInProfileIsOK_bug436666() {
 		assertThat("Should not have found zombie stereotypes", zombies, nullValue());
@@ -160,6 +170,7 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 	 * @see https://bugs.eclipse.org/bugs/show_bug.cgi?id=436666
 	 */
 	@Test
+	@Bug("436666")
 	@PluginResource("/resources/regression/bug436666/model2-missing-schemalocation.uml")
 	public void nestedPackageSchemaMissing_bug436666() {
 		EPackage schema = getOnlyZombieSchema();
@@ -188,8 +199,36 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 	 * @see https://bugs.eclipse.org/bugs/show_bug.cgi?id=436666
 	 */
 	@Test
+	@Bug("436666bis")
 	@PluginResource("/resources/regression/bug436666/model-with-stylesheet.uml")
 	public void nonStereotypeApplicationsAreOK_bug436666() {
+		assertThat("Should not have found zombie stereotypes", zombies, nullValue());
+	}
+
+	/**
+	 * Tests that a sub-united model in which package units do not repeat profile applications,
+	 * but rather just inherit them from parent units, such as might be imported from some other
+	 * UML tool, does not falsely trigger repair.
+	 * 
+	 * @see https://bugs.eclipse.org/bugs/show_bug.cgi?id=455248
+	 */
+	@Test
+	@Bug("455248")
+	@PluginResource("/resources/regression/bug455248/model.uml")
+	public void packageUnitWithoutOwnProfileApplication_bug455248() {
+		assertThat("Should not have found zombie stereotypes", zombies, nullValue());
+	}
+
+	/**
+	 * Tests that a model applying a registered dynamic profile does not detect spurious broken
+	 * stereotype applications.
+	 * 
+	 * @see https://bugs.eclipse.org/bugs/show_bug.cgi?id=455329
+	 */
+	@Test
+	@Bug("455329")
+	@PluginResource("/resources/regression/bug455329/model.uml")
+	public void registeredDynamicProfie_bug455329() {
 		assertThat("Should not have found zombie stereotypes", zombies, nullValue());
 	}
 
@@ -201,24 +240,38 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 	public void createFixture() throws Exception {
 		model = modelSet.getModel();
 
-		if (modelSet.getModelResourceURI().toString().contains("model-with-stylesheet")) {
-			createSimpleFixture();
-		} else if (modelSet.getModelResourceURI().toString().contains("bug436666")) {
-			createBug436666Fixture();
+		// Look for fixture-method correlation
+		Method fixtureMethod = null;
+		Method test = getClass().getMethod(this.houseKeeper.getTestName());
+		if (test.isAnnotationPresent(Bug.class)) {
+			String bug = test.getAnnotation(Bug.class).value()[0];
+			for (Method next : getClass().getDeclaredMethods()) {
+				if (next.isAnnotationPresent(Bug.class) && StereotypeApplicationRepairSnippet.class.isAssignableFrom(next.getReturnType())) {
+					Set<String> bugs = ImmutableSet.copyOf(next.getAnnotation(Bug.class).value());
+					if (bugs.contains(bug)) {
+						fixtureMethod = next;
+						break;
+					}
+				}
+			}
+		}
+
+		if (fixtureMethod == null) {
+			fixture = createDefaultFixture();
 		} else {
-			createDefaultFixture();
+			fixture = (StereotypeApplicationRepairSnippet) fixtureMethod.invoke(this);
 		}
 
 		fixture.start(modelSet.getResourceSet());
 		houseKeeper.setField("zombies", fixture.getZombieStereotypes(modelSet.getModelResource(), modelSet.getModel()));
 	}
 
-	protected void createDefaultFixture() {
+	protected StereotypeApplicationRepairSnippet createDefaultFixture() {
 		final Profile rootProfile = model.getAppliedProfile("Profile");
 		final Profile nested1 = model.getNestedPackage("Package1").getAppliedProfile("Profile::Nested1");
 		final Profile nested2 = model.getNestedPackage("Package2").getAppliedProfile("Profile::Nested2");
 
-		fixture = houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(new Function<EPackage, Profile>() {
+		return houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(new Function<EPackage, Profile>() {
 
 			@Override
 			public Profile apply(EPackage input) {
@@ -238,11 +291,12 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 		}), "dispose", modelSet.getResourceSet());
 	}
 
-	protected void createBug436666Fixture() {
+	@Bug("436666")
+	protected StereotypeApplicationRepairSnippet createBug436666Fixture() {
 		final Profile rootProfile = model.getAppliedProfile("Profile");
 		final Profile nestedProfile = model.getAppliedProfile("Profile::Profile1");
 
-		fixture = houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(new Function<EPackage, Profile>() {
+		return houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(new Function<EPackage, Profile>() {
 
 			@Override
 			public Profile apply(EPackage input) {
@@ -260,8 +314,9 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 		}), "dispose", modelSet.getResourceSet());
 	}
 
-	protected void createSimpleFixture() {
-		fixture = houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(Functions.constant((Profile) null)), "dispose", modelSet.getResourceSet());
+	@Bug({ "436666bis", "455248", "455329" })
+	protected StereotypeApplicationRepairSnippet createSimpleFixture() {
+		return houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(Functions.constant((Profile) null)), "dispose", modelSet.getResourceSet());
 	}
 
 	void repair(final EPackage schema, final IRepairAction action) {
@@ -283,5 +338,15 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 		Collection<? extends EPackage> schemata = zombies.getZombiePackages();
 		assertThat("Wrong number of zombie packages", schemata.size(), is(1));
 		return schemata.iterator().next();
+	}
+
+	//
+	// Nested types
+	//
+
+	@Target(ElementType.METHOD)
+	@Retention(RetentionPolicy.RUNTIME)
+	private @interface Bug {
+		String[] value();
 	}
 }

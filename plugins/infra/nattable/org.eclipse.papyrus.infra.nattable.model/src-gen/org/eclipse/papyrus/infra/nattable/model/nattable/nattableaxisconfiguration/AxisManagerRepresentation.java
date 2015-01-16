@@ -13,8 +13,8 @@
 package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ILabelProviderConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.StyledElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,17 +30,17 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.I
  * <ul>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getAxisManagerId <em>Axis Manager Id</em>}</li>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getLabelProviderContext <em>Label Provider Context</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getHeaderLabelConfiguration <em> Header Label Configuration</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getSpecificAxisConfigurations <em> Specific Axis Configurations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getHeaderLabelConfiguration <em>Header Label Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getSpecificAxisConfigurations <em>Specific Axis Configurations</em>}</li>
  * </ul>
  * </p>
  *
  * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage#getAxisManagerRepresentation()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='nonEmptyAxisManager'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot nonEmptyAxisManager='not (axisManagerId.oclIsUndefined() or axisManagerId = \'\')'"
  * @generated
  */
-public interface AxisManagerRepresentation extends EObject {
-
+public interface AxisManagerRepresentation extends StyledElement {
 	/**
 	 * Returns the value of the '<em><b>Axis Manager Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -60,8 +60,7 @@ public interface AxisManagerRepresentation extends EObject {
 	String getAxisManagerId();
 
 	/**
-	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getAxisManagerId
-	 * <em>Axis Manager Id</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getAxisManagerId <em>Axis Manager Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -90,8 +89,7 @@ public interface AxisManagerRepresentation extends EObject {
 	String getLabelProviderContext();
 
 	/**
-	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getLabelProviderContext
-	 * <em>Label Provider Context</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getLabelProviderContext <em>Label Provider Context</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -119,8 +117,7 @@ public interface AxisManagerRepresentation extends EObject {
 	ILabelProviderConfiguration getHeaderLabelConfiguration();
 
 	/**
-	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getHeaderLabelConfiguration
-	 * <em>Header Label Configuration</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getHeaderLabelConfiguration <em>Header Label Configuration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *

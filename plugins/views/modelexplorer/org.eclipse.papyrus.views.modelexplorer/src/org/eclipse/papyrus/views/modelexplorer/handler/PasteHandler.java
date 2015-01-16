@@ -10,6 +10,7 @@
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Use paste strategy
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - bug 455305
  *****************************************************************************/
 package org.eclipse.papyrus.views.modelexplorer.handler;
 
@@ -58,15 +59,17 @@ public class PasteHandler extends AbstractCommandHandler {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#computeEnabled()
 	 */
 	@Override
 	protected boolean computeEnabled() { // paste is only available on a simple selection and with a non empty Clipboard
+		boolean isEnabled = false;
+
 		if (!PapyrusClipboard.getInstance().isEmptyWithNoAdditionalData() && getSelectedElements().size() == 1) {
-			return !EMFHelper.isReadOnly(getSelectedElements().get(0));
-		} else {
-			return super.computeEnabled();
+			isEnabled = !EMFHelper.isReadOnly(getSelectedElements().get(0));
 		}
+
+		return isEnabled;
 	}
 }

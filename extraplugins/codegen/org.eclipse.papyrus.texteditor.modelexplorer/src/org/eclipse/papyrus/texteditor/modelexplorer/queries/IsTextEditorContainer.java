@@ -18,22 +18,24 @@ import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.facet.infra.query.core.exception.ModelQueryExecutionException;
-import org.eclipse.emf.facet.infra.query.core.java.IJavaModelQuery;
-import org.eclipse.emf.facet.infra.query.core.java.ParameterValueList;
+import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
+import org.eclipse.papyrus.emf.facet.efacet.core.exception.DerivedTypedElementException;
+import org.eclipse.papyrus.emf.facet.query.java.core.IJavaQuery2;
+import org.eclipse.papyrus.emf.facet.query.java.core.IParameterValueList2;
 import org.eclipse.papyrus.infra.viewpoints.policy.NotationUtils;
 import org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModel;
 import org.eclipse.papyrus.views.modelexplorer.queries.AbstractEditorContainerQuery;
 
 /** Returns true if the element contains a Table */
 // FIXME this query is declared using Element in the querySet -> change into EObject when the EMF-Facet bug will be corrected 365744
-public class IsTextEditorContainer extends AbstractEditorContainerQuery implements IJavaModelQuery<EObject, Boolean> {
+public class IsTextEditorContainer extends AbstractEditorContainerQuery implements IJavaQuery2<EObject, Boolean> {
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Boolean evaluate(final EObject context, ParameterValueList parameterValues) throws ModelQueryExecutionException {
+	public Boolean evaluate(EObject context, IParameterValueList2 parameterValues, IFacetManager manager)
+			throws DerivedTypedElementException {
 		Iterator<EObject> roots = NotationUtils.getNotationRoots(context);
 		if (roots == null) {
 			return false;

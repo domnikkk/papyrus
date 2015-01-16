@@ -34,7 +34,6 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell;
  * @generated
  */
 public interface IdAxisWrapper extends ICellAxisWrapper {
-
 	/**
 	 * Returns the value of the '<em><b>Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -53,8 +52,7 @@ public interface IdAxisWrapper extends ICellAxisWrapper {
 	String getElement();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.IdAxisWrapper#getElement <em>Element</em>}'
-	 * attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.IdAxisWrapper#getElement <em>Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *

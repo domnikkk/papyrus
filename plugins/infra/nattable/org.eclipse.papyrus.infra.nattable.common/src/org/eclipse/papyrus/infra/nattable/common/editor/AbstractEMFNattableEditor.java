@@ -18,28 +18,22 @@ package org.eclipse.papyrus.infra.nattable.common.editor;
 
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.preference.PreferenceStore;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.infra.core.editor.reload.IReloadContextProvider;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
-import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.infra.emf.nattable.selection.EObjectSelectionExtractor;
 import org.eclipse.papyrus.infra.nattable.Activator;
 import org.eclipse.papyrus.infra.nattable.common.utils.TableEditorInput;
-import org.eclipse.papyrus.infra.nattable.listener.NatTableDropListener;
 import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
 import org.eclipse.papyrus.infra.nattable.manager.table.NattableModelManager;
 import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
@@ -88,7 +82,7 @@ public abstract class AbstractEMFNattableEditor extends EditorPart implements Na
 	 */
 	public AbstractEMFNattableEditor(final ServicesRegistry servicesRegistry, final Table rawModel) {
 		this.servicesRegistry = servicesRegistry;
-		this.tableManager = new EMFNattableModelManager(rawModel);
+		this.tableManager = new NattableModelManager(rawModel, new EObjectSelectionExtractor());
 		this.synchronizer = new PartNameSynchronizer(rawModel);
 		this.workspacePreferenceStore = getWorkspaceViewerPreferenceStore();
 	}
@@ -323,32 +317,6 @@ public abstract class AbstractEMFNattableEditor extends EditorPart implements Na
 		}
 	}
 
-	private static class EMFNattableModelManager extends NattableModelManager {
-
-		EMFNattableModelManager(Table rawModel) {
-			super(rawModel);
-		}
-
-		@Override
-		protected NatTableDropListener createDropListener() {
-			return new NatTableDropListener(this) {
-
-				@Override
-				protected Collection<?> extractSelectedObjects(IStructuredSelection structuredSelection) {
-					List<EObject> result = new ArrayList<EObject>(structuredSelection.size());
-
-					for (Iterator<?> iter = structuredSelection.iterator(); iter.hasNext();) {
-						EObject eObject = EMFHelper.getEObject(iter.next());
-						if (eObject != null) {
-							result.add(eObject);
-						}
-					}
-
-					return result;
-				}
-			};
-		}
-	}
 
 	/**
 	 *

@@ -12,7 +12,10 @@
  *****************************************************************************/
 package org.eclipse.papyrus.migration.rsa.tests;
 
+import org.eclipse.papyrus.migration.rsa.tests.qvt.BatchImportTest;
 import org.eclipse.papyrus.migration.rsa.tests.qvt.ImportDiagramTest;
+import org.eclipse.papyrus.migration.rsa.tests.qvt.ImportModelsTest;
+import org.eclipse.papyrus.migration.rsa.tests.qvt.ImportProfilesTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -20,7 +23,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 
 @RunWith(Suite.class)
-@SuiteClasses({ ImportDiagramTest.class })
+@SuiteClasses({ ImportDiagramTest.class, ImportModelsTest.class, BatchImportTest.class, ImportProfilesTest.class })
 public class AllTests {
-	//Test suite
+	// Test suite
 }

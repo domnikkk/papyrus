@@ -13,7 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.providers;
 
-import org.eclipse.papyrus.uml.diagram.common.handlers.DeleteFromDiagramCommandHandler;
 import org.eclipse.papyrus.uml.diagram.common.handlers.RenamedElementHandler;
 import org.eclipse.ui.ISources;
 
@@ -31,7 +30,6 @@ public class ActionStateSourceProvider extends AbstractActionStateSourceProvider
 	/**
 	 * The name of the variables to check.
 	 */
-	public static final String DELETE_IN_DIAGRAM = "deleteInDiagram"; //$NON-NLS-1$
 
 	public static final String RENAME_NAMED_ELEMENT = "renameNamedElement";//$NON-NLS-1$
 
@@ -42,7 +40,6 @@ public class ActionStateSourceProvider extends AbstractActionStateSourceProvider
 	 */
 	public ActionStateSourceProvider() {
 		super();
-		currentState.put(DELETE_IN_DIAGRAM, DISABLED);
 		currentState.put(RENAME_NAMED_ELEMENT, DISABLED);
 	}
 
@@ -54,33 +51,9 @@ public class ActionStateSourceProvider extends AbstractActionStateSourceProvider
 	 */
 	@Override
 	public String[] getProvidedSourceNames() {
-		return new String[] { DELETE_IN_DIAGRAM, RENAME_NAMED_ELEMENT };
+		return new String[] { RENAME_NAMED_ELEMENT };
 	}
 
-	/**
-	 * Refresh the state of the Delete Action
-	 */
-	protected void refreshDeleteAction() {
-		String oldState = currentState.get(DELETE_IN_DIAGRAM);
-		String newState = (testDeleteFromDiagram() ? ENABLED : DISABLED);
-
-		if (oldState != newState) {
-			currentState.put(DELETE_IN_DIAGRAM, newState);
-			fireSourceChanged(ISources.WORKBENCH, currentState);
-		}
-	}
-
-	/**
-	 * Tests if the action DeleteFromDiagram (now called Delete Selected Element
-	 * can be executed
-	 *
-	 * @return <code>true</code> if the action DeleteFromDiagram (now called
-	 *         Delete Selected Element can be executed <code>false</code> if not
-	 */
-	protected boolean testDeleteFromDiagram() {
-		DeleteFromDiagramCommandHandler handler = new DeleteFromDiagramCommandHandler();
-		return isSelectionInDiagram() && handler.isEnabled();
-	}
 
 	/**
 	 *
@@ -89,7 +62,6 @@ public class ActionStateSourceProvider extends AbstractActionStateSourceProvider
 	 */
 	@Override
 	protected void refreshActions() {
-		refreshDeleteAction();
 		refreshRenamedNamedElement();
 	}
 

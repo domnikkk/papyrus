@@ -24,6 +24,7 @@ import org.eclipse.core.databinding.observable.IObserving;
 import org.eclipse.core.databinding.observable.Realm;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.WritableList;
+import org.eclipse.papyrus.infra.tools.util.StringHelper;
 import org.eclipse.papyrus.infra.widgets.editors.AbstractEditor;
 import org.eclipse.papyrus.infra.widgets.editors.ICommitListener;
 
@@ -244,7 +245,7 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 		 * @param language
 		 */
 		public void setLanguage(String language) {
-			if (language != this.language) {
+			if (!StringHelper.equals(language, this.language)) {
 				this.language = language;
 				fireChange();
 			}
@@ -256,7 +257,7 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 		 * @param body
 		 */
 		public void setBody(String body) {
-			if (body != this.body) {
+			if (!StringHelper.equals(body, this.body)) {
 				this.body = body;
 				fireChange();
 			}

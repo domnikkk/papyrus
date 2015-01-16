@@ -4,12 +4,36 @@
    <extension
          point="org.eclipse.help.toc">
       <toc
-            file="resource/profile-main-toc.xml"
+            file="resource/users/profile-main-toc.xml"
             primary="false">
       </toc>
       <toc
-            file="resource/profile-toc.xml"
+            file="resource/users/profile-toc.xml"
             primary="false">
+      </toc>
+      <toc
+            file="resource/users/whatIsAUmlProfile-toc.xml"
+            primary="false">
+      </toc>
+      <toc
+            file="resource/users/usingProfilesAndStereotypes-toc.xml"
+            primary="false">
+      </toc>
+      <toc
+            file="resource/users/definingProfilesAndStereotypes-toc.xml"
+            primary="false">
+      </toc>
+      <toc
+            file="resource/users/papyrusProfileArchitecture-toc.xml"
+            primary="false">
+      </toc>
+      <toc
+            file="resource/users/papyrusProfileLimitations-toc.xml"
+            primary="true">
+      </toc>
+      <toc
+            file="resource/users/simplifiedUsageOfProfilesAndStereotypes-toc.xml"
+            primary="true">
       </toc>
    </extension>
 

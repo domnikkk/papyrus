@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
-import org.eclipse.papyrus.uml.diagram.activity.helper.CustomAcceptEventActionEditHelper;
 import org.eclipse.papyrus.uml.diagram.activity.parsers.MessageFormatParser;
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.Element;
@@ -61,7 +60,7 @@ public class AcceptEventActionParser extends MessageFormatParser implements ISem
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see
 	 * org.eclipse.papyrus.uml.diagram.sequence.parsers.AbstractParser#isAffectingEvent
 	 * (java.lang.Object , int)
@@ -74,7 +73,7 @@ public class AcceptEventActionParser extends MessageFormatParser implements ISem
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.parsers.MessageFormatParser#
 	 * getPrintString(org.eclipse .core.runtime.IAdaptable, int)
 	 */
@@ -84,7 +83,7 @@ public class AcceptEventActionParser extends MessageFormatParser implements ISem
 		if (obj instanceof AcceptEventAction) {
 			AcceptEventAction action = (AcceptEventAction) obj;
 			String name = action.getName();
-			if (name != null && !CustomAcceptEventActionEditHelper.isAcceptTimeEventAction(action)) {
+			if (name != null) {// && !CustomAcceptEventActionEditHelper.isAcceptTimeEventAction(action)) {
 				return name;
 			}
 		}
@@ -93,7 +92,7 @@ public class AcceptEventActionParser extends MessageFormatParser implements ISem
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * areSemanticElementsAffected (org.eclipse.emf.ecore.EObject,
 	 * java.lang.Object)
@@ -106,7 +105,7 @@ public class AcceptEventActionParser extends MessageFormatParser implements ISem
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * getSemanticElementsBeingParsed (org.eclipse.emf.ecore.EObject)
 	 */

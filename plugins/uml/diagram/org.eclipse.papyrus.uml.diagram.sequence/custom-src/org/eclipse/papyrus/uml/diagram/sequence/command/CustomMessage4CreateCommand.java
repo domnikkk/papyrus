@@ -53,6 +53,7 @@ public class CustomMessage4CreateCommand extends Message4CreateCommand {
 	 */
 	@Override
 	public boolean canExecute() {
+		// #445271: we don't care about CommandHelper.hasValidContainer() 
 		if (source == null && target == null) {
 			return false;
 		}
@@ -68,11 +69,6 @@ public class CustomMessage4CreateCommand extends Message4CreateCommand {
 		// target may be null here but it's possible to check constraint
 		if (getContainer() == null) {
 			return false;
-		}
-		if (getSource() != null && getTarget() != null) {
-			if (!CommandHelper.hasValidContainer(getRequest())) {
-				return false;
-			}
 		}
 		if (!UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateMessage_4006(getContainer(), getSource(), getTarget())) {
 			return false;

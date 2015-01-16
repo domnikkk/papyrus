@@ -12,8 +12,11 @@
 package org.eclipse.papyrus.migration.rsa.transformation.ui;
 
 import java.text.Collator;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
@@ -26,7 +29,6 @@ import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TableLayout;
 import org.eclipse.jface.viewers.TableViewer;
@@ -45,10 +47,9 @@ import org.eclipse.papyrus.infra.widgets.providers.WorkspaceContentProvider;
 import org.eclipse.papyrus.migration.rsa.Activator;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping;
+import org.eclipse.papyrus.uml.extensionpoints.IRegisteredItem;
 import org.eclipse.papyrus.uml.extensionpoints.Registry;
-import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -79,6 +80,10 @@ public class URIMappingDialog extends SelectionDialog {
 
 	private static final int BROWSE_REGISTERED_ID = IDialogConstants.CLIENT_ID + 2;
 
+	private static final int BROWSE_PROFILES_ID = IDialogConstants.CLIENT_ID + 3;
+
+	List<URIMapping> allMappings;
+
 	public URIMappingDialog(Shell shell, MappingParameters mappingParameters) {
 		super(shell);
 		this.mappingParameters = mappingParameters;
@@ -103,7 +108,7 @@ public class URIMappingDialog extends SelectionDialog {
 
 		Label description = new Label(area, SWT.WRAP);
 		description.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
-		description.setText("Some elements of the following resources can't be resolved. Please choose the model to use to replace them");
+		description.setText("Some elements in the following resources can't be resolved. Please choose the resources to replace them.");
 
 		Composite self = new Composite(area, SWT.NONE);
 		self.setLayout(new GridLayout(1, true));
@@ -122,9 +127,14 @@ public class URIMappingDialog extends SelectionDialog {
 		buttonsBarComposite.setLayoutData(new GridData(SWT.END, SWT.CENTER, false, false));
 
 		Button browseWorkspace = createButton(buttonsBarComposite, BROWSE_WORKSPACE_ID, "", false);
-		browseWorkspace.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("icons/Add_12x12.gif"));
+		browseWorkspace.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("icons/browse_12x12.gif"));
+		browseWorkspace.setToolTipText("Browse Workspace");
 		Button browseRegistered = createButton(buttonsBarComposite, BROWSE_REGISTERED_ID, "", false);
-		browseRegistered.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("icons/AddReg.gif"));
+		browseRegistered.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("icons/Add_12x12.gif"));
+		browseRegistered.setToolTipText("Browse Registered Libraries");
+		Button browseProfiles = createButton(buttonsBarComposite, BROWSE_PROFILES_ID, "", false);
+		browseProfiles.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("icons/AddReg.gif"));
+		browseProfiles.setToolTipText("Browse Registered Profiles");
 
 		viewer = new TableViewer(self, SWT.FULL_SELECTION | SWT.BORDER);
 		Table table = viewer.getTable();
@@ -160,7 +170,13 @@ public class URIMappingDialog extends SelectionDialog {
 			}
 		});
 
-		viewer.setInput(result.getUriMappings());
+		allMappings = new LinkedList<URIMapping>();
+		allMappings.addAll(result.getUriMappings());
+		allMappings.addAll(result.getProfileUriMappings());
+
+		removeDuplicates(allMappings);
+
+		viewer.setInput(allMappings);
 
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
@@ -170,7 +186,60 @@ public class URIMappingDialog extends SelectionDialog {
 			}
 		});
 
+		updateControls();
+
 		return self;
+	}
+
+	/**
+	 * Remove duplicate mappings. Mappings are duplicate if they have the same SourceURI.
+	 * Less specific mappings will be discarded (Usually, the ones with the same Source and Target URI)
+	 */
+	protected void removeDuplicates(List<URIMapping> allMappings) {
+		List<URIMapping> mappingsCopy = new LinkedList<URIMapping>(allMappings);
+
+		for (URIMapping mapping : mappingsCopy) {
+			for (URIMapping m : allMappings) {
+				if (m == mapping) {
+					continue;
+				}
+
+				// This is a duplicate
+				if (mapping.getSourceURI().equals(m.getSourceURI())) {
+					// If both mappings are still present, remove one of them
+					if (allMappings.contains(mapping) && allMappings.contains(m)) {
+						URIMapping mappingToRemove = findLessSpecificMapping(mapping, m);
+
+						allMappings.remove(mappingToRemove);
+						break;
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * If 2 mappings have the same sourceURI but different targetURI, returns the less pertinent one
+	 * (Usually, the one with the same Source and Target)
+	 *
+	 * @param mapping1
+	 * @param mapping2
+	 * @return
+	 */
+	protected URIMapping findLessSpecificMapping(URIMapping mapping1, URIMapping mapping2) {
+		if (!isUsefulMapping(mapping1)) {
+			return mapping1;
+		}
+
+		return mapping2;
+	}
+
+	protected boolean isUsefulMapping(URIMapping mapping) {
+		if (mapping.getTargetURI() == null || "".equals(mapping.getTargetURI()) || mapping.getTargetURI().equals(mapping.getSourceURI())) {
+			return false;
+		}
+
+		return true;
 	}
 
 	@Override
@@ -188,6 +257,7 @@ public class URIMappingDialog extends SelectionDialog {
 
 		getButton(BROWSE_REGISTERED_ID).setEnabled(enableBrowse);
 		getButton(BROWSE_WORKSPACE_ID).setEnabled(enableBrowse);
+		getButton(BROWSE_PROFILES_ID).setEnabled(enableBrowse);
 
 		viewer.refresh();
 	}
@@ -201,12 +271,13 @@ public class URIMappingDialog extends SelectionDialog {
 		case BROWSE_WORKSPACE_ID:
 			browseWorkspaceLibraries();
 			return;
+		case BROWSE_PROFILES_ID:
+			browseRegisteredProfiles();
+			return;
 		}
 
 		super.buttonPressed(buttonId);
 	}
-
-
 
 	protected URIMapping getSelectedMapping() {
 		ISelection selection = viewer.getSelection();
@@ -267,31 +338,19 @@ public class URIMappingDialog extends SelectionDialog {
 	}
 
 	protected void browseRegisteredLibraries() {
+		browseRegisteredItems(Registry.getRegisteredLibraries(), "Browse Registered Libraries", "Select one of the registered libraries below.");
+	}
+
+	protected void browseRegisteredProfiles() {
+		browseRegisteredItems(Registry.getRegisteredProfiles(), "Browse Registered Profiles", "Select one of the registered profiles below.");
+	}
+
+	protected void browseRegisteredItems(Collection<? extends IRegisteredItem> items, String dialogTitle, String dialogDescription) {
 		TreeSelectorDialog dialog = new TreeSelectorDialog(getShell());
-		dialog.setTitle("Browse Registered Libraries");
-		dialog.setDescription("Select one of the registered libraries below.");
-		dialog.setContentProvider(new EncapsulatedContentProvider(new StaticContentProvider(Registry.getRegisteredLibraries().toArray(new IRegisteredLibrary[0]))));
-		dialog.setLabelProvider(new LabelProvider() {
-
-			@Override
-			public Image getImage(Object element) {
-				if (element instanceof IRegisteredLibrary) {
-					IRegisteredLibrary library = (IRegisteredLibrary) element;
-					return library.getImage();
-				}
-				return super.getImage(element);
-			}
-
-			@Override
-			public String getText(Object element) {
-				if (element instanceof IRegisteredLibrary) {
-					IRegisteredLibrary library = (IRegisteredLibrary) element;
-					return library.getName();
-				}
-
-				return super.getText(element);
-			}
-		});
+		dialog.setTitle(dialogTitle);
+		dialog.setDescription(dialogDescription);
+		dialog.setContentProvider(new EncapsulatedContentProvider(new StaticContentProvider(items.toArray(new IRegisteredItem[0]))));
+		dialog.setLabelProvider(new RegisteredItemLabelProvider());
 
 		if (dialog.open() == Window.OK) {
 			Object[] result = dialog.getResult();
@@ -300,18 +359,36 @@ public class URIMappingDialog extends SelectionDialog {
 			}
 
 			Object selectedElement = result[0];
-			if (selectedElement instanceof IRegisteredLibrary) {
-				IRegisteredLibrary library = (IRegisteredLibrary) selectedElement;
+			if (selectedElement instanceof IRegisteredItem) {
+				IRegisteredItem item = (IRegisteredItem) selectedElement;
 
-				replaceSelectionWith(library.getUri());
+				replaceSelectionWith(item.getUri());
 			}
 		}
 	}
 
 	@Override
 	protected void okPressed() {
+		propagateURIMappings();
 		setResult(Collections.singletonList(result)); // Set the new result
 		super.okPressed();
+	}
+
+	/** Propagates the URI Mappings to all duplicates */
+	protected void propagateURIMappings() {
+		for (URIMapping mapping : allMappings) {
+			for (URIMapping uriMapping : result.getUriMappings()) {
+				if (uriMapping.getSourceURI().equals(mapping.getSourceURI())) {
+					uriMapping.setTargetURI(mapping.getTargetURI());
+				}
+			}
+
+			for (URIMapping profileURIMapping : result.getProfileUriMappings()) {
+				if (profileURIMapping.getSourceURI().equals(mapping.getSourceURI())) {
+					profileURIMapping.setTargetURI(mapping.getTargetURI());
+				}
+			}
+		}
 	}
 
 	private class URIColumnsLabelProvider extends ColumnLabelProvider {

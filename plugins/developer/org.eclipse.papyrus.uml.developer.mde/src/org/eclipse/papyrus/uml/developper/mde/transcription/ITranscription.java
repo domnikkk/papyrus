@@ -198,4 +198,13 @@ public interface ITranscription {
 	 * 		represents the uri of the sub section doc element
 	 */
 	public abstract void writeTOCSubSection(StringBuffer out, String subSectionName, String uri);
+	
+	/**
+	 * 
+	 * @param out
+	 */
+	public abstract void writeNewLine(StringBuffer out);
+	
+
+	
 }

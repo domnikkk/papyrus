@@ -13,20 +13,20 @@
  *****************************************************************************/
 package org.eclipse.papyrus.texteditor.modelexplorer.queries;
 
-import org.eclipse.emf.facet.infra.query.core.exception.ModelQueryExecutionException;
-import org.eclipse.emf.facet.infra.query.core.java.IJavaModelQuery;
-import org.eclipse.emf.facet.infra.query.core.java.ParameterValueList;
+import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
+import org.eclipse.papyrus.emf.facet.query.java.core.IJavaQuery2;
+import org.eclipse.papyrus.emf.facet.query.java.core.IParameterValueList2;
 import org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModel;
 import org.eclipse.papyrus.views.modelexplorer.queries.AbstractGetEditorIconQuery;
 
 /** Return the path to the icon of the corresponding table */
-public class GetTextEditorIcon extends AbstractGetEditorIconQuery implements IJavaModelQuery<TextEditorModel, String> {
+public class GetTextEditorIcon extends AbstractGetEditorIconQuery implements IJavaQuery2<TextEditorModel, String> {
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public String evaluate(final TextEditorModel textInstance, final ParameterValueList parameterValues) throws ModelQueryExecutionException {
+	public String evaluate(TextEditorModel textInstance, IParameterValueList2 parameterValues, IFacetManager manager) {
 		return "/" + getEditorRegistry(textInstance).getEditorURLIcon(textInstance); //$NON-NLS-1$
 	}
 }

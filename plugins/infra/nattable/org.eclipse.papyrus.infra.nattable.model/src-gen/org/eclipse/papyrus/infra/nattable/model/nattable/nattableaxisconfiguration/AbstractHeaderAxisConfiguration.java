@@ -13,9 +13,8 @@
 package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EModelElement;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ILabelProviderConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.StyledElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,10 +37,8 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.I
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayLabel <em>Display Label</em>}</li>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayFilter <em>Display Filter</em>}</li>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayIndex <em>Display Index</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getOwnedLabelConfigurations
- * <em>Owned Label Configurations</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getOwnedAxisConfigurations
- * <em>Owned Axis Configurations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getOwnedLabelConfigurations <em>Owned Label Configurations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getOwnedAxisConfigurations <em>Owned Axis Configurations</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,8 +49,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.I
  *        "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot oneObjectLabelConfigurationTypes='ownedLabelConfigurations->collect(ilc : nattable::nattablelabelprovider::ILabelProviderConfiguration | ilc.oclAsType(nattable::nattablelabelprovider::ObjectLabelProviderConfiguration))->size() <= 1' oneFeatureLabelConfigurationTypes='ownedLabelConfigurations->collect(ilc : nattable::nattablelabelprovider::ILabelProviderConfiguration | ilc.oclAsType(nattable::nattablelabelprovider::FeatureLabelProviderConfiguration))->size() <= 1'"
  * @generated
  */
-public interface AbstractHeaderAxisConfiguration extends EObject, EModelElement {
-
+public interface AbstractHeaderAxisConfiguration extends StyledElement {
 	/**
 	 * Returns the value of the '<em><b>Index Style</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisIndexStyle}.
@@ -73,8 +69,7 @@ public interface AbstractHeaderAxisConfiguration extends EObject, EModelElement 
 	AxisIndexStyle getIndexStyle();
 
 	/**
-	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getIndexStyle
-	 * <em>Index Style</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getIndexStyle <em>Index Style</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -104,8 +99,7 @@ public interface AbstractHeaderAxisConfiguration extends EObject, EModelElement 
 	boolean isDisplayLabel();
 
 	/**
-	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayLabel
-	 * <em>Display Label</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayLabel <em>Display Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -134,8 +128,7 @@ public interface AbstractHeaderAxisConfiguration extends EObject, EModelElement 
 	boolean isDisplayFilter();
 
 	/**
-	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayFilter
-	 * <em>Display Filter</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayFilter <em>Display Filter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -164,8 +157,7 @@ public interface AbstractHeaderAxisConfiguration extends EObject, EModelElement 
 	boolean isDisplayIndex();
 
 	/**
-	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayIndex
-	 * <em>Display Index</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayIndex <em>Display Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *

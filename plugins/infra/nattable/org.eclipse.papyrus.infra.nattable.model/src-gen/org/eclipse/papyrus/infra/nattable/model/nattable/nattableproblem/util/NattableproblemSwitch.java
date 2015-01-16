@@ -20,6 +20,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.T
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.NattableproblemPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.Problem;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.StyledElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +36,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringR
  * @generated
  */
 public class NattableproblemSwitch<T> extends Switch<T> {
-
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -90,6 +90,9 @@ public class NattableproblemSwitch<T> extends Switch<T> {
 				result = caseTableNamedElement(problem);
 			}
 			if (result == null) {
+				result = caseStyledElement(problem);
+			}
+			if (result == null) {
 				result = caseEModelElement(problem);
 			}
 			if (result == null) {
@@ -105,6 +108,9 @@ public class NattableproblemSwitch<T> extends Switch<T> {
 			}
 			if (result == null) {
 				result = caseTableNamedElement(stringResolutionProblem);
+			}
+			if (result == null) {
+				result = caseStyledElement(stringResolutionProblem);
 			}
 			if (result == null) {
 				result = caseEModelElement(stringResolutionProblem);
@@ -167,6 +173,23 @@ public class NattableproblemSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEModelElement(EModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Styled Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Styled Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStyledElement(StyledElement object) {
 		return null;
 	}
 

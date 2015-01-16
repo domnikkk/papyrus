@@ -21,6 +21,7 @@ import org.eclipse.nebula.widgets.nattable.style.DisplayMode;
 import org.eclipse.papyrus.infra.nattable.manager.table.AbstractNattableWidgetManager;
 import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.IAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration;
 import org.eclipse.papyrus.infra.nattable.utils.Constants;
 import org.eclipse.papyrus.infra.nattable.utils.ILabelProviderCellContextElementWrapper;
 import org.eclipse.papyrus.infra.nattable.utils.NattableConfigAttributes;
@@ -53,6 +54,11 @@ public class NattableTopLabelProvider extends AbstractNattableCellLabelProvider 
 	 * @return
 	 */
 	protected String getRowHeaderLabel(final ILabelProviderCellContextElementWrapper cell, final IConfigRegistry configRegistry) {
+		Object representedObjet = cell.getObject();
+		if (representedObjet instanceof IAxis && ((IAxis) representedObjet).getElement() instanceof TreeFillingConfiguration) {
+			TreeFillingConfiguration conf = (TreeFillingConfiguration) ((IAxis) representedObjet).getElement();
+			return getLabel(cell, configRegistry, conf.getLabelProviderContext());
+		}
 		return getLabel(cell, configRegistry, Constants.HEADER_LABEL_PROVIDER_CONTEXT);
 	}
 
@@ -161,12 +167,18 @@ public class NattableTopLabelProvider extends AbstractNattableCellLabelProvider 
 	@Override
 	public Image getImage(Object element) {
 		final ILabelProviderCellContextElementWrapper contextElement = (ILabelProviderCellContextElementWrapper) element;
-
-
 		Object object = contextElement.getObject();
 		String labelProviderContextId = null;
 		final IConfigRegistry configRegistry = contextElement.getConfigRegistry();
 		if (object instanceof IAxis) {
+			if (((IAxis) object).getElement() instanceof TreeFillingConfiguration) {
+				TreeFillingConfiguration conf = (TreeFillingConfiguration) ((IAxis) object).getElement();
+				labelProviderContextId = conf.getLabelProviderContext();
+				return getImage(contextElement, configRegistry, labelProviderContextId);
+			}
+			if (((IAxis) object).getManager() == null) {
+				return null;
+			}
 			labelProviderContextId = ((IAxis) object).getManager().getLabelProviderContext();
 			return getImage(contextElement, configRegistry, labelProviderContextId);
 		}
@@ -202,6 +214,11 @@ public class NattableTopLabelProvider extends AbstractNattableCellLabelProvider 
 	 *         the image to display in the row
 	 */
 	private Image getRowHeaderImage(ILabelProviderCellContextElementWrapper cell, IConfigRegistry configRegistry) {
+		Object representedObjet = cell.getObject();
+		if (representedObjet instanceof IAxis && ((IAxis) representedObjet).getElement() instanceof TreeFillingConfiguration) {
+			TreeFillingConfiguration conf = (TreeFillingConfiguration) ((IAxis) representedObjet).getElement();
+			return getImage(cell, configRegistry, conf.getLabelProviderContext());
+		}
 		return getImage(cell, configRegistry, Constants.HEADER_LABEL_PROVIDER_CONTEXT);
 	}
 

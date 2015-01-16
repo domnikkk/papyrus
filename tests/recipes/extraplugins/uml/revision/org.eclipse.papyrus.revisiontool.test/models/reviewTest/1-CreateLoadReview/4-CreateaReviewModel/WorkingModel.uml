@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_3zvrkHFhEeSbnbmZnYsqkw" name="model">
+  <ownedComment xmi:type="uml:Comment" xmi:id="_8g6LUIElEeSVftpA_T1lwg">
+    <body>The goals of this model is to test if a review model can be created&#xD;
+1. Open this model&#xD;
+2. Click on the comment with a plus.&#xD;
+3. Set the name for a review model&#xD;
+4. Save all.&#xD;
+--> the review editor must display one review and a review model must be created in the project explorer</body>
+  </ownedComment>
+  <packagedElement xmi:type="uml:Class" xmi:id="_5qw3kHFhEeSbnbmZnYsqkw" name="Class1"/>
+</uml:Model>

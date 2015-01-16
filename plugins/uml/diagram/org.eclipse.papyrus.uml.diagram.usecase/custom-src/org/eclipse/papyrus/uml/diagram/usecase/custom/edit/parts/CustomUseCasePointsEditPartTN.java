@@ -13,8 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.usecase.custom.edit.parts;
 
-import org.eclipse.draw2d.IFigure;
-import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCasePointsEditPartTN;
 
@@ -24,15 +22,15 @@ public class CustomUseCasePointsEditPartTN extends UseCasePointsEditPartTN {
 		super(view);
 	}
 
-	/**
-	 * remove border
-	 */
-	@Override
-	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
-		// remove border
-		result.setBorder(null);
-		result.setTitleVisibility(false);
-		return result;
-	}
+	// /**
+	// * remove border
+	// */
+	// @Override
+	// public IFigure createFigure() {
+	// ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
+	// // remove border
+	// result.setBorder(null);
+	// result.setTitleVisibility(false);
+	// return result;
+	// }
 }

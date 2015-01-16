@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:nattable="http://www.eclipse.org/papyrus/nattable/model" xmlns:nattableaxis="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxis" xmlns:nattableaxisconfiguration="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisconfiguration" xmlns:nattableaxisprovider="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisprovider" xmlns:nattableconfiguration="http://www.eclipse.org/papyrus/nattable/model/nattableconfiguration" xmlns:nattablestyle="http://www.eclipse.org/papyrus/nattable/model/table/nattablestyle" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxis http://www.eclipse.org/papyrus/nattable/model#//nattableaxis http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisconfiguration http://www.eclipse.org/papyrus/nattable/model#//nattableaxisconfiguration http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisprovider http://www.eclipse.org/papyrus/nattable/model#//nattableaxisprovider http://www.eclipse.org/papyrus/nattable/model/nattableconfiguration http://www.eclipse.org/papyrus/nattable/model#//nattableconfiguration http://www.eclipse.org/papyrus/nattable/model/table/nattablestyle http://www.eclipse.org/papyrus/nattable/model#//nattablestyle">
+  <nattable:Table xmi:id="_aUsOoFz_EeSXB5lObuMx0Q" name="ClassTreeTable0" currentRowAxisProvider="_aUsOo1z_EeSXB5lObuMx0Q" currentColumnAxisProvider="_aUsOoVz_EeSXB5lObuMx0Q">
+    <styles xmi:type="nattablestyle:TableDisplayStyle" xmi:id="_3ADggF9oEeSKQchw6MYwwA" displayStyle="HIERARCHIC_MULTI_TREE_COLUMN"/>
+    <styles xmi:type="nattablestyle:IntListValueStyle" xmi:id="_-d-fMGBbEeSBLv2oi7EXvw" name="hiddenCategoriesByDepth">
+      <intListValue>1</intListValue>
+    </styles>
+    <context xmi:type="uml:Model" href="tableFillingAndTableExpandTest.uml#_Wn-FQFz_EeSXB5lObuMx0Q"/>
+    <owner xmi:type="uml:Model" href="tableFillingAndTableExpandTest.uml#_Wn-FQFz_EeSXB5lObuMx0Q"/>
+    <prototype xmi:type="configuration:PapyrusSyncTable" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.clazz.config/configs/classTreeTable.configuration#_P3J1cEr7EeSVGbM3cmVSqQ"/>
+    <tableConfiguration xmi:type="nattableconfiguration:TableConfiguration" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.clazz.config/configs/class_synchronized_tree.nattableconfiguration#/"/>
+    <columnAxisProvidersHistory xmi:type="nattableaxisprovider:SlaveObjectAxisProvider" xmi:id="_aUsOoVz_EeSXB5lObuMx0Q" description="This axis provider provides available columns according to the rows of the table (features of the object displayed on the other axis)" name="UML Feature axis provider">
+      <axis xmi:type="nattableaxis:EStructuralFeatureAxis" xmi:id="_7jkSgF9pEeSKQchw6MYwwA">
+        <manager xmi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.clazz.config/configs/class_synchronized_tree.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.0"/>
+        <element xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+      </axis>
+      <axis xmi:type="nattableaxis:EStructuralFeatureAxis" xmi:id="_x4JCIF-BEeSiC_8vQsLcmQ">
+        <manager xmi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.clazz.config/configs/class_synchronized_tree.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.0"/>
+        <element xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/clientDependency"/>
+      </axis>
+    </columnAxisProvidersHistory>
+    <rowAxisProvidersHistory xmi:type="nattableaxisprovider:MasterObjectAxisProvider" xmi:id="_aUsOo1z_EeSXB5lObuMx0Q" description="This axis provider manages the rows, according to the wanted hierarchy" name="HierarchicalRowaAxisManager" disconnectSlave="true"/>
+    <localRowHeaderAxisConfiguration xmi:type="nattableaxisconfiguration:LocalTableHeaderAxisConfiguration" xmi:id="_ar-hsF96EeS5UN4qxUcpWg" indexStyle="NUMERIC">
+      <styles xmi:type="nattablestyle:IntValueStyle" xmi:id="_ar_v0F96EeS5UN4qxUcpWg" name="rowLabelWidth" intValue="397"/>
+    </localRowHeaderAxisConfiguration>
+  </nattable:Table>
+  <nattable:Table xmi:id="_DvW5QGBcEeSBLv2oi7EXvw" name="ClassTreeTable1" currentRowAxisProvider="_DvW5Q2BcEeSBLv2oi7EXvw" currentColumnAxisProvider="_DvW5QWBcEeSBLv2oi7EXvw">
+    <styles xmi:type="nattablestyle:TableDisplayStyle" xmi:id="_FknxwGBcEeSBLv2oi7EXvw" displayStyle="HIERARCHIC_SINGLE_TREE_COLUMN"/>
+    <styles xmi:type="nattablestyle:IntListValueStyle" xmi:id="_o6bowGBcEeSBLv2oi7EXvw" name="hiddenCategoriesByDepth">
+      <intListValue>1</intListValue>
+    </styles>
+    <context xmi:type="uml:Model" href="tableFillingAndTableExpandTest.uml#_Wn-FQFz_EeSXB5lObuMx0Q"/>
+    <owner xmi:type="uml:Model" href="tableFillingAndTableExpandTest.uml#_Wn-FQFz_EeSXB5lObuMx0Q"/>
+    <prototype xmi:type="configuration:PapyrusSyncTable" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.clazz.config/configs/classTreeTable.configuration#_P3J1cEr7EeSVGbM3cmVSqQ"/>
+    <tableConfiguration xmi:type="nattableconfiguration:TableConfiguration" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.clazz.config/configs/class_synchronized_tree.nattableconfiguration#/"/>
+    <columnAxisProvidersHistory xmi:type="nattableaxisprovider:SlaveObjectAxisProvider" xmi:id="_DvW5QWBcEeSBLv2oi7EXvw" description="This axis provider provides available columns according to the rows of the table (features of the object displayed on the other axis)" name="UML Feature axis provider">
+      <axis xmi:type="nattableaxis:EStructuralFeatureAxis" xmi:id="_DvW5QmBcEeSBLv2oi7EXvw">
+        <manager xmi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.clazz.config/configs/class_synchronized_tree.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.0"/>
+        <element xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+      </axis>
+    </columnAxisProvidersHistory>
+    <rowAxisProvidersHistory xmi:type="nattableaxisprovider:MasterObjectAxisProvider" xmi:id="_DvW5Q2BcEeSBLv2oi7EXvw" description="This axis provider manages the rows, according to the wanted hierarchy" name="HierarchicalRowaAxisManager" disconnectSlave="true"/>
+  </nattable:Table>
+  <nattable:Table xmi:id="_BLq3IGTTEeSdf_74U33iMg" name="ClassTreeTable2" currentRowAxisProvider="_BLq3I2TTEeSdf_74U33iMg" currentColumnAxisProvider="_BLq3IWTTEeSdf_74U33iMg">
+    <styles xmi:type="nattablestyle:TableDisplayStyle" xmi:id="_P7VJgGTTEeSdf_74U33iMg" displayStyle="HIERARCHIC_MULTI_TREE_COLUMN"/>
+    <context xmi:type="uml:Model" href="tableFillingAndTableExpandTest.uml#_Wn-FQFz_EeSXB5lObuMx0Q"/>
+    <owner xmi:type="uml:Model" href="tableFillingAndTableExpandTest.uml#_Wn-FQFz_EeSXB5lObuMx0Q"/>
+    <prototype xmi:type="configuration:PapyrusSyncTable" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.clazz.config/configs/classTreeTable.configuration#_P3J1cEr7EeSVGbM3cmVSqQ"/>
+    <tableConfiguration xmi:type="nattableconfiguration:TableConfiguration" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.clazz.config/configs/class_synchronized_tree.nattableconfiguration#/"/>
+    <columnAxisProvidersHistory xmi:type="nattableaxisprovider:SlaveObjectAxisProvider" xmi:id="_BLq3IWTTEeSdf_74U33iMg" description="This axis provider provides available columns according to the rows of the table (features of the object displayed on the other axis)" name="UML Feature axis provider">
+      <axis xmi:type="nattableaxis:EStructuralFeatureAxis" xmi:id="_BLq3ImTTEeSdf_74U33iMg">
+        <manager xmi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.clazz.config/configs/class_synchronized_tree.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.0"/>
+        <element xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+      </axis>
+    </columnAxisProvidersHistory>
+    <rowAxisProvidersHistory xmi:type="nattableaxisprovider:MasterObjectAxisProvider" xmi:id="_BLq3I2TTEeSdf_74U33iMg" description="This axis provider manages the rows, according to the wanted hierarchy" name="HierarchicalRowaAxisManager" disconnectSlave="true"/>
+    <localRowHeaderAxisConfiguration xmi:type="nattableaxisconfiguration:LocalTableHeaderAxisConfiguration" xmi:id="_N_UIwGTTEeSdf_74U33iMg" indexStyle="NUMERIC"/>
+  </nattable:Table>
+</xmi:XMI>

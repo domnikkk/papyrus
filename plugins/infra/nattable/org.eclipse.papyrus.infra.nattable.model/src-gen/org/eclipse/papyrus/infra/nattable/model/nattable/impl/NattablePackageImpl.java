@@ -36,6 +36,8 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.N
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.NattablelabelproviderPackageImpl;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.NattableproblemPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.impl.NattableproblemPackageImpl;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.NattablestylePackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.impl.NattablestylePackageImpl;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.NattabletesterPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl.NattabletesterPackageImpl;
 import org.eclipse.papyrus.infra.nattable.model.nattable.util.NattableValidator;
@@ -48,7 +50,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.util.NattableValidator;
  * @generated
  */
 public class NattablePackageImpl extends EPackageImpl implements NattablePackage {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,8 +59,7 @@ public class NattablePackageImpl extends EPackageImpl implements NattablePackage
 	private EClass tableEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
-	 * package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -107,13 +107,16 @@ public class NattablePackageImpl extends EPackageImpl implements NattablePackage
 
 		// Obtain or create and register interdependencies
 		NattableconfigurationPackageImpl theNattableconfigurationPackage = (NattableconfigurationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattableconfigurationPackage.eNS_URI) instanceof NattableconfigurationPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(NattableconfigurationPackage.eNS_URI) : NattableconfigurationPackage.eINSTANCE);
+				.getEPackage(NattableconfigurationPackage.eNS_URI)
+				: NattableconfigurationPackage.eINSTANCE);
 		NattableaxisproviderPackageImpl theNattableaxisproviderPackage = (NattableaxisproviderPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattableaxisproviderPackage.eNS_URI) instanceof NattableaxisproviderPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(NattableaxisproviderPackage.eNS_URI) : NattableaxisproviderPackage.eINSTANCE);
 		NattablelabelproviderPackageImpl theNattablelabelproviderPackage = (NattablelabelproviderPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattablelabelproviderPackage.eNS_URI) instanceof NattablelabelproviderPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(NattablelabelproviderPackage.eNS_URI) : NattablelabelproviderPackage.eINSTANCE);
+				.getEPackage(NattablelabelproviderPackage.eNS_URI)
+				: NattablelabelproviderPackage.eINSTANCE);
 		NattableaxisconfigurationPackageImpl theNattableaxisconfigurationPackage = (NattableaxisconfigurationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattableaxisconfigurationPackage.eNS_URI) instanceof NattableaxisconfigurationPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(NattableaxisconfigurationPackage.eNS_URI) : NattableaxisconfigurationPackage.eINSTANCE);
+				.getEPackage(NattableaxisconfigurationPackage.eNS_URI)
+				: NattableaxisconfigurationPackage.eINSTANCE);
 		NattabletesterPackageImpl theNattabletesterPackage = (NattabletesterPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattabletesterPackage.eNS_URI) instanceof NattabletesterPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(NattabletesterPackage.eNS_URI) : NattabletesterPackage.eINSTANCE);
 		NattableaxisPackageImpl theNattableaxisPackage = (NattableaxisPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattableaxisPackage.eNS_URI) instanceof NattableaxisPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NattableaxisPackage.eNS_URI)
@@ -122,6 +125,8 @@ public class NattablePackageImpl extends EPackageImpl implements NattablePackage
 				: NattablecellPackage.eINSTANCE);
 		NattableproblemPackageImpl theNattableproblemPackage = (NattableproblemPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattableproblemPackage.eNS_URI) instanceof NattableproblemPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(NattableproblemPackage.eNS_URI) : NattableproblemPackage.eINSTANCE);
+		NattablestylePackageImpl theNattablestylePackage = (NattablestylePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattablestylePackage.eNS_URI) instanceof NattablestylePackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(NattablestylePackage.eNS_URI) : NattablestylePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theNattablePackage.createPackageContents();
@@ -133,6 +138,7 @@ public class NattablePackageImpl extends EPackageImpl implements NattablePackage
 		theNattableaxisPackage.createPackageContents();
 		theNattablecellPackage.createPackageContents();
 		theNattableproblemPackage.createPackageContents();
+		theNattablestylePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theNattablePackage.initializePackageContents();
@@ -144,15 +150,17 @@ public class NattablePackageImpl extends EPackageImpl implements NattablePackage
 		theNattableaxisPackage.initializePackageContents();
 		theNattablecellPackage.initializePackageContents();
 		theNattableproblemPackage.initializePackageContents();
+		theNattablestylePackage.initializePackageContents();
 
 		// Register package validator
-		EValidator.Registry.INSTANCE.put(theNattablePackage, new EValidator.Descriptor() {
-
-			@Override
-			public EValidator getEValidator() {
-				return NattableValidator.INSTANCE;
-			}
-		});
+		EValidator.Registry.INSTANCE.put
+				(theNattablePackage,
+						new EValidator.Descriptor() {
+							@Override
+							public EValidator getEValidator() {
+								return NattableValidator.INSTANCE;
+							}
+						});
 
 		// Mark meta-data to indicate it can't be changed
 		theNattablePackage.freeze();
@@ -391,6 +399,7 @@ public class NattablePackageImpl extends EPackageImpl implements NattablePackage
 		NattableaxisPackage theNattableaxisPackage = (NattableaxisPackage) EPackage.Registry.INSTANCE.getEPackage(NattableaxisPackage.eNS_URI);
 		NattablecellPackage theNattablecellPackage = (NattablecellPackage) EPackage.Registry.INSTANCE.getEPackage(NattablecellPackage.eNS_URI);
 		NattableproblemPackage theNattableproblemPackage = (NattableproblemPackage) EPackage.Registry.INSTANCE.getEPackage(NattableproblemPackage.eNS_URI);
+		NattablestylePackage theNattablestylePackage = (NattablestylePackage) EPackage.Registry.INSTANCE.getEPackage(NattablestylePackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theNattableconfigurationPackage);
@@ -401,6 +410,7 @@ public class NattablePackageImpl extends EPackageImpl implements NattablePackage
 		getESubpackages().add(theNattableaxisPackage);
 		getESubpackages().add(theNattablecellPackage);
 		getESubpackages().add(theNattableproblemPackage);
+		getESubpackages().add(theNattablestylePackage);
 
 		// Create type parameters
 
@@ -452,8 +462,10 @@ public class NattablePackageImpl extends EPackageImpl implements NattablePackage
 	 */
 	protected void createImportAnnotations() {
 		String source = "http://www.eclipse.org/OCL/Import"; //$NON-NLS-1$
-		addAnnotation(this, source, new String[] { "ecore", "http://www.eclipse.org/emf/2002/Ecore#/" //$NON-NLS-1$ //$NON-NLS-2$
-		});
+		addAnnotation(this,
+				source,
+				new String[] { "ecore", "http://www.eclipse.org/emf/2002/Ecore#/" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
 	/**
@@ -465,12 +477,16 @@ public class NattablePackageImpl extends EPackageImpl implements NattablePackage
 	 */
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore"; //$NON-NLS-1$
-		addAnnotation(this, source, new String[] { "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$ //$NON-NLS-2$
-				"settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$ //$NON-NLS-2$
-				"validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot" //$NON-NLS-1$ //$NON-NLS-2$
-		});
-		addAnnotation(tableEClass, source, new String[] { "constraints", "currentRowAxisInHistory currentColumnAxisInHistory" //$NON-NLS-1$ //$NON-NLS-2$
-		});
+		addAnnotation(this,
+				source,
+				new String[] { "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$ //$NON-NLS-2$
+						"settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$ //$NON-NLS-2$
+						"validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(tableEClass,
+				source,
+				new String[] { "constraints", "currentRowAxisInHistory currentColumnAxisInHistory currentAxisProvidersTypes" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
 	/**
@@ -482,9 +498,12 @@ public class NattablePackageImpl extends EPackageImpl implements NattablePackage
 	 */
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"; //$NON-NLS-1$
-		addAnnotation(tableEClass, source, new String[] { "currentRowAxisInHistory", "rowAxisProvidersHistory->includes(currentRowAxisProvider)", //$NON-NLS-1$ //$NON-NLS-2$
-				"currentColumnAxisInHistory", "columnAxisProvidersHistory->includes(currentColumnAxisProvider)" //$NON-NLS-1$ //$NON-NLS-2$
-		});
+		addAnnotation(tableEClass,
+				source,
+				new String[] { "currentRowAxisInHistory", "rowAxisProvidersHistory->includes(currentRowAxisProvider)", //$NON-NLS-1$ //$NON-NLS-2$
+						"currentColumnAxisInHistory", "columnAxisProvidersHistory->includes(currentColumnAxisProvider)", //$NON-NLS-1$ //$NON-NLS-2$
+						"currentAxisProvidersTypes", "not (currentRowAxisProvider.oclIsKindOf(nattableaxisprovider::ISlaveAxisProvider) and currentColumnAxisProvider.oclIsKindOf(nattableaxisprovider::ISlaveAxisProvider))" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
 } // NattablePackageImpl

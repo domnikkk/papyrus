@@ -22,7 +22,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
 
 /**
- * initialize constant about revision mode
+ * Initialize preference constants about revision mode.
  *
  */
 

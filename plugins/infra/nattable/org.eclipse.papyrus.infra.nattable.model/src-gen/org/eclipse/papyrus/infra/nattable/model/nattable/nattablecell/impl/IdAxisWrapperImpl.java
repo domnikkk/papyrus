@@ -33,7 +33,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Nattablece
  * @generated
  */
 public class IdAxisWrapperImpl extends EModelElementImpl implements IdAxisWrapper {
-
 	/**
 	 * The default value of the '{@link #getElement() <em>Element</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+ <extension point="org.eclipse.papyrus.views.properties.environment">
+      <environment environmentModel="Model/environment.xmi">
+      </environment>
+   </extension>
+   <extension point="org.eclipse.papyrus.views.properties.context">
+      <context contextModel="Model/UML/RichText.ctx">
+      </context>
+   </extension>
+</plugin>

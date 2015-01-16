@@ -18,6 +18,7 @@ import java.util.Collection;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
@@ -219,7 +220,9 @@ public class EMFStringValueConverter extends AbstractStringValueConverter {
 		} else {
 			final EEnumLiteral literal = eenum.getEEnumLiteral(valueAsString);
 			if (literal != null) {
-				returnedValue = new ConvertedValueContainer<EEnumLiteral>(literal, iStatus);
+				// returnedValue = new ConvertedValueContainer<EEnumLiteral>(literal, iStatus);
+				// fix a bug on enumerator
+				returnedValue = new ConvertedValueContainer<Enumerator>(literal.getInstance(), iStatus);
 			} else {
 				unresolvedValues.add(valueAsString);
 				iStatus = new StringValueConverterStatus(IStatus.ERROR, Activator.PLUGIN_ID, NLS.bind(THE_STRING_X_IS_NOT_VALID_TO_CREATE_Y, valueAsString, EMFContants.EENUM_LITERAL), unresolvedValues);

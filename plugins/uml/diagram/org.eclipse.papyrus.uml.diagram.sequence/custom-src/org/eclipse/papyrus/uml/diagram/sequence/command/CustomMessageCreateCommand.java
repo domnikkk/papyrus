@@ -21,7 +21,6 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.commands.MessageCreateCommand;
-import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.sequence.util.CommandHelper;
 import org.eclipse.papyrus.uml.diagram.sequence.util.MessageConnectionHelper;
 import org.eclipse.papyrus.uml.diagram.sequence.util.OccurrenceSpecificationHelper;
@@ -76,9 +75,6 @@ public class CustomMessageCreateCommand extends MessageCreateCommand {
 			if (!CommandHelper.hasValidContainer(getRequest())) {
 				return false;
 			}
-		}
-		if (!UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateMessage_4003(getContainer(), getSource(), getTarget())) {
-			return false;
 		}
 		return MessageConnectionHelper.canExist(MessageSort.SYNCH_CALL_LITERAL, (Element) source, (Element) target);
 	}

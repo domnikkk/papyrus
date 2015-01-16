@@ -15,7 +15,7 @@ package org.eclipse.papyrus.infra.nattable.dialog;
 
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.infra.widgets.editors.IElementSelector;
-import org.eclipse.papyrus.infra.widgets.editors.MultipleValueSelectorDialogWithCheckBox;
+import org.eclipse.papyrus.infra.widgets.editors.MultipleValueSelectionWithCheckBoxDialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
@@ -25,7 +25,7 @@ import org.eclipse.swt.widgets.Shell;
  * @author vl222926
  *
  */
-public class DisplayedAxisSelectorDialog extends MultipleValueSelectorDialogWithCheckBox {
+public class DisplayedAxisSelectorDialog extends MultipleValueSelectionWithCheckBoxDialog {
 
 	/**
 	 * the title of the information dialog
@@ -116,8 +116,8 @@ public class DisplayedAxisSelectorDialog extends MultipleValueSelectorDialogWith
 	@Override
 	protected void okPressed() {
 		boolean mustContinue = true;
-		;
-		if (displayCheckBox && !isChecked) {
+
+		if (isDisplayingCheckBox() && !isChecked()) {
 			mustContinue = MessageDialog.openQuestion(Display.getDefault().getActiveShell(), informationDialogTitle, informationDialogMessage);
 		}
 		if (mustContinue) {

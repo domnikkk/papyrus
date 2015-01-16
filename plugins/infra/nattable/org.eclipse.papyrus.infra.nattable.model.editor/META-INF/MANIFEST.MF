@@ -15,6 +15,7 @@ Export-Package: org.eclipse.papyrus.infra.nattable.model.editor.customeditors,
  org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.presentation,
  org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.presentation,
  org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.presentation,
+ org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.presentation,
  org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.presentation,
  org.eclipse.papyrus.infra.nattable.model.nattable.presentation
 Bundle-Vendor: %providerName
@@ -23,10 +24,8 @@ Bundle-ClassPath: .
 Bundle-Version: 1.1.0.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
-Bundle-Activator: org.eclipse.papyrus.infra.nattable.model.nattable.pr
- esentation.NattableEditorPlugin$Implementation
+Bundle-Activator: org.eclipse.papyrus.infra.nattable.model.nattable.presentation.NattableEditorPlugin$Implementation
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: org.eclipse.papyrus.infra.nattable.model.editor;s
- ingleton:=true
+Bundle-SymbolicName: org.eclipse.papyrus.infra.nattable.model.editor;singleton:=true
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 

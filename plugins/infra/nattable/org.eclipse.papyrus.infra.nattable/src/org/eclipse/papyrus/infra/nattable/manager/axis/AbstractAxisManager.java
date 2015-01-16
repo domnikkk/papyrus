@@ -90,9 +90,17 @@ public abstract class AbstractAxisManager implements IAxisManager {
 	 *
 	 */
 	public AbstractAxisManager() {
-		this.managedObject = new ArrayList<Object>();
+		this.managedObject = createManagedObjectList();
 	}
 
+	/**
+	 *
+	 * @return
+	 *         a new managed object list
+	 */
+	protected List<Object> createManagedObjectList() {
+		return new ArrayList<Object>();
+	}
 
 	/**
 	 *

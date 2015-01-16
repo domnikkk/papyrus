@@ -14,8 +14,6 @@ package org.eclipse.papyrus.cpp.codegen.transformation;
 import org.eclipse.cdt.core.CCorePlugin;
 import org.eclipse.cdt.core.ToolFactory;
 import org.eclipse.cdt.core.formatter.CodeFormatter;
-import org.eclipse.core.resources.IContainer;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -23,68 +21,92 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.Document;
 import org.eclipse.jface.text.IDocument;
-import org.eclipse.papyrus.C_Cpp.CppRoot;
 import org.eclipse.papyrus.C_Cpp.ExternLibrary;
 import org.eclipse.papyrus.C_Cpp.External;
+import org.eclipse.papyrus.C_Cpp.Include;
+import org.eclipse.papyrus.C_Cpp.ManualGeneration;
 import org.eclipse.papyrus.C_Cpp.NoCodeGen;
-import org.eclipse.papyrus.acceleo.GenUtils;
-import org.eclipse.papyrus.acceleo.ModelElementsCreator;
+import org.eclipse.papyrus.C_Cpp.Template;
+import org.eclipse.papyrus.codegen.base.GenUtils;
+import org.eclipse.papyrus.codegen.base.IPFileSystemAccess;
+import org.eclipse.papyrus.codegen.base.ModelElementsCreator;
+import org.eclipse.papyrus.codegen.base.ProjectBasedFileAccess;
 import org.eclipse.papyrus.cpp.codegen.Activator;
+import org.eclipse.papyrus.cpp.codegen.Constants;
 import org.eclipse.papyrus.cpp.codegen.Messages;
 import org.eclipse.papyrus.cpp.codegen.preferences.CppCodeGenUtils;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppClassifierGenerator;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppPackageHeaderGenerator;
 import org.eclipse.text.edits.MalformedTreeException;
 import org.eclipse.text.edits.TextEdit;
+import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Namespace;
+import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.PackageableElement;
+import org.eclipse.uml2.uml.PrimitiveType;
+import org.eclipse.uml2.uml.Relationship;
+import org.eclipse.uml2.uml.Signal;
+import org.eclipse.uml2.uml.SignalEvent;
+import org.eclipse.uml2.uml.Usage;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 
 
 /**
- * Main class of code generator
+ * Main class of C++ code generator
  * 
+ * @author Ansgar Radermacher (ansgar.radermacher@cea.fr)
  * @author Önder GÜRCAN (onder.gurcan@cea.fr)
  */
 public class CppModelElementsCreator extends ModelElementsCreator {
 
-	public static final String DOT = "."; //$NON-NLS-1$
-	
 	/**
-	 * 
 	 * Constructor.
 	 * 
 	 * @param project
-	 *        the project in which the generated code should be placed
+	 *            the project in which the generated code should be placed
 	 */
 	public CppModelElementsCreator(IProject project) {
-		super(project, CppCodeGenUtils.getCommentHeader());
-		hppExt = CppCodeGenUtils.getHeaderSuffix();
-		cppExt = CppCodeGenUtils.getBodySuffix();
+		this(new ProjectBasedFileAccess(project), null);
 	}
 
 	/**
-	 * 
-	 * Constructor.
+	 * Constructor, allows for non-standard commentHeader
 	 * 
 	 * @param project
-	 *        the project in which the generated code should be placed
+	 *            the project in which the generated code should be placed
 	 * @param commentHeader
-	 *        Custom prefix for each generated file
+	 *            Custom prefix for each generated file
 	 */
 	public CppModelElementsCreator(IProject project, String commentHeader) {
-		super(project, commentHeader);
+		this(new ProjectBasedFileAccess(project), commentHeader);
+	}
+
+	/**
+	 * Constructor. Pass caller defined file system access and commentHeader
+	 * 
+	 * @param project
+	 *            the project in which the generated code should be placed
+	 * @param commentHeader
+	 *            commentHeader. If null, take from preferences
+	 */
+	public CppModelElementsCreator(IPFileSystemAccess fileSystemAccess, String commentHeader) {
+		super(fileSystemAccess, new CppLocationStrategy());
+		this.commentHeader = (commentHeader != null) ?
+				commentHeader :
+				CppCodeGenUtils.getCommentHeader();
 		hppExt = CppCodeGenUtils.getHeaderSuffix();
 		cppExt = CppCodeGenUtils.getBodySuffix();
 	}
-
 
 	protected String hppExt;
 
 	protected String cppExt;
 
+	protected String commentHeader;
 
 	/**
 	 * Creates the files corresponding to the class. For a "simple" class
@@ -96,18 +118,95 @@ public class CppModelElementsCreator extends ModelElementsCreator {
 	 * @param classifier
 	 * @throws CoreException
 	 */
-	protected void createClassifierFiles(IContainer container, Classifier classifier) throws CoreException {
-		CppClassifierGenerator.generate(container, classifier, commentHeader);
+	@Override
+	protected void createPackageableElementFile(PackageableElement element, IProgressMonitor monitor) {
+		if (element instanceof Package) {
+			generatePkg((Package) element);
+		}
+
+		else if ((element instanceof PrimitiveType) || (element instanceof Enumeration) || (element instanceof Usage)) {
+			// do nothing, included in package
+		}
+		else if (element instanceof Classifier) {
+			generateClassifier((Classifier) element);
+		}
+		else if (element instanceof Relationship) {
+			// no code generation for relationships
+		}
+		else if (element instanceof Signal) {
+			// TODO: not supported, but do nothing
+		}
+		else if (element instanceof SignalEvent) {
+			// TODO: not supported, but do nothing
+		}
+		else {
+			Activator.log.debug("C++ code generator: unsupported model element " + element); //$NON-NLS-1$
+		}
 	}
 
-	@Override
-	protected void createFile(IFile file, String content, boolean force) throws CoreException {
-		String formatted = format(content);
-		super.createFile(file, formatted, force);
+	protected void generateClassifier(Classifier classifier) {
+
+		// treat case of manual code generation
+		if (GenUtils.hasStereotype(classifier, ManualGeneration.class)) {
+			final ManualGeneration mg = UMLUtil.getStereotypeApplication(classifier, ManualGeneration.class);
+			final Include cppInclude = UMLUtil.getStereotypeApplication(classifier, Include.class);
+			final String fileContentH = commentHeader + cppInclude.getHeader();
+
+			// generate header code
+			final String fileNameH = locStrategy.getFileName(classifier) + Constants.DOT + hppExt;
+
+			generateFile(fileNameH, fileContentH);
+
+			// generate body code
+			String fileContentB = commentHeader +
+					cppInclude.getPreBody() + GenUtils.NL +
+					cppInclude.getBody() + GenUtils.NL;
+			String ext = GenUtils.maskNull(mg.getExtensionBody());
+			if (ext.length() == 0) {
+				ext = cppExt;
+			}
+			String fileNameB = locStrategy.getFileName(classifier) + Constants.DOT + ext;
+			generateFile(fileNameB, fileContentB);
+		}
+
+		// Only generate when no CppNoCodeGen stereotype is applied to the class
+		else if ((!noCodeGen(classifier)) && (!GenUtils.hasStereotype(classifier, Template.class)) &&
+				(!(classifier instanceof Association))) {
+
+			// Template Bound Class
+			if (GenUtils.isTemplateBoundElement(classifier)) {
+				final String bindHeaderFileName = locStrategy.getFileName(classifier) + Constants.DOT + hppExt;
+				generateFile(bindHeaderFileName, commentHeader + CppClassifierGenerator.generateBindHeaderCode(classifier));
+
+				final String bindBodyFileName = classifier.getName() + Constants.DOT + cppExt;
+				generateFile(bindBodyFileName, commentHeader + CppClassifierGenerator.generateBindBodyCode(classifier));
+			}
+			else {
+
+				// Class Header file generation
+				final String classHeaderFileName = locStrategy.getFileName(classifier) + Constants.DOT + hppExt;
+				generateFile(classHeaderFileName, commentHeader + CppClassifierGenerator.generateClassHeaderCode(classifier));
+
+				// Class Body file generation
+				if (classifier instanceof Class) {
+					final String classBodyFileName = locStrategy.getFileName(classifier) + Constants.DOT + cppExt;
+					generateFile(classBodyFileName, commentHeader + CppClassifierGenerator.generateClassBodyCode(classifier));
+				}
+			}
+		}
+	}
+
+	protected void generatePkg(Package pkg) {
+		final String fileName = locStrategy.getFileName(pkg) + Constants.DOT + hppExt;
+		generateFile(fileName, CppPackageHeaderGenerator.generateCode(pkg).toString());
+	}
+
+	protected void generateFile(String fileName, String content) {
+		fileSystemAccess.generateFile(fileName, format(content));
 	}
 
 	/**
-	 * Apply the user's currently selected formatting options to the input content.  Return the
+	 * Apply the user's currently selected formatting options to the input content. Return the
 	 * input String in case of error.
 	 */
 	private static String format(String content) {
@@ -134,24 +233,14 @@ public class CppModelElementsCreator extends ModelElementsCreator {
 		} catch (BadLocationException e) {
 			Activator.log.error(e);
 		}
-
 		return content;
 	}
 
-	@Override
-	protected void createPackageFiles(IContainer packageContainer, IProgressMonitor monitor, Package pkg) throws CoreException {
-		CppPackageHeaderGenerator.generate(packageContainer, pkg);
-	}
-
-
-	protected boolean isRoot(Namespace ns) {
-		return GenUtils.hasStereotype(ns, CppRoot.class);
-	}
-
 	protected boolean noCodeGen(Element element) {
-		return
-			GenUtils.hasStereotype(element, NoCodeGen.class) ||
-			GenUtils.hasStereotype(element, External.class) ||
-			GenUtils.hasStereotypeTree(element, ExternLibrary.class);
+		return GenUtils.hasStereotype(element, NoCodeGen.class) ||
+				GenUtils.hasStereotype(element, External.class) ||
+				GenUtils.hasStereotypeTree(element, ExternLibrary.class);
 	}
+
+
 }

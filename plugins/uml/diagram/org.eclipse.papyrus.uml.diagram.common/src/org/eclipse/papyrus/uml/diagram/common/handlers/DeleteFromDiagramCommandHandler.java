@@ -1,7 +1,6 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *
- *
+ * Copyright (c) 2014 CEA LIST and others.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,122 +11,38 @@
  *   Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 411570
  *
  *****************************************************************************/
+
 package org.eclipse.papyrus.uml.diagram.common.handlers;
 
-import java.util.Iterator;
-import java.util.List;
-
-import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.commands.IHandler;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gef.EditPart;
-import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
-import org.eclipse.gef.commands.CompoundCommand;
-import org.eclipse.gef.commands.UnexecutableCommand;
-import org.eclipse.gef.requests.GroupRequest;
-import org.eclipse.gmf.runtime.diagram.ui.actions.internal.DeleteFromDiagramAction;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
-import org.eclipse.papyrus.infra.gmfdiag.menu.handlers.AbstractGraphicalCommandHandler;
+
 
 /**
  * Command handler for delete from diagram
+ * 
+ * @deprecated Since 1.1.0 and the moving of handler to org.eclipse.papyrus.infra.gmfdiag.menu plugin. Use {@link org.eclipse.papyrus.infra.gmfdiag.menu.handlers.DeleteFromDiagramCommandHandler}.
  */
-public class DeleteFromDiagramCommandHandler extends AbstractGraphicalCommandHandler implements IHandler {
+@Deprecated
+public class DeleteFromDiagramCommandHandler extends org.eclipse.papyrus.infra.gmfdiag.menu.handlers.DeleteFromDiagramCommandHandler {
 
 	/**
+	 * Constructor.
 	 *
-	 * @see org.eclipse.papyrus.uml.diagram.common.handlers.GraphicalCommandHandler#getCommand()
+	 */
+	public DeleteFromDiagramCommandHandler() {
+		super();
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.menu.handlers.DeleteFromDiagramCommandHandler#getCommand()
 	 *
-	 * @return the deletion command
-	 * @throws ExecutionException
+	 * @return
 	 */
 	@Override
 	protected Command getCommand() {
-
-		// Retrieve currently selected IGraphicalEditPart(s)
-		List<IGraphicalEditPart> editParts = getSelectedElements();
-		if (editParts.isEmpty()) {
-			return UnexecutableCommand.INSTANCE;
-		}
-
-		if (!supportViews(editParts) || isCanonical(editParts)) {
-			return UnexecutableCommand.INSTANCE;
-		}
-
-		CompoundCommand command = new CompoundCommand("Delete From Diagram");
-		for (Iterator<IGraphicalEditPart> iter = editParts.iterator(); iter.hasNext();) {
-			IGraphicalEditPart editPart = iter.next();
-			/* Send the request to the edit part */
-			command.add(editPart.getCommand(new GroupRequest(RequestConstants.REQ_DELETE)));
-		}
-		return command;
+		return super.getCommand();
 	}
 
-	/**
-	 * Copied from {@link DeleteFromDiagramAction}
-	 */
-	private boolean supportViews(List<IGraphicalEditPart> editParts) {
-		for (Iterator<IGraphicalEditPart> iter = editParts.iterator(); iter.hasNext();) {
-			IGraphicalEditPart object = iter.next();
-			if (object instanceof GraphicalEditPart && !((GraphicalEditPart) object).hasNotationView()) {
-				return false;
-			}
-		}
-		return true;
-	}
 
-	/**
-	 * Copied from {@link DeleteFromDiagramAction}
-	 */
-	protected boolean isCanonical(List<IGraphicalEditPart> editParts) {
-
-		boolean isCanonical = false;
-		if (!editParts.isEmpty()) {
-
-			for (Iterator<IGraphicalEditPart> si = editParts.iterator(); si.hasNext() && !isCanonical;) {
-				IGraphicalEditPart child = si.next();
-
-				View view = (View) child.getAdapter(View.class);
-				if (view == null || view.getElement() == null || view.getElement() instanceof View) {
-					// If there is no element or the element is a view (e.g.
-					// diagram
-					// link) than we want to support delete from diagram. See
-					// bugzilla#148453.
-					isCanonical = false;
-					continue;
-				}
-
-				if (child instanceof ConnectionEditPart) {
-					ConnectionEditPart connection = (ConnectionEditPart) child;
-					isCanonical = (!connection.isSemanticConnection() || (isCanonical(connection.getSource()) && isCanonical(connection.getTarget())));
-				} else {
-					isCanonical = isCanonical(child);
-				}
-			}
-		}
-		return isCanonical;
-	}
-
-	/**
-	 * Copied from {@link DeleteFromDiagramAction}
-	 */
-	protected boolean isCanonical(EditPart ep) {
-		EObject eObject = EMFHelper.getEObject(ep);
-		EditPart parent = ep.getParent();
-		if (eObject != null && parent != null) { // sanity checks
-			CanonicalEditPolicy cep = (CanonicalEditPolicy) parent.getEditPolicy(EditPolicyRoles.CANONICAL_ROLE);
-			return cep != null && cep.isEnabled() && cep.canCreate(eObject);
-		}
-		return false;
-	}
-
-	private static final String DISPLAY_MESSAGE_FOR_HIDE_ACTION_PREFERENCE_KEY = "displayMessageForHideActionPreferenceKey";
 
 }

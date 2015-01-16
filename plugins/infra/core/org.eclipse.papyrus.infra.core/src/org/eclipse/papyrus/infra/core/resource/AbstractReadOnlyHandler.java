@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013, 2014 Atos Origin, CEA, and others.
+ * Copyright (c) 2013, 2015 Atos Origin, CEA, Christian W. Damus, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -11,6 +11,7 @@
  *  Mathieu Velten (Atos Origin) mathieu.velten@atosorigin.com - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
  *  Christian W. Damus (CEA) - bug 429826
+ *  Christian W. Damus - bug 457560
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
@@ -29,13 +30,17 @@ import org.eclipse.papyrus.infra.core.Activator;
 import com.google.common.base.Optional;
 
 public abstract class AbstractReadOnlyHandler implements IReadOnlyHandler2 {
+	private static ResourceReadOnlyCache.Provider resourceCacheProvider;
 
-	private EditingDomain editingDomain;
+	private final EditingDomain editingDomain;
+
+	private final ResourceReadOnlyCache resourceCache;
 
 	private CopyOnWriteArrayList<IReadOnlyListener> listeners = new CopyOnWriteArrayList<IReadOnlyListener>();
 
 	public AbstractReadOnlyHandler(EditingDomain editingDomain) {
 		this.editingDomain = editingDomain;
+		this.resourceCache = (resourceCacheProvider == null) ? null : resourceCacheProvider.get(this);
 	}
 
 	public static IReadOnlyHandler2 adapt(IReadOnlyHandler handler, EditingDomain domain) {
@@ -60,11 +65,25 @@ public abstract class AbstractReadOnlyHandler implements IReadOnlyHandler2 {
 
 	@Override
 	public Optional<Boolean> isReadOnly(Set<ReadOnlyAxis> axes, EObject eObject) {
+		Optional<Boolean> result;
+
 		Resource res = eObject.eResource();
-		if (res != null && res.getURI() != null) {
-			return anyReadOnly(axes, new URI[] { res.getURI() });
+		URI uri = (res == null) ? null : res.getURI();
+		if (uri != null) {
+			if (resourceCache != null) {
+				result = resourceCache.get(axes, uri);
+				if (result == null) {
+					result = anyReadOnly(axes, new URI[] { uri });
+					resourceCache.put(axes, uri, result);
+				}
+			} else {
+				result = anyReadOnly(axes, new URI[] { uri });
+			}
+		} else {
+			result = Optional.absent();
 		}
-		return Optional.absent();
+
+		return result;
 	}
 
 	@Override
@@ -141,6 +160,23 @@ public abstract class AbstractReadOnlyHandler implements IReadOnlyHandler2 {
 		}
 	}
 
+	/**
+	 * Installs the provider of resource read-only state caches to be used for caching the resource-based read-only state
+	 * of objects. This helps to improve the performance of object read-only checks for handlers that don't implement
+	 * object-level read-only state, especially for cases where checking the read-only state of a resource is expensive
+	 * (such as reading file attributes from the filesystem).
+	 * 
+	 * @param provider
+	 *            the provider to install. Subsequent invocations are ignored (the first provider installed wins out)
+	 */
+	public static void setResourceReadOnlyCacheProvider(ResourceReadOnlyCache.Provider provider) {
+		if (resourceCacheProvider != null) {
+			Activator.log.warn("Resource read-only cache provider already installed; ignoring " + provider);
+		} else {
+			resourceCacheProvider = provider;
+		}
+	}
+
 	//
 	// Nested types
 	//
@@ -188,6 +224,50 @@ public abstract class AbstractReadOnlyHandler implements IReadOnlyHandler2 {
 			}
 
 			return result;
+		}
+	}
+
+	/**
+	 * A protocol for caching the read-only state of a resource by axis.
+	 * 
+	 * @see Provider
+	 */
+	public interface ResourceReadOnlyCache {
+		/**
+		 * Queries the cached read-only state of a resource for a specific set of axes.
+		 * 
+		 * @param axes
+		 *            the read-only axes to query
+		 * @param resourceURI
+		 *            the resource to query
+		 * 
+		 * @return the previously cached read-only state, or {@code null} if it has not previously been cached
+		 */
+		Optional<Boolean> get(Set<ReadOnlyAxis> axes, URI resourceURI);
+
+		/**
+		 * Caches the read-only state of a resource for a specific set of axes.
+		 * 
+		 * @param axes
+		 *            the read-only axes to cache
+		 * @param resourceURI
+		 *            the resource to cache
+		 * @param readOnly
+		 *            the read-only state to cache
+		 */
+		void put(Set<ReadOnlyAxis> axes, URI resourceURI, Optional<Boolean> readOnly);
+
+		//
+		// Nested types
+		//
+
+		/**
+		 * A simple protocol for a provider of resource read-only state caches, per handler.
+		 * 
+		 * @see AbstractReadOnlyHandler#setResourceReadOnlyCacheProvider(Provider)
+		 */
+		interface Provider {
+			ResourceReadOnlyCache get(AbstractReadOnlyHandler handler);
 		}
 	}
 }

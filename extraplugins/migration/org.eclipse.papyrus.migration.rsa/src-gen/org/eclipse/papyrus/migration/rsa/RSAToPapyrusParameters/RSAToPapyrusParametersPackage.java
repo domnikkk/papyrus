@@ -194,6 +194,16 @@ public interface RSAToPapyrusParametersPackage extends EPackage {
 	int MAPPING_PARAMETERS__URI_MAPPINGS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Profile Uri Mappings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_PARAMETERS__PROFILE_URI_MAPPINGS = 1;
+
+	/**
 	 * The number of structural features of the '<em>Mapping Parameters</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -201,7 +211,7 @@ public interface RSAToPapyrusParametersPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAPPING_PARAMETERS_FEATURE_COUNT = 1;
+	int MAPPING_PARAMETERS_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Mapping Parameters</em>' class.
@@ -384,6 +394,18 @@ public interface RSAToPapyrusParametersPackage extends EPackage {
 	EReference getMappingParameters_UriMappings();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters#getProfileUriMappings <em>Profile Uri Mappings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Profile Uri Mappings</em>'.
+	 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters#getProfileUriMappings()
+	 * @see #getMappingParameters()
+	 * @generated
+	 */
+	EReference getMappingParameters_ProfileUriMappings();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping <em>URI Mapping</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -536,6 +558,15 @@ public interface RSAToPapyrusParametersPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MAPPING_PARAMETERS__URI_MAPPINGS = eINSTANCE.getMappingParameters_UriMappings();
+
+		/**
+		 * The meta object literal for the '<em><b>Profile Uri Mappings</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference MAPPING_PARAMETERS__PROFILE_URI_MAPPINGS = eINSTANCE.getMappingParameters_ProfileUriMappings();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.URIMappingImpl <em>URI Mapping</em>}' class.

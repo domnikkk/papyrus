@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011, 2014 LIFL and others.
+ * Copyright (c) 2011, 2014 LIFL, Christian W. Damus, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  LIFL - Initial API and implementation
+ *  Christian W. Damus - bug 415638
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.editor;
@@ -18,6 +19,7 @@ import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsCon
 import org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.DiSashModelManager;
 import org.eclipse.papyrus.infra.core.services.IServiceFactory;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.core.services.ServiceNotFoundException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 
 /**
@@ -70,9 +72,13 @@ public class PageMngrServiceFactory implements IServiceFactory {
 	 *
 	 * @return
 	 * @throws ServiceException
+	 *             if the required sash model manager service is unavailable
 	 */
 	@Override
 	public Object createServiceInstance() throws ServiceException {
+		if (sashModelMngr == null) {
+			throw new ServiceNotFoundException(DiSashModelManager.class.getName());
+		}
 		return sashModelMngr.getIPageMngr();
 	}
 

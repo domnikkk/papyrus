@@ -36,7 +36,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.O
  * @generated
  */
 public class ObjectIdAxisImpl extends IdAxisImpl implements ObjectIdAxis {
-
 	/**
 	 * The cached value of the '{@link #getLocalLabelConfiguration() <em>Local Label Configuration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -120,7 +119,8 @@ public class ObjectIdAxisImpl extends IdAxisImpl implements ObjectIdAxis {
 			if (msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		}
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattableaxisPackage.OBJECT_ID_AXIS__LOCAL_LABEL_CONFIGURATION, newLocalLabelConfiguration, newLocalLabelConfiguration));
 		}
 	}

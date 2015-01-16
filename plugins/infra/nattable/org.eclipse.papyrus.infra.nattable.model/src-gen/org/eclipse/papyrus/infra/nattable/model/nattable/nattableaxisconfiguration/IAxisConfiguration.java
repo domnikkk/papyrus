@@ -12,7 +12,7 @@
  */
 package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.StyledElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,5 +28,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface IAxisConfiguration extends EObject {
+public interface IAxisConfiguration extends StyledElement {
 } // IAxisConfiguration

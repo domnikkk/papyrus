@@ -237,7 +237,7 @@ public class UMLTextNonResizableEditPolicy extends NonResizableEditPolicyEx impl
 	 * @generated
 	 */
 	@Override
-	protected List createSelectionHandles() {
+	protected List<?> createSelectionHandles() {
 		MoveHandle moveHandle = new MoveHandle((GraphicalEditPart) getHost());
 		moveHandle.setBorder(null);
 		moveHandle.setDragTracker(new DragEditPartsTrackerEx(getHost()));

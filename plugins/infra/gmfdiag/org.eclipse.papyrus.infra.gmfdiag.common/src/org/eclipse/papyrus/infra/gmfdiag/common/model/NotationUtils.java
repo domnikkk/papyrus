@@ -13,9 +13,11 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.model;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -27,6 +29,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.IntValueStyle;
 import org.eclipse.gmf.runtime.notation.NamedStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.gmf.runtime.notation.StringListValueStyle;
 import org.eclipse.gmf.runtime.notation.StringValueStyle;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.core.resource.IModel;
@@ -254,85 +257,114 @@ public class NotationUtils {
 			throw new RuntimeException("Resource Set is not a ModelSet or is null"); //$NON-NLS-1$
 		}
 	}
-	
-	
+
 	/**
+	 * Gets the int value from a NamedStyle property.
+	 *
 	 * @param view
+	 *            the view
 	 * @param property
-	 * @param defaultValue
+	 *            the property
+	 * @param defaultInt
+	 *            the default int
 	 * @return Integer corresponding to the property
 	 */
 	public static int getIntValue(View view, String property, int defaultInt) {
 		int value = defaultInt;
 		EClass intValueStyle = NotationPackage.eINSTANCE.getIntValueStyle();
-		NamedStyle style ; 
+		NamedStyle style;
 
-		if (intValueStyle != null){
-
+		if (intValueStyle != null) {
 			style = view.getNamedStyle(intValueStyle, property);
-
-			if (style != null){
-				if (style instanceof IntValueStyle){
-					value = ((IntValueStyle) style).getIntValue();
-				}
+			if (style instanceof IntValueStyle) {
+				value = ((IntValueStyle) style).getIntValue();
 			}
 		}
-
 		return value;
 	}
-	
-	
+
+
 
 	/**
+	 * Gets the boolean value from a NamedStyle property.
+	 *
 	 * @param view
+	 *            the view
 	 * @param property
+	 *            the property
 	 * @param defaultValue
+	 *            the default value
 	 * @return Boolean corresponding to the property
 	 */
 	public static boolean getBooleanValue(View view, String property, boolean defaultValue) {
 		boolean value = defaultValue;
 		EClass booleanValueStyle = NotationPackage.eINSTANCE.getBooleanValueStyle();
-		NamedStyle style ; 
+		NamedStyle style;
 
-		if (booleanValueStyle != null){
-
+		if (booleanValueStyle != null) {
 			style = view.getNamedStyle(booleanValueStyle, property);
-
-			if (style != null){
-				if (style instanceof BooleanValueStyle){
-					value = ((BooleanValueStyle) style).isBooleanValue();
-				}
+			if (style instanceof BooleanValueStyle) {
+				value = ((BooleanValueStyle) style).isBooleanValue();
 			}
 		}
-
 		return value;
 	}
-	
-	
+
+
+
 	/**
+	 * Gets the string value from a NamedStyle property.
+	 *
 	 * @param view
+	 *            the view
 	 * @param property
+	 *            the property
 	 * @param defaultValue
-	 * @return String corresponding to the property
+	 *            the default value
+	 * @return the string value
 	 */
 	public static String getStringValue(View view, String property, String defaultValue) {
 		String value = defaultValue;
 		EClass stringValueStyle = NotationPackage.eINSTANCE.getStringValueStyle();
-		NamedStyle style ; 
+		NamedStyle style;
 
-		if (stringValueStyle != null){
-
+		if (stringValueStyle != null) {
 			style = view.getNamedStyle(stringValueStyle, property);
+			if (style instanceof StringValueStyle) {
+				value = ((StringValueStyle) style).getStringValue();
+			}
+		}
+		return value;
+	}
 
-			if (style != null){
-				if (style instanceof StringValueStyle){
-					value = ((StringValueStyle) style).getStringValue();
+	/**
+	 * Get the list as a String list and convert it to Int list
+	 * 
+	 * @param model
+	 * @param floatingLabelOffsetWidth
+	 * @param defaultCustomStyle
+	 * @return
+	 * 
+	 */
+	public static int[] getIntListValue(View view, String property, int[] defaultIntList) {
+		int[] value = defaultIntList;
+		EClass intValueStyle = NotationPackage.eINSTANCE.getStringListValueStyle();
+		NamedStyle style;
+
+		if (intValueStyle != null) {
+			style = view.getNamedStyle(intValueStyle, property);
+			if (style instanceof StringListValueStyle) {
+				// Get the string list
+				EList<String> valueList = ((StringListValueStyle) style).getStringListValue();
+				int i = 0;
+				value = new int[valueList.size()];
+				// Convert list in int array
+				for (Iterator iterator = valueList.iterator(); iterator.hasNext();) {
+					String string = (String) iterator.next();
+					value[i++] = Integer.parseInt(string);
 				}
 			}
 		}
-
 		return value;
 	}
-	
-
 }

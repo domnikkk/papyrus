@@ -34,7 +34,7 @@ public abstract class AbstractColumnChangeHeaderConfigurationHandler extends Abs
 	 */
 	@Override
 	protected AbstractHeaderAxisConfiguration getEditedAxisConfiguration() {
-		return HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisUsedInTable(getCurrentNattableModelManager().getTable());
+		return HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisConfigurationUsedInTable(getCurrentNattableModelManager().getTable());
 	}
 
 	/**

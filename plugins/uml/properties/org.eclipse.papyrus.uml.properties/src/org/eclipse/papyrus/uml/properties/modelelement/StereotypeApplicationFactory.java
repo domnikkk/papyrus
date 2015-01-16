@@ -54,7 +54,7 @@ public class StereotypeApplicationFactory extends AbstractEMFModelElementFactory
 			throw new IllegalArgumentException("Cannot resolve UML element selection: " + newSourceElement);
 		}
 		modelElement.umlSource = element;
-		modelElement.domain = EMFHelper.resolveEditingDomain(element);
+		modelElement.setEditingDomain(EMFHelper.resolveEditingDomain(element));
 		modelElement.sourceElement = (newSourceElement instanceof EditPart) ? (EditPart) newSourceElement : null;
 
 		super.updateModelElement(modelElement, newSourceElement);

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: UML RealTime Element Types
+Bundle-SymbolicName: org.eclipse.papyrus.umlrt.elementtypes;singleton:=true
+Bundle-Version: 1.1.0.qualifier
+Bundle-Activator: org.eclipse.papyrus.umlrt.elementtypes.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.papyrus.infra.extendedtypes;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.newchild;bundle-version="1.1.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Eclipse Modeling Project

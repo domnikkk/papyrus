@@ -34,7 +34,7 @@ import xpt.Common
 					if (resource.isLoaded()) {
 						boolean modified = false;
 						for (java.util.Iterator<org.eclipse.emf.ecore.resource.Resource> it = myInfo.getLoadedResourcesIterator(); it.hasNext() && !modified;) {
-							org.eclipse.emf.ecore.resource.Resource nextResource = (org.eclipse.emf.ecore.resource.Resource) it.next();
+							org.eclipse.emf.ecore.resource.Resource nextResource = it.next();
 							if (nextResource.isLoaded()) {
 								modified = nextResource.isModified();
 							}

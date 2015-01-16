@@ -161,7 +161,7 @@ public class PortUtils {
 			if (isTemplatePort(port)) {
 				TemplatePort tp = UMLUtil.getStereotypeApplication(port, TemplatePort.class);
 				if (tp.getBoundType() == null) {
-					System.err.println("Problems, problems"); //$NON-NLS-1$
+					Activator.log.debug("Bound type of template port is null, choosing base class of kind instead"); //$NON-NLS-1$
 					cl = fcmPort.getKind().getBase_Class();
 				}
 				else {
