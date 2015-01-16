@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.fragment" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
+<uml:Interface xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_7yPLoLZ7EeOu-9meM8ButQ" name="Interface - Fragment">
+  <eAnnotations xmi:id="__TtR0bZ8EeOu-9meM8ButQ" source="com.ibm.xtools.uml.msl.fragments"/>
+  <eAnnotations xmi:id="__TtR0LZ8EeOu-9meM8ButQ" source="com.ibm.xtools.uml.msl.fragmentContainer">
+    <references xmi:type="uml:Package" href="Blank%20Package.emx#_0B7RALZ7EeOu-9meM8ButQ?Blank%20Package/Package3?"/>
+  </eAnnotations>
+</uml:Interface>
