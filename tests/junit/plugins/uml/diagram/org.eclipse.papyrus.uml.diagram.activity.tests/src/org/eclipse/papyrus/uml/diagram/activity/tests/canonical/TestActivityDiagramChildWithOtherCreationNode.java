@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,15 +32,17 @@ public class TestActivityDiagramChildWithOtherCreationNode extends AbstractTestA
 	protected String getProjectName() {
 		return IActivityDiagramTestsConstants.PROJECT_NAME;
 	}
+
 	@Override
 	public DiagramUpdater getDiagramUpdater() {
-		return UMLDiagramUpdater.TYPED_INSTANCE;
+		return UMLDiagramUpdater.INSTANCE;
 	}
+
 	@Override
 	protected String getFileName() {
 		return IActivityDiagramTestsConstants.FILE_NAME;
 	}
-	
+
 	/**
 	 * Test to manage callbehaviorAction
 	 */
@@ -49,6 +51,7 @@ public class TestActivityDiagramChildWithOtherCreationNode extends AbstractTestA
 	public void testToManageCallbehaviorAction() {
 		testToManageNode(UMLElementTypes.CallBehaviorAction_3008, UMLPackage.eINSTANCE.getCallBehaviorAction(), UMLElementTypes.StructuredActivityNode_3065, false);
 	}
+
 	/**
 	 * Test to manage callOperationAction
 	 */
@@ -57,7 +60,7 @@ public class TestActivityDiagramChildWithOtherCreationNode extends AbstractTestA
 	public void testToManageCallOperationAction() {
 		testToManageNode(UMLElementTypes.CallOperationAction_3010, UMLPackage.eINSTANCE.getCallOperationAction(), UMLElementTypes.StructuredActivityNode_3065, false);
 	}
-	
+
 	/**
 	 * Test to manage SendSignalAction Node.
 	 */
@@ -66,7 +69,7 @@ public class TestActivityDiagramChildWithOtherCreationNode extends AbstractTestA
 	public void testToManageSendSignalAction() {
 		testToManageNode(UMLElementTypes.SendSignalAction_3052, UMLPackage.eINSTANCE.getSendSignalAction(), UMLElementTypes.StructuredActivityNode_3065, false);
 	}
-	
+
 	/**
 	 * Test to SendObjectAction Node.
 	 */
@@ -74,13 +77,14 @@ public class TestActivityDiagramChildWithOtherCreationNode extends AbstractTestA
 	public void testToManageSendObjectAction() {
 		testToManageNode(UMLElementTypes.SendObjectAction_3042, UMLPackage.eINSTANCE.getSendObjectAction(), UMLElementTypes.StructuredActivityNode_3065, false);
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected CreateViewRequest createViewRequestShapeContainer() {
 		return null;
 	}
 
-	
+
 }

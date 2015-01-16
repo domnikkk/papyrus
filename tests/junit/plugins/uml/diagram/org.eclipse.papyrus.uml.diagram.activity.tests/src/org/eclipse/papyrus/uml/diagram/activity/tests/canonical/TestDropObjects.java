@@ -47,7 +47,7 @@ public class TestDropObjects extends AbstractPapyrusTestCase {
 	}
 
 	public DiagramUpdater getDiagramUpdater() {
-		return UMLDiagramUpdater.TYPED_INSTANCE;
+		return UMLDiagramUpdater.INSTANCE;
 	}
 
 	/**
@@ -73,42 +73,42 @@ public class TestDropObjects extends AbstractPapyrusTestCase {
 		IGraphicalEditPart activityEP = findChildBySemanticHint(getDiagramEditPart(), ActivityEditPart.VISUAL_ID);
 		return findChildBySemanticHint(activityEP, ActivityActivityContentCompartmentEditPart.VISUAL_ID);
 	}
-	
+
 	@Test
 	public void testExpansionNodeInExpansionRegionCompartment() throws Exception {
 		IGraphicalEditPart regionEP = createChild(ExpansionRegionEditPart.VISUAL_ID, getActivityCompartmentEditPart());
 		IGraphicalEditPart regionCompartmentEP = findChildBySemanticHint(regionEP, ExpansionRegionStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID);
 		IGraphicalEditPart expansionNode = createChild(ExpansionNodeAsInEditPart.VISUAL_ID, regionEP);
-	
+
 		DropObjectSequence dropSeq = new DropObjectSequence(expansionNode, regionEP, regionCompartmentEP);
 		dropSeq.doSequence();
 	}
-	
+
 	/**
 	 * Sequence for manage and testing drop object action
 	 *
 	 */
 	public class DropObjectSequence {
-		
+
 		private final IGraphicalEditPart myChild;
-		
+
 		private final IGraphicalEditPart myParent;
-		
+
 		private final IGraphicalEditPart myDropParent;
-		
+
 		public DropObjectSequence(IGraphicalEditPart childEP, IGraphicalEditPart parentEP, IGraphicalEditPart dropParent) {
 			assertNotNull(childEP);
 			assertNotNull(parentEP);
 			assertNotNull(dropParent);
-			
+
 			myChild = childEP;
 			myParent = parentEP;
 			myDropParent = dropParent;
-			
+
 			assertNotEquals(myChild, myParent);
 			assertNotEquals(myChild, myDropParent);
 		}
-		
+
 		public void doSequence() {
 			testBeforeRemoveView();
 			EObject objectToDrop = doHideChild();
@@ -116,16 +116,16 @@ public class TestDropObjects extends AbstractPapyrusTestCase {
 			IGraphicalEditPart newGrapticalChild = doDrop(objectToDrop);
 			testDrop(newGrapticalChild);
 		}
-		
+
 		protected void testBeforeRemoveView() {
-			testGraphicalEditParts((IGraphicalEditPart)getChildEP().getParent(), getParentEP());
-			
+			testGraphicalEditParts((IGraphicalEditPart) getChildEP().getParent(), getParentEP());
+
 			EObject childObject = getChildEP().resolveSemanticElement();
 			EObject parentObject = getParentEP().resolveSemanticElement();
-			
+
 			testSemantic(parentObject, childObject.eContainer());
 		}
-		
+
 		protected EObject doHideChild() {
 			EObject result = getChildEP().resolveSemanticElement();
 			Command deleteChild = getChildEP().getCommand(new GroupRequest(RequestConstants.REQ_DELETE));
@@ -133,18 +133,18 @@ public class TestDropObjects extends AbstractPapyrusTestCase {
 			executeOnUIThread(deleteChild);
 			return result;
 		}
-		
+
 		protected void testHide() {
 			List<?> childrenAfterHide = getParentEP().getChildren();
 			for (Object child : childrenAfterHide) {
 				assertNotEquals(child, getChildEP());
 			}
 		}
-		
+
 		private int getChildVID() {
 			return UMLVisualIDRegistry.getVisualID(getChildEP().getNotationView());
 		}
-		
+
 		protected IGraphicalEditPart doDrop(EObject objectToDrop) {
 			DropObjectsRequest req = createRequest(objectToDrop);
 			Command dropCommand = myDropParent.getCommand(req);
@@ -152,7 +152,7 @@ public class TestDropObjects extends AbstractPapyrusTestCase {
 			executeOnUIThread(dropCommand);
 			return findChildBySemanticHint(getParentEP(), getChildVID());
 		}
-		
+
 		private DropObjectsRequest createRequest(EObject objectToDrop) {
 			DropObjectsRequest result = new DropObjectsRequest();
 			result.setObjects(Arrays.asList(objectToDrop));
@@ -160,32 +160,32 @@ public class TestDropObjects extends AbstractPapyrusTestCase {
 			result.setLocation(new Point(1, 1));
 			return result;
 		}
-		
+
 		protected void testDrop(IGraphicalEditPart childEP) {
-			testGraphicalEditParts((IGraphicalEditPart)childEP.getParent(), getParentEP());
-			
+			testGraphicalEditParts((IGraphicalEditPart) childEP.getParent(), getParentEP());
+
 			EObject childObject = childEP.resolveSemanticElement();
 			EObject parentObject = getParentEP().resolveSemanticElement();
-			
+
 			testSemantic(parentObject, childObject.eContainer());
 		}
-		
+
 		public final IGraphicalEditPart getChildEP() {
 			return myChild;
 		}
-		
+
 		public final IGraphicalEditPart getParentEP() {
 			return myParent;
 		}
-		
+
 		public final IGraphicalEditPart getDropParentEP() {
 			return myDropParent;
 		}
-		
+
 		protected void testSemantic(EObject parent, EObject expected) {
 			assertEquals(parent, expected);
 		}
-		
+
 		protected void testGraphicalEditParts(IGraphicalEditPart parent, IGraphicalEditPart expected) {
 			assertEquals(parent, expected);
 		}

@@ -33,7 +33,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 
 	@Override
 	public DiagramUpdater getDiagramUpdater() {
-		return UMLDiagramUpdater.TYPED_INSTANCE;
+		return UMLDiagramUpdater.INSTANCE;
 	}
 
 	@Override
@@ -132,8 +132,8 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageSendObjectAction() {
-		//Change for Bug 438560: 2 pins were created by the Live validation actions. These validation actions are not live anymore.
-		//FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
+		// Change for Bug 438560: 2 pins were created by the Live validation actions. These validation actions are not live anymore.
+		// FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
 		testToManageNode(UMLElementTypes.SendObjectAction_3042, UMLPackage.eINSTANCE.getSendObjectAction(), UMLElementTypes.StructuredActivityNode_3065, true, 0);
 	}
 
@@ -230,8 +230,8 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageReadStructuralFeatureAction() {
-		//Change for Bug 438560: 2 pins were created by the Live validation actions. These validation actions are not live anymore.
-		//FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
+		// Change for Bug 438560: 2 pins were created by the Live validation actions. These validation actions are not live anymore.
+		// FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
 		testToManageNode(UMLElementTypes.ReadStructuralFeatureAction_3088, UMLPackage.eINSTANCE.getReadStructuralFeatureAction(), UMLElementTypes.StructuredActivityNode_3065, true, 0);
 	}
 
@@ -240,8 +240,8 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageDestroyObjectAction() {
-		//Change for Bug 438560: 1 pin was created by the Live validation actions. These validation actions are not live anymore.
-		//FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
+		// Change for Bug 438560: 1 pin was created by the Live validation actions. These validation actions are not live anymore.
+		// FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
 		testToManageNode(UMLElementTypes.DestroyObjectAction_3095, UMLPackage.eINSTANCE.getDestroyObjectAction(), UMLElementTypes.StructuredActivityNode_3065, true, 0);
 	}
 
@@ -250,8 +250,8 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageReadVariableAction() {
-		//Change for Bug 438560: 1 pin was created by the Live validation actions. These validation actions are not live anymore.
-		//FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
+		// Change for Bug 438560: 1 pin was created by the Live validation actions. These validation actions are not live anymore.
+		// FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
 		testToManageNode(UMLElementTypes.ReadVariableAction_3097, UMLPackage.eINSTANCE.getReadVariableAction(), UMLElementTypes.StructuredActivityNode_3065, true, 0);
 	}
 
@@ -268,8 +268,8 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageCreateObjectAction() {
-		//Change for Bug 438560: 1 pin was created by the Live validation actions. These validation actions are not live anymore.
-		//FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
+		// Change for Bug 438560: 1 pin was created by the Live validation actions. These validation actions are not live anymore.
+		// FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
 		testToManageNode(UMLElementTypes.CreateObjectAction_3086, UMLPackage.eINSTANCE.getCreateObjectAction(), UMLElementTypes.StructuredActivityNode_3065, true, 0);
 	}
 
@@ -278,8 +278,8 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageAddVariableValueAction() {
-		//Change for Bug 438560: 2 pins were created by the Live validation actions. These validation actions are not live anymore.
-		//FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
+		// Change for Bug 438560: 2 pins were created by the Live validation actions. These validation actions are not live anymore.
+		// FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
 		testToManageNode(UMLElementTypes.AddVariableValueAction_3099, UMLPackage.eINSTANCE.getAddVariableValueAction(), UMLElementTypes.StructuredActivityNode_3065, true, 0);
 	}
 

@@ -36,10 +36,12 @@ public class TestActivityChildNodeInStructuredActivity extends AbstractTestActiv
 	protected String getFileName() {
 		return IActivityDiagramTestsConstants.FILE_NAME;
 	}
+
 	@Override
 	public DiagramUpdater getDiagramUpdater() {
-		return UMLDiagramUpdater.TYPED_INSTANCE;
+		return UMLDiagramUpdater.INSTANCE;
 	}
+
 	/**
 	 * {@inheritDoc}
 	 */

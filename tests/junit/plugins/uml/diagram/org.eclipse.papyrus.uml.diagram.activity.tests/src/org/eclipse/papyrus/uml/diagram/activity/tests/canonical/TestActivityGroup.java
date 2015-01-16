@@ -15,7 +15,6 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
-import org.eclipse.papyrus.junit.framework.classification.FailingTest;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityActivityContentCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityPartitionActivityPartitionContentCompartmentEditPart;
@@ -56,18 +55,10 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * This class test graphical and semantic part of {@link ActivityGroup} elements: 
- * {@link StructuredActivityNode}
- * {@link ConditionalNode}
- * {@link ExpansionRegion}
- * {@link LoopNode}
- * {@link SequenceNode}
- * {@link InterruptibleActivityRegion}
- * {@link ActivityPartition}
+ * This class test graphical and semantic part of {@link ActivityGroup} elements: {@link StructuredActivityNode} {@link ConditionalNode} {@link ExpansionRegion} {@link LoopNode} {@link SequenceNode} {@link InterruptibleActivityRegion} {@link ActivityPartition}
  *
  * For each {@link ActivityGroup} elements test:
- * 1) created child {@link ActivityNode} in {@link ActivityGroup} and drag-drop child to {@link Activity}
- * 2) created child {@link ActivityNode} in {@link Activity} and drag-drop child to {@link ActivityGroup} element
+ * 1) created child {@link ActivityNode} in {@link ActivityGroup} and drag-drop child to {@link Activity} 2) created child {@link ActivityNode} in {@link Activity} and drag-drop child to {@link ActivityGroup} element
  */
 public class TestActivityGroup extends AbstractPapyrusTestCase {
 
@@ -82,7 +73,7 @@ public class TestActivityGroup extends AbstractPapyrusTestCase {
 	}
 
 	public DiagramUpdater getDiagramUpdater() {
-		return UMLDiagramUpdater.TYPED_INSTANCE;
+		return UMLDiagramUpdater.INSTANCE;
 	}
 
 	/**
@@ -315,7 +306,7 @@ public class TestActivityGroup extends AbstractPapyrusTestCase {
 		protected ActivityNode getActivityNodeSemantic(IGraphicalEditPart activityNodeEP) {
 			EObject activityNode = getSemanticElement(activityNodeEP);
 			assertTrue("ActivityNode expected", UMLPackage.eINSTANCE.getActivityNode().isSuperTypeOf(activityNode.eClass()));
-			return (ActivityNode)activityNode;
+			return (ActivityNode) activityNode;
 		}
 
 		protected EObject getSemanticElement(IGraphicalEditPart ep) {
@@ -362,7 +353,7 @@ public class TestActivityGroup extends AbstractPapyrusTestCase {
 		@Override
 		protected void checkSemantic(IGraphicalEditPart childEP, IGraphicalEditPart parentEP) {
 			ActivityNode activityNode = getActivityNodeSemantic(childEP);
-			if(parentEP.resolveSemanticElement() instanceof InterruptibleActivityRegion) {
+			if (parentEP.resolveSemanticElement() instanceof InterruptibleActivityRegion) {
 				assertEquals(activityNode.getInInterruptibleRegions().size(), 1);
 			} else {
 				assertEquals(activityNode.getInInterruptibleRegions().size(), 0);
@@ -380,7 +371,7 @@ public class TestActivityGroup extends AbstractPapyrusTestCase {
 		@Override
 		protected void checkSemantic(IGraphicalEditPart childEP, IGraphicalEditPart parentEP) {
 			ActivityNode activityNode = getActivityNodeSemantic(childEP);
-			if(parentEP.resolveSemanticElement() instanceof ActivityPartition) {
+			if (parentEP.resolveSemanticElement() instanceof ActivityPartition) {
 				assertEquals(activityNode.getInPartitions().size(), 1);
 			} else {
 				assertEquals(activityNode.getInPartitions().size(), 0);
