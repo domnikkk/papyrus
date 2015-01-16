@@ -30,7 +30,7 @@ public class UMLDiagramActionBarContributor extends DiagramActionBarContributor 
 	 * @generated
 	 */
 	@Override
-	protected Class getEditorClass() {
+	protected Class<UMLDiagramEditor> getEditorClass() {
 		return UMLDiagramEditor.class;
 	}
 

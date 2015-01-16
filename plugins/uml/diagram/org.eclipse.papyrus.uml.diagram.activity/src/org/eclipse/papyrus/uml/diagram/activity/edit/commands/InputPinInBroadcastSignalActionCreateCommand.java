@@ -47,27 +47,6 @@ public class InputPinInBroadcastSignalActionCreateCommand extends EditElementCom
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public InputPinInBroadcastSignalActionCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static InputPinInBroadcastSignalActionCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new InputPinInBroadcastSignalActionCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public InputPinInBroadcastSignalActionCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class InputPinInBroadcastSignalActionCreateCommand extends EditElementCom
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

@@ -116,9 +116,9 @@ public class RestoreRelatedLinksCommand extends AbstractTransactionalCommand {
 		Collection<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		if (!domain2NotationMap.containsKey(view.getElement())) {
 			// We must prevent duplicate descriptors
-			List<?> outgoingDescriptors = UMLDiagramUpdater.getOutgoingLinks(view);
+			List<?> outgoingDescriptors = UMLDiagramUpdater.INSTANCE.getOutgoingLinks(view);
 			cleanAdd(result, view, outgoingDescriptors);
-			List<?> incomingDescriptors = UMLDiagramUpdater.getIncomingLinks(view);
+			List<?> incomingDescriptors = UMLDiagramUpdater.INSTANCE.getIncomingLinks(view);
 			cleanAdd(result, view, incomingDescriptors);
 		}
 		if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -272,7 +272,7 @@ public class RestoreRelatedLinksCommand extends AbstractTransactionalCommand {
 			return;
 		}
 		// register the view if its type allows incoming or outgoing links
-		if (!UMLDiagramUpdater.getOutgoingLinks(view).isEmpty() || !UMLDiagramUpdater.getIncomingLinks(view).isEmpty()) {
+		if (!UMLDiagramUpdater.INSTANCE.getOutgoingLinks(view).isEmpty() || !UMLDiagramUpdater.INSTANCE.getIncomingLinks(view).isEmpty()) {
 			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) {
 				domain2NotationMap.put(view.getElement(), view);
 			}

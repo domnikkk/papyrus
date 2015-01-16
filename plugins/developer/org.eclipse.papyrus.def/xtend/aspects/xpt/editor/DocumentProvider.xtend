@@ -63,14 +63,14 @@ import xpt.editor.DiagramEditorUtil
 					if (uri.fragment() != null) {
 						org.eclipse.emf.ecore.EObject rootElement = resource.getEObject(uri.fragment());
 						if (rootElement instanceof org.eclipse.gmf.runtime.notation.Diagram) {
-							document.setContent((org.eclipse.gmf.runtime.notation.Diagram) rootElement);
+							document.setContent(rootElement);
 							return;
 						}
 					} else {
 						for (java.util.Iterator<org.eclipse.emf.ecore.EObject> it = resource.getContents().iterator(); it.hasNext();) {
 							Object rootElement = it.next();
 							if (rootElement instanceof org.eclipse.gmf.runtime.notation.Diagram) {
-								document.setContent((org.eclipse.gmf.runtime.notation.Diagram) rootElement);
+								document.setContent(rootElement);
 								return;
 							}
 						}
@@ -194,7 +194,7 @@ import xpt.editor.DiagramEditorUtil
 				}
 				org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument diagramDocument = (org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument) document;
 				final org.eclipse.emf.ecore.resource.Resource newResource = diagramDocument.getEditingDomain().getResourceSet().createResource(newResoruceURI);
-				final org.eclipse.gmf.runtime.notation.Diagram diagramCopy = (org.eclipse.gmf.runtime.notation.Diagram) org.eclipse.emf.ecore.util.EcoreUtil.copy(diagramDocument.getDiagram());
+				final org.eclipse.gmf.runtime.notation.Diagram diagramCopy = org.eclipse.emf.ecore.util.EcoreUtil.copy(diagramDocument.getDiagram());
 				try {
 					new org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand(diagramDocument.getEditingDomain(), org.eclipse.osgi.util.NLS.bind(«xptExternalizer.accessorCall(editorGen, i18nKeyForDocumentSaveAs(it))», diagramCopy.getName()), affectedFiles) {
 						«overrideC»
@@ -235,6 +235,102 @@ import xpt.editor.DiagramEditorUtil
 			} while (parent != null && !parent.exists());
 		
 			return org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRuleFactory().createRule(toCreateOrModify);
+		}
+	'''
+	
+	override doValidateState(GenDiagram it) '''
+		«generatedMemberComment»
+		protected void doValidateState(Object element, Object computationContext) throws org.eclipse.core.runtime.CoreException {
+			ResourceSetInfo info = getResourceSetInfo(element);
+			if (info != null) {
+				java.util.LinkedList<org.eclipse.core.resources.IFile> files2Validate = new java.util.LinkedList<org.eclipse.core.resources.IFile>();
+				for (java.util.Iterator<org.eclipse.emf.ecore.resource.Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
+					org.eclipse.emf.ecore.resource.Resource nextResource = it.next();
+					org.eclipse.core.resources.IFile file = org.eclipse.emf.workspace.util.WorkspaceSynchronizer.getFile(nextResource);
+					if (file != null && file.isReadOnly()) {
+						files2Validate.add(file);
+					}
+				}
+				org.eclipse.core.resources.ResourcesPlugin.getWorkspace().validateEdit(files2Validate.toArray(new org.eclipse.core.resources.IFile[files2Validate.size()]), computationContext);
+			}
+			
+			super.doValidateState(element, computationContext);
+		}
+	'''
+	
+	override getResetRule(GenDiagram it) '''
+		«generatedMemberComment»
+		protected org.eclipse.core.runtime.jobs.ISchedulingRule getResetRule(Object element) {
+			ResourceSetInfo info = getResourceSetInfo(element);
+			if (info != null) {
+				java.util.LinkedList<org.eclipse.core.runtime.jobs.ISchedulingRule> rules = new java.util.LinkedList<org.eclipse.core.runtime.jobs.ISchedulingRule>();
+				for (java.util.Iterator<org.eclipse.emf.ecore.resource.Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
+					org.eclipse.emf.ecore.resource.Resource nextResource = it.next();
+					org.eclipse.core.resources.IFile file = org.eclipse.emf.workspace.util.WorkspaceSynchronizer.getFile(nextResource);
+					if (file != null) {
+						rules.add(org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRuleFactory().modifyRule(file));
+					}
+				}
+				return new org.eclipse.core.runtime.jobs.MultiRule(rules.toArray(new org.eclipse.core.runtime.jobs.ISchedulingRule[rules.size()]));
+			}
+			return null;
+		}
+	'''
+	
+	override getSaveRule(GenDiagram it) '''
+		«generatedMemberComment»
+		protected org.eclipse.core.runtime.jobs.ISchedulingRule getSaveRule(Object element) {
+			ResourceSetInfo info = getResourceSetInfo(element);
+			if (info != null) {
+				java.util.LinkedList<org.eclipse.core.runtime.jobs.ISchedulingRule> rules = new java.util.LinkedList<org.eclipse.core.runtime.jobs.ISchedulingRule>();
+				for (java.util.Iterator<org.eclipse.emf.ecore.resource.Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
+					org.eclipse.emf.ecore.resource.Resource nextResource = it.next();
+					org.eclipse.core.resources.IFile file = org.eclipse.emf.workspace.util.WorkspaceSynchronizer.getFile(nextResource);
+					if (file != null) {
+						rules.add(computeSchedulingRule(file));
+					}
+				}
+				return new org.eclipse.core.runtime.jobs.MultiRule(rules.toArray(new org.eclipse.core.runtime.jobs.ISchedulingRule[rules.size()]));
+			}
+			return null;
+		}
+	'''
+	
+	override getSynchronizeRule(GenDiagram it) '''
+		«generatedMemberComment»
+		protected org.eclipse.core.runtime.jobs.ISchedulingRule getSynchronizeRule(Object element) {
+			ResourceSetInfo info = getResourceSetInfo(element);
+			if (info != null) {
+				java.util.LinkedList<org.eclipse.core.runtime.jobs.ISchedulingRule> rules = new java.util.LinkedList<org.eclipse.core.runtime.jobs.ISchedulingRule>();
+				for (java.util.Iterator<org.eclipse.emf.ecore.resource.Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
+					org.eclipse.emf.ecore.resource.Resource nextResource = it.next();
+					org.eclipse.core.resources.IFile file = org.eclipse.emf.workspace.util.WorkspaceSynchronizer.getFile(nextResource);
+					if (file != null) {
+						rules.add(org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRuleFactory().refreshRule(file));
+					}
+				}
+				return new org.eclipse.core.runtime.jobs.MultiRule(rules.toArray(new org.eclipse.core.runtime.jobs.ISchedulingRule[rules.size()]));
+			}
+			return null;
+		}
+	'''
+	
+	override getValidateStateRule(GenDiagram it) '''
+		«generatedMemberComment»
+		protected org.eclipse.core.runtime.jobs.ISchedulingRule getValidateStateRule(Object element) {
+			ResourceSetInfo info = getResourceSetInfo(element);
+			if (info != null) {«/*FIXME: [MG] bad copy paste here, files should be <IFile>, its a miracle that it does not fail in runtime at toArray stage */»
+				java.util.LinkedList<org.eclipse.core.runtime.jobs.ISchedulingRule> files = new java.util.LinkedList<org.eclipse.core.runtime.jobs.ISchedulingRule>();
+				for (java.util.Iterator<org.eclipse.emf.ecore.resource.Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
+					org.eclipse.emf.ecore.resource.Resource nextResource = it.next();
+					org.eclipse.core.resources.IFile file = org.eclipse.emf.workspace.util.WorkspaceSynchronizer.getFile(nextResource);
+					if (file != null) {
+						files.add(file);
+					}
+				}
+				return org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRuleFactory().validateEditRule(files.toArray(new org.eclipse.core.resources.IFile[files.size()]));
+			}
+			return null;
 		}
 	'''
 }

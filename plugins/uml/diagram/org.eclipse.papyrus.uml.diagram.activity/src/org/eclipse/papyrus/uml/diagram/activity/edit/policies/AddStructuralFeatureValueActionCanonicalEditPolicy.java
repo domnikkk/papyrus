@@ -67,7 +67,7 @@ public class AddStructuralFeatureValueActionCanonicalEditPolicy extends Canonica
 	 * @generated
 	 */
 	@Override
-	protected Set getFeaturesToSynchronize() {
+	protected Set<EStructuralFeature> getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getStructuralFeatureAction_Object());
@@ -82,10 +82,10 @@ public class AddStructuralFeatureValueActionCanonicalEditPolicy extends Canonica
 	 */
 	@Override
 	@SuppressWarnings("rawtypes")
-	protected List getSemanticChildrenList() {
+	protected List<EObject> getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.getAddStructuralFeatureValueAction_3091SemanticChildren(viewObject);
+		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getAddStructuralFeatureValueAction_3091SemanticChildren(viewObject);
 		for (UMLNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -118,7 +118,7 @@ public class AddStructuralFeatureValueActionCanonicalEditPolicy extends Canonica
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.getAddStructuralFeatureValueAction_3091SemanticChildren((View) getHost().getModel());
+		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getAddStructuralFeatureValueAction_3091SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();

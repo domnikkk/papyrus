@@ -136,4 +136,25 @@ import xpt.editor.VisualIDRegistry
 		}
 		'''
 
+		override getEditPartMethod(GenDiagram it) '''
+			«generatedMemberComment»
+			private org.eclipse.gef.EditPart getEditPart(org.eclipse.emf.ecore.EObject domainModelElement, «Domain2Notation(it)» domain2NotationMap) {
+				org.eclipse.gmf.runtime.notation.View view = domain2NotationMap.get(domainModelElement);
+				if (view != null) {
+					return (org.eclipse.gef.EditPart) getHost().getViewer().getEditPartRegistry().get(view);
+				}
+				return null;
+			}
+		'''
+
+		override getHintedEditPartMethod(GenDiagram it) '''
+			«generatedMemberComment»
+			protected final org.eclipse.gef.EditPart getHintedEditPart(org.eclipse.emf.ecore.EObject domainModelElement, «Domain2Notation(it)» domain2NotationMap, int hintVisualId) { 
+				org.eclipse.gmf.runtime.notation.View view = domain2NotationMap.getHinted(domainModelElement, «xptVisualIDRegistry.typeMethodCall(it, 'hintVisualId')»);
+				if (view != null) {
+					return (org.eclipse.gef.EditPart) getHost().getViewer().getEditPartRegistry().get(view);
+				}
+				return null;
+			}
+		'''
 }

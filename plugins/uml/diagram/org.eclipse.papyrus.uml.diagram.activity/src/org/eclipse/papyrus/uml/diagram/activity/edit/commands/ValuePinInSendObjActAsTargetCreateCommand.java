@@ -47,27 +47,6 @@ public class ValuePinInSendObjActAsTargetCreateCommand extends EditElementComman
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public ValuePinInSendObjActAsTargetCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static ValuePinInSendObjActAsTargetCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new ValuePinInSendObjActAsTargetCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public ValuePinInSendObjActAsTargetCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class ValuePinInSendObjActAsTargetCreateCommand extends EditElementComman
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

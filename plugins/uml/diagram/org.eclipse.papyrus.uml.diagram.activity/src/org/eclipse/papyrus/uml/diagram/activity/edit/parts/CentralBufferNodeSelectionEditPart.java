@@ -27,7 +27,6 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
@@ -53,7 +52,10 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.ILabelEditorDialog;
 import org.eclipse.papyrus.extensionpoints.editors.ui.IPopupEditorHelper;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalLabelPrimaryDragRoleEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.BehaviorPropertyNodeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.figures.WrappedLabel;
@@ -78,7 +80,7 @@ import org.eclipse.uml2.uml.ObjectNode;
 /**
  * @generated
  */
-public class CentralBufferNodeSelectionEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
+public class CentralBufferNodeSelectionEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	 * @generated
@@ -140,6 +142,7 @@ public class CentralBufferNodeSelectionEditPart extends LabelEditPart implements
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ExternalLabelPrimaryDragRoleEditPolicy());
 	}
 
 	/**
@@ -242,7 +245,7 @@ public class CentralBufferNodeSelectionEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	@Override
-	protected List getModelChildren() {
+	protected List<?> getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -252,6 +255,13 @@ public class CentralBufferNodeSelectionEditPart extends LabelEditPart implements
 	@Override
 	public IGraphicalEditPart getChildBySemanticHint(String semanticHint) {
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setParser(IParser parser) {
+		this.parser = parser;
 	}
 
 	/**
@@ -338,7 +348,7 @@ public class CentralBufferNodeSelectionEditPart extends LabelEditPart implements
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<java.lang.Object>() {
 
 							@Override
 							public void run() {
@@ -520,6 +530,31 @@ public class CentralBufferNodeSelectionEditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
+	protected void initializeDirectEditManager(final Request request) {
+		// initialize the direct edit manager
+		try {
+			getEditingDomain().runExclusive(new Runnable() {
+
+				@Override
+				public void run() {
+					if (isActive() && isEditable()) {
+						if (request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
+							Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+							performDirectEdit(initialChar.charValue());
+						} else {
+							performDirectEdit();
+						}
+					}
+				}
+			});
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
@@ -536,8 +571,17 @@ public class CentralBufferNodeSelectionEditPart extends LabelEditPart implements
 	protected void refreshLabel() {
 		EditPolicy maskLabelPolicy = getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
 		if (maskLabelPolicy == null) {
-			setLabelTextHelper(getFigure(), getLabelText());
-			setLabelIconHelper(getFigure(), getLabelIcon());
+			maskLabelPolicy = getEditPolicy(IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL);
+		}
+		if (maskLabelPolicy == null) {
+			View view = (View) getModel();
+			if (view.isVisible()) {
+				setLabelTextHelper(getFigure(), getLabelText());
+				setLabelIconHelper(getFigure(), getLabelIcon());
+			} else {
+				setLabelTextHelper(getFigure(), ""); //$NON-NLS-1$
+				setLabelIconHelper(getFigure(), null);
+			}
 		}
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
@@ -715,7 +759,7 @@ public class CentralBufferNodeSelectionEditPart extends LabelEditPart implements
 	 */
 	protected void updateExtendedEditorConfiguration() {
 		String languagePreferred = Activator.getDefault().getPreferenceStore().getString(IDirectEditorsIds.EDITOR_FOR_ELEMENT + resolveSemanticElement().eClass().getInstanceClassName());
-		if (languagePreferred != null && !languagePreferred.equals("") && languagePreferred != configuration.getLanguage()) {
+		if (languagePreferred != null && !languagePreferred.equals("") && !languagePreferred.equals(configuration.getLanguage())) {
 			configuration = DirectEditorsUtil.findEditorConfiguration(languagePreferred, resolveSemanticElement().eClass().getInstanceClassName());
 		} else if (IDirectEditorsIds.SIMPLE_DIRECT_EDITOR.equals(languagePreferred)) {
 			configuration = null;

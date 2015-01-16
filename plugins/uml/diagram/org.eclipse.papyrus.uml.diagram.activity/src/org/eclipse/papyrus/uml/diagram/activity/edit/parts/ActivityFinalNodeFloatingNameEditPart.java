@@ -117,7 +117,7 @@ public class ActivityFinalNodeFloatingNameEditPart extends FloatingLabelEditPart
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(ActivityFinalNodeFloatingNameEditPart.VISUAL_ID), new Point(0, 0));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityFinalNodeFloatingNameEditPart.VISUAL_ID), new Point(0, 0));
 	}
 
 	/**
@@ -135,6 +135,7 @@ public class ActivityFinalNodeFloatingNameEditPart extends FloatingLabelEditPart
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ExternalLabelPrimaryDragRoleEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ExternalLabelPrimaryDragRoleEditPolicy());
 	}
 
@@ -368,7 +369,7 @@ public class ActivityFinalNodeFloatingNameEditPart extends FloatingLabelEditPart
 	@Override
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.BroadcastSignalAction_3102, getParserElement(), UMLVisualIDRegistry.getType(ActivityFinalNodeFloatingNameEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.ActivityFinalNode_3005, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityFinalNodeFloatingNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -456,8 +457,7 @@ public class ActivityFinalNodeFloatingNameEditPart extends FloatingLabelEditPart
 				} else if (configuration instanceof IAdvancedEditorConfiguration) {
 					dialog = ((IAdvancedEditorConfiguration) configuration).createDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()));
 				} else if (configuration instanceof IDirectEditorConfiguration) {
-					dialog = new ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()),
-							configuration);
+					dialog = new ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()), configuration);
 				} else {
 					return;
 				}

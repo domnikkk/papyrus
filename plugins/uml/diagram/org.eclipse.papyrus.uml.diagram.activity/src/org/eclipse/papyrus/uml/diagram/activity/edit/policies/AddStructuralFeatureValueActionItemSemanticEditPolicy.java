@@ -61,43 +61,22 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-		IElementType baseElementType = requestElementType;
-		boolean isExtendedType = false;
-		if (requestElementType instanceof IExtendedHintedElementType) {
-			baseElementType = ElementTypeUtils.getClosestDiagramType(requestElementType);
-			if (baseElementType != null) {
-				isExtendedType = true;
-			} else {
-				// no reference element type ID. using the closest super element type to give more opportunities, but can lead to bugs.
-				baseElementType = ElementTypeUtils.findClosestNonExtendedElementType((IExtendedHintedElementType) requestElementType);
-				isExtendedType = true;
-			}
-		}
-		if (UMLElementTypes.InputPin_3092 == baseElementType) {
+		if (UMLElementTypes.InputPin_3092 == requestElementType) {
 			// adjust the containment feature
 			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuralFeatureAction_Object();
 			req.setContainmentFeature(containmentFeature);
-			if (isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType) requestElementType);
-			}
 			return getGEFWrapper(getSemanticCreationCommand(req));
 		}
-		if (UMLElementTypes.InputPin_3093 == baseElementType) {
+		if (UMLElementTypes.InputPin_3093 == requestElementType) {
 			// adjust the containment feature
 			EReference containmentFeature = UMLPackage.eINSTANCE.getWriteStructuralFeatureAction_Value();
 			req.setContainmentFeature(containmentFeature);
-			if (isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType) requestElementType);
-			}
 			return getGEFWrapper(getSemanticCreationCommand(req));
 		}
-		if (UMLElementTypes.OutputPin_3094 == baseElementType) {
+		if (UMLElementTypes.OutputPin_3094 == requestElementType) {
 			// adjust the containment feature
 			EReference containmentFeature = UMLPackage.eINSTANCE.getWriteStructuralFeatureAction_Result();
 			req.setContainmentFeature(containmentFeature);
-			if (isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType) requestElementType);
-			}
 			return getGEFWrapper(getSemanticCreationCommand(req));
 		}
 		return super.getCreateCommand(req);

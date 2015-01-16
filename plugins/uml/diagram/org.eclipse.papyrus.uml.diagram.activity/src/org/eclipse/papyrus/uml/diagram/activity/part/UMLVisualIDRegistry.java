@@ -162,65 +162,65 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case CallOperationActionEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3021(containerView, (ActionInputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3021((ActionInputPin) domainElement)) {
 				return ActionInputPinInCallOpActEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3022(containerView, (ValuePin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3022((ValuePin) domainElement)) {
 				return ValuePinInCallOpActEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3023(containerView, (InputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3023((InputPin) domainElement)) {
 				return InputPinInCallOpActEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
 				return OutputPinInCallOpActEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3025(containerView, (ValuePin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3025((ValuePin) domainElement)) {
 				return ValuePinInCallOpActAsTargetEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3026(containerView, (ActionInputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3026((ActionInputPin) domainElement)) {
 				return ActionInputPinInCallOpActAsTargetEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3027(containerView, (InputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3027((InputPin) domainElement)) {
 				return InputPinInCallOpActAsTargetEditPart.VISUAL_ID;
 			}
 			break;
 		case SendObjectActionEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3046(containerView, (ValuePin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3046((ValuePin) domainElement)) {
 				return ValuePinInSendObjActAsReqEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3047(containerView, (ActionInputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3047((ActionInputPin) domainElement)) {
 				return ActionInputPinInSendObjActAsReqEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3048(containerView, (InputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3048((InputPin) domainElement)) {
 				return InputPinInSendObjActAsReqEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3049(containerView, (ValuePin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3049((ValuePin) domainElement)) {
 				return ValuePinInSendObjActAsTargetEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3050(containerView, (ActionInputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3050((ActionInputPin) domainElement)) {
 				return ActionInputPinInSendObjActAsTargetEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3051(containerView, (InputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3051((InputPin) domainElement)) {
 				return InputPinInSendObjActAsTargetEditPart.VISUAL_ID;
 			}
 			break;
 		case SendSignalActionEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3053(containerView, (ActionInputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3053((ActionInputPin) domainElement)) {
 				return ActionInputPinInSendSigActEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3054(containerView, (ValuePin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3054((ValuePin) domainElement)) {
 				return ValuePinInSendSigActEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3055(containerView, (InputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3055((InputPin) domainElement)) {
 				return InputPinInSendSigActEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3060(containerView, (ValuePin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3060((ValuePin) domainElement)) {
 				return ValuePinInSendSigActAsTargetEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3061(containerView, (ActionInputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3061((ActionInputPin) domainElement)) {
 				return ActionInputPinInSendSigActAsTargetEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3062(containerView, (InputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3062((InputPin) domainElement)) {
 				return InputPinInSendSigActAsTargetEditPart.VISUAL_ID;
 			}
 			break;
@@ -235,10 +235,10 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case ExpansionRegionEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getExpansionNode().isSuperTypeOf(domainElement.eClass()) && isExpansionNode_3074(containerView, (ExpansionNode) domainElement)) {
+			if (UMLPackage.eINSTANCE.getExpansionNode().isSuperTypeOf(domainElement.eClass()) && isExpansionNode_3074((ExpansionNode) domainElement)) {
 				return ExpansionNodeAsInEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getExpansionNode().isSuperTypeOf(domainElement.eClass()) && isExpansionNode_3075(containerView, (ExpansionNode) domainElement)) {
+			if (UMLPackage.eINSTANCE.getExpansionNode().isSuperTypeOf(domainElement.eClass()) && isExpansionNode_3075((ExpansionNode) domainElement)) {
 				return ExpansionNodeAsOutEditPart.VISUAL_ID;
 			}
 			break;
@@ -280,10 +280,10 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3092(containerView, (InputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3092((InputPin) domainElement)) {
 				return InputPinInAddStructuralFeatureValueActionAsObjectEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3093(containerView, (InputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3093((InputPin) domainElement)) {
 				return InputPinInAddStructuralFeatureValueActionAsValueEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
@@ -291,25 +291,25 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case DestroyObjectActionEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3096(containerView, (InputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3096((InputPin) domainElement)) {
 				return InputPinInDestroyObjectActionEditPart.VISUAL_ID;
 			}
 			break;
 		case ReadVariableActionEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass()) && isOutputPin_3098(containerView, (OutputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass()) && isOutputPin_3098((OutputPin) domainElement)) {
 				return OutputPinInReadVariableActionAsResultEditPart.VISUAL_ID;
 			}
 			break;
 		case AddVariableValueActionEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3100(containerView, (InputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3100((InputPin) domainElement)) {
 				return InputPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3101(containerView, (InputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3101((InputPin) domainElement)) {
 				return InputPinInAddVariableValueActionAsValueEditPart.VISUAL_ID;
 			}
 			break;
 		case BroadcastSignalActionEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3103(containerView, (InputPin) domainElement)) {
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3103((InputPin) domainElement)) {
 				return InputPinInBroadcastSignalActionEditPart.VISUAL_ID;
 			}
 			break;
@@ -347,28 +347,28 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
 				return CallOperationActionEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011((Constraint) domainElement)) {
 				return ConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012((Constraint) domainElement)) {
 				return ConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
@@ -475,28 +475,28 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
 				return CallOperationActionEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011((Constraint) domainElement)) {
 				return ConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012((Constraint) domainElement)) {
 				return ConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
@@ -636,28 +636,28 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getReadSelfAction().isSuperTypeOf(domainElement.eClass())) {
 				return ReadSelfActionEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011((Constraint) domainElement)) {
 				return ConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012((Constraint) domainElement)) {
 				return ConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
@@ -755,28 +755,28 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getReadSelfAction().isSuperTypeOf(domainElement.eClass())) {
 				return ReadSelfActionEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011((Constraint) domainElement)) {
 				return ConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012((Constraint) domainElement)) {
 				return ConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
@@ -874,28 +874,28 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getReadSelfAction().isSuperTypeOf(domainElement.eClass())) {
 				return ReadSelfActionEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011((Constraint) domainElement)) {
 				return ConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012((Constraint) domainElement)) {
 				return ConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
@@ -993,28 +993,28 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getReadSelfAction().isSuperTypeOf(domainElement.eClass())) {
 				return ReadSelfActionEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011((Constraint) domainElement)) {
 				return ConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012((Constraint) domainElement)) {
 				return ConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
@@ -1115,28 +1115,28 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getActivityPartition().isSuperTypeOf(domainElement.eClass())) {
 				return ActivityPartitionEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011((Constraint) domainElement)) {
 				return ConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012((Constraint) domainElement)) {
 				return ConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
@@ -1234,28 +1234,28 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getReadSelfAction().isSuperTypeOf(domainElement.eClass())) {
 				return ReadSelfActionEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011((Constraint) domainElement)) {
 				return ConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012((Constraint) domainElement)) {
 				return ConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
@@ -1323,28 +1323,28 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
 				return CallOperationActionEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3034((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035(containerView, (DurationConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getDurationConstraint().isSuperTypeOf(domainElement.eClass()) && isDurationConstraint_3035((DurationConstraint) domainElement)) {
 				return DurationConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3036((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037(containerView, (TimeConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getTimeConstraint().isSuperTypeOf(domainElement.eClass()) && isTimeConstraint_3037((TimeConstraint) domainElement)) {
 				return TimeConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3032((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033(containerView, (IntervalConstraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getIntervalConstraint().isSuperTypeOf(domainElement.eClass()) && isIntervalConstraint_3033((IntervalConstraint) domainElement)) {
 				return IntervalConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3011((Constraint) domainElement)) {
 				return ConstraintAsLocalPrecondEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012(containerView, (Constraint) domainElement)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_3012((Constraint) domainElement)) {
 				return ConstraintAsLocalPostcondEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
@@ -1736,41 +1736,34 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case InitialNodeEditPart.VISUAL_ID:
-			if (InitialNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			// not generated but change include on gmfgen, can be override at the generation
 			if (InitialNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
-			break;
-		case ActivityFinalNodeEditPart.VISUAL_ID:
-			if (ActivityFinalNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+			if (InitialNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			// not generated but change include on gmfgen, can be override at the generation
+			break;
+		case ActivityFinalNodeEditPart.VISUAL_ID:
 			if (ActivityFinalNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActivityFinalNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case FlowFinalNodeEditPart.VISUAL_ID:
-			if (FlowFinalNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			// not generated but change include on gmfgen, can be override at the generation
 			if (FlowFinalNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
-			break;
-		case OpaqueActionEditPart.VISUAL_ID:
-			// not generated but change include on gmfgen, can be override at the generation
-			if (OpaqueActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (FlowFinalNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
+			break;
+		case OpaqueActionEditPart.VISUAL_ID:
 			if (OpaqueActionNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OpaqueActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ValuePinInOpaqueActEditPart.VISUAL_ID == nodeVisualID) {
@@ -1828,6 +1821,9 @@ public class UMLVisualIDRegistry {
 			if (CallBehaviorActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (CallBehaviorActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (ValuePinInCallBeActEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -1838,10 +1834,6 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (OutputPinInCallBeActEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			// not generated but change include on gmfgen, can be override at the generation
-			if (CallBehaviorActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1884,12 +1876,10 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case CallOperationActionEditPart.VISUAL_ID:
-			// not generated but change include on gmfgen, can be override at the generation
-			if (CallOperationActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (CallOperationActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
-			if (CallOperationActionNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (CallOperationActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ActionInputPinInCallOpActEditPart.VISUAL_ID == nodeVisualID) {
@@ -2047,50 +2037,42 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case DecisionNodeEditPart.VISUAL_ID:
+			if (DecisionNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (DecisionInputEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (DecisionNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			// not generated but change include on gmfgen, can be override at the generation
-			if (DecisionNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-
 			break;
 		case MergeNodeEditPart.VISUAL_ID:
-			if (MergeNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			// not generated but changes include on gmfgen, can be override at the generation
 			if (MergeNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
-			break;
-		case ForkNodeEditPart.VISUAL_ID:
-			if (ForkNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+			if (MergeNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			// not generated but changes include on gmfgen, can be override at the generation
+			break;
+		case ForkNodeEditPart.VISUAL_ID:
 			if (ForkNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
+			if (ForkNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case JoinNodeEditPart.VISUAL_ID:
 			if (JoinSpecEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (JoinNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			// not generated but changes include on gmfgen, can be override at the generation
 			if (JoinNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
+			if (JoinNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case DataStoreNodeEditPart.VISUAL_ID:
 			if (DataStoreNodeLabelEditPart.VISUAL_ID == nodeVisualID) {
@@ -2099,19 +2081,15 @@ public class UMLVisualIDRegistry {
 			if (DataStoreSelectionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			// not generated but change include on gmfgen, can be override at the generation
 			if (DataStoreNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
 			break;
 		case SendObjectActionEditPart.VISUAL_ID:
-			// not generated but change include on gmfgen, can be override at the generation
-			if (SendObjectActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (SendObjectActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
-			if (SendObjectActionNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (SendObjectActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ValuePinInSendObjActAsReqEditPart.VISUAL_ID == nodeVisualID) {
@@ -2194,11 +2172,10 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case SendSignalActionEditPart.VISUAL_ID:
-			// not generated but change include on gmfgen, can be override at the generation
-			if (SendSignalActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (SendSignalActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (SendSignalActionNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (SendSignalActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ActionInputPinInSendSigActEditPart.VISUAL_ID == nodeVisualID) {
@@ -2295,6 +2272,9 @@ public class UMLVisualIDRegistry {
 			if (AcceptTimeEventActionAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (AcceptEventActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (OutputPinInAcceptEventActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -2308,12 +2288,10 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case ValueSpecificationActionEditPart.VISUAL_ID:
-			// not generated but change include on gmfgen, can be override at the generation
-			if (ValueSpecificationActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (ValueSpecificationActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
-			if (ValueSpecificationActionNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (ValueSpecificationActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (OutputPinInValSpecActEditPart.VISUAL_ID == nodeVisualID) {
@@ -2422,18 +2400,12 @@ public class UMLVisualIDRegistry {
 			if (ActivityPartitionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ActivityPartitionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (ActivityPartitionActivityPartitionContentCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			// not generated but change include on gmfgen, can be override at the generation
-			if (BroadcastSignalActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			// not generated but change include on gmfgen, can be override at the generation
-			if (AddVariableValueActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-
 			break;
 		case InterruptibleActivityRegionEditPart.VISUAL_ID:
 			if (InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentEditPart.VISUAL_ID == nodeVisualID) {
@@ -2446,12 +2418,10 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case ReadSelfActionEditPart.VISUAL_ID:
-			// not generated but change include on gmfgen, can be override at the generation
-			if (ReadSelfActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (ReadSelfActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
-			if (ReadSelfActionNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (ReadSelfActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ReadSelfActionOutputPinEditPart.VISUAL_ID == nodeVisualID) {
@@ -2490,12 +2460,10 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case CreateObjectActionEditPart.VISUAL_ID:
-			// not generated but change include on gmfgen, can be override at the generation
-			if (CreateObjectActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (CreateObjectActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
-			if (CreateObjectActionNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (CreateObjectActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (OutputPinInCreateObjectActionAsResultEditPart.VISUAL_ID == nodeVisualID) {
@@ -2516,12 +2484,10 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case ReadStructuralFeatureActionEditPart.VISUAL_ID:
-			// not generated but change include on gmfgen, can be override at the generation
-			if (ReadStructuralFeatureActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (ReadStructuralFeatureActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
-			if (ReadStructuralFeatureActionNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (ReadStructuralFeatureActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (InputPinInReadStructuralFeatureAsObjectEditPart.VISUAL_ID == nodeVisualID) {
@@ -2551,6 +2517,9 @@ public class UMLVisualIDRegistry {
 			if (AddStructuralFeatureValueActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (AddStructuralFeatureValueActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (InputPinInAddStructuralFeatureValueActionAsObjectEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -2558,10 +2527,6 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (OutputPinInAddStructuralFeatureValueActionAsResultEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			// not generated but change include on gmfgen, can be override at the generation
-			if (AddStructuralFeatureValueActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -2590,12 +2555,10 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case DestroyObjectActionEditPart.VISUAL_ID:
-			// not generated but change include on gmfgen, can be override at the generation
-			if (DestroyObjectActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (DestroyObjectActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
-			if (DestroyObjectActionNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (DestroyObjectActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (InputPinInDestroyObjectActionEditPart.VISUAL_ID == nodeVisualID) {
@@ -2611,12 +2574,10 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case ReadVariableActionEditPart.VISUAL_ID:
-			// not generated but change include on gmfgen, can be override at the generation
-			if (ReadVariableActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (ReadVariableActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
-			if (ReadVariableActionNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (ReadVariableActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (OutputPinInReadVariableActionAsResultEditPart.VISUAL_ID == nodeVisualID) {
@@ -2633,6 +2594,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case AddVariableValueActionEditPart.VISUAL_ID:
 			if (AddVariableValueActionNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AddVariableValueActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (InputPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID == nodeVisualID) {
@@ -2662,6 +2626,9 @@ public class UMLVisualIDRegistry {
 			if (BroadcastSignalActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (BroadcastSignalActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (InputPinInBroadcastSignalActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -2684,11 +2651,9 @@ public class UMLVisualIDRegistry {
 			if (CentralBufferNodeSelectionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			// not generated but change include on gmfgen, can be override at the generation
 			if (CentralBufferNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-
 			break;
 		case ConstraintEditPartCN.VISUAL_ID:
 			if (ConstraintNameEditPartCN.VISUAL_ID == nodeVisualID) {

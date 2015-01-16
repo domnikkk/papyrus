@@ -47,27 +47,6 @@ public class InputPinInAddVariableValueActionAsInsertAtCreateCommand extends Edi
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public InputPinInAddVariableValueActionAsInsertAtCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static InputPinInAddVariableValueActionAsInsertAtCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new InputPinInAddVariableValueActionAsInsertAtCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public InputPinInAddVariableValueActionAsInsertAtCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class InputPinInAddVariableValueActionAsInsertAtCreateCommand extends Edi
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

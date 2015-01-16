@@ -72,15 +72,12 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 			return null;
 		}
 		IElementType baseElementType = requestElementType;
-		boolean isExtendedType = false;
 		if (requestElementType instanceof IExtendedHintedElementType) {
 			baseElementType = ElementTypeUtils.getClosestDiagramType(requestElementType);
 			if (baseElementType != null) {
-				isExtendedType = true;
 			} else {
 				// no reference element type ID. using the closest super element type to give more opportunities, but can lead to bugs.
 				baseElementType = ElementTypeUtils.findClosestNonExtendedElementType((IExtendedHintedElementType) requestElementType);
-				isExtendedType = true;
 			}
 		}
 		if (UMLElementTypes.CommentAnnotatedElement_4006 == baseElementType) {

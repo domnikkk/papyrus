@@ -47,27 +47,6 @@ public class ConstraintAsLocalPrecondCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public ConstraintAsLocalPrecondCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static ConstraintAsLocalPrecondCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new ConstraintAsLocalPrecondCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public ConstraintAsLocalPrecondCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class ConstraintAsLocalPrecondCreateCommand extends EditElementCommand {
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

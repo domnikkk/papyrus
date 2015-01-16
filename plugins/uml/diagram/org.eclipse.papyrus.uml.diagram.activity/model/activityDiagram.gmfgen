@@ -1771,7 +1771,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -1866,7 +1871,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -1961,7 +1971,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -2042,7 +2057,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -2227,7 +2247,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -2326,7 +2351,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -2425,7 +2455,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -2510,7 +2545,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -2699,7 +2739,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -2799,7 +2844,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -2899,7 +2949,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -2985,7 +3040,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -3070,7 +3130,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -3170,7 +3235,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -3270,7 +3340,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -4765,7 +4840,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -4861,7 +4941,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -4957,7 +5042,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -5039,7 +5129,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -5135,7 +5230,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -5231,7 +5331,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -5421,7 +5526,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -5517,7 +5627,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -5613,7 +5728,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -5695,7 +5815,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -5791,7 +5916,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -5887,7 +6017,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -6178,7 +6313,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -6371,7 +6511,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -6756,7 +6901,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -6836,7 +6986,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -6916,7 +7071,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -7126,7 +7286,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -7298,7 +7463,7 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figures.node.RoundedCompartmentFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure"/>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -7816,7 +7981,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -8062,7 +8232,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -8139,7 +8314,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -8328,7 +8508,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -8406,7 +8591,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -8484,7 +8674,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -8673,7 +8868,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.gef.EditPolicy.LAYOUT_ROLE"
@@ -8753,7 +8953,7 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -8860,7 +9060,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -9050,7 +9255,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -9128,7 +9338,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -9318,7 +9533,12 @@
         </elementType>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure"/>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
@@ -18387,7 +18607,7 @@
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="Elements that inherits RoundedCompartmentEditPart"
-        genView="/0/@diagram/@childNodes.87 /0/@diagram/@childNodes.67 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.68 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.3 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.52"
+        genView="/0/@diagram/@childNodes.87 /0/@diagram/@childNodes.67 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.68 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.3 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.72 /0/@diagram/@topLevelNodes.0"
         name="Rounded Compartment EP inheritance"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart"/>
     <extensionNodes

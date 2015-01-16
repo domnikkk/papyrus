@@ -225,7 +225,7 @@ import org.eclipse.papyrus.papyrusgmfgenextension.CustomDiagramUpdaterSingleton
 					«ENDFOR»
 					«IF it.getPhantomNodes.notEmpty»
 						org.eclipse.emf.ecore.resource.Resource resource = modelElement.eResource();
-						for (java.util.Iterator<org.eclipse.emf.ecore.EObject> it = getPhantomNodesIterator(resource)) {
+						for (java.util.Iterator<org.eclipse.emf.ecore.EObject> it = getPhantomNodesIterator(resource); it.hasNaxt();) {
 							org.eclipse.emf.ecore.EObject childElement = it.next();
 							if (childElement == modelElement) {
 								continue;

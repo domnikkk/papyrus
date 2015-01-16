@@ -44,27 +44,6 @@ public class ShapeNamedElementCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public ShapeNamedElementCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static ShapeNamedElementCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new ShapeNamedElementCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public ShapeNamedElementCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -81,10 +60,7 @@ public class ShapeNamedElementCreateCommand extends EditElementCommand {
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

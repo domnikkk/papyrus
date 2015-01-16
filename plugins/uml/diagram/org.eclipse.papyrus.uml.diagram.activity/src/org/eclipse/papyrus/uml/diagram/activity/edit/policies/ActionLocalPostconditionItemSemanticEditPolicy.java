@@ -43,7 +43,6 @@ public class ActionLocalPostconditionItemSemanticEditPolicy extends UMLBaseItemS
 	protected Command getDestroyReferenceCommand(DestroyReferenceRequest req) {
 		return getGEFWrapper(new DestroyReferenceCommand(req) {
 
-			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 				EObject referencedObject = getReferencedObject();
 				Resource resource = referencedObject.eResource();

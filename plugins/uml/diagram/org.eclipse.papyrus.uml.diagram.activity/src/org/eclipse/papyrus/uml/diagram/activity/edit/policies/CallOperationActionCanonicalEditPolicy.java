@@ -92,10 +92,10 @@ public class CallOperationActionCanonicalEditPolicy extends CanonicalEditPolicy 
 	 */
 	@Override
 	@SuppressWarnings("rawtypes")
-	protected List getSemanticChildrenList() {
+	protected List<EObject> getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.getCallOperationAction_3010SemanticChildren(viewObject);
+		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getCallOperationAction_3010SemanticChildren(viewObject);
 		for (UMLNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -137,7 +137,7 @@ public class CallOperationActionCanonicalEditPolicy extends CanonicalEditPolicy 
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.getCallOperationAction_3010SemanticChildren((View) getHost().getModel());
+		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getCallOperationAction_3010SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -241,7 +241,7 @@ public class CallOperationActionCanonicalEditPolicy extends CanonicalEditPolicy 
 	 * @generated
 	 */
 	@Override
-	protected Set getFeaturesToSynchronize() {
+	protected Set<EStructuralFeature> getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getInvocationAction_Argument());

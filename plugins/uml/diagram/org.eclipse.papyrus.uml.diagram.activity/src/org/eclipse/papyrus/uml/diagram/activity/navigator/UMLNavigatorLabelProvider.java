@@ -603,11 +603,11 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getInitialNode_3004Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.InitialNode_3004, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(InitialNodeAppliedStereotypeEditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.InitialNode_3004, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(InitialNodeFloatingNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5080); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6034); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -655,11 +655,11 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getActivityFinalNode_3005Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ActivityFinalNode_3005, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(ActivityFinalNodeAppliedStereotypeEditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ActivityFinalNode_3005, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(ActivityFinalNodeFloatingNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5081); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6033); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -681,11 +681,11 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getFlowFinalNode_3006Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.FlowFinalNode_3006, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(FlowFinalNodeAppliedStereotypeEditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.FlowFinalNode_3006, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(FlowFinalNodeFloatingNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5082); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6035); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -1058,11 +1058,11 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getDecisionNode_3038Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.DecisionNode_3038, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(DecisionInputEditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.DecisionNode_3038, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(DecisionNodeFloatingNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5043); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6036); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -1071,11 +1071,11 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getMergeNode_3039Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.MergeNode_3039, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(MergeNodeAppliedStereotypeEditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.MergeNode_3039, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(MergeNodeFloatingNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5099); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6037); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -1097,11 +1097,11 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getForkNode_3040Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ForkNode_3040, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(ForkNodeAppliedStereotypeEditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ForkNode_3040, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(ForkNodeFloatingNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5100); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6038); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

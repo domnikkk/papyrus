@@ -47,27 +47,6 @@ public class ConstraintAsLocalPostcondCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public ConstraintAsLocalPostcondCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static ConstraintAsLocalPostcondCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new ConstraintAsLocalPostcondCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public ConstraintAsLocalPostcondCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class ConstraintAsLocalPostcondCreateCommand extends EditElementCommand {
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

@@ -34,6 +34,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
+import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
@@ -173,10 +174,10 @@ public class ActivityDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	@Override
 	@SuppressWarnings("rawtypes")
-	protected List getSemanticChildrenList() {
+	protected List<EObject> getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.getPackage_1000SemanticChildren(viewObject);
+		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getPackage_1000SemanticChildren(viewObject);
 		for (UMLNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -207,7 +208,7 @@ public class ActivityDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.getPackage_1000SemanticChildren((View) getHost().getModel());
+		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getPackage_1000SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -345,8 +346,14 @@ public class ActivityDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	private Collection<IAdaptable> refreshConnections() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
 		Collection<UMLLinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
-		Collection existingLinks = new LinkedList(getDiagram().getEdges());
-		for (Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
+		List<View> edges = new ArrayList<View>();
+		for (Object edge : getDiagram().getEdges()) {
+			if (edge instanceof View) {
+				edges.add((View) edge);
+			}
+		}
+		Collection<View> existingLinks = new LinkedList<View>(edges);
+		for (Iterator<View> linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
 			Edge nextDiagramLink = (Edge) linksIterator.next();
 			int diagramLinkVisualID = UMLVisualIDRegistry.getVisualID(nextDiagramLink);
 			if (diagramLinkVisualID == -1) {
@@ -382,681 +389,681 @@ public class ActivityDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case ActivityDiagramEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getPackage_1000ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getPackage_1000ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActivityEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getActivity_2001ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getActivity_2001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InitialNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInitialNode_3004ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInitialNode_3004ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActivityFinalNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getActivityFinalNode_3005ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getActivityFinalNode_3005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case FlowFinalNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getFlowFinalNode_3006ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getFlowFinalNode_3006ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case OpaqueActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getOpaqueAction_3007ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getOpaqueAction_3007ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ValuePinInOpaqueActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getValuePin_3015ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getValuePin_3015ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActionInputPinInOpaqueActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getActionInputPin_3016ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getActionInputPin_3016ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInOpaqueActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3013ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3013ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case OutputPinInOpaqueActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getOutputPin_3014ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getOutputPin_3014ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case CallBehaviorActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getCallBehaviorAction_3008ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getCallBehaviorAction_3008ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ValuePinInCallBeActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getValuePin_3017ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getValuePin_3017ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActionInputPinInCallBeActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getActionInputPin_3018ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getActionInputPin_3018ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInCallBeActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3019ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3019ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case OutputPinInCallBeActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getOutputPin_3020ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getOutputPin_3020ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case CallOperationActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getCallOperationAction_3010ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getCallOperationAction_3010ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActionInputPinInCallOpActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getActionInputPin_3021ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getActionInputPin_3021ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ValuePinInCallOpActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getValuePin_3022ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getValuePin_3022ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInCallOpActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3023ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3023ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case OutputPinInCallOpActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getOutputPin_3024ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getOutputPin_3024ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ValuePinInCallOpActAsTargetEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getValuePin_3025ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getValuePin_3025ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActionInputPinInCallOpActAsTargetEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getActionInputPin_3026ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getActionInputPin_3026ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInCallOpActAsTargetEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3027ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3027ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case DurationConstraintAsLocalPrecondEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getDurationConstraint_3034ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getDurationConstraint_3034ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case DurationConstraintAsLocalPostcondEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getDurationConstraint_3035ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getDurationConstraint_3035ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case TimeConstraintAsLocalPrecondEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getTimeConstraint_3036ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getTimeConstraint_3036ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case TimeConstraintAsLocalPostcondEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getTimeConstraint_3037ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getTimeConstraint_3037ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case IntervalConstraintAsLocalPrecondEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getIntervalConstraint_3032ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getIntervalConstraint_3032ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case IntervalConstraintAsLocalPostcondEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getIntervalConstraint_3033ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getIntervalConstraint_3033ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ConstraintAsLocalPrecondEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getConstraint_3011ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getConstraint_3011ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ConstraintAsLocalPostcondEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getConstraint_3012ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getConstraint_3012ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case DecisionNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getDecisionNode_3038ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getDecisionNode_3038ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case MergeNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getMergeNode_3039ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getMergeNode_3039ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ForkNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getForkNode_3040ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getForkNode_3040ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case JoinNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getJoinNode_3041ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getJoinNode_3041ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case DataStoreNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getDataStoreNode_3078ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getDataStoreNode_3078ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case SendObjectActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getSendObjectAction_3042ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getSendObjectAction_3042ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ValuePinInSendObjActAsReqEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getValuePin_3046ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getValuePin_3046ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActionInputPinInSendObjActAsReqEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getActionInputPin_3047ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getActionInputPin_3047ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInSendObjActAsReqEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3048ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3048ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ValuePinInSendObjActAsTargetEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getValuePin_3049ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getValuePin_3049ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActionInputPinInSendObjActAsTargetEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getActionInputPin_3050ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getActionInputPin_3050ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInSendObjActAsTargetEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3051ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3051ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case SendSignalActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getSendSignalAction_3052ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getSendSignalAction_3052ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActionInputPinInSendSigActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getActionInputPin_3053ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getActionInputPin_3053ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ValuePinInSendSigActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getValuePin_3054ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getValuePin_3054ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInSendSigActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3055ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3055ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ValuePinInSendSigActAsTargetEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getValuePin_3060ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getValuePin_3060ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActionInputPinInSendSigActAsTargetEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getActionInputPin_3061ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getActionInputPin_3061ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInSendSigActAsTargetEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3062ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3062ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActivityParameterNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getActivityParameterNode_3059ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getActivityParameterNode_3059ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case AcceptEventActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getAcceptEventAction_3063ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getAcceptEventAction_3063ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case OutputPinInAcceptEventActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getOutputPin_3064ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getOutputPin_3064ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ValueSpecificationActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getValueSpecificationAction_3076ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getValueSpecificationAction_3076ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case OutputPinInValSpecActEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getOutputPin_3077ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getOutputPin_3077ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ConditionalNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getConditionalNode_3069ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getConditionalNode_3069ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ExpansionRegionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getExpansionRegion_3070ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getExpansionRegion_3070ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ExpansionNodeAsInEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getExpansionNode_3074ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getExpansionNode_3074ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ExpansionNodeAsOutEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getExpansionNode_3075ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getExpansionNode_3075ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case LoopNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getLoopNode_3071ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getLoopNode_3071ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case OutputPinInLoopNodeAsBodyOutputEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getOutputPin_3109ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getOutputPin_3109ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case OutputPinInLoopNodeAsLoopVariableEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getOutputPin_3110ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getOutputPin_3110ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case OutputPinInLoopNodeAsResultEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getOutputPin_3111ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getOutputPin_3111ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case SequenceNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getSequenceNode_3073ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getSequenceNode_3073ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case StructuredActivityNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getStructuredActivityNode_3065ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getStructuredActivityNode_3065ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInLoopNodeAsVariableEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3105ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3105ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActivityPartitionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getActivityPartition_3067ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getActivityPartition_3067ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InterruptibleActivityRegionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInterruptibleActivityRegion_3068ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInterruptibleActivityRegion_3068ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case CommentEditPartCN.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getComment_3080ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getComment_3080ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ReadSelfActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getReadSelfAction_3081ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getReadSelfAction_3081ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ReadSelfActionOutputPinEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getOutputPin_3084ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getOutputPin_3084ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActivityEditPartCN.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getActivity_3083ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getActivity_3083ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case CreateObjectActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getCreateObjectAction_3086ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getCreateObjectAction_3086ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case OutputPinInCreateObjectActionAsResultEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getOutputPin_3087ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getOutputPin_3087ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ShapeNamedElementEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getNamedElement_3085ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getNamedElement_3085ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ReadStructuralFeatureActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getReadStructuralFeatureAction_3088ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getReadStructuralFeatureAction_3088ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInReadStructuralFeatureAsObjectEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3089ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3089ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case OutputPinInReadStructuralFeatureAsResultEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getOutputPin_3090ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getOutputPin_3090ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case AddStructuralFeatureValueActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getAddStructuralFeatureValueAction_3091ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getAddStructuralFeatureValueAction_3091ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInAddStructuralFeatureValueActionAsObjectEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3092ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3092ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInAddStructuralFeatureValueActionAsValueEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3093ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3093ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case OutputPinInAddStructuralFeatureValueActionAsResultEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getOutputPin_3094ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getOutputPin_3094ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case DestroyObjectActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getDestroyObjectAction_3095ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getDestroyObjectAction_3095ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInDestroyObjectActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3096ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3096ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ReadVariableActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getReadVariableAction_3097ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getReadVariableAction_3097ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case OutputPinInReadVariableActionAsResultEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getOutputPin_3098ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getOutputPin_3098ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case AddVariableValueActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getAddVariableValueAction_3099ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getAddVariableValueAction_3099ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3100ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3100ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInAddVariableValueActionAsValueEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3101ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3101ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case BroadcastSignalActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getBroadcastSignalAction_3102ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getBroadcastSignalAction_3102ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPinInBroadcastSignalActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getInputPin_3103ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3103ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case CentralBufferNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getCentralBufferNode_3104ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getCentralBufferNode_3104ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ConstraintEditPartCN.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getConstraint_3112ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getConstraint_3112ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ObjectFlowEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getObjectFlow_4003ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getObjectFlow_4003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ControlFlowEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getControlFlow_4004ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getControlFlow_4004ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ExceptionHandlerEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getExceptionHandler_4005ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getExceptionHandler_4005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		}
-		for (Iterator children = view.getChildren().iterator(); children.hasNext();) {
+		for (Iterator<?> children = view.getChildren().iterator(); children.hasNext();) {
 			result.addAll(collectAllLinks((View) children.next(), domain2NotationMap));
 		}
-		for (Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
+		for (Iterator<?> edges = view.getSourceEdges().iterator(); edges.hasNext();) {
 			result.addAll(collectAllLinks((View) edges.next(), domain2NotationMap));
 		}
 		return result;
@@ -1076,11 +1083,11 @@ public class ActivityDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(nextLinkDescriptor.getSemanticAdapter(), UMLVisualIDRegistry.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND,
 					false, ((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
 			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
-			ccr.setType(org.eclipse.gef.RequestConstants.REQ_CONNECTION_START);
+			ccr.setType(RequestConstants.REQ_CONNECTION_START);
 			ccr.setSourceEditPart(sourceEditPart);
 			sourceEditPart.getCommand(ccr);
 			ccr.setTargetEditPart(targetEditPart);
-			ccr.setType(org.eclipse.gef.RequestConstants.REQ_CONNECTION_END);
+			ccr.setType(RequestConstants.REQ_CONNECTION_END);
 			Command cmd = targetEditPart.getCommand(ccr);
 			if (cmd != null && cmd.canExecute()) {
 				executeCommand(cmd);

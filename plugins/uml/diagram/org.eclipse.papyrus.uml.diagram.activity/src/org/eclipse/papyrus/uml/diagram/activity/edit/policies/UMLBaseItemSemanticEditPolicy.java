@@ -308,7 +308,17 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		// no more usage of the extended types here.
+		IElementType requestElementType = req.getElementType();
+		if (requestElementType instanceof IExtendedHintedElementType) {
+			// try to get a semantic create command from the extended type
+			IElementEditService commandProvider = ElementEditServiceUtils.getCommandProvider(req.getContainer());
+			if (commandProvider != null) {
+				ICommand command = commandProvider.getEditCommand(req);
+				if (command != null && command.canExecute()) {
+					return new ICommandProxy(command);
+				}
+			}
+		}
 		return null;
 	}
 
@@ -453,7 +463,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 */
 	protected void addDestroyShortcutsCommand(ICompositeCommand cmd, View view) {
 		assert view.getEAnnotation("Shortcut") == null; //$NON-NLS-1$
-		for (Iterator it = view.getDiagram().getChildren().iterator(); it.hasNext();) {
+		for (Iterator<?> it = view.getDiagram().getChildren().iterator(); it.hasNext();) {
 			View nextView = (View) it.next();
 			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() || nextView.getElement() != view.getElement()) { //$NON-NLS-1$
 				continue;
@@ -481,8 +491,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public LinkConstraints() {
-			// use static method #getLinkConstraints() to access instance
+		public LinkConstraints() { // use static method #getLinkConstraints() to access instance
 		}
 
 		/**

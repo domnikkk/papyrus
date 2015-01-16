@@ -47,27 +47,6 @@ public class OutputPinInReadStructuralFeatureAsResultCreateCommand extends EditE
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public OutputPinInReadStructuralFeatureAsResultCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static OutputPinInReadStructuralFeatureAsResultCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new OutputPinInReadStructuralFeatureAsResultCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public OutputPinInReadStructuralFeatureAsResultCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class OutputPinInReadStructuralFeatureAsResultCreateCommand extends EditE
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

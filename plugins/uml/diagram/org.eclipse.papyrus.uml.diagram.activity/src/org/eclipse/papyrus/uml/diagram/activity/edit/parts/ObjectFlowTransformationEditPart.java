@@ -55,6 +55,7 @@ import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.extensionpoints.editors.Activator;
 import org.eclipse.papyrus.extensionpoints.editors.configuration.IAdvancedEditorConfiguration;
+import org.eclipse.papyrus.extensionpoints.editors.configuration.ICustomDirectEditorConfiguration;
 import org.eclipse.papyrus.extensionpoints.editors.configuration.IDirectEditorConfiguration;
 import org.eclipse.papyrus.extensionpoints.editors.configuration.IPopupEditorConfiguration;
 import org.eclipse.papyrus.extensionpoints.editors.ui.ExtendedDirectEditionDialog;
@@ -62,8 +63,11 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.ILabelEditorDialog;
 import org.eclipse.papyrus.extensionpoints.editors.ui.IPopupEditorHelper;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IControlParserForDirectEdit;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.PapyrusLinkLabelDragPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ObjectFlowEditPart.ActivityEdgeDescriptor;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.BehaviorPropertyNodeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.UMLTextSelectionEditPolicy;
@@ -72,15 +76,16 @@ import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLParserProvider;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
-import org.eclipse.papyrus.uml.diagram.common.editparts.ILabelRoleProvider;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.CornerBentFigure;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.accessibility.AccessibleEvent;
+import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Feature;
@@ -89,7 +94,7 @@ import org.eclipse.uml2.uml.ObjectFlow;
 /**
  * @generated
  */
-public class ObjectFlowTransformationEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, ILabelRoleProvider {
+public class ObjectFlowTransformationEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IControlParserForDirectEdit {
 
 	/**
 	 * @generated
@@ -143,7 +148,7 @@ public class ObjectFlowTransformationEditPart extends PapyrusLabelEditPart imple
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ActivityDiagramEditPart.LinkLabelDragPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new PapyrusLinkLabelDragPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new BehaviorPropertyNodeEditPolicy());
 	}
 
@@ -231,7 +236,7 @@ public class ObjectFlowTransformationEditPart extends PapyrusLabelEditPart imple
 	 */
 	@Override
 	@SuppressWarnings("rawtypes")
-	protected List getModelChildren() {
+	protected List<?> getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -241,6 +246,13 @@ public class ObjectFlowTransformationEditPart extends PapyrusLabelEditPart imple
 	@Override
 	public IGraphicalEditPart getChildBySemanticHint(String semanticHint) {
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setParser(IParser parser) {
+		this.parser = parser;
 	}
 
 	/**
@@ -319,7 +331,7 @@ public class ObjectFlowTransformationEditPart extends PapyrusLabelEditPart imple
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<java.lang.Object>() {
 
 							@Override
 							public void run() {
@@ -388,7 +400,13 @@ public class ObjectFlowTransformationEditPart extends PapyrusLabelEditPart imple
 	 * @generated
 	 */
 	protected void performDirectEdit() {
-		getManager().show();
+		BusyIndicator.showWhile(Display.getDefault(), new java.lang.Runnable() {
+
+			@Override
+			public void run() {
+				getManager().show();
+			}
+		});
 	}
 
 	/**
@@ -427,11 +445,17 @@ public class ObjectFlowTransformationEditPart extends PapyrusLabelEditPart imple
 		case IDirectEdition.EXTENDED_DIRECT_EDITOR:
 			updateExtendedEditorConfiguration();
 			if (configuration == null || configuration.getLanguage() == null) {
+				// Create default edit manager
+				setManager(new MultilineLabelDirectEditManager(this, MultilineLabelDirectEditManager.getTextCellEditorClass(this), UMLEditPartFactory.getTextCellEditorLocator(this)));
 				performDefaultDirectEditorEdit(theRequest);
 			} else {
 				configuration.preEditAction(resolveSemanticElement());
 				Dialog dialog = null;
-				if (configuration instanceof IPopupEditorConfiguration) {
+				if (configuration instanceof ICustomDirectEditorConfiguration) {
+					setManager(((ICustomDirectEditorConfiguration) configuration).createDirectEditManager(this));
+					initializeDirectEditManager(theRequest);
+					return;
+				} else if (configuration instanceof IPopupEditorConfiguration) {
 					IPopupEditorHelper helper = ((IPopupEditorConfiguration) configuration).createPopupEditorHelper(this);
 					helper.showEditor();
 					return;
@@ -457,31 +481,35 @@ public class ObjectFlowTransformationEditPart extends PapyrusLabelEditPart imple
 			}
 			break;
 		case IDirectEdition.DEFAULT_DIRECT_EDITOR:
-			// initialize the direct edit manager
-			try {
-				getEditingDomain().runExclusive(new Runnable() {
-
-					@Override
-					public void run() {
-						if (isActive() && isEditable()) {
-							if (theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
-								Character initialChar = (Character) theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
-								performDirectEdit(initialChar.charValue());
-							} else if ((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
-								DirectEditRequest editRequest = (DirectEditRequest) theRequest;
-								performDirectEdit(editRequest.getLocation());
-							} else {
-								performDirectEdit();
-							}
-						}
-					}
-				});
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			initializeDirectEditManager(theRequest);
 			break;
 		default:
 			break;
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void initializeDirectEditManager(final Request request) {
+		// initialize the direct edit manager
+		try {
+			getEditingDomain().runExclusive(new Runnable() {
+
+				@Override
+				public void run() {
+					if (isActive() && isEditable()) {
+						if (request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
+							Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+							performDirectEdit(initialChar.charValue());
+						} else {
+							performDirectEdit();
+						}
+					}
+				}
+			});
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -522,6 +550,9 @@ public class ObjectFlowTransformationEditPart extends PapyrusLabelEditPart imple
 	 */
 	protected void refreshLabel() {
 		EditPolicy maskLabelPolicy = getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
+		if (maskLabelPolicy == null) {
+			maskLabelPolicy = getEditPolicy(IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL);
+		}
 		if (maskLabelPolicy == null) {
 			setLabelTextHelper(getFigure(), getLabelText());
 			setLabelIconHelper(getFigure(), getLabelIcon());
@@ -883,20 +914,4 @@ public class ObjectFlowTransformationEditPart extends PapyrusLabelEditPart imple
 	 * @generated
 	 */
 	static final Color THIS_BACK = new Color(null, 248, 249, 214);
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public String getLabelRole() {
-		return "Transformation";//$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public String getIconPathRole() {
-		return "";//$NON-NLS-1$
-	}
 }

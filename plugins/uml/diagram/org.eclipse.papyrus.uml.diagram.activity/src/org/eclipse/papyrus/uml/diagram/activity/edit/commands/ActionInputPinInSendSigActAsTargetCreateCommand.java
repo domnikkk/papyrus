@@ -47,27 +47,6 @@ public class ActionInputPinInSendSigActAsTargetCreateCommand extends EditElement
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public ActionInputPinInSendSigActAsTargetCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static ActionInputPinInSendSigActAsTargetCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new ActionInputPinInSendSigActAsTargetCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public ActionInputPinInSendSigActAsTargetCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class ActionInputPinInSendSigActAsTargetCreateCommand extends EditElement
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

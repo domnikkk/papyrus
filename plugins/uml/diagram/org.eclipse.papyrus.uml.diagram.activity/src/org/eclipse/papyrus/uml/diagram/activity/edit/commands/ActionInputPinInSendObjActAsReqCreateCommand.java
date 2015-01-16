@@ -47,27 +47,6 @@ public class ActionInputPinInSendObjActAsReqCreateCommand extends EditElementCom
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public ActionInputPinInSendObjActAsReqCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static ActionInputPinInSendObjActAsReqCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new ActionInputPinInSendObjActAsReqCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public ActionInputPinInSendObjActAsReqCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class ActionInputPinInSendObjActAsReqCreateCommand extends EditElementCom
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

@@ -28,6 +28,8 @@ import metamodel.MetaModel
 import xpt.expressions.AbstractExpression
 import xpt.providers.ElementInitializers_qvto
 import aspects.xpt.Common
+import org.eclipse.gmf.codegen.gmfgen.GenFeatureSeqInitializer
+import plugin.Activator
 
 /**
  * XXX should generate this class only when there is initialization logic defined in the model
@@ -37,6 +39,7 @@ import aspects.xpt.Common
     @Inject extension Common;
     @Inject extension ElementInitializers_qvto;
 
+	@Inject Activator xptActivator
     @Inject AbstractExpression xptAbstractExpression;
     @Inject MetaModel xptMetaModel
 
@@ -97,4 +100,16 @@ import aspects.xpt.Common
         «ENDIF/*is literal expression*/»
     '''
 
+	override dispatch CharSequence initMethod(GenFeatureSeqInitializer it, GenCommonBase diagramElement) '''
+		«generatedMemberComment»
+		public void init_«diagramElement.getUniqueIdentifier()»(«xptMetaModel.QualifiedClassName(elementClass)» instance) {
+			try {
+				«FOR i : it.initializers»
+					«performInit(i, diagramElement, 'instance', elementClass, <Integer>newLinkedList(initializers.indexOf(i)))»
+				«ENDFOR»
+			} catch(RuntimeException e) {
+				«xptActivator.qualifiedClassName(diagramElement.getDiagram().editorGen.plugin)».getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
+			}
+		}
+	'''
 }

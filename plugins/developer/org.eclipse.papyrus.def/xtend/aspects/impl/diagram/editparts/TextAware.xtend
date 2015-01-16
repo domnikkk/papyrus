@@ -373,7 +373,7 @@ override getEditTextValidator (GenCommonBase it)'''
 								setResult(parser.isValidEditString(new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(element), (String) value));
 							}
 						});
-						return valid.getCode() == org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus.EDITABLE ? null : valid.getMessage();
+						return valid.getCode() == org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus.EDITABLE ? null : valid.getMessage();
 					} catch (InterruptedException ie) {
 						ie.printStackTrace();
 					}
@@ -501,7 +501,7 @@ def performDirectEditRequest(GenCommonBase it, GenDiagram diagram ) '''
 				else if(configuration instanceof org.eclipse.papyrus.extensionpoints.editors.configuration.IAdvancedEditorConfiguration) {
 					dialog = ((org.eclipse.papyrus.extensionpoints.editors.configuration.IAdvancedEditorConfiguration)configuration).createDialog(org.eclipse.ui.PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()));
 				} else if(configuration instanceof org.eclipse.papyrus.extensionpoints.editors.configuration.IDirectEditorConfiguration) {
-					dialog = new org.eclipse.papyrus.extensionpoints.editors.ui.ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), ((org.eclipse.papyrus.extensionpoints.editors.configuration.IDirectEditorConfiguration)configuration).getTextToEdit(resolveSemanticElement()), (org.eclipse.papyrus.extensionpoints.editors.configuration.IDirectEditorConfiguration)configuration);
+					dialog = new org.eclipse.papyrus.extensionpoints.editors.ui.ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()), configuration);
 				} else {
 					return;
 				}

@@ -47,27 +47,6 @@ public class InputPinInDestroyObjectActionCreateCommand extends EditElementComma
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public InputPinInDestroyObjectActionCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static InputPinInDestroyObjectActionCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new InputPinInDestroyObjectActionCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public InputPinInDestroyObjectActionCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class InputPinInDestroyObjectActionCreateCommand extends EditElementComma
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

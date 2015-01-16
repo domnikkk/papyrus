@@ -17,14 +17,12 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.papyrus.infra.extendedtypes.types.IExtendedHintedElementType;
-import org.eclipse.papyrus.infra.extendedtypes.util.ElementTypeUtils;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.diagram.common.commands.DuplicateNamedElementCommand;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -48,25 +46,10 @@ public class ActivityDiagramItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-		IElementType baseElementType = requestElementType;
-		boolean isExtendedType = false;
-		if (requestElementType instanceof IExtendedHintedElementType) {
-			baseElementType = ElementTypeUtils.getClosestDiagramType(requestElementType);
-			if (baseElementType != null) {
-				isExtendedType = true;
-			} else {
-				// no reference element type ID. using the closest super element type to give more opportunities, but can lead to bugs.
-				baseElementType = ElementTypeUtils.findClosestNonExtendedElementType((IExtendedHintedElementType) requestElementType);
-				isExtendedType = true;
-			}
-		}
-		if (UMLElementTypes.Activity_2001 == baseElementType) {
+		if (UMLElementTypes.Activity_2001 == requestElementType) {
 			// adjust the containment feature
 			EReference containmentFeature = UMLPackage.eINSTANCE.getPackage_PackagedElement();
 			req.setContainmentFeature(containmentFeature);
-			if (isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType) requestElementType);
-			}
 			return getGEFWrapper(getSemanticCreationCommand(req));
 		}
 		return super.getCreateCommand(req);
@@ -78,26 +61,21 @@ public class ActivityDiagramItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 	@Override
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
 		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
-		Diagram currentDiagram = null;
-		if (getHost() instanceof IGraphicalEditPart) {
-			currentDiagram = ((IGraphicalEditPart) getHost()).getNotationView().getDiagram();
-		}
-		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req, currentDiagram));
+		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 
 	/**
 	 * @generated
 	 */
-	private static class DuplicateAnythingCommand extends DuplicateNamedElementCommand {
-
-		private Diagram diagram;
+	private static class DuplicateAnythingCommand extends DuplicateEObjectsCommand {
 
 		/**
 		 * @generated
 		 */
-		public DuplicateAnythingCommand(TransactionalEditingDomain editingDomain, DuplicateElementsRequest req, Diagram currentDiagram) {
-			super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap(), currentDiagram);
-			this.diagram = currentDiagram;
+		public DuplicateAnythingCommand(TransactionalEditingDomain editingDomain, DuplicateElementsRequest req) {
+			super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap());
 		}
+
+		private Diagram diagram;
 	}
 }

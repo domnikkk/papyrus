@@ -64,7 +64,7 @@ import xpt.navigator.Utils_qvtoimport xpt.CodeStyle
 
 	override processChanges(GenNavigator it) '''
 		for (java.util.Iterator<org.eclipse.emf.ecore.resource.Resource> it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
-			org.eclipse.emf.ecore.resource.Resource nextResource = (org.eclipse.emf.ecore.resource.Resource) it.next();
+			org.eclipse.emf.ecore.resource.Resource nextResource = it.next();
 				nextResource.unload();
 		}
 		if (myViewer != null) {
@@ -137,7 +137,7 @@ import xpt.navigator.Utils_qvtoimport xpt.CodeStyle
 			myViewerRefreshRunnable = null;
 			
 			for (java.util.Iterator<org.eclipse.emf.ecore.resource.Resource> it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
-				org.eclipse.emf.ecore.resource.Resource resource = (org.eclipse.emf.ecore.resource.Resource) it.next();
+				org.eclipse.emf.ecore.resource.Resource resource = it.next();
 				resource.unload();
 			}
 			
@@ -315,7 +315,7 @@ import xpt.navigator.Utils_qvtoimport xpt.CodeStyle
 			}
 	'''
 	
-
+	override createEditingDomain(GenNavigator it) '''org.eclipse.emf.workspace.WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain()'''
 	
 //BEGIN: PapyrusGenCode
 //Loop to call generator of each method
@@ -357,7 +357,7 @@ private Object[] getViewChildrenFor«it.editPartClassName»(org.eclipse.gmf.runtim
 				«var segment = path.segments.get(segmentsIterator-1)»
 					«IF referencesIterator==1 && pathsIterator==1 && segmentsIterator==1»java.util.Collection «ENDIF»
 					connectedViews = «childrenMethodName(segment.from,reference.referenceType, segment) »
-					(«IF segmentsIterator==0»java.util.Collections.singleton(view)«ELSE»connectedViews«ENDIF»
+					(«IF segmentsIterator==1»java.util.Collections.singleton(view)«ELSE»connectedViews«ENDIF»
 					, «xptVisualIDRegistry.typeMethodCall(segment.to)»);
 
 				«ENDFOR»
