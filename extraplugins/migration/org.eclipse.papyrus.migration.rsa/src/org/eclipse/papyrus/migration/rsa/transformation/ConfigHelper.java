@@ -83,45 +83,39 @@ public class ConfigHelper {
 	}
 
 	public void computeURIMappings(Collection<Resource> sourceModels) {
-		for (Resource sourceModel : sourceModels) {
-			doComputeURIMappings(sourceModel);
+		try {
+			for (Resource sourceModel : sourceModels) {
+				doComputeURIMappings(sourceModel);
+			}
+		} finally {
+			unloadResourceSet();
 		}
-		unloadResourceSet();
-	}
-
-	public void computeURIMappings(Resource sourceModel) {
-		doComputeURIMappings(sourceModel);
-		unloadResourceSet();
 	}
 
 	protected void doComputeURIMappings(Resource sourceModel) {
-		try {
-			doComputeProfileURIMappings(sourceModel);
+		doComputeProfileURIMappings(sourceModel);
 
-			TreeIterator<EObject> resourceContents = sourceModel.getAllContents();
-			ResourceSet resourceSet = sourceModel.getResourceSet();
+		TreeIterator<EObject> resourceContents = sourceModel.getAllContents();
+		ResourceSet resourceSet = sourceModel.getResourceSet();
 
-			while (resourceContents.hasNext()) {
-				EObject next = resourceContents.next();
-				for (EReference reference : next.eClass().getEAllReferences()) {
-					if (reference.isContainer() || reference.isContainment() || reference.isDerived() || reference.isTransient()) {
-						continue;
-					}
+		while (resourceContents.hasNext()) {
+			EObject next = resourceContents.next();
+			for (EReference reference : next.eClass().getEAllReferences()) {
+				if (reference.isContainer() || reference.isContainment() || reference.isDerived() || reference.isTransient()) {
+					continue;
+				}
 
-					Object value = next.eGet(reference);
-					if (value instanceof EObject) {
-						handleURIMapping((EObject) value, resourceSet);
-					} else if (value instanceof Collection<?>) {
-						for (Object element : (Collection<?>) value) {
-							if (element instanceof EObject) {
-								handleURIMapping((EObject) element, resourceSet);
-							}
+				Object value = next.eGet(reference);
+				if (value instanceof EObject) {
+					handleURIMapping((EObject) value, resourceSet);
+				} else if (value instanceof Collection<?>) {
+					for (Object element : (Collection<?>) value) {
+						if (element instanceof EObject) {
+							handleURIMapping((EObject) element, resourceSet);
 						}
 					}
 				}
 			}
-		} finally {
-			unloadResourceSet();
 		}
 	}
 
