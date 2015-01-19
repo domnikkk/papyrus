@@ -1,5 +1,6 @@
 package org.eclipse.papyrus.codegen.base;
 
+import org.eclipse.papyrus.infra.core.log.LogHelper;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -17,6 +18,8 @@ public class Activator implements BundleActivator {
 		return context;
 	}
 
+	public static LogHelper log;
+
 	/*
 	 * (non-Javadoc)
 	 *
@@ -25,6 +28,7 @@ public class Activator implements BundleActivator {
 	@Override
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
+		log = new LogHelper();
 	}
 
 	/*
@@ -35,5 +39,6 @@ public class Activator implements BundleActivator {
 	@Override
 	public void stop(BundleContext bundleContext) throws Exception {
 		Activator.context = null;
+		log = null;
 	}
 }
