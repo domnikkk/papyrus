@@ -11,6 +11,7 @@
  *   Christian W. Damus (CEA) - bug 431953 (adapted from SwitchProfileDialog)
  *   Christian W. Damus - bug 451338
  *   Christian W. Damus - bug 451557
+ *   Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - bug 454997
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.ui;
@@ -19,8 +20,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.AbstractCollection;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -78,6 +81,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.ui.statushandlers.StatusManager;
+import org.eclipse.uml2.uml.Profile;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
@@ -106,6 +110,8 @@ public class ZombieStereotypesDialog extends TrayDialog {
 
 	private ProgressMonitorPart progress;
 
+	private Map<String, Profile> brokenNamespaceProfileMap;
+
 	/**
 	 * @param shell
 	 */
@@ -123,7 +129,9 @@ public class ZombieStereotypesDialog extends TrayDialog {
 		this.zombieDescriptors = Lists.newArrayList(zombies);
 		this.labelProviderService = ServiceUtilsForResourceSet.getInstance().getService(LabelProviderService.class, modelSet);
 		this.actionsToApply = createActionsToApply();
+		this.brokenNamespaceProfileMap = new HashMap<String, Profile>();
 	}
+
 
 	private Collection<MissingSchema> createActionsToApply() {
 		return new AbstractCollection<ZombieStereotypesDialog.MissingSchema>() {
@@ -249,9 +257,14 @@ public class ZombieStereotypesDialog extends TrayDialog {
 							SubMonitor subMonitor = SubMonitor.convert(monitor, actionsToApply.size());
 
 							for (Iterator<MissingSchema> iter = repairActions.iterator(); iter.hasNext();) {
-								if (!iter.next().apply(diagnostics, subMonitor.newChild(1, SubMonitor.SUPPRESS_NONE))) {
+								MissingSchema missingSchema = iter.next();
+
+								missingSchema.initialiseRepairAction(brokenNamespaceProfileMap);
+								if (!missingSchema.apply(diagnostics, subMonitor.newChild(1, SubMonitor.SUPPRESS_NONE))) {
 									// Leave this one to try it again
 									iter.remove();
+								} else {
+									saveRepairAction(missingSchema);
 								}
 							}
 
@@ -375,6 +388,17 @@ public class ZombieStereotypesDialog extends TrayDialog {
 		return super.close();
 	}
 
+	protected void saveRepairAction(MissingSchema missingSchema) {
+		IRepairAction repairAction = missingSchema.getSelectedRepairAction();
+
+		if (repairAction instanceof IRepairAction.IApplyProfileAction) {
+			Profile appliedProfile = ((IRepairAction.IApplyProfileAction) repairAction).getAppliedProfile();
+			if (appliedProfile != null) {
+				brokenNamespaceProfileMap.put(missingSchema.getSchema().getNsURI(), appliedProfile);
+			}
+		}
+	}
+
 	//
 	// Nested types
 	//
@@ -439,6 +463,13 @@ public class ZombieStereotypesDialog extends TrayDialog {
 			this.ePackage = ePackage;
 			this.descriptor = descriptor;
 			this.selectedAction = descriptor.getSuggestedRepairAction(ePackage);
+		}
+
+		void initialiseRepairAction(Map<String, Profile> brokenNsProfileMap) {
+			if (selectedAction instanceof IRepairAction.IApplyProfileAction) {
+				((IRepairAction.IApplyProfileAction) selectedAction).setPreviousAppliedProfile(brokenNsProfileMap.get(getSchema().getNsURI()));
+			}
+
 		}
 
 		Resource getResource() {

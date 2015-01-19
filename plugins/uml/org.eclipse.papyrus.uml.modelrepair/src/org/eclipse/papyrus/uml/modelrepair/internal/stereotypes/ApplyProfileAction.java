@@ -10,6 +10,7 @@
  *   Christian W. Damus (CEA) - Initial API and implementation
  *   Christian W. Damus - bug 399859
  *   Christian W. Damus - bug 451557
+ *   Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - bug 454997
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.uml.modelrepair.internal.participants.StereotypeApplicationRepairParticipant;
+import org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.IRepairAction.IApplyProfileAction;
 import org.eclipse.papyrus.uml.tools.helper.IProfileApplicationDelegate;
 import org.eclipse.papyrus.uml.tools.helper.ProfileApplicationDelegateRegistry;
 import org.eclipse.uml2.uml.Package;
@@ -42,7 +44,7 @@ import com.google.common.collect.Sets;
 /**
  * This is the ApplyProfileAction type. Enjoy.
  */
-public class ApplyProfileAction extends AbstractRepairAction {
+public class ApplyProfileAction extends AbstractRepairAction implements IApplyProfileAction {
 
 	private final Resource resourceUnderRepair;
 	private final Set<Package> packages;
@@ -50,6 +52,10 @@ public class ApplyProfileAction extends AbstractRepairAction {
 	private Supplier<Profile> profileSupplier;
 
 	private String label;
+
+	private Profile appliedProfile;
+
+	private Profile previousProfile;
 
 	public ApplyProfileAction(Resource resourceUnderRepair, Iterable<? extends Package> packages, Profile profile, LabelProviderService labelProviderService) {
 		this(resourceUnderRepair, packages, Suppliers.ofInstance(profile));
@@ -81,29 +87,47 @@ public class ApplyProfileAction extends AbstractRepairAction {
 	}
 
 	public boolean repair(Resource resource, EPackage profileDefinition, Collection<? extends EObject> stereotypeApplications, DiagnosticChain diagnostics, IProgressMonitor monitor) {
+
 		// We can be assured that there is at least one stereotype application, otherwise we wouldn't be here
 		boolean result = false;
+		SubMonitor repairMonitor = SubMonitor.convert(monitor, 2);
 
-		Profile profile = profileSupplier.get();
-		if (profile != null) {
-			String taskName = NLS.bind("Migrating stereotypes to current version of profile \"{0}\"...", profile.getName());
-			SubMonitor sub = SubMonitor.convert(monitor, taskName, stereotypeApplications.size() * 3 / 2);
+		// First, try to apply previous profile
+		if (previousProfile != null) {
+			result = applySelectedProfile(resource, stereotypeApplications, diagnostics, repairMonitor.newChild(1, SubMonitor.SUPPRESS_NONE), previousProfile);
+		}
 
-			// Apply the profile
-			StereotypeApplicationRepairParticipant.createStereotypeApplicationMigrator(resource, profile, diagnostics).migrate(stereotypeApplications, sub.newChild(stereotypeApplications.size()));
-			for (Package next : packages) {
-				if (sub.isCanceled()) {
-					throw new OperationCanceledException();
-				}
+		// Then, if no Profile could be already applied, ask to user where find the Profile
+		if (!result) {
+			appliedProfile = profileSupplier.get();
+			if (appliedProfile != null) {
+				result = applySelectedProfile(resource, stereotypeApplications, diagnostics, repairMonitor.newChild(1, SubMonitor.SUPPRESS_NONE), appliedProfile);
 
-				applyProfile(next, profile, sub.newChild(stereotypeApplications.size() / 2));
+			}
+		}
+		repairMonitor.done();
+
+		return result;
+	}
+
+
+	private boolean applySelectedProfile(Resource resource, Collection<? extends EObject> stereotypeApplications, DiagnosticChain diagnostics, IProgressMonitor monitor, Profile profile) {
+		String taskName = NLS.bind("Migrating stereotypes to current version of profile \"{0}\"...", profile.getName());
+		SubMonitor sub = SubMonitor.convert(monitor, taskName, stereotypeApplications.size() * 3 / 2);
+		boolean result = false;
+
+		// Apply the profile
+		StereotypeApplicationRepairParticipant.createStereotypeApplicationMigrator(resource, profile, diagnostics).migrate(stereotypeApplications, sub.newChild(stereotypeApplications.size()));
+		for (Package next : packages) {
+			if (sub.isCanceled()) {
+				throw new OperationCanceledException();
 			}
 
-			result = true;
+			ProfileApplication profileApplication = applyProfile(next, profile, sub.newChild(stereotypeApplications.size() / 2));
+			result = profileApplication != null;
 
 			sub.done();
 		}
-
 		return result;
 	}
 
@@ -136,5 +160,17 @@ public class ApplyProfileAction extends AbstractRepairAction {
 		monitor.done();
 
 		return result;
+	}
+
+
+
+	public Profile getAppliedProfile() {
+		return appliedProfile;
+	}
+
+
+	public void setPreviousAppliedProfile(Profile previousProfile) {
+		this.previousProfile = previousProfile;
+
 	}
 }

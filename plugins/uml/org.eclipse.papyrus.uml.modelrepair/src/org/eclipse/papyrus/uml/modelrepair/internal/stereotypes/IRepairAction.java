@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - bug 454997
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -19,6 +20,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.uml2.uml.Profile;
 
 import com.google.common.base.Predicate;
 
@@ -84,6 +86,16 @@ public interface IRepairAction {
 	//
 	// Nested types
 	//
+
+	/*
+	 * The interface for Apply Profile repair action.
+	 */
+	interface IApplyProfileAction {
+
+		Profile getAppliedProfile();
+
+		void setPreviousAppliedProfile(Profile previousProfile);
+	}
 
 	enum Kind {
 		/** The lazy option. */
