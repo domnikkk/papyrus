@@ -27,6 +27,8 @@ http://www.eclipse.org/legal/epl-v10.html
 
    <plugin download-size="0" id="org.eclipse.papyrus.uml.profile" install-size="0" unpack="false" version="0.0.0"/>
 
+   <plugin download-size="0" id="org.eclipse.papyrus.uml.profile.drafter" install-size="0" unpack="false" version="0.0.0"/>
+
    <plugin download-size="0" id="org.eclipse.papyrus.uml.resourceloading.profile" install-size="0" unpack="false" version="0.0.0"/>
 
    <plugin download-size="0" id="org.eclipse.papyrus.uml.service.types" install-size="0" unpack="false" version="0.0.0"/>

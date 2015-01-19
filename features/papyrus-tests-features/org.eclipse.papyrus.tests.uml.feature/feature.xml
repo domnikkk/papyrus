@@ -20,4 +20,6 @@
 
    <plugin download-size="0" fragment="true" id="org.eclipse.papyrus.uml.service.types.tests" install-size="0" unpack="false" version="0.0.0"/>
 
+   <plugin download-size="0" fragment="true" id="org.eclipse.papyrus.uml.profile.drafter.tests" install-size="0" unpack="false" version="0.0.0"/>
+
 </feature>

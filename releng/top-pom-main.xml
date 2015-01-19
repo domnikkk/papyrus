@@ -257,6 +257,7 @@
 		<module>../plugins/uml/org.eclipse.papyrus.uml.oclconstraintevaluation</module>
 		<module>../plugins/uml/org.eclipse.papyrus.uml.perspective</module>
 		<module>../plugins/uml/org.eclipse.papyrus.uml.profile</module>
+		<module>../plugins/uml/profile/org.eclipse.papyrus.uml.profile.drafter</module>
 		<module>../plugins/uml/properties/org.eclipse.papyrus.uml.properties</module>
 		<module>../plugins/uml/properties/org.eclipse.papyrus.uml.properties.xtext</module>
 		<module>../plugins/uml/org.eclipse.papyrus.uml.resourceloading.profile</module>
