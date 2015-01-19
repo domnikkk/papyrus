@@ -89,12 +89,12 @@ svgFile:"platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/symbols
 
 DurationObservation 
 {
-svgFile:"platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/symbols/DurationObservation.svg";
+svgFile:"platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/symbols/durationObservation.svg";
 }
 
 TimeObservation 
 {
-svgFile:"platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/symbols/TimeObservation.svg";
+svgFile:"platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/symbols/timeObservation.svg";
 }
 
 StateMachineDiagram Pseudostate[kind="shallowHistory"]
