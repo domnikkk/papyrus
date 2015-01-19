@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_BB8hgNeIEeO9b7Ib8OAaeQ" name="house" metaclassReference="_KAJyoNeIEeO9b7Ib8OAaeQ _HwfgUNeMEeOxVfFeCUP2Mg">
+  <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NVJ_kNeIEeO9b7Ib8OAaeQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_Kx8fIdeMEeOxVfFeCUP2Mg" name="house" nsURI="http:///schemas/house/_Kx8fINeMEeOxVfFeCUP2Mg/1" nsPrefix="house">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Kx8fNteMEeOxVfFeCUP2Mg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Kx8fN9eMEeOxVfFeCUP2Mg" key="Version" value="0.0.2"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Kx8fONeMEeOxVfFeCUP2Mg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Kx8fOdeMEeOxVfFeCUP2Mg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Kx8fOteMEeOxVfFeCUP2Mg" key="Date" value="2014-05-09"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Kx8fO9eMEeOxVfFeCUP2Mg" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_Kx8fIteMEeOxVfFeCUP2Mg" name="House">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Kx8fI9eMEeOxVfFeCUP2Mg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_B3KSQNeIEeO9b7Ib8OAaeQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_Kx8fJNeMEeOxVfFeCUP2Mg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_Kx8fJteMEeOxVfFeCUP2Mg" name="Building">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Kx8fJ9eMEeOxVfFeCUP2Mg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_DME2wNeIEeO9b7Ib8OAaeQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_Kx8fKNeMEeOxVfFeCUP2Mg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_Kx8fKteMEeOxVfFeCUP2Mg" name="Factory">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Kx8fK9eMEeOxVfFeCUP2Mg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_D_AvkNeIEeO9b7Ib8OAaeQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_Kx8fLNeMEeOxVfFeCUP2Mg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_Kx8fLteMEeOxVfFeCUP2Mg" name="Box">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Kx8fL9eMEeOxVfFeCUP2Mg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_IyZpQNeMEeOxVfFeCUP2Mg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_Kx8fMNeMEeOxVfFeCUP2Mg" name="base_Package" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_NVJ_kdeIEeO9b7Ib8OAaeQ" name="house" nsURI="http:///schemas/house/_NVD48NeIEeO9b7Ib8OAaeQ/0" nsPrefix="house">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NVJ_odeIEeO9b7Ib8OAaeQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NVJ_oteIEeO9b7Ib8OAaeQ" key="Version" value="0.0.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NVJ_o9eIEeO9b7Ib8OAaeQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NVJ_pNeIEeO9b7Ib8OAaeQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NVJ_pdeIEeO9b7Ib8OAaeQ" key="Date" value="2014-05-09"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NVJ_pteIEeO9b7Ib8OAaeQ" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NVJ_kteIEeO9b7Ib8OAaeQ" name="House">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NVJ_k9eIEeO9b7Ib8OAaeQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_B3KSQNeIEeO9b7Ib8OAaeQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NVJ_lNeIEeO9b7Ib8OAaeQ" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NVJ_lteIEeO9b7Ib8OAaeQ" name="Building">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NVJ_l9eIEeO9b7Ib8OAaeQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_DME2wNeIEeO9b7Ib8OAaeQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NVJ_mNeIEeO9b7Ib8OAaeQ" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NVJ_mteIEeO9b7Ib8OAaeQ" name="Factory">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NVJ_m9eIEeO9b7Ib8OAaeQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_D_AvkNeIEeO9b7Ib8OAaeQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NVJ_nNeIEeO9b7Ib8OAaeQ" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_KAJyoNeIEeO9b7Ib8OAaeQ" alias="Class">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+  </elementImport>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_HwfgUNeMEeOxVfFeCUP2Mg" alias="Package">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_B3KSQNeIEeO9b7Ib8OAaeQ" name="House">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_KkxioNeIEeO9b7Ib8OAaeQ" name="base_Class" association="_KkxiodeIEeO9b7Ib8OAaeQ">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_DME2wNeIEeO9b7Ib8OAaeQ" name="Building">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_LADwcNeIEeO9b7Ib8OAaeQ" name="base_Class" association="_LADwcdeIEeO9b7Ib8OAaeQ">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_D_AvkNeIEeO9b7Ib8OAaeQ" name="Factory">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_LYSqQNeIEeO9b7Ib8OAaeQ" name="base_Class" association="_LYSqQdeIEeO9b7Ib8OAaeQ">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_KkxiodeIEeO9b7Ib8OAaeQ" name="E_House_Class1" memberEnd="_KkxioteIEeO9b7Ib8OAaeQ _KkxioNeIEeO9b7Ib8OAaeQ">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_KkxioteIEeO9b7Ib8OAaeQ" name="extension_House" type="_B3KSQNeIEeO9b7Ib8OAaeQ" aggregation="composite" association="_KkxiodeIEeO9b7Ib8OAaeQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_LADwcdeIEeO9b7Ib8OAaeQ" name="E_Building_Class1" memberEnd="_LADwcteIEeO9b7Ib8OAaeQ _LADwcNeIEeO9b7Ib8OAaeQ">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_LADwcteIEeO9b7Ib8OAaeQ" name="extension_Building" type="_DME2wNeIEeO9b7Ib8OAaeQ" aggregation="composite" association="_LADwcdeIEeO9b7Ib8OAaeQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_LYSqQdeIEeO9b7Ib8OAaeQ" name="E_Factory_Class1" memberEnd="_LYSqQteIEeO9b7Ib8OAaeQ _LYSqQNeIEeO9b7Ib8OAaeQ">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_LYSqQteIEeO9b7Ib8OAaeQ" name="extension_Factory" type="_D_AvkNeIEeO9b7Ib8OAaeQ" aggregation="composite" association="_LYSqQdeIEeO9b7Ib8OAaeQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_IyZpQNeMEeOxVfFeCUP2Mg" name="Box">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_JNTckNeMEeOxVfFeCUP2Mg" name="base_Package" association="_JNTckdeMEeOxVfFeCUP2Mg">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_JNTckdeMEeOxVfFeCUP2Mg" name="E_Box_Package1" memberEnd="_JNTckteMEeOxVfFeCUP2Mg _JNTckNeMEeOxVfFeCUP2Mg">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_JNTckteMEeOxVfFeCUP2Mg" name="extension_Box" type="_IyZpQNeMEeOxVfFeCUP2Mg" aggregation="composite" association="_JNTckdeMEeOxVfFeCUP2Mg"/>
+  </packagedElement>
+</uml:Profile>
