@@ -4,7 +4,8 @@
     copyrightText="Copyright (c) 2015 CEA LIST.&#xD;&#xA;&#xD;&#xA; All rights reserved. This program and the accompanying materials&#xD;&#xA; are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA; which accompanies this distribution, and is available at&#xD;&#xA; http://www.eclipse.org/legal/epl-v10.html"
     modelDirectory="/org.eclipse.papyrus.sysml14/src-gen" editDirectory="/org.eclipse.papyrus.sysml14.edit/src-gen"
     editorDirectory="/org.eclipse.papyrus.sysml14.editor/src-gen" modelPluginID="org.eclipse.papyrus.sysml14"
-    modelName="SysML" nonNLSMarkers="true" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    modelName="SysML" editPluginClass="org.eclipse.papyrus.sysml14.provider.SysmlEditPlugin"
+    nonNLSMarkers="true" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     testsDirectory="/org.eclipse.papyrus.sysml14.tests/src-gen" importerID="org.eclipse.uml2.uml.ecore.importer"
     complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.uml2.uml.profile.standard/model/Standard.genmodel#//standard ../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"
     operationReflection="true" importOrganizing="true">
