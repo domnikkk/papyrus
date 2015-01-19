@@ -36,9 +36,12 @@ TestComponentDiagramLinkOwnedBySource.class,
 // CommentLink
 TestComponentDiagramCommentLink.class,
 // Constraint Link
-TestComponentDiagramConstraintLink.class
-
-
+TestComponentDiagramConstraintLink.class,
+// List compartment duplicates
+TestListCompartmentNodeChildDuplicates.class,
+// List Compartment Illegal Elements
+TestListCompartmentIllegalElements.class,
+TestListCompartmentPropertiesOperationsDrop.class
 // End
 })
 public class AllCanonicalTests {
