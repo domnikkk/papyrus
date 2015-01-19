@@ -1110,11 +1110,11 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getJoinNode_3041Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.JoinNode_3041, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(JoinSpecEditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.JoinNode_3041, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(JoinNodeFloatingNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5042); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6039); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
