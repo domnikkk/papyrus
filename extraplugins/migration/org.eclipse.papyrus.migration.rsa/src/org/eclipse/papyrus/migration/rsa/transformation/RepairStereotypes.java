@@ -13,11 +13,11 @@ package org.eclipse.papyrus.migration.rsa.transformation;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.common.command.AbstractCommand;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -25,7 +25,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.transaction.RollbackException;
+import org.eclipse.emf.transaction.Transaction;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.impl.InternalTransactionalEditingDomain;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
@@ -73,8 +76,11 @@ public class RepairStereotypes {
 	 * Finds all zombie stereotypes, and repair them with the default action.
 	 *
 	 * If the profile can't be found automatically, the profileMappings map is used
+	 * 
+	 * @throws InterruptedException
+	 * @throws RollbackException
 	 */
-	public void execute() {
+	public void execute() throws InterruptedException, RollbackException {
 		ZombieStereotypesDescriptor result = null;
 
 		LabelProviderService labelProvider = new LabelProviderServiceImpl();
@@ -129,30 +135,27 @@ public class RepairStereotypes {
 
 			final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
 
-			domain.getCommandStack().execute(new AbstractCommand("Repair profiles") {
 
-				@Override
-				public void execute() {
+			InternalTransactionalEditingDomain internalDomain = (InternalTransactionalEditingDomain) domain;
 
-					final BasicDiagnostic diagnostics = new BasicDiagnostic(Activator.PLUGIN_ID, 0, "Problems in repairing stereotypes", null);
+			Map<String, Object> options = new HashMap<String, Object>();
+			options.put(Transaction.OPTION_NO_UNDO, true);
+			options.put(Transaction.OPTION_NO_VALIDATION, true);
+			options.put(Transaction.OPTION_NO_TRIGGERS, true);
 
-					for (EPackage packageToRepair : descriptor.getZombiePackages()) {
-						IRepairAction action = descriptor.getRepairAction(packageToRepair, IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION);
-						descriptor.repair(packageToRepair, action, diagnostics, new NullProgressMonitor());
-					}
+			// We're in a batch environment, with no undo/redo support. Run a vanilla transaction to improve performances
+			Transaction fastTransaction = internalDomain.startTransaction(false, options);
+			try {
+				final BasicDiagnostic diagnostics = new BasicDiagnostic(Activator.PLUGIN_ID, 0, "Problems in repairing stereotypes", null);
 
+				for (EPackage packageToRepair : descriptor.getZombiePackages()) {
+					IRepairAction action = descriptor.getRepairAction(packageToRepair, IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION);
+					descriptor.repair(packageToRepair, action, diagnostics, new NullProgressMonitor());
 				}
+			} finally {
+				fastTransaction.commit();
+			}
 
-				@Override
-				public void redo() {
-					// Nothing
-				}
-
-				@Override
-				protected boolean prepare() {
-					return true;
-				}
-			});
 		}
 
 		try {

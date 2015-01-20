@@ -5,8 +5,30 @@
          point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
       <profile
             name="Model Import Test Profile"
-            path="platform:/plugin/org.eclipse.papyrus.migration.rsa.tests/deployedProfile/ProfileUpdate.profile.uml">
+            path="platform:/plugin/org.eclipse.papyrus.migration.rsa.tests/deployedProfile/ProfileUpdates.profile.uml">
       </profile>
+   </extension>
+   
+   <extension
+         point="org.eclipse.uml2.uml.dynamic_package">
+    
+   	  <!-- URI Fragment of the UML Profile -->
+      <!-- NSUri of the latest Profile Definition (EPackage) -->
+      <profile
+            location="platform:/plugin/org.eclipse.papyrus.migration.rsa.tests/deployedProfile/ProfileUpdates.profile.uml#_vfjmUJdJEeSUisRPbTY3hA"  
+            uri="http:///schemas/ProfileUpdates/_Edh1EJdKEeSUisRPbTY3hA/4">
+      </profile>
+   </extension>
+
+   <extension
+         point="org.eclipse.emf.ecore.dynamic_package">
+         
+      <!-- URI Fragment of the Profile Definition (EPackage) -->
+      <!-- NSUri of the latest Profile Definition (EPackage) -->
+      <resource
+            location="platform:/plugin/org.eclipse.papyrus.migration.rsa.tests/deployedProfile/ProfileUpdates.profile.uml#_Edh1EZdKEeSUisRPbTY3hA" 
+            uri="http:///schemas/ProfileUpdates/_Edh1EJdKEeSUisRPbTY3hA/4"> 
+      </resource>
    </extension>
 
 </plugin>

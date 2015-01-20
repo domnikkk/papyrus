@@ -11,12 +11,15 @@
  *****************************************************************************/
 package org.eclipse.papyrus.migration.rsa.tests.qvt;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
@@ -52,7 +55,7 @@ public class AbstractTransformationTest extends AbstractPapyrusTest {
 		project = houseKeeper.createProject("org.eclipse.papyrus.migration.rsa.test.project");
 	}
 
-	protected void simpleImport(String modelToImportPath, String[] additionalResourcesPath) throws Exception {
+	protected void simpleImport(String modelToImportPath, String[] additionalResourcesPath, boolean useBatchLauncher) throws Exception {
 		// Import the main model file
 		mainModelFile = houseKeeper.createFile(project, modelToImportPath, modelToImportPath);
 
@@ -63,11 +66,27 @@ public class AbstractTransformationTest extends AbstractPapyrusTest {
 		}
 
 		URI sourceURI = URI.createPlatformResourceURI(mainModelFile.getFullPath().toString(), true);
-		ImportTransformation transformation = new ImportTransformation(sourceURI);
-		transformation.run(false);
-		transformation.waitForCompletion();
 
-		Assert.assertTrue("The transformation didn't complete normally", transformation.getStatus().isOK());
+		if (useBatchLauncher) {
+			Config config = RSAToPapyrusParametersFactory.eINSTANCE.createConfig();
+			config.setAlwaysAcceptSuggestedMappings(true);
+
+			ImportTransformationLauncher launcher = new ImportTransformationLauncher(config);
+			launcher.run(Collections.singletonList(sourceURI));
+
+			launcher.waitForCompletion();
+		} else {
+			ImportTransformation transformation = new ImportTransformation(sourceURI);
+			transformation.run(false);
+			transformation.waitForCompletion();
+
+			Assert.assertTrue("The transformation didn't complete normally", transformation.getStatus().isOK());
+		}
+
+	}
+
+	protected void simpleImport(String modelToImportPath, String[] additionalResourcesPath) throws Exception {
+		simpleImport(modelToImportPath, additionalResourcesPath, false);
 	}
 
 	protected void openEditor() throws Exception {
@@ -97,6 +116,7 @@ public class AbstractTransformationTest extends AbstractPapyrusTest {
 			houseKeeper.createFile(project, path, path);
 		}
 
+		mainModelFile = mainModelFiles[0];
 
 		Config config = RSAToPapyrusParametersFactory.eINSTANCE.createConfig();
 		config.setMaxThreads(4);
@@ -107,5 +127,17 @@ public class AbstractTransformationTest extends AbstractPapyrusTest {
 		launcher.waitForCompletion();
 
 		Assert.assertTrue("The transformation didn't complete normally", launcher.getResult().isOK());
+	}
+
+	protected void assertRSAModelsRemoved(boolean resolveAll) {
+		EcoreUtil.resolveAll(rootPackage);
+
+		// General test: After resolving everything, we should only have Papyrus resources in the scope
+		for (Resource resource : rootPackage.eResource().getResourceSet().getResources()) {
+			String fileExtension = resource.getURI().fileExtension();
+			Assert.assertNotEquals("RSA resources should not be referenced anymore", "emx", fileExtension);
+			Assert.assertNotEquals("RSA resources should not be referenced anymore", "efx", fileExtension);
+			Assert.assertNotEquals("RSA Profiles should not be reference anymore", "epx", fileExtension);
+		}
 	}
 }

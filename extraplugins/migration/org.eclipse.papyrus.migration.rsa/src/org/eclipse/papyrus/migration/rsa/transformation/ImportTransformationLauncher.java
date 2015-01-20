@@ -30,12 +30,13 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
-import org.eclipse.emf.common.command.AbstractCommand;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RollbackException;
+import org.eclipse.emf.transaction.Transaction;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.impl.InternalTransactionalEditingDomain;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.infra.core.resource.IEMFModel;
 import org.eclipse.papyrus.infra.core.resource.IModel;
@@ -58,7 +59,6 @@ import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.console.ConsolePlugin;
 import org.eclipse.ui.console.IConsole;
 import org.eclipse.ui.console.IConsoleManager;
@@ -207,21 +207,33 @@ public class ImportTransformationLauncher {
 			}
 
 			protected void handle(final IStatus status) {
+				if (baseControl == null) {
+					int severity = status.getSeverity();
+					if (severity == IStatus.OK || severity == IStatus.CANCEL) {
+						return;
+					}
+
+					StatusManager.getManager().handle(status, StatusManager.LOG);
+					return;
+				}
+
+				Display display = baseControl.getDisplay();
+
 				if (status.getSeverity() == IStatus.OK) {
-					Display.getDefault().asyncExec(new Runnable() {
+					display.asyncExec(new Runnable() {
 
 						@Override
 						public void run() {
-							MessageDialog.openInformation(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), "Import models", status.getMessage());
+							MessageDialog.openInformation(baseControl.getShell(), "Import models", status.getMessage());
 						}
 					});
 
 				} else if (status.getSeverity() == IStatus.CANCEL) {
-					Display.getDefault().asyncExec(new Runnable() {
+					display.asyncExec(new Runnable() {
 
 						@Override
 						public void run() {
-							MessageDialog.openInformation(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), "Import models", status.getMessage());
+							MessageDialog.openInformation(baseControl.getShell(), "Import models", status.getMessage());
 						}
 					});
 				} else {
@@ -319,13 +331,6 @@ public class ImportTransformationLauncher {
 		final Map<URI, URI> profileUrisToReplace = new HashMap<URI, URI>();
 
 		for (ImportTransformation transformation : transformations) {
-			for (Map.Entry<URI, URI> mapping : transformation.getURIMappings().entrySet()) {
-				URI sourceURI = mapping.getKey();
-				URI targetURI = mapping.getValue();
-				if ("emx".equals(sourceURI.fileExtension()) || "efx".equals(sourceURI.fileExtension())) {
-					urisToReplace.put(sourceURI, targetURI);
-				}
-			}
 			urisToReplace.putAll(transformation.getURIMappings());
 			profileUrisToReplace.putAll(transformation.getProfileURIMappings());
 		}
@@ -343,6 +348,7 @@ public class ImportTransformationLauncher {
 
 			// Include the user-defined URI mappings
 			populateURIMap(parameters.getUriMappings(), urisToReplace);
+			populateURIMap(parameters.getUriMappings(), profileUrisToReplace);
 			populateURIMap(parameters.getProfileUriMappings(), profileUrisToReplace);
 		}
 
@@ -395,10 +401,20 @@ public class ImportTransformationLauncher {
 			return Status.OK_STATUS;
 		}
 
-		repairProxies(modelSet, resourcesToRepair, urisToReplace, monitor); // Repairing proxies first will change the Applied Profiles. This helps repairing stereotypes
+		try {
+			repairProxies(modelSet, resourcesToRepair, urisToReplace, monitor); // Repairing proxies first will change the Applied Profiles. This helps repairing stereotypes
+		} catch (Exception ex) {
+			Activator.log.error(ex);
+			return new Status(IStatus.ERROR, Activator.PLUGIN_ID, "An exception occurred when repairing library dependencies", ex);
+		}
 
 		RepairStereotypes repairStereotypesAction = new RepairStereotypes(modelSet, resourcesToRepair, profileUrisToReplace);
-		repairStereotypesAction.execute();
+		try {
+			repairStereotypesAction.execute();
+		} catch (Exception ex) {
+			Activator.log.error(ex);
+			return new Status(IStatus.ERROR, Activator.PLUGIN_ID, "An exception occurred when repairing profiles/stereotypes", ex);
+		}
 
 		try {
 
@@ -478,7 +494,7 @@ public class ImportTransformationLauncher {
 		return false;
 	}
 
-	protected void repairProxies(final ModelSet modelSet, final Collection<Resource> resourcesToRepair, Map<URI, URI> urisToReplace, IProgressMonitor monitor) {
+	protected void repairProxies(final ModelSet modelSet, final Collection<Resource> resourcesToRepair, Map<URI, URI> urisToReplace, IProgressMonitor monitor) throws InterruptedException, RollbackException {
 
 		final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
 
@@ -491,23 +507,20 @@ public class ImportTransformationLauncher {
 				continue;
 			}
 
-			domain.getCommandStack().execute(new AbstractCommand("Import dependencies") {
+			InternalTransactionalEditingDomain internalDomain = (InternalTransactionalEditingDomain) domain;
 
-				@Override
-				public void execute() {
-					DependencyManagementHelper.updateDependencies(entry.getKey(), entry.getValue(), resourcesToRepair, domain);
-				}
+			Map<String, Object> options = new HashMap<String, Object>();
+			options.put(Transaction.OPTION_NO_UNDO, true);
+			options.put(Transaction.OPTION_NO_VALIDATION, true);
+			options.put(Transaction.OPTION_NO_TRIGGERS, true);
 
-				@Override
-				public void redo() {
-					// Nothing
-				}
-
-				@Override
-				protected boolean prepare() {
-					return true;
-				};
-			});
+			// We're in a batch environment, with no undo/redo support. Run a vanilla transaction to improve performances
+			Transaction fastTransaction = internalDomain.startTransaction(false, options);
+			try {
+				DependencyManagementHelper.updateDependencies(entry.getKey(), entry.getValue(), resourcesToRepair, domain);
+			} finally {
+				fastTransaction.commit();
+			}
 		}
 	}
 

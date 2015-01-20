@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.fragment" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TestProfile="http:///schemas/TestProfile/_m-0zgJ_dEeSMStbbPSeZNQ/1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xsi:schemaLocation="http:///schemas/TestProfile/_m-0zgJ_dEeSMStbbPSeZNQ/1 TestProfile%20-%20Fragments.epx#_m-2BoJ_dEeSMStbbPSeZNQ?TestProfile/TestProfile?">
+  <uml:Package xmi:id="_uU8FcJ_dEeSMStbbPSeZNQ" name="Fragment2">
+    <eAnnotations xmi:id="_0nVQkZ_dEeSMStbbPSeZNQ" source="com.ibm.xtools.uml.msl.fragments"/>
+    <eAnnotations xmi:id="_0nVQkJ_dEeSMStbbPSeZNQ" source="com.ibm.xtools.uml.msl.fragmentContainer">
+      <references xmi:type="uml:Model" href="Blank%20Package.emx#_NBlOZp_dEeSMStbbPSeZNQ?Blank%20Package?"/>
+    </eAnnotations>
+    <eAnnotations xmi:id="_uU8sgJ_dEeSMStbbPSeZNQ" source="uml2.diagrams" references="_uU8sgZ_dEeSMStbbPSeZNQ">
+      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_uU8sgZ_dEeSMStbbPSeZNQ" type="Freeform" name="Main">
+        <element xsi:nil="true"/>
+      </contents>
+    </eAnnotations>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vn4UAJ_dEeSMStbbPSeZNQ" name="Class1"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vs1sgJ_dEeSMStbbPSeZNQ" name="Class2"/>
+  </uml:Package>
+  <TestProfile:Stereotype1 xmi:id="_wPaOEJ_dEeSMStbbPSeZNQ" base_Class="_vn4UAJ_dEeSMStbbPSeZNQ"/>
+  <TestProfile:Stereotype2 xmi:id="_wPaOEZ_dEeSMStbbPSeZNQ" base_Class="_vn4UAJ_dEeSMStbbPSeZNQ"/>
+  <TestProfile:Stereotype1 xmi:id="_wq9hoJ_dEeSMStbbPSeZNQ" base_Class="_vs1sgJ_dEeSMStbbPSeZNQ"/>
+</xmi:XMI>

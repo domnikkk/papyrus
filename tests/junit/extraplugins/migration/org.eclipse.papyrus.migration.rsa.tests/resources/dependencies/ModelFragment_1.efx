@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.fragment" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
+<uml:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmi:id="_UWc_oJ_cEeSMStbbPSeZNQ" name="Fragment1">
+  <eAnnotations xmi:id="_acnsoJ_cEeSMStbbPSeZNQ" source="com.ibm.xtools.uml.msl.fragmentContainer">
+    <references xmi:type="uml:Model" href="Library.emx#_9yH3FZ_bEeSMStbbPSeZNQ?Library?"/>
+  </eAnnotations>
+  <eAnnotations xmi:id="_UWdmsJ_cEeSMStbbPSeZNQ" source="uml2.diagrams" references="_UWdmsZ_cEeSMStbbPSeZNQ">
+    <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_UWdmsZ_cEeSMStbbPSeZNQ" type="Freeform" name="Main">
+      <element xsi:nil="true"/>
+    </contents>
+  </eAnnotations>
+  <packagedElement xmi:type="uml:Class" xmi:id="_VJK2AJ_cEeSMStbbPSeZNQ" name="Class1" clientDependency="_0bPKwJ_cEeSMStbbPSeZNQ"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_VPW9kJ_cEeSMStbbPSeZNQ" name="Class2">
+    <ownedAttribute xmi:id="_VwCowJ_cEeSMStbbPSeZNQ" name="attribute1" visibility="private">
+      <type xmi:type="uml:Class" href="Library.emx#_VTeokJ_cEeSMStbbPSeZNQ?Library/Class1?"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_YkhikJ_cEeSMStbbPSeZNQ" name="class1" visibility="private" association="_YkftYJ_cEeSMStbbPSeZNQ">
+      <type xmi:type="uml:Class" href="Library.emx#_VTeokJ_cEeSMStbbPSeZNQ?Library/Class1?"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YkjXwZ_cEeSMStbbPSeZNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YkjXwJ_cEeSMStbbPSeZNQ" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_YkftYJ_cEeSMStbbPSeZNQ">
+    <memberEnd href="#_YkhikJ_cEeSMStbbPSeZNQ?Library/Fragment1/Class2/class1?"/>
+    <memberEnd href="Library.emx#_Ykj-0J_cEeSMStbbPSeZNQ?Library/Class1/class2?"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_0bPKwJ_cEeSMStbbPSeZNQ" client="_VJK2AJ_cEeSMStbbPSeZNQ">
+    <supplier xmi:type="uml:Interface" href="ModelFragment_2.efx#_zuVogJ_cEeSMStbbPSeZNQ?Libraries/Package1/Package1/Interface1?"/>
+  </packagedElement>
+</uml:Package>

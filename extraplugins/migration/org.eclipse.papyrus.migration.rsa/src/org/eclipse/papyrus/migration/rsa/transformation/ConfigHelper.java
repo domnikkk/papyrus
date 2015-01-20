@@ -56,8 +56,10 @@ public class ConfigHelper {
 
 	public ConfigHelper(Config config) {
 		this.config = config;
-		if (config.getMappingParameters() == null) {
-			config.setMappingParameters(RSAToPapyrusParametersFactory.eINSTANCE.createMappingParameters());
+		synchronized (config) {
+			if (config.getMappingParameters() == null) {
+				config.setMappingParameters(RSAToPapyrusParametersFactory.eINSTANCE.createMappingParameters());
+			}
 		}
 
 		configureResourceSet();
@@ -160,9 +162,13 @@ public class ConfigHelper {
 			mapping.setSourceURI(packageURI.trimFragment().trimQuery().toString());
 			mapping.setTargetURI(packageURI.trimFragment().trimQuery().toString());
 
-			mappings.add(mapping);
+			synchronized (config) {
+				mappings.add(mapping);
+			}
 		} else {
-			mappings.add(existingMapping);
+			synchronized (config) {
+				mappings.add(existingMapping);
+			}
 		}
 	}
 
@@ -182,9 +188,13 @@ public class ConfigHelper {
 					mapping.setSourceURI(sourceURI.trimFragment().trimQuery().toString());
 					mapping.setTargetURI(sourceURI.trimFragment().trimQuery().toString()); // By default, don't change anything
 
-					mappings.add(mapping);
+					synchronized (config) {
+						mappings.add(mapping);
+					}
 				} else {
-					mappings.add(existingMapping);
+					synchronized (config) {
+						mappings.add(existingMapping);
+					}
 				}
 			}
 		}

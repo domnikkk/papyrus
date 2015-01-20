@@ -20,11 +20,13 @@ import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Package;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ImportModelsTest extends AbstractTransformationTest {
 
 
+	// resources/fragments/*
 	@Test
 	public void testFragments() throws Exception {
 
@@ -59,4 +61,13 @@ public class ImportModelsTest extends AbstractTransformationTest {
 		Assert.assertEquals(2, fragmentPackageNotationResource.getContents().size());
 
 	}
+
+	// resources/parameters/*
+	@Test
+	@Ignore("Not yet implemented")
+	public void testTransformationParameters() throws Exception {
+
+	}
+
+
 }

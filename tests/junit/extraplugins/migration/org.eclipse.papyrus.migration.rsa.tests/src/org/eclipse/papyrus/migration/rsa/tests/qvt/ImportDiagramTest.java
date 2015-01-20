@@ -55,6 +55,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Profile;
@@ -65,6 +66,7 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+//resources/*.e*x
 public class ImportDiagramTest extends AbstractPapyrusTest {
 
 	private static IProject targetProject;
@@ -86,6 +88,13 @@ public class ImportDiagramTest extends AbstractPapyrusTest {
 
 	@BeforeClass
 	public static void init() throws Exception {
+		IWorkbench workbench = PlatformUI.getWorkbench();
+		IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();
+		while (window == null) {
+			Display.getCurrent().readAndDispatch();
+			window = workbench.getActiveWorkbenchWindow();
+		}
+
 		targetProject = ProjectUtils.createProject(Activator.PLUGIN_ID + ".testProject");
 		URI rsaDiagramModelUri = URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/ModelTestClass.emx", true);
 		URI rsaProfileModelUri = URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/Profile.epx", true);
