@@ -315,6 +315,7 @@
 		<xtext.version>2.7.3</xtext.version>
 		<java.source.version>1.6</java.source.version>
 		<java.target.version>1.6</java.target.version>
+		<papyrus.eclipse.target>mars</papyrus.eclipse.target>
 	</properties>
 	<repositories>
 		<repository>
@@ -743,6 +744,34 @@
 	        </activation>
     	</profile>
       
-      
+        <!-- nightly profile is usefull for developers that want to link to nightly build -->
+		<profile>
+			<id>nightly</id>
+			<repositories>
+				<repository>
+					<id>papyrus-nightly</id>
+					<layout>p2</layout>
+					<url>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/${papyrus.eclipse.target}/
+					</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>warn</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+				</repository>
+			</repositories>
+			<activation>
+				<property>
+					<name>env</name>
+					<value>devnightly</value>
+				</property>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
     </profiles>
 </project>
