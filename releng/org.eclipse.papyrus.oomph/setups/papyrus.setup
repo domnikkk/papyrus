@@ -2019,6 +2019,8 @@
       <sourceLocator
           rootFolder="${papyrus.git.clone.location/extraplugins}/${papyrus.extraplugins.folder}"/>
       <sourceLocator
+          rootFolder="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}"/>
+      <sourceLocator
           rootFolder="${papyrus.git.clone.location/features/papyrus-extra-features}">
         <predicate
             xsi:type="predicates:NamePredicate"
@@ -2098,11 +2100,6 @@
           xsi:type="setup:VariableTask"
           name="papyrus.extraplugins.folder"
           value="cdo"/>
-      <setupTask
-          xsi:type="projects:ProjectsImportTask">
-        <sourceLocator
-            rootFolder="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}"/>
-      </setupTask>
       <stream
           name="master"
           label="master (Mars/1.1)">
@@ -2180,11 +2177,6 @@
           xsi:type="setup:VariableTask"
           name="papyrus.extratestsfeature"
           value="tests.extra.codegen.cpp"/>
-      <setupTask
-          xsi:type="projects:ProjectsImportTask">
-        <sourceLocator
-            rootFolder="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}"/>
-      </setupTask>
       <stream
           name="master"
           label="master (Mars/1.1)">
@@ -2405,9 +2397,12 @@
           name="papyrus.extraplugins.folder"
           value="migration"/>
       <setupTask
-          xsi:type="projects:ProjectsImportTask">
-        <sourceLocator
-            rootFolder="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}"/>
+          xsi:type="setup.targlets:TargletTask">
+        <targlet
+            name="Papyrus Model Migration Dependencies">
+          <requirement
+              name="org.eclipse.papyrus.umlrt"/>
+        </targlet>
       </setupTask>
       <stream
           name="master"
@@ -2434,11 +2429,6 @@
           xsi:type="setup:VariableTask"
           name="papyrus.extraplugins.folder"
           value="moka"/>
-      <setupTask
-          xsi:type="projects:ProjectsImportTask">
-        <sourceLocator
-            rootFolder="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}"/>
-      </setupTask>
       <stream
           name="master"
           label="master (Mars/1.1)">
@@ -2522,11 +2512,6 @@
           xsi:type="setup:VariableTask"
           name="papyrus.extrafeature"
           value="extra.uml.compare"/>
-      <setupTask
-          xsi:type="projects:ProjectsImportTask">
-        <sourceLocator
-            rootFolder="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}"/>
-      </setupTask>
       <stream
           name="master"
           label="master (Mars/1.1)">
@@ -2581,11 +2566,6 @@
           xsi:type="setup:VariableTask"
           name="papyrus.extraplugins.folder"
           value="umlrt"/>
-      <setupTask
-          xsi:type="projects:ProjectsImportTask">
-        <sourceLocator
-            rootFolder="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}"/>
-      </setupTask>
       <stream
           name="master"
           label="master (Mars/1.1)">
