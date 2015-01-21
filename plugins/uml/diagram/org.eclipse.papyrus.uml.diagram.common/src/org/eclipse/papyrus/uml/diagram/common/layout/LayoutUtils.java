@@ -238,9 +238,9 @@ public class LayoutUtils {
 	 * an Affixed Child Node
 	 *
 	 * @param sourceEditPart
-	 *            the source EditPart
+	 *            the source EditPart, it must be a node
 	 * @param targetEditPart
-	 *            the targetEditPart
+	 *            the targetEditPart, it must be a node
 	 * @return <ul>
 	 *         <li>Point[0] is the source Anchor</li>
 	 *         <li>Point[1] is the target Anchor</li>

@@ -182,7 +182,7 @@ public class AspectUnspecifiedTypeConnectionTool extends UnspecifiedTypeConnecti
 					}
 				}
 				
-				// do nothing if you have at least one edge element 
+				// do nothing if you have at least one edge element, in fact the following lines have been written to take in account only nodes. 
 				if( !(sourceEditPart instanceof NodeEditPart) || !(targetEditPart instanceof NodeEditPart)){
 					break;
 				}
