@@ -15,4 +15,5 @@ Bundle-Name: %pluginName
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.layers.integrationtests
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Localization: plugin
 
