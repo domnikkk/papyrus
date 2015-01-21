@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.papyrus.infra.core.papyrusDiagram">
+      <diagramCategory
+            class="org.eclipse.papyrus.bpmn.diagram.common.commands.CreateBpmnModelCommand"
+            description="Papyrus BPMN diagrams"
+            icon="platform:/plugin/org.eclipse.papyrus.bpmn/icons/bpmn64_64.png"
+            id="BPMN"
+            label="BPMN">
+      </diagramCategory>
+      <editorDiagram
+            actionBarContributorId="org.eclipse.papyrus.uml.diagram.common.part.UMLDiagramActionBarContributor"
+            factoryClass="org.eclipse.papyrus.bpmn.diagram.common.factory.BpmnProcessDiagramFactory"
+            icon="platform:/plugin/org.eclipse.papyrus.bpmn/icons/bpmn64_64.png">
+      </editorDiagram>
+      <editorDiagram
+            actionBarContributorId="org.eclipse.papyrus.uml.diagram.common.part.UMLDiagramActionBarContributor"
+            factoryClass="org.eclipse.papyrus.bpmn.diagram.common.factory.BpmnCollaborationDiagramFactory"
+            icon="platform:/plugin/org.eclipse.papyrus.bpmn/icons/bpmn64_64.png">
+      </editorDiagram>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="org.eclipse.papyrus.bpmn.diagram.common.IsPapyrusActiveWithBpmn">
+         <and>
+            <with
+                  variable="activeEditorId">
+               <equals
+                     value="org.eclipse.papyrus.infra.core.papyrusEditor">
+               </equals>
+            </with>
+            <with
+                  variable="selection">
+               <test
+                     forcePluginActivation="true"
+                     property="org.eclipse.papyrus.BpmnSelectionTester.isBpmnModel"
+                     value="true">
+               </test>
+            </with>
+         </and>
+      </definition>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.eclipse.papyrus.bpmn.diagram.common.utils.BpmnSelectionTester"
+            id="org.eclipse.papyrus.BpmnSelectionTester"
+            namespace="org.eclipse.papyrus.BpmnSelectionTester"
+            properties="isBpmnModel"
+            type="org.eclipse.jface.viewers.ISelection">
+      </propertyTester>
+   </extension>
+ <extension
+       point="org.eclipse.papyrus.uml.properties.languageEditor">
+    <editor
+          editor="org.eclipse.papyrus.uml.properties.widgets.NaturalLanguageEditor"
+          language="alf">
+    </editor>
+ </extension>
+ <extension
+       point="org.eclipse.papyrus.infra.viewpoints.policy.custom">
+    <contribution
+          file="viewpoints/bpmn.configuration"
+          original="platform:/plugin/org.eclipse.papyrus.infra.viewpoints.policy/builtin/default.configuration">
+    </contribution>
+ </extension>
+ <extension
+	point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
+	<editpolicyProvider
+		class="org.eclipse.papyrus.bpmn.diagram.common.editpolicy.provider.BpmnDiagramsEditPolicyProvider">
+		<Priority name="Low"/>
+	</editpolicyProvider>
+</extension>
+</plugin>

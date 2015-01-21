@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            canFinishEarly="false"
+            category="org.eclipse.papyrus.wizards.category"
+            class="org.eclipse.papyrus.bpmn.diagram.ui.NewBpmnModelWizard"
+            finalPerspective="org.eclipse.papyrus.infra.core.perspective"
+            icon="platform:/plugin/org.eclipse.papyrus.bpmn/icons/bpmn64_64.png"
+            id="org.eclipse.papyrus.wizards.createbpmnmodel"
+            name="Papyrus BPMN Model">
+         <selection
+               class="org.eclipse.core.resources.IResource">
+         </selection>
+      </wizard>
+      <wizard
+            category="org.eclipse.papyrus.wizards.category"
+            class="org.eclipse.papyrus.bpmn.diagram.ui.NewBpmnProjectWizard"
+            finalPerspective="org.eclipse.papyrus.infra.core.perspective"
+            icon="platform:/plugin/org.eclipse.papyrus.bpmn/icons/bpmn64_64.png"
+            id="org.eclipse.papyrus.wizards.createbpmnwizard"
+            name="Papyrus BPMN Project"
+            project="true">
+         <description>
+            New Bpmn Project
+         </description>
+      </wizard>
+   </extension>
+
+</plugin>

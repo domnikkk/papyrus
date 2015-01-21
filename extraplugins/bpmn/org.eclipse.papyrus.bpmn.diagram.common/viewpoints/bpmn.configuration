@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration:PapyrusConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration" xmi:id="_0kyH4PL_EeONXPQ2mbw9vA" defaultStakeholder="_0kyu8PL_EeONXPQ2mbw9vA">
+  <stakeholders xmi:id="_oEQ6oKYJEeS3vNH2fiQDrQ" name="Business Process Analyst"/>
+  <stakeholders xmi:id="_0kyu8PL_EeONXPQ2mbw9vA" name="Enterprise System Architect"/>
+  <viewpoints xsi:type="configuration:PapyrusViewpoint" xmi:id="_0kyu8fL_EeONXPQ2mbw9vA" name="Default Papyrus Viewpoint">
+    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_0kzWAPL_EeONXPQ2mbw9vA" name="BPMN Process Diagram" icon="platform:/plugin/org.eclipse.papyrus.bpmn/icons/bpmn64_64.png" implementationID="PapyrusUMLActivityDiagram" categories="_0kz9GPL_EeONXPQ2mbw9vA" customPalette="platform:/plugin/org.eclipse.papyrus.bpmn.diagram.common/diagrams/process/process.palette.xml" customStyle="platform:/plugin/org.eclipse.papyrus.bpmn.diagram.common/css/style.css">
+      <profiles href="http://www.omg.org/spec/BPMNProfile/20121112/#/"/>
+      <modelRules xmi:id="_0kzWAfL_EeONXPQ2mbw9vA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Activity"/>
+        <stereotypes href="http://www.omg.org/spec/BPMNProfile/20121112/#//BPMNProcess"/>
+      </modelRules>
+      <owningRules xmi:id="_0kzWAvL_EeONXPQ2mbw9vA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+        <newModelPath xmi:id="_EwB-kKx4EeSnrKVaqDJBJQ" creationType="org.eclipse.papyrus.uml.Activity">
+          <feature href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+        </newModelPath>
+      </owningRules>
+      <paletteRules xmi:id="_M-bMQKyMEeSnrKVaqDJBJQ" permit="false" element="createAcceptEventAction14CreationTool"/>
+    </modelKinds>
+    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_0kzWAPL_EeONXPQ2mbw9vA" name="BPMN Collaboration Diagram" icon="platform:/plugin/org.eclipse.papyrus.bpmn/icons/bpmn64_64.png" implementationID="PapyrusUMLActivityDiagram" categories="_0kz9GPL_EeONXPQ2mbw9vA" customStyle="platform:/plugin/org.eclipse.papyrus.bpmn.diagram.common/css/style.css">
+      <profiles href="http://www.omg.org/spec/BPMNProfile/20121112/#/"/>
+      <modelRules xmi:id="_0kzWAfL_EeONXPQ2mbw9vA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Activity"/>
+        <stereotypes href="http://www.omg.org/spec/BPMNProfile/20121112/#//BPMNProcess"/>
+      </modelRules>
+      <owningRules xmi:id="_0kzWAvL_EeONXPQ2mbw9vA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+        <newModelPath xmi:id="_gmE4YKx4EeSnrKVaqDJBJQ" creationType="org.eclipse.papyrus.uml.Activity">
+          <feature href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+        </newModelPath>
+      </owningRules>
+      <paletteRules xmi:id="_LXbZQKyMEeSnrKVaqDJBJQ" element="*"/>
+    </modelKinds>
+  </viewpoints>
+  <metamodel href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
+  <categories xmi:id="_0kz9GPL_EeONXPQ2mbw9vA" name="BPMN"/>
+</configuration:PapyrusConfiguration>
