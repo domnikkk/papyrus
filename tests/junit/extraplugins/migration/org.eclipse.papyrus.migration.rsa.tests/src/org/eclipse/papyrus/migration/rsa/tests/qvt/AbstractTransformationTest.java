@@ -75,6 +75,8 @@ public class AbstractTransformationTest extends AbstractPapyrusTest {
 			launcher.run(Collections.singletonList(sourceURI));
 
 			launcher.waitForCompletion();
+
+			Assert.assertTrue("The transformation didn't complete normally", launcher.getResult().isOK());
 		} else {
 			ImportTransformation transformation = new ImportTransformation(sourceURI);
 			transformation.run(false);
