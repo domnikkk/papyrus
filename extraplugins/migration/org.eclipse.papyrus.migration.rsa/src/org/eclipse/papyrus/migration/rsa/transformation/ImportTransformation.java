@@ -120,8 +120,14 @@ public class ImportTransformation {
 	/** Execution time, in nano-seconds */
 	protected long executionTime = 0L;
 
-	/** Execution time of the initial model loading */
+	/** Execution time of the initial model loading / ns */
 	protected long loadingTime = 0L;
+
+	/** Execution time for handling dangling references / ns */
+	protected long danglingRefTime = 0L;
+
+	/** Execution time for executing the UML-RT transformation / ns */
+	protected long importRTTime = 0L;
 
 	/** Source URI to Target URI map (For Models/Libraries/Fragments) */
 	protected final Map<URI, URI> uriMappings = new HashMap<URI, URI>();
@@ -239,6 +245,14 @@ public class ImportTransformation {
 		return loadingTime;
 	}
 
+	public long getHandleDanglingRefTime() {
+		return danglingRefTime;
+	}
+
+	public long getImportRTTime() {
+		return importRTTime;
+	}
+
 	public Map<URI, URI> getURIMappings() {
 		return uriMappings;
 	}
@@ -269,8 +283,6 @@ public class ImportTransformation {
 		} catch (Exception ex) {
 			Activator.log.error("An error occurred while loading " + getModelName(), ex);
 		}
-
-		monitor.subTask("Resolving all dependencies...");
 	}
 
 	/**
@@ -342,7 +354,7 @@ public class ImportTransformation {
 	// Preloads all required transformations (Either locally or statically, depending on the cache parameter)
 	protected IStatus loadTransformations(IProgressMonitor monitor) {
 		for (URI transformationURI : getAllTransformationURIs()) {
-			IStatus status = executorsPool.preLoad(transformationURI);
+			executorsPool.preLoad(transformationURI);
 			monitor.worked(1);
 		}
 
@@ -400,9 +412,10 @@ public class ImportTransformation {
 
 		IStatus result; // Result of an individual transformation (Will be aggregated to the complete GenerationStatus)
 
-		// UML RT (First operation, because it can transform Collaborations to Classes, which has some consequences on the diagram transformation)
-		// TODO: Restore the UML RT transformation (Update to UML RT v3)
+		long startRT = System.nanoTime();
 		result = importRTProfile(context, monitor);
+		long endRT = System.nanoTime();
+		this.importRTTime = endRT - startRT;
 		generationStatus.add(result);
 
 		// Diagrams
@@ -535,7 +548,10 @@ public class ImportTransformation {
 
 			monitor.subTask("Analyzing dangling references...");
 
+			long startDangling = System.nanoTime();
 			handleDanglingURIs(resourcesToSave);
+			long endDangling = System.nanoTime();
+			this.danglingRefTime = endDangling - startDangling;
 
 			monitor.subTask("Saving models...");
 
