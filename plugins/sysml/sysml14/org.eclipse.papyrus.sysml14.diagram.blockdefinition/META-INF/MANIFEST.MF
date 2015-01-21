@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: BDD1.4 Configuration for Papyrus
+Bundle-SymbolicName: org.eclipse.papyrus.sysml14.diagram.blockdefinition;singleton:=true
+Bundle-Version: 1.1.0.qualifier
+Bundle-Activator: org.eclipse.papyrus.sysml14.diagram.blockdefinition.Activator
+Bundle-Vendor: Eclipse Modeling Project
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.papyrus.infra.viewpoints.policy;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.newchild;bundle-version="1.1.0",
+ org.eclipse.papyrus.views.properties;bundle-version="1.1.0",
+ org.eclipse.uml2.uml,
+ org.eclipse.papyrus.infra.core;bundle-version="1.1.0",
+ org.eclipse.emf.ecore.editor,
+ org.eclipse.papyrus.infra.onefile;bundle-version="1.1.0",
+ com.google.guava;bundle-version="11.0.0",
+ org.eclipse.papyrus.infra.emf;bundle-version="1.1.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
