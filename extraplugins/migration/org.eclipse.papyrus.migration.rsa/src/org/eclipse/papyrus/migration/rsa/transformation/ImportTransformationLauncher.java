@@ -108,6 +108,11 @@ public class ImportTransformationLauncher {
 	protected long ownRepairLibrariesTime;
 
 	/**
+	 * Own execution time for resolving all matches for broken profiles/libraries
+	 */
+	protected long resolveAllDependencies;
+
+	/**
 	 * The top-level job for this transformation
 	 */
 	protected Job importDependenciesJob;
@@ -117,6 +122,8 @@ public class ImportTransformationLauncher {
 	 * this may be different from their cumulated execution time (Unless a single thread is used)
 	 */
 	protected long transformationsExecutionTime = 0L;
+
+	protected DependencyAnalysisHelper analysisHelper;
 
 	public ImportTransformationLauncher(Config config) {
 		this(config, null);
@@ -135,8 +142,10 @@ public class ImportTransformationLauncher {
 	public void run(List<URI> urisToImport) {
 		List<ImportTransformation> transformations = new LinkedList<ImportTransformation>();
 
+		analysisHelper = new DependencyAnalysisHelper(config);
+
 		for (URI uri : urisToImport) {
-			ImportTransformation transformation = new ImportTransformation(uri, config);
+			ImportTransformation transformation = new ImportTransformation(uri, config, analysisHelper);
 			transformations.add(transformation);
 		}
 
@@ -199,6 +208,7 @@ public class ImportTransformationLauncher {
 				log("\tTotal Transformation Time: " + timeFormat(transformationsExecutionTime));
 
 				log("Second phase (50-100%) / " + nbThreads + " Threads");
+				log("\tTotal Handle all Dangling References: " + timeFormat(resolveAllDependencies));
 				log("\tCumulated Loading Time: " + timeFormat(ownLoadingTime));
 				log("\tCumulated Fix Libraries Time: " + timeFormat(ownRepairLibrariesTime));
 				log("\tCumulated Fix Stereotypes Time: " + timeFormat(ownRepairStereotypesTime));
@@ -385,6 +395,11 @@ public class ImportTransformationLauncher {
 			urisToReplace.putAll(transformation.getURIMappings());
 			profileUrisToReplace.putAll(transformation.getProfileURIMappings());
 		}
+
+		long startResolveAll = System.nanoTime();
+		analysisHelper.resolveAllMappings();
+		long endResolveAll = System.nanoTime();
+		resolveAllDependencies = endResolveAll - startResolveAll;
 
 		filterKnownMappings(config.getMappingParameters(), urisToReplace, profileUrisToReplace);
 

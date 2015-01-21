@@ -142,6 +142,7 @@ public class ImportTransformation {
 	/** EPackages corresponding to source native profiles with specific support in the transformation */
 	protected static final Set<EPackage> sourceEPackages = new HashSet<EPackage>();
 
+	protected final DependencyAnalysisHelper analysisHelper;
 
 	static {
 		sourceEPackages.add(org.eclipse.papyrus.migration.rsa.default_.DefaultPackage.eINSTANCE);
@@ -150,13 +151,14 @@ public class ImportTransformation {
 	}
 
 	public ImportTransformation(URI sourceURI) {
-		this(sourceURI, RSAToPapyrusParametersFactory.eINSTANCE.createConfig());
+		this(sourceURI, RSAToPapyrusParametersFactory.eINSTANCE.createConfig(), null);
 	}
 
-	public ImportTransformation(URI sourceURI, Config config) {
+	public ImportTransformation(URI sourceURI, Config config, DependencyAnalysisHelper analysisHelper) {
 		Assert.isNotNull(sourceURI);
 		this.sourceURI = sourceURI;
 		this.parameters = config;
+		this.analysisHelper = analysisHelper;
 	}
 
 	public void run() {
@@ -578,8 +580,9 @@ public class ImportTransformation {
 	}
 
 	protected void handleDanglingURIs(Collection<Resource> resourcesToSave) {
-		ConfigHelper helper = new ConfigHelper(parameters);
-		helper.computeURIMappings(resourcesToSave);
+		if (analysisHelper != null) {
+			analysisHelper.computeURIMappings(resourcesToSave);
+		}
 	}
 
 	protected void unloadResourceSet(ResourceSet resourceSet) {
