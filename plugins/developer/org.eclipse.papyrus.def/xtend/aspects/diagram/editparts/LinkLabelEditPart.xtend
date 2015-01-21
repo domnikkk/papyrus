@@ -15,10 +15,10 @@ package aspects.diagram.editparts
 
 import com.google.inject.Inject
 import com.google.inject.Singleton
+import org.eclipse.gmf.codegen.gmfgen.CustomBehaviour
 import org.eclipse.gmf.codegen.gmfgen.GenLinkLabel
 import org.eclipse.papyrus.papyrusgmfgenextension.LabelVisibilityPreference
 import xpt.Common
-import org.eclipse.gmf.codegen.gmfgen.CustomBehaviour
 
 @Singleton class LinkLabelEditPart extends diagram.editparts.LinkLabelEditPart{
 	@Inject extension Common;
@@ -70,5 +70,4 @@ import org.eclipse.gmf.codegen.gmfgen.CustomBehaviour
 		«ENDFOR»
 	}
 	'''
-	
 }
