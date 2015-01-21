@@ -9,9 +9,14 @@
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 402525
+ *  Nicolas FAUVERGUE (ALL4TEC) nicolas.fauvergue@all4tec.net - Bug 455783
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.nattable.config;
+
+import static org.eclipse.nebula.widgets.nattable.util.ObjectUtils.isNotNull;
+
+import java.math.BigDecimal;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
@@ -427,7 +432,25 @@ public class UMLFeatureCellEditorConfig extends EStructuralFeatureEditorConfig {
 		IDisplayConverter converter = null;
 		switch (editorKind) {
 		case SINGLE_REAL:
-			converter = new DefaultDoubleDisplayConverter();
+			converter = new DefaultDoubleDisplayConverter(){
+
+				@Override
+				public Object canonicalToDisplayValue(Object canonicalValue) {
+					// Bug 455783 :
+					// Redefine this method to manage the display of double number with dot and not with comma
+					if (isNotNull(canonicalValue)) {
+						return canonicalValue;
+					}
+					return null;
+				}
+
+				@Override
+				protected Object convertToNumericValue(String value) {
+					// Bug 455783 :
+					// Redefine this method to manage the conversion to double value with the dot and not the comma
+					return new BigDecimal(value).doubleValue();
+				}
+			};
 			break;
 		case SINGLE_UML_REFERENCE:
 			converter = new DisplayConverter() {

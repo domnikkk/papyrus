@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Nicolas FAUVERGUE (ALL4TEC) nicolas.fauvergue@all4tec.net - Bug 455783
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.nattable.validator;
@@ -35,7 +36,7 @@ public class RealDataValidator extends DataValidator {
 	@Override
 	public boolean validate(int columnIndex, int rowIndex, Object newValue) {
 		final RealInputValidator validator = new RealInputValidator();
-		return validator.isValid(newValue.toString()) == null;
+		return newValue != null ? validator.isValid(newValue.toString()) == null : false;
 	}
 
 }
