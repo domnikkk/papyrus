@@ -64,20 +64,6 @@
             label="UML Activity Diagram">
       </creationCommand>
    </extension>
-   	
-
-   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders">
-		<modelingAssistantProvider
-			class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLModelingAssistantProvider">
-			<Priority 
-				name="Lowest">
-			</Priority>
-		</modelingAssistantProvider>
-   </extension>
-
-	<?gmfgen generated="true"?>
-
-	<?gmfgen generated="true"?>
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
