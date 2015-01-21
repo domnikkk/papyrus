@@ -269,10 +269,10 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new ForkNodeAppliedStereotypeEditPart(view);
 			case JoinNodeEditPart.VISUAL_ID:
 				return new JoinNodeEditPart(view);
-			case JoinSpecEditPart.VISUAL_ID:
-				return new JoinSpecEditPart(view);
 			case JoinNodeFloatingNameEditPart.VISUAL_ID:
 				return new JoinNodeFloatingNameEditPart(view);
+			case JoinSpecEditPart.VISUAL_ID:
+				return new JoinSpecEditPart(view);
 			case JoinNodeAppliedStereotypeEditPart.VISUAL_ID:
 				return new JoinNodeAppliedStereotypeEditPart(view);
 			case DataStoreNodeEditPart.VISUAL_ID:

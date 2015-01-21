@@ -2064,10 +2064,10 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case JoinNodeEditPart.VISUAL_ID:
-			if (JoinSpecEditPart.VISUAL_ID == nodeVisualID) {
+			if (JoinNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (JoinNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (JoinSpecEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (JoinNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {

@@ -126,7 +126,7 @@ public class UMLOCLFactory {
 				"result->notEmpty() implies self.result.type = self.object.type", //$NON-NLS-1$
 				"self.value -> notEmpty()", //$NON-NLS-1$
 				"self.structuralFeature.featuringClassifier->size() = 1", //$NON-NLS-1$
-				"self.target.type->size() = 0", //$NON-NLS-1$
+				"if self.target.oclIsUndefined() then true else self.target.type->size() = 0 endif", //$NON-NLS-1$
 				"(not self.structuralFeature.oclIsUndefined()) implies (self.structuralFeature.isStatic = false)", //$NON-NLS-1$
 				"self.structuralFeature.featuringClassifier.oclAsType(Type)->includes(self.object.type) or\r\nself.structuralFeature.oclAsType(Property).opposite.type = self.object.type", //$NON-NLS-1$
 				"self.object.lowerBound()=1 and self.object.upperBound()=1", //$NON-NLS-1$

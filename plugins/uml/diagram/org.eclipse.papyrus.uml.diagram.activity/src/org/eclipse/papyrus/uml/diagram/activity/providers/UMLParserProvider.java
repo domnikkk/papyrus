@@ -3444,10 +3444,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getForkNodeName_6038Parser();
 		case ForkNodeAppliedStereotypeEditPart.VISUAL_ID:
 			return getForkNodeLabel_5100Parser();
-		case JoinSpecEditPart.VISUAL_ID:
-			return getJoinNodeLabel_5042Parser();
 		case JoinNodeFloatingNameEditPart.VISUAL_ID:
 			return getJoinNodeName_6039Parser();
+		case JoinSpecEditPart.VISUAL_ID:
+			return getJoinNodeLabel_5042Parser();
 		case JoinNodeAppliedStereotypeEditPart.VISUAL_ID:
 			return getJoinNodeLabel_5101Parser();
 		case DataStoreNodeLabelEditPart.VISUAL_ID:
