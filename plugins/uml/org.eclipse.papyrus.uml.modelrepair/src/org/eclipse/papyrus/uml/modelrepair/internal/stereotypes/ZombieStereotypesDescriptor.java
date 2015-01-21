@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA, Christian W. Damus, and others.
+ * Copyright (c) 2014, 2015 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -10,6 +10,7 @@
  *   Christian W. Damus (CEA) - Initial API and implementation
  *   Christian W. Damus - bug 399859
  *  Christian W. Damus - bug 451338
+ *   Christian W. Damus - bug 436666
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -22,6 +23,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
@@ -36,6 +38,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
+import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.uml.modelrepair.internal.participants.StereotypesUtil;
 import org.eclipse.papyrus.uml.tools.helper.IProfileApplicationDelegate;
@@ -81,11 +84,11 @@ public class ZombieStereotypesDescriptor {
 
 	private final Multimap<ProfileContext, EObject> zombies = ArrayListMultimap.create();
 
-	private final Map<EPackage, IRepairAction> suggestedActions = Maps.newHashMap();
+	private final Map<IAdaptable, IRepairAction> suggestedActions = Maps.newHashMap();
 
 	private final Function<? super EPackage, Profile> dynamicProfileSupplier;
 
-	private Map<EPackage, Map<IRepairAction.Kind, IRepairAction>> repairActions = Maps.newHashMap();
+	private Map<IAdaptable, Map<IRepairAction.Kind, IRepairAction>> repairActions = Maps.newHashMap();
 
 	private Map<EPackage, Profile> definitionToProfileMap = Maps.newHashMap();
 
@@ -123,7 +126,10 @@ public class ZombieStereotypesDescriptor {
 
 	public void analyze(EObject stereotypeApplication) {
 		EPackage schema = getEPackage(stereotypeApplication);
-		if ((schema == null) || (!appliedProfileDefinitions.contains(schema) && couldBeProfileDefinition(schema, stereotypeApplication))) {
+		if ((schema == null)
+				|| (!appliedProfileDefinitions.contains(schema) && couldBeProfileDefinition(schema, stereotypeApplication))
+				|| (appliedProfileDefinitions.contains(schema) && (UMLUtil.getBaseElement(stereotypeApplication) == null))) {
+
 			// It's a zombie. Determine the profile-application context that covers this stereotype instance
 			ProfileContext context = getProfileContext(stereotypeApplication, schema);
 
@@ -131,11 +137,12 @@ public class ZombieStereotypesDescriptor {
 			zombies.put(context, stereotypeApplication);
 
 			if (newContext && (schema != null)) {
-				if (!suggestedActions.containsKey(schema)) {
-					suggestedActions.put(schema, computeSuggestedAction(schema));
+				IAdaptable schemaAdaptable = context.getSchemaAdaptable();
+				if (!suggestedActions.containsKey(schemaAdaptable)) {
+					suggestedActions.put(schemaAdaptable, computeSuggestedAction(schemaAdaptable));
 				} else {
 					// Already computed the actions previously, but we need to add this new package to the apply-profile action
-					ApplyProfileAction applyProfile = (ApplyProfileAction) getRepairAction(schema, IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION);
+					ApplyProfileAction applyProfile = (ApplyProfileAction) getRepairAction(schemaAdaptable, IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION);
 					if (applyProfile != null) {
 						applyProfile.addPackage(context.getApplyingPackage());
 					}
@@ -164,40 +171,61 @@ public class ZombieStereotypesDescriptor {
 		return resource;
 	}
 
-	public Collection<? extends EPackage> getZombiePackages() {
-		return ImmutableSet.copyOf(Iterables.transform(zombies.keySet(), new Function<ProfileContext, EPackage>() {
+	/**
+	 * Obtains a collection of zombie schemas detected by the stereotype repair analysis and for which {@link IRepairAction}s
+	 * are available to remedy problems. Every resulting adaptable
+	 * <ul>
+	 * <li>adapts to {@link EPackage} to provide the EMF schema that is unresolved or otherwise broken</li>
+	 * <li>may possibly adapt to {@link IStereotypeOrphanGroup} representing stereotype applications from a broken schema that are not repairable by profile migration and so are treated separately with a distinct set of available actions
+	 * </ul>
+	 * 
+	 * @return the zombie schemas that are detected
+	 */
+	public Collection<? extends IAdaptable> getZombieSchemas() {
+		return ImmutableSet.copyOf(Iterables.transform(zombies.keySet(), new Function<ProfileContext, IAdaptable>() {
 
-			public EPackage apply(ProfileContext input) {
-				return input.getSchema();
+			public IAdaptable apply(ProfileContext input) {
+				return input.getSchemaAdaptable();
 			}
 		}));
 	}
 
-	public int getZombieCount(EPackage schema) {
+	public int getZombieCount(IAdaptable schema) {
 		int result = 0;
-		for (Map.Entry<ProfileContext, Collection<EObject>> next : zombies.asMap().entrySet()) {
-			if (equal(next.getKey().getSchema(), schema, root)) {
-				result = result + next.getValue().size();
-			}
+
+		for (Map.Entry<ProfileContext, Collection<EObject>> next : Iterables.filter(zombies.asMap().entrySet(), matches(schema))) {
+			result = result + next.getValue().size();
 		}
 
 		return result;
 	}
 
-	public Collection<? extends EObject> getZombies(EPackage schema) {
+	private Predicate<Map.Entry<ProfileContext, ?>> matches(IAdaptable schema) {
+		IStereotypeOrphanGroup orphans = AdapterUtils.adapt(schema, IStereotypeOrphanGroup.class, null);
+		final boolean isOrphanGroup = orphans != null;
+		final EPackage targetSchema = isOrphanGroup ? orphans.getSchema() : AdapterUtils.adapt(schema, EPackage.class, null);
+
+		return new Predicate<Map.Entry<ProfileContext, ?>>() {
+			public boolean apply(Map.Entry<ProfileContext, ?> input) {
+				ProfileContext context = input.getKey();
+				return (context.isOrphanGroup() == isOrphanGroup) && equal(context.getSchema(), targetSchema, root);
+			}
+		};
+	}
+
+	public Collection<? extends EObject> getZombies(IAdaptable schema) {
 		ImmutableList.Builder<EObject> result = ImmutableList.builder();
 
-		for (Map.Entry<ProfileContext, Collection<EObject>> next : zombies.asMap().entrySet()) {
-			if (equal(next.getKey().getSchema(), schema, root)) {
-				result.addAll(next.getValue());
-			}
+		for (Map.Entry<ProfileContext, Collection<EObject>> next : Iterables.filter(zombies.asMap().entrySet(), matches(schema))) {
+			result.addAll(next.getValue());
 		}
 
 		return result.build();
 	}
 
-	public boolean repair(EPackage schema, IRepairAction repairAction, DiagnosticChain diagnostics, IProgressMonitor monitor) {
-		return repairAction.repair(resource, schema, getZombies(schema), diagnostics, monitor);
+	public boolean repair(IAdaptable schema, IRepairAction repairAction, DiagnosticChain diagnostics, IProgressMonitor monitor) {
+		EPackage ePackage = AdapterUtils.adapt(schema, EPackage.class).get(); // Fails if not present
+		return !repairAction.isNull() && repairAction.repair(resource, ePackage, getZombies(schema), diagnostics, monitor);
 	}
 
 	protected EPackage getEPackage(EObject object) {
@@ -205,18 +233,27 @@ public class ZombieStereotypesDescriptor {
 		return (eclass == null) ? null : eclass.getEPackage();
 	}
 
-	protected IRepairAction computeSuggestedAction(EPackage schema) {
+	protected IRepairAction computeSuggestedAction(IAdaptable schema) {
 		// Try options in our preferred order
 		IRepairAction result = getRepairAction(schema, IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION);
+
 		if (result.isNull()) {
-			// This one is always available
-			result = getRepairAction(schema, IRepairAction.Kind.NO_OP);
+			IStereotypeOrphanGroup orphanGroup = AdapterUtils.adapt(schema, IStereotypeOrphanGroup.class, null);
+			if (orphanGroup != null) {
+				// Prefer to just delete orphans
+				result = getRepairAction(schema, IRepairAction.Kind.DELETE);
+			}
+
+			if (result.isNull()) {
+				// This one is always available
+				result = getRepairAction(schema, IRepairAction.Kind.NO_OP);
+			}
 		}
 
 		return result;
 	}
 
-	protected Map<IRepairAction.Kind, IRepairAction> computeFeasibleRepairActions(EPackage schema) {
+	protected Map<IRepairAction.Kind, IRepairAction> computeFeasibleRepairActions(IAdaptable schema) {
 		Map<IRepairAction.Kind, IRepairAction> result = Maps.newEnumMap(IRepairAction.Kind.class);
 
 		// Always available
@@ -224,15 +261,21 @@ public class ZombieStereotypesDescriptor {
 		result.put(DeleteAction.INSTANCE.kind(), DeleteAction.INSTANCE);
 		result.put(CreateMarkersAction.INSTANCE.kind(), CreateMarkersAction.INSTANCE);
 
-		IRepairAction applyProfile;
-		Collection<Package> packages = getContextPackages(schema);
-		Profile profile = findProfile(schema);
-		if (profile == null) {
-			applyProfile = new ApplyProfileAction(resource, packages, curry(schema, dynamicProfileSupplier));
+		IStereotypeOrphanGroup orphanGroup = AdapterUtils.adapt(schema, IStereotypeOrphanGroup.class, null);
+		if (orphanGroup != null) {
+			// Easy case. Nothing more to add!
 		} else {
-			applyProfile = new ApplyProfileAction(resource, packages, profile, labelProviderService);
+			EPackage ePackage = AdapterUtils.adapt(schema, EPackage.class, null);
+			IRepairAction applyProfile;
+			Collection<Package> packages = getContextPackages(ePackage);
+			Profile profile = findProfile(ePackage);
+			if (profile == null) {
+				applyProfile = new ApplyProfileAction(resource, packages, curry(ePackage, dynamicProfileSupplier));
+			} else {
+				applyProfile = new ApplyProfileAction(resource, packages, profile, labelProviderService);
+			}
+			result.put(applyProfile.kind(), applyProfile);
 		}
-		result.put(applyProfile.kind(), applyProfile);
 
 		return result;
 	}
@@ -259,21 +302,34 @@ public class ZombieStereotypesDescriptor {
 		return Suppliers.compose(function, Suppliers.ofInstance(input));
 	}
 
-	public IRepairAction getSuggestedRepairAction(EPackage schema) {
+	public IRepairAction getSuggestedRepairAction(IAdaptable schema) {
 		return suggestedActions.get(schema);
 	}
 
-	public IRepairAction getRepairAction(EPackage schema, IRepairAction.Kind kind) {
+	/**
+	 * Obtains a repair action of the specified {@code kind} for a broken {@code schema}, if it is available.
+	 * 
+	 * @param schema
+	 *            a schema to repair
+	 * @param kind
+	 *            the kind of repair action to obtain
+	 * @return the requested {@code kind} of action, or {@link IRepairAction#NULL} if the requested {@code kind} is not available for this {@code schema}
+	 */
+	public IRepairAction getRepairAction(IAdaptable schema, IRepairAction.Kind kind) {
 		Map<IRepairAction.Kind, IRepairAction> available = repairActions.get(schema);
 		if (available == null) {
 			available = computeFeasibleRepairActions(schema);
 			repairActions.put(schema, available);
 		}
 
-		return available.get(kind);
+		IRepairAction result = available.get(kind);
+		if (result == null) {
+			result = IRepairAction.NULL;
+		}
+		return result;
 	}
 
-	public List<IRepairAction> getAvailableRepairActions(EPackage schema) {
+	public List<IRepairAction> getAvailableRepairActions(IAdaptable schema) {
 		Map<IRepairAction.Kind, IRepairAction> actions = repairActions.get(schema);
 		return (actions == null) ? Collections.<IRepairAction> emptyList() : ImmutableList.copyOf(Iterables.filter(actions.values(), IRepairAction.NOT_NULL));
 	}
@@ -300,8 +356,8 @@ public class ZombieStereotypesDescriptor {
 		} else {
 			Element base = getBaseElement(stereotypeApplication);
 			if (base == null) {
-				// Can't make any inference about package context
-				result = new ProfileContext(root, schema);
+				// These are orphans
+				result = new ProfileContext(schema);
 			} else {
 				// Find the profile application
 				result = null;
@@ -453,7 +509,7 @@ public class ZombieStereotypesDescriptor {
 	// Nested types
 	//
 
-	static class ProfileContext {
+	static class ProfileContext implements IAdaptable {
 
 		private final Package applyingPackage;
 
@@ -471,6 +527,18 @@ public class ZombieStereotypesDescriptor {
 			this(profileApplication.getApplyingPackage(), schema);
 		}
 
+		/**
+		 * Creates a descriptor for a group of orphaned stereotype instances of the given {@code schema}.
+		 * An orphan group is distinct from the stereotype instances of the same schema that are attached
+		 * to base UML elements, because those can be properly managed by the UML2 API.
+		 *
+		 * @param schema
+		 *            the XML/Ecore schema of the orphaned stereotype instances
+		 */
+		ProfileContext(EPackage schema) {
+			this(null, schema);
+		}
+
 		private void init() {
 			String schemaHash = (schema == null) ? null : schema.getNsURI();
 			hash = Objects.hashCode(applyingPackage, schemaHash);
@@ -482,6 +550,37 @@ public class ZombieStereotypesDescriptor {
 
 		public EPackage getSchema() {
 			return schema;
+		}
+
+		public IAdaptable getSchemaAdaptable() {
+			return isOrphanGroup() ? this : new EPackageAdapter(getSchema());
+		}
+
+		/**
+		 * Queries whether I represent a group of orphaned stereotype instances.
+		 * An orphan group is distinct from the stereotype instances of the same schema that are attached
+		 * to base UML elements, because those can be properly managed by the UML2 API.
+		 *
+		 * @return whether I represent orphaned stereotype instances of some schema
+		 */
+		public boolean isOrphanGroup() {
+			return getApplyingPackage() == null;
+		}
+
+		public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
+			Object result = null;
+
+			if (adapter == EPackage.class) {
+				result = getSchema();
+			} else if ((adapter == IStereotypeOrphanGroup.class) && isOrphanGroup()) {
+				result = new IStereotypeOrphanGroup() {
+					public EPackage getSchema() {
+						return ProfileContext.this.getSchema();
+					}
+				};
+			}
+
+			return result;
 		}
 
 		@Override
@@ -503,6 +602,30 @@ public class ZombieStereotypesDescriptor {
 		@Override
 		public int hashCode() {
 			return hash;
+		}
+	}
+
+	private static final class EPackageAdapter implements IAdaptable {
+		private final EPackage ePackage;
+
+		EPackageAdapter(EPackage ePackage) {
+			super();
+
+			this.ePackage = ePackage;
+		}
+
+		public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
+			return (adapter == EPackage.class) ? ePackage : null;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			return (obj instanceof EPackageAdapter) && (((EPackageAdapter) obj).ePackage == ePackage);
+		}
+
+		@Override
+		public int hashCode() {
+			return ePackage.hashCode();
 		}
 	}
 }

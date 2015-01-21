@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014, 2015 CEA, Christian W. Damus, and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Christian W. Damus - bug 436666
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -24,6 +25,7 @@ import static org.junit.Assert.fail;
 import java.util.Arrays;
 import java.util.Collection;
 
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.URI;
@@ -33,6 +35,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
@@ -95,9 +98,10 @@ public class StereotypeApplicationRepairSnippetTest extends AbstractPapyrusTest 
 	public void wrongProfileVersion() {
 		assertThat("Should have found zombie stereotypes", zombies, notNullValue());
 
-		EPackage schema = getOnlyZombieSchema();
-		assertThat("Did not match schema to loaded profile", EcoreUtil.getRootContainer(schema), is((EObject)profile));
-		assertThat("EPackage is an unknown schema", getExtendedMetadata().demandedPackages(), not(hasItem(schema)));
+		IAdaptable schema = getOnlyZombieSchema();
+		EPackage ePackage = AdapterUtils.adapt(schema, EPackage.class).get();
+		assertThat("Did not match schema to loaded profile", EcoreUtil.getRootContainer(ePackage), is((EObject) profile));
+		assertThat("EPackage is an unknown schema", getExtendedMetadata().demandedPackages(), not(hasItem(ePackage)));
 
 		IRepairAction action = zombies.getSuggestedRepairAction(schema);
 		assertThat("Wrong suggested repair action", action.kind(), is(IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION));
@@ -115,9 +119,10 @@ public class StereotypeApplicationRepairSnippetTest extends AbstractPapyrusTest 
 	public void missingProfileApplication() {
 		assertThat("Should have found zombie stereotypes", zombies, notNullValue());
 
-		EPackage schema = getOnlyZombieSchema();
-		assertThat("Did not match schema to loaded profile", EcoreUtil.getRootContainer(schema), is((EObject)profile));
-		assertThat("EPackage is an unknown schema", getExtendedMetadata().demandedPackages(), not(hasItem(schema)));
+		IAdaptable schema = getOnlyZombieSchema();
+		EPackage ePackage = AdapterUtils.adapt(schema, EPackage.class).get();
+		assertThat("Did not match schema to loaded profile", EcoreUtil.getRootContainer(ePackage), is((EObject) profile));
+		assertThat("EPackage is an unknown schema", getExtendedMetadata().demandedPackages(), not(hasItem(ePackage)));
 
 		IRepairAction action = zombies.getSuggestedRepairAction(schema);
 		assertThat("Wrong suggested repair action", action.kind(), is(IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION));
@@ -135,8 +140,9 @@ public class StereotypeApplicationRepairSnippetTest extends AbstractPapyrusTest 
 	public void missingSchema() {
 		assertThat("Should have found zombie stereotypes", zombies, notNullValue());
 
-		EPackage schema = getOnlyZombieSchema();
-		assertThat("EPackage is not an unknown schema", getExtendedMetadata().demandedPackages(), hasItem(schema));
+		IAdaptable schema = getOnlyZombieSchema();
+		EPackage ePackage = AdapterUtils.adapt(schema, EPackage.class).get();
+		assertThat("EPackage is not an unknown schema", getExtendedMetadata().demandedPackages(), hasItem(ePackage));
 
 		IRepairAction action = zombies.getSuggestedRepairAction(schema);
 		assertThat("Wrong suggested repair action", action.kind(), is(IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION));
@@ -153,7 +159,7 @@ public class StereotypeApplicationRepairSnippetTest extends AbstractPapyrusTest 
 	public void deleteStereotypes() {
 		assertThat("Should have found zombie stereotypes", zombies, notNullValue());
 
-		EPackage schema = getOnlyZombieSchema();
+		IAdaptable schema = getOnlyZombieSchema();
 
 		IRepairAction action = zombies.getRepairAction(schema, IRepairAction.Kind.DELETE);
 		assertThat("Wrong repair action", action.kind(), is(IRepairAction.Kind.DELETE));
@@ -172,14 +178,14 @@ public class StereotypeApplicationRepairSnippetTest extends AbstractPapyrusTest 
 		URI profileURI = URI.createPlatformPluginURI("org.eclipse.papyrus.uml.modelrepair.tests/resources/profile/myprofile.profile.uml", true);
 		profile = UML2Util.load(modelSet.getResourceSet(), profileURI, UMLPackage.Literals.PROFILE);
 		stereotype = profile.getOwnedStereotype("Stereo");
-		class1 = (Class)modelSet.getModel().getOwnedType("Class1");
+		class1 = (Class) modelSet.getModel().getOwnedType("Class1");
 
 		fixture = houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(Functions.constant(profile)), "dispose", modelSet.getResourceSet());
 		fixture.start(modelSet.getResourceSet());
 		houseKeeper.setField("zombies", fixture.getZombieStereotypes(modelSet.getModelResource(), modelSet.getModel()));
 	}
 
-	void repair(final EPackage schema, final IRepairAction action) {
+	void repair(final IAdaptable schema, final IRepairAction action) {
 		try {
 			TransactionHelper.run(modelSet.getEditingDomain(), new Runnable() {
 
@@ -194,8 +200,8 @@ public class StereotypeApplicationRepairSnippetTest extends AbstractPapyrusTest 
 		}
 	}
 
-	EPackage getOnlyZombieSchema() {
-		Collection<? extends EPackage> schemata = zombies.getZombiePackages();
+	IAdaptable getOnlyZombieSchema() {
+		Collection<? extends IAdaptable> schemata = zombies.getZombieSchemas();
 		assertThat("Wrong number of zombie packages", schemata.size(), is(1));
 		return schemata.iterator().next();
 	}
@@ -207,41 +213,41 @@ public class StereotypeApplicationRepairSnippetTest extends AbstractPapyrusTest 
 
 		// Verify an Enumeration value stored as an XML attribute
 		Object value = application.eGet(eclass.getEStructuralFeature("alertLevel"));
-		assertThat("Alert level is not yellow", (value instanceof Enumerator) && ((Enumerator)value).getLiteral().equals("yellow"), is(true));
+		assertThat("Alert level is not yellow", (value instanceof Enumerator) && ((Enumerator) value).getLiteral().equals("yellow"), is(true));
 
 		// Verify a multi-valued attribute stored as XML elements
 		value = application.eGet(eclass.getEStructuralFeature("tag"));
-		assertThat("Wrong tags found", value, is((Object)Arrays.asList("p2", "silver")));
+		assertThat("Wrong tags found", value, is((Object) Arrays.asList("p2", "silver")));
 
 		// Verify a reference value stored as an XML IDREFS attribute
 		value = application.eGet(eclass.getEStructuralFeature("appliesTo"));
-		assertThat("Wrong appliesTo found", value, is((Object)class1.getOwnedAttributes()));
+		assertThat("Wrong appliesTo found", value, is((Object) class1.getOwnedAttributes()));
 
 		// Verify a contained EObject that is a complex DataType value
 		value = application.eGet(eclass.getEStructuralFeature("name"));
 		{
 			assertThat("Value is not an EList", value, instanceOf(EList.class));
-			EList<?> list = (EList<?>)value;
+			EList<?> list = (EList<?>) value;
 
 			assertThat("List has wrong number of elements", list.size(), is(1));
 			value = list.get(0);
 
 			assertThat("Value is not an EObject", value, instanceOf(EObject.class));
-			EObject name = (EObject)value;
+			EObject name = (EObject) value;
 			EClass dataType = name.eClass();
 
-			assertThat("Wrong firstName", name.eGet(dataType.getEStructuralFeature("firstName")), is((Object)"Christian"));
-			assertThat("Wrong lastName", name.eGet(dataType.getEStructuralFeature("lastName")), is((Object)"Damus"));
-			assertThat("Wrong initials", name.eGet(dataType.getEStructuralFeature("initials")), is((Object)Arrays.asList("W")));
+			assertThat("Wrong firstName", name.eGet(dataType.getEStructuralFeature("firstName")), is((Object) "Christian"));
+			assertThat("Wrong lastName", name.eGet(dataType.getEStructuralFeature("lastName")), is((Object) "Damus"));
+			assertThat("Wrong initials", name.eGet(dataType.getEStructuralFeature("initials")), is((Object) Arrays.asList("W")));
 		}
 	}
 
 	ExtendedMetaData getExtendedMetadata() {
 		ExtendedMetaData result = ExtendedMetaData.INSTANCE;
 
-		Object option = ((XMLResource)modelSet.getModelResource()).getDefaultSaveOptions().get(XMLResource.OPTION_EXTENDED_META_DATA);
-		if(option instanceof ExtendedMetaData) {
-			result = (ExtendedMetaData)option;
+		Object option = ((XMLResource) modelSet.getModelResource()).getDefaultSaveOptions().get(XMLResource.OPTION_EXTENDED_META_DATA);
+		if (option instanceof ExtendedMetaData) {
+			result = (ExtendedMetaData) option;
 		}
 
 		return result;

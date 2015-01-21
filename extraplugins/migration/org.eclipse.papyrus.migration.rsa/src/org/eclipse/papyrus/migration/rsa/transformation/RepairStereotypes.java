@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2014 CEA LIST.
+ * Copyright (c) 2014, 2015 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus - bug 436666
  *****************************************************************************/
 package org.eclipse.papyrus.migration.rsa.transformation;
 
@@ -17,6 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -148,7 +150,7 @@ public class RepairStereotypes {
 			try {
 				final BasicDiagnostic diagnostics = new BasicDiagnostic(Activator.PLUGIN_ID, 0, "Problems in repairing stereotypes", null);
 
-				for (EPackage packageToRepair : descriptor.getZombiePackages()) {
+				for (IAdaptable packageToRepair : descriptor.getZombieSchemas()) {
 					IRepairAction action = descriptor.getRepairAction(packageToRepair, IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION);
 					descriptor.repair(packageToRepair, action, diagnostics, new NullProgressMonitor());
 				}

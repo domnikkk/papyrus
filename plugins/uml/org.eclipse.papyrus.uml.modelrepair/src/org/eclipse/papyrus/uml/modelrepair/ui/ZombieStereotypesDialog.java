@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, 2014 CEA, Christian W. Damus, and others.
+ * Copyright (c) 2013, 2015 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -12,6 +12,7 @@
  *   Christian W. Damus - bug 451338
  *   Christian W. Damus - bug 451557
  *   Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - bug 454997
+ *   Christian W. Damus - bug 436666
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.ui;
@@ -25,6 +26,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -59,8 +61,10 @@ import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.jface.window.IShellProvider;
 import org.eclipse.jface.window.SameShellProvider;
 import org.eclipse.jface.wizard.ProgressMonitorPart;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
@@ -68,6 +72,7 @@ import org.eclipse.papyrus.infra.services.markerlistener.dialogs.DiagnosticDialo
 import org.eclipse.papyrus.infra.tools.util.UIUtil;
 import org.eclipse.papyrus.uml.modelrepair.Activator;
 import org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.IRepairAction;
+import org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.IStereotypeOrphanGroup;
 import org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.ZombieStereotypesDescriptor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Cursor;
@@ -217,7 +222,7 @@ public class ZombieStereotypesDialog extends TrayDialog {
 			missingSchemas = Lists.newArrayList();
 
 			for (ZombieStereotypesDescriptor next : zombieDescriptors) {
-				for (EPackage schema : next.getZombiePackages()) {
+				for (IAdaptable schema : next.getZombieSchemas()) {
 					missingSchemas.add(new MissingSchema(schema, next));
 				}
 			}
@@ -434,8 +439,14 @@ public class ZombieStereotypesDialog extends TrayDialog {
 		}
 
 		void updateAffected(ViewerCell cell) {
-			int count = ((MissingSchema) cell.getElement()).getAffectedCount();
-			cell.setText(Integer.toString(count));
+			MissingSchema schema = (MissingSchema) cell.getElement();
+			int count = schema.getAffectedCount();
+
+			String text = Integer.toString(count);
+			if (schema.isOrphanGroup()) {
+				text = NLS.bind("{0} dangling stereotypes", text);
+			}
+			cell.setText(text);
 		}
 
 		void updateSchema(ViewerCell cell) {
@@ -453,16 +464,16 @@ public class ZombieStereotypesDialog extends TrayDialog {
 
 	private class MissingSchema {
 
-		private final EPackage ePackage;
+		private final IAdaptable schema;
 
 		private final ZombieStereotypesDescriptor descriptor;
 
 		private IRepairAction selectedAction;
 
-		MissingSchema(EPackage ePackage, ZombieStereotypesDescriptor descriptor) {
-			this.ePackage = ePackage;
+		MissingSchema(IAdaptable schema, ZombieStereotypesDescriptor descriptor) {
+			this.schema = schema;
 			this.descriptor = descriptor;
-			this.selectedAction = descriptor.getSuggestedRepairAction(ePackage);
+			this.selectedAction = descriptor.getSuggestedRepairAction(schema);
 		}
 
 		void initialiseRepairAction(Map<String, Profile> brokenNsProfileMap) {
@@ -477,15 +488,19 @@ public class ZombieStereotypesDialog extends TrayDialog {
 		}
 
 		int getAffectedCount() {
-			return descriptor.getZombieCount(getSchema());
+			return descriptor.getZombieCount(schema);
 		}
 
 		EPackage getSchema() {
-			return ePackage;
+			return AdapterUtils.adapt(schema, EPackage.class, null);
+		}
+
+		boolean isOrphanGroup() {
+			return AdapterUtils.adapt(schema, IStereotypeOrphanGroup.class).isPresent();
 		}
 
 		List<IRepairAction> getRepairActions() {
-			return descriptor.getAvailableRepairActions(ePackage);
+			return descriptor.getAvailableRepairActions(schema);
 		}
 
 		IRepairAction getSelectedRepairAction() {
@@ -497,7 +512,7 @@ public class ZombieStereotypesDialog extends TrayDialog {
 		}
 
 		boolean apply(DiagnosticChain diagnostics, IProgressMonitor monitor) {
-			return descriptor.repair(getSchema(), getSelectedRepairAction(), diagnostics, monitor);
+			return descriptor.repair(schema, getSelectedRepairAction(), diagnostics, monitor);
 		}
 	}
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA, Christian W. Damus, and others.
+ * Copyright (c) 2014, 2015 CEA, Christian W. Damus, and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,7 @@
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
  *   Christian W. Damus - bug 399859
+ *   Christian W. Damus - bug 436666
  *
  */
 package org.eclipse.papyrus.uml.decoratormodel.tests;
@@ -22,12 +23,14 @@ import static org.junit.Assert.fail;
 
 import java.util.Collection;
 
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
 import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.rules.PluginResource;
@@ -69,9 +72,10 @@ public class StereotypeApplicationRepairTest extends AbstractProfileExternalizat
 	public void wrongProfileVersion() {
 		assertThat("Should have found zombie stereotypes", zombies, notNullValue());
 
-		EPackage schema = getOnlyZombieSchema();
-		assertThat("Did not match schema to loaded profile", EcoreUtil.getRootContainer(schema), is((EObject) getTestProfile()));
-		assertThat("EPackage is an unknown schema", getExtendedMetadata().demandedPackages(), not(hasItem(schema)));
+		IAdaptable schema = getOnlyZombieSchema();
+		EPackage ePackage = AdapterUtils.adapt(schema, EPackage.class).get();
+		assertThat("Did not match schema to loaded profile", EcoreUtil.getRootContainer(ePackage), is((EObject) getTestProfile()));
+		assertThat("EPackage is an unknown schema", getExtendedMetadata().demandedPackages(), not(hasItem(ePackage)));
 
 		IRepairAction action = zombies.getSuggestedRepairAction(schema);
 		assertThat("Wrong suggested repair action", action.kind(), is(IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION));
@@ -89,9 +93,10 @@ public class StereotypeApplicationRepairTest extends AbstractProfileExternalizat
 	public void missingProfileApplication() {
 		assertThat("Should have found zombie stereotypes", zombies, notNullValue());
 
-		EPackage schema = getOnlyZombieSchema();
-		assertThat("Did not match schema to loaded profile", EcoreUtil.getRootContainer(schema), is((EObject) getTestProfile()));
-		assertThat("EPackage is an unknown schema", getExtendedMetadata().demandedPackages(), not(hasItem(schema)));
+		IAdaptable schema = getOnlyZombieSchema();
+		EPackage ePackage = AdapterUtils.adapt(schema, EPackage.class).get();
+		assertThat("Did not match schema to loaded profile", EcoreUtil.getRootContainer(ePackage), is((EObject) getTestProfile()));
+		assertThat("EPackage is an unknown schema", getExtendedMetadata().demandedPackages(), not(hasItem(ePackage)));
 
 		IRepairAction action = zombies.getSuggestedRepairAction(schema);
 		assertThat("Wrong suggested repair action", action.kind(), is(IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION));
@@ -109,8 +114,9 @@ public class StereotypeApplicationRepairTest extends AbstractProfileExternalizat
 	public void missingSchema() {
 		assertThat("Should have found zombie stereotypes", zombies, notNullValue());
 
-		EPackage schema = getOnlyZombieSchema();
-		assertThat("EPackage is not an unknown schema", getExtendedMetadata().demandedPackages(), hasItem(schema));
+		IAdaptable schema = getOnlyZombieSchema();
+		EPackage ePackage = AdapterUtils.adapt(schema, EPackage.class).get();
+		assertThat("EPackage is not an unknown schema", getExtendedMetadata().demandedPackages(), hasItem(ePackage));
 
 		IRepairAction action = zombies.getSuggestedRepairAction(schema);
 		assertThat("Wrong suggested repair action", action.kind(), is(IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION));
@@ -135,7 +141,7 @@ public class StereotypeApplicationRepairTest extends AbstractProfileExternalizat
 		houseKeeper.setField("zombies", snippet.getZombieStereotypes(decoratorModelResource));
 	}
 
-	void repair(final EPackage schema, final IRepairAction action) {
+	void repair(final IAdaptable schema, final IRepairAction action) {
 		try {
 			TransactionHelper.run(modelSet.getEditingDomain(), new Runnable() {
 
@@ -150,8 +156,8 @@ public class StereotypeApplicationRepairTest extends AbstractProfileExternalizat
 		}
 	}
 
-	EPackage getOnlyZombieSchema() {
-		Collection<? extends EPackage> schemata = zombies.getZombiePackages();
+	IAdaptable getOnlyZombieSchema() {
+		Collection<? extends IAdaptable> schemata = zombies.getZombieSchemas();
 		assertThat("Wrong number of zombie packages", schemata.size(), is(1));
 		return schemata.iterator().next();
 	}
