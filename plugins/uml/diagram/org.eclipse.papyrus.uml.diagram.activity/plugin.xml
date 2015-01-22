@@ -64,20 +64,6 @@
             label="UML Activity Diagram">
       </creationCommand>
    </extension>
-   	
-
-   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders">
-		<modelingAssistantProvider
-			class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLModelingAssistantProvider">
-			<Priority 
-				name="Lowest">
-			</Priority>
-		</modelingAssistantProvider>
-   </extension>
-
-	<?gmfgen generated="true"?>
-
-	<?gmfgen generated="true"?>
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
@@ -180,7 +166,7 @@
       <viewProvider class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="PapyrusUMLActivityDiagram"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002,3003,3004,3005,3006,3007,3015,3016,3013,3014,3008,3017,3018,3019,3020,3010,3021,3022,3023,3024,3025,3026,3027,3034,3035,3036,3037,3032,3033,3011,3012,3038,3039,3040,3041,3078,3042,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3061,3062,3059,3063,3064,3076,3077,3069,3070,3074,3075,3071,3109,3110,3111,3073,3065,3105,3067,3068,3080,3081,3084,3083,3086,3087,3085,3088,3089,3090,3091,3092,3093,3094,3095,3096,3097,3098,3099,3100,3101,3102,3103,3104,3112"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002,3003,3004,3005,3006,3007,3015,3016,3013,3014,3008,3017,3018,3019,3020,3010,3021,3022,3023,3024,3025,3026,3027,3034,3035,3036,3037,3032,3033,3011,3012,3038,3039,3040,3041,3078,3042,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3061,3062,3059,3063,3064,3076,3077,3069,3070,3074,3075,3071,3109,3110,3111,3073,3065,3105,3067,3068,3080,3081,3084,3083,3086,3087,3085,3088,3089,3090,3091,3092,3093,3094,3095,3096,3097,3098,3099,3100,3101,3102,3103,3104,3112,3113,3125,3132,3145,3158,3133,3146,3159"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005,4006,4007"/>
       </viewProvider>
    </extension>
@@ -193,13 +179,13 @@
             <method name="getType()" value="PapyrusUMLActivityDiagram"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,3001,3002,3003,3004,3005,3006,3007,3015,3016,3013,3014,3008,3017,3018,3019,3020,3010,3021,3022,3023,3024,3025,3026,3027,3034,3035,3036,3037,3032,3033,3011,3012,3038,3039,3040,3041,3078,3042,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3061,3062,3059,3063,3064,3076,3077,3069,3070,3074,3075,3071,3109,3110,3111,3073,3065,3105,3067,3068,3080,3081,3084,3083,3086,3087,3085,3088,3089,3090,3091,3092,3093,3094,3095,3096,3097,3098,3099,3100,3101,3102,3103,3104,3112"/>
+            <method name="getType()" value="2001,3001,3002,3003,3004,3005,3006,3007,3015,3016,3013,3014,3008,3017,3018,3019,3020,3010,3021,3022,3023,3024,3025,3026,3027,3034,3035,3036,3037,3032,3033,3011,3012,3038,3039,3040,3041,3078,3042,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3061,3062,3059,3063,3064,3076,3077,3069,3070,3074,3075,3071,3109,3110,3111,3073,3065,3105,3067,3068,3080,3081,3084,3083,3086,3087,3085,3088,3089,3090,3091,3092,3093,3094,3095,3096,3097,3098,3099,3100,3101,3102,3103,3104,3112,3113,3125,3132,3145,3158,3133,3146,3159"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4002,4003,4004,4005,4006,4007"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5002,6034,5080,6033,5081,6035,5082,5003,6028,5011,5024,5083,5012,5025,5084,5009,5085,5010,5086,5004,6029,5013,5026,5087,5014,5027,5088,5015,5089,5016,5090,5006,6020,5017,5028,5091,5018,5029,5092,5019,5093,5020,5094,5021,5030,5095,5022,5031,5096,5023,5097,5038,5130,5039,5131,5040,5132,5041,5133,5036,5134,5037,5135,5007,5136,5008,5137,6036,5043,5098,6037,5099,6038,5100,6039,5042,5101,5127,5128,6031,5059,6027,5049,5050,5102,5051,5052,5103,5053,5104,5054,5055,5105,5056,5057,5106,5058,5107,5060,6032,5061,5062,5108,5063,5064,5109,5065,5110,5072,5073,5111,5074,5075,5112,5076,5113,5071,5078,5079,5115,6040,5077,5114,5126,6026,5124,5125,5119,5120,5121,5184,5185,5186,5183,5187,5188,5123,5117,5178,5179,5118,6016,5138,5139,6025,5144,5145,5142,5143,5148,6024,5146,5147,5129,5153,6023,5149,5150,5151,5152,5160,6019,5154,5155,5156,5157,5158,5159,5163,6022,5161,5162,5166,6021,5164,5165,5171,6018,5167,5168,5169,5170,5175,6017,5172,5173,5174,5176,5177,6030,5189,5190"/>
+            <method name="getType()" value="5001,5002,6034,5080,6033,5081,6035,5082,5003,6028,5011,5024,5083,5012,5025,5084,5009,5085,5010,5086,5004,6029,5013,5026,5087,5014,5027,5088,5015,5089,5016,5090,5006,6020,5017,5028,5091,5018,5029,5092,5019,5093,5020,5094,5021,5030,5095,5022,5031,5096,5023,5097,5038,5130,5039,5131,5040,5132,5041,5133,5036,5134,5037,5135,5007,5136,5008,5137,6036,5043,5098,6037,5099,6038,5100,6039,5042,5101,5127,5128,6031,5059,6027,5049,5050,5102,5051,5052,5103,5053,5104,5054,5055,5105,5056,5057,5106,5058,5107,5060,6032,5061,5062,5108,5063,5064,5109,5065,5110,5072,5073,5111,5074,5075,5112,5076,5113,5071,5078,5079,5115,6040,5077,5114,5126,6026,5124,5125,5119,5120,5121,5184,5185,5186,5183,5187,5188,5123,5117,5178,5179,5118,6016,5138,5139,6025,5144,5145,5142,5143,5148,6024,5146,5147,5129,5153,6023,5149,5150,5151,5152,5160,6019,5154,5155,5156,5157,5158,5159,5163,6022,5161,5162,5166,6021,5164,5165,5171,6018,5167,5168,5169,5170,5175,6017,5172,5173,5174,5176,5177,6030,5189,5190,5191,5394,5203,5204,5217,5218,5245,5246,5247,5263,5264,5265,5219,5220,5248,5249,5250,5266,5267,5268"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7001,7002,7003,7004,7008,7009,7010,7012,7005,7006,7007,7014,7015,7016,7013"/>
@@ -1080,6 +1066,78 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
          <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.StartObjectBehaviorAction_3113"
+               name="%metatype.name.StartObjectBehaviorAction_3113"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.StartObjectBehaviorAction"/>
+            <param name="semanticHint" value="3113"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.OutputPin_3125"
+               name="%metatype.name.OutputPin_3125"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.OutputPin"/>
+            <param name="semanticHint" value="3125"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.InputPin_3132"
+               name="%metatype.name.InputPin_3132"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.InputPin"/>
+            <param name="semanticHint" value="3132"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.ValuePin_3145"
+               name="%metatype.name.ValuePin_3145"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.ValuePin"/>
+            <param name="semanticHint" value="3145"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3158"
+               name="%metatype.name.ActionInputPin_3158"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.ActionInputPin"/>
+            <param name="semanticHint" value="3158"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.InputPin_3133"
+               name="%metatype.name.InputPin_3133"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.InputPin"/>
+            <param name="semanticHint" value="3133"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.ValuePin_3146"
+               name="%metatype.name.ValuePin_3146"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.ValuePin"/>
+            <param name="semanticHint" value="3146"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3159"
+               name="%metatype.name.ActionInputPin_3159"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.ActionInputPin"/>
+            <param name="semanticHint" value="3159"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
                id="org.eclipse.papyrus.uml.diagram.activity.ActionLocalPrecondition_4001"
                name="%metatype.name.ActionLocalPrecondition_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
@@ -1243,6 +1301,14 @@
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.InputPin_3103"/>
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.CentralBufferNode_3104"/>
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.Constraint_3112"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.StartObjectBehaviorAction_3113"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.OutputPin_3125"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.InputPin_3132"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ValuePin_3145"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3158"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.InputPin_3133"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ValuePin_3146"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3159"/>
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ActionLocalPrecondition_4001"/>
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ActionLocalPostcondition_4002"/>
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ObjectFlow_4003"/>
@@ -2941,6 +3007,16 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 					</entry>
 				<entry
 				      defineOnly="true"
+				      description="Create a Start Object Behaviour Action"
+				      id="createStartObjectBehaviourAction6CreationTool"
+				      kind="tool"
+				      label="Start Object Behaviour Action "
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StartObjectBehaviorAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StartObjectBehaviorAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
 				      description="Create a Create Object Action"
 				      id="createCreateObjectAction1CreationTool"
 				      kind="tool"
@@ -3565,6 +3641,10 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createSendSignalAction5CreationTool"
+				path="/createNodes1Group/InvocationActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createStartObjectBehaviourAction6CreationTool"
 				path="/createNodes1Group/InvocationActionsGroup">
 		  </predefinedEntry>
 		<entry

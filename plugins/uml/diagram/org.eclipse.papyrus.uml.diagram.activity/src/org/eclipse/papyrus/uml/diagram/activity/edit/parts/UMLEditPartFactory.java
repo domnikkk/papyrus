@@ -621,6 +621,62 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new ConstraintNameEditPartCN(view);
 			case ConstraintBodyEditPartCN.VISUAL_ID:
 				return new ConstraintBodyEditPartCN(view);
+			case StartObjectBehavoiurActionEditPart.VISUAL_ID:
+				return new StartObjectBehavoiurActionEditPart(view);
+			case StartObjectBehaviorActionNameEditPart.VISUAL_ID:
+				return new StartObjectBehaviorActionNameEditPart(view);
+			case StartObjectBehaviorActionFloatingNameEditPart.VISUAL_ID:
+				return new StartObjectBehaviorActionFloatingNameEditPart(view);
+			case OutputPinInStartObjectBehaviorActionEditPart.VISUAL_ID:
+				return new OutputPinInStartObjectBehaviorActionEditPart(view);
+			case OutputPinInStartObjectBehaviorActionLabelEditPart.VISUAL_ID:
+				return new OutputPinInStartObjectBehaviorActionLabelEditPart(view);
+			case OutputPinInStartObjectBehaviorActionAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new OutputPinInStartObjectBehaviorActionAppliedStereotypeLabelEditPart(view);
+			case InputPinInStartObjectBehaviorActionAsObjectEditPart.VISUAL_ID:
+				return new InputPinInStartObjectBehaviorActionAsObjectEditPart(view);
+			case InputPinInStartObjectBehaviorActionAsObjectLabelEditPart.VISUAL_ID:
+				return new InputPinInStartObjectBehaviorActionAsObjectLabelEditPart(view);
+			case InputPinInStartObjectBehaviorActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new InputPinInStartObjectBehaviorActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case ValuePinInStartObjectBehaviorActionAsObjectEditPart.VISUAL_ID:
+				return new ValuePinInStartObjectBehaviorActionAsObjectEditPart(view);
+			case ValuePinInStartObjectBehaviorActionAsObjectLabelEditPart.VISUAL_ID:
+				return new ValuePinInStartObjectBehaviorActionAsObjectLabelEditPart(view);
+			case ValuePinInStartObjectBehaviorActionAsObjectValueEditPart.VISUAL_ID:
+				return new ValuePinInStartObjectBehaviorActionAsObjectValueEditPart(view);
+			case ValuePinInStartObjectBehaviorActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ValuePinInStartObjectBehaviorActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case ActionPinInStartObjectBehaviorActionAsObjectEditPart.VISUAL_ID:
+				return new ActionPinInStartObjectBehaviorActionAsObjectEditPart(view);
+			case ActionPinInStartObjectBehaviorActionAsObjectLabelEditPart.VISUAL_ID:
+				return new ActionPinInStartObjectBehaviorActionAsObjectLabelEditPart(view);
+			case ActionPinInStartObjectBehaviorActionAsObjectValueEditPart.VISUAL_ID:
+				return new ActionPinInStartObjectBehaviorActionAsObjectValueEditPart(view);
+			case ActionPinInStartObjectBehaviorActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ActionPinInStartObjectBehaviorActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case InputPinInStartObjectBehaviorActionAsArgumentEditPart.VISUAL_ID:
+				return new InputPinInStartObjectBehaviorActionAsArgumentEditPart(view);
+			case InputPinInStartObjectBehaviorActionAsArgumentLabelEditPart.VISUAL_ID:
+				return new InputPinInStartObjectBehaviorActionAsArgumentLabelEditPart(view);
+			case InputPinInStartObjectBehaviorActionAsArgumentAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new InputPinInStartObjectBehaviorActionAsArgumentAppliedStereotypeLabelEditPart(view);
+			case ValuePinInStartObjectBehaviorActionAsArgumentEditPart.VISUAL_ID:
+				return new ValuePinInStartObjectBehaviorActionAsArgumentEditPart(view);
+			case ValuePinInStartObjectBehaviorActionAsArgumentLabelEditPart.VISUAL_ID:
+				return new ValuePinInStartObjectBehaviorActionAsArgumentLabelEditPart(view);
+			case ValuePinInStartObjectBehaviorActionAsArgumentValueEditPart.VISUAL_ID:
+				return new ValuePinInStartObjectBehaviorActionAsArgumentValueEditPart(view);
+			case ValuePinInStartObjectBehaviorActionAsArgumentAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ValuePinInStartObjectBehaviorActionAsArgumentAppliedStereotypeLabelEditPart(view);
+			case ActionPinInStartObjectBehaviorActionAsArgumentEditPart.VISUAL_ID:
+				return new ActionPinInStartObjectBehaviorActionAsArgumentEditPart(view);
+			case ActionPinInStartObjectBehaviorActionAsArgumentLabelEditPart.VISUAL_ID:
+				return new ActionPinInStartObjectBehaviorActionAsArgumentLabelEditPart(view);
+			case ActionPinInStartObjectBehaviorActionAsArgumentValueEditPart.VISUAL_ID:
+				return new ActionPinInStartObjectBehaviorActionAsArgumentValueEditPart(view);
+			case ActionPinInStartObjectBehaviorActionAsArgumentAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ActionPinInStartObjectBehaviorActionAsArgumentAppliedStereotypeLabelEditPart(view);
 			case ActivityActivityParametersCompartmentEditPart.VISUAL_ID:
 				return new ActivityActivityParametersCompartmentEditPart(view);
 			case ActivityActivityPreConditionsCompartmentEditPart.VISUAL_ID:

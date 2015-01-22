@@ -776,6 +776,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String StartObjectBehaviourAction6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StartObjectBehaviourAction6CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String CreateObjectAction1CreationTool_title;
 
 	/**

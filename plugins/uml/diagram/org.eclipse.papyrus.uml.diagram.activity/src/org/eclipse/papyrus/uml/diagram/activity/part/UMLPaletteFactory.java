@@ -226,6 +226,11 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	private final static String CREATESTARTOBJECTBEHAVIOURACTION6CREATIONTOOL = "createStartObjectBehaviourAction6CreationTool";//$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private final static String CREATECREATEOBJECTACTION1CREATIONTOOL = "createCreateObjectAction1CreationTool"; //$NON-NLS-1$
 
 	/**
@@ -425,6 +430,9 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 		}
 		if (toolId.equals(CREATESENDSIGNALACTION5CREATIONTOOL)) {
 			return createSendSignalAction5CreationTool();
+		}
+		if (toolId.equals(CREATESTARTOBJECTBEHAVIOURACTION6CREATIONTOOL)) {
+			return createStartObjectBehaviourAction6CreationTool();
 		}
 		if (toolId.equals(CREATECREATEOBJECTACTION1CREATIONTOOL)) {
 			return createCreateObjectAction1CreationTool();
@@ -757,7 +765,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 * @generated
 	 */
 	private Tool createOutputPin1CreationTool() {
-		List<IElementType> types = new ArrayList<IElementType>(9);
+		List<IElementType> types = new ArrayList<IElementType>(10);
 		types.add(UMLElementTypes.OutputPin_3014);
 		types.add(UMLElementTypes.OutputPin_3020);
 		types.add(UMLElementTypes.OutputPin_3024);
@@ -767,6 +775,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 		types.add(UMLElementTypes.OutputPin_3109);
 		types.add(UMLElementTypes.OutputPin_3110);
 		types.add(UMLElementTypes.OutputPin_3111);
+		types.add(UMLElementTypes.OutputPin_3125);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
 		return tool;
 	}
@@ -775,12 +784,14 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 * @generated
 	 */
 	private Tool createInputPin2CreationTool() {
-		List<IElementType> types = new ArrayList<IElementType>(5);
+		List<IElementType> types = new ArrayList<IElementType>(7);
 		types.add(UMLElementTypes.InputPin_3013);
 		types.add(UMLElementTypes.InputPin_3019);
 		types.add(UMLElementTypes.InputPin_3023);
 		types.add(UMLElementTypes.InputPin_3055);
 		types.add(UMLElementTypes.InputPin_3105);
+		types.add(UMLElementTypes.InputPin_3132);
+		types.add(UMLElementTypes.InputPin_3133);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
 		return tool;
 	}
@@ -789,11 +800,13 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 * @generated
 	 */
 	private Tool createActionInputPin3CreationTool() {
-		List<IElementType> types = new ArrayList<IElementType>(4);
+		List<IElementType> types = new ArrayList<IElementType>(6);
 		types.add(UMLElementTypes.ActionInputPin_3016);
 		types.add(UMLElementTypes.ActionInputPin_3018);
 		types.add(UMLElementTypes.ActionInputPin_3021);
 		types.add(UMLElementTypes.ActionInputPin_3053);
+		types.add(UMLElementTypes.ActionInputPin_3158);
+		types.add(UMLElementTypes.ActionInputPin_3159);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
 		return tool;
 	}
@@ -802,11 +815,13 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 * @generated
 	 */
 	private Tool createValuePin4CreationTool() {
-		List<IElementType> types = new ArrayList<IElementType>(4);
+		List<IElementType> types = new ArrayList<IElementType>(6);
 		types.add(UMLElementTypes.ValuePin_3015);
 		types.add(UMLElementTypes.ValuePin_3017);
 		types.add(UMLElementTypes.ValuePin_3022);
 		types.add(UMLElementTypes.ValuePin_3054);
+		types.add(UMLElementTypes.ValuePin_3145);
+		types.add(UMLElementTypes.ValuePin_3146);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
 		return tool;
 	}
@@ -887,6 +902,16 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	private Tool createSendSignalAction5CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.SendSignalAction_3052);
+		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
+		return tool;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Tool createStartObjectBehaviourAction6CreationTool() {
+		List<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(UMLElementTypes.StartObjectBehaviorAction_3113);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
 		return tool;
 	}

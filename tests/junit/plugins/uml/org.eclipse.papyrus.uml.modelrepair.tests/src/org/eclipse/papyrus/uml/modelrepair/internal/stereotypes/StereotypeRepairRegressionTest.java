@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA, Christian W. Damus, and others.
+ * Copyright (c) 2014, 2015 CEA, Christian W. Damus, and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -10,6 +10,7 @@
  *   Christian W. Damus (CEA) - Initial API and implementation
  *   Christian W. Damus - bug 455248
  *   Christian W. Damus - bug 455329
+ *   Christian W. Damus - bug 436666
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -27,6 +28,9 @@ import java.lang.reflect.Method;
 import java.util.Collection;
 import java.util.Set;
 
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.common.util.ECollections;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
@@ -90,7 +94,7 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 	@Test
 	@PluginResource("/resources/regression/bug434302/nested-profiles-nonamespace.uml")
 	public void nestedProfileApplicationsMissingNamespace_bug434302() {
-		EPackage schema = getOnlyZombieSchema();
+		IAdaptable schema = getOnlyZombieSchema();
 		IRepairAction action = zombies.getSuggestedRepairAction(schema);
 		assertThat("Wrong suggested repair action", action.kind(), is(IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION));
 
@@ -119,7 +123,7 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 	@Test
 	@PluginResource("/resources/regression/bug434302/nested-profiles-2pkgs1profile.uml")
 	public void nestedProfileApplications2Pkgs1Profile_bug434302() {
-		EPackage schema = getOnlyZombieSchema();
+		IAdaptable schema = getOnlyZombieSchema();
 		IRepairAction action = zombies.getSuggestedRepairAction(schema);
 		assertThat("Wrong suggested repair action", action.kind(), is(IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION));
 
@@ -173,7 +177,7 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 	@Bug("436666")
 	@PluginResource("/resources/regression/bug436666/model2-missing-schemalocation.uml")
 	public void nestedPackageSchemaMissing_bug436666() {
-		EPackage schema = getOnlyZombieSchema();
+		IAdaptable schema = getOnlyZombieSchema();
 		IRepairAction action = zombies.getSuggestedRepairAction(schema);
 		assertThat("Wrong suggested repair action", action.kind(), is(IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION));
 
@@ -230,6 +234,44 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 	@PluginResource("/resources/regression/bug455329/model.uml")
 	public void registeredDynamicProfie_bug455329() {
 		assertThat("Should not have found zombie stereotypes", zombies, nullValue());
+	}
+
+	/**
+	 * Tests that orphaned stereotype instances are correctly detected where they are of the currently applied profile schema.
+	 * 
+	 * @see https://bugs.eclipse.org/bugs/show_bug.cgi?id=436666
+	 */
+	@Test
+	@Bug("436666")
+	@PluginResource("/resources/regression/bug436666/orphans-of-valid-schema.uml")
+	public void orphansOfValidSchema_bug436666() {
+		IAdaptable schema = getOnlyZombieSchema();
+		IRepairAction action = zombies.getSuggestedRepairAction(schema);
+		assertThat("Wrong suggested repair action", action.kind(), is(IRepairAction.Kind.DELETE));
+
+		repair(schema, action);
+
+		// The stereotype applications were deleted
+		assertThat(model.eResource().getContents(), is(ECollections.singletonEList((EObject) model)));
+	}
+
+	/**
+	 * Tests that orphaned stereotype instances are correctly detected where they are of a profile version that is not currently applied.
+	 * 
+	 * @see https://bugs.eclipse.org/bugs/show_bug.cgi?id=436666
+	 */
+	@Test
+	@Bug("436666")
+	@PluginResource("/resources/regression/bug436666/orphans-of-wrong-profile-version.uml")
+	public void orphansOfWrongProfileVersion_bug436666() {
+		IAdaptable schema = getOnlyZombieSchema();
+		IRepairAction action = zombies.getSuggestedRepairAction(schema);
+		assertThat("Wrong suggested repair action", action.kind(), is(IRepairAction.Kind.DELETE));
+
+		repair(schema, action);
+
+		// The stereotype applications were deleted
+		assertThat(model.eResource().getContents(), is(ECollections.singletonEList((EObject) model)));
 	}
 
 	//
@@ -319,7 +361,7 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 		return houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(Functions.constant((Profile) null)), "dispose", modelSet.getResourceSet());
 	}
 
-	void repair(final EPackage schema, final IRepairAction action) {
+	void repair(final IAdaptable schema, final IRepairAction action) {
 		try {
 			TransactionHelper.run(modelSet.getEditingDomain(), new Runnable() {
 
@@ -334,8 +376,8 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 		}
 	}
 
-	EPackage getOnlyZombieSchema() {
-		Collection<? extends EPackage> schemata = zombies.getZombiePackages();
+	IAdaptable getOnlyZombieSchema() {
+		Collection<? extends IAdaptable> schemata = zombies.getZombieSchemas();
 		assertThat("Wrong number of zombie packages", schemata.size(), is(1));
 		return schemata.iterator().next();
 	}

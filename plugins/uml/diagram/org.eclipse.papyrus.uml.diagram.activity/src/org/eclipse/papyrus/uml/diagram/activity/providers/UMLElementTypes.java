@@ -449,6 +449,46 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType StartObjectBehaviorAction_3113 = getElementType("org.eclipse.papyrus.uml.diagram.activity.StartObjectBehaviorAction_3113"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OutputPin_3125 = getElementType("org.eclipse.papyrus.uml.diagram.activity.OutputPin_3125"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3132 = getElementType("org.eclipse.papyrus.uml.diagram.activity.InputPin_3132"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValuePin_3145 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3145"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3158 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3158"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3133 = getElementType("org.eclipse.papyrus.uml.diagram.activity.InputPin_3133"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValuePin_3146 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3146"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3159 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3159"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ValueSpecificationAction_3076 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValueSpecificationAction_3076"); //$NON-NLS-1$
 
 	/**
@@ -704,6 +744,14 @@ public class UMLElementTypes {
 			elements.put(InputPin_3103, UMLPackage.eINSTANCE.getInputPin());
 			elements.put(CentralBufferNode_3104, UMLPackage.eINSTANCE.getCentralBufferNode());
 			elements.put(Constraint_3112, UMLPackage.eINSTANCE.getConstraint());
+			elements.put(StartObjectBehaviorAction_3113, UMLPackage.eINSTANCE.getStartObjectBehaviorAction());
+			elements.put(OutputPin_3125, UMLPackage.eINSTANCE.getOutputPin());
+			elements.put(InputPin_3132, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(ValuePin_3145, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ActionInputPin_3158, UMLPackage.eINSTANCE.getActionInputPin());
+			elements.put(InputPin_3133, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(ValuePin_3146, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ActionInputPin_3159, UMLPackage.eINSTANCE.getActionInputPin());
 			elements.put(ActionLocalPrecondition_4001, UMLPackage.eINSTANCE.getAction_LocalPrecondition());
 			elements.put(ActionLocalPostcondition_4002, UMLPackage.eINSTANCE.getAction_LocalPostcondition());
 			elements.put(ObjectFlow_4003, UMLPackage.eINSTANCE.getObjectFlow());
@@ -824,6 +872,14 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(InputPin_3103);
 			KNOWN_ELEMENT_TYPES.add(CentralBufferNode_3104);
 			KNOWN_ELEMENT_TYPES.add(Constraint_3112);
+			KNOWN_ELEMENT_TYPES.add(StartObjectBehaviorAction_3113);
+			KNOWN_ELEMENT_TYPES.add(OutputPin_3125);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3132);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3145);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3158);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3133);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3146);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3159);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPrecondition_4001);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPostcondition_4002);
 			KNOWN_ELEMENT_TYPES.add(ObjectFlow_4003);
@@ -1032,6 +1088,22 @@ public class UMLElementTypes {
 			return CentralBufferNode_3104;
 		case ConstraintEditPartCN.VISUAL_ID:
 			return Constraint_3112;
+		case StartObjectBehavoiurActionEditPart.VISUAL_ID:
+			return StartObjectBehaviorAction_3113;
+		case OutputPinInStartObjectBehaviorActionEditPart.VISUAL_ID:
+			return OutputPin_3125;
+		case InputPinInStartObjectBehaviorActionAsObjectEditPart.VISUAL_ID:
+			return InputPin_3132;
+		case ValuePinInStartObjectBehaviorActionAsObjectEditPart.VISUAL_ID:
+			return ValuePin_3145;
+		case ActionPinInStartObjectBehaviorActionAsObjectEditPart.VISUAL_ID:
+			return ActionInputPin_3158;
+		case InputPinInStartObjectBehaviorActionAsArgumentEditPart.VISUAL_ID:
+			return InputPin_3133;
+		case ValuePinInStartObjectBehaviorActionAsArgumentEditPart.VISUAL_ID:
+			return ValuePin_3146;
+		case ActionPinInStartObjectBehaviorActionAsArgumentEditPart.VISUAL_ID:
+			return ActionInputPin_3159;
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
 			return ActionLocalPrecondition_4001;
 		case ActionLocalPostconditionEditPart.VISUAL_ID:

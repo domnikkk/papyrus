@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:j2ee="http:///schemas/j2ee/_jFbZoNOFEeO2iNKjb11rWg/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g http:///schemas/j2ee/_jFbZoNOFEeO2iNKjb11rWg/1 j2ee.profile.uml#_jFgSINOFEeO2iNKjb11rWg">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:j2ee="http:///schemas/j2ee/_jFbZoNOFEeO2iNKjb11rWg/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/j2ee/_jFbZoNOFEeO2iNKjb11rWg/1 j2ee.profile.uml#_jFgSINOFEeO2iNKjb11rWg">
   <uml:Model xmi:id="_J4wuULjVEeOUcroamP8z5w" name="Model">
-    <packageImport xmi:type="uml:PackageImport" xmi:id="_J4wuUbjVEeOUcroamP8z5w">
+    <packageImport xmi:id="_J4wuUbjVEeOUcroamP8z5w">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_Kzml8LjVEeOUcroamP8z5w" name="Person">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_nMtwkLjVEeOUcroamP8z5w" name="name" visibility="public">
+      <ownedAttribute xmi:id="_nMtwkLjVEeOUcroamP8z5w" name="name" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rLtVsLjVEeOUcroamP8z5w" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rLuj0LjVEeOUcroamP8z5w" value="1"/>
       </ownedAttribute>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_mDkXMLjVEeOUcroamP8z5w" name="lookup"/>
+      <ownedOperation xmi:id="_mDkXMLjVEeOUcroamP8z5w" name="lookup"/>
     </packagedElement>
-    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_XFt30LjVEeOUcroamP8z5w">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XGDPALjVEeOUcroamP8z5w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <profileApplication xmi:id="_XFt30LjVEeOUcroamP8z5w">
+      <eAnnotations xmi:id="_XGDPALjVEeOUcroamP8z5w" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="j2ee.profile.uml#_jFgSINOFEeO2iNKjb11rWg"/>
       </eAnnotations>
-      <appliedProfile xmi:type="uml:Profile" href="j2ee.profile.uml#_ONhZ8JKHEeOKCcahrNz4pQ"/>
-    </profileApplication>
-    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_npoWELjVEeOUcroamP8z5w">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_np6p8LjVEeOUcroamP8z5w" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
-      </eAnnotations>
-      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+      <appliedProfile href="j2ee.profile.uml#_ONhZ8JKHEeOKCcahrNz4pQ"/>
     </profileApplication>
   </uml:Model>
-  <ActionLanguage:TextualRepresentation xmi:id="_np74ELjVEeOUcroamP8z5w" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
   <j2ee:Bean xmi:id="_WG5mgLtDEeOsE9GQnSNONw" comment="This is a comment." disposition="happy" base_Class="_Kzml8LjVEeOUcroamP8z5w" finder="_mDkXMLjVEeOUcroamP8z5w">
     <tag>gold</tag>
     <tag>p1</tag>

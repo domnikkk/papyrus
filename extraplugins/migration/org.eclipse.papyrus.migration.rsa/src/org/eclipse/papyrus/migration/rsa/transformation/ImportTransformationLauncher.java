@@ -79,6 +79,9 @@ public class ImportTransformationLauncher {
 	// Nano to Second
 	protected final static long SECOND = 1000 * 1000 * 1000;
 
+	// Nano to Milliseconds
+	protected final static long MILLIS = 1000 * 1000;
+
 	protected final Config config;
 
 	protected final Control baseControl;
@@ -95,6 +98,21 @@ public class ImportTransformationLauncher {
 	protected long ownLoadingTime;
 
 	/**
+	 * Own cumulated execution time for repairing stereotypes
+	 */
+	protected long ownRepairStereotypesTime;
+
+	/**
+	 * Own cumulated execution time for repairing libraries
+	 */
+	protected long ownRepairLibrariesTime;
+
+	/**
+	 * Own execution time for resolving all matches for broken profiles/libraries
+	 */
+	protected long resolveAllDependencies;
+
+	/**
 	 * The top-level job for this transformation
 	 */
 	protected Job importDependenciesJob;
@@ -104,6 +122,8 @@ public class ImportTransformationLauncher {
 	 * this may be different from their cumulated execution time (Unless a single thread is used)
 	 */
 	protected long transformationsExecutionTime = 0L;
+
+	protected DependencyAnalysisHelper analysisHelper;
 
 	public ImportTransformationLauncher(Config config) {
 		this(config, null);
@@ -122,8 +142,10 @@ public class ImportTransformationLauncher {
 	public void run(List<URI> urisToImport) {
 		List<ImportTransformation> transformations = new LinkedList<ImportTransformation>();
 
+		analysisHelper = new DependencyAnalysisHelper(config);
+
 		for (URI uri : urisToImport) {
-			ImportTransformation transformation = new ImportTransformation(uri, config);
+			ImportTransformation transformation = new ImportTransformation(uri, config, analysisHelper);
 			transformations.add(transformation);
 		}
 
@@ -143,21 +165,57 @@ public class ImportTransformationLauncher {
 			protected IStatus run(IProgressMonitor monitor) {
 				IStatus result = ImportTransformationLauncher.this.importModels(monitor, transformations);
 
-				long totalLoadingTime = 0L;
+				if (monitor.isCanceled()) {
+					return new Status(IStatus.CANCEL, Activator.PLUGIN_ID, "Operation Canceled");
+				}
+
+				long cumulatedLoadingTime = 0L;
 				long cumulatedTransformationTime = 0L;
+				long cumulatedHandleDanglingTime = 0L;
+				long cumulatedImportRTTime = 0L;
 				for (ImportTransformation transformation : transformations) {
+					cumulatedLoadingTime += transformation.getLoadingTime();
+					cumulatedImportRTTime += transformation.getImportRTTime();
+					cumulatedHandleDanglingTime += transformation.getHandleDanglingRefTime();
+
 					cumulatedTransformationTime += transformation.getExecutionTime();
-					totalLoadingTime += transformation.getLoadingTime();
+
+					log("Import " + transformation.getModelName());
+					log("First phase (0-50%):");
+					log("\tTotal loading time: " + timeFormat(transformation.getLoadingTime()));
+					log("\tTotal Import UML-RT time: " + timeFormat(transformation.getImportRTTime()));
+					log("\tTotal Handle Dangling References time: " + timeFormat(transformation.getHandleDanglingRefTime()));
+					log("\tTotal execution time: " + timeFormat(transformation.getExecutionTime()));
+
+					Long loadingTime = loadingTimeV2.get(transformation);
+					Long repairProxiesTime = proxiesTime.get(transformation);
+					Long repairStereoTime = stereoTime.get(transformation);
+					Long totalPhase2 = totalTimeV2.get(transformation);
+
+					log("Second phase (50-100%):");
+					log("\tTotal loading time: " + timeFormat(loadingTime));
+					log("\tTotal fix proxies time: " + timeFormat(repairProxiesTime));
+					log("\tTotal fix stereotypes time: " + timeFormat(repairStereoTime));
+					log("\tTotal execution time: " + timeFormat(totalPhase2));
+
+					log("Total");
+					log("\tTotal execution time: " + timeFormat(transformation.getExecutionTime() + totalPhase2));
+					log("\n");
 				}
 
 				int nbThreads = Math.max(1, config.getMaxThreads());
 				log("First phase (0-50%) / " + nbThreads + " Threads");
 				log("\tCumulated Transformation Time: " + timeFormat(cumulatedTransformationTime));
-				log("\tCumulated Loading Time: " + timeFormat(totalLoadingTime));
+				log("\tCumulated Loading Time: " + timeFormat(cumulatedLoadingTime));
+				log("\tCumulated Handle Dangling Refs Time: " + timeFormat(cumulatedHandleDanglingTime));
+				log("\tCumulated Import RT Time: " + timeFormat(cumulatedImportRTTime));
 				log("\tTotal Transformation Time: " + timeFormat(transformationsExecutionTime));
 
 				log("Second phase (50-100%) / " + nbThreads + " Threads");
+				log("\tTotal Handle all Dangling References: " + timeFormat(resolveAllDependencies));
 				log("\tCumulated Loading Time: " + timeFormat(ownLoadingTime));
+				log("\tCumulated Fix Libraries Time: " + timeFormat(ownRepairLibrariesTime));
+				log("\tCumulated Fix Stereotypes Time: " + timeFormat(ownRepairStereotypesTime));
 				log("\tTotal Fix Dependencies Time: " + timeFormat(ownExecutionTime));
 
 				log("Total");
@@ -271,8 +329,15 @@ public class ImportTransformationLauncher {
 		return rsaConsole;
 	}
 
-	protected String timeFormat(long nano) {
+	protected String timeFormat(Long nano) {
+		if (nano == null) {
+			return "?"; // FIXME: crash?
+		}
 		long seconds = nano / SECOND;
+		if (seconds < 1) {
+			long millis = nano / MILLIS;
+			return String.format("%s ms", millis);
+		}
 		return String.format("%d:%02d:%02d", seconds / 3600, (seconds % 3600) / 60, (seconds % 60));
 	}
 
@@ -335,7 +400,11 @@ public class ImportTransformationLauncher {
 			profileUrisToReplace.putAll(transformation.getProfileURIMappings());
 		}
 
-		filterKnownMappings(config.getMappingParameters(), urisToReplace, profileUrisToReplace);
+		monitor.subTask("Analysing unresolved references...");
+		long startResolveAll = System.nanoTime();
+		analysisHelper.resolveAllMappings(urisToReplace, profileUrisToReplace);
+		long endResolveAll = System.nanoTime();
+		resolveAllDependencies = endResolveAll - startResolveAll;
 
 		if (!config.getMappingParameters().getUriMappings().isEmpty() || !config.getMappingParameters().getProfileUriMappings().isEmpty()) {
 
@@ -358,7 +427,12 @@ public class ImportTransformationLauncher {
 			Job transformationJob = new Job("Importing dependencies for " + transformation.getModelName()) {
 				@Override
 				protected IStatus run(IProgressMonitor monitor) {
+					long startFix = System.nanoTime();
 					fixDependencies(transformation, monitor, urisToReplace, profileUrisToReplace);
+					long endFix = System.nanoTime();
+					synchronized (ImportTransformationLauncher.this) {
+						totalTimeV2.put(transformation, endFix - startFix);
+					}
 
 					return Status.OK_STATUS;
 				}
@@ -374,6 +448,14 @@ public class ImportTransformationLauncher {
 
 		ownExecutionTime = end - begin - timeToIgnore;
 	}
+
+	final protected Map<ImportTransformation, Long> loadingTimeV2 = new HashMap<ImportTransformation, Long>();
+
+	final protected Map<ImportTransformation, Long> proxiesTime = new HashMap<ImportTransformation, Long>();
+
+	final protected Map<ImportTransformation, Long> stereoTime = new HashMap<ImportTransformation, Long>();
+
+	final protected Map<ImportTransformation, Long> totalTimeV2 = new HashMap<ImportTransformation, Long>();
 
 	protected IStatus fixDependencies(ImportTransformation transformation, IProgressMonitor monitor, Map<URI, URI> urisToReplace, Map<URI, URI> profileUrisToReplace) {
 		monitor.subTask("Importing dependencies for " + transformation.getModelName());
@@ -394,6 +476,7 @@ public class ImportTransformationLauncher {
 			long endLoading = System.nanoTime();
 			synchronized (ImportTransformationLauncher.this) {
 				ownLoadingTime += endLoading - startLoading;
+				loadingTimeV2.put(transformation, endLoading - startLoading);
 			}
 		} catch (ModelMultiException e) {
 			Activator.log.error(e);
@@ -402,7 +485,13 @@ public class ImportTransformationLauncher {
 		}
 
 		try {
+			long startProxies = System.nanoTime();
 			repairProxies(modelSet, resourcesToRepair, urisToReplace, monitor); // Repairing proxies first will change the Applied Profiles. This helps repairing stereotypes
+			long endProxies = System.nanoTime();
+			synchronized (ImportTransformationLauncher.this) {
+				ownRepairLibrariesTime += endProxies - startProxies;
+				proxiesTime.put(transformation, endProxies - startProxies);
+			}
 		} catch (Exception ex) {
 			Activator.log.error(ex);
 			return new Status(IStatus.ERROR, Activator.PLUGIN_ID, "An exception occurred when repairing library dependencies", ex);
@@ -410,7 +499,13 @@ public class ImportTransformationLauncher {
 
 		RepairStereotypes repairStereotypesAction = new RepairStereotypes(modelSet, resourcesToRepair, profileUrisToReplace);
 		try {
+			long startStereotypes = System.nanoTime();
 			repairStereotypesAction.execute();
+			long endStereotypes = System.nanoTime();
+			synchronized (ImportTransformationLauncher.this) {
+				ownRepairStereotypesTime += endStereotypes - startStereotypes;
+				stereoTime.put(transformation, endStereotypes - startStereotypes);
+			}
 		} catch (Exception ex) {
 			Activator.log.error(ex);
 			return new Status(IStatus.ERROR, Activator.PLUGIN_ID, "An exception occurred when repairing profiles/stereotypes", ex);
@@ -550,39 +645,6 @@ public class ImportTransformationLauncher {
 				uriMap.put(sourceURI, targetURI);
 			}
 		}
-	}
-
-	/**
-	 * Remove automatic mappings (When multiple files are imported simultaneously) and duplicates
-	 *
-	 * @param mappingParameters
-	 *            All unresolved proxies
-	 * @param currentMappings
-	 *            The map of known (automatic) mappings
-	 */
-	protected void filterKnownMappings(final MappingParameters mappingParameters, final Map<URI, URI> currentMappings, final Map<URI, URI> currentProfileMappings) {
-		filterKnownMappings(mappingParameters.getUriMappings(), currentMappings);
-		filterKnownMappings(mappingParameters.getProfileUriMappings(), currentProfileMappings);
-	}
-
-	protected void filterKnownMappings(List<URIMapping> allMappings, Map<URI, URI> knownMappings) {
-
-		Set<URI> userMappings = new HashSet<URI>();
-
-		Iterator<URIMapping> mappings = allMappings.iterator();
-		while (mappings.hasNext()) {
-			URIMapping mapping = mappings.next();
-			if (mapping == null) {
-				continue;
-			}
-			URI sourceURI = URI.createURI(mapping.getSourceURI());
-			if (knownMappings.containsKey(sourceURI) || userMappings.contains(sourceURI)) {
-				mappings.remove();
-			} else {
-				userMappings.add(sourceURI);
-			}
-		}
-
 	}
 
 	protected MappingParameters confirmURIMappings(final MappingParameters mappingParameters) {

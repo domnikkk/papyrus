@@ -28,7 +28,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.migration.rsa.Activator;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
-import org.eclipse.papyrus.migration.rsa.transformation.ConfigHelper;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersFactory;
 import org.eclipse.papyrus.migration.rsa.transformation.ImportTransformationLauncher;
 import org.eclipse.papyrus.views.properties.creation.PropertyEditorFactory;
 import org.eclipse.swt.widgets.Control;
@@ -109,9 +109,7 @@ public class ImportHandler extends AbstractHandler {
 	}
 
 	public Config getTransformationParameters(ExecutionEvent event) {
-		ConfigHelper helper = new ConfigHelper();
-
-		Config config = helper.getConfig();
+		Config config = RSAToPapyrusParametersFactory.eINSTANCE.createConfig();
 
 		Shell activeShell = HandlerUtil.getActiveShell(event);
 

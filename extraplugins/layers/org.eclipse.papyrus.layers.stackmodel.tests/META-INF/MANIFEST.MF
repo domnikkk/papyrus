@@ -16,4 +16,3 @@ Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.layers.stackmodel.tests;singl
  eton:=true
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-

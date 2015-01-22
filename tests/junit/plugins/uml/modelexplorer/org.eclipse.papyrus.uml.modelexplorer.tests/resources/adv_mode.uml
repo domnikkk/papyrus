@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g">
-  <uml:Model xmi:id="_IXDeQBf8EeSLM5AVoLTKwA" name="Model">
-    <packageImport xmi:type="uml:PackageImport" xmi:id="_IXEFUBf8EeSLM5AVoLTKwA">
-      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
-    </packageImport>
-    <packagedElement xmi:type="uml:Class" xmi:id="_JOhRwBf8EeSLM5AVoLTKwA" name="Container">
-      <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_LkcAQBf8EeSLM5AVoLTKwA" name="RedefinableTemplateSignature1" parameter="_T3jF8Bf8EeSLM5AVoLTKwA">
-        <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_T3jF8Bf8EeSLM5AVoLTKwA" parameteredElement="_WiCWQBf8EeSLM5AVoLTKwA">
-          <ownedParameteredElement xmi:type="uml:Class" xmi:id="_WiCWQBf8EeSLM5AVoLTKwA" name="T" templateParameter="_T3jF8Bf8EeSLM5AVoLTKwA"/>
-        </ownedParameter>
-      </ownedTemplateSignature>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_dG048Bf8EeSLM5AVoLTKwA" name="size" isReadOnly="true" isDerived="true">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-      </ownedAttribute>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_qsvVABf8EeSLM5AVoLTKwA" name="add">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_29UV0Bf8EeSLM5AVoLTKwA" name="element" type="_WiCWQBf8EeSLM5AVoLTKwA" effect="read"/>
-      </ownedOperation>
-    </packagedElement>
-    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ex7I0Bf8EeSLM5AVoLTKwA">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_eyRHEBf8EeSLM5AVoLTKwA" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
-      </eAnnotations>
-      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
-    </profileApplication>
-  </uml:Model>
-  <ActionLanguage:TextualRepresentation xmi:id="_e56nMBf8EeSLM5AVoLTKwA" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
-</xmi:XMI>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_IXDeQBf8EeSLM5AVoLTKwA" name="Model">
+  <packageImport xmi:id="_IXEFUBf8EeSLM5AVoLTKwA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_JOhRwBf8EeSLM5AVoLTKwA" name="Container">
+    <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_LkcAQBf8EeSLM5AVoLTKwA" name="RedefinableTemplateSignature1" parameter="_T3jF8Bf8EeSLM5AVoLTKwA">
+      <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_T3jF8Bf8EeSLM5AVoLTKwA" parameteredElement="_WiCWQBf8EeSLM5AVoLTKwA">
+        <ownedParameteredElement xmi:type="uml:Class" xmi:id="_WiCWQBf8EeSLM5AVoLTKwA" name="T" templateParameter="_T3jF8Bf8EeSLM5AVoLTKwA"/>
+      </ownedParameter>
+    </ownedTemplateSignature>
+    <ownedAttribute xmi:id="_dG048Bf8EeSLM5AVoLTKwA" name="size" isReadOnly="true" isDerived="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_qsvVABf8EeSLM5AVoLTKwA" name="add">
+      <ownedParameter xmi:id="_29UV0Bf8EeSLM5AVoLTKwA" name="element" type="_WiCWQBf8EeSLM5AVoLTKwA" effect="read"/>
+    </ownedOperation>
+  </packagedElement>
+</uml:Model>

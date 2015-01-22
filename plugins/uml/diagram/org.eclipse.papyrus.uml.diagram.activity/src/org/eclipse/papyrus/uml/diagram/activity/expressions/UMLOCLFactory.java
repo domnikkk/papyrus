@@ -49,7 +49,7 @@ public class UMLOCLFactory {
 	 * @generated
 	 */
 	protected UMLOCLFactory() {
-		this.expressions = new UMLAbstractExpression[87];
+		this.expressions = new UMLAbstractExpression[93];
 		this.expressionBodies = new String[] {
 				"if self.owner.oclIsKindOf(CallOperationAction)\r\nthen self.owner.oclAsType(CallOperationAction).argument->includes(self)\r\nelse false endif", //$NON-NLS-1$
 				"if self.owner.oclIsKindOf(CallOperationAction)\r\nthen self.owner.oclAsType(CallOperationAction).argument->includes(self)\r\nelse false endif", //$NON-NLS-1$
@@ -138,6 +138,12 @@ public class UMLOCLFactory {
 				"self.result.type =self.variable.type and self.result.isOrdered = self.variable.isOrdered", //$NON-NLS-1$
 				"(self.result.lowerBound() <= self.variable.lowerBound())  and (self.result.upperBound() >= self.variable.lowerBound())", //$NON-NLS-1$
 				"((not self.handlerBody.oclIsUndefined()) and  (not self.exceptionInput.oclIsUndefined())) implies( let pins : Collection(Element) = self.handlerBody.allOwnedElements()->select(e : Element | e.oclIsKindOf(Pin)) in pins->forAll(e : Element | e.oclIsKindOf(Pin) implies e = self.exceptionInput))", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(StartObjectBehaviorAction) and self.oclIsTypeOf(InputPin) then self.owner.oclAsType(StartObjectBehaviorAction).argument->includes(self) else false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(StartObjectBehaviorAction) and self.oclIsTypeOf(InputPin)\r\nthen self.owner.oclAsType(StartObjectBehaviorAction).object = self\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(StartObjectBehaviorAction) and self.oclIsTypeOf(ValuePin) then self.owner.oclAsType(StartObjectBehaviorAction).argument->includes(self) else false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(StartObjectBehaviorAction) and self.oclIsTypeOf(ValuePin)\r\nthen self.owner.oclAsType(StartObjectBehaviorAction).object = self\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(StartObjectBehaviorAction) and self.oclIsTypeOf(ActionInputPin) then self.owner.oclAsType(StartObjectBehaviorAction).argument->includes(self) else false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(StartObjectBehaviorAction) and self.oclIsTypeOf(ActionInputPin)\r\nthen self.owner.oclAsType(StartObjectBehaviorAction).object = self\r\nelse false endif", //$NON-NLS-1$
 		};
 	}
 
