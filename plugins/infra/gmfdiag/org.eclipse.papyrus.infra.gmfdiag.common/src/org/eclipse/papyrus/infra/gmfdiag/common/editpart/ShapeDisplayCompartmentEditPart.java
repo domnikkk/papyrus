@@ -113,6 +113,21 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 	}
 
 	/**
+	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ResizableCompartmentEditPart#handleNotificationEvent(org.eclipse.emf.common.notify.Notification)
+	 *
+	 * @param notification
+	 */
+	@Override
+	protected void handleNotificationEvent(Notification notification) {
+		Object feature = notification.getFeature();
+		if (NotationPackage.eINSTANCE.getSize_Width().equals(feature) || NotationPackage.eINSTANCE.getSize_Height().equals(feature) || NotationPackage.eINSTANCE.getLocation_X().equals(feature) || NotationPackage.eINSTANCE.getLocation_Y().equals(feature)) {
+			// Bug 457695: refresh shape when resizing
+			refresh();
+		}
+		super.handleNotificationEvent(notification);
+	}
+
+	/**
 	 * this method is used to set the ratio of the figure.
 	 * pay attention if the ratio is true, the only figure is displayed
 	 *
