@@ -54,8 +54,8 @@
 			<aspectTool description="Create a new Actor" id="blockdefinition_modelelements.tool.actor"
 				name="Actor" refToolId="usecase.tool.actor">
 			</aspectTool>
-			<aspectTool description="Create a new Block" id="blockdefinition_modelelements.tool.block"
-				name="Block" refToolId="clazz.tool.class">
+			<aspectTool  id="blockdefinition_modelelements.tool.block" name="Block"
+				 refToolId="clazz.tool.class" description="Create a new Block">
 				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
 					<stereotypesToApply>
 						<stereotype stereotypeName="SysML::Blocks::Block" />
