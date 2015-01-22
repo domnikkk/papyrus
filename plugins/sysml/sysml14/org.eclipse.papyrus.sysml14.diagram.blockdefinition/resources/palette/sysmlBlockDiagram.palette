@@ -1,46 +1,59 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ Copyright (c) 2015 CEA.
+ 
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+   CEA - Initial API and implementation
+   Benoit Maggi benoit.maggi@cea.fr
+   
+-->
 <paletteDefinition>
 	<content>
 	<!-- ASSOCIATIONS -->
-		<!--	
-			<drawer	iconpath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif" id="org.eclipse.papyrus.sysml.diagram.blockdefinition.SYSML_BlockDefinition__Associations" name="Associations">
 			
-			<aspectTool description="Create a new Association" id="blockdefinition_associations.tool.association_none"
-				name="Association" refToolId="blockdefinition.tool.association_none">
-			</aspectTool>
+	<drawer	id="org.eclipse.papyrus.sysml.diagram.blockdefinition.SYSML_BlockDefinition__Associations" 
+		iconpath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"  name="Associations">
 			
+		<aspectTool description="Create a new Association" id="blockdefinition_associations.tool.association_none" name="Association" refToolId="clazz.tool.association"/>
 			<aspectTool description="Create a new DirectedAssociation" id="blockdefinition_associations.tool.association_none_directed"
-				name="DirectedAssociation" refToolId="blockdefinition.tool.association_none_directed">
+			iconpath="platform:/plugin/org.eclipse.papyrus.uml.service.types/icons/Association_none_directed.gif"
+				name="DirectedAssociation" refToolId="clazz.tool.association">
 			</aspectTool>
 			
 			<aspectTool description="Create a new Composition" id="blockdefinition_associations.tool.association_composite"
-				name="Composition" refToolId="blockdefinition.tool.association_composite">
+			iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association_composite.gif"
+				name="Composition" refToolId="clazz.tool.association">
 			</aspectTool>
 
 			<aspectTool description="Create a new DirectedComposition" id="blockdefinition_associations.tool.association_composite_directed"
-				name="DirectedComposition" refToolId="blockdefinition.tool.association_composite_directed">
+			iconpath="platform:/plugin/org.eclipse.papyrus.uml.service.types/icons/Association_composite_directed.gif"
+				name="DirectedComposition" refToolId="clazz.tool.association">
 			</aspectTool>
 	
 			<aspectTool description="Create a new Aggregation" id="blockdefinition_associations.tool.association_shared"
-				name="Aggregation" refToolId="blockdefinition.tool.association_shared">
+			iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association_shared.gif"
+				name="Aggregation" refToolId="clazz.tool.association">
 			</aspectTool>
 
 			<aspectTool description="Create a new DirectedAggregation" id="blockdefinition_associations.tool.association_shared_directed"
-				name="DirectedAggregation" refToolId="blockdefinition.tool.association_shared_directed">
-			</aspectTool>
-											
-		</drawer>
-	-->
-<!-- MODEL ELEMENTS -->		
-		<drawer	iconpath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif" 
-		id="org.eclipse.papyrus.sysml.diagram.blockdefinition.SYSML_BlockDefinition__ModelElements" name="ModelElements">
+			iconpath="platform:/plugin/org.eclipse.papyrus.uml.service.types/icons/Association_shared_directed.gif"
+				name="DirectedAggregation" refToolId="clazz.tool.association">
+			</aspectTool>							
+	</drawer>
+
+	<!-- MODEL ELEMENTS -->		
+	<drawer	id="org.eclipse.papyrus.sysml.diagram.blockdefinition.SYSML_BlockDefinition__ModelElements"
+		iconpath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif" name="ModelElements">
 			
 			<aspectTool description="Create a new Package" id="blockdefinition_modelelements.tool.package" name="Package" refToolId="clazz.tool.package"/>
-	<!--
 			<aspectTool description="Create a new Actor" id="blockdefinition_modelelements.tool.actor"
-				name="Actor" refToolId="blockdefinition.tool.actor">
+				name="Actor" refToolId="usecase.tool.actor">
 			</aspectTool>
-	-->
 			<aspectTool description="Create a new Block" id="blockdefinition_modelelements.tool.block"
 				name="Block" refToolId="clazz.tool.class">
 				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
@@ -49,19 +62,13 @@
 					</stereotypesToApply>
 				</postAction>				
 			</aspectTool>
-	<!--
-			<aspectTool description="Create a new Signal" id="blockdefinition_modelelements.tool.signal"
-				name="Signal" refToolId="blockdefinition.tool.signal">
-			</aspectTool>			
-			<aspectTool description="Create a new Operation" id="blockdefinition_modelelements.tool.operation"
-				name="Operation" refToolId="blockdefinition.tool.operation">
-			</aspectTool>
-			<aspectTool description="Create a new Reception" id="blockdefinition_modelelements.tool.reception"
-				name="Reception" refToolId="blockdefinition.tool.reception">
-			</aspectTool>
-			<aspectTool description="Create a new Property" id="blockdefinition_modelelements.tool.property"
-				name="Property" refToolId="blockdefinition.tool.property">
-			</aspectTool>
+	
+			<aspectTool description="Create a new Signal" id="blockdefinition_modelelements.tool.signal" name="Signal" refToolId="clazz.tool.signal"/>
+			<aspectTool description="Create a new Operation" id="blockdefinition_modelelements.tool.operation" name="Operation" refToolId="clazz.tool.operation"/>
+			<aspectTool description="Create a new Reception" id="blockdefinition_modelelements.tool.reception" name="Reception" refToolId="clazz.tool.reception"/>
+			<aspectTool description="Create a new Property" id="blockdefinition_modelelements.tool.property" name="Property" refToolId="clazz.tool.property"/>
+			
+			<!--
 			<aspectTool description="Create a new Part" id="blockdefinition_modelelements.tool.part"
 				name="Part" refToolId="blockdefinition.tool.part">
 			</aspectTool>
@@ -74,192 +81,17 @@
 			<aspectTool description="Create a new Value" id="blockdefinition_modelelements.tool.value"
 				name="Value" refToolId="blockdefinition.tool.value">
 			</aspectTool>
-			<aspectTool description="Create a new InstanceSpecification" id="blockdefinition_modelelements.tool.instancespecification"
-				name="InstanceSpecification" refToolId="blockdefinition.tool.instancespecification">
-			</aspectTool>
-			<aspectTool description="Create a new Slot" id="blockdefinition_modelelements.tool.slot"
-				name="Slot" refToolId="blockdefinition.tool.slot">
-			</aspectTool>
-			<aspectTool description="Create a new Dependency" id="blockdefinition_modelelements.tool.dependency"
-				name="Dependency" refToolId="blockdefinition.tool.dependency">
-			</aspectTool>
-			<aspectTool description="Create a new Generalization" id="blockdefinition_modelelements.tool.generalization"
-				name="Generalization" refToolId="blockdefinition.tool.generalization">
-			</aspectTool>						
-		-->
-		</drawer>
+			-->
+			<aspectTool description="Create a new InstanceSpecification" id="blockdefinition_modelelements.tool.instancespecification" name="InstanceSpecification" refToolId="clazz.tool.instancespecification"/>
+			<aspectTool description="Create a new Slot" id="blockdefinition_modelelements.tool.slot" name="Slot" refToolId="clazz.tool.slot"/>
+			<aspectTool description="Create a new Dependency" id="blockdefinition_modelelements.tool.dependency" name="Dependency" refToolId="clazz.tool.dependency"/>			
+			<aspectTool description="Create a new Generalization" id="blockdefinition_modelelements.tool.generalization" name="Generalization" refToolId="clazz.tool.generalization"/>					
 		
-		<!--
-				<drawer
-			iconpath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-			id="org.eclipse.papyrus.sysml.diagram.blockdefinition.SYSML_BlockDefinition__ContraintTools" name="CommentAndConstraints">
-			
-			<aspectTool description="Create a new ConstraintBlock" id="blockdefinition_constraints.tool.constraintblock"
-				name="ConstraintBlock" refToolId="blockdefinition.tool.constraintblock">
-			</aspectTool>
-			<aspectTool description="Create a new ConstraintProperty" id="blockdefinition_constraints.tool.constraintproperty"
-				name="ConstraintProperty" refToolId="blockdefinition.tool.constraintproperty">
-			</aspectTool>			
-			<aspectTool description="Create a new Parameter (Property)" id="blockdefinition_constraints.tool.property"
-				name="Parameter" refToolId="blockdefinition.tool.property">
-			</aspectTool>			
-			<aspectTool description="Create a new Constraint" id="blockdefinition_constraints.tool.constraint"
-				name="Constraint" refToolId="blockdefinition.tool.constraint">
-			</aspectTool>
-			<aspectTool description="Create a new Comment" id="blockdefinition_constraints.tool.comment"
-				name="Comment" refToolId="blockdefinition.tool.comment">
-			</aspectTool>				
-			<aspectTool description="Create a new Comment / Constraint link" id="blockdefinition_constraints.tool.comment_constraint_link"
-				name="Comment / Constraint link" refToolId="blockdefinition.tool.comment_constraint_link">
-			</aspectTool>				
-		</drawer>
-
-			<drawer
-			iconpath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-			id="org.eclipse.papyrus.sysml.diagram.blockdefinition.SYSML_BlockDefinition__DataTypeTools" name="DataTypes">
-			
-			<aspectTool description="Create a new DataType" id="blockdefinition_datatypes.tool.datatype"
-				name="DataType" refToolId="blockdefinition.tool.datatype">
-			</aspectTool>
-			<aspectTool description="Create a new ValueType" id="blockdefinition_datatypes.tool.valuetype"
-				name="ValueType" refToolId="blockdefinition.tool.valuetype">
-			</aspectTool>
-			<aspectTool description="Create a new PrimitiveType" id="blockdefinition_datatypes.tool.primitivetype"
-				name="PrimitiveType" refToolId="blockdefinition.tool.primitivetype">
-			</aspectTool>				
-			<aspectTool description="Create a new Enumeration" id="blockdefinition_datatypes.tool.enumeration"
-				name="Enumeration" refToolId="blockdefinition.tool.enumeration">
-			</aspectTool>			
-			<aspectTool description="Create a new EnumerationLiteral" id="blockdefinition_datatypes.tool.enumerationliteral"
-				name="EnumerationLiteral" refToolId="blockdefinition.tool.enumerationliteral">
-			</aspectTool>
-			<aspectTool description="Create a new Dimension" id="blockdefinition_datatypes.tool.dimension"
-				name="Dimension" refToolId="blockdefinition.tool.dimension">
-			</aspectTool>
-			<aspectTool description="Create a new Unit" id="blockdefinition_datatypes.tool.unit"
-				name="Unit" refToolId="blockdefinition.tool.unit">
-			</aspectTool>			
-		</drawer>
-		-->
-	<!--	
-			<drawer
-			iconpath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-			id="org.eclipse.papyrus.sysml.diagram.blockdefinition.SYSML_BlockDefinition__Tools" name="Tools">
-			<aspectTool description="Create a new Actor" id="blockdefinition.tool.actor"
-				name="Actor" refToolId="blockdefinition.tool.actor">
-			</aspectTool>
-			<aspectTool description="Create a new Block" id="blockdefinition.tool.block"
-				name="Block" refToolId="blockdefinition.tool.block">
-			</aspectTool>
-			<aspectTool description="Create a new Constraint" id="blockdefinition.tool.constraint"
-				name="Constraint" refToolId="blockdefinition.tool.constraint">
-			</aspectTool>
-			<aspectTool description="Create a new ConstraintBlock" id="blockdefinition.tool.constraintblock"
-				name="ConstraintBlock" refToolId="blockdefinition.tool.constraintblock">
-			</aspectTool>
-			<aspectTool description="Create a new ConstraintProperty" id="blockdefinition.tool.constraintproperty"
-				name="ConstraintProperty" refToolId="blockdefinition.tool.constraintproperty">
-			</aspectTool>
-			<aspectTool description="Create a new DataType" id="blockdefinition.tool.datatype"
-				name="DataType" refToolId="blockdefinition.tool.datatype">
-			</aspectTool>
-			<aspectTool description="Create a new Dimension" id="blockdefinition.tool.dimension"
-				name="Dimension" refToolId="blockdefinition.tool.dimension">
-			</aspectTool>
-			<aspectTool description="Create a new Enumeration" id="blockdefinition.tool.enumeration"
-				name="Enumeration" refToolId="blockdefinition.tool.enumeration">
-			</aspectTool>
-			<aspectTool description="Create a new EnumerationLiteral" id="blockdefinition.tool.enumerationliteral"
-				name="EnumerationLiteral" refToolId="blockdefinition.tool.enumerationliteral">
-			</aspectTool>
-			<aspectTool description="Create a new FlowPort" id="blockdefinition.tool.flowport"
-				name="FlowPort" refToolId="blockdefinition.tool.flowport">
-			</aspectTool>
-			<aspectTool description="Create a new FlowProperty" id="blockdefinition.tool.flowproperty"
-				name="FlowProperty" refToolId="blockdefinition.tool.flowproperty">
-			</aspectTool>
-			<aspectTool description="Create a new FlowSpecification" id="blockdefinition.tool.flowspecification"
-				name="FlowSpecification" refToolId="blockdefinition.tool.flowspecification">
-			</aspectTool>
-			<aspectTool description="Create a new Interface" id="blockdefinition.tool.interface"
-				name="Interface" refToolId="blockdefinition.tool.interface">
-			</aspectTool>
-			<aspectTool description="Create a new Operation" id="blockdefinition.tool.operation"
-				name="Operation" refToolId="blockdefinition.tool.operation">
-			</aspectTool>
-			<aspectTool description="Create a new Part" id="blockdefinition.tool.part"
-				name="Part" refToolId="blockdefinition.tool.part">
-			</aspectTool>
-			<aspectTool description="Create a new Port" id="blockdefinition.tool.port"
-				name="Port" refToolId="blockdefinition.tool.port">
-			</aspectTool>
-			<aspectTool description="Create a new PrimitiveType" id="blockdefinition.tool.primitivetype"
-				name="PrimitiveType" refToolId="blockdefinition.tool.primitivetype">
-			</aspectTool>
-			<aspectTool description="Create a new Property" id="blockdefinition.tool.property"
-				name="Property" refToolId="blockdefinition.tool.property">
-			</aspectTool>
-			<aspectTool description="Create a new Reception" id="blockdefinition.tool.reception"
-				name="Reception" refToolId="blockdefinition.tool.reception">
-			</aspectTool>
-			<aspectTool description="Create a new Reference" id="blockdefinition.tool.reference"
-				name="Reference" refToolId="blockdefinition.tool.reference">
-			</aspectTool>
-			<aspectTool description="Create a new Signal" id="blockdefinition.tool.signal"
-				name="Signal" refToolId="blockdefinition.tool.signal">
-			</aspectTool>
-			<aspectTool description="Create a new Unit" id="blockdefinition.tool.unit"
-				name="Unit" refToolId="blockdefinition.tool.unit">
-			</aspectTool>
-			<aspectTool description="Create a new Value" id="blockdefinition.tool.value"
-				name="Value" refToolId="blockdefinition.tool.value">
-			</aspectTool>
-			<aspectTool description="Create a new ValueType" id="blockdefinition.tool.valuetype"
-				name="ValueType" refToolId="blockdefinition.tool.valuetype">
-			</aspectTool>
-			<aspectTool description="Create a new Association" id="blockdefinition.tool.association"
-				name="Association" refToolId="blockdefinition.tool.association">
-			</aspectTool>
-			<aspectTool description="Create a new Dependency" id="blockdefinition.tool.dependency"
-				name="Dependency" refToolId="blockdefinition.tool.dependency">
-			</aspectTool>
-			<aspectTool description="Create a new Generalization" id="blockdefinition.tool.generalization"
-				name="Generalization" refToolId="blockdefinition.tool.generalization">
-			</aspectTool>
-			<aspectTool description="Create a new InterfaceRealization" id="blockdefinition.tool.interfacerealization"
-				name="InterfaceRealization" refToolId="blockdefinition.tool.interfacerealization">
-			</aspectTool>
-			<aspectTool description="Create a new Usage" id="blockdefinition.tool.usage"
-				name="Usage" refToolId="blockdefinition.tool.usage">
-			</aspectTool>
-			
-			<aspectTool description="Create a new Comment" id="blockdefinition.tool.comment"
-				name="Comment" refToolId="clazz.tool.comment">
-			</aspectTool>
-			<aspectTool description="Create a new Constraint" id="blockdefinition.tool.constraint"
-				name="Constraint" refToolId="clazz.tool.constraint">
-			</aspectTool>
-			<aspectTool description="Create a new InstanceSpecification" id="blockdefinition.tool.instancespecification"
-				name="InstanceSpecification" refToolId="clazz.tool.instancespecification">
-			</aspectTool>
-			<aspectTool description="Create a new Model" id="blockdefinition.tool.model"
-				name="Model" refToolId="clazz.tool.model">
-			</aspectTool>
-			<aspectTool description="Create a new Package" id="blockdefinition.tool.package"
-				name="Package" refToolId="clazz.tool.package">
-			</aspectTool>
-			<aspectTool description="Create a new Slot" id="blockdefinition.tool.slot"
-				name="Slot" refToolId="clazz.tool.slot">
-			</aspectTool>
-			<aspectTool description="Create a new Comment / Constraint link" id="blockdefinition.tool.comment / constraint link"
-				name="Comment / Constraint link" refToolId="clazz.tool.link">
-			</aspectTool>
-			
-		</drawer>
+		</drawer>	
 	
-		<drawer	iconpath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-			id="org.eclipse.papyrus.sysml.diagram.blockdefinition.SYSML_BlockDefinition__PortAndFlowTools" name="PortAndFlows">
-			
+	<drawer	id="org.eclipse.papyrus.sysml.diagram.blockdefinition.SYSML_BlockDefinition__PortAndFlowTools"
+	iconpath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif" name="PortAndFlows">
+		<!--
 			<aspectTool description="Create a new Port" id="blockdefinition_portandflows.tool.port"
 				name="Port" refToolId="blockdefinition.tool.port">
 			</aspectTool>
@@ -278,11 +110,57 @@
 			<aspectTool description="Create a new InterfaceRealization" id="blockdefinition_portandflows.tool.interfacerealization"
 				name="InterfaceRealization" refToolId="blockdefinition.tool.interfacerealization">
 			</aspectTool>
-			<aspectTool description="Create a new Usage" id="blockdefinition_portandflows.tool.usage"
-				name="Usage" refToolId="blockdefinition.tool.usage">
+			<aspectTool description="Create a new Usage" id="blockdefinition_portandflows.tool.usage" name="Usage" refToolId="blockdefinition.tool.usage">
 			</aspectTool>
-						
-		</drawer>
-		-->
+		-->		
+	</drawer>	
+				
+	<drawer	id="org.eclipse.papyrus.sysml.diagram.blockdefinition.SYSML_BlockDefinition__DataTypeTools"
+		iconpath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif" name="DataTypes">
+			
+		<aspectTool description="Create a new DataType" id="blockdefinition_datatypes.tool.datatype" name="DataType" refToolId="clazz.tool.datatype"/>
+			<!--
+			<aspectTool description="Create a new ValueType" id="blockdefinition_datatypes.tool.valuetype"
+				name="ValueType" refToolId="blockdefinition.tool.valuetype">
+			</aspectTool>
+			-->
+		<aspectTool description="Create a new PrimitiveType" id="blockdefinition_datatypes.tool.primitivetype" name="PrimitiveType" refToolId="clazz.tool.primitivetype"/>				
+		<aspectTool description="Create a new Enumeration" id="blockdefinition_datatypes.tool.enumeration" name="Enumeration" refToolId="clazz.tool.enumeration"/>
+		<aspectTool description="Create a new EnumerationLiteral" id="blockdefinition_datatypes.tool.enumerationliteral" name="EnumerationLiteral" refToolId="clazz.tool.enumerationliteral"/>
+			<!--		
+			<aspectTool description="Create a new Dimension" id="blockdefinition_datatypes.tool.dimension"
+				name="Dimension" refToolId="blockdefinition.tool.dimension">
+			</aspectTool>
+			<aspectTool description="Create a new Unit" id="blockdefinition_datatypes.tool.unit"
+				name="Unit" refToolId="blockdefinition.tool.unit">
+			</aspectTool>	
+			-->		
+	</drawer>
+		
+	<drawer id="org.eclipse.papyrus.sysml.diagram.blockdefinition.SYSML_BlockDefinition__ContraintTools" 
+		iconpath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif" name="CommentAndConstraints">
+
+		<aspectTool description="Create a new ConstraintBlock" id="blockdefinition_constraints.tool.constraintblock"
+				name="ConstraintBlock" refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="SysML::Constraints::ConstraintBlock" />
+					</stereotypesToApply>
+				</postAction>	
+		</aspectTool>
+			
+		<aspectTool description="Create a new ConstraintProperty" id="blockdefinition_constraints.tool.constraintproperty"
+				name="ConstraintProperty" refToolId="clazz.tool.property">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="SysML::Constraints::ConstraintProperty" />
+					</stereotypesToApply>
+				</postAction>				
+		</aspectTool>
+		<aspectTool description="Create a new Parameter (Property)" id="blockdefinition_constraints.tool.property" name="Parameter" refToolId="clazz.tool.property"/>	
+		<aspectTool description="Create a new Constraint" id="blockdefinition_constraints.tool.constraint" name="Constraint" refToolId="clazz.tool.constraint"/>
+		<aspectTool description="Create a new Comment" id="blockdefinition_constraints.tool.comment" name="Comment" refToolId="clazz.tool.comment"/>		
+		<aspectTool description="Create a new Comment / Constraint link" id="blockdefinition_constraints.tool.comment_constraint_link" name="Comment / Constraint link" refToolId="clazz.tool.contextlink"/>		
+	</drawer>
 	</content>	
 </paletteDefinition>
