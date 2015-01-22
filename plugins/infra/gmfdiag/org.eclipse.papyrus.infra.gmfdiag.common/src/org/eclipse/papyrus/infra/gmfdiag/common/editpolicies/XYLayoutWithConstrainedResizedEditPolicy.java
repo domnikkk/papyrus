@@ -26,6 +26,7 @@ import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.NodeEditPart;
 import org.eclipse.gef.SnapToHelper;
 import org.eclipse.gef.commands.Command;
@@ -46,6 +47,7 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalC
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
 import org.eclipse.papyrus.infra.gmfdiag.common.commands.FixEdgeAnchorsDeferredCommand;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.ConnectionEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.helper.FixAnchorHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.ServiceUtilsForEditPart;
 
@@ -57,6 +59,19 @@ import org.eclipse.papyrus.infra.gmfdiag.common.utils.ServiceUtilsForEditPart;
 public class XYLayoutWithConstrainedResizedEditPolicy extends XYLayoutEditPolicy {
 
 	private FixAnchorHelper helper = null;
+
+	/**
+	 * Overrided {@link org.eclipse.gef.editpolicies.XYLayoutEditPolicy}#getCurrentConstraintFor()
+	 * to the fixing NPE of parent.getLayoutManager().getConstraint(fig) row
+	 * parent.getLayoutManager() can be null for edges
+	 */
+	@Override
+	protected Rectangle getCurrentConstraintFor(GraphicalEditPart child) {
+		if (child instanceof ConnectionEditPart && child.getParent() instanceof DiagramRootEditPart) {
+			return null;
+		}
+		return super.getCurrentConstraintFor(child);
+	}
 
 	/**
 	 * Called in response to a <tt>REQ_CREATE</tt> request. Returns a command
