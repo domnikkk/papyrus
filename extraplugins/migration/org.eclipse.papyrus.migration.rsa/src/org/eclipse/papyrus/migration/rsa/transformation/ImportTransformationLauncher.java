@@ -614,7 +614,7 @@ public class ImportTransformationLauncher {
 		// We're in a batch environment, with no undo/redo support. Run a vanilla transaction to improve performances
 		Transaction fastTransaction = internalDomain.startTransaction(false, options);
 		try {
-			DependencyManagementHelper.updateDependencies(urisToReplace, resourcesToRepair, domain);
+			DependencyManagementHelper.batchUpdateDependencies(urisToReplace, resourcesToRepair, domain);
 		} finally {
 			fastTransaction.commit();
 		}

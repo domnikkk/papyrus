@@ -360,13 +360,13 @@ public class DependencyManagementHelper {
 	 * @param editingDomain
 	 *            The editing domain. May be null.
 	 */
-	public static void updateDependencies(Map<URI, URI> urisToReplace, Collection<Resource> resourcesToRepair, EditingDomain editingDomain) {
+	public static void batchUpdateDependencies(Map<URI, URI> urisToReplace, Collection<Resource> resourcesToRepair, EditingDomain editingDomain) {
 		for (Resource resource : resourcesToRepair) {
 			if (EMFHelper.isReadOnly(resource, editingDomain)) {
 				continue;
 			}
 
-			updateDependencies(urisToReplace, resource, editingDomain);
+			batchUpdateDependencies(urisToReplace, resource, editingDomain);
 		}
 	}
 
@@ -380,7 +380,7 @@ public class DependencyManagementHelper {
 	 * @param editingDomain
 	 *            The editing domain. May be null.
 	 */
-	public static void updateDependencies(Map<URI, URI> urisToReplace, Resource fromResource, EditingDomain editingDomain) {
+	public static void batchUpdateDependencies(Map<URI, URI> urisToReplace, Resource fromResource, EditingDomain editingDomain) {
 		Iterator<EObject> allContentsIterator = fromResource.getAllContents();
 
 		while (allContentsIterator.hasNext()) {
