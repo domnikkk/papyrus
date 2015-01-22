@@ -350,4 +350,122 @@ public class DependencyManagementHelper {
 		return updateDependencies(uriToReplace, targetURI, resourcesToEdit, null);
 	}
 
+	/**
+	 * Batch operation for replacing a set of resource URIs with another set of URIs, for a Collection of resources
+	 *
+	 * @param urisToReplace
+	 *            The mapping of Resource URIs to replace (Key = SourceURI, Value = TargetURI)
+	 * @param resourcesToRepair
+	 *            The list of resources to edit. Only the objects of these resources will be modified.
+	 * @param editingDomain
+	 *            The editing domain. May be null.
+	 */
+	public static void updateDependencies(Map<URI, URI> urisToReplace, Collection<Resource> resourcesToRepair, EditingDomain editingDomain) {
+		for (Resource resource : resourcesToRepair) {
+			if (EMFHelper.isReadOnly(resource, editingDomain)) {
+				continue;
+			}
+
+			updateDependencies(urisToReplace, resource, editingDomain);
+		}
+	}
+
+	/**
+	 * Batch operation for replacing a set of resource URIs with another set of URIs, for a single resource
+	 *
+	 * @param urisToReplace
+	 *            The mapping of Resource URIs to replace (Key = SourceURI, Value = TargetURI)
+	 * @param resourcesToRepair
+	 *            The list of resources to edit. Only the objects of these resources will be modified.
+	 * @param editingDomain
+	 *            The editing domain. May be null.
+	 */
+	public static void updateDependencies(Map<URI, URI> urisToReplace, Resource fromResource, EditingDomain editingDomain) {
+		Iterator<EObject> allContentsIterator = fromResource.getAllContents();
+
+		while (allContentsIterator.hasNext()) {
+			EObject eObject = allContentsIterator.next();
+
+			for (EReference reference : eObject.eClass().getEAllReferences()) {
+				if (reference.isContainer() || reference.isContainment()) {
+					continue;
+				}
+
+				// Attempts to modify a changeable + derived feature (e.g. Class#general in UML)
+				// will rely in reverse-derivation algorithms, which may recreate some existing elements
+				// (Instead of modifying them). This can result in loss of information. Don't change derived values.
+				if (reference.isDerived() || !reference.isChangeable()) {
+					continue;
+				}
+
+				Object value = eObject.eGet(reference);
+				if (value instanceof EObject) {
+					EObject eObjectToReplace = (EObject) value;
+
+					EObject newEObject = checkAndReplace(eObjectToReplace, urisToReplace);
+					if (newEObject == null) {
+						continue;
+					}
+
+					try {
+						eObject.eSet(reference, newEObject);
+					} catch (Exception ex) {
+						Activator.log.error(ex);
+					}
+
+				} else if (value instanceof Collection<?>) {
+					Map<EObject, EObject> previousToNewValue = new HashMap<EObject, EObject>();
+
+					Collection<?> collection = (Collection<?>) value;
+
+					for (Object collectionElement : (Collection<?>) value) {
+						if (collectionElement instanceof EObject) {
+							EObject eObjectToReplace = (EObject) collectionElement;
+							EObject newEObject = checkAndReplace(eObjectToReplace, urisToReplace);
+							if (newEObject == null) {
+								continue;
+							}
+
+							previousToNewValue.put(eObjectToReplace, newEObject);
+						}
+					}
+
+					if (previousToNewValue.isEmpty()) {
+						continue;
+					}
+
+					if (collection instanceof EStructuralFeature.Setting) {
+						EStructuralFeature.Setting setting = (EStructuralFeature.Setting) collection;
+						for (Map.Entry<EObject, EObject> entry : previousToNewValue.entrySet()) {
+							EcoreUtil.replace(setting, entry.getKey(), entry.getValue());
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * Replaces the EObject (Which may be a proxy) by its equivalent in the given Resource's URI.
+	 * Returns null if the "currentValueToReplace" doesn't belong to the resource represented by "urisToReplace".
+	 *
+	 * @param currentValueToReplace
+	 *            The current value, to be replaced. May be a proxy
+	 * @param urisToReplace
+	 *            The mapping of Resource URIs to replace (Key = SourceURI, Value = TargetURI)
+	 * @return
+	 *         The EObject equivalent to the replaced EObject, in the target resource.
+	 */
+	private static EObject checkAndReplace(EObject currentValueToReplace, Map<URI, URI> urisToReplace) {
+		URI eObjectURIToReplace = EcoreUtil.getURI(currentValueToReplace);
+		URI resourceURI = eObjectURIToReplace.trimFragment();
+
+		URI targetURI = urisToReplace.get(resourceURI);
+		if (targetURI == null) {
+			return null;
+		}
+
+		return replace(currentValueToReplace, targetURI);
+	}
+
 }

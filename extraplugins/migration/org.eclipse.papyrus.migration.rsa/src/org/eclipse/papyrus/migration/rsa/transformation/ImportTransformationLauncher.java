@@ -421,6 +421,7 @@ public class ImportTransformationLauncher {
 			populateURIMap(parameters.getProfileUriMappings(), profileUrisToReplace);
 		}
 
+		removeEmptyMappings(urisToReplace);
 
 		List<Schedulable> tasks = new LinkedList<Schedulable>();
 		for (final ImportTransformation transformation : transformations) {
@@ -447,6 +448,16 @@ public class ImportTransformationLauncher {
 		long end = System.nanoTime();
 
 		ownExecutionTime = end - begin - timeToIgnore;
+	}
+
+	protected void removeEmptyMappings(Map<URI, URI> urisToReplace) {
+		Iterator<Map.Entry<URI, URI>> iterator = urisToReplace.entrySet().iterator();
+		while (iterator.hasNext()) {
+			Map.Entry<URI, URI> entry = iterator.next();
+			if (entry.getKey().equals(entry.getValue())) {
+				iterator.remove();
+			}
+		}
 	}
 
 	final protected Map<ImportTransformation, Long> loadingTimeV2 = new HashMap<ImportTransformation, Long>();
@@ -593,29 +604,19 @@ public class ImportTransformationLauncher {
 
 		final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
 
-		for (final Map.Entry<URI, URI> entry : urisToReplace.entrySet()) {
-			if (monitor.isCanceled()) {
-				return;
-			}
+		InternalTransactionalEditingDomain internalDomain = (InternalTransactionalEditingDomain) domain;
 
-			if (entry.getKey().equals(entry.getValue())) {
-				continue;
-			}
+		Map<String, Object> options = new HashMap<String, Object>();
+		options.put(Transaction.OPTION_NO_UNDO, true);
+		options.put(Transaction.OPTION_NO_VALIDATION, true);
+		options.put(Transaction.OPTION_NO_TRIGGERS, true);
 
-			InternalTransactionalEditingDomain internalDomain = (InternalTransactionalEditingDomain) domain;
-
-			Map<String, Object> options = new HashMap<String, Object>();
-			options.put(Transaction.OPTION_NO_UNDO, true);
-			options.put(Transaction.OPTION_NO_VALIDATION, true);
-			options.put(Transaction.OPTION_NO_TRIGGERS, true);
-
-			// We're in a batch environment, with no undo/redo support. Run a vanilla transaction to improve performances
-			Transaction fastTransaction = internalDomain.startTransaction(false, options);
-			try {
-				DependencyManagementHelper.updateDependencies(entry.getKey(), entry.getValue(), resourcesToRepair, domain);
-			} finally {
-				fastTransaction.commit();
-			}
+		// We're in a batch environment, with no undo/redo support. Run a vanilla transaction to improve performances
+		Transaction fastTransaction = internalDomain.startTransaction(false, options);
+		try {
+			DependencyManagementHelper.updateDependencies(urisToReplace, resourcesToRepair, domain);
+		} finally {
+			fastTransaction.commit();
 		}
 	}
 
