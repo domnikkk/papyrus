@@ -81,40 +81,67 @@ public class DependencyAnalysisHelper {
 		}
 	}
 
-	public synchronized void resolveAllMappings() {
+	public synchronized void resolveAllMappings(Map<URI, URI> urisToReplace, Map<URI, URI> profileUrisToReplace) {
 		if (config.getMappingParameters() == null) {
 			config.setMappingParameters(RSAToPapyrusParametersFactory.eINSTANCE.createMappingParameters());
 		}
 
 		try {
 			for (Entry<URI, Set<String>> resourceToRepair : brokenUris.entrySet()) {
+
+				// Already known mapping
+				if (urisToReplace.containsKey(resourceToRepair.getKey())) {
+					continue;
+				}
 				findMatch(resourceToRepair.getKey(), resourceToRepair.getValue());
 			}
 
 			for (URI profileDefinition : brokenProfiles) {
+
+				// Already known mapping
+				if (profileUrisToReplace.containsKey(profileDefinition.trimFragment().trimQuery())) {
+					continue;
+				}
 				findMatch(profileDefinition);
 			}
 		} finally {
 			unloadResourceSet();
+			brokenUris.clear();
+			brokenProfiles.clear();
 		}
 	}
 
 	protected void findMatch(URI resourceURI, Set<String> fragments) {
+		URIMapping mapping = null;
+
 		for (String fragment : fragments) {
 			URI eObjectURI = resourceURI.appendFragment(fragment);
-			URIMapping mapping = findExistingMapping(eObjectURI, localResourceSet);
+			mapping = findExistingMapping(eObjectURI, localResourceSet);
+
 			if (mapping != null) {
-				config.getMappingParameters().getUriMappings().add(mapping);
-				return;
+				break;
 			}
 		}
+
+		if (mapping == null) {
+			mapping = RSAToPapyrusParametersFactory.eINSTANCE.createURIMapping();
+			mapping.setSourceURI(resourceURI.toString());
+			mapping.setTargetURI(mapping.getSourceURI());
+		}
+
+		config.getMappingParameters().getUriMappings().add(mapping);
 	}
 
 	protected void findMatch(URI profileDefinitionURI) {
 		URIMapping match = findExistingProfileMapping(profileDefinitionURI, localResourceSet);
-		if (match != null) {
-			config.getMappingParameters().getProfileUriMappings().add(match);
+
+		if (match == null) {
+			match = RSAToPapyrusParametersFactory.eINSTANCE.createURIMapping();
+			match.setSourceURI(profileDefinitionURI.trimFragment().trimQuery().toString());
+			match.setTargetURI(match.getSourceURI());
 		}
+
+		config.getMappingParameters().getProfileUriMappings().add(match);
 	}
 
 	protected void doComputeURIMappings(Resource sourceModel) {
@@ -193,6 +220,7 @@ public class DependencyAnalysisHelper {
 	protected synchronized void handleBrokenReference(EObject proxy) {
 		URI proxyURI = EcoreUtil.getURI(proxy);
 		URI resourceURI = proxyURI.trimFragment().trimQuery();
+
 		String fragment = proxyURI.fragment();
 		Set<String> fragments = getFragments(resourceURI);
 		fragments.add(fragment);
@@ -207,28 +235,11 @@ public class DependencyAnalysisHelper {
 
 		EPackage profileDefinition = stereotypeApplication.eClass().getEPackage();
 		URI packageURI = EcoreUtil.getURI(profileDefinition);
+		if (packageURI.trimFragment().isEmpty()) {
+			packageURI = URI.createURI(profileDefinition.getNsURI());
+		}
 		addBrokenProfileDefinition(packageURI);
 
-
-		// Collection<URIMapping> mappings = config.getMappingParameters().getProfileUriMappings();
-		//
-		// URIMapping existingMapping = findExistingProfileMapping(stereotypeApplication, resourceSet);
-		// if (existingMapping == null) {
-		// URI packageURI = EcoreUtil.getURI(stereotypeApplication.eClass().getEPackage());
-		//
-		// URIMapping mapping = RSAToPapyrusParametersFactory.eINSTANCE.createURIMapping();
-		//
-		// mapping.setSourceURI(packageURI.trimFragment().trimQuery().toString());
-		// mapping.setTargetURI(packageURI.trimFragment().trimQuery().toString());
-		//
-		// synchronized (config) {
-		// mappings.add(mapping);
-		// }
-		// } else {
-		// synchronized (config) {
-		// mappings.add(existingMapping);
-		// }
-		// }
 	}
 
 	protected void handleURIMapping(EObject eObject, ResourceSet resourceSet) {
@@ -246,30 +257,6 @@ public class DependencyAnalysisHelper {
 			}
 		}
 
-		// Collection<URIMapping> mappings = config.getMappingParameters().getUriMappings();
-		//
-		// if (eObject.eIsProxy() || isRSAModelElement(eObject)) { // Not yet resolved, or still a reference to an RSA Model Element
-		// eObject = EcoreUtil.resolve(eObject, resourceSet);
-		// if (eObject.eIsProxy() || isRSAModelElement(eObject)) { // Can't be resolved
-		//
-		// URIMapping existingMapping = findExistingMapping(eObject, resourceSet);
-		// if (existingMapping == null) {
-		// URIMapping mapping = RSAToPapyrusParametersFactory.eINSTANCE.createURIMapping();
-		// URI sourceURI = EcoreUtil.getURI(eObject);
-		//
-		// mapping.setSourceURI(sourceURI.trimFragment().trimQuery().toString());
-		// mapping.setTargetURI(sourceURI.trimFragment().trimQuery().toString()); // By default, don't change anything
-		//
-		// synchronized (config) {
-		// mappings.add(mapping);
-		// }
-		// } else {
-		// synchronized (config) {
-		// mappings.add(existingMapping);
-		// }
-		// }
-		// }
-		// }
 	}
 
 	protected URIMapping findExistingProfileMapping(URI profileDefinitionURI, ResourceSet resourceSet) {
@@ -395,7 +382,7 @@ public class DependencyAnalysisHelper {
 	protected boolean isPathFragment(URI proxyURI) {
 		String uriFragment = proxyURI.fragment();
 
-		return uriFragment.charAt(0) == '/';
+		return uriFragment != null && uriFragment.charAt(0) == '/';
 	}
 
 	protected URIMapping findExistingMapping(EObject proxy, ResourceSet resourceSet) {

@@ -165,6 +165,10 @@ public class ImportTransformationLauncher {
 			protected IStatus run(IProgressMonitor monitor) {
 				IStatus result = ImportTransformationLauncher.this.importModels(monitor, transformations);
 
+				if (monitor.isCanceled()) {
+					return new Status(IStatus.CANCEL, Activator.PLUGIN_ID, "Operation Canceled");
+				}
+
 				long cumulatedLoadingTime = 0L;
 				long cumulatedTransformationTime = 0L;
 				long cumulatedHandleDanglingTime = 0L;
@@ -396,12 +400,11 @@ public class ImportTransformationLauncher {
 			profileUrisToReplace.putAll(transformation.getProfileURIMappings());
 		}
 
+		monitor.subTask("Analysing unresolved references...");
 		long startResolveAll = System.nanoTime();
-		analysisHelper.resolveAllMappings();
+		analysisHelper.resolveAllMappings(urisToReplace, profileUrisToReplace);
 		long endResolveAll = System.nanoTime();
 		resolveAllDependencies = endResolveAll - startResolveAll;
-
-		filterKnownMappings(config.getMappingParameters(), urisToReplace, profileUrisToReplace);
 
 		if (!config.getMappingParameters().getUriMappings().isEmpty() || !config.getMappingParameters().getProfileUriMappings().isEmpty()) {
 
@@ -642,39 +645,6 @@ public class ImportTransformationLauncher {
 				uriMap.put(sourceURI, targetURI);
 			}
 		}
-	}
-
-	/**
-	 * Remove automatic mappings (When multiple files are imported simultaneously) and duplicates
-	 *
-	 * @param mappingParameters
-	 *            All unresolved proxies
-	 * @param currentMappings
-	 *            The map of known (automatic) mappings
-	 */
-	protected void filterKnownMappings(final MappingParameters mappingParameters, final Map<URI, URI> currentMappings, final Map<URI, URI> currentProfileMappings) {
-		filterKnownMappings(mappingParameters.getUriMappings(), currentMappings);
-		filterKnownMappings(mappingParameters.getProfileUriMappings(), currentProfileMappings);
-	}
-
-	protected void filterKnownMappings(List<URIMapping> allMappings, Map<URI, URI> knownMappings) {
-
-		Set<URI> userMappings = new HashSet<URI>();
-
-		Iterator<URIMapping> mappings = allMappings.iterator();
-		while (mappings.hasNext()) {
-			URIMapping mapping = mappings.next();
-			if (mapping == null) {
-				continue;
-			}
-			URI sourceURI = URI.createURI(mapping.getSourceURI());
-			if (knownMappings.containsKey(sourceURI) || userMappings.contains(sourceURI)) {
-				mappings.remove();
-			} else {
-				userMappings.add(sourceURI);
-			}
-		}
-
 	}
 
 	protected MappingParameters confirmURIMappings(final MappingParameters mappingParameters) {
