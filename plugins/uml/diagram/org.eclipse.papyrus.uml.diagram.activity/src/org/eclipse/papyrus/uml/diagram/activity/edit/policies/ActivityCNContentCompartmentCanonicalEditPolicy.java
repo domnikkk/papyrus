@@ -43,6 +43,7 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.parts.BroadcastSignalAction
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.CallBehaviorActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.CallOperationActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.CentralBufferNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ClearStructuralFeatureActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.CommentEditPartCN;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ConditionalNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ConstraintAsLocalPostcondEditPart;
@@ -194,6 +195,7 @@ public class ActivityCNContentCompartmentCanonicalEditPolicy extends CanonicalEd
 		case ActivityParameterNodeEditPart.VISUAL_ID:
 		case StartObjectBehavoiurActionEditPart.VISUAL_ID:
 		case TestIdentityActionEditPart.VISUAL_ID:
+		case ClearStructuralFeatureActionEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
