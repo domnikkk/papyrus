@@ -157,7 +157,7 @@ public class DependencyAnalysisHelper {
 					continue;
 				}
 
-				Object value = next.eGet(reference);
+				Object value = next.eGet(reference, false);
 				if (value instanceof EObject) {
 					handleURIMapping((EObject) value, resourceSet);
 				} else if (value instanceof Collection<?>) {

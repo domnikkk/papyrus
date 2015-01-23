@@ -144,7 +144,7 @@ public class DependencyManagementHelper {
 					continue;
 				}
 
-				Object value = eObject.eGet(reference);
+				Object value = eObject.eGet(reference, false);
 				if (value instanceof EObject) {
 					EObject eObjectToReplace = (EObject) value;
 
@@ -398,7 +398,7 @@ public class DependencyManagementHelper {
 					continue;
 				}
 
-				Object value = eObject.eGet(reference);
+				Object value = eObject.eGet(reference, false);
 				if (value instanceof EObject) {
 					EObject eObjectToReplace = (EObject) value;
 
