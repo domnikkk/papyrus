@@ -35,6 +35,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.ISources;
 
 /**
  * Handler for the Cut Action in Diagram : it's a copy followed by a delete
@@ -42,16 +43,10 @@ import org.eclipse.swt.widgets.Text;
 public class CutInDiagramHandler extends AbstractGraphicalCommandHandler {
 
 	/** The Constant DELETE_COMMAND_LABEL. */
-	private static final String DELETE_COMMAND_LABEL = "Delete From Model"; //$NON-NLS-1$
+	private static final String DELETE_COMMAND_LABEL = "Delete From Model";
 
 	/** The Constant CUT_COMMAND_LABEL. */
-	private static final String CUT_COMMAND_LABEL = "Cut In Diagram Command"; //$NON-NLS-1$
-
-	/** The Constant ACTIVE_SHELL. */
-	private static final String ACTIVE_SHELL = "activeShell"; //$NON-NLS-1$
-
-	/** The Constant ACTIVE_FOCUS_CONTROL. */
-	private static final String ACTIVE_FOCUS_CONTROL = "activeFocusControl"; //$NON-NLS-1$
+	private static final String CUT_COMMAND_LABEL = "Cut In Diagram Command";
 
 	/** The active focus control. */
 	private Object activeFocusControl;
@@ -123,8 +118,8 @@ public class CutInDiagramHandler extends AbstractGraphicalCommandHandler {
 	public void setEnabled(Object evaluationContext) {
 		if (evaluationContext instanceof IEvaluationContext) {
 			IEvaluationContext iEvaluationContext = (IEvaluationContext) evaluationContext;
-			activeFocusControl = iEvaluationContext.getVariable(ACTIVE_FOCUS_CONTROL);
-			activeShell = iEvaluationContext.getVariable(ACTIVE_SHELL);
+			activeFocusControl = iEvaluationContext.getVariable(ISources.ACTIVE_FOCUS_CONTROL_NAME);
+			activeShell = iEvaluationContext.getVariable(ISources.ACTIVE_SHELL_NAME);
 
 		}
 

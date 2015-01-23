@@ -47,6 +47,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.ISources;
 
 
 /**
@@ -55,16 +56,10 @@ import org.eclipse.swt.widgets.Text;
 public class CopyInDiagramHandler extends AbstractGraphicalCommandHandler {
 
 	/** The Constant COPY_COMMAND_LABEL. */
-	private static final String COPY_COMMAND_LABEL = "Copy In Diagram"; //$NON-NLS-1$
-
-	/** The Constant ACTIVE_SHELL_VARIABLE_KEY. */
-	private static final String ACTIVE_SHELL_VARIABLE_KEY = "activeShell"; //$NON-NLS-1$
-
-	/** The Constant ACTIVE_FOCUS_VARIABLE_KEY. */
-	private static final String ACTIVE_FOCUS_VARIABLE_KEY = "activeFocusControl"; //$NON-NLS-1$
+	private static final String COPY_COMMAND_LABEL = "Copy In Diagram";
 
 	/** The Constant COPY_IMAGE_COMMAND_LABEL. */
-	private static final String COPY_IMAGE_COMMAND_LABEL = "Create image to allow paste on system"; //$NON-NLS-1$
+	private static final String COPY_IMAGE_COMMAND_LABEL = "Create image to allow paste on system";
 
 	/** The active focus control. */
 	private Object activeFocusControl = null;
@@ -142,8 +137,8 @@ public class CopyInDiagramHandler extends AbstractGraphicalCommandHandler {
 		// Local handling
 		if (evaluationContext instanceof IEvaluationContext) {
 			IEvaluationContext iEvaluationContext = (IEvaluationContext) evaluationContext;
-			activeFocusControl = iEvaluationContext.getVariable(ACTIVE_FOCUS_VARIABLE_KEY);
-			activeShell = iEvaluationContext.getVariable(ACTIVE_SHELL_VARIABLE_KEY);
+			activeFocusControl = iEvaluationContext.getVariable(ISources.ACTIVE_FOCUS_CONTROL_NAME);
+			activeShell = iEvaluationContext.getVariable(ISources.ACTIVE_SHELL_NAME);
 		}
 
 		// Parent handling
