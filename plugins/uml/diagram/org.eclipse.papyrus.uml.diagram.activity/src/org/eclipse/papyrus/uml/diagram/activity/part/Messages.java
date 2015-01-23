@@ -376,82 +376,92 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String AcceptEventActions12Group_title;
+	public static String LinkActionsGroup_title;
 
 	/**
 	 * @generated
 	 */
-	public static String AcceptEventActions12Group_desc;
+	public static String LinkActionsGroup_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String AcceptEventAction13CreationTool_title;
+	public static String AcceptEventActions13Group_title;
 
 	/**
 	 * @generated
 	 */
-	public static String AcceptEventAction13CreationTool_desc;
+	public static String AcceptEventActions13Group_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String TestIdentityAction14CreationTool_title;
+	public static String AcceptEventAction14CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String TestIdentityAction14CreationTool_desc;
+	public static String AcceptEventAction14CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Activity15CreationTool_title;
+	public static String TestIdentityAction15CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Activity15CreationTool_desc;
+	public static String TestIdentityAction15CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ActivityParameterNode16CreationTool_title;
+	public static String Activity16CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ActivityParameterNode16CreationTool_desc;
+	public static String Activity16CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String CentralBufferNode17CreationTool_title;
+	public static String ActivityParameterNode17CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String CentralBufferNode17CreationTool_desc;
+	public static String ActivityParameterNode17CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DataStoreNode18CreationTool_title;
+	public static String CentralBufferNode18CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DataStoreNode18CreationTool_desc;
+	public static String CentralBufferNode18CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Comment19CreationTool_title;
+	public static String DataStoreNode19CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Comment19CreationTool_desc;
+	public static String DataStoreNode19CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Comment20CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Comment20CreationTool_desc;
 
 	/**
 	 * @generated
@@ -952,6 +962,36 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String ValueSpecificationAction2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String CreateLinkAction1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String CreateLinkAction1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ReadLinkAction2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ReadLinkAction2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String DestroyLinkAction3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String DestroyLinkAction3CreationTool_desc;
 
 	/**
 	 * @generated

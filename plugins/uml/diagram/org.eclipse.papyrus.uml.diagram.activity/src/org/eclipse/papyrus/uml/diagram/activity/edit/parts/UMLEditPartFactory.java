@@ -767,6 +767,96 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new ActionInputPinInClearStructuralFeatureActionAsObjectValueEditPart(view);
 			case ActionInputPinInClearStructFeatActAsObjectAppliedStereotypeEditPart.VISUAL_ID:
 				return new ActionInputPinInClearStructFeatActAsObjectAppliedStereotypeEditPart(view);
+			case CreateLinkActionEditPart.VISUAL_ID:
+				return new CreateLinkActionEditPart(view);
+			case CreateLinkActionNameEditPart.VISUAL_ID:
+				return new CreateLinkActionNameEditPart(view);
+			case CreateLinkActionFloatingNameEditPart.VISUAL_ID:
+				return new CreateLinkActionFloatingNameEditPart(view);
+			case InputPinInCreateLinkActionAsInputValueEditPart.VISUAL_ID:
+				return new InputPinInCreateLinkActionAsInputValueEditPart(view);
+			case InputPinInCreateLinkActionAsInputValueLabelEditPart.VISUAL_ID:
+				return new InputPinInCreateLinkActionAsInputValueLabelEditPart(view);
+			case InputPinInCreateLinkActionAsInputValueAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new InputPinInCreateLinkActionAsInputValueAppliedStereotypeLabelEditPart(view);
+			case ValuePinInCreateLinkActionAsInputValueEditPart.VISUAL_ID:
+				return new ValuePinInCreateLinkActionAsInputValueEditPart(view);
+			case ValuePinInCreateLinkActionAsInputValueLabelEditPart.VISUAL_ID:
+				return new ValuePinInCreateLinkActionAsInputValueLabelEditPart(view);
+			case ValuePinInCreateLinkActionAsInputValueValueEditPart.VISUAL_ID:
+				return new ValuePinInCreateLinkActionAsInputValueValueEditPart(view);
+			case ValuePinInCreateLinkActionAsInputValueAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ValuePinInCreateLinkActionAsInputValueAppliedStereotypeLabelEditPart(view);
+			case ActionInputPinInCreateLinkActionAsInputValueEditPart.VISUAL_ID:
+				return new ActionInputPinInCreateLinkActionAsInputValueEditPart(view);
+			case ActionInputPinInCreateLinkActionAsInputValueLabelEditPart.VISUAL_ID:
+				return new ActionInputPinInCreateLinkActionAsInputValueLabelEditPart(view);
+			case ActionInputPinInCreateLinkActionAsInputValueValueEditPart.VISUAL_ID:
+				return new ActionInputPinInCreateLinkActionAsInputValueValueEditPart(view);
+			case ActionInputPinInCreateLinkActionAsInputValueAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ActionInputPinInCreateLinkActionAsInputValueAppliedStereotypeLabelEditPart(view);
+			case ReadLinkActionEditPart.VISUAL_ID:
+				return new ReadLinkActionEditPart(view);
+			case ReadLinkActionNameEditPart.VISUAL_ID:
+				return new ReadLinkActionNameEditPart(view);
+			case ReadLinkActionFloatingNameEditPart.VISUAL_ID:
+				return new ReadLinkActionFloatingNameEditPart(view);
+			case OutputPinInReadLinkActionEditPart.VISUAL_ID:
+				return new OutputPinInReadLinkActionEditPart(view);
+			case OutputPinInReadLinkActionLabelEditPart.VISUAL_ID:
+				return new OutputPinInReadLinkActionLabelEditPart(view);
+			case OutputPinInReadLinkActionAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new OutputPinInReadLinkActionAppliedStereotypeLabelEditPart(view);
+			case InputPinInReadLinkActionAsInputValueEditPart.VISUAL_ID:
+				return new InputPinInReadLinkActionAsInputValueEditPart(view);
+			case InputPinInReadLinkActionAsInputValueLabelEditPart.VISUAL_ID:
+				return new InputPinInReadLinkActionAsInputValueLabelEditPart(view);
+			case InputPinInReadLinkActionAsInputValueAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new InputPinInReadLinkActionAsInputValueAppliedStereotypeLabelEditPart(view);
+			case ValuePinInReadLinkActionAsInputValueEditPart.VISUAL_ID:
+				return new ValuePinInReadLinkActionAsInputValueEditPart(view);
+			case ValuePinInReadLinkActionAsInputValueLabelEditPart.VISUAL_ID:
+				return new ValuePinInReadLinkActionAsInputValueLabelEditPart(view);
+			case ValuePinInReadLinkActionAsInputValueValueEditPart.VISUAL_ID:
+				return new ValuePinInReadLinkActionAsInputValueValueEditPart(view);
+			case ValuePinInReadLinkActionAsInputValueAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ValuePinInReadLinkActionAsInputValueAppliedStereotypeLabelEditPart(view);
+			case ActionInputPinInReadLinkActionAsInputValueEditPart.VISUAL_ID:
+				return new ActionInputPinInReadLinkActionAsInputValueEditPart(view);
+			case ActionInputPinInReadLinkActionAsInputValueLabelEditPart.VISUAL_ID:
+				return new ActionInputPinInReadLinkActionAsInputValueLabelEditPart(view);
+			case ActionInputPinInReadLinkActionAsInputValueValueEditPart.VISUAL_ID:
+				return new ActionInputPinInReadLinkActionAsInputValueValueEditPart(view);
+			case ActionInputPinInReadLinkActionAsInputValueAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ActionInputPinInReadLinkActionAsInputValueAppliedStereotypeLabelEditPart(view);
+			case DestroyLinkActionEditPart.VISUAL_ID:
+				return new DestroyLinkActionEditPart(view);
+			case DestroyLinkActionNameEditPart.VISUAL_ID:
+				return new DestroyLinkActionNameEditPart(view);
+			case DestroyLinkActionFloatingNameEditPart.VISUAL_ID:
+				return new DestroyLinkActionFloatingNameEditPart(view);
+			case InputPinInDestroyLinkActionAsInputValueEditPart.VISUAL_ID:
+				return new InputPinInDestroyLinkActionAsInputValueEditPart(view);
+			case InputPinInDestroyLinkActionAsInputValueLabelEditPart.VISUAL_ID:
+				return new InputPinInDestroyLinkActionAsInputValueLabelEditPart(view);
+			case InputPinInDestroyLinkActionAsInputValueAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new InputPinInDestroyLinkActionAsInputValueAppliedStereotypeLabelEditPart(view);
+			case ValuePinInDestroyLinkActionAsInputValueEditPart.VISUAL_ID:
+				return new ValuePinInDestroyLinkActionAsInputValueEditPart(view);
+			case ValuePinInDestroyLinkActionAsInputValueLabelEditPart.VISUAL_ID:
+				return new ValuePinInDestroyLinkActionAsInputValueLabelEditPart(view);
+			case ValuePinInDestroyLinkActionAsInputValueValueEditPart.VISUAL_ID:
+				return new ValuePinInDestroyLinkActionAsInputValueValueEditPart(view);
+			case ValuePinInDestroyLinkActionAsInputValueAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ValuePinInDestroyLinkActionAsInputValueAppliedStereotypeLabelEditPart(view);
+			case ActionInputPinInDestroyLinkActionAsInputValueEditPart.VISUAL_ID:
+				return new ActionInputPinInDestroyLinkActionAsInputValueEditPart(view);
+			case ActionInputPinInDestroyLinkActionAsInputValueLabelEditPart.VISUAL_ID:
+				return new ActionInputPinInDestroyLinkActionAsInputValueLabelEditPart(view);
+			case ActionInputPinInDestroyLinkActionAsInputValueValueEditPart.VISUAL_ID:
+				return new ActionInputPinInDestroyLinkActionAsInputValueValueEditPart(view);
+			case ActionInputPinInDestroyLinkActionAsInputValueAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ActionInputPinInDestroyLinkActionAsInputValueAppliedStereotypeLabelEditPart(view);
 			case ActivityActivityParametersCompartmentEditPart.VISUAL_ID:
 				return new ActivityActivityParametersCompartmentEditPart(view);
 			case ActivityActivityPreConditionsCompartmentEditPart.VISUAL_ID:

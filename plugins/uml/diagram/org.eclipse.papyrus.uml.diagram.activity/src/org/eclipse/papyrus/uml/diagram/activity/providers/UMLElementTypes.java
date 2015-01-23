@@ -554,6 +554,71 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType CreateLinkAction_3117 = getElementType("org.eclipse.papyrus.uml.diagram.activity.CreateLinkAction_3117"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3137 = getElementType("org.eclipse.papyrus.uml.diagram.activity.InputPin_3137"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValuePin_3151 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3151"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3163 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3163"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ReadLinkAction_3116 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ReadLinkAction_3116"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OutputPin_3128 = getElementType("org.eclipse.papyrus.uml.diagram.activity.OutputPin_3128"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3138 = getElementType("org.eclipse.papyrus.uml.diagram.activity.InputPin_3138"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValuePin_3150 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3150"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3164 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3164"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType DestroyLinkAction_3118 = getElementType("org.eclipse.papyrus.uml.diagram.activity.DestroyLinkAction_3118"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3139 = getElementType("org.eclipse.papyrus.uml.diagram.activity.InputPin_3139"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValuePin_3152 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3152"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3165 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3165"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ValueSpecificationAction_3076 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValueSpecificationAction_3076"); //$NON-NLS-1$
 
 	/**
@@ -830,6 +895,19 @@ public class UMLElementTypes {
 			elements.put(InputPin_3136, UMLPackage.eINSTANCE.getInputPin());
 			elements.put(ValuePin_3149, UMLPackage.eINSTANCE.getValuePin());
 			elements.put(ActionInputPin_3162, UMLPackage.eINSTANCE.getActionInputPin());
+			elements.put(CreateLinkAction_3117, UMLPackage.eINSTANCE.getCreateLinkAction());
+			elements.put(InputPin_3137, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(ValuePin_3151, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ActionInputPin_3163, UMLPackage.eINSTANCE.getActionInputPin());
+			elements.put(ReadLinkAction_3116, UMLPackage.eINSTANCE.getReadLinkAction());
+			elements.put(OutputPin_3128, UMLPackage.eINSTANCE.getOutputPin());
+			elements.put(InputPin_3138, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(ValuePin_3150, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ActionInputPin_3164, UMLPackage.eINSTANCE.getActionInputPin());
+			elements.put(DestroyLinkAction_3118, UMLPackage.eINSTANCE.getDestroyLinkAction());
+			elements.put(InputPin_3139, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(ValuePin_3152, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ActionInputPin_3165, UMLPackage.eINSTANCE.getActionInputPin());
 			elements.put(ActionLocalPrecondition_4001, UMLPackage.eINSTANCE.getAction_LocalPrecondition());
 			elements.put(ActionLocalPostcondition_4002, UMLPackage.eINSTANCE.getAction_LocalPostcondition());
 			elements.put(ObjectFlow_4003, UMLPackage.eINSTANCE.getObjectFlow());
@@ -971,6 +1049,19 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(InputPin_3136);
 			KNOWN_ELEMENT_TYPES.add(ValuePin_3149);
 			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3162);
+			KNOWN_ELEMENT_TYPES.add(CreateLinkAction_3117);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3137);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3151);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3163);
+			KNOWN_ELEMENT_TYPES.add(ReadLinkAction_3116);
+			KNOWN_ELEMENT_TYPES.add(OutputPin_3128);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3138);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3150);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3164);
+			KNOWN_ELEMENT_TYPES.add(DestroyLinkAction_3118);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3139);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3152);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3165);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPrecondition_4001);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPostcondition_4002);
 			KNOWN_ELEMENT_TYPES.add(ObjectFlow_4003);
@@ -1221,6 +1312,32 @@ public class UMLElementTypes {
 			return ValuePin_3149;
 		case ActionInputPinInClearStructuralFeatureActionAsObjectEditPart.VISUAL_ID:
 			return ActionInputPin_3162;
+		case CreateLinkActionEditPart.VISUAL_ID:
+			return CreateLinkAction_3117;
+		case InputPinInCreateLinkActionAsInputValueEditPart.VISUAL_ID:
+			return InputPin_3137;
+		case ValuePinInCreateLinkActionAsInputValueEditPart.VISUAL_ID:
+			return ValuePin_3151;
+		case ActionInputPinInCreateLinkActionAsInputValueEditPart.VISUAL_ID:
+			return ActionInputPin_3163;
+		case ReadLinkActionEditPart.VISUAL_ID:
+			return ReadLinkAction_3116;
+		case OutputPinInReadLinkActionEditPart.VISUAL_ID:
+			return OutputPin_3128;
+		case InputPinInReadLinkActionAsInputValueEditPart.VISUAL_ID:
+			return InputPin_3138;
+		case ValuePinInReadLinkActionAsInputValueEditPart.VISUAL_ID:
+			return ValuePin_3150;
+		case ActionInputPinInReadLinkActionAsInputValueEditPart.VISUAL_ID:
+			return ActionInputPin_3164;
+		case DestroyLinkActionEditPart.VISUAL_ID:
+			return DestroyLinkAction_3118;
+		case InputPinInDestroyLinkActionAsInputValueEditPart.VISUAL_ID:
+			return InputPin_3139;
+		case ValuePinInDestroyLinkActionAsInputValueEditPart.VISUAL_ID:
+			return ValuePin_3152;
+		case ActionInputPinInDestroyLinkActionAsInputValueEditPart.VISUAL_ID:
+			return ActionInputPin_3165;
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
 			return ActionLocalPrecondition_4001;
 		case ActionLocalPostconditionEditPart.VISUAL_ID:

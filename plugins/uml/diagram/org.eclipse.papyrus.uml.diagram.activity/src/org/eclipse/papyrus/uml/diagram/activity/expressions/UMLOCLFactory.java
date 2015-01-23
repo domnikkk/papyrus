@@ -49,7 +49,7 @@ public class UMLOCLFactory {
 	 * @generated
 	 */
 	protected UMLOCLFactory() {
-		this.expressions = new UMLAbstractExpression[102];
+		this.expressions = new UMLAbstractExpression[111];
 		this.expressionBodies = new String[] {
 				"if self.owner.oclIsKindOf(CallOperationAction)\r\nthen self.owner.oclAsType(CallOperationAction).argument->includes(self)\r\nelse false endif", //$NON-NLS-1$
 				"if self.owner.oclIsKindOf(CallOperationAction)\r\nthen self.owner.oclAsType(CallOperationAction).argument->includes(self)\r\nelse false endif", //$NON-NLS-1$
@@ -153,6 +153,15 @@ public class UMLOCLFactory {
 				"if self.owner.oclIsKindOf(ClearStructuralFeatureAction) and self.oclIsTypeOf(InputPin)\r\nthen self.owner.oclAsType(ClearStructuralFeatureAction).object = self\r\nelse false endif", //$NON-NLS-1$
 				"if self.owner.oclIsKindOf(ClearStructuralFeatureAction) and self.oclIsTypeOf(ValuePin)\r\nthen self.owner.oclAsType(ClearStructuralFeatureAction).object = self\r\nelse false endif", //$NON-NLS-1$
 				"if self.owner.oclIsKindOf(ClearStructuralFeatureAction) and self.oclIsTypeOf(ActionInputPin)\r\nthen self.owner.oclAsType(ClearStructuralFeatureAction).object = self\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(CreateLinkAction) and self.oclIsTypeOf(InputPin)\r\nthen self.owner.oclAsType(CreateLinkAction).inputValue->includes(self)\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(CreateLinkAction) and self.oclIsTypeOf(ValuePin)\r\nthen self.owner.oclAsType(CreateLinkAction).inputValue->includes(self)\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(CreateLinkAction) and self.oclIsTypeOf(ActionInputPin)\r\nthen self.owner.oclAsType(CreateLinkAction).inputValue->includes(self)\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(ReadLinkAction) and self.oclIsTypeOf(InputPin)\r\nthen self.owner.oclAsType(ReadLinkAction).inputValue->includes(self)\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(ReadLinkAction) and self.oclIsTypeOf(ValuePin)\r\nthen self.owner.oclAsType(ReadLinkAction).inputValue->includes(self)\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(ReadLinkAction) and self.oclIsTypeOf(ActionInputPin)\r\nthen self.owner.oclAsType(ReadLinkAction).inputValue->includes(self)\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(DestroyLinkAction) and self.oclIsTypeOf(InputPin)\r\nthen self.owner.oclAsType(DestroyLinkAction).inputValue->includes(self)\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(DestroyLinkAction) and self.oclIsTypeOf(ValuePin)\r\nthen self.owner.oclAsType(DestroyLinkAction).inputValue->includes(self)\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(DestroyLinkAction) and self.oclIsTypeOf(ActionInputPin)\r\nthen self.owner.oclAsType(DestroyLinkAction).inputValue->includes(self)\r\nelse false endif", //$NON-NLS-1$
 		};
 	}
 
