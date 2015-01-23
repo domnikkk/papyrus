@@ -299,6 +299,12 @@ public class ActivityActivityContentCompartmentItemSemanticEditPolicy extends UM
 			req.setContainmentFeature(containmentFeature);
 			return getGEFWrapper(getSemanticCreationCommand(req));
 		}
+		if (UMLElementTypes.TestIdentityAction_3114 == requestElementType) {
+			// adjust the containment feature
+			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			req.setContainmentFeature(containmentFeature);
+			return getGEFWrapper(getSemanticCreationCommand(req));
+		}
 		return super.getCreateCommand(req);
 	}
 }
