@@ -3822,6 +3822,160 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser clearAssociationActionName_5197Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getClearAssociationActionName_5197Parser() {
+		if (clearAssociationActionName_5197Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			clearAssociationActionName_5197Parser = parser;
+		}
+		return clearAssociationActionName_5197Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser clearAssociationActionName_5400Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getClearAssociationActionName_5400Parser() {
+		if (clearAssociationActionName_5400Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			clearAssociationActionName_5400Parser = parser;
+		}
+		return clearAssociationActionName_5400Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinParser inputPinLabel_5235Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInputPinLabel_5235Parser() {
+		if (inputPinLabel_5235Parser == null) {
+			inputPinLabel_5235Parser = new PinParser();
+		}
+		return inputPinLabel_5235Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser inputPinLabel_5236Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInputPinLabel_5236Parser() {
+		if (inputPinLabel_5236Parser == null) {
+			inputPinLabel_5236Parser = new AppliedStereotypeParser();
+		}
+		return inputPinLabel_5236Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinParser valuePinLabel_5296Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValuePinLabel_5296Parser() {
+		if (valuePinLabel_5296Parser == null) {
+			valuePinLabel_5296Parser = new PinParser();
+		}
+		return valuePinLabel_5296Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinValueParser valuePinLabel_5297Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValuePinLabel_5297Parser() {
+		if (valuePinLabel_5297Parser == null) {
+			valuePinLabel_5297Parser = new PinValueParser();
+		}
+		return valuePinLabel_5297Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser valuePinLabel_5298Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValuePinLabel_5298Parser() {
+		if (valuePinLabel_5298Parser == null) {
+			valuePinLabel_5298Parser = new AppliedStereotypeParser();
+		}
+		return valuePinLabel_5298Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinParser actionInputPinLabel_5299Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActionInputPinLabel_5299Parser() {
+		if (actionInputPinLabel_5299Parser == null) {
+			actionInputPinLabel_5299Parser = new PinParser();
+		}
+		return actionInputPinLabel_5299Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinValueParser actionInputPinLabel_5300Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActionInputPinLabel_5300Parser() {
+		if (actionInputPinLabel_5300Parser == null) {
+			actionInputPinLabel_5300Parser = new PinValueParser();
+		}
+		return actionInputPinLabel_5300Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser actionInputPinLabel_5301Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActionInputPinLabel_5301Parser() {
+		if (actionInputPinLabel_5301Parser == null) {
+			actionInputPinLabel_5301Parser = new AppliedStereotypeParser();
+		}
+		return actionInputPinLabel_5301Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private CommentParser commentBody_5138Parser;
 
 	/**
@@ -5132,6 +5286,26 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getActionInputPinLabel_5294Parser();
 		case ActionInputPinInDestroyLinkActionAsInputValueAppliedStereotypeLabelEditPart.VISUAL_ID:
 			return getActionInputPinLabel_5295Parser();
+		case ClearAssociationActionNameEditPart.VISUAL_ID:
+			return getClearAssociationActionName_5197Parser();
+		case ClearAssociationActionFloatingNameEditPart.VISUAL_ID:
+			return getClearAssociationActionName_5400Parser();
+		case InputPinInClearAssociationActionAsObjectLabelEditPart.VISUAL_ID:
+			return getInputPinLabel_5235Parser();
+		case InputPinInClearAssociationActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+			return getInputPinLabel_5236Parser();
+		case ValuePinInClearAssociationActionAsObjectLabelEditPart.VISUAL_ID:
+			return getValuePinLabel_5296Parser();
+		case ValuePinInClearAssociationActionAsObjectValueEditPart.VISUAL_ID:
+			return getValuePinLabel_5297Parser();
+		case ValuePinInClearAssociationActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+			return getValuePinLabel_5298Parser();
+		case ActionPinInClearAssociationActionAsObjectLabelEditPart.VISUAL_ID:
+			return getActionInputPinLabel_5299Parser();
+		case ActionPinInClearAssociationActionAsObjectValueEditPart.VISUAL_ID:
+			return getActionInputPinLabel_5300Parser();
+		case ActionPinInClearAssociationActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+			return getActionInputPinLabel_5301Parser();
 		case ObjectFlowNameEditPart.VISUAL_ID:
 			return getObjectFlowName_6001Parser();
 		case ObjectFlowWeightEditPart.VISUAL_ID:

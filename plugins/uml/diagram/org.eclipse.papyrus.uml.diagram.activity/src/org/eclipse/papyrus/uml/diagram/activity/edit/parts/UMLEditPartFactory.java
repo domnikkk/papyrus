@@ -857,6 +857,34 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new ActionInputPinInDestroyLinkActionAsInputValueValueEditPart(view);
 			case ActionInputPinInDestroyLinkActionAsInputValueAppliedStereotypeLabelEditPart.VISUAL_ID:
 				return new ActionInputPinInDestroyLinkActionAsInputValueAppliedStereotypeLabelEditPart(view);
+			case ClearAssociationActionEditPart.VISUAL_ID:
+				return new ClearAssociationActionEditPart(view);
+			case ClearAssociationActionNameEditPart.VISUAL_ID:
+				return new ClearAssociationActionNameEditPart(view);
+			case ClearAssociationActionFloatingNameEditPart.VISUAL_ID:
+				return new ClearAssociationActionFloatingNameEditPart(view);
+			case InputPinInClearAssociationActionAsObjectEditPart.VISUAL_ID:
+				return new InputPinInClearAssociationActionAsObjectEditPart(view);
+			case InputPinInClearAssociationActionAsObjectLabelEditPart.VISUAL_ID:
+				return new InputPinInClearAssociationActionAsObjectLabelEditPart(view);
+			case InputPinInClearAssociationActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new InputPinInClearAssociationActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case ValuePinInClearAssociationActionAsObjectEditPart.VISUAL_ID:
+				return new ValuePinInClearAssociationActionAsObjectEditPart(view);
+			case ValuePinInClearAssociationActionAsObjectLabelEditPart.VISUAL_ID:
+				return new ValuePinInClearAssociationActionAsObjectLabelEditPart(view);
+			case ValuePinInClearAssociationActionAsObjectValueEditPart.VISUAL_ID:
+				return new ValuePinInClearAssociationActionAsObjectValueEditPart(view);
+			case ValuePinInClearAssociationActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ValuePinInClearAssociationActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case ActionPinInClearAssociationActionAsObjectEditPart.VISUAL_ID:
+				return new ActionPinInClearAssociationActionAsObjectEditPart(view);
+			case ActionPinInClearAssociationActionAsObjectLabelEditPart.VISUAL_ID:
+				return new ActionPinInClearAssociationActionAsObjectLabelEditPart(view);
+			case ActionPinInClearAssociationActionAsObjectValueEditPart.VISUAL_ID:
+				return new ActionPinInClearAssociationActionAsObjectValueEditPart(view);
+			case ActionPinInClearAssociationActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ActionPinInClearAssociationActionAsObjectAppliedStereotypeLabelEditPart(view);
 			case ActivityActivityParametersCompartmentEditPart.VISUAL_ID:
 				return new ActivityActivityParametersCompartmentEditPart(view);
 			case ActivityActivityPreConditionsCompartmentEditPart.VISUAL_ID:

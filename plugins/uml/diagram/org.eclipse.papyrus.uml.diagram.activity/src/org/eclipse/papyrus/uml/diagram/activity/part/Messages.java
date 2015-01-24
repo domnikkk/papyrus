@@ -966,6 +966,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ClearAssociationAction3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ClearAssociationAction3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String CreateLinkAction1CreationTool_title;
 
 	/**

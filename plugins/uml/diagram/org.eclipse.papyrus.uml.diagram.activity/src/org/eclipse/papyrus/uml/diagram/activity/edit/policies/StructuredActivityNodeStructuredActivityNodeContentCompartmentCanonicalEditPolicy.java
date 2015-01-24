@@ -53,6 +53,7 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.parts.BroadcastSignalAction
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.CallBehaviorActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.CallOperationActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.CentralBufferNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ClearAssociationActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ClearStructuralFeatureActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.CommentEditPartCN;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ConditionalNodeEditPart;
@@ -209,6 +210,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentCanon
 		case CreateLinkActionEditPart.VISUAL_ID:
 		case ReadLinkActionEditPart.VISUAL_ID:
 		case DestroyLinkActionEditPart.VISUAL_ID:
+		case ClearAssociationActionEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
