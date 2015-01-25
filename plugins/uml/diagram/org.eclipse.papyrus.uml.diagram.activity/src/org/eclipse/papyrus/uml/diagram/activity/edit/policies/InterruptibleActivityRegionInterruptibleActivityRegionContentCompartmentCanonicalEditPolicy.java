@@ -85,6 +85,7 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadSelfActionEditPar
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadStructuralFeatureActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadVariableActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReclassifyObjectActionEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReduceActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SendObjectActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SendSignalActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SequenceNodeEditPart;
@@ -217,6 +218,7 @@ public class InterruptibleActivityRegionInterruptibleActivityRegionContentCompar
 		case ReadExtentActionEditPart.VISUAL_ID:
 		case ReclassifyObjectActionEditPart.VISUAL_ID:
 		case ReadIsClassifiedObjectActionEditPart.VISUAL_ID:
+		case ReduceActionEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;

@@ -694,6 +694,31 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ReduceAction_3123 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ReduceAction_3123"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OutputPin_3131 = getElementType("org.eclipse.papyrus.uml.diagram.activity.OutputPin_3131"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3143 = getElementType("org.eclipse.papyrus.uml.diagram.activity.InputPin_3143"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValuePin_3156 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3156"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3169 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3169"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ValueSpecificationAction_3076 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValueSpecificationAction_3076"); //$NON-NLS-1$
 
 	/**
@@ -998,6 +1023,11 @@ public class UMLElementTypes {
 			elements.put(InputPin_3142, UMLPackage.eINSTANCE.getInputPin());
 			elements.put(ValuePin_3155, UMLPackage.eINSTANCE.getValuePin());
 			elements.put(ActionInputPin_3168, UMLPackage.eINSTANCE.getActionInputPin());
+			elements.put(ReduceAction_3123, UMLPackage.eINSTANCE.getReduceAction());
+			elements.put(OutputPin_3131, UMLPackage.eINSTANCE.getOutputPin());
+			elements.put(InputPin_3143, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(ValuePin_3156, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ActionInputPin_3169, UMLPackage.eINSTANCE.getActionInputPin());
 			elements.put(ActionLocalPrecondition_4001, UMLPackage.eINSTANCE.getAction_LocalPrecondition());
 			elements.put(ActionLocalPostcondition_4002, UMLPackage.eINSTANCE.getAction_LocalPostcondition());
 			elements.put(ObjectFlow_4003, UMLPackage.eINSTANCE.getObjectFlow());
@@ -1167,6 +1197,11 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(InputPin_3142);
 			KNOWN_ELEMENT_TYPES.add(ValuePin_3155);
 			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3168);
+			KNOWN_ELEMENT_TYPES.add(ReduceAction_3123);
+			KNOWN_ELEMENT_TYPES.add(OutputPin_3131);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3143);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3156);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3169);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPrecondition_4001);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPostcondition_4002);
 			KNOWN_ELEMENT_TYPES.add(ObjectFlow_4003);
@@ -1473,6 +1508,16 @@ public class UMLElementTypes {
 			return ValuePin_3155;
 		case ActionPinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID:
 			return ActionInputPin_3168;
+		case ReduceActionEditPart.VISUAL_ID:
+			return ReduceAction_3123;
+		case OutputPinInReduceActionEditPart.VISUAL_ID:
+			return OutputPin_3131;
+		case InputPinInReduceActionAsCollectionEditPart.VISUAL_ID:
+			return InputPin_3143;
+		case ValuePinInReduceActionAsCollectionEditPart.VISUAL_ID:
+			return ValuePin_3156;
+		case ActionPinInReduceActionAsCollectionEditPart.VISUAL_ID:
+			return ActionInputPin_3169;
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
 			return ActionLocalPrecondition_4001;
 		case ActionLocalPostconditionEditPart.VISUAL_ID:

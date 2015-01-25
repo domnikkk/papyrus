@@ -1006,6 +1006,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ReduceAction5CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ReduceAction5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String CreateLinkAction1CreationTool_title;
 
 	/**
