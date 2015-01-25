@@ -639,6 +639,16 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ReadExtentAction_3120 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ReadExtentAction_3120"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OutputPin_3129 = getElementType("org.eclipse.papyrus.uml.diagram.activity.OutputPin_3129"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ValueSpecificationAction_3076 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValueSpecificationAction_3076"); //$NON-NLS-1$
 
 	/**
@@ -932,6 +942,8 @@ public class UMLElementTypes {
 			elements.put(InputPin_3140, UMLPackage.eINSTANCE.getInputPin());
 			elements.put(ValuePin_3153, UMLPackage.eINSTANCE.getValuePin());
 			elements.put(ActionInputPin_3166, UMLPackage.eINSTANCE.getActionInputPin());
+			elements.put(ReadExtentAction_3120, UMLPackage.eINSTANCE.getReadExtentAction());
+			elements.put(OutputPin_3129, UMLPackage.eINSTANCE.getOutputPin());
 			elements.put(ActionLocalPrecondition_4001, UMLPackage.eINSTANCE.getAction_LocalPrecondition());
 			elements.put(ActionLocalPostcondition_4002, UMLPackage.eINSTANCE.getAction_LocalPostcondition());
 			elements.put(ObjectFlow_4003, UMLPackage.eINSTANCE.getObjectFlow());
@@ -1090,6 +1102,8 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(InputPin_3140);
 			KNOWN_ELEMENT_TYPES.add(ValuePin_3153);
 			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3166);
+			KNOWN_ELEMENT_TYPES.add(ReadExtentAction_3120);
+			KNOWN_ELEMENT_TYPES.add(OutputPin_3129);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPrecondition_4001);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPostcondition_4002);
 			KNOWN_ELEMENT_TYPES.add(ObjectFlow_4003);
@@ -1374,6 +1388,10 @@ public class UMLElementTypes {
 			return ValuePin_3153;
 		case ActionPinInClearAssociationActionAsObjectEditPart.VISUAL_ID:
 			return ActionInputPin_3166;
+		case ReadExtentActionEditPart.VISUAL_ID:
+			return ReadExtentAction_3120;
+		case OutputPinInReadExtentActionEditPart.VISUAL_ID:
+			return OutputPin_3129;
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
 			return ActionLocalPrecondition_4001;
 		case ActionLocalPostconditionEditPart.VISUAL_ID:

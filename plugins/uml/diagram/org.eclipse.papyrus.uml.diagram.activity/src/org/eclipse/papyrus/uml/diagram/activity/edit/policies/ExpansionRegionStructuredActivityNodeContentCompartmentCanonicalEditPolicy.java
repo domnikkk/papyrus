@@ -78,6 +78,7 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.parts.JoinNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.LoopNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.OpaqueActionEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadExtentActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadLinkActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadSelfActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadStructuralFeatureActionEditPart;
@@ -211,6 +212,7 @@ public class ExpansionRegionStructuredActivityNodeContentCompartmentCanonicalEdi
 		case ReadLinkActionEditPart.VISUAL_ID:
 		case DestroyLinkActionEditPart.VISUAL_ID:
 		case ClearAssociationActionEditPart.VISUAL_ID:
+		case ReadExtentActionEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
