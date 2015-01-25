@@ -3993,18 +3993,18 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser readExtentActionName_5401Parser;
+	private IParser readExtentActionName_5402Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getReadExtentActionName_5401Parser() {
-		if (readExtentActionName_5401Parser == null) {
+	private IParser getReadExtentActionName_5402Parser() {
+		if (readExtentActionName_5402Parser == null) {
 			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			readExtentActionName_5401Parser = parser;
+			readExtentActionName_5402Parser = parser;
 		}
-		return readExtentActionName_5401Parser;
+		return readExtentActionName_5402Parser;
 	}
 
 	/**
@@ -4035,6 +4035,344 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			outputPinLabel_5212Parser = new AppliedStereotypeParser();
 		}
 		return outputPinLabel_5212Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser reclassifyObjectActionName_5199Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getReclassifyObjectActionName_5199Parser() {
+		if (reclassifyObjectActionName_5199Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			reclassifyObjectActionName_5199Parser = parser;
+		}
+		return reclassifyObjectActionName_5199Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser reclassifyObjectActionName_5401Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getReclassifyObjectActionName_5401Parser() {
+		if (reclassifyObjectActionName_5401Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			reclassifyObjectActionName_5401Parser = parser;
+		}
+		return reclassifyObjectActionName_5401Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinParser inputPinLabel_5237Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInputPinLabel_5237Parser() {
+		if (inputPinLabel_5237Parser == null) {
+			inputPinLabel_5237Parser = new PinParser();
+		}
+		return inputPinLabel_5237Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser inputPinLabel_5238Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInputPinLabel_5238Parser() {
+		if (inputPinLabel_5238Parser == null) {
+			inputPinLabel_5238Parser = new AppliedStereotypeParser();
+		}
+		return inputPinLabel_5238Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinParser valuePinLabel_5302Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValuePinLabel_5302Parser() {
+		if (valuePinLabel_5302Parser == null) {
+			valuePinLabel_5302Parser = new PinParser();
+		}
+		return valuePinLabel_5302Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinValueParser valuePinLabel_5303Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValuePinLabel_5303Parser() {
+		if (valuePinLabel_5303Parser == null) {
+			valuePinLabel_5303Parser = new PinValueParser();
+		}
+		return valuePinLabel_5303Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser valuePinLabel_5304Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValuePinLabel_5304Parser() {
+		if (valuePinLabel_5304Parser == null) {
+			valuePinLabel_5304Parser = new AppliedStereotypeParser();
+		}
+		return valuePinLabel_5304Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinParser actionInputPinLabel_5305Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActionInputPinLabel_5305Parser() {
+		if (actionInputPinLabel_5305Parser == null) {
+			actionInputPinLabel_5305Parser = new PinParser();
+		}
+		return actionInputPinLabel_5305Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinValueParser actionInputPinLabel_5306Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActionInputPinLabel_5306Parser() {
+		if (actionInputPinLabel_5306Parser == null) {
+			actionInputPinLabel_5306Parser = new PinValueParser();
+		}
+		return actionInputPinLabel_5306Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser actionInputPinLabel_5307Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActionInputPinLabel_5307Parser() {
+		if (actionInputPinLabel_5307Parser == null) {
+			actionInputPinLabel_5307Parser = new AppliedStereotypeParser();
+		}
+		return actionInputPinLabel_5307Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser readIsClassifiedObjectActionName_5200Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getReadIsClassifiedObjectActionName_5200Parser() {
+		if (readIsClassifiedObjectActionName_5200Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			readIsClassifiedObjectActionName_5200Parser = parser;
+		}
+		return readIsClassifiedObjectActionName_5200Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser readIsClassifiedObjectActionName_5403Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getReadIsClassifiedObjectActionName_5403Parser() {
+		if (readIsClassifiedObjectActionName_5403Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			readIsClassifiedObjectActionName_5403Parser = parser;
+		}
+		return readIsClassifiedObjectActionName_5403Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinParser outputPinLabel_5213Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOutputPinLabel_5213Parser() {
+		if (outputPinLabel_5213Parser == null) {
+			outputPinLabel_5213Parser = new PinParser();
+		}
+		return outputPinLabel_5213Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser outputPinLabel_5214Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOutputPinLabel_5214Parser() {
+		if (outputPinLabel_5214Parser == null) {
+			outputPinLabel_5214Parser = new AppliedStereotypeParser();
+		}
+		return outputPinLabel_5214Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinParser inputPinLabel_5239Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInputPinLabel_5239Parser() {
+		if (inputPinLabel_5239Parser == null) {
+			inputPinLabel_5239Parser = new PinParser();
+		}
+		return inputPinLabel_5239Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser inputPinLabel_5240Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInputPinLabel_5240Parser() {
+		if (inputPinLabel_5240Parser == null) {
+			inputPinLabel_5240Parser = new AppliedStereotypeParser();
+		}
+		return inputPinLabel_5240Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinParser valuePinLabel_5308Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValuePinLabel_5308Parser() {
+		if (valuePinLabel_5308Parser == null) {
+			valuePinLabel_5308Parser = new PinParser();
+		}
+		return valuePinLabel_5308Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinValueParser valuePinLabel_5309Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValuePinLabel_5309Parser() {
+		if (valuePinLabel_5309Parser == null) {
+			valuePinLabel_5309Parser = new PinValueParser();
+		}
+		return valuePinLabel_5309Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser valuePinLabel_5310Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValuePinLabel_5310Parser() {
+		if (valuePinLabel_5310Parser == null) {
+			valuePinLabel_5310Parser = new AppliedStereotypeParser();
+		}
+		return valuePinLabel_5310Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinParser actionInputPinLabel_5311Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActionInputPinLabel_5311Parser() {
+		if (actionInputPinLabel_5311Parser == null) {
+			actionInputPinLabel_5311Parser = new PinParser();
+		}
+		return actionInputPinLabel_5311Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinValueParser actionInputPinLabel_5312Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActionInputPinLabel_5312Parser() {
+		if (actionInputPinLabel_5312Parser == null) {
+			actionInputPinLabel_5312Parser = new PinValueParser();
+		}
+		return actionInputPinLabel_5312Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser actionInputPinLabel_5313Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActionInputPinLabel_5313Parser() {
+		if (actionInputPinLabel_5313Parser == null) {
+			actionInputPinLabel_5313Parser = new AppliedStereotypeParser();
+		}
+		return actionInputPinLabel_5313Parser;
 	}
 
 	/**
@@ -5373,11 +5711,55 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		case ReadExtentActionNameEditPart.VISUAL_ID:
 			return getReadExtentActionName_5198Parser();
 		case ReadExtentActionFloatingNameEditPart.VISUAL_ID:
-			return getReadExtentActionName_5401Parser();
+			return getReadExtentActionName_5402Parser();
 		case OutputPinInReadExtentActionLabelEditPart.VISUAL_ID:
 			return getOutputPinLabel_5211Parser();
 		case OutputPinInReadExtentActionAppliedStereotypeLabelEditPart.VISUAL_ID:
 			return getOutputPinLabel_5212Parser();
+		case ReclassifyObjectActionNameEditPart.VISUAL_ID:
+			return getReclassifyObjectActionName_5199Parser();
+		case ReclassifyObjectActionFloatingNameEditPart.VISUAL_ID:
+			return getReclassifyObjectActionName_5401Parser();
+		case InputPinInReclassifyObjectActionAsObjectLabelEditPart.VISUAL_ID:
+			return getInputPinLabel_5237Parser();
+		case InputPinInReclassifyObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+			return getInputPinLabel_5238Parser();
+		case ValuePinInReclassifyObjectActionAsObjectLabelEditPart.VISUAL_ID:
+			return getValuePinLabel_5302Parser();
+		case ValuePinInReclassifyObjectActionAsObjectValueEditPart.VISUAL_ID:
+			return getValuePinLabel_5303Parser();
+		case ValuePinInReclassifyObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+			return getValuePinLabel_5304Parser();
+		case ActionPinInReclassifyObjectActionAsObjectLabelEditPart.VISUAL_ID:
+			return getActionInputPinLabel_5305Parser();
+		case ActionPinInReclassifyObjectActionAsObjectValueEditPart.VISUAL_ID:
+			return getActionInputPinLabel_5306Parser();
+		case ActionPinInReclassifyObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+			return getActionInputPinLabel_5307Parser();
+		case ReadIsClassifiedObjectActionNameEditPart.VISUAL_ID:
+			return getReadIsClassifiedObjectActionName_5200Parser();
+		case ReadIsClassifiedObjectActionFloatingNameEditPart.VISUAL_ID:
+			return getReadIsClassifiedObjectActionName_5403Parser();
+		case OutputPinInReadIsClassifiedObjectActionLabelEditPart.VISUAL_ID:
+			return getOutputPinLabel_5213Parser();
+		case OutputPinInReadIsClassifiedObjectActionAppliedStereotypeLabelEditPart.VISUAL_ID:
+			return getOutputPinLabel_5214Parser();
+		case InputPinInReadIsClassifiedObjectActionAsObjectLabelEditPart.VISUAL_ID:
+			return getInputPinLabel_5239Parser();
+		case InputPinInReadIsClassifiedObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+			return getInputPinLabel_5240Parser();
+		case ValuePinInReadIsClassifiedObjectActionAsObjectLabelEditPart.VISUAL_ID:
+			return getValuePinLabel_5308Parser();
+		case ValuePinInReadIsClassifiedObjectActionAsObjectValueEditPart.VISUAL_ID:
+			return getValuePinLabel_5309Parser();
+		case ValuePinInReadIsClassifiedObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+			return getValuePinLabel_5310Parser();
+		case ActionPinInReadIsClassifiedObjectActionAsObjectLabelEditPart.VISUAL_ID:
+			return getActionInputPinLabel_5311Parser();
+		case ActionPinInReadIsClassifiedObjectActionAsObjectValueEditPart.VISUAL_ID:
+			return getActionInputPinLabel_5312Parser();
+		case ActionPinInReadIsClassifiedObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+			return getActionInputPinLabel_5313Parser();
 		case ObjectFlowNameEditPart.VISUAL_ID:
 			return getObjectFlowName_6001Parser();
 		case ObjectFlowWeightEditPart.VISUAL_ID:

@@ -78,7 +78,7 @@ public class ReadExtentActionFloatingNameEditPart extends FloatingLabelEditPart 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5401;
+	public static final int VISUAL_ID = 5402;
 
 	/**
 	 * @generated

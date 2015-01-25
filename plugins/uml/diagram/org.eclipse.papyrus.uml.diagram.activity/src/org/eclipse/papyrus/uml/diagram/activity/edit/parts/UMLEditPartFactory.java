@@ -897,6 +897,68 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new OutputPinInReadExtentActionLabelEditPart(view);
 			case OutputPinInReadExtentActionAppliedStereotypeLabelEditPart.VISUAL_ID:
 				return new OutputPinInReadExtentActionAppliedStereotypeLabelEditPart(view);
+			case ReclassifyObjectActionEditPart.VISUAL_ID:
+				return new ReclassifyObjectActionEditPart(view);
+			case ReclassifyObjectActionNameEditPart.VISUAL_ID:
+				return new ReclassifyObjectActionNameEditPart(view);
+			case ReclassifyObjectActionFloatingNameEditPart.VISUAL_ID:
+				return new ReclassifyObjectActionFloatingNameEditPart(view);
+			case InputPinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID:
+				return new InputPinInReclassifyObjectActionAsObjectEditPart(view);
+			case InputPinInReclassifyObjectActionAsObjectLabelEditPart.VISUAL_ID:
+				return new InputPinInReclassifyObjectActionAsObjectLabelEditPart(view);
+			case InputPinInReclassifyObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new InputPinInReclassifyObjectActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case ValuePinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID:
+				return new ValuePinInReclassifyObjectActionAsObjectEditPart(view);
+			case ValuePinInReclassifyObjectActionAsObjectLabelEditPart.VISUAL_ID:
+				return new ValuePinInReclassifyObjectActionAsObjectLabelEditPart(view);
+			case ValuePinInReclassifyObjectActionAsObjectValueEditPart.VISUAL_ID:
+				return new ValuePinInReclassifyObjectActionAsObjectValueEditPart(view);
+			case ValuePinInReclassifyObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ValuePinInReclassifyObjectActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case ActionPinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID:
+				return new ActionPinInReclassifyObjectActionAsObjectEditPart(view);
+			case ActionPinInReclassifyObjectActionAsObjectLabelEditPart.VISUAL_ID:
+				return new ActionPinInReclassifyObjectActionAsObjectLabelEditPart(view);
+			case ActionPinInReclassifyObjectActionAsObjectValueEditPart.VISUAL_ID:
+				return new ActionPinInReclassifyObjectActionAsObjectValueEditPart(view);
+			case ActionPinInReclassifyObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ActionPinInReclassifyObjectActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case ReadIsClassifiedObjectActionEditPart.VISUAL_ID:
+				return new ReadIsClassifiedObjectActionEditPart(view);
+			case ReadIsClassifiedObjectActionNameEditPart.VISUAL_ID:
+				return new ReadIsClassifiedObjectActionNameEditPart(view);
+			case ReadIsClassifiedObjectActionFloatingNameEditPart.VISUAL_ID:
+				return new ReadIsClassifiedObjectActionFloatingNameEditPart(view);
+			case OutputPinInReadIsClassifiedObjectActionEditPart.VISUAL_ID:
+				return new OutputPinInReadIsClassifiedObjectActionEditPart(view);
+			case OutputPinInReadIsClassifiedObjectActionLabelEditPart.VISUAL_ID:
+				return new OutputPinInReadIsClassifiedObjectActionLabelEditPart(view);
+			case OutputPinInReadIsClassifiedObjectActionAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new OutputPinInReadIsClassifiedObjectActionAppliedStereotypeLabelEditPart(view);
+			case InputPinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID:
+				return new InputPinInReadIsClassifiedObjectActionAsObjectEditPart(view);
+			case InputPinInReadIsClassifiedObjectActionAsObjectLabelEditPart.VISUAL_ID:
+				return new InputPinInReadIsClassifiedObjectActionAsObjectLabelEditPart(view);
+			case InputPinInReadIsClassifiedObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new InputPinInReadIsClassifiedObjectActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case ValuePinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID:
+				return new ValuePinInReadIsClassifiedObjectActionAsObjectEditPart(view);
+			case ValuePinInReadIsClassifiedObjectActionAsObjectLabelEditPart.VISUAL_ID:
+				return new ValuePinInReadIsClassifiedObjectActionAsObjectLabelEditPart(view);
+			case ValuePinInReadIsClassifiedObjectActionAsObjectValueEditPart.VISUAL_ID:
+				return new ValuePinInReadIsClassifiedObjectActionAsObjectValueEditPart(view);
+			case ValuePinInReadIsClassifiedObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ValuePinInReadIsClassifiedObjectActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case ActionPinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID:
+				return new ActionPinInReadIsClassifiedObjectActionAsObjectEditPart(view);
+			case ActionPinInReadIsClassifiedObjectActionAsObjectLabelEditPart.VISUAL_ID:
+				return new ActionPinInReadIsClassifiedObjectActionAsObjectLabelEditPart(view);
+			case ActionPinInReadIsClassifiedObjectActionAsObjectValueEditPart.VISUAL_ID:
+				return new ActionPinInReadIsClassifiedObjectActionAsObjectValueEditPart(view);
+			case ActionPinInReadIsClassifiedObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ActionPinInReadIsClassifiedObjectActionAsObjectAppliedStereotypeLabelEditPart(view);
 			case ActivityActivityParametersCompartmentEditPart.VISUAL_ID:
 				return new ActivityActivityParametersCompartmentEditPart(view);
 			case ActivityActivityPreConditionsCompartmentEditPart.VISUAL_ID:

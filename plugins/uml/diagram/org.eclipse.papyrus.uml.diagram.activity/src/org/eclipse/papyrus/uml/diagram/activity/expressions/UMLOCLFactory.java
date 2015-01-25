@@ -49,7 +49,7 @@ public class UMLOCLFactory {
 	 * @generated
 	 */
 	protected UMLOCLFactory() {
-		this.expressions = new UMLAbstractExpression[114];
+		this.expressions = new UMLAbstractExpression[120];
 		this.expressionBodies = new String[] {
 				"if self.owner.oclIsKindOf(CallOperationAction)\r\nthen self.owner.oclAsType(CallOperationAction).argument->includes(self)\r\nelse false endif", //$NON-NLS-1$
 				"if self.owner.oclIsKindOf(CallOperationAction)\r\nthen self.owner.oclAsType(CallOperationAction).argument->includes(self)\r\nelse false endif", //$NON-NLS-1$
@@ -165,6 +165,12 @@ public class UMLOCLFactory {
 				"if self.owner.oclIsKindOf(ClearAssociationAction) and self.oclIsTypeOf(InputPin)\r\nthen self.owner.oclAsType(ClearAssociationAction).object = self\r\nelse false endif", //$NON-NLS-1$
 				"if self.owner.oclIsKindOf(ClearAssociationAction) and self.oclIsTypeOf(ValuePin)\r\nthen self.owner.oclAsType(ClearAssociationAction).object = self\r\nelse false endif", //$NON-NLS-1$
 				"if self.owner.oclIsKindOf(ClearAssociationAction) and self.oclIsTypeOf(ActionInputPin)\r\nthen self.owner.oclAsType(ClearAssociationAction).object = self\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(ReclassifyObjectAction) and self.oclIsTypeOf(ActionInputPin)\r\nthen self.owner.oclAsType(ReclassifyObjectAction).object = self\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(ReclassifyObjectAction) and self.oclIsTypeOf(InputPin)\r\nthen self.owner.oclAsType(ReclassifyObjectAction).object = self\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(ReclassifyObjectAction) and self.oclIsTypeOf(ValuePin)\r\nthen self.owner.oclAsType(ReclassifyObjectAction).object = self\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(ReadIsClassifiedObjectAction) and self.oclIsTypeOf(ValuePin)\r\nthen self.owner.oclAsType(ReadIsClassifiedObjectAction).object = self\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(ReadIsClassifiedObjectAction) and self.oclIsTypeOf(ActionInputPin)\r\nthen self.owner.oclAsType(ReadIsClassifiedObjectAction).object = self\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(ReadIsClassifiedObjectAction) and self.oclIsTypeOf(InputPin)\r\nthen self.owner.oclAsType(ReadIsClassifiedObjectAction).object = self\r\nelse false endif", //$NON-NLS-1$
 		};
 	}
 

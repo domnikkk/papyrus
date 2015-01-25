@@ -649,6 +649,51 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ReclassifyObjectAction_3121 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ReclassifyObjectAction_3121"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3141 = getElementType("org.eclipse.papyrus.uml.diagram.activity.InputPin_3141"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValuePin_3154 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3154"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3167 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3167"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ReadIsClassifiedObjectAction_3122 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ReadIsClassifiedObjectAction_3122"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OutputPin_3130 = getElementType("org.eclipse.papyrus.uml.diagram.activity.OutputPin_3130"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3142 = getElementType("org.eclipse.papyrus.uml.diagram.activity.InputPin_3142"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValuePin_3155 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3155"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3168 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3168"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ValueSpecificationAction_3076 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValueSpecificationAction_3076"); //$NON-NLS-1$
 
 	/**
@@ -944,6 +989,15 @@ public class UMLElementTypes {
 			elements.put(ActionInputPin_3166, UMLPackage.eINSTANCE.getActionInputPin());
 			elements.put(ReadExtentAction_3120, UMLPackage.eINSTANCE.getReadExtentAction());
 			elements.put(OutputPin_3129, UMLPackage.eINSTANCE.getOutputPin());
+			elements.put(ReclassifyObjectAction_3121, UMLPackage.eINSTANCE.getReclassifyObjectAction());
+			elements.put(InputPin_3141, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(ValuePin_3154, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ActionInputPin_3167, UMLPackage.eINSTANCE.getActionInputPin());
+			elements.put(ReadIsClassifiedObjectAction_3122, UMLPackage.eINSTANCE.getReadIsClassifiedObjectAction());
+			elements.put(OutputPin_3130, UMLPackage.eINSTANCE.getOutputPin());
+			elements.put(InputPin_3142, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(ValuePin_3155, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ActionInputPin_3168, UMLPackage.eINSTANCE.getActionInputPin());
 			elements.put(ActionLocalPrecondition_4001, UMLPackage.eINSTANCE.getAction_LocalPrecondition());
 			elements.put(ActionLocalPostcondition_4002, UMLPackage.eINSTANCE.getAction_LocalPostcondition());
 			elements.put(ObjectFlow_4003, UMLPackage.eINSTANCE.getObjectFlow());
@@ -1104,6 +1158,15 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3166);
 			KNOWN_ELEMENT_TYPES.add(ReadExtentAction_3120);
 			KNOWN_ELEMENT_TYPES.add(OutputPin_3129);
+			KNOWN_ELEMENT_TYPES.add(ReclassifyObjectAction_3121);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3141);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3154);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3167);
+			KNOWN_ELEMENT_TYPES.add(ReadIsClassifiedObjectAction_3122);
+			KNOWN_ELEMENT_TYPES.add(OutputPin_3130);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3142);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3155);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3168);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPrecondition_4001);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPostcondition_4002);
 			KNOWN_ELEMENT_TYPES.add(ObjectFlow_4003);
@@ -1392,6 +1455,24 @@ public class UMLElementTypes {
 			return ReadExtentAction_3120;
 		case OutputPinInReadExtentActionEditPart.VISUAL_ID:
 			return OutputPin_3129;
+		case ReclassifyObjectActionEditPart.VISUAL_ID:
+			return ReclassifyObjectAction_3121;
+		case InputPinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID:
+			return InputPin_3141;
+		case ValuePinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID:
+			return ValuePin_3154;
+		case ActionPinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID:
+			return ActionInputPin_3167;
+		case ReadIsClassifiedObjectActionEditPart.VISUAL_ID:
+			return ReadIsClassifiedObjectAction_3122;
+		case OutputPinInReadIsClassifiedObjectActionEditPart.VISUAL_ID:
+			return OutputPin_3130;
+		case InputPinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID:
+			return InputPin_3142;
+		case ValuePinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID:
+			return ValuePin_3155;
+		case ActionPinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID:
+			return ActionInputPin_3168;
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
 			return ActionLocalPrecondition_4001;
 		case ActionLocalPostconditionEditPart.VISUAL_ID:
