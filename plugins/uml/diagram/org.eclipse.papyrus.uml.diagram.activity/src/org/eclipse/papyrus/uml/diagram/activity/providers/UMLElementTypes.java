@@ -719,6 +719,26 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType StartClassifierBehaviorAction_3124 = getElementType("org.eclipse.papyrus.uml.diagram.activity.StartClassifierBehaviorAction_3124"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3144 = getElementType("org.eclipse.papyrus.uml.diagram.activity.InputPin_3144"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValuePin_3157 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3157"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3170 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3170"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ValueSpecificationAction_3076 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValueSpecificationAction_3076"); //$NON-NLS-1$
 
 	/**
@@ -1028,6 +1048,10 @@ public class UMLElementTypes {
 			elements.put(InputPin_3143, UMLPackage.eINSTANCE.getInputPin());
 			elements.put(ValuePin_3156, UMLPackage.eINSTANCE.getValuePin());
 			elements.put(ActionInputPin_3169, UMLPackage.eINSTANCE.getActionInputPin());
+			elements.put(StartClassifierBehaviorAction_3124, UMLPackage.eINSTANCE.getStartClassifierBehaviorAction());
+			elements.put(InputPin_3144, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(ValuePin_3157, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ActionInputPin_3170, UMLPackage.eINSTANCE.getActionInputPin());
 			elements.put(ActionLocalPrecondition_4001, UMLPackage.eINSTANCE.getAction_LocalPrecondition());
 			elements.put(ActionLocalPostcondition_4002, UMLPackage.eINSTANCE.getAction_LocalPostcondition());
 			elements.put(ObjectFlow_4003, UMLPackage.eINSTANCE.getObjectFlow());
@@ -1202,6 +1226,10 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(InputPin_3143);
 			KNOWN_ELEMENT_TYPES.add(ValuePin_3156);
 			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3169);
+			KNOWN_ELEMENT_TYPES.add(StartClassifierBehaviorAction_3124);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3144);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3157);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3170);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPrecondition_4001);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPostcondition_4002);
 			KNOWN_ELEMENT_TYPES.add(ObjectFlow_4003);
@@ -1518,6 +1546,14 @@ public class UMLElementTypes {
 			return ValuePin_3156;
 		case ActionPinInReduceActionAsCollectionEditPart.VISUAL_ID:
 			return ActionInputPin_3169;
+		case StartClassifierBehaviorActionEditPart.VISUAL_ID:
+			return StartClassifierBehaviorAction_3124;
+		case InputPinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID:
+			return InputPin_3144;
+		case ValuePinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID:
+			return ValuePin_3157;
+		case ActionPinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID:
+			return ActionInputPin_3170;
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
 			return ActionLocalPrecondition_4001;
 		case ActionLocalPostconditionEditPart.VISUAL_ID:

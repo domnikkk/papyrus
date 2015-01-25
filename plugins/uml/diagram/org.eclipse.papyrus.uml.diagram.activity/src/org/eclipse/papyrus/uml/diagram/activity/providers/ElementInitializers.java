@@ -59,6 +59,7 @@ import org.eclipse.uml2.uml.ReduceAction;
 import org.eclipse.uml2.uml.SendObjectAction;
 import org.eclipse.uml2.uml.SendSignalAction;
 import org.eclipse.uml2.uml.SequenceNode;
+import org.eclipse.uml2.uml.StartClassifierBehaviorAction;
 import org.eclipse.uml2.uml.StartObjectBehaviorAction;
 import org.eclipse.uml2.uml.StructuredActivityNode;
 import org.eclipse.uml2.uml.TestIdentityAction;
@@ -2196,6 +2197,62 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_StartClassifierBehaviorAction_3124(StartClassifierBehaviorAction instance) {
+		try {
+			Object value_0 = name_StartClassifierBehaviorAction_3124(instance);
+			if (value_0 != null) {
+				instance.setName((String) value_0);
+			}
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_InputPin_3144(InputPin instance) {
+		try {
+			Object value_0 = name_InputPin_3144(instance);
+			if (value_0 != null) {
+				instance.setName((String) value_0);
+			}
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_ValuePin_3157(ValuePin instance) {
+		try {
+			Object value_0 = name_ValuePin_3157(instance);
+			if (value_0 != null) {
+				instance.setName((String) value_0);
+			}
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_ActionInputPin_3170(ActionInputPin instance) {
+		try {
+			Object value_0 = name_ActionInputPin_3170(instance);
+			if (value_0 != null) {
+				instance.setName((String) value_0);
+			}
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public void init_ObjectFlow_4003(ObjectFlow instance) {
 		try {
 			Object value_0 = name_ObjectFlow_4003(instance);
@@ -3318,6 +3375,34 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	private String name_ActionInputPin_3169(ActionInputPin it) {
+		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String name_StartClassifierBehaviorAction_3124(StartClassifierBehaviorAction it) {
+		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String name_InputPin_3144(InputPin it) {
+		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String name_ValuePin_3157(ValuePin it) {
+		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String name_ActionInputPin_3170(ActionInputPin it) {
 		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
 	}
 

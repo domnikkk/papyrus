@@ -49,7 +49,7 @@ public class UMLOCLFactory {
 	 * @generated
 	 */
 	protected UMLOCLFactory() {
-		this.expressions = new UMLAbstractExpression[123];
+		this.expressions = new UMLAbstractExpression[126];
 		this.expressionBodies = new String[] {
 				"if self.owner.oclIsKindOf(CallOperationAction)\r\nthen self.owner.oclAsType(CallOperationAction).argument->includes(self)\r\nelse false endif", //$NON-NLS-1$
 				"if self.owner.oclIsKindOf(CallOperationAction)\r\nthen self.owner.oclAsType(CallOperationAction).argument->includes(self)\r\nelse false endif", //$NON-NLS-1$
@@ -174,6 +174,9 @@ public class UMLOCLFactory {
 				"if self.owner.oclIsKindOf(ReduceAction) and self.oclIsTypeOf(InputPin)\r\nthen self.owner.oclAsType(ReduceAction).collection = self\r\nelse false endif", //$NON-NLS-1$
 				"if self.owner.oclIsKindOf(ReduceAction) and self.oclIsTypeOf(ValuePin)\r\nthen self.owner.oclAsType(ReduceAction).collection = self\r\nelse false endif", //$NON-NLS-1$
 				"if self.owner.oclIsKindOf(ReduceAction) and self.oclIsTypeOf(ActionInputPin)\r\nthen self.owner.oclAsType(ReduceAction).collection = self\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(StartClassifierBehaviorAction) and self.oclIsTypeOf(ActionInputPin)\r\nthen self.owner.oclAsType(StartClassifierBehaviorAction).object = self\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(StartClassifierBehaviorAction) and self.oclIsTypeOf(InputPin)\r\nthen self.owner.oclAsType(StartClassifierBehaviorAction).object = self\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(StartClassifierBehaviorAction) and self.oclIsTypeOf(ValuePin)\r\nthen self.owner.oclAsType(StartClassifierBehaviorAction).object = self\r\nelse false endif", //$NON-NLS-1$
 		};
 	}
 
