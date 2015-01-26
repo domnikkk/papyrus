@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - bug 447698
  *
  *****************************************************************************/
 
@@ -37,12 +38,22 @@ public class UnsettableStringValue extends PapyrusObservableValue {
 		super(realm, eObject, eStructuralFeature, domain);
 	}
 
+
 	@Override
 	protected IEditCommandRequest createSetRequest(TransactionalEditingDomain domain, EObject owner, EStructuralFeature feature, Object value) {
-		if ("".equals(value) && (feature.getDefaultValue() == null)) { //$NON-NLS-1$
-			// Unset the string attribute instead of making it an empty string
-			return new UnsetRequest(owner, feature);
+
+		// Bug 447698 : It doesn't necessary to create UnsetRequest if the value is already null
+		if ("".equals(value)) {//$NON-NLS-1$
+
+			if ((feature.getDefaultValue() == null) && owner.eGet(eStructuralFeature) != null) {
+				// Unset the string attribute instead of making it an empty string
+				return new UnsetRequest(owner, feature);
+			}
+
+		} else {
+			return super.createSetRequest(domain, owner, feature, value);
 		}
-		return super.createSetRequest(domain, owner, feature, value);
+
+		return null;
 	}
 }

@@ -11,6 +11,7 @@
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *  Christian W. Damus (CEA) - bug 440108
  *  Christian W. Damus (CEA) - bug 417409
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - bug 447698
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.databinding;
@@ -112,7 +113,13 @@ public class PapyrusObservableValue extends EMFObservableValue implements Aggreg
 					cc.add(provider.getEditCommand(new DestroyElementRequest((TransactionalEditingDomain) domain, (EObject) oldValue, false)));
 				}
 
-				cc.add(provider.getEditCommand(createSetRequest((TransactionalEditingDomain) domain, eObject, eStructuralFeature, value)));
+				IEditCommandRequest createSetRequest = createSetRequest((TransactionalEditingDomain) domain, eObject, eStructuralFeature, value);
+
+				if (createSetRequest == null) {
+					return UnexecutableCommand.INSTANCE;
+				}
+
+				cc.add(provider.getEditCommand(createSetRequest));
 
 				return new GMFtoEMFCommandWrapper(cc);
 			}
