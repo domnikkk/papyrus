@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012, 2014 CEA LIST and others.
+ * Copyright (c) 2012, 2015 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
+ *  Christian W. Damus - bug 455075
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.properties.modelelement;
@@ -38,8 +39,7 @@ public class CustomStyleModelElement extends EMFModelElement {
 
 	private DataContextElement element;
 
-	// this.view == super.source
-	private View view;
+	View view;
 
 	public CustomStyleModelElement(View source, DataContextElement context) {
 		this(source, null, context);
