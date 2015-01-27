@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Requirement1.4 Configuration for Papyrus
+Bundle-SymbolicName: org.eclipse.papyrus.sysml14.diagram.requirement;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Activator: org.eclipse.papyrus.sysml14.diagram.requirement.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.papyrus.infra.viewpoints.policy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Eclipse Modeling Project
