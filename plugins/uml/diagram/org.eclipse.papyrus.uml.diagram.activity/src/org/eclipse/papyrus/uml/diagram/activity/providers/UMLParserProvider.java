@@ -3976,6 +3976,70 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser readExtentActionName_5198Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getReadExtentActionName_5198Parser() {
+		if (readExtentActionName_5198Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			readExtentActionName_5198Parser = parser;
+		}
+		return readExtentActionName_5198Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser readExtentActionName_5401Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getReadExtentActionName_5401Parser() {
+		if (readExtentActionName_5401Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			readExtentActionName_5401Parser = parser;
+		}
+		return readExtentActionName_5401Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PinParser outputPinLabel_5211Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOutputPinLabel_5211Parser() {
+		if (outputPinLabel_5211Parser == null) {
+			outputPinLabel_5211Parser = new PinParser();
+		}
+		return outputPinLabel_5211Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser outputPinLabel_5212Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOutputPinLabel_5212Parser() {
+		if (outputPinLabel_5212Parser == null) {
+			outputPinLabel_5212Parser = new AppliedStereotypeParser();
+		}
+		return outputPinLabel_5212Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private CommentParser commentBody_5138Parser;
 
 	/**
@@ -5306,6 +5370,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getActionInputPinLabel_5300Parser();
 		case ActionPinInClearAssociationActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
 			return getActionInputPinLabel_5301Parser();
+		case ReadExtentActionNameEditPart.VISUAL_ID:
+			return getReadExtentActionName_5198Parser();
+		case ReadExtentActionFloatingNameEditPart.VISUAL_ID:
+			return getReadExtentActionName_5401Parser();
+		case OutputPinInReadExtentActionLabelEditPart.VISUAL_ID:
+			return getOutputPinLabel_5211Parser();
+		case OutputPinInReadExtentActionAppliedStereotypeLabelEditPart.VISUAL_ID:
+			return getOutputPinLabel_5212Parser();
 		case ObjectFlowNameEditPart.VISUAL_ID:
 			return getObjectFlowName_6001Parser();
 		case ObjectFlowWeightEditPart.VISUAL_ID:

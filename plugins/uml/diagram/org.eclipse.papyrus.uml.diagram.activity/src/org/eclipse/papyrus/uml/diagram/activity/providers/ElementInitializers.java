@@ -48,6 +48,7 @@ import org.eclipse.uml2.uml.OpaqueAction;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.Parameter;
+import org.eclipse.uml2.uml.ReadExtentAction;
 import org.eclipse.uml2.uml.ReadLinkAction;
 import org.eclipse.uml2.uml.ReadSelfAction;
 import org.eclipse.uml2.uml.ReadStructuralFeatureAction;
@@ -1968,6 +1969,34 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_ReadExtentAction_3120(ReadExtentAction instance) {
+		try {
+			Object value_0 = name_ReadExtentAction_3120(instance);
+			if (value_0 != null) {
+				instance.setName((String) value_0);
+			}
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_OutputPin_3129(OutputPin instance) {
+		try {
+			Object value_0 = name_OutputPin_3129(instance);
+			if (value_0 != null) {
+				instance.setName((String) value_0);
+			}
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public void init_ObjectFlow_4003(ObjectFlow instance) {
 		try {
 			Object value_0 = name_ObjectFlow_4003(instance);
@@ -2978,6 +3007,20 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	private String name_ActionInputPin_3166(ActionInputPin it) {
+		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String name_ReadExtentAction_3120(ReadExtentAction it) {
+		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String name_OutputPin_3129(OutputPin it) {
 		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
 	}
 

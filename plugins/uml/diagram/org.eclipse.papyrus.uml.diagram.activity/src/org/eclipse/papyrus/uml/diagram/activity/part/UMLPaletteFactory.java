@@ -321,6 +321,11 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	private final static String CREATEREADEXTENTACTION4CREATIONTOOL = "createReadExtentAction4CreationTool";//$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private final static String CREATECREATELINKACTION1CREATIONTOOL = "createCreateLinkAction1CreationTool";//$NON-NLS-1$
 
 	/**
@@ -517,6 +522,9 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 		}
 		if (toolId.equals(CREATECLEARASSOCIATIONACTION3CREATIONTOOL)) {
 			return createClearAssociationAction3CreationTool();
+		}
+		if (toolId.equals(CREATEREADEXTENTACTION4CREATIONTOOL)) {
+			return createReadExtentAction4CreationTool();
 		}
 		if (toolId.equals(CREATECREATELINKACTION1CREATIONTOOL)) {
 			return createCreateLinkAction1CreationTool();
@@ -823,7 +831,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 * @generated
 	 */
 	private Tool createOutputPin1CreationTool() {
-		List<IElementType> types = new ArrayList<IElementType>(13);
+		List<IElementType> types = new ArrayList<IElementType>(14);
 		types.add(UMLElementTypes.OutputPin_3014);
 		types.add(UMLElementTypes.OutputPin_3020);
 		types.add(UMLElementTypes.OutputPin_3024);
@@ -837,6 +845,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 		types.add(UMLElementTypes.OutputPin_3126);
 		types.add(UMLElementTypes.OutputPin_3127);
 		types.add(UMLElementTypes.OutputPin_3128);
+		types.add(UMLElementTypes.OutputPin_3129);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
 		return tool;
 	}
@@ -1163,6 +1172,16 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	private Tool createClearAssociationAction3CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.ClearAssociationAction_3119);
+		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
+		return tool;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Tool createReadExtentAction4CreationTool() {
+		List<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(UMLElementTypes.ReadExtentAction_3120);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
 		return tool;
 	}

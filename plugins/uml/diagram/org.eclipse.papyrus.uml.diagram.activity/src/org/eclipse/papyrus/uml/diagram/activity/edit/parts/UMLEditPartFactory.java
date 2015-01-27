@@ -885,6 +885,18 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new ActionPinInClearAssociationActionAsObjectValueEditPart(view);
 			case ActionPinInClearAssociationActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
 				return new ActionPinInClearAssociationActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case ReadExtentActionEditPart.VISUAL_ID:
+				return new ReadExtentActionEditPart(view);
+			case ReadExtentActionNameEditPart.VISUAL_ID:
+				return new ReadExtentActionNameEditPart(view);
+			case ReadExtentActionFloatingNameEditPart.VISUAL_ID:
+				return new ReadExtentActionFloatingNameEditPart(view);
+			case OutputPinInReadExtentActionEditPart.VISUAL_ID:
+				return new OutputPinInReadExtentActionEditPart(view);
+			case OutputPinInReadExtentActionLabelEditPart.VISUAL_ID:
+				return new OutputPinInReadExtentActionLabelEditPart(view);
+			case OutputPinInReadExtentActionAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new OutputPinInReadExtentActionAppliedStereotypeLabelEditPart(view);
 			case ActivityActivityParametersCompartmentEditPart.VISUAL_ID:
 				return new ActivityActivityParametersCompartmentEditPart(view);
 			case ActivityActivityPreConditionsCompartmentEditPart.VISUAL_ID:
