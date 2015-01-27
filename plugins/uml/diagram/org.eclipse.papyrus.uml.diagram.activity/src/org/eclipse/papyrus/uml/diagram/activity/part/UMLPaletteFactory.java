@@ -31,37 +31,37 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private final static String CREATEACCEPTEVENTACTION13CREATIONTOOL = "createAcceptEventAction13CreationTool";//$NON-NLS-1$
+	private final static String CREATEACCEPTEVENTACTION14CREATIONTOOL = "createAcceptEventAction14CreationTool";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String CREATETESTIDENTITYACTION14CREATIONTOOL = "createTestIdentityAction14CreationTool";//$NON-NLS-1$
+	private final static String CREATETESTIDENTITYACTION15CREATIONTOOL = "createTestIdentityAction15CreationTool";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String CREATEACTIVITY15CREATIONTOOL = "createActivity15CreationTool";//$NON-NLS-1$
+	private final static String CREATEACTIVITY16CREATIONTOOL = "createActivity16CreationTool";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String CREATEACTIVITYPARAMETERNODE16CREATIONTOOL = "createActivityParameterNode16CreationTool";//$NON-NLS-1$
+	private final static String CREATEACTIVITYPARAMETERNODE17CREATIONTOOL = "createActivityParameterNode17CreationTool";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String CREATECENTRALBUFFERNODE17CREATIONTOOL = "createCentralBufferNode17CreationTool";//$NON-NLS-1$
+	private final static String CREATECENTRALBUFFERNODE18CREATIONTOOL = "createCentralBufferNode18CreationTool";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String CREATEDATASTORENODE18CREATIONTOOL = "createDataStoreNode18CreationTool";//$NON-NLS-1$
+	private final static String CREATEDATASTORENODE19CREATIONTOOL = "createDataStoreNode19CreationTool";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String CREATECOMMENT19CREATIONTOOL = "createComment19CreationTool";//$NON-NLS-1$
+	private final static String CREATECOMMENT20CREATIONTOOL = "createComment20CreationTool";//$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -316,6 +316,21 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	private final static String CREATECREATELINKACTION1CREATIONTOOL = "createCreateLinkAction1CreationTool";//$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	private final static String CREATEREADLINKACTION2CREATIONTOOL = "createReadLinkAction2CreationTool";//$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	private final static String CREATEDESTROYLINKACTION3CREATIONTOOL = "createDestroyLinkAction3CreationTool";//$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public UMLPaletteFactory() {
 	}
 
@@ -324,26 +339,26 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 */
 	@Override
 	public Tool createTool(String toolId) {
-		if (toolId.equals(CREATEACCEPTEVENTACTION13CREATIONTOOL)) {
-			return createAcceptEventAction13CreationTool();
+		if (toolId.equals(CREATEACCEPTEVENTACTION14CREATIONTOOL)) {
+			return createAcceptEventAction14CreationTool();
 		}
-		if (toolId.equals(CREATETESTIDENTITYACTION14CREATIONTOOL)) {
-			return createTestIdentityAction14CreationTool();
+		if (toolId.equals(CREATETESTIDENTITYACTION15CREATIONTOOL)) {
+			return createTestIdentityAction15CreationTool();
 		}
-		if (toolId.equals(CREATEACTIVITY15CREATIONTOOL)) {
-			return createActivity15CreationTool();
+		if (toolId.equals(CREATEACTIVITY16CREATIONTOOL)) {
+			return createActivity16CreationTool();
 		}
-		if (toolId.equals(CREATEACTIVITYPARAMETERNODE16CREATIONTOOL)) {
-			return createActivityParameterNode16CreationTool();
+		if (toolId.equals(CREATEACTIVITYPARAMETERNODE17CREATIONTOOL)) {
+			return createActivityParameterNode17CreationTool();
 		}
-		if (toolId.equals(CREATECENTRALBUFFERNODE17CREATIONTOOL)) {
-			return createCentralBufferNode17CreationTool();
+		if (toolId.equals(CREATECENTRALBUFFERNODE18CREATIONTOOL)) {
+			return createCentralBufferNode18CreationTool();
 		}
-		if (toolId.equals(CREATEDATASTORENODE18CREATIONTOOL)) {
-			return createDataStoreNode18CreationTool();
+		if (toolId.equals(CREATEDATASTORENODE19CREATIONTOOL)) {
+			return createDataStoreNode19CreationTool();
 		}
-		if (toolId.equals(CREATECOMMENT19CREATIONTOOL)) {
-			return createComment19CreationTool();
+		if (toolId.equals(CREATECOMMENT20CREATIONTOOL)) {
+			return createComment20CreationTool();
 		}
 		if (toolId.equals(CREATECONTROLFLOW1CREATIONTOOL)) {
 			return createControlFlow1CreationTool();
@@ -495,6 +510,15 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 		if (toolId.equals(CREATEVALUESPECIFICATIONACTION2CREATIONTOOL)) {
 			return createValueSpecificationAction2CreationTool();
 		}
+		if (toolId.equals(CREATECREATELINKACTION1CREATIONTOOL)) {
+			return createCreateLinkAction1CreationTool();
+		}
+		if (toolId.equals(CREATEREADLINKACTION2CREATIONTOOL)) {
+			return createReadLinkAction2CreationTool();
+		}
+		if (toolId.equals(CREATEDESTROYLINKACTION3CREATIONTOOL)) {
+			return createDestroyLinkAction3CreationTool();
+		}
 		// default return: null
 		return null;
 	}
@@ -508,7 +532,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createAcceptEventAction13CreationTool() {
+	private Tool createAcceptEventAction14CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.AcceptEventAction_3063);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
@@ -518,7 +542,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createTestIdentityAction14CreationTool() {
+	private Tool createTestIdentityAction15CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.TestIdentityAction_3114);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
@@ -528,7 +552,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createActivity15CreationTool() {
+	private Tool createActivity16CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(UMLElementTypes.Activity_2001);
 		types.add(UMLElementTypes.Activity_3083);
@@ -539,7 +563,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createActivityParameterNode16CreationTool() {
+	private Tool createActivityParameterNode17CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.ActivityParameterNode_3059);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
@@ -549,7 +573,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createCentralBufferNode17CreationTool() {
+	private Tool createCentralBufferNode18CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.CentralBufferNode_3104);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
@@ -559,7 +583,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createDataStoreNode18CreationTool() {
+	private Tool createDataStoreNode19CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.DataStoreNode_3078);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
@@ -569,7 +593,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createComment19CreationTool() {
+	private Tool createComment20CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.Comment_3080);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
@@ -791,7 +815,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 * @generated
 	 */
 	private Tool createOutputPin1CreationTool() {
-		List<IElementType> types = new ArrayList<IElementType>(12);
+		List<IElementType> types = new ArrayList<IElementType>(13);
 		types.add(UMLElementTypes.OutputPin_3014);
 		types.add(UMLElementTypes.OutputPin_3020);
 		types.add(UMLElementTypes.OutputPin_3024);
@@ -804,6 +828,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 		types.add(UMLElementTypes.OutputPin_3125);
 		types.add(UMLElementTypes.OutputPin_3126);
 		types.add(UMLElementTypes.OutputPin_3127);
+		types.add(UMLElementTypes.OutputPin_3128);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
 		return tool;
 	}
@@ -812,7 +837,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 * @generated
 	 */
 	private Tool createInputPin2CreationTool() {
-		List<IElementType> types = new ArrayList<IElementType>(10);
+		List<IElementType> types = new ArrayList<IElementType>(13);
 		types.add(UMLElementTypes.InputPin_3013);
 		types.add(UMLElementTypes.InputPin_3019);
 		types.add(UMLElementTypes.InputPin_3023);
@@ -823,6 +848,9 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 		types.add(UMLElementTypes.InputPin_3134);
 		types.add(UMLElementTypes.InputPin_3135);
 		types.add(UMLElementTypes.InputPin_3136);
+		types.add(UMLElementTypes.InputPin_3137);
+		types.add(UMLElementTypes.InputPin_3138);
+		types.add(UMLElementTypes.InputPin_3139);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
 		return tool;
 	}
@@ -831,7 +859,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 * @generated
 	 */
 	private Tool createActionInputPin3CreationTool() {
-		List<IElementType> types = new ArrayList<IElementType>(9);
+		List<IElementType> types = new ArrayList<IElementType>(12);
 		types.add(UMLElementTypes.ActionInputPin_3016);
 		types.add(UMLElementTypes.ActionInputPin_3018);
 		types.add(UMLElementTypes.ActionInputPin_3021);
@@ -841,6 +869,9 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 		types.add(UMLElementTypes.ActionInputPin_3160);
 		types.add(UMLElementTypes.ActionInputPin_3161);
 		types.add(UMLElementTypes.ActionInputPin_3162);
+		types.add(UMLElementTypes.ActionInputPin_3163);
+		types.add(UMLElementTypes.ActionInputPin_3164);
+		types.add(UMLElementTypes.ActionInputPin_3165);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
 		return tool;
 	}
@@ -849,7 +880,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 * @generated
 	 */
 	private Tool createValuePin4CreationTool() {
-		List<IElementType> types = new ArrayList<IElementType>(9);
+		List<IElementType> types = new ArrayList<IElementType>(12);
 		types.add(UMLElementTypes.ValuePin_3015);
 		types.add(UMLElementTypes.ValuePin_3017);
 		types.add(UMLElementTypes.ValuePin_3022);
@@ -859,6 +890,9 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 		types.add(UMLElementTypes.ValuePin_3147);
 		types.add(UMLElementTypes.ValuePin_3148);
 		types.add(UMLElementTypes.ValuePin_3149);
+		types.add(UMLElementTypes.ValuePin_3151);
+		types.add(UMLElementTypes.ValuePin_3150);
+		types.add(UMLElementTypes.ValuePin_3152);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
 		return tool;
 	}
@@ -1109,6 +1143,36 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	private Tool createValueSpecificationAction2CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.ValueSpecificationAction_3076);
+		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
+		return tool;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Tool createCreateLinkAction1CreationTool() {
+		List<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(UMLElementTypes.CreateLinkAction_3117);
+		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
+		return tool;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Tool createReadLinkAction2CreationTool() {
+		List<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(UMLElementTypes.ReadLinkAction_3116);
+		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
+		return tool;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Tool createDestroyLinkAction3CreationTool() {
+		List<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(UMLElementTypes.DestroyLinkAction_3118);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
 		return tool;
 	}

@@ -57,9 +57,11 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ConditionalNodeEditPa
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ConstraintAsLocalPostcondEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ConstraintAsLocalPrecondEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ConstraintEditPartCN;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.CreateLinkActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.DataStoreNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.DecisionNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.DestroyLinkActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.DestroyObjectActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.DurationConstraintAsLocalPostcondEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.DurationConstraintAsLocalPrecondEditPart;
@@ -73,6 +75,7 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.parts.JoinNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.LoopNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.OpaqueActionEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadLinkActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadSelfActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadStructuralFeatureActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadVariableActionEditPart;
@@ -195,6 +198,9 @@ public class ConditionalNodeStructuredActivityNodeContentCompartmentCanonicalEdi
 		case CentralBufferNodeEditPart.VISUAL_ID:
 		case CommentEditPartCN.VISUAL_ID:
 		case ConstraintEditPartCN.VISUAL_ID:
+		case CreateLinkActionEditPart.VISUAL_ID:
+		case ReadLinkActionEditPart.VISUAL_ID:
+		case DestroyLinkActionEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;

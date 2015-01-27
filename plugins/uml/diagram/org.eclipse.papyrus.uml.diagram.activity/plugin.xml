@@ -166,7 +166,7 @@
       <viewProvider class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="PapyrusUMLActivityDiagram"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002,3003,3004,3005,3006,3007,3015,3016,3013,3014,3008,3017,3018,3019,3020,3010,3021,3022,3023,3024,3025,3026,3027,3034,3035,3036,3037,3032,3033,3011,3012,3038,3039,3040,3041,3078,3042,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3061,3062,3059,3063,3064,3076,3077,3069,3070,3074,3075,3071,3109,3110,3111,3073,3065,3105,3067,3068,3080,3081,3084,3083,3086,3087,3085,3088,3089,3090,3091,3092,3093,3094,3095,3096,3097,3098,3099,3100,3101,3102,3103,3104,3112,3113,3125,3132,3145,3158,3133,3146,3159,3114,3126,3134,3135,3147,3148,3160,3161,3115,3127,3136,3149,3162"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002,3003,3004,3005,3006,3007,3015,3016,3013,3014,3008,3017,3018,3019,3020,3010,3021,3022,3023,3024,3025,3026,3027,3034,3035,3036,3037,3032,3033,3011,3012,3038,3039,3040,3041,3078,3042,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3061,3062,3059,3063,3064,3076,3077,3069,3070,3074,3075,3071,3109,3110,3111,3073,3065,3105,3067,3068,3080,3081,3084,3083,3086,3087,3085,3088,3089,3090,3091,3092,3093,3094,3095,3096,3097,3098,3099,3100,3101,3102,3103,3104,3112,3113,3125,3132,3145,3158,3133,3146,3159,3114,3126,3134,3135,3147,3148,3160,3161,3115,3127,3136,3149,3162,3117,3137,3151,3163,3116,3128,3138,3150,3164,3118,3139,3152,3165"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005,4006,4007"/>
       </viewProvider>
    </extension>
@@ -179,13 +179,13 @@
             <method name="getType()" value="PapyrusUMLActivityDiagram"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,3001,3002,3003,3004,3005,3006,3007,3015,3016,3013,3014,3008,3017,3018,3019,3020,3010,3021,3022,3023,3024,3025,3026,3027,3034,3035,3036,3037,3032,3033,3011,3012,3038,3039,3040,3041,3078,3042,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3061,3062,3059,3063,3064,3076,3077,3069,3070,3074,3075,3071,3109,3110,3111,3073,3065,3105,3067,3068,3080,3081,3084,3083,3086,3087,3085,3088,3089,3090,3091,3092,3093,3094,3095,3096,3097,3098,3099,3100,3101,3102,3103,3104,3112,3113,3125,3132,3145,3158,3133,3146,3159,3114,3126,3134,3135,3147,3148,3160,3161,3115,3127,3136,3149,3162"/>
+            <method name="getType()" value="2001,3001,3002,3003,3004,3005,3006,3007,3015,3016,3013,3014,3008,3017,3018,3019,3020,3010,3021,3022,3023,3024,3025,3026,3027,3034,3035,3036,3037,3032,3033,3011,3012,3038,3039,3040,3041,3078,3042,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3061,3062,3059,3063,3064,3076,3077,3069,3070,3074,3075,3071,3109,3110,3111,3073,3065,3105,3067,3068,3080,3081,3084,3083,3086,3087,3085,3088,3089,3090,3091,3092,3093,3094,3095,3096,3097,3098,3099,3100,3101,3102,3103,3104,3112,3113,3125,3132,3145,3158,3133,3146,3159,3114,3126,3134,3135,3147,3148,3160,3161,3115,3127,3136,3149,3162,3117,3137,3151,3163,3116,3128,3138,3150,3164,3118,3139,3152,3165"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4002,4003,4004,4005,4006,4007"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5002,6034,5080,6033,5081,6035,5082,5003,6028,5011,5024,5083,5012,5025,5084,5009,5085,5010,5086,5004,6029,5013,5026,5087,5014,5027,5088,5015,5089,5016,5090,5006,6020,5017,5028,5091,5018,5029,5092,5019,5093,5020,5094,5021,5030,5095,5022,5031,5096,5023,5097,5038,5130,5039,5131,5040,5132,5041,5133,5036,5134,5037,5135,5007,5136,5008,5137,6036,5043,5098,6037,5099,6038,5100,6039,5042,5101,5127,5128,6031,5059,6027,5049,5050,5102,5051,5052,5103,5053,5104,5054,5055,5105,5056,5057,5106,5058,5107,5060,6032,5061,5062,5108,5063,5064,5109,5065,5110,5072,5073,5111,5074,5075,5112,5076,5113,5071,5078,5079,5115,6040,5077,5114,5126,6026,5124,5125,5119,5120,5121,5184,5185,5186,5183,5187,5188,5123,5117,5178,5179,5118,6016,5138,5139,6025,5144,5145,5142,5143,5148,6024,5146,5147,5129,5153,6023,5149,5150,5151,5152,5160,6019,5154,5155,5156,5157,5158,5159,5163,6022,5161,5162,5166,6021,5164,5165,5171,6018,5167,5168,5169,5170,5175,6017,5172,5173,5174,5176,5177,6030,5189,5190,5191,5394,5203,5204,5217,5218,5245,5246,5247,5263,5264,5265,5219,5220,5248,5249,5250,5266,5267,5268,5192,5395,5205,5206,5221,5222,5223,5224,5251,5252,5253,5254,5255,5256,5269,5270,5271,5272,5273,5274,5193,5396,5207,5208,5225,5226,5260,5261,5262,5275,5276,5277"/>
+            <method name="getType()" value="5001,5002,6034,5080,6033,5081,6035,5082,5003,6028,5011,5024,5083,5012,5025,5084,5009,5085,5010,5086,5004,6029,5013,5026,5087,5014,5027,5088,5015,5089,5016,5090,5006,6020,5017,5028,5091,5018,5029,5092,5019,5093,5020,5094,5021,5030,5095,5022,5031,5096,5023,5097,5038,5130,5039,5131,5040,5132,5041,5133,5036,5134,5037,5135,5007,5136,5008,5137,6036,5043,5098,6037,5099,6038,5100,6039,5042,5101,5127,5128,6031,5059,6027,5049,5050,5102,5051,5052,5103,5053,5104,5054,5055,5105,5056,5057,5106,5058,5107,5060,6032,5061,5062,5108,5063,5064,5109,5065,5110,5072,5073,5111,5074,5075,5112,5076,5113,5071,5078,5079,5115,6040,5077,5114,5126,6026,5124,5125,5119,5120,5121,5184,5185,5186,5183,5187,5188,5123,5117,5178,5179,5118,6016,5138,5139,6025,5144,5145,5142,5143,5148,6024,5146,5147,5129,5153,6023,5149,5150,5151,5152,5160,6019,5154,5155,5156,5157,5158,5159,5163,6022,5161,5162,5166,6021,5164,5165,5171,6018,5167,5168,5169,5170,5175,6017,5172,5173,5174,5176,5177,6030,5189,5190,5191,5394,5203,5204,5217,5218,5245,5246,5247,5263,5264,5265,5219,5220,5248,5249,5250,5266,5267,5268,5192,5395,5205,5206,5221,5222,5223,5224,5251,5252,5253,5254,5255,5256,5269,5270,5271,5272,5273,5274,5193,5396,5207,5208,5225,5226,5260,5261,5262,5275,5276,5277,5195,5397,5227,5228,5281,5282,5283,5278,5279,5280,5194,5398,5209,5210,5229,5230,5287,5288,5289,5284,5285,5286,5196,5399,5231,5232,5290,5291,5292,5293,5294,5295"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7001,7002,7003,7004,7008,7009,7010,7012,7005,7006,7007,7014,7015,7016,7013"/>
@@ -1255,6 +1255,123 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
          <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.CreateLinkAction_3117"
+               name="%metatype.name.CreateLinkAction_3117"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.CreateLinkAction"/>
+            <param name="semanticHint" value="3117"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.InputPin_3137"
+               name="%metatype.name.InputPin_3137"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.InputPin"/>
+            <param name="semanticHint" value="3137"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.ValuePin_3151"
+               name="%metatype.name.ValuePin_3151"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.ValuePin"/>
+            <param name="semanticHint" value="3151"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3163"
+               name="%metatype.name.ActionInputPin_3163"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.ActionInputPin"/>
+            <param name="semanticHint" value="3163"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.ReadLinkAction_3116"
+               name="%metatype.name.ReadLinkAction_3116"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.ReadLinkAction"/>
+            <param name="semanticHint" value="3116"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.OutputPin_3128"
+               name="%metatype.name.OutputPin_3128"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.OutputPin"/>
+            <param name="semanticHint" value="3128"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.InputPin_3138"
+               name="%metatype.name.InputPin_3138"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.InputPin"/>
+            <param name="semanticHint" value="3138"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.ValuePin_3150"
+               name="%metatype.name.ValuePin_3150"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.ValuePin"/>
+            <param name="semanticHint" value="3150"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3164"
+               name="%metatype.name.ActionInputPin_3164"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.ActionInputPin"/>
+            <param name="semanticHint" value="3164"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.DestroyLinkAction_3118"
+               name="%metatype.name.DestroyLinkAction_3118"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.DestroyLinkAction"/>
+            <param name="semanticHint" value="3118"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.InputPin_3139"
+               name="%metatype.name.InputPin_3139"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.InputPin"/>
+            <param name="semanticHint" value="3139"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.ValuePin_3152"
+               name="%metatype.name.ValuePin_3152"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.ValuePin"/>
+            <param name="semanticHint" value="3152"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3165"
+               name="%metatype.name.ActionInputPin_3165"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.uml.ActionInputPin"/>
+            <param name="semanticHint" value="3165"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <specializationType
                id="org.eclipse.papyrus.uml.diagram.activity.ActionLocalPrecondition_4001"
                name="%metatype.name.ActionLocalPrecondition_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
@@ -1439,6 +1556,19 @@
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.InputPin_3136"/>
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ValuePin_3149"/>
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3162"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.CreateLinkAction_3117"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.InputPin_3137"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ValuePin_3151"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3163"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ReadLinkAction_3116"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.OutputPin_3128"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.InputPin_3138"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ValuePin_3150"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3164"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.DestroyLinkAction_3118"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.InputPin_3139"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ValuePin_3152"/>
+         <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3165"/>
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ActionLocalPrecondition_4001"/>
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ActionLocalPostcondition_4002"/>
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ObjectFlow_4003"/>
@@ -1733,7 +1863,7 @@
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateInitialNode_validateNoIncomingEdges"
             lang="OCL"
             name="validateNoIncomingEdges"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.incoming->isEmpty()]]>
             <description><![CDATA[An initial node has no incoming edge]]></description>
@@ -1743,7 +1873,7 @@
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateInitialNode_validateControlEdges"
             lang="OCL"
             name="validateControlEdges"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[not self.source.oclIsKindOf(InitialNode)]]>
             <description><![CDATA[Only control edges can have initial nodes as source]]></description>
@@ -1755,7 +1885,7 @@
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateFinalNode_validateNoOutgoingEdges"
             lang="OCL"
             name="validateNoOutgoingEdges"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.outgoing->isEmpty()]]>
             <description><![CDATA[A fianl node has no outgoing edge]]></description>
@@ -1783,7 +1913,7 @@
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectNode_validateNotUnique"
             lang="OCL"
             name="validateNotUnique"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[-- must be applied on corresponding parameter, if only it exists
 true
@@ -1833,7 +1963,7 @@ true
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validatePin_validateControlPins"
             lang="OCL"
             name="validateControlPins"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.isControl implies self.isControlType]]>
             <description><![CDATA[Control pins have a control type]]></description>
@@ -1845,7 +1975,7 @@ true
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateInputPin_validateOutgoingEdgesStructuredOnly"
             lang="OCL"
             name="validateOutgoingEdgesStructuredOnly"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.outgoing.target->forAll(inStructuredNode=self.owner)]]>
             <description><![CDATA[Input pins may have outgoing edges only when they are on actions that are structured nodes, and these edges must target a node contained by the structured node.]]></description>
@@ -1857,7 +1987,7 @@ true
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin_validateOneOutputPin"
             lang="OCL"
             name="validateOneOutputPin"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.fromAction.oclIsUndefined()) implies
 self.fromAction.output->size() = 1]]>
@@ -1868,7 +1998,7 @@ self.fromAction.output->size() = 1]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin_validateInputPin"
             lang="OCL"
             name="validateInputPin"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.fromAction.oclIsUndefined()) implies
 self.fromAction.input->forAll(oclIsKindOf(ActionInputPin))]]>
@@ -1879,7 +2009,7 @@ self.fromAction.input->forAll(oclIsKindOf(ActionInputPin))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin_validateNoControlOrDataFlow"
             lang="OCL"
             name="validateNoControlOrDataFlow"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.fromAction.oclIsUndefined()) implies
 (self.fromAction.incoming->isEmpty() and self.fromAction.outgoing->isEmpty()
@@ -1894,7 +2024,7 @@ and self.fromAction.output->forAll(incoming->isEmpty() and outgoing->isEmpty()))
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateValuePin_validateCompatibleType"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter13"
             name="validateCompatibleType"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[The type of value specification must be compatible with the type of the value pin.]]></description>
@@ -1904,7 +2034,7 @@ and self.fromAction.output->forAll(incoming->isEmpty() and outgoing->isEmpty()))
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateValuePin_validateNoIncomingEdges"
             lang="OCL"
             name="validateNoIncomingEdges"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.incoming->isEmpty()]]>
             <description><![CDATA[Value pins have no incoming edges.]]></description>
@@ -1916,7 +2046,7 @@ and self.fromAction.output->forAll(incoming->isEmpty() and outgoing->isEmpty()))
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateOutputPin_validateIncomingEdgesStructuredOnly"
             lang="OCL"
             name="validateIncomingEdgesStructuredOnly"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.incoming.source->forAll(inStructuredNode=self.owner)]]>
             <description><![CDATA[Output pins may have incoming edges only when they are on actions that are structured nodes, and these edges may not target a node contained by the structured node.]]></description>
@@ -1928,7 +2058,7 @@ and self.fromAction.output->forAll(incoming->isEmpty() and outgoing->isEmpty()))
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge_validateSourceAndTarget"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter16"
             name="validateSourceAndTarget"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[The source and target of an edge must be in the same activity as the edge.]]></description>
@@ -1938,7 +2068,7 @@ and self.fromAction.output->forAll(incoming->isEmpty() and outgoing->isEmpty()))
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge_validateOwned"
             lang="OCL"
             name="validateOwned"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.owner.oclIsKindOf(Activity)
 or self.owner.oclIsKindOf(ActivityGroup)]]>
@@ -1949,7 +2079,7 @@ or self.owner.oclIsKindOf(ActivityGroup)]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge_validateStructuredNode"
             lang="OCL"
             name="validateStructuredNode"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[true
 -- constraint is checked by the model structure]]>
@@ -1984,7 +2114,7 @@ not self.source.oclIsUndefined() and not self.target.oclIsUndefined()]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateNoActions"
             lang="OCL"
             name="validateNoActions"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(self.source.oclIsUndefined() or not self.source.oclIsKindOf(Action))
 and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
@@ -1995,7 +2125,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateCompatibleTypes"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter21"
             name="validateCompatibleTypes"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[Object nodes connected by an object flow, with optionally intervening control nodes, must have compatible types. In particular, the downstream object node type must be the same or a supertype of the upstream object node type]]></description>
@@ -2005,7 +2135,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateSameUpperBounds"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter22"
             name="validateSameUpperBounds"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[Object nodes connected by an object flow, with optionally intervening control nodes, must have the same upper bounds.]]></description>
@@ -2015,7 +2145,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateTarget"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter23"
             name="validateTarget"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[An edge with constant weight may not target an object node, or lead to an object node downstream with no intervening actions, that has an upper bound less than the weight.]]></description>
@@ -2025,7 +2155,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateTransformationBehaviour"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter24"
             name="validateTransformationBehaviour"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[A transformation behavior has one input parameter and one output parameter. The input parameter must be the same as or a supertype of the type of object token coming from the source end. The output parameter must be the same or a subtype of the type of object token expected downstream. The behavior cannot have side effects.]]></description>
@@ -2035,7 +2165,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateSelectionBehaviour"
             lang="OCL"
             name="validateSelectionBehaviour"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.selection.oclIsUndefined()) implies self.source.oclIsKindOf(ObjectNode)]]>
             <description><![CDATA[An object flow may have a selection behavior only if it has an object node as a source.]]></description>
@@ -2045,7 +2175,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateInputAndOutputParameter"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter26"
             name="validateInputAndOutputParameter"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[A selection behavior has one input parameter and one output parameter. The input parameter must be a bag of elements of the same as or a supertype of the type of source object node. The output parameter must be the same or a subtype of the type of source object node. The behavior cannot have side effects.]]></description>
@@ -2055,7 +2185,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateIsMulticastOrIsMultireceive"
             lang="OCL"
             name="validateIsMulticastOrIsMultireceive"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.isMulticast implies not self.isMultireceive]]>
             <description><![CDATA[isMulticast and isMultireceive cannot both be true.]]></description>
@@ -2067,7 +2197,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateControlFlow_validateObjectNodes"
             lang="OCL"
             name="validateObjectNodes"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(self.source.oclIsUndefined() or
 	(self.source.oclIsKindOf(ObjectNode) implies
@@ -2111,7 +2241,7 @@ self.incoming->size() <= 2]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateDecisionNode_validateDecisionInputFlowIncoming"
             lang="OCL"
             name="validateDecisionInputFlowIncoming"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.decisionInputFlow.oclIsUndefined()) implies
 self.incoming->includes(self.decisionInputFlow)]]>
@@ -2122,7 +2252,7 @@ self.incoming->includes(self.decisionInputFlow)]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateDecisionNode_validateParameters"
             lang="OCL"
             name="validateParameters"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.decisionInput.oclIsUndefined()) implies (
 self.decisionInput.ownedParameter->select(
@@ -2261,7 +2391,7 @@ and self.decisionInput.ownedParameter->select(
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityParameterNode_validateIncomingOrOutgoing"
             lang="OCL"
             name="validateIncomingOrOutgoing"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(self.incoming->notEmpty() implies self.outgoing->isEmpty()) and
 (self.outgoing->notEmpty() implies self.incoming->isEmpty())]]>
@@ -2274,7 +2404,7 @@ and self.decisionInput.ownedParameter->select(
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateCreateObjectActionClassifier_notAbstract"
             lang="OCL"
             name="validateNotAbstract"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.classifier.oclIsUndefined()) implies (self.classifier.isAbstract = false)]]>
             <description><![CDATA[Check that the classifier is not abstract]]></description>
@@ -2284,7 +2414,7 @@ and self.decisionInput.ownedParameter->select(
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateCreateObjectActionClassifier_notClassifier"
             lang="OCL"
             name="valideNotAssociationClass"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.classifier.oclIsUndefined()) implies (not self.classifier.oclIsKindOf(uml::AssociationClass))]]>
             <description><![CDATA[Check that the classifier is not an association class]]></description>
@@ -2350,7 +2480,7 @@ and self.decisionInput.ownedParameter->select(
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateDestroyObjectAction_InputPinHasNotType"
             lang="OCL"
             name="validateInputPinHasNoType"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[if self.target.oclIsUndefined() then true else self.target.type->size() = 0 endif]]>
             <description><![CDATA[Check that the input pin has no type]]></description>
@@ -2362,7 +2492,7 @@ and self.decisionInput.ownedParameter->select(
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateStructuralFeatureAction_FeatureNotStatic"
             lang="OCL"
             name="validateFeatureNotStatic"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.structuralFeature.oclIsUndefined()) implies (self.structuralFeature.isStatic = false)]]>
             <description><![CDATA[Check that the structural feature must not be static.]]></description>
@@ -2475,7 +2605,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateException_HandlerBody_Constraint4"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter62"
             name="validateException_HandlerBody_Constraint4"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[The handler body has one input, and that input is the same as the exception input.]]></description>
@@ -2485,7 +2615,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateException_StructuredActivityNode_Constraint3"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter64"
             name="validateException_StructuredActivityNode_Constraint3"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[If the protected node is a StructuredActivityNode with output pins, then the exception handler body must also be a StructuredActivityNode with output pins that correspond in number and types to those of the protected node.]]></description>
@@ -2495,7 +2625,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateException_SourceAndTargetEdge_Constraint1"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter65"
             name="validateException_SourceAndTargetEdge_Constraint1"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[The exception handler and its input object node are not the source or target of any edge.]]></description>
@@ -2507,7 +2637,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateInterruptibleEdge_validateEdge"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter63"
             name="validateInterruptibleEdge"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[Validate the constraint for interruptible Edge]]></description>
@@ -2748,7 +2878,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 				<entry
 				      defineOnly="true"
 				      description="Create an Accept Event Action node"
-				      id="createAcceptEventAction13CreationTool"
+				      id="createAcceptEventAction14CreationTool"
 				      kind="tool"
 				      label="Accept Event Action"
 				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AcceptEventAction.gif"
@@ -2758,7 +2888,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 				<entry
 				      defineOnly="true"
 				      description="Create a Test Identity Action node"
-				      id="createTestIdentityAction14CreationTool"
+				      id="createTestIdentityAction15CreationTool"
 				      kind="tool"
 				      label="Test Identity Action "
 				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TestIdentityAction.gif"
@@ -2768,7 +2898,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 				<entry
 				      defineOnly="true"
 				      description="Create an Activity"
-				      id="createActivity15CreationTool"
+				      id="createActivity16CreationTool"
 				      kind="tool"
 				      label="Activity"
 				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Activity.gif"
@@ -2778,7 +2908,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 				<entry
 				      defineOnly="true"
 				      description="Create an Activity Parameter Node"
-				      id="createActivityParameterNode16CreationTool"
+				      id="createActivityParameterNode17CreationTool"
 				      kind="tool"
 				      label="Activity Parameter Node"
 				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityParameterNode.gif"
@@ -2788,7 +2918,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 				<entry
 				      defineOnly="true"
 				      description="Create a Central Buffer Node"
-				      id="createCentralBufferNode17CreationTool"
+				      id="createCentralBufferNode18CreationTool"
 				      kind="tool"
 				      label="Central Buffer Node"
 				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataStoreNode.gif"
@@ -2798,7 +2928,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 				<entry
 				      defineOnly="true"
 				      description="Create a Data Store Node"
-				      id="createDataStoreNode18CreationTool"
+				      id="createDataStoreNode19CreationTool"
 				      kind="tool"
 				      label="Data Store Node"
 				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataStoreNode.gif"
@@ -2808,7 +2938,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 				<entry
 				      defineOnly="true"
 				      description="Create a Comment"
-				      id="createComment19CreationTool"
+				      id="createComment20CreationTool"
 				      kind="tool"
 				      label="Comment"
 				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Comment.gif"
@@ -3315,6 +3445,36 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 				      path=""
 				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValueSpecificationAction.gif">
 					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Create Link Action node"
+				      id="createCreateLinkAction1CreationTool"
+				      kind="tool"
+				      label="Create Link Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CreateLinkAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CreateLinkAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Read Link Action node"
+				      id="createReadLinkAction2CreationTool"
+				      kind="tool"
+				      label="Read Link Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadLinkAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadLinkAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Destroy Link Action node"
+				      id="createDestroyLinkAction3CreationTool"
+				      kind="tool"
+				      label="Destroy Link Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DestroyLinkAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DestroyLinkAction.gif">
+					</entry>
 				
 				</contribution>
 			</paletteProvider>	
@@ -3574,31 +3734,31 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 		   </expand>
 		</entry>
 		<predefinedEntry
-		        id="createAcceptEventAction13CreationTool"
+		        id="createAcceptEventAction14CreationTool"
 				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
-		        id="createTestIdentityAction14CreationTool"
+		        id="createTestIdentityAction15CreationTool"
 				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
-		        id="createActivity15CreationTool"
+		        id="createActivity16CreationTool"
 				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
-		        id="createActivityParameterNode16CreationTool"
+		        id="createActivityParameterNode17CreationTool"
 				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
-		        id="createCentralBufferNode17CreationTool"
+		        id="createCentralBufferNode18CreationTool"
 				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
-		        id="createDataStoreNode18CreationTool"
+		        id="createDataStoreNode19CreationTool"
 				path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
-		        id="createComment19CreationTool"
+		        id="createComment20CreationTool"
 				path="/createNodes1Group">
 		  </predefinedEntry>
 		<entry
@@ -3926,8 +4086,32 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 				path="/createNodes1Group/createOtherActionsGroup">
 		  </predefinedEntry>
 		<entry
+		      description="LinkActions"
+		      id="createLinkActionsGroup"
+		      kind="stack"
+		      label="LinkActions"
+		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+		      path="/createNodes1Group"
+		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		<predefinedEntry
+		        id="createCreateLinkAction1CreationTool"
+				path="/createNodes1Group/createLinkActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createReadLinkAction2CreationTool"
+				path="/createNodes1Group/createLinkActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createDestroyLinkAction3CreationTool"
+				path="/createNodes1Group/createLinkActionsGroup">
+		  </predefinedEntry>
+		<entry
 		      description="AcceptEventActions"
-		      id="createAcceptEventActions12Group"
+		      id="createAcceptEventActions13Group"
 		      kind="stack"
 		      label="AcceptEventActions"
 		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
