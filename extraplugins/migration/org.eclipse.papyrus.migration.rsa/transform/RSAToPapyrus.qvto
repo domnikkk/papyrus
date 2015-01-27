@@ -186,7 +186,9 @@ mapping FontStyle::toFontStyle() : FontStyle {
 
 mapping FillStyle::toFillStyle() : FillStyle {
 	result.fillColor := self.fillColor;
-	result.transparency := self.transparency;
+	
+	/* Workaround for Bug 456933: use default transparency so that CSS can override the value if necessary */
+	result.transparency := if self.transparency = 0 then -1 else self.transparency endif; 
 	
 	//TODO: Gradient
 }
