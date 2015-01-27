@@ -331,6 +331,10 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 				case InputPinInReduceActionAsCollectionEditPart.VISUAL_ID:
 				case ValuePinInReduceActionAsCollectionEditPart.VISUAL_ID:
 				case ActionPinInReduceActionAsCollectionEditPart.VISUAL_ID:
+				case StartClassifierBehaviorActionEditPart.VISUAL_ID:
+				case InputPinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID:
+				case ValuePinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID:
+				case ActionPinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement)) {
 						return false; // visual id in semantic hint should match visual id for domain element
 					}
@@ -701,6 +705,14 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 			return createValuePin_3156(domainElement, containerView, index, persisted, preferencesHint);
 		case ActionPinInReduceActionAsCollectionEditPart.VISUAL_ID:
 			return createActionInputPin_3169(domainElement, containerView, index, persisted, preferencesHint);
+		case StartClassifierBehaviorActionEditPart.VISUAL_ID:
+			return createStartClassifierBehaviorAction_3124(domainElement, containerView, index, persisted, preferencesHint);
+		case InputPinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID:
+			return createInputPin_3144(domainElement, containerView, index, persisted, preferencesHint);
+		case ValuePinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID:
+			return createValuePin_3157(domainElement, containerView, index, persisted, preferencesHint);
+		case ActionPinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID:
+			return createActionInputPin_3170(domainElement, containerView, index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
 		return null;
@@ -4251,6 +4263,116 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Location location5319 = (Location) label5319.getLayoutConstraint();
 		location5319.setX(0);
 		location5319.setY(5);
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createStartClassifierBehaviorAction_3124(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(UMLVisualIDRegistry.getType(StartClassifierBehaviorActionEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "StartClassifierBehaviourAction");
+		Node label5202 = createLabel(node, UMLVisualIDRegistry.getType(StartClassifierBehaviorActionNameEditPart.VISUAL_ID));
+		Node label5405 = createLabel(node, UMLVisualIDRegistry.getType(StartClassifierBehaviorActionFloatingNameEditPart.VISUAL_ID));
+		label5405.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5405 = (Location) label5405.getLayoutConstraint();
+		location5405.setX(0);
+		location5405.setY(5);
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createInputPin_3144(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(UMLVisualIDRegistry.getType(InputPinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "InputPin");
+		Node label5243 = createLabel(node, UMLVisualIDRegistry.getType(InputPinInStartClassifierBehaviorActionAsObjectLabelEditPart.VISUAL_ID));
+		label5243.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5243 = (Location) label5243.getLayoutConstraint();
+		location5243.setX(0);
+		location5243.setY(5);
+		Node label5244 = createLabel(node, UMLVisualIDRegistry.getType(InputPinInStartClassifierBehaviorActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID));
+		label5244.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5244 = (Location) label5244.getLayoutConstraint();
+		location5244.setX(0);
+		location5244.setY(5);
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createValuePin_3157(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(UMLVisualIDRegistry.getType(ValuePinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "ValuePin");
+		Node label5320 = createLabel(node, UMLVisualIDRegistry.getType(ValuePinInStartClassifierBehaviorActionAsObjectLabelEditPart.VISUAL_ID));
+		label5320.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5320 = (Location) label5320.getLayoutConstraint();
+		location5320.setX(0);
+		location5320.setY(5);
+		Node label5321 = createLabel(node, UMLVisualIDRegistry.getType(ValuePinInStartClassifierBehaviorActionAsObjectValueEditPart.VISUAL_ID));
+		label5321.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5321 = (Location) label5321.getLayoutConstraint();
+		location5321.setX(0);
+		location5321.setY(5);
+		Node label5322 = createLabel(node, UMLVisualIDRegistry.getType(ValuePinInStartClassifierBehaviorActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID));
+		label5322.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5322 = (Location) label5322.getLayoutConstraint();
+		location5322.setX(0);
+		location5322.setY(5);
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createActionInputPin_3170(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(UMLVisualIDRegistry.getType(ActionPinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "ActionInputPin");
+		Node label5323 = createLabel(node, UMLVisualIDRegistry.getType(ActionPinInStartClassifierBehaviorActionAsObjectLabelEditPart.VISUAL_ID));
+		label5323.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5323 = (Location) label5323.getLayoutConstraint();
+		location5323.setX(0);
+		location5323.setY(5);
+		Node label5324 = createLabel(node, UMLVisualIDRegistry.getType(ActionPinInStartClassifierBehaviorActionAsObjectValueEditPart.VISUAL_ID));
+		label5324.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5324 = (Location) label5324.getLayoutConstraint();
+		location5324.setX(0);
+		location5324.setY(5);
+		Node label5325 = createLabel(node, UMLVisualIDRegistry.getType(ActionPinInStartClassifierBehaviorActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID));
+		label5325.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5325 = (Location) label5325.getLayoutConstraint();
+		location5325.setX(0);
+		location5325.setY(5);
 		return node;
 	}
 

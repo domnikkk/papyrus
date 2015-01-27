@@ -993,6 +993,34 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new ActionPinInReduceActionAsCollectionValueEditPart(view);
 			case ActionPinInReduceActionAsCollectionAppliedStereotypeLabelEditPart.VISUAL_ID:
 				return new ActionPinInReduceActionAsCollectionAppliedStereotypeLabelEditPart(view);
+			case StartClassifierBehaviorActionEditPart.VISUAL_ID:
+				return new StartClassifierBehaviorActionEditPart(view);
+			case StartClassifierBehaviorActionNameEditPart.VISUAL_ID:
+				return new StartClassifierBehaviorActionNameEditPart(view);
+			case StartClassifierBehaviorActionFloatingNameEditPart.VISUAL_ID:
+				return new StartClassifierBehaviorActionFloatingNameEditPart(view);
+			case InputPinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID:
+				return new InputPinInStartClassifierBehaviorActionAsObjectEditPart(view);
+			case InputPinInStartClassifierBehaviorActionAsObjectLabelEditPart.VISUAL_ID:
+				return new InputPinInStartClassifierBehaviorActionAsObjectLabelEditPart(view);
+			case InputPinInStartClassifierBehaviorActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new InputPinInStartClassifierBehaviorActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case ValuePinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID:
+				return new ValuePinInStartClassifierBehaviorActionAsObjectEditPart(view);
+			case ValuePinInStartClassifierBehaviorActionAsObjectLabelEditPart.VISUAL_ID:
+				return new ValuePinInStartClassifierBehaviorActionAsObjectLabelEditPart(view);
+			case ValuePinInStartClassifierBehaviorActionAsObjectValueEditPart.VISUAL_ID:
+				return new ValuePinInStartClassifierBehaviorActionAsObjectValueEditPart(view);
+			case ValuePinInStartClassifierBehaviorActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ValuePinInStartClassifierBehaviorActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case ActionPinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID:
+				return new ActionPinInStartClassifierBehaviorActionAsObjectEditPart(view);
+			case ActionPinInStartClassifierBehaviorActionAsObjectLabelEditPart.VISUAL_ID:
+				return new ActionPinInStartClassifierBehaviorActionAsObjectLabelEditPart(view);
+			case ActionPinInStartClassifierBehaviorActionAsObjectValueEditPart.VISUAL_ID:
+				return new ActionPinInStartClassifierBehaviorActionAsObjectValueEditPart(view);
+			case ActionPinInStartClassifierBehaviorActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ActionPinInStartClassifierBehaviorActionAsObjectAppliedStereotypeLabelEditPart(view);
 			case ActivityActivityParametersCompartmentEditPart.VISUAL_ID:
 				return new ActivityActivityParametersCompartmentEditPart(view);
 			case ActivityActivityPreConditionsCompartmentEditPart.VISUAL_ID:

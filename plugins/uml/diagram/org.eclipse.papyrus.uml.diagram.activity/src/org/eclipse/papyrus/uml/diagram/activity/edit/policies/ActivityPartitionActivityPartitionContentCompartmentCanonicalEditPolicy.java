@@ -90,6 +90,7 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReduceActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SendObjectActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SendSignalActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SequenceNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.StartClassifierBehaviorActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.StartObjectBehavoiurActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.TestIdentityActionEditPart;
@@ -221,6 +222,7 @@ public class ActivityPartitionActivityPartitionContentCompartmentCanonicalEditPo
 		case ReclassifyObjectActionEditPart.VISUAL_ID:
 		case ReadIsClassifiedObjectActionEditPart.VISUAL_ID:
 		case ReduceActionEditPart.VISUAL_ID:
+		case StartClassifierBehaviorActionEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;

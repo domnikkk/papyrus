@@ -1016,6 +1016,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String StartClassifierBehavior6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StartClassifierBehavior6CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String CreateLinkAction1CreationTool_title;
 
 	/**
