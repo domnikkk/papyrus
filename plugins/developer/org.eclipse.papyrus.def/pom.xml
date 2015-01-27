@@ -26,8 +26,11 @@
 						<fileset>
 							<directory>xtend-gen</directory>
 							<includes>
-								<include>**</include>
+								<include>**/*</include>
 							</includes>
+							<excludes>
+								<exclude>.gitignore</exclude>
+							</excludes>
 						</fileset>
 					</filesets>
 				</configuration>
