@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.papyrus.infra.viewpoints.policy.custom">
+      <contribution
+            file="resources/configuration/RequirementDiagram.configuration"
+            original="platform:/plugin/org.eclipse.papyrus.infra.viewpoints.policy/builtin/default.configuration">
+      </contribution>
+   </extension>
+
+</plugin>
