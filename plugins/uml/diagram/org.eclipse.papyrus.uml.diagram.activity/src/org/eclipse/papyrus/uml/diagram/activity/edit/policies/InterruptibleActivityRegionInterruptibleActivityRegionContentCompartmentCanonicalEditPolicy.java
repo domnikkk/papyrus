@@ -79,10 +79,12 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.parts.LoopNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.OpaqueActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadExtentActionEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadIsClassifiedObjectActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadLinkActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadSelfActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadStructuralFeatureActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadVariableActionEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReclassifyObjectActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SendObjectActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SendSignalActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SequenceNodeEditPart;
@@ -213,6 +215,8 @@ public class InterruptibleActivityRegionInterruptibleActivityRegionContentCompar
 		case DestroyLinkActionEditPart.VISUAL_ID:
 		case ClearAssociationActionEditPart.VISUAL_ID:
 		case ReadExtentActionEditPart.VISUAL_ID:
+		case ReclassifyObjectActionEditPart.VISUAL_ID:
+		case ReadIsClassifiedObjectActionEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;

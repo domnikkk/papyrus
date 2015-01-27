@@ -425,6 +425,31 @@ public class UMLVisualIDRegistry {
 				return OutputPinInReadExtentActionEditPart.VISUAL_ID;
 			}
 			break;
+		case ReclassifyObjectActionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3141((InputPin) domainElement)) {
+				return InputPinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3154((ValuePin) domainElement)) {
+				return ValuePinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3167((ActionInputPin) domainElement)) {
+				return ActionPinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID;
+			}
+			break;
+		case ReadIsClassifiedObjectActionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPinInReadIsClassifiedObjectActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3142((InputPin) domainElement)) {
+				return InputPinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3155((ValuePin) domainElement)) {
+				return ValuePinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3168((ActionInputPin) domainElement)) {
+				return ActionPinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID;
+			}
+			break;
 		case ActivityActivityParametersCompartmentEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getParameter().isSuperTypeOf(domainElement.eClass())) {
 				return ParameterEditPart.VISUAL_ID;
@@ -590,6 +615,12 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getReadExtentAction().isSuperTypeOf(domainElement.eClass())) {
 				return ReadExtentActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getReclassifyObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReclassifyObjectActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getReadIsClassifiedObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReadIsClassifiedObjectActionEditPart.VISUAL_ID;
 			}
 			break;
 		case ConditionalNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID:
@@ -859,6 +890,12 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getReadExtentAction().isSuperTypeOf(domainElement.eClass())) {
 				return ReadExtentActionEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getReclassifyObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReclassifyObjectActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getReadIsClassifiedObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReadIsClassifiedObjectActionEditPart.VISUAL_ID;
+			}
 			break;
 		case LoopNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass())) {
@@ -1001,6 +1038,12 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getReadExtentAction().isSuperTypeOf(domainElement.eClass())) {
 				return ReadExtentActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getReclassifyObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReclassifyObjectActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getReadIsClassifiedObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReadIsClassifiedObjectActionEditPart.VISUAL_ID;
 			}
 			break;
 		case SequenceNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID:
@@ -1145,6 +1188,12 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getReadExtentAction().isSuperTypeOf(domainElement.eClass())) {
 				return ReadExtentActionEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getReclassifyObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReclassifyObjectActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getReadIsClassifiedObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReadIsClassifiedObjectActionEditPart.VISUAL_ID;
+			}
 			break;
 		case StructuredActivityNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass())) {
@@ -1287,6 +1336,12 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getReadExtentAction().isSuperTypeOf(domainElement.eClass())) {
 				return ReadExtentActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getReclassifyObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReclassifyObjectActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getReadIsClassifiedObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReadIsClassifiedObjectActionEditPart.VISUAL_ID;
 			}
 			break;
 		case ActivityPartitionActivityPartitionContentCompartmentEditPart.VISUAL_ID:
@@ -1434,6 +1489,12 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getReadExtentAction().isSuperTypeOf(domainElement.eClass())) {
 				return ReadExtentActionEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getReclassifyObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReclassifyObjectActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getReadIsClassifiedObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReadIsClassifiedObjectActionEditPart.VISUAL_ID;
+			}
 			break;
 		case InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass())) {
@@ -1576,6 +1637,12 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getReadExtentAction().isSuperTypeOf(domainElement.eClass())) {
 				return ReadExtentActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getReclassifyObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReclassifyObjectActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getReadIsClassifiedObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReadIsClassifiedObjectActionEditPart.VISUAL_ID;
 			}
 			break;
 		case ActivityCNParametersCompartmentEditPart.VISUAL_ID:
@@ -1743,6 +1810,12 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getReadExtentAction().isSuperTypeOf(domainElement.eClass())) {
 				return ReadExtentActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getReclassifyObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReclassifyObjectActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getReadIsClassifiedObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return ReadIsClassifiedObjectActionEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -3446,6 +3519,111 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ReclassifyObjectActionEditPart.VISUAL_ID:
+			if (ReclassifyObjectActionNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ReclassifyObjectActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InputPinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InputPinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID:
+			if (InputPinInReclassifyObjectActionAsObjectLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InputPinInReclassifyObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ValuePinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID:
+			if (ValuePinInReclassifyObjectActionAsObjectLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInReclassifyObjectActionAsObjectValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInReclassifyObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActionPinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID:
+			if (ActionPinInReclassifyObjectActionAsObjectLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInReclassifyObjectActionAsObjectValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInReclassifyObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ReadIsClassifiedObjectActionEditPart.VISUAL_ID:
+			if (ReadIsClassifiedObjectActionNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ReadIsClassifiedObjectActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OutputPinInReadIsClassifiedObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InputPinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case OutputPinInReadIsClassifiedObjectActionEditPart.VISUAL_ID:
+			if (OutputPinInReadIsClassifiedObjectActionLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OutputPinInReadIsClassifiedObjectActionAppliedStereotypeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InputPinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID:
+			if (InputPinInReadIsClassifiedObjectActionAsObjectLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InputPinInReadIsClassifiedObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ValuePinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID:
+			if (ValuePinInReadIsClassifiedObjectActionAsObjectLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInReadIsClassifiedObjectActionAsObjectValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInReadIsClassifiedObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActionPinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID:
+			if (ActionPinInReadIsClassifiedObjectActionAsObjectLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInReadIsClassifiedObjectActionAsObjectValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInReadIsClassifiedObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case ActivityActivityParametersCompartmentEditPart.VISUAL_ID:
 			if (ParameterEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -3610,6 +3788,12 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (ReadExtentActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ReclassifyObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ReadIsClassifiedObjectActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -3880,6 +4064,12 @@ public class UMLVisualIDRegistry {
 			if (ReadExtentActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ReclassifyObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ReadIsClassifiedObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case LoopNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID:
 			if (InitialNodeEditPart.VISUAL_ID == nodeVisualID) {
@@ -4021,6 +4211,12 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (ReadExtentActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ReclassifyObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ReadIsClassifiedObjectActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -4166,6 +4362,12 @@ public class UMLVisualIDRegistry {
 			if (ReadExtentActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ReclassifyObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ReadIsClassifiedObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case StructuredActivityNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID:
 			if (InitialNodeEditPart.VISUAL_ID == nodeVisualID) {
@@ -4307,6 +4509,12 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (ReadExtentActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ReclassifyObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ReadIsClassifiedObjectActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -4455,6 +4663,12 @@ public class UMLVisualIDRegistry {
 			if (ReadExtentActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ReclassifyObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ReadIsClassifiedObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentEditPart.VISUAL_ID:
 			if (InitialNodeEditPart.VISUAL_ID == nodeVisualID) {
@@ -4596,6 +4810,12 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (ReadExtentActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ReclassifyObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ReadIsClassifiedObjectActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -4763,6 +4983,12 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (ReadExtentActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ReclassifyObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ReadIsClassifiedObjectActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -5352,6 +5578,54 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	private static boolean isInputPin_3141(InputPin domainElement) {
+		Object result = UMLOCLFactory.getExpression(115, UMLPackage.eINSTANCE.getInputPin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isValuePin_3154(ValuePin domainElement) {
+		Object result = UMLOCLFactory.getExpression(116, UMLPackage.eINSTANCE.getValuePin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isActionInputPin_3167(ActionInputPin domainElement) {
+		Object result = UMLOCLFactory.getExpression(114, UMLPackage.eINSTANCE.getActionInputPin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isInputPin_3142(InputPin domainElement) {
+		Object result = UMLOCLFactory.getExpression(119, UMLPackage.eINSTANCE.getInputPin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isValuePin_3155(ValuePin domainElement) {
+		Object result = UMLOCLFactory.getExpression(117, UMLPackage.eINSTANCE.getValuePin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isActionInputPin_3168(ActionInputPin domainElement) {
+		Object result = UMLOCLFactory.getExpression(118, UMLPackage.eINSTANCE.getActionInputPin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
 			// unrecognized id is always bad
@@ -5471,6 +5745,7 @@ public class UMLVisualIDRegistry {
 		case OutputPinInClearStructuralFeatureActionEditPart.VISUAL_ID:
 		case OutputPinInReadLinkActionEditPart.VISUAL_ID:
 		case OutputPinInReadExtentActionEditPart.VISUAL_ID:
+		case OutputPinInReadIsClassifiedObjectActionEditPart.VISUAL_ID:
 		case InputPinInStartObjectBehaviorActionAsObjectEditPart.VISUAL_ID:
 		case InputPinInStartObjectBehaviorActionAsArgumentEditPart.VISUAL_ID:
 		case InputPinInTestIdentityActionAsFirstEditPart.VISUAL_ID:
@@ -5480,6 +5755,8 @@ public class UMLVisualIDRegistry {
 		case InputPinInReadLinkActionAsInputValueEditPart.VISUAL_ID:
 		case InputPinInDestroyLinkActionAsInputValueEditPart.VISUAL_ID:
 		case InputPinInClearAssociationActionAsObjectEditPart.VISUAL_ID:
+		case InputPinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID:
+		case InputPinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID:
 		case ValuePinInStartObjectBehaviorActionAsObjectEditPart.VISUAL_ID:
 		case ValuePinInStartObjectBehaviorActionAsArgumentEditPart.VISUAL_ID:
 		case ValuePinInTestIdentityActionAsFirstEditPart.VISUAL_ID:
@@ -5489,6 +5766,8 @@ public class UMLVisualIDRegistry {
 		case ValuePinInCreateLinkActionAsInputValueEditPart.VISUAL_ID:
 		case ValuePinInDestroyLinkActionAsInputValueEditPart.VISUAL_ID:
 		case ValuePinInClearAssociationActionAsObjectEditPart.VISUAL_ID:
+		case ValuePinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID:
+		case ValuePinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID:
 		case ActionPinInStartObjectBehaviorActionAsObjectEditPart.VISUAL_ID:
 		case ActionPinInStartObjectBehaviorActionAsArgumentEditPart.VISUAL_ID:
 		case ActionPinInTestIdentityActionAsFirstEditPart.VISUAL_ID:
@@ -5498,6 +5777,8 @@ public class UMLVisualIDRegistry {
 		case ActionInputPinInReadLinkActionAsInputValueEditPart.VISUAL_ID:
 		case ActionInputPinInDestroyLinkActionAsInputValueEditPart.VISUAL_ID:
 		case ActionPinInClearAssociationActionAsObjectEditPart.VISUAL_ID:
+		case ActionPinInReclassifyObjectActionAsObjectEditPart.VISUAL_ID:
+		case ActionPinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

@@ -836,6 +836,26 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ReclassifyObjectAction4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ReclassifyObjectAction4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ReadIsClassifiedObjectAction5CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ReadIsClassifiedObjectAction5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String StructuredActivityNode1CreationTool_title;
 
 	/**
