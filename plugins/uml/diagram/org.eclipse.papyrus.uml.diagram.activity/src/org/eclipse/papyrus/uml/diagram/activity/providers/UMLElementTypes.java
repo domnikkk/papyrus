@@ -619,6 +619,26 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ClearAssociationAction_3119 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ClearAssociationAction_3119"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3140 = getElementType("org.eclipse.papyrus.uml.diagram.activity.InputPin_3140"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValuePin_3153 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3153"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3166 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3166"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ValueSpecificationAction_3076 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValueSpecificationAction_3076"); //$NON-NLS-1$
 
 	/**
@@ -908,6 +928,10 @@ public class UMLElementTypes {
 			elements.put(InputPin_3139, UMLPackage.eINSTANCE.getInputPin());
 			elements.put(ValuePin_3152, UMLPackage.eINSTANCE.getValuePin());
 			elements.put(ActionInputPin_3165, UMLPackage.eINSTANCE.getActionInputPin());
+			elements.put(ClearAssociationAction_3119, UMLPackage.eINSTANCE.getClearAssociationAction());
+			elements.put(InputPin_3140, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(ValuePin_3153, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ActionInputPin_3166, UMLPackage.eINSTANCE.getActionInputPin());
 			elements.put(ActionLocalPrecondition_4001, UMLPackage.eINSTANCE.getAction_LocalPrecondition());
 			elements.put(ActionLocalPostcondition_4002, UMLPackage.eINSTANCE.getAction_LocalPostcondition());
 			elements.put(ObjectFlow_4003, UMLPackage.eINSTANCE.getObjectFlow());
@@ -1062,6 +1086,10 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(InputPin_3139);
 			KNOWN_ELEMENT_TYPES.add(ValuePin_3152);
 			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3165);
+			KNOWN_ELEMENT_TYPES.add(ClearAssociationAction_3119);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3140);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3153);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3166);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPrecondition_4001);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPostcondition_4002);
 			KNOWN_ELEMENT_TYPES.add(ObjectFlow_4003);
@@ -1338,6 +1366,14 @@ public class UMLElementTypes {
 			return ValuePin_3152;
 		case ActionInputPinInDestroyLinkActionAsInputValueEditPart.VISUAL_ID:
 			return ActionInputPin_3165;
+		case ClearAssociationActionEditPart.VISUAL_ID:
+			return ClearAssociationAction_3119;
+		case InputPinInClearAssociationActionAsObjectEditPart.VISUAL_ID:
+			return InputPin_3140;
+		case ValuePinInClearAssociationActionAsObjectEditPart.VISUAL_ID:
+			return ValuePin_3153;
+		case ActionPinInClearAssociationActionAsObjectEditPart.VISUAL_ID:
+			return ActionInputPin_3166;
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
 			return ActionLocalPrecondition_4001;
 		case ActionLocalPostconditionEditPart.VISUAL_ID:
