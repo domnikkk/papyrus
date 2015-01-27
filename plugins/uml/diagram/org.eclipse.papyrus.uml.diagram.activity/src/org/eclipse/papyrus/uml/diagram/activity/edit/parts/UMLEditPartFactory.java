@@ -959,6 +959,40 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new ActionPinInReadIsClassifiedObjectActionAsObjectValueEditPart(view);
 			case ActionPinInReadIsClassifiedObjectActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
 				return new ActionPinInReadIsClassifiedObjectActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case ReduceActionEditPart.VISUAL_ID:
+				return new ReduceActionEditPart(view);
+			case ReduceActionNameEditPart.VISUAL_ID:
+				return new ReduceActionNameEditPart(view);
+			case ReduceActionFloatingNameEditPart.VISUAL_ID:
+				return new ReduceActionFloatingNameEditPart(view);
+			case OutputPinInReduceActionEditPart.VISUAL_ID:
+				return new OutputPinInReduceActionEditPart(view);
+			case OutputPinInReduceActionLabelEditPart.VISUAL_ID:
+				return new OutputPinInReduceActionLabelEditPart(view);
+			case OutputPinInReduceActionAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new OutputPinInReduceActionAppliedStereotypeLabelEditPart(view);
+			case InputPinInReduceActionAsCollectionEditPart.VISUAL_ID:
+				return new InputPinInReduceActionAsCollectionEditPart(view);
+			case InputPinInReduceActionAsCollectionLabelEditPart.VISUAL_ID:
+				return new InputPinInReduceActionAsCollectionLabelEditPart(view);
+			case InputPinInReduceActionAsCollectionAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new InputPinInReduceActionAsCollectionAppliedStereotypeLabelEditPart(view);
+			case ValuePinInReduceActionAsCollectionEditPart.VISUAL_ID:
+				return new ValuePinInReduceActionAsCollectionEditPart(view);
+			case ValuePinInReduceActionAsCollectionLabelEditPart.VISUAL_ID:
+				return new ValuePinInReduceActionAsCollectionLabelEditPart(view);
+			case ValuePinInReduceActionAsCollectionValueEditPart.VISUAL_ID:
+				return new ValuePinInReduceActionAsCollectionValueEditPart(view);
+			case ValuePinInReduceActionAsCollectionAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ValuePinInReduceActionAsCollectionAppliedStereotypeLabelEditPart(view);
+			case ActionPinInReduceActionAsCollectionEditPart.VISUAL_ID:
+				return new ActionPinInReduceActionAsCollectionEditPart(view);
+			case ActionPinInReduceActionAsCollectionLabelEditPart.VISUAL_ID:
+				return new ActionPinInReduceActionAsCollectionLabelEditPart(view);
+			case ActionPinInReduceActionAsCollectionValueEditPart.VISUAL_ID:
+				return new ActionPinInReduceActionAsCollectionValueEditPart(view);
+			case ActionPinInReduceActionAsCollectionAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ActionPinInReduceActionAsCollectionAppliedStereotypeLabelEditPart(view);
 			case ActivityActivityParametersCompartmentEditPart.VISUAL_ID:
 				return new ActivityActivityParametersCompartmentEditPart(view);
 			case ActivityActivityPreConditionsCompartmentEditPart.VISUAL_ID:
