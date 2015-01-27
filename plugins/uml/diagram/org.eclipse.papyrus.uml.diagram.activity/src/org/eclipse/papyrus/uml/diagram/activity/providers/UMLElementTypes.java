@@ -529,6 +529,31 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ClearStructuralFeatureAction_3115 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ClearStructuralFeatureAction_3115"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OutputPin_3127 = getElementType("org.eclipse.papyrus.uml.diagram.activity.OutputPin_3127"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3136 = getElementType("org.eclipse.papyrus.uml.diagram.activity.InputPin_3136"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValuePin_3149 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3149"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3162 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3162"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ValueSpecificationAction_3076 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValueSpecificationAction_3076"); //$NON-NLS-1$
 
 	/**
@@ -800,6 +825,11 @@ public class UMLElementTypes {
 			elements.put(ValuePin_3148, UMLPackage.eINSTANCE.getValuePin());
 			elements.put(ActionInputPin_3160, UMLPackage.eINSTANCE.getActionInputPin());
 			elements.put(ActionInputPin_3161, UMLPackage.eINSTANCE.getActionInputPin());
+			elements.put(ClearStructuralFeatureAction_3115, UMLPackage.eINSTANCE.getClearStructuralFeatureAction());
+			elements.put(OutputPin_3127, UMLPackage.eINSTANCE.getOutputPin());
+			elements.put(InputPin_3136, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(ValuePin_3149, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ActionInputPin_3162, UMLPackage.eINSTANCE.getActionInputPin());
 			elements.put(ActionLocalPrecondition_4001, UMLPackage.eINSTANCE.getAction_LocalPrecondition());
 			elements.put(ActionLocalPostcondition_4002, UMLPackage.eINSTANCE.getAction_LocalPostcondition());
 			elements.put(ObjectFlow_4003, UMLPackage.eINSTANCE.getObjectFlow());
@@ -936,6 +966,11 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ValuePin_3148);
 			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3160);
 			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3161);
+			KNOWN_ELEMENT_TYPES.add(ClearStructuralFeatureAction_3115);
+			KNOWN_ELEMENT_TYPES.add(OutputPin_3127);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3136);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3149);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3162);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPrecondition_4001);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPostcondition_4002);
 			KNOWN_ELEMENT_TYPES.add(ObjectFlow_4003);
@@ -1176,6 +1211,16 @@ public class UMLElementTypes {
 			return ActionInputPin_3160;
 		case ActionPinInTestIdentityActionAsSecondEditPart.VISUAL_ID:
 			return ActionInputPin_3161;
+		case ClearStructuralFeatureActionEditPart.VISUAL_ID:
+			return ClearStructuralFeatureAction_3115;
+		case OutputPinInClearStructuralFeatureActionEditPart.VISUAL_ID:
+			return OutputPin_3127;
+		case InputPinInClearStructuralFeatureActionAsObjectEditPart.VISUAL_ID:
+			return InputPin_3136;
+		case ValuePinInClearStructuralFeatureActionAsObjectEditPart.VISUAL_ID:
+			return ValuePin_3149;
+		case ActionInputPinInClearStructuralFeatureActionAsObjectEditPart.VISUAL_ID:
+			return ActionInputPin_3162;
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
 			return ActionLocalPrecondition_4001;
 		case ActionLocalPostconditionEditPart.VISUAL_ID:

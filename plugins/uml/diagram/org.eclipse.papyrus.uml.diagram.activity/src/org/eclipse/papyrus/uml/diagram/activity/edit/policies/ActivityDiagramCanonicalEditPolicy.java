@@ -1055,6 +1055,41 @@ public class ActivityDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
+		case ClearStructuralFeatureActionEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.INSTANCE.getClearStructuralFeatureAction_3115ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case OutputPinInClearStructuralFeatureActionEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.INSTANCE.getOutputPin_3127ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case InputPinInClearStructuralFeatureActionAsObjectEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.INSTANCE.getInputPin_3136ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case ValuePinInClearStructuralFeatureActionAsObjectEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.INSTANCE.getValuePin_3149ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case ActionInputPinInClearStructuralFeatureActionAsObjectEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.INSTANCE.getActionInputPin_3162ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
 		case ObjectFlowEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getObjectFlow_4003ContainedLinks(view));

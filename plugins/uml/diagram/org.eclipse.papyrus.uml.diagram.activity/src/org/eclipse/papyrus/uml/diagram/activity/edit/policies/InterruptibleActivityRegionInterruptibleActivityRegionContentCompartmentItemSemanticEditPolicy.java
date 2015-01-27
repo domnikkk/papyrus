@@ -287,6 +287,12 @@ public class InterruptibleActivityRegionInterruptibleActivityRegionContentCompar
 			req.setContainmentFeature(containmentFeature);
 			return getGEFWrapper(getSemanticCreationCommand(req));
 		}
+		if (UMLElementTypes.ClearStructuralFeatureAction_3115 == requestElementType) {
+			// adjust the containment feature
+			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			req.setContainmentFeature(containmentFeature);
+			return getGEFWrapper(getSemanticCreationCommand(req));
+		}
 		return super.getCreateCommand(req);
 	}
 }

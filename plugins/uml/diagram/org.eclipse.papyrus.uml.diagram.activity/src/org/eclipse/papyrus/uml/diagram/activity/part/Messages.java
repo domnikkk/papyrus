@@ -906,6 +906,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ClearStructuralFeature5CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ClearStructuralFeature5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String AddVariableValueAction1CreationTool_title;
 
 	/**

@@ -733,6 +733,40 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new ActionPinInTestIdentityActionAsSecondValueEditPart(view);
 			case ActionPinInTestIdentityActionAsSecondAppliedStereotypeLabelEditPart.VISUAL_ID:
 				return new ActionPinInTestIdentityActionAsSecondAppliedStereotypeLabelEditPart(view);
+			case ClearStructuralFeatureActionEditPart.VISUAL_ID:
+				return new ClearStructuralFeatureActionEditPart(view);
+			case ClearStructuralFeatureActionNameEditPart.VISUAL_ID:
+				return new ClearStructuralFeatureActionNameEditPart(view);
+			case ClearStructuralFeatureActionFloatingNameEditPart.VISUAL_ID:
+				return new ClearStructuralFeatureActionFloatingNameEditPart(view);
+			case OutputPinInClearStructuralFeatureActionEditPart.VISUAL_ID:
+				return new OutputPinInClearStructuralFeatureActionEditPart(view);
+			case OutputPinInClearStructuralFeatureActionLabelEditPart.VISUAL_ID:
+				return new OutputPinInClearStructuralFeatureActionLabelEditPart(view);
+			case OutputPinInClearStructuralFeatureActionAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new OutputPinInClearStructuralFeatureActionAppliedStereotypeLabelEditPart(view);
+			case InputPinInClearStructuralFeatureActionAsObjectEditPart.VISUAL_ID:
+				return new InputPinInClearStructuralFeatureActionAsObjectEditPart(view);
+			case InputPinInClearStructuralFeatureActionAsObjectLabelEditPart.VISUAL_ID:
+				return new InputPinInClearStructuralFeatureActionAsObjectLabelEditPart(view);
+			case InputPinInClearStructuralFeatureActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new InputPinInClearStructuralFeatureActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case ValuePinInClearStructuralFeatureActionAsObjectEditPart.VISUAL_ID:
+				return new ValuePinInClearStructuralFeatureActionAsObjectEditPart(view);
+			case ValuePinInClearStructuralFeatureActionAsObjectLabelEditPart.VISUAL_ID:
+				return new ValuePinInClearStructuralFeatureActionAsObjectLabelEditPart(view);
+			case ValuePinInClearStructuralFeatureActionAsObjectValueEditPart.VISUAL_ID:
+				return new ValuePinInClearStructuralFeatureActionAsObjectValueEditPart(view);
+			case ValuePinInClearStructuralFeatureActionAsObjectAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ValuePinInClearStructuralFeatureActionAsObjectAppliedStereotypeLabelEditPart(view);
+			case ActionInputPinInClearStructuralFeatureActionAsObjectEditPart.VISUAL_ID:
+				return new ActionInputPinInClearStructuralFeatureActionAsObjectEditPart(view);
+			case ActionInputPinInClearStructuralFeatureActionAsObjectLabelEditPart.VISUAL_ID:
+				return new ActionInputPinInClearStructuralFeatureActionAsObjectLabelEditPart(view);
+			case ActionInputPinInClearStructuralFeatureActionAsObjectValueEditPart.VISUAL_ID:
+				return new ActionInputPinInClearStructuralFeatureActionAsObjectValueEditPart(view);
+			case ActionInputPinInClearStructFeatActAsObjectAppliedStereotypeEditPart.VISUAL_ID:
+				return new ActionInputPinInClearStructFeatActAsObjectAppliedStereotypeEditPart(view);
 			case ActivityActivityParametersCompartmentEditPart.VISUAL_ID:
 				return new ActivityActivityParametersCompartmentEditPart(view);
 			case ActivityActivityPreConditionsCompartmentEditPart.VISUAL_ID:
