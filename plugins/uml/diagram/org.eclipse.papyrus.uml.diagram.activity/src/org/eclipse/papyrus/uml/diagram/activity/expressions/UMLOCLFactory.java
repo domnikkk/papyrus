@@ -49,7 +49,7 @@ public class UMLOCLFactory {
 	 * @generated
 	 */
 	protected UMLOCLFactory() {
-		this.expressions = new UMLAbstractExpression[93];
+		this.expressions = new UMLAbstractExpression[99];
 		this.expressionBodies = new String[] {
 				"if self.owner.oclIsKindOf(CallOperationAction)\r\nthen self.owner.oclAsType(CallOperationAction).argument->includes(self)\r\nelse false endif", //$NON-NLS-1$
 				"if self.owner.oclIsKindOf(CallOperationAction)\r\nthen self.owner.oclAsType(CallOperationAction).argument->includes(self)\r\nelse false endif", //$NON-NLS-1$
@@ -144,6 +144,12 @@ public class UMLOCLFactory {
 				"if self.owner.oclIsKindOf(StartObjectBehaviorAction) and self.oclIsTypeOf(ValuePin)\r\nthen self.owner.oclAsType(StartObjectBehaviorAction).object = self\r\nelse false endif", //$NON-NLS-1$
 				"if self.owner.oclIsKindOf(StartObjectBehaviorAction) and self.oclIsTypeOf(ActionInputPin) then self.owner.oclAsType(StartObjectBehaviorAction).argument->includes(self) else false endif", //$NON-NLS-1$
 				"if self.owner.oclIsKindOf(StartObjectBehaviorAction) and self.oclIsTypeOf(ActionInputPin)\r\nthen self.owner.oclAsType(StartObjectBehaviorAction).object = self\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(TestIdentityAction) and self.oclIsTypeOf(InputPin) then self.owner.oclAsType(TestIdentityAction).first = self else false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(TestIdentityAction) and self.oclIsTypeOf(InputPin)\r\nthen self.owner.oclAsType(TestIdentityAction).second = self\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(TestIdentityAction) and self.oclIsTypeOf(ValuePin) then self.owner.oclAsType(TestIdentityAction).first = self else false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(TestIdentityAction) and self.oclIsTypeOf(ValuePin)\r\nthen self.owner.oclAsType(TestIdentityAction).second = self\r\nelse false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(TestIdentityAction) and self.oclIsTypeOf(ActionInputPin) then self.owner.oclAsType(TestIdentityAction).first = self else false endif", //$NON-NLS-1$
+				"if self.owner.oclIsKindOf(TestIdentityAction) and self.oclIsTypeOf(ActionInputPin)\r\nthen self.owner.oclAsType(TestIdentityAction).second = self\r\nelse false endif", //$NON-NLS-1$
 		};
 	}
 

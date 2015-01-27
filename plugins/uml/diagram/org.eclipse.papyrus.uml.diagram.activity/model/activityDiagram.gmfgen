@@ -10529,6 +10529,714 @@
               parser="/0/@labelParsers/@implementations.1"/>
         </labels>
       </childNodes>
+      <childNodes
+          visualID="3114"
+          editPartClassName="TestIdentityActionEditPart"
+          itemSemanticEditPolicyClassName="TestIdentityActionItemSemanticEditPolicy"
+          canonicalEditPolicyClassName="TestIdentityActionCanonicalEditPolicy"
+          childNodes="/0/@diagram/@childNodes.103 /0/@diagram/@childNodes.104 /0/@diagram/@childNodes.105 /0/@diagram/@childNodes.106 /0/@diagram/@childNodes.107 /0/@diagram/@childNodes.108 /0/@diagram/@childNodes.109"
+          graphicalNodeEditPolicyClassName="TestIdentityActionGraphicalNodeEditPolicy"
+          createCommandClassName="TestIdentityActionCreateCommand"
+          containers="/0/@diagram/@compartments.14 /0/@diagram/@compartments.3 /0/@diagram/@compartments.5 /0/@diagram/@compartments.6 /0/@diagram/@compartments.7 /0/@diagram/@compartments.8 /0/@diagram/@compartments.9 /0/@diagram/@compartments.10">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <elementType
+            xsi:type="gmfgen:SpecializationType"
+            displayName="TestIdentityAction">
+          <metamodelType
+              href="../../org.eclipse.papyrus.uml.diagram.common/model/GenericUML.gmfgen#//@diagram/@topLevelNodes.184/@elementType"/>
+        </elementType>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusRoundedNodeFigure"/>
+        <behaviour
+            xsi:type="gmfgen:OpenDiagramBehaviour"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
+            editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.papyrus.uml.diagram.common.editpolicies.ChangeStereotypedShapeEditPolicy.CHANGE_SHAPE_POLICY"
+            editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
+            editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ObjectFlowWithPinsCreationEditPolicy"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
+            editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
+        <modelFacet>
+          <metaClass
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TestIdentityAction"/>
+          <containmentMetaFeature
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/ownedNode"/>
+          <modelElementInitializer
+              xsi:type="gmfgen:GenFeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfgen:GenFeatureValueSpec"
+                value="/0/@expressionProviders/@providers.0/@expressions.0">
+              <feature
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+            </initializers>
+          </modelElementInitializer>
+        </modelFacet>
+        <labels
+            visualID="5192"
+            editPartClassName="TestIdentityActionNameEditPart"
+            itemSemanticEditPolicyClassName="TestIdentityActionNameItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:ParentAssignedViewmap"
+              getterName="getNameLabel"
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
+          <modelFacet
+              xsi:type="gmfgen:FeatureLabelModelFacet"
+              parser="/0/@labelParsers/@implementations.0">
+            <metaFeatures
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+          </modelFacet>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5395"
+            editPartClassName="TestIdentityActionFloatingNameEditPart"
+            itemSemanticEditPolicyClassName="TestIdentityActionFloatingNameItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalLabelPrimaryDragRoleEditPolicy"/>
+          <modelFacet
+              xsi:type="gmfgen:FeatureLabelModelFacet"
+              parser="/0/@labelParsers/@implementations.0"
+              viewPattern=""
+              editorPattern=""
+              editPattern="">
+            <metaFeatures
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+          </modelFacet>
+        </labels>
+      </childNodes>
+      <childNodes
+          xsi:type="gmfgen:GenChildSideAffixedNode"
+          visualID="3126"
+          editPartClassName="OutputPinInTestIdentityActionEditPart"
+          itemSemanticEditPolicyClassName="OutputPinInTestIdentityActionItemSemanticEditPolicy"
+          canonicalEditPolicyClassName="OutputPinInTestIdentityActionCanonicalEditPolicy"
+          graphicalNodeEditPolicyClassName="OutputPinInTestIdentityActionGraphicalNodeEditPolicy"
+          createCommandClassName="OutputPinInTestIdentityActionCreateCommand"
+          containers="/0/@diagram/@childNodes.102"
+          preferredSideName="EAST">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <elementType
+            xsi:type="gmfgen:SpecializationType">
+          <metamodelType
+              href="../../org.eclipse.papyrus.uml.diagram.common/model/GenericUML.gmfgen#//@diagram/@topLevelNodes.76/@elementType"/>
+        </elementType>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.OutputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
+        <behaviour
+            xsi:type="gmfgen:OpenDiagramBehaviour"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.LAYOUT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.PinLayoutEditPolicy"/>
+        <modelFacet>
+          <metaClass
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/OutputPin"/>
+          <containmentMetaFeature
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TestIdentityAction/result"/>
+          <childMetaFeature
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TestIdentityAction/result"/>
+          <modelElementInitializer
+              xsi:type="gmfgen:GenFeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfgen:GenFeatureValueSpec"
+                value="/0/@expressionProviders/@providers.0/@expressions.0">
+              <feature
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+            </initializers>
+          </modelElementInitializer>
+        </modelFacet>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5205"
+            editPartClassName="OutputPinInTestIdentityActionItemLabelEditPart"
+            itemSemanticEditPolicyClassName="OutputPinInTestIdentityActionItemLabelItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.6"/>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5206"
+            editPartClassName="OutputPinInTestIdentityActionItemAppliedStereotypeLabelEditPart"
+            itemSemanticEditPolicyClassName="OutputPinInTestIdentityActionItemAppliedStereotypeLabelItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.1"/>
+        </labels>
+      </childNodes>
+      <childNodes
+          xsi:type="gmfgen:GenChildSideAffixedNode"
+          visualID="3134"
+          editPartClassName="InputPinInTestIdentityActionAsFirstEditPart"
+          itemSemanticEditPolicyClassName="InputPinInTestIdentityActionAsFirstItemSemanticEditPolicy"
+          canonicalEditPolicyClassName="InputPinInTestIdentityActionAsFirstCanonicalEditPolicy"
+          graphicalNodeEditPolicyClassName="InputPinInTestIdentityActionAsFirstGraphicalNodeEditPolicy"
+          createCommandClassName="InputPinInTestIdentityActionAsFirstCreateCommand"
+          containers="/0/@diagram/@childNodes.102">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <elementType
+            xsi:type="gmfgen:SpecializationType">
+          <metamodelType
+              href="../../org.eclipse.papyrus.uml.diagram.common/model/GenericUML.gmfgen#//@diagram/@topLevelNodes.75/@elementType"/>
+        </elementType>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
+        <behaviour
+            xsi:type="gmfgen:OpenDiagramBehaviour"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.LAYOUT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.PinLayoutEditPolicy"/>
+        <modelFacet
+            modelElementSelector="/0/@expressionProviders/@providers.1/@expressions.93">
+          <metaClass
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/InputPin"/>
+          <containmentMetaFeature
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TestIdentityAction/first"/>
+          <childMetaFeature
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TestIdentityAction/first"/>
+          <modelElementInitializer
+              xsi:type="gmfgen:GenFeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfgen:GenFeatureValueSpec"
+                value="/0/@expressionProviders/@providers.0/@expressions.0">
+              <feature
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+            </initializers>
+          </modelElementInitializer>
+        </modelFacet>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5221"
+            editPartClassName="InputPinInTestIdentityActionAsFirstLabelEditPart"
+            itemSemanticEditPolicyClassName="InputPinInTestIdentityActionAsFirstLabelItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.6"/>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5222"
+            editPartClassName="InputPinInTestIdentityActionAsFirstAppliedStereotypeLabelEditPart"
+            itemSemanticEditPolicyClassName="InputPinInTestIdentityActionAsFirstAppliedStereotypeLabelItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.1"/>
+        </labels>
+      </childNodes>
+      <childNodes
+          xsi:type="gmfgen:GenChildSideAffixedNode"
+          visualID="3135"
+          editPartClassName="InputPinInTestIdentityActionAsSecondEditPart"
+          itemSemanticEditPolicyClassName="InputPinInTestIdentityActionAsSecondItemSemanticEditPolicy"
+          canonicalEditPolicyClassName="InputPinInTestIdentityActionAsSecondCanonicalEditPolicy"
+          graphicalNodeEditPolicyClassName="InputPinInTestIdentityActionAsSecondGraphicalNodeEditPolicy"
+          createCommandClassName="InputPinInTestIdentityActionAsSecondCreateCommand"
+          containers="/0/@diagram/@childNodes.102">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <elementType
+            xsi:type="gmfgen:SpecializationType">
+          <metamodelType
+              href="../../org.eclipse.papyrus.uml.diagram.common/model/GenericUML.gmfgen#//@diagram/@topLevelNodes.75/@elementType"/>
+        </elementType>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InputPinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
+        <behaviour
+            xsi:type="gmfgen:OpenDiagramBehaviour"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.LAYOUT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.PinLayoutEditPolicy"/>
+        <modelFacet
+            modelElementSelector="/0/@expressionProviders/@providers.1/@expressions.94">
+          <metaClass
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/InputPin"/>
+          <containmentMetaFeature
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TestIdentityAction/second"/>
+          <childMetaFeature
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TestIdentityAction/second"/>
+          <modelElementInitializer
+              xsi:type="gmfgen:GenFeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfgen:GenFeatureValueSpec"
+                value="/0/@expressionProviders/@providers.0/@expressions.0">
+              <feature
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+            </initializers>
+          </modelElementInitializer>
+        </modelFacet>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5223"
+            editPartClassName="InputPinInTestIdentityActionAsSecondLabelEditPart"
+            itemSemanticEditPolicyClassName="InputPinInTestIdentityActionAsSecondLabelItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.6"/>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5224"
+            editPartClassName="InputPinInTestIdentityActionAsSecondAppliedStereotypeLabelEditPart"
+            itemSemanticEditPolicyClassName="InputPinInTestIdentityActionAsSecondAppliedStereotypeLabelItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.1"/>
+        </labels>
+      </childNodes>
+      <childNodes
+          xsi:type="gmfgen:GenChildSideAffixedNode"
+          visualID="3147"
+          editPartClassName="ValuePinInTestIdentityActionAsFirstEditPart"
+          itemSemanticEditPolicyClassName="ValuePinInTestIdentityActionAsFirstItemSemanticEditPolicy"
+          canonicalEditPolicyClassName="ValuePinInTestIdentityActionAsFirstCanonicalEditPolicy"
+          graphicalNodeEditPolicyClassName="ValuePinInTestIdentityActionAsFirstGraphicalNodeEditPolicy"
+          createCommandClassName="ValuePinInTestIdentityActionAsFirstCreateCommand"
+          containers="/0/@diagram/@childNodes.102">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <elementType
+            xsi:type="gmfgen:SpecializationType">
+          <metamodelType
+              href="../../org.eclipse.papyrus.uml.diagram.common/model/GenericUML.gmfgen#//@diagram/@topLevelNodes.191/@elementType"/>
+        </elementType>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
+        <behaviour
+            xsi:type="gmfgen:OpenDiagramBehaviour"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.LAYOUT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.PinLayoutEditPolicy"/>
+        <modelFacet
+            modelElementSelector="/0/@expressionProviders/@providers.1/@expressions.95">
+          <metaClass
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ValuePin"/>
+          <containmentMetaFeature
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TestIdentityAction/first"/>
+          <childMetaFeature
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TestIdentityAction/first"/>
+          <modelElementInitializer
+              xsi:type="gmfgen:GenFeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfgen:GenFeatureValueSpec"
+                value="/0/@expressionProviders/@providers.0/@expressions.0">
+              <feature
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+            </initializers>
+          </modelElementInitializer>
+        </modelFacet>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5251"
+            editPartClassName="ValuePinInTestIdentityActionAsFirstLabelEditPart"
+            itemSemanticEditPolicyClassName="ValuePinInTestIdentityActionAsFirstLabelItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.6"/>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5252"
+            editPartClassName="ValuePinInTestIdentityActionAsFirstValueEditPart"
+            itemSemanticEditPolicyClassName="ValuePinInTestIdentityActionAsFirstValueItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.7"/>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5253"
+            editPartClassName="ValuePinInTestIdentityActionAsFirstAppliedStereotypeLabelEditPart"
+            itemSemanticEditPolicyClassName="ValuePinInTestIdentityActionAsFirstAppliedStereotypeLabelItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.1"/>
+        </labels>
+      </childNodes>
+      <childNodes
+          xsi:type="gmfgen:GenChildSideAffixedNode"
+          visualID="3148"
+          editPartClassName="ValuePinInTestIdentityActionAsSecondEditPart"
+          itemSemanticEditPolicyClassName="ValuePinInTestIdentityActionAsSecondItemSemanticEditPolicy"
+          canonicalEditPolicyClassName="ValuePinInTestIdentityActionAsSecondCanonicalEditPolicy"
+          graphicalNodeEditPolicyClassName="ValuePinInTestIdentityActionAsSecondGraphicalNodeEditPolicy"
+          createCommandClassName="ValuePinInTestIdentityActionAsSecondCreateCommand"
+          containers="/0/@diagram/@childNodes.102">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <elementType
+            xsi:type="gmfgen:SpecializationType">
+          <metamodelType
+              href="../../org.eclipse.papyrus.uml.diagram.common/model/GenericUML.gmfgen#//@diagram/@topLevelNodes.191/@elementType"/>
+        </elementType>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
+        <behaviour
+            xsi:type="gmfgen:OpenDiagramBehaviour"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.LAYOUT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.PinLayoutEditPolicy"/>
+        <modelFacet
+            modelElementSelector="/0/@expressionProviders/@providers.1/@expressions.96">
+          <metaClass
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ValuePin"/>
+          <containmentMetaFeature
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TestIdentityAction/second"/>
+          <childMetaFeature
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TestIdentityAction/second"/>
+          <modelElementInitializer
+              xsi:type="gmfgen:GenFeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfgen:GenFeatureValueSpec"
+                value="/0/@expressionProviders/@providers.0/@expressions.0">
+              <feature
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+            </initializers>
+          </modelElementInitializer>
+        </modelFacet>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5254"
+            editPartClassName="ValuePinInTestIdentityActionAsSecondLabelEditPart"
+            itemSemanticEditPolicyClassName="ValuePinInTestIdentityActionAsSecondLabelItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.6"/>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5255"
+            editPartClassName="ValuePinInTestIdentityActionAsSecondValueEditPart"
+            itemSemanticEditPolicyClassName="ValuePinInTestIdentityActionAsSecondValueItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.7"/>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5256"
+            editPartClassName="ValuePinInTestIdentityActionAsSecondAppliedStereotypeLabelEditPart"
+            itemSemanticEditPolicyClassName="ValuePinInTestIdentityActionAsSecondAppliedStereotypeLabelItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.1"/>
+        </labels>
+      </childNodes>
+      <childNodes
+          xsi:type="gmfgen:GenChildSideAffixedNode"
+          visualID="3160"
+          editPartClassName="ActionPinInTestIdentityActionAsFirstEditPart"
+          itemSemanticEditPolicyClassName="ActionPinInTestIdentityActionAsFirstItemSemanticEditPolicy"
+          canonicalEditPolicyClassName="ActionPinInTestIdentityActionAsFirstCanonicalEditPolicy"
+          graphicalNodeEditPolicyClassName="ActionPinInTestIdentityActionAsFirstGraphicalNodeEditPolicy"
+          createCommandClassName="ActionPinInTestIdentityActionAsFirstCreateCommand"
+          containers="/0/@diagram/@childNodes.102">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <elementType
+            xsi:type="gmfgen:SpecializationType">
+          <metamodelType
+              href="../../org.eclipse.papyrus.uml.diagram.common/model/GenericUML.gmfgen#//@diagram/@topLevelNodes.91/@elementType"/>
+        </elementType>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
+        <behaviour
+            xsi:type="gmfgen:OpenDiagramBehaviour"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.LAYOUT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.PinLayoutEditPolicy"/>
+        <modelFacet
+            modelElementSelector="/0/@expressionProviders/@providers.1/@expressions.97">
+          <metaClass
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActionInputPin"/>
+          <containmentMetaFeature
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TestIdentityAction/first"/>
+          <childMetaFeature
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TestIdentityAction/first"/>
+          <modelElementInitializer
+              xsi:type="gmfgen:GenFeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfgen:GenFeatureValueSpec"
+                value="/0/@expressionProviders/@providers.0/@expressions.0">
+              <feature
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+            </initializers>
+          </modelElementInitializer>
+        </modelFacet>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5269"
+            editPartClassName="ActionPinInTestIdentityActionAsFirstLabelEditPart"
+            itemSemanticEditPolicyClassName="ActionPinInTestIdentityActionAsFirstLabelItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.6"/>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5270"
+            editPartClassName="ActionPinInTestIdentityActionAsFirstValueEditPart"
+            itemSemanticEditPolicyClassName="ActionPinInTestIdentityActionAsFirstValueItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.7"/>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5271"
+            editPartClassName="ActionPinInTestIdentityActionAsFirstAppliedStereotypeLabelEditPart"
+            itemSemanticEditPolicyClassName="ActionPinInTestIdentityActionAsFirstAppliedStereotypeLabelItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.1"/>
+        </labels>
+      </childNodes>
+      <childNodes
+          xsi:type="gmfgen:GenChildSideAffixedNode"
+          visualID="3161"
+          editPartClassName="ActionPinInTestIdentityActionAsSecondEditPart"
+          itemSemanticEditPolicyClassName="ActionPinInTestIdentityActionAsSecondItemSemanticEditPolicy"
+          canonicalEditPolicyClassName="ActionPinInTestIdentityActionAsSecondCanonicalEditPolicy"
+          graphicalNodeEditPolicyClassName="ActionPinInTestIdentityActionAsSecondGraphicalNodeEditPolicy"
+          createCommandClassName="ActionPinInTestIdentityActionAsSecondCreateCommand"
+          containers="/0/@diagram/@childNodes.102">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <elementType
+            xsi:type="gmfgen:SpecializationType">
+          <metamodelType
+              href="../../org.eclipse.papyrus.uml.diagram.common/model/GenericUML.gmfgen#//@diagram/@topLevelNodes.91/@elementType"/>
+        </elementType>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.PinFigure">
+          <attributes
+              xsi:type="gmfgen:DefaultSizeAttributes"
+              width="16"
+              height="16"/>
+        </viewmap>
+        <behaviour
+            xsi:type="gmfgen:OpenDiagramBehaviour"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.LAYOUT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.PinLayoutEditPolicy"/>
+        <modelFacet
+            modelElementSelector="/0/@expressionProviders/@providers.1/@expressions.98">
+          <metaClass
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActionInputPin"/>
+          <containmentMetaFeature
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TestIdentityAction/second"/>
+          <childMetaFeature
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TestIdentityAction/second"/>
+          <modelElementInitializer
+              xsi:type="gmfgen:GenFeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfgen:GenFeatureValueSpec"
+                value="/0/@expressionProviders/@providers.0/@expressions.0">
+              <feature
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+            </initializers>
+          </modelElementInitializer>
+        </modelFacet>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5272"
+            editPartClassName="ActionPinInTestIdentityActionAsSecondLabelEditPart"
+            itemSemanticEditPolicyClassName="ActionPinInTestIdentityActionAsSecondLabelItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.6"/>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5273"
+            editPartClassName="ActionPinInTestIdentityActionAsSecondValueEditPart"
+            itemSemanticEditPolicyClassName="ActionPinInTestIdentityActionAsSecondValueItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.7"/>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5274"
+            editPartClassName="ActionPinInTestIdentityActionAsSecondAppliedStereotypeLabelEditPart"
+            itemSemanticEditPolicyClassName="ActionPinInTestIdentityActionAsSecondAppliedStereotypeLabelItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.1"/>
+        </labels>
+      </childNodes>
       <topLevelNodes
           visualID="2001"
           editPartClassName="ActivityEditPart"
@@ -11226,7 +11934,7 @@
           itemSemanticEditPolicyClassName="ActivityActivityContentCompartmentItemSemanticEditPolicy"
           notationViewFactoryClassName="ActivityActivityContentCompartmentViewFactory"
           canonicalEditPolicyClassName="ActivityActivityContentCompartmentCanonicalEditPolicy"
-          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.67 /0/@diagram/@childNodes.68 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.72 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.93 /0/@diagram/@childNodes.94"
+          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.67 /0/@diagram/@childNodes.68 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.72 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.93 /0/@diagram/@childNodes.94 /0/@diagram/@childNodes.102"
           title="ActivityFigureContentCompartment"
           canCollapse="false"
           needsTitle="false"
@@ -11300,7 +12008,7 @@
           itemSemanticEditPolicyClassName="ExpansionRegionStructuredActivityNodeContentCompartmentItemSemanticEditPolicy"
           notationViewFactoryClassName="ExpansionRegionStructuredActivityNodeContentCompartmentViewFactory"
           canonicalEditPolicyClassName="ExpansionRegionStructuredActivityNodeContentCompartmentCanonicalEditPolicy"
-          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.93 /0/@diagram/@childNodes.94"
+          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.93 /0/@diagram/@childNodes.94 /0/@diagram/@childNodes.102"
           title="StructuredActivityNodeContentCompartment"
           canCollapse="false"
           needsTitle="false"
@@ -11335,7 +12043,7 @@
           itemSemanticEditPolicyClassName="LoopNodeStructuredActivityNodeContentCompartmentItemSemanticEditPolicy"
           notationViewFactoryClassName="LoopNodeStructuredActivityNodeContentCompartmentViewFactory"
           canonicalEditPolicyClassName="LoopNodeStructuredActivityNodeContentCompartmentCanonicalEditPolicy"
-          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.93 /0/@diagram/@childNodes.94"
+          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.93 /0/@diagram/@childNodes.94 /0/@diagram/@childNodes.102"
           title="StructuredActivityNodeContentCompartment"
           canCollapse="false"
           needsTitle="false"
@@ -11370,7 +12078,7 @@
           itemSemanticEditPolicyClassName="SequenceNodeStructuredActivityNodeContentCompartmentItemSemanticEditPolicy"
           notationViewFactoryClassName="SequenceNodeStructuredActivityNodeContentCompartmentViewFactory"
           canonicalEditPolicyClassName="SequenceNodeStructuredActivityNodeContentCompartmentCanonicalEditPolicy"
-          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.93 /0/@diagram/@childNodes.94"
+          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.93 /0/@diagram/@childNodes.94 /0/@diagram/@childNodes.102"
           title="StructuredActivityNodeContentCompartment"
           canCollapse="false"
           needsTitle="false"
@@ -11405,7 +12113,7 @@
           itemSemanticEditPolicyClassName="StructuredActivityNodeStructuredActivityNodeContentCompartmentItemSemanticEditPolicy"
           notationViewFactoryClassName="StructuredActivityNodeStructuredActivityNodeContentCompartmentViewFactory"
           canonicalEditPolicyClassName="StructuredActivityNodeStructuredActivityNodeContentCompartmentCanonicalEditPolicy"
-          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.93 /0/@diagram/@childNodes.94"
+          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.93 /0/@diagram/@childNodes.94 /0/@diagram/@childNodes.102"
           title="StructuredActivityNodeContentCompartment"
           canCollapse="false"
           needsTitle="false"
@@ -11440,7 +12148,7 @@
           itemSemanticEditPolicyClassName="ActivityPartitionActivityPartitionContentCompartmentItemSemanticEditPolicy"
           notationViewFactoryClassName="ActivityPartitionActivityPartitionContentCompartmentViewFactory"
           canonicalEditPolicyClassName="ActivityPartitionActivityPartitionContentCompartmentCanonicalEditPolicy"
-          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.67 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.93 /0/@diagram/@childNodes.94"
+          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.67 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.93 /0/@diagram/@childNodes.94 /0/@diagram/@childNodes.102"
           title="ActivityPartitionContentCompartment"
           canCollapse="false"
           needsTitle="false"
@@ -11475,7 +12183,7 @@
           itemSemanticEditPolicyClassName="InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentItemSemanticEditPolicy"
           notationViewFactoryClassName="InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentViewFactory"
           canonicalEditPolicyClassName="InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentCanonicalEditPolicy"
-          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.93 /0/@diagram/@childNodes.94"
+          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.93 /0/@diagram/@childNodes.94 /0/@diagram/@childNodes.102"
           title="InterruptibleActivityRegionContentCompartment"
           canCollapse="false"
           needsTitle="false"
@@ -11595,7 +12303,7 @@
           itemSemanticEditPolicyClassName="ActivityCNContentCompartmentItemSemanticEditPolicy"
           notationViewFactoryClassName="ActivityActivityContentCompartmentViewFactory"
           canonicalEditPolicyClassName="ActivityCNContentCompartmentCanonicalEditPolicy"
-          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.67 /0/@diagram/@childNodes.68 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.72 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.51 /0/@diagram/@childNodes.94"
+          childNodes="/0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.26 /0/@diagram/@childNodes.27 /0/@diagram/@childNodes.28 /0/@diagram/@childNodes.29 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.67 /0/@diagram/@childNodes.68 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.72 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.51 /0/@diagram/@childNodes.94 /0/@diagram/@childNodes.102"
           title="ActivityFigureContentCompartment"
           canCollapse="false"
           needsTitle="false"
@@ -11807,28 +12515,28 @@
                 description="Create an Output Pin"
                 largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OutputPin.gif"
                 smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OutputPin.gif"
-                genNodes="/0/@diagram/@childNodes.10 /0/@diagram/@childNodes.15 /0/@diagram/@childNodes.20 /0/@diagram/@childNodes.53 /0/@diagram/@childNodes.55 /0/@diagram/@childNodes.71 /0/@diagram/@childNodes.61 /0/@diagram/@childNodes.62 /0/@diagram/@childNodes.63 /0/@diagram/@childNodes.95"/>
+                genNodes="/0/@diagram/@childNodes.10 /0/@diagram/@childNodes.15 /0/@diagram/@childNodes.20 /0/@diagram/@childNodes.53 /0/@diagram/@childNodes.55 /0/@diagram/@childNodes.71 /0/@diagram/@childNodes.61 /0/@diagram/@childNodes.62 /0/@diagram/@childNodes.63 /0/@diagram/@childNodes.95 /0/@diagram/@childNodes.103"/>
             <entries
                 xsi:type="gmfgen:ToolEntry"
                 title="Input Pin"
                 description="Create an Input Pin"
                 largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InputPin.gif"
                 smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InputPin.gif"
-                genNodes="/0/@diagram/@childNodes.9 /0/@diagram/@childNodes.14 /0/@diagram/@childNodes.19 /0/@diagram/@childNodes.47 /0/@diagram/@childNodes.66 /0/@diagram/@childNodes.96 /0/@diagram/@childNodes.99"/>
+                genNodes="/0/@diagram/@childNodes.9 /0/@diagram/@childNodes.14 /0/@diagram/@childNodes.19 /0/@diagram/@childNodes.47 /0/@diagram/@childNodes.66 /0/@diagram/@childNodes.96 /0/@diagram/@childNodes.99 /0/@diagram/@childNodes.104 /0/@diagram/@childNodes.105"/>
             <entries
                 xsi:type="gmfgen:ToolEntry"
                 title="Action Input Pin"
                 description="Create an Action Input Pin"
                 largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActionInputPin.gif"
                 smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActionInputPin.gif"
-                genNodes="/0/@diagram/@childNodes.8 /0/@diagram/@childNodes.13 /0/@diagram/@childNodes.17 /0/@diagram/@childNodes.45 /0/@diagram/@childNodes.98 /0/@diagram/@childNodes.101"/>
+                genNodes="/0/@diagram/@childNodes.8 /0/@diagram/@childNodes.13 /0/@diagram/@childNodes.17 /0/@diagram/@childNodes.45 /0/@diagram/@childNodes.98 /0/@diagram/@childNodes.101 /0/@diagram/@childNodes.108 /0/@diagram/@childNodes.109"/>
             <entries
                 xsi:type="gmfgen:ToolEntry"
                 title="Value Pin"
                 description="Create a Value Pin"
                 largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValuePin.gif"
                 smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValuePin.gif"
-                genNodes="/0/@diagram/@childNodes.7 /0/@diagram/@childNodes.12 /0/@diagram/@childNodes.18 /0/@diagram/@childNodes.46 /0/@diagram/@childNodes.97 /0/@diagram/@childNodes.100"/>
+                genNodes="/0/@diagram/@childNodes.7 /0/@diagram/@childNodes.12 /0/@diagram/@childNodes.18 /0/@diagram/@childNodes.46 /0/@diagram/@childNodes.97 /0/@diagram/@childNodes.100 /0/@diagram/@childNodes.106 /0/@diagram/@childNodes.107"/>
           </entries>
           <entries
               xsi:type="gmfgen:ToolGroup"
@@ -12083,6 +12791,13 @@
               largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AcceptEventAction.gif"
               smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AcceptEventAction.gif"
               genNodes="/0/@diagram/@childNodes.52"/>
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Test Identity Action "
+              description="Create a Test Identity Action node"
+              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TestIdentityAction.gif"
+              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TestIdentityAction.gif"
+              genNodes="/0/@diagram/@childNodes.102"/>
           <entries
               xsi:type="gmfgen:ToolEntry"
               title="Activity"
@@ -19243,16 +19958,34 @@
         <expressions
             xsi:type="gmfgen:GenConstraint"
             body="if self.owner.oclIsKindOf(StartObjectBehaviorAction) and self.oclIsTypeOf(ActionInputPin)&#xD;&#xA;then self.owner.oclAsType(StartObjectBehaviorAction).object = self&#xD;&#xA;else false endif"/>
+        <expressions
+            xsi:type="gmfgen:GenConstraint"
+            body="if self.owner.oclIsKindOf(TestIdentityAction) and self.oclIsTypeOf(InputPin) then self.owner.oclAsType(TestIdentityAction).first = self else false endif"/>
+        <expressions
+            xsi:type="gmfgen:GenConstraint"
+            body="if self.owner.oclIsKindOf(TestIdentityAction) and self.oclIsTypeOf(InputPin)&#xD;&#xA;then self.owner.oclAsType(TestIdentityAction).second = self&#xD;&#xA;else false endif"/>
+        <expressions
+            xsi:type="gmfgen:GenConstraint"
+            body="if self.owner.oclIsKindOf(TestIdentityAction) and self.oclIsTypeOf(ValuePin) then self.owner.oclAsType(TestIdentityAction).first = self else false endif"/>
+        <expressions
+            xsi:type="gmfgen:GenConstraint"
+            body="if self.owner.oclIsKindOf(TestIdentityAction) and self.oclIsTypeOf(ValuePin)&#xD;&#xA;then self.owner.oclAsType(TestIdentityAction).second = self&#xD;&#xA;else false endif"/>
+        <expressions
+            xsi:type="gmfgen:GenConstraint"
+            body="if self.owner.oclIsKindOf(TestIdentityAction) and self.oclIsTypeOf(ActionInputPin) then self.owner.oclAsType(TestIdentityAction).first = self else false endif"/>
+        <expressions
+            xsi:type="gmfgen:GenConstraint"
+            body="if self.owner.oclIsKindOf(TestIdentityAction) and self.oclIsTypeOf(ActionInputPin)&#xD;&#xA;then self.owner.oclAsType(TestIdentityAction).second = self&#xD;&#xA;else false endif"/>
       </providers>
     </expressionProviders>
     <labelParsers
         extensibleViaService="true">
       <implementations
           xsi:type="gmfgen:PredefinedParser"
-          uses="/0/@diagram/@childNodes.6/@labels.0/@modelFacet /0/@diagram/@childNodes.24/@labels.0/@modelFacet /0/@diagram/@childNodes.25/@labels.0/@modelFacet /0/@diagram/@childNodes.26/@labels.0/@modelFacet /0/@diagram/@childNodes.27/@labels.0/@modelFacet /0/@diagram/@childNodes.28/@labels.0/@modelFacet /0/@diagram/@childNodes.29/@labels.0/@modelFacet /0/@diagram/@childNodes.30/@labels.0/@modelFacet /0/@diagram/@childNodes.31/@labels.0/@modelFacet /0/@diagram/@childNodes.37/@labels.0/@modelFacet /0/@diagram/@childNodes.44/@labels.0/@modelFacet /0/@diagram/@childNodes.54/@labels.0/@modelFacet /0/@diagram/@childNodes.67/@labels.0/@modelFacet /0/@diagram/@childNodes.70/@labels.0/@modelFacet /0/@diagram/@childNodes.73/@labels.0/@modelFacet /0/@diagram/@childNodes.76/@labels.0/@modelFacet /0/@diagram/@childNodes.79/@labels.0/@modelFacet /0/@diagram/@childNodes.83/@labels.0/@modelFacet /0/@diagram/@childNodes.85/@labels.0/@modelFacet /0/@diagram/@childNodes.87/@labels.0/@modelFacet /0/@diagram/@childNodes.90/@labels.0/@modelFacet /0/@diagram/@childNodes.72/@labels.0/@modelFacet /0/@diagram/@topLevelNodes.0/@labels.0/@modelFacet /0/@diagram/@links.2/@labels.0/@modelFacet /0/@diagram/@links.3/@labels.0/@modelFacet /0/@diagram/@childNodes.93/@labels.0/@modelFacet /0/@diagram/@childNodes.67/@labels.1/@modelFacet /0/@diagram/@childNodes.90/@labels.1/@modelFacet /0/@diagram/@childNodes.87/@labels.1/@modelFacet /0/@diagram/@childNodes.16/@labels.1/@modelFacet /0/@diagram/@childNodes.79/@labels.1/@modelFacet /0/@diagram/@childNodes.85/@labels.1/@modelFacet /0/@diagram/@childNodes.83/@labels.1/@modelFacet /0/@diagram/@childNodes.76/@labels.1/@modelFacet /0/@diagram/@childNodes.73/@labels.1/@modelFacet /0/@diagram/@childNodes.70/@labels.1/@modelFacet /0/@diagram/@childNodes.54/@labels.1/@modelFacet /0/@diagram/@childNodes.37/@labels.1/@modelFacet /0/@diagram/@childNodes.6/@labels.1/@modelFacet /0/@diagram/@childNodes.11/@labels.1/@modelFacet /0/@diagram/@childNodes.92/@labels.2/@modelFacet /0/@diagram/@childNodes.36/@labels.2/@modelFacet /0/@diagram/@childNodes.44/@labels.1/@modelFacet /0/@diagram/@childNodes.4/@labels.0/@modelFacet /0/@diagram/@childNodes.3/@labels.0/@modelFacet /0/@diagram/@childNodes.5/@labels.0/@modelFacet /0/@diagram/@childNodes.32/@labels.0/@modelFacet /0/@diagram/@childNodes.33/@labels.0/@modelFacet /0/@diagram/@childNodes.34/@labels.0/@modelFacet /0/@diagram/@childNodes.35/@labels.0/@modelFacet /0/@diagram/@childNodes.52/@labels.3/@modelFacet /0/@diagram/@childNodes.94/@labels.0/@modelFacet /0/@diagram/@childNodes.94/@labels.1/@modelFacet"/>
+          uses="/0/@diagram/@childNodes.6/@labels.0/@modelFacet /0/@diagram/@childNodes.24/@labels.0/@modelFacet /0/@diagram/@childNodes.25/@labels.0/@modelFacet /0/@diagram/@childNodes.26/@labels.0/@modelFacet /0/@diagram/@childNodes.27/@labels.0/@modelFacet /0/@diagram/@childNodes.28/@labels.0/@modelFacet /0/@diagram/@childNodes.29/@labels.0/@modelFacet /0/@diagram/@childNodes.30/@labels.0/@modelFacet /0/@diagram/@childNodes.31/@labels.0/@modelFacet /0/@diagram/@childNodes.37/@labels.0/@modelFacet /0/@diagram/@childNodes.44/@labels.0/@modelFacet /0/@diagram/@childNodes.54/@labels.0/@modelFacet /0/@diagram/@childNodes.67/@labels.0/@modelFacet /0/@diagram/@childNodes.70/@labels.0/@modelFacet /0/@diagram/@childNodes.73/@labels.0/@modelFacet /0/@diagram/@childNodes.76/@labels.0/@modelFacet /0/@diagram/@childNodes.79/@labels.0/@modelFacet /0/@diagram/@childNodes.83/@labels.0/@modelFacet /0/@diagram/@childNodes.85/@labels.0/@modelFacet /0/@diagram/@childNodes.87/@labels.0/@modelFacet /0/@diagram/@childNodes.90/@labels.0/@modelFacet /0/@diagram/@childNodes.72/@labels.0/@modelFacet /0/@diagram/@topLevelNodes.0/@labels.0/@modelFacet /0/@diagram/@links.2/@labels.0/@modelFacet /0/@diagram/@links.3/@labels.0/@modelFacet /0/@diagram/@childNodes.93/@labels.0/@modelFacet /0/@diagram/@childNodes.67/@labels.1/@modelFacet /0/@diagram/@childNodes.90/@labels.1/@modelFacet /0/@diagram/@childNodes.87/@labels.1/@modelFacet /0/@diagram/@childNodes.16/@labels.1/@modelFacet /0/@diagram/@childNodes.79/@labels.1/@modelFacet /0/@diagram/@childNodes.85/@labels.1/@modelFacet /0/@diagram/@childNodes.83/@labels.1/@modelFacet /0/@diagram/@childNodes.76/@labels.1/@modelFacet /0/@diagram/@childNodes.73/@labels.1/@modelFacet /0/@diagram/@childNodes.70/@labels.1/@modelFacet /0/@diagram/@childNodes.54/@labels.1/@modelFacet /0/@diagram/@childNodes.37/@labels.1/@modelFacet /0/@diagram/@childNodes.6/@labels.1/@modelFacet /0/@diagram/@childNodes.11/@labels.1/@modelFacet /0/@diagram/@childNodes.92/@labels.2/@modelFacet /0/@diagram/@childNodes.36/@labels.2/@modelFacet /0/@diagram/@childNodes.44/@labels.1/@modelFacet /0/@diagram/@childNodes.4/@labels.0/@modelFacet /0/@diagram/@childNodes.3/@labels.0/@modelFacet /0/@diagram/@childNodes.5/@labels.0/@modelFacet /0/@diagram/@childNodes.32/@labels.0/@modelFacet /0/@diagram/@childNodes.33/@labels.0/@modelFacet /0/@diagram/@childNodes.34/@labels.0/@modelFacet /0/@diagram/@childNodes.35/@labels.0/@modelFacet /0/@diagram/@childNodes.52/@labels.3/@modelFacet /0/@diagram/@childNodes.94/@labels.0/@modelFacet /0/@diagram/@childNodes.94/@labels.1/@modelFacet /0/@diagram/@childNodes.102/@labels.0/@modelFacet /0/@diagram/@childNodes.102/@labels.1/@modelFacet"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
-          uses="/0/@diagram/@childNodes.89/@labels.1/@modelFacet /0/@diagram/@childNodes.49/@labels.2/@modelFacet /0/@diagram/@childNodes.82/@labels.1/@modelFacet /0/@diagram/@childNodes.53/@labels.1/@modelFacet /0/@diagram/@childNodes.81/@labels.1/@modelFacet /0/@diagram/@childNodes.12/@labels.2/@modelFacet /0/@diagram/@childNodes.22/@labels.2/@modelFacet /0/@diagram/@childNodes.45/@labels.2/@modelFacet /0/@diagram/@childNodes.47/@labels.1/@modelFacet /0/@diagram/@childNodes.23/@labels.1/@modelFacet /0/@diagram/@links.2/@labels.6/@modelFacet /0/@diagram/@childNodes.19/@labels.1/@modelFacet /0/@diagram/@childNodes.4/@labels.1/@modelFacet /0/@diagram/@childNodes.15/@labels.1/@modelFacet /0/@diagram/@childNodes.43/@labels.1/@modelFacet /0/@diagram/@childNodes.80/@labels.1/@modelFacet /0/@diagram/@childNodes.91/@labels.2/@modelFacet /0/@diagram/@childNodes.84/@labels.1/@modelFacet /0/@diagram/@childNodes.13/@labels.2/@modelFacet /0/@diagram/@childNodes.35/@labels.2/@modelFacet /0/@diagram/@childNodes.9/@labels.1/@modelFacet /0/@diagram/@childNodes.33/@labels.1/@modelFacet /0/@diagram/@childNodes.88/@labels.1/@modelFacet /0/@diagram/@childNodes.20/@labels.1/@modelFacet /0/@diagram/@childNodes.52/@labels.2/@modelFacet /0/@diagram/@childNodes.41/@labels.2/@modelFacet /0/@diagram/@childNodes.32/@labels.2/@modelFacet /0/@diagram/@childNodes.77/@labels.1/@modelFacet /0/@diagram/@childNodes.8/@labels.2/@modelFacet /0/@diagram/@childNodes.34/@labels.1/@modelFacet /0/@diagram/@links.3/@labels.3/@modelFacet /0/@diagram/@childNodes.74/@labels.1/@modelFacet /0/@diagram/@childNodes.86/@labels.1/@modelFacet /0/@diagram/@childNodes.17/@labels.2/@modelFacet /0/@diagram/@childNodes.50/@labels.1/@modelFacet /0/@diagram/@childNodes.78/@labels.1/@modelFacet /0/@diagram/@childNodes.10/@labels.1/@modelFacet /0/@diagram/@childNodes.21/@labels.2/@modelFacet /0/@diagram/@childNodes.14/@labels.1/@modelFacet /0/@diagram/@childNodes.55/@labels.1/@modelFacet /0/@diagram/@childNodes.71/@labels.1/@modelFacet /0/@diagram/@childNodes.39/@labels.2/@modelFacet /0/@diagram/@childNodes.18/@labels.2/@modelFacet /0/@diagram/@childNodes.42/@labels.2/@modelFacet /0/@diagram/@childNodes.3/@labels.1/@modelFacet /0/@diagram/@childNodes.46/@labels.2/@modelFacet /0/@diagram/@childNodes.48/@labels.2/@modelFacet /0/@diagram/@childNodes.7/@labels.2/@modelFacet /0/@diagram/@childNodes.38/@labels.2/@modelFacet /0/@diagram/@childNodes.5/@labels.1/@modelFacet /0/@diagram/@childNodes.40/@labels.1/@modelFacet /0/@diagram/@childNodes.66/@labels.1/@modelFacet /0/@diagram/@childNodes.63/@labels.1/@modelFacet /0/@diagram/@childNodes.62/@labels.1/@modelFacet /0/@diagram/@childNodes.61/@labels.1/@modelFacet /0/@diagram/@childNodes.95/@labels.1/@modelFacet /0/@diagram/@childNodes.96/@labels.1/@modelFacet /0/@diagram/@childNodes.97/@labels.2/@modelFacet /0/@diagram/@childNodes.98/@labels.2/@modelFacet /0/@diagram/@childNodes.100/@labels.2/@modelFacet /0/@diagram/@childNodes.101/@labels.2/@modelFacet"
+          uses="/0/@diagram/@childNodes.89/@labels.1/@modelFacet /0/@diagram/@childNodes.49/@labels.2/@modelFacet /0/@diagram/@childNodes.82/@labels.1/@modelFacet /0/@diagram/@childNodes.53/@labels.1/@modelFacet /0/@diagram/@childNodes.81/@labels.1/@modelFacet /0/@diagram/@childNodes.12/@labels.2/@modelFacet /0/@diagram/@childNodes.22/@labels.2/@modelFacet /0/@diagram/@childNodes.45/@labels.2/@modelFacet /0/@diagram/@childNodes.47/@labels.1/@modelFacet /0/@diagram/@childNodes.23/@labels.1/@modelFacet /0/@diagram/@links.2/@labels.6/@modelFacet /0/@diagram/@childNodes.19/@labels.1/@modelFacet /0/@diagram/@childNodes.4/@labels.1/@modelFacet /0/@diagram/@childNodes.15/@labels.1/@modelFacet /0/@diagram/@childNodes.43/@labels.1/@modelFacet /0/@diagram/@childNodes.80/@labels.1/@modelFacet /0/@diagram/@childNodes.91/@labels.2/@modelFacet /0/@diagram/@childNodes.84/@labels.1/@modelFacet /0/@diagram/@childNodes.13/@labels.2/@modelFacet /0/@diagram/@childNodes.35/@labels.2/@modelFacet /0/@diagram/@childNodes.9/@labels.1/@modelFacet /0/@diagram/@childNodes.33/@labels.1/@modelFacet /0/@diagram/@childNodes.88/@labels.1/@modelFacet /0/@diagram/@childNodes.20/@labels.1/@modelFacet /0/@diagram/@childNodes.52/@labels.2/@modelFacet /0/@diagram/@childNodes.41/@labels.2/@modelFacet /0/@diagram/@childNodes.32/@labels.2/@modelFacet /0/@diagram/@childNodes.77/@labels.1/@modelFacet /0/@diagram/@childNodes.8/@labels.2/@modelFacet /0/@diagram/@childNodes.34/@labels.1/@modelFacet /0/@diagram/@links.3/@labels.3/@modelFacet /0/@diagram/@childNodes.74/@labels.1/@modelFacet /0/@diagram/@childNodes.86/@labels.1/@modelFacet /0/@diagram/@childNodes.17/@labels.2/@modelFacet /0/@diagram/@childNodes.50/@labels.1/@modelFacet /0/@diagram/@childNodes.78/@labels.1/@modelFacet /0/@diagram/@childNodes.10/@labels.1/@modelFacet /0/@diagram/@childNodes.21/@labels.2/@modelFacet /0/@diagram/@childNodes.14/@labels.1/@modelFacet /0/@diagram/@childNodes.55/@labels.1/@modelFacet /0/@diagram/@childNodes.71/@labels.1/@modelFacet /0/@diagram/@childNodes.39/@labels.2/@modelFacet /0/@diagram/@childNodes.18/@labels.2/@modelFacet /0/@diagram/@childNodes.42/@labels.2/@modelFacet /0/@diagram/@childNodes.3/@labels.1/@modelFacet /0/@diagram/@childNodes.46/@labels.2/@modelFacet /0/@diagram/@childNodes.48/@labels.2/@modelFacet /0/@diagram/@childNodes.7/@labels.2/@modelFacet /0/@diagram/@childNodes.38/@labels.2/@modelFacet /0/@diagram/@childNodes.5/@labels.1/@modelFacet /0/@diagram/@childNodes.40/@labels.1/@modelFacet /0/@diagram/@childNodes.66/@labels.1/@modelFacet /0/@diagram/@childNodes.63/@labels.1/@modelFacet /0/@diagram/@childNodes.62/@labels.1/@modelFacet /0/@diagram/@childNodes.61/@labels.1/@modelFacet /0/@diagram/@childNodes.95/@labels.1/@modelFacet /0/@diagram/@childNodes.96/@labels.1/@modelFacet /0/@diagram/@childNodes.97/@labels.2/@modelFacet /0/@diagram/@childNodes.98/@labels.2/@modelFacet /0/@diagram/@childNodes.100/@labels.2/@modelFacet /0/@diagram/@childNodes.101/@labels.2/@modelFacet /0/@diagram/@childNodes.103/@labels.1/@modelFacet /0/@diagram/@childNodes.104/@labels.1/@modelFacet /0/@diagram/@childNodes.105/@labels.1/@modelFacet /0/@diagram/@childNodes.106/@labels.2/@modelFacet /0/@diagram/@childNodes.107/@labels.2/@modelFacet /0/@diagram/@childNodes.108/@labels.2/@modelFacet /0/@diagram/@childNodes.109/@labels.2/@modelFacet"
           qualifiedName="org.eclipse.papyrus.uml.diagram.common.parser.stereotype.AppliedStereotypeParser"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
@@ -19272,11 +20005,11 @@
           qualifiedName="org.eclipse.papyrus.uml.diagram.activity.parser.custom.CallBehaviorActionParser"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
-          uses="/0/@diagram/@childNodes.15/@labels.0/@modelFacet /0/@diagram/@childNodes.71/@labels.0/@modelFacet /0/@diagram/@childNodes.10/@labels.0/@modelFacet /0/@diagram/@childNodes.42/@labels.0/@modelFacet /0/@diagram/@childNodes.14/@labels.0/@modelFacet /0/@diagram/@childNodes.21/@labels.0/@modelFacet /0/@diagram/@childNodes.88/@labels.0/@modelFacet /0/@diagram/@childNodes.8/@labels.0/@modelFacet /0/@diagram/@childNodes.47/@labels.0/@modelFacet /0/@diagram/@childNodes.50/@labels.0/@modelFacet /0/@diagram/@childNodes.86/@labels.0/@modelFacet /0/@diagram/@childNodes.78/@labels.0/@modelFacet /0/@diagram/@childNodes.89/@labels.0/@modelFacet /0/@diagram/@childNodes.12/@labels.0/@modelFacet /0/@diagram/@childNodes.38/@labels.0/@modelFacet /0/@diagram/@childNodes.22/@labels.0/@modelFacet /0/@diagram/@childNodes.7/@labels.0/@modelFacet /0/@diagram/@childNodes.17/@labels.0/@modelFacet /0/@diagram/@childNodes.81/@labels.0/@modelFacet /0/@diagram/@childNodes.39/@labels.0/@modelFacet /0/@diagram/@childNodes.48/@labels.0/@modelFacet /0/@diagram/@childNodes.91/@labels.0/@modelFacet /0/@diagram/@childNodes.49/@labels.0/@modelFacet /0/@diagram/@childNodes.45/@labels.0/@modelFacet /0/@diagram/@childNodes.77/@labels.0/@modelFacet /0/@diagram/@childNodes.82/@labels.0/@modelFacet /0/@diagram/@childNodes.80/@labels.0/@modelFacet /0/@diagram/@childNodes.20/@labels.0/@modelFacet /0/@diagram/@childNodes.40/@labels.0/@modelFacet /0/@diagram/@childNodes.23/@labels.0/@modelFacet /0/@diagram/@childNodes.74/@labels.0/@modelFacet /0/@diagram/@childNodes.53/@labels.0/@modelFacet /0/@diagram/@childNodes.13/@labels.0/@modelFacet /0/@diagram/@childNodes.9/@labels.0/@modelFacet /0/@diagram/@childNodes.19/@labels.0/@modelFacet /0/@diagram/@childNodes.41/@labels.0/@modelFacet /0/@diagram/@childNodes.84/@labels.0/@modelFacet /0/@diagram/@childNodes.18/@labels.0/@modelFacet /0/@diagram/@childNodes.43/@labels.0/@modelFacet /0/@diagram/@childNodes.55/@labels.0/@modelFacet /0/@diagram/@childNodes.46/@labels.0/@modelFacet /0/@diagram/@childNodes.66/@labels.0/@modelFacet /0/@diagram/@childNodes.63/@labels.0/@modelFacet /0/@diagram/@childNodes.62/@labels.0/@modelFacet /0/@diagram/@childNodes.61/@labels.0/@modelFacet /0/@diagram/@childNodes.95/@labels.0/@modelFacet /0/@diagram/@childNodes.96/@labels.0/@modelFacet /0/@diagram/@childNodes.97/@labels.0/@modelFacet /0/@diagram/@childNodes.98/@labels.0/@modelFacet /0/@diagram/@childNodes.99/@labels.0/@modelFacet /0/@diagram/@childNodes.100/@labels.0/@modelFacet /0/@diagram/@childNodes.101/@labels.0/@modelFacet"
+          uses="/0/@diagram/@childNodes.15/@labels.0/@modelFacet /0/@diagram/@childNodes.71/@labels.0/@modelFacet /0/@diagram/@childNodes.10/@labels.0/@modelFacet /0/@diagram/@childNodes.42/@labels.0/@modelFacet /0/@diagram/@childNodes.14/@labels.0/@modelFacet /0/@diagram/@childNodes.21/@labels.0/@modelFacet /0/@diagram/@childNodes.88/@labels.0/@modelFacet /0/@diagram/@childNodes.8/@labels.0/@modelFacet /0/@diagram/@childNodes.47/@labels.0/@modelFacet /0/@diagram/@childNodes.50/@labels.0/@modelFacet /0/@diagram/@childNodes.86/@labels.0/@modelFacet /0/@diagram/@childNodes.78/@labels.0/@modelFacet /0/@diagram/@childNodes.89/@labels.0/@modelFacet /0/@diagram/@childNodes.12/@labels.0/@modelFacet /0/@diagram/@childNodes.38/@labels.0/@modelFacet /0/@diagram/@childNodes.22/@labels.0/@modelFacet /0/@diagram/@childNodes.7/@labels.0/@modelFacet /0/@diagram/@childNodes.17/@labels.0/@modelFacet /0/@diagram/@childNodes.81/@labels.0/@modelFacet /0/@diagram/@childNodes.39/@labels.0/@modelFacet /0/@diagram/@childNodes.48/@labels.0/@modelFacet /0/@diagram/@childNodes.91/@labels.0/@modelFacet /0/@diagram/@childNodes.49/@labels.0/@modelFacet /0/@diagram/@childNodes.45/@labels.0/@modelFacet /0/@diagram/@childNodes.77/@labels.0/@modelFacet /0/@diagram/@childNodes.82/@labels.0/@modelFacet /0/@diagram/@childNodes.80/@labels.0/@modelFacet /0/@diagram/@childNodes.20/@labels.0/@modelFacet /0/@diagram/@childNodes.40/@labels.0/@modelFacet /0/@diagram/@childNodes.23/@labels.0/@modelFacet /0/@diagram/@childNodes.74/@labels.0/@modelFacet /0/@diagram/@childNodes.53/@labels.0/@modelFacet /0/@diagram/@childNodes.13/@labels.0/@modelFacet /0/@diagram/@childNodes.9/@labels.0/@modelFacet /0/@diagram/@childNodes.19/@labels.0/@modelFacet /0/@diagram/@childNodes.41/@labels.0/@modelFacet /0/@diagram/@childNodes.84/@labels.0/@modelFacet /0/@diagram/@childNodes.18/@labels.0/@modelFacet /0/@diagram/@childNodes.43/@labels.0/@modelFacet /0/@diagram/@childNodes.55/@labels.0/@modelFacet /0/@diagram/@childNodes.46/@labels.0/@modelFacet /0/@diagram/@childNodes.66/@labels.0/@modelFacet /0/@diagram/@childNodes.63/@labels.0/@modelFacet /0/@diagram/@childNodes.62/@labels.0/@modelFacet /0/@diagram/@childNodes.61/@labels.0/@modelFacet /0/@diagram/@childNodes.95/@labels.0/@modelFacet /0/@diagram/@childNodes.96/@labels.0/@modelFacet /0/@diagram/@childNodes.97/@labels.0/@modelFacet /0/@diagram/@childNodes.98/@labels.0/@modelFacet /0/@diagram/@childNodes.99/@labels.0/@modelFacet /0/@diagram/@childNodes.100/@labels.0/@modelFacet /0/@diagram/@childNodes.101/@labels.0/@modelFacet /0/@diagram/@childNodes.103/@labels.0/@modelFacet /0/@diagram/@childNodes.104/@labels.0/@modelFacet /0/@diagram/@childNodes.105/@labels.0/@modelFacet /0/@diagram/@childNodes.106/@labels.0/@modelFacet /0/@diagram/@childNodes.107/@labels.0/@modelFacet /0/@diagram/@childNodes.108/@labels.0/@modelFacet /0/@diagram/@childNodes.109/@labels.0/@modelFacet"
           qualifiedName="org.eclipse.papyrus.uml.diagram.activity.parser.custom.PinParser"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
-          uses="/0/@diagram/@childNodes.8/@labels.1/@modelFacet /0/@diagram/@childNodes.21/@labels.1/@modelFacet /0/@diagram/@childNodes.42/@labels.1/@modelFacet /0/@diagram/@childNodes.38/@labels.1/@modelFacet /0/@diagram/@childNodes.39/@labels.1/@modelFacet /0/@diagram/@childNodes.22/@labels.1/@modelFacet /0/@diagram/@childNodes.13/@labels.1/@modelFacet /0/@diagram/@childNodes.17/@labels.1/@modelFacet /0/@diagram/@childNodes.12/@labels.1/@modelFacet /0/@diagram/@childNodes.49/@labels.1/@modelFacet /0/@diagram/@childNodes.91/@labels.1/@modelFacet /0/@diagram/@childNodes.46/@labels.1/@modelFacet /0/@diagram/@childNodes.41/@labels.1/@modelFacet /0/@diagram/@childNodes.18/@labels.1/@modelFacet /0/@diagram/@childNodes.7/@labels.1/@modelFacet /0/@diagram/@childNodes.48/@labels.1/@modelFacet /0/@diagram/@childNodes.45/@labels.1/@modelFacet /0/@diagram/@childNodes.97/@labels.1/@modelFacet /0/@diagram/@childNodes.98/@labels.1/@modelFacet /0/@diagram/@childNodes.99/@labels.1/@modelFacet /0/@diagram/@childNodes.100/@labels.1/@modelFacet /0/@diagram/@childNodes.101/@labels.1/@modelFacet"
+          uses="/0/@diagram/@childNodes.8/@labels.1/@modelFacet /0/@diagram/@childNodes.21/@labels.1/@modelFacet /0/@diagram/@childNodes.42/@labels.1/@modelFacet /0/@diagram/@childNodes.38/@labels.1/@modelFacet /0/@diagram/@childNodes.39/@labels.1/@modelFacet /0/@diagram/@childNodes.22/@labels.1/@modelFacet /0/@diagram/@childNodes.13/@labels.1/@modelFacet /0/@diagram/@childNodes.17/@labels.1/@modelFacet /0/@diagram/@childNodes.12/@labels.1/@modelFacet /0/@diagram/@childNodes.49/@labels.1/@modelFacet /0/@diagram/@childNodes.91/@labels.1/@modelFacet /0/@diagram/@childNodes.46/@labels.1/@modelFacet /0/@diagram/@childNodes.41/@labels.1/@modelFacet /0/@diagram/@childNodes.18/@labels.1/@modelFacet /0/@diagram/@childNodes.7/@labels.1/@modelFacet /0/@diagram/@childNodes.48/@labels.1/@modelFacet /0/@diagram/@childNodes.45/@labels.1/@modelFacet /0/@diagram/@childNodes.97/@labels.1/@modelFacet /0/@diagram/@childNodes.98/@labels.1/@modelFacet /0/@diagram/@childNodes.99/@labels.1/@modelFacet /0/@diagram/@childNodes.100/@labels.1/@modelFacet /0/@diagram/@childNodes.101/@labels.1/@modelFacet /0/@diagram/@childNodes.106/@labels.1/@modelFacet /0/@diagram/@childNodes.107/@labels.1/@modelFacet /0/@diagram/@childNodes.108/@labels.1/@modelFacet /0/@diagram/@childNodes.109/@labels.1/@modelFacet"
           qualifiedName="org.eclipse.papyrus.uml.diagram.activity.parser.custom.PinValueParser"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
@@ -19363,13 +20096,13 @@
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="add superclass for floating Label"
-        genView="/0/@diagram/@childNodes.67/@labels.1 /0/@diagram/@childNodes.87/@labels.1 /0/@diagram/@childNodes.90/@labels.1 /0/@diagram/@childNodes.16/@labels.1 /0/@diagram/@childNodes.6/@labels.1 /0/@diagram/@childNodes.37/@labels.1 /0/@diagram/@childNodes.54/@labels.1 /0/@diagram/@childNodes.70/@labels.1 /0/@diagram/@childNodes.73/@labels.1 /0/@diagram/@childNodes.76/@labels.1 /0/@diagram/@childNodes.79/@labels.1 /0/@diagram/@childNodes.83/@labels.1 /0/@diagram/@childNodes.85/@labels.1 /0/@diagram/@childNodes.11/@labels.1 /0/@diagram/@childNodes.92/@labels.2 /0/@diagram/@childNodes.36/@labels.2 /0/@diagram/@childNodes.44/@labels.1 /0/@diagram/@childNodes.3/@labels.0 /0/@diagram/@childNodes.4/@labels.0 /0/@diagram/@childNodes.5/@labels.0 /0/@diagram/@childNodes.32/@labels.0 /0/@diagram/@childNodes.33/@labels.0 /0/@diagram/@childNodes.34/@labels.0 /0/@diagram/@childNodes.35/@labels.0 /0/@diagram/@childNodes.52/@labels.3 /0/@diagram/@childNodes.94/@labels.1"
+        genView="/0/@diagram/@childNodes.67/@labels.1 /0/@diagram/@childNodes.87/@labels.1 /0/@diagram/@childNodes.90/@labels.1 /0/@diagram/@childNodes.16/@labels.1 /0/@diagram/@childNodes.6/@labels.1 /0/@diagram/@childNodes.37/@labels.1 /0/@diagram/@childNodes.54/@labels.1 /0/@diagram/@childNodes.70/@labels.1 /0/@diagram/@childNodes.73/@labels.1 /0/@diagram/@childNodes.76/@labels.1 /0/@diagram/@childNodes.79/@labels.1 /0/@diagram/@childNodes.83/@labels.1 /0/@diagram/@childNodes.85/@labels.1 /0/@diagram/@childNodes.11/@labels.1 /0/@diagram/@childNodes.92/@labels.2 /0/@diagram/@childNodes.36/@labels.2 /0/@diagram/@childNodes.44/@labels.1 /0/@diagram/@childNodes.3/@labels.0 /0/@diagram/@childNodes.4/@labels.0 /0/@diagram/@childNodes.5/@labels.0 /0/@diagram/@childNodes.32/@labels.0 /0/@diagram/@childNodes.33/@labels.0 /0/@diagram/@childNodes.34/@labels.0 /0/@diagram/@childNodes.35/@labels.0 /0/@diagram/@childNodes.52/@labels.3 /0/@diagram/@childNodes.94/@labels.1 /0/@diagram/@childNodes.102/@labels.1"
         name="FloatingLabelEditPart"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.FloatingLabelEditPart"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="Elements that inherits RoundedCompartmentEditPart"
-        genView="/0/@diagram/@childNodes.87 /0/@diagram/@childNodes.67 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.68 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.3 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.72 /0/@diagram/@topLevelNodes.0 /0/@diagram/@childNodes.94"
+        genView="/0/@diagram/@childNodes.87 /0/@diagram/@childNodes.67 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.68 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.3 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.72 /0/@diagram/@topLevelNodes.0 /0/@diagram/@childNodes.94 /0/@diagram/@childNodes.102"
         name="Rounded Compartment EP inheritance"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart"/>
     <extensionNodes
@@ -19393,7 +20126,7 @@
         xsi:type="papyrusgmfgenextension:SpecificLocator"
         comment="Affixed Pin locator for Actions"
         classpath="org.eclipse.papyrus.uml.diagram.activity.locator.PinPositionLocator"
-        genChildSideAffixedNode="/0/@diagram/@childNodes.38 /0/@diagram/@childNodes.39 /0/@diagram/@childNodes.40 /0/@diagram/@childNodes.41 /0/@diagram/@childNodes.42 /0/@diagram/@childNodes.43 /0/@diagram/@childNodes.45 /0/@diagram/@childNodes.46 /0/@diagram/@childNodes.47 /0/@diagram/@childNodes.7 /0/@diagram/@childNodes.8 /0/@diagram/@childNodes.9 /0/@diagram/@childNodes.10 /0/@diagram/@childNodes.12 /0/@diagram/@childNodes.13 /0/@diagram/@childNodes.14 /0/@diagram/@childNodes.15 /0/@diagram/@childNodes.17 /0/@diagram/@childNodes.18 /0/@diagram/@childNodes.19 /0/@diagram/@childNodes.20 /0/@diagram/@childNodes.21 /0/@diagram/@childNodes.22 /0/@diagram/@childNodes.23 /0/@diagram/@childNodes.48 /0/@diagram/@childNodes.49 /0/@diagram/@childNodes.50 /0/@diagram/@childNodes.53 /0/@diagram/@childNodes.55 /0/@diagram/@childNodes.71 /0/@diagram/@childNodes.74 /0/@diagram/@childNodes.77 /0/@diagram/@childNodes.78 /0/@diagram/@childNodes.80 /0/@diagram/@childNodes.81 /0/@diagram/@childNodes.82 /0/@diagram/@childNodes.84 /0/@diagram/@childNodes.86 /0/@diagram/@childNodes.88 /0/@diagram/@childNodes.89 /0/@diagram/@childNodes.91 /0/@diagram/@childNodes.66 /0/@diagram/@childNodes.95 /0/@diagram/@childNodes.96 /0/@diagram/@childNodes.97 /0/@diagram/@childNodes.98 /0/@diagram/@childNodes.99 /0/@diagram/@childNodes.100 /0/@diagram/@childNodes.101"/>
+        genChildSideAffixedNode="/0/@diagram/@childNodes.38 /0/@diagram/@childNodes.39 /0/@diagram/@childNodes.40 /0/@diagram/@childNodes.41 /0/@diagram/@childNodes.42 /0/@diagram/@childNodes.43 /0/@diagram/@childNodes.45 /0/@diagram/@childNodes.46 /0/@diagram/@childNodes.47 /0/@diagram/@childNodes.7 /0/@diagram/@childNodes.8 /0/@diagram/@childNodes.9 /0/@diagram/@childNodes.10 /0/@diagram/@childNodes.12 /0/@diagram/@childNodes.13 /0/@diagram/@childNodes.14 /0/@diagram/@childNodes.15 /0/@diagram/@childNodes.17 /0/@diagram/@childNodes.18 /0/@diagram/@childNodes.19 /0/@diagram/@childNodes.20 /0/@diagram/@childNodes.21 /0/@diagram/@childNodes.22 /0/@diagram/@childNodes.23 /0/@diagram/@childNodes.48 /0/@diagram/@childNodes.49 /0/@diagram/@childNodes.50 /0/@diagram/@childNodes.53 /0/@diagram/@childNodes.55 /0/@diagram/@childNodes.71 /0/@diagram/@childNodes.74 /0/@diagram/@childNodes.77 /0/@diagram/@childNodes.78 /0/@diagram/@childNodes.80 /0/@diagram/@childNodes.81 /0/@diagram/@childNodes.82 /0/@diagram/@childNodes.84 /0/@diagram/@childNodes.86 /0/@diagram/@childNodes.88 /0/@diagram/@childNodes.89 /0/@diagram/@childNodes.91 /0/@diagram/@childNodes.66 /0/@diagram/@childNodes.95 /0/@diagram/@childNodes.96 /0/@diagram/@childNodes.97 /0/@diagram/@childNodes.98 /0/@diagram/@childNodes.99 /0/@diagram/@childNodes.100 /0/@diagram/@childNodes.101 /0/@diagram/@childNodes.103 /0/@diagram/@childNodes.104 /0/@diagram/@childNodes.105 /0/@diagram/@childNodes.106 /0/@diagram/@childNodes.107 /0/@diagram/@childNodes.108 /0/@diagram/@childNodes.109"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:SpecificLocator"
         comment="Affixed Activity Parameter Node locator for Activity"
@@ -19485,24 +20218,24 @@
         xsi:type="papyrusgmfgenextension:EditPartUsingDeleteService"
         comment=""
         name="Delete service elements"
-        genView="/0/@diagram/@childNodes.7 /0/@diagram/@childNodes.8 /0/@diagram/@childNodes.9 /0/@diagram/@childNodes.10 /0/@diagram/@childNodes.12 /0/@diagram/@childNodes.13 /0/@diagram/@childNodes.14 /0/@diagram/@childNodes.15 /0/@diagram/@childNodes.17 /0/@diagram/@childNodes.18 /0/@diagram/@childNodes.19 /0/@diagram/@childNodes.20 /0/@diagram/@childNodes.21 /0/@diagram/@childNodes.22 /0/@diagram/@childNodes.23 /0/@diagram/@childNodes.38 /0/@diagram/@childNodes.39 /0/@diagram/@childNodes.40 /0/@diagram/@childNodes.41 /0/@diagram/@childNodes.42 /0/@diagram/@childNodes.43 /0/@diagram/@childNodes.45 /0/@diagram/@childNodes.46 /0/@diagram/@childNodes.47 /0/@diagram/@childNodes.48 /0/@diagram/@childNodes.49 /0/@diagram/@childNodes.50 /0/@diagram/@childNodes.53 /0/@diagram/@childNodes.55 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.77 /0/@diagram/@childNodes.78 /0/@diagram/@childNodes.80 /0/@diagram/@childNodes.81 /0/@diagram/@childNodes.82 /0/@diagram/@childNodes.84 /0/@diagram/@childNodes.86 /0/@diagram/@childNodes.88 /0/@diagram/@childNodes.89 /0/@diagram/@childNodes.91 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.72 /0/@diagram/@childNodes.68 /0/@diagram/@childNodes.67 /0/@diagram/@topLevelNodes.0 /0/@diagram/@childNodes.51 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.2 /0/@diagram/@childNodes.1 /0/@diagram/@childNodes.93 /0/@diagram/@links.3 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.66 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.71 /0/@diagram/@childNodes.75 /0/@diagram/@links.4 /0/@diagram/@links.2 /0/@diagram/@childNodes.74 /0/@diagram/@childNodes.61 /0/@diagram/@childNodes.63/@labels.0 /0/@diagram/@childNodes.62 /0/@diagram/@childNodes.63 /0/@diagram/@childNodes.58 /0/@diagram/@childNodes.59 /0/@diagram/@childNodes.94 /0/@diagram/@childNodes.95 /0/@diagram/@childNodes.96 /0/@diagram/@childNodes.97 /0/@diagram/@childNodes.98 /0/@diagram/@childNodes.99 /0/@diagram/@childNodes.100 /0/@diagram/@childNodes.101"/>
+        genView="/0/@diagram/@childNodes.7 /0/@diagram/@childNodes.8 /0/@diagram/@childNodes.9 /0/@diagram/@childNodes.10 /0/@diagram/@childNodes.12 /0/@diagram/@childNodes.13 /0/@diagram/@childNodes.14 /0/@diagram/@childNodes.15 /0/@diagram/@childNodes.17 /0/@diagram/@childNodes.18 /0/@diagram/@childNodes.19 /0/@diagram/@childNodes.20 /0/@diagram/@childNodes.21 /0/@diagram/@childNodes.22 /0/@diagram/@childNodes.23 /0/@diagram/@childNodes.38 /0/@diagram/@childNodes.39 /0/@diagram/@childNodes.40 /0/@diagram/@childNodes.41 /0/@diagram/@childNodes.42 /0/@diagram/@childNodes.43 /0/@diagram/@childNodes.45 /0/@diagram/@childNodes.46 /0/@diagram/@childNodes.47 /0/@diagram/@childNodes.48 /0/@diagram/@childNodes.49 /0/@diagram/@childNodes.50 /0/@diagram/@childNodes.53 /0/@diagram/@childNodes.55 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.77 /0/@diagram/@childNodes.78 /0/@diagram/@childNodes.80 /0/@diagram/@childNodes.81 /0/@diagram/@childNodes.82 /0/@diagram/@childNodes.84 /0/@diagram/@childNodes.86 /0/@diagram/@childNodes.88 /0/@diagram/@childNodes.89 /0/@diagram/@childNodes.91 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.87 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.72 /0/@diagram/@childNodes.68 /0/@diagram/@childNodes.67 /0/@diagram/@topLevelNodes.0 /0/@diagram/@childNodes.51 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.69 /0/@diagram/@childNodes.31 /0/@diagram/@childNodes.30 /0/@diagram/@childNodes.2 /0/@diagram/@childNodes.1 /0/@diagram/@childNodes.93 /0/@diagram/@links.3 /0/@diagram/@childNodes.24 /0/@diagram/@childNodes.25 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.66 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.71 /0/@diagram/@childNodes.75 /0/@diagram/@links.4 /0/@diagram/@links.2 /0/@diagram/@childNodes.74 /0/@diagram/@childNodes.61 /0/@diagram/@childNodes.63/@labels.0 /0/@diagram/@childNodes.62 /0/@diagram/@childNodes.63 /0/@diagram/@childNodes.58 /0/@diagram/@childNodes.59 /0/@diagram/@childNodes.94 /0/@diagram/@childNodes.95 /0/@diagram/@childNodes.96 /0/@diagram/@childNodes.97 /0/@diagram/@childNodes.98 /0/@diagram/@childNodes.99 /0/@diagram/@childNodes.100 /0/@diagram/@childNodes.101 /0/@diagram/@childNodes.102 /0/@diagram/@childNodes.103 /0/@diagram/@childNodes.104 /0/@diagram/@childNodes.105 /0/@diagram/@childNodes.106 /0/@diagram/@childNodes.107 /0/@diagram/@childNodes.108 /0/@diagram/@childNodes.109"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="set the super class as AbstractLabelEditPart"
-        genView="/0/@diagram/@childNodes.3/@labels.1 /0/@diagram/@childNodes.4/@labels.1 /0/@diagram/@childNodes.5/@labels.1 /0/@diagram/@childNodes.7/@labels.2 /0/@diagram/@childNodes.8/@labels.2 /0/@diagram/@childNodes.9/@labels.1 /0/@diagram/@childNodes.10/@labels.1 /0/@diagram/@childNodes.12/@labels.2 /0/@diagram/@childNodes.13/@labels.2 /0/@diagram/@childNodes.14/@labels.1 /0/@diagram/@childNodes.15/@labels.1 /0/@diagram/@childNodes.17/@labels.2 /0/@diagram/@childNodes.18/@labels.2 /0/@diagram/@childNodes.19/@labels.1 /0/@diagram/@childNodes.20/@labels.1 /0/@diagram/@childNodes.21/@labels.2 /0/@diagram/@childNodes.22/@labels.2 /0/@diagram/@childNodes.23/@labels.1 /0/@diagram/@childNodes.32/@labels.2 /0/@diagram/@childNodes.33/@labels.1 /0/@diagram/@childNodes.34/@labels.1 /0/@diagram/@childNodes.35/@labels.2 /0/@diagram/@childNodes.38/@labels.2 /0/@diagram/@childNodes.39/@labels.2 /0/@diagram/@childNodes.40/@labels.1 /0/@diagram/@childNodes.41/@labels.2 /0/@diagram/@childNodes.42/@labels.2 /0/@diagram/@childNodes.43/@labels.1 /0/@diagram/@childNodes.45/@labels.2 /0/@diagram/@childNodes.46/@labels.2 /0/@diagram/@childNodes.47/@labels.1 /0/@diagram/@childNodes.48/@labels.2 /0/@diagram/@childNodes.49/@labels.2 /0/@diagram/@childNodes.50/@labels.1 /0/@diagram/@childNodes.52/@labels.2 /0/@diagram/@childNodes.53/@labels.1 /0/@diagram/@childNodes.55/@labels.1 /0/@diagram/@childNodes.71/@labels.1 /0/@diagram/@childNodes.74/@labels.1 /0/@diagram/@childNodes.77/@labels.1 /0/@diagram/@childNodes.80/@labels.1 /0/@diagram/@childNodes.81/@labels.1 /0/@diagram/@childNodes.82/@labels.1 /0/@diagram/@childNodes.84/@labels.1 /0/@diagram/@childNodes.86/@labels.1 /0/@diagram/@childNodes.88/@labels.1 /0/@diagram/@childNodes.89/@labels.1 /0/@diagram/@childNodes.91/@labels.2 /0/@diagram/@childNodes.61/@labels.1 /0/@diagram/@childNodes.62/@labels.1 /0/@diagram/@childNodes.63/@labels.1 /0/@diagram/@childNodes.66/@labels.1"
+        genView="/0/@diagram/@childNodes.3/@labels.1 /0/@diagram/@childNodes.4/@labels.1 /0/@diagram/@childNodes.5/@labels.1 /0/@diagram/@childNodes.7/@labels.2 /0/@diagram/@childNodes.8/@labels.2 /0/@diagram/@childNodes.9/@labels.1 /0/@diagram/@childNodes.10/@labels.1 /0/@diagram/@childNodes.12/@labels.2 /0/@diagram/@childNodes.13/@labels.2 /0/@diagram/@childNodes.14/@labels.1 /0/@diagram/@childNodes.15/@labels.1 /0/@diagram/@childNodes.17/@labels.2 /0/@diagram/@childNodes.18/@labels.2 /0/@diagram/@childNodes.19/@labels.1 /0/@diagram/@childNodes.20/@labels.1 /0/@diagram/@childNodes.21/@labels.2 /0/@diagram/@childNodes.22/@labels.2 /0/@diagram/@childNodes.23/@labels.1 /0/@diagram/@childNodes.32/@labels.2 /0/@diagram/@childNodes.33/@labels.1 /0/@diagram/@childNodes.34/@labels.1 /0/@diagram/@childNodes.35/@labels.2 /0/@diagram/@childNodes.38/@labels.2 /0/@diagram/@childNodes.39/@labels.2 /0/@diagram/@childNodes.40/@labels.1 /0/@diagram/@childNodes.41/@labels.2 /0/@diagram/@childNodes.42/@labels.2 /0/@diagram/@childNodes.43/@labels.1 /0/@diagram/@childNodes.45/@labels.2 /0/@diagram/@childNodes.46/@labels.2 /0/@diagram/@childNodes.47/@labels.1 /0/@diagram/@childNodes.48/@labels.2 /0/@diagram/@childNodes.49/@labels.2 /0/@diagram/@childNodes.50/@labels.1 /0/@diagram/@childNodes.52/@labels.2 /0/@diagram/@childNodes.53/@labels.1 /0/@diagram/@childNodes.55/@labels.1 /0/@diagram/@childNodes.71/@labels.1 /0/@diagram/@childNodes.74/@labels.1 /0/@diagram/@childNodes.77/@labels.1 /0/@diagram/@childNodes.80/@labels.1 /0/@diagram/@childNodes.81/@labels.1 /0/@diagram/@childNodes.82/@labels.1 /0/@diagram/@childNodes.84/@labels.1 /0/@diagram/@childNodes.86/@labels.1 /0/@diagram/@childNodes.88/@labels.1 /0/@diagram/@childNodes.89/@labels.1 /0/@diagram/@childNodes.91/@labels.2 /0/@diagram/@childNodes.61/@labels.1 /0/@diagram/@childNodes.62/@labels.1 /0/@diagram/@childNodes.63/@labels.1 /0/@diagram/@childNodes.66/@labels.1 /0/@diagram/@childNodes.103/@labels.1 /0/@diagram/@childNodes.104/@labels.1 /0/@diagram/@childNodes.105/@labels.1 /0/@diagram/@childNodes.106/@labels.2 /0/@diagram/@childNodes.107/@labels.2 /0/@diagram/@childNodes.108/@labels.2 /0/@diagram/@childNodes.109/@labels.2"
         name="AbstractLabelEditPart"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.AbstractLabelEditPart"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="contains methods to display arrows"
-        genView="/0/@diagram/@childNodes.13 /0/@diagram/@childNodes.22 /0/@diagram/@childNodes.17 /0/@diagram/@childNodes.8 /0/@diagram/@childNodes.39 /0/@diagram/@childNodes.42 /0/@diagram/@childNodes.49 /0/@diagram/@childNodes.45 /0/@diagram/@childNodes.80 /0/@diagram/@childNodes.81 /0/@diagram/@childNodes.88 /0/@diagram/@childNodes.89 /0/@diagram/@childNodes.91 /0/@diagram/@childNodes.14 /0/@diagram/@childNodes.23 /0/@diagram/@childNodes.19 /0/@diagram/@childNodes.84 /0/@diagram/@childNodes.9 /0/@diagram/@childNodes.77 /0/@diagram/@childNodes.40 /0/@diagram/@childNodes.43 /0/@diagram/@childNodes.50 /0/@diagram/@childNodes.47 /0/@diagram/@childNodes.53 /0/@diagram/@childNodes.82 /0/@diagram/@childNodes.15 /0/@diagram/@childNodes.20 /0/@diagram/@childNodes.74 /0/@diagram/@childNodes.10 /0/@diagram/@childNodes.78 /0/@diagram/@childNodes.86 /0/@diagram/@childNodes.55 /0/@diagram/@childNodes.12 /0/@diagram/@childNodes.21 /0/@diagram/@childNodes.18 /0/@diagram/@childNodes.7 /0/@diagram/@childNodes.38 /0/@diagram/@childNodes.41 /0/@diagram/@childNodes.48 /0/@diagram/@childNodes.46 /0/@diagram/@childNodes.71 /0/@diagram/@childNodes.95 /0/@diagram/@childNodes.96 /0/@diagram/@childNodes.97 /0/@diagram/@childNodes.98 /0/@diagram/@childNodes.99 /0/@diagram/@childNodes.100 /0/@diagram/@childNodes.101"
+        genView="/0/@diagram/@childNodes.13 /0/@diagram/@childNodes.22 /0/@diagram/@childNodes.17 /0/@diagram/@childNodes.8 /0/@diagram/@childNodes.39 /0/@diagram/@childNodes.42 /0/@diagram/@childNodes.49 /0/@diagram/@childNodes.45 /0/@diagram/@childNodes.80 /0/@diagram/@childNodes.81 /0/@diagram/@childNodes.88 /0/@diagram/@childNodes.89 /0/@diagram/@childNodes.91 /0/@diagram/@childNodes.14 /0/@diagram/@childNodes.23 /0/@diagram/@childNodes.19 /0/@diagram/@childNodes.84 /0/@diagram/@childNodes.9 /0/@diagram/@childNodes.77 /0/@diagram/@childNodes.40 /0/@diagram/@childNodes.43 /0/@diagram/@childNodes.50 /0/@diagram/@childNodes.47 /0/@diagram/@childNodes.53 /0/@diagram/@childNodes.82 /0/@diagram/@childNodes.15 /0/@diagram/@childNodes.20 /0/@diagram/@childNodes.74 /0/@diagram/@childNodes.10 /0/@diagram/@childNodes.78 /0/@diagram/@childNodes.86 /0/@diagram/@childNodes.55 /0/@diagram/@childNodes.12 /0/@diagram/@childNodes.21 /0/@diagram/@childNodes.18 /0/@diagram/@childNodes.7 /0/@diagram/@childNodes.38 /0/@diagram/@childNodes.41 /0/@diagram/@childNodes.48 /0/@diagram/@childNodes.46 /0/@diagram/@childNodes.71 /0/@diagram/@childNodes.95 /0/@diagram/@childNodes.96 /0/@diagram/@childNodes.97 /0/@diagram/@childNodes.98 /0/@diagram/@childNodes.99 /0/@diagram/@childNodes.100 /0/@diagram/@childNodes.101 /0/@diagram/@childNodes.103 /0/@diagram/@childNodes.104 /0/@diagram/@childNodes.105 /0/@diagram/@childNodes.106 /0/@diagram/@childNodes.107 /0/@diagram/@childNodes.108 /0/@diagram/@childNodes.109"
         name="AbstractPinEditPart"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.activity.edit.part.AbstractPinEditPart"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:SpecificLocatorExternalLabel"
         comment="locator for external label of pins"
         classpath="org.eclipse.papyrus.uml.diagram.common.locator.ExternalLabelPositionLocator"
-        genExternalNodeLabel="/0/@diagram/@childNodes.75/@labels.0 /0/@diagram/@childNodes.3/@labels.1 /0/@diagram/@childNodes.4/@labels.1 /0/@diagram/@childNodes.5/@labels.1 /0/@diagram/@childNodes.7/@labels.2 /0/@diagram/@childNodes.8/@labels.2 /0/@diagram/@childNodes.9/@labels.1 /0/@diagram/@childNodes.10/@labels.1 /0/@diagram/@childNodes.12/@labels.2 /0/@diagram/@childNodes.13/@labels.2 /0/@diagram/@childNodes.14/@labels.1 /0/@diagram/@childNodes.15/@labels.1 /0/@diagram/@childNodes.17/@labels.2 /0/@diagram/@childNodes.18/@labels.2 /0/@diagram/@childNodes.19/@labels.1 /0/@diagram/@childNodes.20/@labels.1 /0/@diagram/@childNodes.21/@labels.2 /0/@diagram/@childNodes.22/@labels.2 /0/@diagram/@childNodes.23/@labels.1 /0/@diagram/@childNodes.32/@labels.2 /0/@diagram/@childNodes.33/@labels.1 /0/@diagram/@childNodes.34/@labels.1 /0/@diagram/@childNodes.35/@labels.2 /0/@diagram/@childNodes.38/@labels.2 /0/@diagram/@childNodes.39/@labels.2 /0/@diagram/@childNodes.40/@labels.1 /0/@diagram/@childNodes.41/@labels.2 /0/@diagram/@childNodes.42/@labels.2 /0/@diagram/@childNodes.43/@labels.1 /0/@diagram/@childNodes.45/@labels.2 /0/@diagram/@childNodes.46/@labels.2 /0/@diagram/@childNodes.47/@labels.1 /0/@diagram/@childNodes.48/@labels.2 /0/@diagram/@childNodes.49/@labels.2 /0/@diagram/@childNodes.50/@labels.1 /0/@diagram/@childNodes.52/@labels.2 /0/@diagram/@childNodes.53/@labels.1 /0/@diagram/@childNodes.55/@labels.1 /0/@diagram/@childNodes.71/@labels.1 /0/@diagram/@childNodes.74/@labels.1 /0/@diagram/@childNodes.77/@labels.1 /0/@diagram/@childNodes.80/@labels.1 /0/@diagram/@childNodes.81/@labels.1 /0/@diagram/@childNodes.82/@labels.1 /0/@diagram/@childNodes.84/@labels.1 /0/@diagram/@childNodes.86/@labels.1 /0/@diagram/@childNodes.88/@labels.1 /0/@diagram/@childNodes.89/@labels.1 /0/@diagram/@childNodes.91/@labels.2 /0/@diagram/@childNodes.63/@labels.0 /0/@diagram/@childNodes.61/@labels.1 /0/@diagram/@childNodes.62/@labels.1 /0/@diagram/@childNodes.63/@labels.1 /0/@diagram/@childNodes.66/@labels.1 /0/@diagram/@childNodes.53/@labels.0 /0/@diagram/@childNodes.7/@labels.0 /0/@diagram/@childNodes.7/@labels.1 /0/@diagram/@childNodes.8/@labels.0 /0/@diagram/@childNodes.8/@labels.1 /0/@diagram/@childNodes.9/@labels.0 /0/@diagram/@childNodes.10/@labels.0 /0/@diagram/@childNodes.12/@labels.0 /0/@diagram/@childNodes.12/@labels.1 /0/@diagram/@childNodes.13/@labels.0 /0/@diagram/@childNodes.13/@labels.1 /0/@diagram/@childNodes.14/@labels.0 /0/@diagram/@childNodes.15/@labels.0 /0/@diagram/@childNodes.17/@labels.0 /0/@diagram/@childNodes.17/@labels.1 /0/@diagram/@childNodes.18/@labels.0 /0/@diagram/@childNodes.18/@labels.1 /0/@diagram/@childNodes.19/@labels.0 /0/@diagram/@childNodes.20/@labels.0 /0/@diagram/@childNodes.21/@labels.0 /0/@diagram/@childNodes.21/@labels.1 /0/@diagram/@childNodes.22/@labels.0 /0/@diagram/@childNodes.22/@labels.1 /0/@diagram/@childNodes.23/@labels.0 /0/@diagram/@childNodes.32/@labels.1 /0/@diagram/@childNodes.35/@labels.1 /0/@diagram/@childNodes.36/@labels.1 /0/@diagram/@childNodes.38/@labels.0 /0/@diagram/@childNodes.38/@labels.1 /0/@diagram/@childNodes.39/@labels.0 /0/@diagram/@childNodes.39/@labels.1 /0/@diagram/@childNodes.40/@labels.0 /0/@diagram/@childNodes.41/@labels.0 /0/@diagram/@childNodes.41/@labels.1 /0/@diagram/@childNodes.42/@labels.0 /0/@diagram/@childNodes.42/@labels.1 /0/@diagram/@childNodes.43/@labels.0 /0/@diagram/@childNodes.45/@labels.0 /0/@diagram/@childNodes.45/@labels.1 /0/@diagram/@childNodes.46/@labels.0 /0/@diagram/@childNodes.46/@labels.1 /0/@diagram/@childNodes.47/@labels.0 /0/@diagram/@childNodes.48/@labels.0 /0/@diagram/@childNodes.48/@labels.1 /0/@diagram/@childNodes.49/@labels.0 /0/@diagram/@childNodes.49/@labels.1 /0/@diagram/@childNodes.50/@labels.0 /0/@diagram/@childNodes.52/@labels.1 /0/@diagram/@childNodes.55/@labels.0 /0/@diagram/@childNodes.61/@labels.0 /0/@diagram/@childNodes.62/@labels.0 /0/@diagram/@childNodes.66/@labels.0 /0/@diagram/@childNodes.71/@labels.0 /0/@diagram/@childNodes.74/@labels.0 /0/@diagram/@childNodes.77/@labels.0 /0/@diagram/@childNodes.78/@labels.0 /0/@diagram/@childNodes.78/@labels.1 /0/@diagram/@childNodes.80/@labels.0 /0/@diagram/@childNodes.81/@labels.0 /0/@diagram/@childNodes.82/@labels.0 /0/@diagram/@childNodes.84/@labels.0 /0/@diagram/@childNodes.86/@labels.0 /0/@diagram/@childNodes.88/@labels.0 /0/@diagram/@childNodes.89/@labels.0 /0/@diagram/@childNodes.91/@labels.0 /0/@diagram/@childNodes.91/@labels.1 /0/@diagram/@childNodes.92/@labels.1 /0/@diagram/@childNodes.95/@labels.0 /0/@diagram/@childNodes.95/@labels.1 /0/@diagram/@childNodes.96/@labels.0 /0/@diagram/@childNodes.96/@labels.1 /0/@diagram/@childNodes.97/@labels.0 /0/@diagram/@childNodes.97/@labels.1 /0/@diagram/@childNodes.97/@labels.2 /0/@diagram/@childNodes.98/@labels.0 /0/@diagram/@childNodes.98/@labels.1 /0/@diagram/@childNodes.98/@labels.2 /0/@diagram/@childNodes.99/@labels.0 /0/@diagram/@childNodes.99/@labels.1 /0/@diagram/@childNodes.100/@labels.0 /0/@diagram/@childNodes.100/@labels.1 /0/@diagram/@childNodes.100/@labels.2 /0/@diagram/@childNodes.101/@labels.0 /0/@diagram/@childNodes.101/@labels.1 /0/@diagram/@childNodes.101/@labels.2"/>
+        genExternalNodeLabel="/0/@diagram/@childNodes.75/@labels.0 /0/@diagram/@childNodes.3/@labels.1 /0/@diagram/@childNodes.4/@labels.1 /0/@diagram/@childNodes.5/@labels.1 /0/@diagram/@childNodes.7/@labels.2 /0/@diagram/@childNodes.8/@labels.2 /0/@diagram/@childNodes.9/@labels.1 /0/@diagram/@childNodes.10/@labels.1 /0/@diagram/@childNodes.12/@labels.2 /0/@diagram/@childNodes.13/@labels.2 /0/@diagram/@childNodes.14/@labels.1 /0/@diagram/@childNodes.15/@labels.1 /0/@diagram/@childNodes.17/@labels.2 /0/@diagram/@childNodes.18/@labels.2 /0/@diagram/@childNodes.19/@labels.1 /0/@diagram/@childNodes.20/@labels.1 /0/@diagram/@childNodes.21/@labels.2 /0/@diagram/@childNodes.22/@labels.2 /0/@diagram/@childNodes.23/@labels.1 /0/@diagram/@childNodes.32/@labels.2 /0/@diagram/@childNodes.33/@labels.1 /0/@diagram/@childNodes.34/@labels.1 /0/@diagram/@childNodes.35/@labels.2 /0/@diagram/@childNodes.38/@labels.2 /0/@diagram/@childNodes.39/@labels.2 /0/@diagram/@childNodes.40/@labels.1 /0/@diagram/@childNodes.41/@labels.2 /0/@diagram/@childNodes.42/@labels.2 /0/@diagram/@childNodes.43/@labels.1 /0/@diagram/@childNodes.45/@labels.2 /0/@diagram/@childNodes.46/@labels.2 /0/@diagram/@childNodes.47/@labels.1 /0/@diagram/@childNodes.48/@labels.2 /0/@diagram/@childNodes.49/@labels.2 /0/@diagram/@childNodes.50/@labels.1 /0/@diagram/@childNodes.52/@labels.2 /0/@diagram/@childNodes.53/@labels.1 /0/@diagram/@childNodes.55/@labels.1 /0/@diagram/@childNodes.71/@labels.1 /0/@diagram/@childNodes.74/@labels.1 /0/@diagram/@childNodes.77/@labels.1 /0/@diagram/@childNodes.80/@labels.1 /0/@diagram/@childNodes.81/@labels.1 /0/@diagram/@childNodes.82/@labels.1 /0/@diagram/@childNodes.84/@labels.1 /0/@diagram/@childNodes.86/@labels.1 /0/@diagram/@childNodes.88/@labels.1 /0/@diagram/@childNodes.89/@labels.1 /0/@diagram/@childNodes.91/@labels.2 /0/@diagram/@childNodes.63/@labels.0 /0/@diagram/@childNodes.61/@labels.1 /0/@diagram/@childNodes.62/@labels.1 /0/@diagram/@childNodes.63/@labels.1 /0/@diagram/@childNodes.66/@labels.1 /0/@diagram/@childNodes.53/@labels.0 /0/@diagram/@childNodes.7/@labels.0 /0/@diagram/@childNodes.7/@labels.1 /0/@diagram/@childNodes.8/@labels.0 /0/@diagram/@childNodes.8/@labels.1 /0/@diagram/@childNodes.9/@labels.0 /0/@diagram/@childNodes.10/@labels.0 /0/@diagram/@childNodes.12/@labels.0 /0/@diagram/@childNodes.12/@labels.1 /0/@diagram/@childNodes.13/@labels.0 /0/@diagram/@childNodes.13/@labels.1 /0/@diagram/@childNodes.14/@labels.0 /0/@diagram/@childNodes.15/@labels.0 /0/@diagram/@childNodes.17/@labels.0 /0/@diagram/@childNodes.17/@labels.1 /0/@diagram/@childNodes.18/@labels.0 /0/@diagram/@childNodes.18/@labels.1 /0/@diagram/@childNodes.19/@labels.0 /0/@diagram/@childNodes.20/@labels.0 /0/@diagram/@childNodes.21/@labels.0 /0/@diagram/@childNodes.21/@labels.1 /0/@diagram/@childNodes.22/@labels.0 /0/@diagram/@childNodes.22/@labels.1 /0/@diagram/@childNodes.23/@labels.0 /0/@diagram/@childNodes.32/@labels.1 /0/@diagram/@childNodes.35/@labels.1 /0/@diagram/@childNodes.36/@labels.1 /0/@diagram/@childNodes.38/@labels.0 /0/@diagram/@childNodes.38/@labels.1 /0/@diagram/@childNodes.39/@labels.0 /0/@diagram/@childNodes.39/@labels.1 /0/@diagram/@childNodes.40/@labels.0 /0/@diagram/@childNodes.41/@labels.0 /0/@diagram/@childNodes.41/@labels.1 /0/@diagram/@childNodes.42/@labels.0 /0/@diagram/@childNodes.42/@labels.1 /0/@diagram/@childNodes.43/@labels.0 /0/@diagram/@childNodes.45/@labels.0 /0/@diagram/@childNodes.45/@labels.1 /0/@diagram/@childNodes.46/@labels.0 /0/@diagram/@childNodes.46/@labels.1 /0/@diagram/@childNodes.47/@labels.0 /0/@diagram/@childNodes.48/@labels.0 /0/@diagram/@childNodes.48/@labels.1 /0/@diagram/@childNodes.49/@labels.0 /0/@diagram/@childNodes.49/@labels.1 /0/@diagram/@childNodes.50/@labels.0 /0/@diagram/@childNodes.52/@labels.1 /0/@diagram/@childNodes.55/@labels.0 /0/@diagram/@childNodes.61/@labels.0 /0/@diagram/@childNodes.62/@labels.0 /0/@diagram/@childNodes.66/@labels.0 /0/@diagram/@childNodes.71/@labels.0 /0/@diagram/@childNodes.74/@labels.0 /0/@diagram/@childNodes.77/@labels.0 /0/@diagram/@childNodes.78/@labels.0 /0/@diagram/@childNodes.78/@labels.1 /0/@diagram/@childNodes.80/@labels.0 /0/@diagram/@childNodes.81/@labels.0 /0/@diagram/@childNodes.82/@labels.0 /0/@diagram/@childNodes.84/@labels.0 /0/@diagram/@childNodes.86/@labels.0 /0/@diagram/@childNodes.88/@labels.0 /0/@diagram/@childNodes.89/@labels.0 /0/@diagram/@childNodes.91/@labels.0 /0/@diagram/@childNodes.91/@labels.1 /0/@diagram/@childNodes.92/@labels.1 /0/@diagram/@childNodes.95/@labels.0 /0/@diagram/@childNodes.95/@labels.1 /0/@diagram/@childNodes.96/@labels.0 /0/@diagram/@childNodes.96/@labels.1 /0/@diagram/@childNodes.97/@labels.0 /0/@diagram/@childNodes.97/@labels.1 /0/@diagram/@childNodes.97/@labels.2 /0/@diagram/@childNodes.98/@labels.0 /0/@diagram/@childNodes.98/@labels.1 /0/@diagram/@childNodes.98/@labels.2 /0/@diagram/@childNodes.99/@labels.0 /0/@diagram/@childNodes.99/@labels.1 /0/@diagram/@childNodes.100/@labels.0 /0/@diagram/@childNodes.100/@labels.1 /0/@diagram/@childNodes.100/@labels.2 /0/@diagram/@childNodes.101/@labels.0 /0/@diagram/@childNodes.101/@labels.1 /0/@diagram/@childNodes.101/@labels.2 /0/@diagram/@childNodes.103/@labels.1 /0/@diagram/@childNodes.104/@labels.1 /0/@diagram/@childNodes.105/@labels.1 /0/@diagram/@childNodes.106/@labels.2 /0/@diagram/@childNodes.107/@labels.2 /0/@diagram/@childNodes.108/@labels.2 /0/@diagram/@childNodes.109/@labels.2 /0/@diagram/@childNodes.103/@labels.0 /0/@diagram/@childNodes.104/@labels.0 /0/@diagram/@childNodes.105/@labels.0 /0/@diagram/@childNodes.106/@labels.0 /0/@diagram/@childNodes.106/@labels.1 /0/@diagram/@childNodes.107/@labels.0 /0/@diagram/@childNodes.107/@labels.1 /0/@diagram/@childNodes.108/@labels.0 /0/@diagram/@childNodes.108/@labels.1 /0/@diagram/@childNodes.109/@labels.0 /0/@diagram/@childNodes.109/@labels.1"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:GenerateUsingElementTypeCreationCommand"/>
   </papyrusgmfgenextension:PapyrusExtensionRootNode>

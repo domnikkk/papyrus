@@ -336,6 +336,29 @@ public class UMLVisualIDRegistry {
 				return ActionPinInStartObjectBehaviorActionAsArgumentEditPart.VISUAL_ID;
 			}
 			break;
+		case TestIdentityActionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPinInTestIdentityActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3134((InputPin) domainElement)) {
+				return InputPinInTestIdentityActionAsFirstEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3135((InputPin) domainElement)) {
+				return InputPinInTestIdentityActionAsSecondEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3147((ValuePin) domainElement)) {
+				return ValuePinInTestIdentityActionAsFirstEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3148((ValuePin) domainElement)) {
+				return ValuePinInTestIdentityActionAsSecondEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3160((ActionInputPin) domainElement)) {
+				return ActionPinInTestIdentityActionAsFirstEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3161((ActionInputPin) domainElement)) {
+				return ActionPinInTestIdentityActionAsSecondEditPart.VISUAL_ID;
+			}
+			break;
 		case ActivityActivityParametersCompartmentEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getParameter().isSuperTypeOf(domainElement.eClass())) {
 				return ParameterEditPart.VISUAL_ID;
@@ -480,6 +503,9 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getStartObjectBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
 				return StartObjectBehavoiurActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getTestIdentityAction().isSuperTypeOf(domainElement.eClass())) {
+				return TestIdentityActionEditPart.VISUAL_ID;
 			}
 			break;
 		case ConditionalNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID:
@@ -719,6 +745,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getStartObjectBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
 				return StartObjectBehavoiurActionEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getTestIdentityAction().isSuperTypeOf(domainElement.eClass())) {
+				return TestIdentityActionEditPart.VISUAL_ID;
+			}
 			break;
 		case LoopNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass())) {
@@ -840,6 +869,9 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getStartObjectBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
 				return StartObjectBehavoiurActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getTestIdentityAction().isSuperTypeOf(domainElement.eClass())) {
+				return TestIdentityActionEditPart.VISUAL_ID;
 			}
 			break;
 		case SequenceNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID:
@@ -963,6 +995,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getStartObjectBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
 				return StartObjectBehavoiurActionEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getTestIdentityAction().isSuperTypeOf(domainElement.eClass())) {
+				return TestIdentityActionEditPart.VISUAL_ID;
+			}
 			break;
 		case StructuredActivityNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass())) {
@@ -1084,6 +1119,9 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getStartObjectBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
 				return StartObjectBehavoiurActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getTestIdentityAction().isSuperTypeOf(domainElement.eClass())) {
+				return TestIdentityActionEditPart.VISUAL_ID;
 			}
 			break;
 		case ActivityPartitionActivityPartitionContentCompartmentEditPart.VISUAL_ID:
@@ -1210,6 +1248,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getStartObjectBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
 				return StartObjectBehavoiurActionEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getTestIdentityAction().isSuperTypeOf(domainElement.eClass())) {
+				return TestIdentityActionEditPart.VISUAL_ID;
+			}
 			break;
 		case InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass())) {
@@ -1331,6 +1372,9 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getStartObjectBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
 				return StartObjectBehavoiurActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getTestIdentityAction().isSuperTypeOf(domainElement.eClass())) {
+				return TestIdentityActionEditPart.VISUAL_ID;
 			}
 			break;
 		case ActivityCNParametersCompartmentEditPart.VISUAL_ID:
@@ -1477,6 +1521,9 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getStartObjectBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
 				return StartObjectBehavoiurActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getTestIdentityAction().isSuperTypeOf(domainElement.eClass())) {
+				return TestIdentityActionEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -2807,6 +2854,103 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case TestIdentityActionEditPart.VISUAL_ID:
+			if (TestIdentityActionNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (TestIdentityActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OutputPinInTestIdentityActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InputPinInTestIdentityActionAsFirstEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InputPinInTestIdentityActionAsSecondEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInTestIdentityActionAsFirstEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInTestIdentityActionAsSecondEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInTestIdentityActionAsFirstEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInTestIdentityActionAsSecondEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case OutputPinInTestIdentityActionEditPart.VISUAL_ID:
+			if (OutputPinInTestIdentityActionItemLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OutputPinInTestIdentityActionItemAppliedStereotypeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InputPinInTestIdentityActionAsFirstEditPart.VISUAL_ID:
+			if (InputPinInTestIdentityActionAsFirstLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InputPinInTestIdentityActionAsFirstAppliedStereotypeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InputPinInTestIdentityActionAsSecondEditPart.VISUAL_ID:
+			if (InputPinInTestIdentityActionAsSecondLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InputPinInTestIdentityActionAsSecondAppliedStereotypeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ValuePinInTestIdentityActionAsFirstEditPart.VISUAL_ID:
+			if (ValuePinInTestIdentityActionAsFirstLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInTestIdentityActionAsFirstValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInTestIdentityActionAsFirstAppliedStereotypeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ValuePinInTestIdentityActionAsSecondEditPart.VISUAL_ID:
+			if (ValuePinInTestIdentityActionAsSecondLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInTestIdentityActionAsSecondValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInTestIdentityActionAsSecondAppliedStereotypeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActionPinInTestIdentityActionAsFirstEditPart.VISUAL_ID:
+			if (ActionPinInTestIdentityActionAsFirstLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInTestIdentityActionAsFirstValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInTestIdentityActionAsFirstAppliedStereotypeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActionPinInTestIdentityActionAsSecondEditPart.VISUAL_ID:
+			if (ActionPinInTestIdentityActionAsSecondLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInTestIdentityActionAsSecondValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInTestIdentityActionAsSecondAppliedStereotypeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case ActivityActivityParametersCompartmentEditPart.VISUAL_ID:
 			if (ParameterEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -2950,6 +3094,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (StartObjectBehavoiurActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (TestIdentityActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -3190,6 +3337,9 @@ public class UMLVisualIDRegistry {
 			if (StartObjectBehavoiurActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (TestIdentityActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case LoopNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID:
 			if (InitialNodeEditPart.VISUAL_ID == nodeVisualID) {
@@ -3310,6 +3460,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (StartObjectBehavoiurActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (TestIdentityActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -3434,6 +3587,9 @@ public class UMLVisualIDRegistry {
 			if (StartObjectBehavoiurActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (TestIdentityActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case StructuredActivityNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID:
 			if (InitialNodeEditPart.VISUAL_ID == nodeVisualID) {
@@ -3554,6 +3710,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (StartObjectBehavoiurActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (TestIdentityActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -3681,6 +3840,9 @@ public class UMLVisualIDRegistry {
 			if (StartObjectBehavoiurActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (TestIdentityActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentEditPart.VISUAL_ID:
 			if (InitialNodeEditPart.VISUAL_ID == nodeVisualID) {
@@ -3801,6 +3963,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (StartObjectBehavoiurActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (TestIdentityActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -3947,6 +4112,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (StartObjectBehavoiurActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (TestIdentityActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -4368,6 +4536,54 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	private static boolean isInputPin_3134(InputPin domainElement) {
+		Object result = UMLOCLFactory.getExpression(93, UMLPackage.eINSTANCE.getInputPin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isInputPin_3135(InputPin domainElement) {
+		Object result = UMLOCLFactory.getExpression(94, UMLPackage.eINSTANCE.getInputPin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isValuePin_3147(ValuePin domainElement) {
+		Object result = UMLOCLFactory.getExpression(95, UMLPackage.eINSTANCE.getValuePin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isValuePin_3148(ValuePin domainElement) {
+		Object result = UMLOCLFactory.getExpression(96, UMLPackage.eINSTANCE.getValuePin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isActionInputPin_3160(ActionInputPin domainElement) {
+		Object result = UMLOCLFactory.getExpression(97, UMLPackage.eINSTANCE.getActionInputPin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isActionInputPin_3161(ActionInputPin domainElement) {
+		Object result = UMLOCLFactory.getExpression(98, UMLPackage.eINSTANCE.getActionInputPin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
 			// unrecognized id is always bad
@@ -4483,12 +4699,19 @@ public class UMLVisualIDRegistry {
 		case OutputPinInLoopNodeAsResultEditPart.VISUAL_ID:
 		case ConstraintEditPartCN.VISUAL_ID:
 		case OutputPinInStartObjectBehaviorActionEditPart.VISUAL_ID:
+		case OutputPinInTestIdentityActionEditPart.VISUAL_ID:
 		case InputPinInStartObjectBehaviorActionAsObjectEditPart.VISUAL_ID:
 		case InputPinInStartObjectBehaviorActionAsArgumentEditPart.VISUAL_ID:
+		case InputPinInTestIdentityActionAsFirstEditPart.VISUAL_ID:
+		case InputPinInTestIdentityActionAsSecondEditPart.VISUAL_ID:
 		case ValuePinInStartObjectBehaviorActionAsObjectEditPart.VISUAL_ID:
 		case ValuePinInStartObjectBehaviorActionAsArgumentEditPart.VISUAL_ID:
+		case ValuePinInTestIdentityActionAsFirstEditPart.VISUAL_ID:
+		case ValuePinInTestIdentityActionAsSecondEditPart.VISUAL_ID:
 		case ActionPinInStartObjectBehaviorActionAsObjectEditPart.VISUAL_ID:
 		case ActionPinInStartObjectBehaviorActionAsArgumentEditPart.VISUAL_ID:
+		case ActionPinInTestIdentityActionAsFirstEditPart.VISUAL_ID:
+		case ActionPinInTestIdentityActionAsSecondEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

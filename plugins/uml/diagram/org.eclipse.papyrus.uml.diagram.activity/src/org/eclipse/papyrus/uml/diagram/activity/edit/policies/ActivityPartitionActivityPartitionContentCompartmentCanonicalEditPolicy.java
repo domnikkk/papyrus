@@ -83,6 +83,7 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SendSignalActionEditP
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SequenceNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.StartObjectBehavoiurActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.TestIdentityActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.TimeConstraintAsLocalPostcondEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.TimeConstraintAsLocalPrecondEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ValueSpecificationActionEditPart;
@@ -201,6 +202,7 @@ public class ActivityPartitionActivityPartitionContentCompartmentCanonicalEditPo
 		case CommentEditPartCN.VISUAL_ID:
 		case ConstraintEditPartCN.VISUAL_ID:
 		case StartObjectBehavoiurActionEditPart.VISUAL_ID:
+		case TestIdentityActionEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;

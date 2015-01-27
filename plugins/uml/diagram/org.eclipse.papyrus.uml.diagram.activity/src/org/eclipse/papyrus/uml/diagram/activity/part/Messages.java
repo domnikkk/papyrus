@@ -396,52 +396,62 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Activity14CreationTool_title;
+	public static String TestIdentityAction14CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Activity14CreationTool_desc;
+	public static String TestIdentityAction14CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ActivityParameterNode15CreationTool_title;
+	public static String Activity15CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ActivityParameterNode15CreationTool_desc;
+	public static String Activity15CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String CentralBufferNode16CreationTool_title;
+	public static String ActivityParameterNode16CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String CentralBufferNode16CreationTool_desc;
+	public static String ActivityParameterNode16CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DataStoreNode17CreationTool_title;
+	public static String CentralBufferNode17CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DataStoreNode17CreationTool_desc;
+	public static String CentralBufferNode17CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Comment18CreationTool_title;
+	public static String DataStoreNode18CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Comment18CreationTool_desc;
+	public static String DataStoreNode18CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Comment19CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Comment19CreationTool_desc;
 
 	/**
 	 * @generated

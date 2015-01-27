@@ -489,6 +489,46 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType TestIdentityAction_3114 = getElementType("org.eclipse.papyrus.uml.diagram.activity.TestIdentityAction_3114"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OutputPin_3126 = getElementType("org.eclipse.papyrus.uml.diagram.activity.OutputPin_3126"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3134 = getElementType("org.eclipse.papyrus.uml.diagram.activity.InputPin_3134"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3135 = getElementType("org.eclipse.papyrus.uml.diagram.activity.InputPin_3135"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValuePin_3147 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3147"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValuePin_3148 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3148"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3160 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3160"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3161 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3161"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ValueSpecificationAction_3076 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValueSpecificationAction_3076"); //$NON-NLS-1$
 
 	/**
@@ -752,6 +792,14 @@ public class UMLElementTypes {
 			elements.put(InputPin_3133, UMLPackage.eINSTANCE.getInputPin());
 			elements.put(ValuePin_3146, UMLPackage.eINSTANCE.getValuePin());
 			elements.put(ActionInputPin_3159, UMLPackage.eINSTANCE.getActionInputPin());
+			elements.put(TestIdentityAction_3114, UMLPackage.eINSTANCE.getTestIdentityAction());
+			elements.put(OutputPin_3126, UMLPackage.eINSTANCE.getOutputPin());
+			elements.put(InputPin_3134, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(InputPin_3135, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(ValuePin_3147, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ValuePin_3148, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ActionInputPin_3160, UMLPackage.eINSTANCE.getActionInputPin());
+			elements.put(ActionInputPin_3161, UMLPackage.eINSTANCE.getActionInputPin());
 			elements.put(ActionLocalPrecondition_4001, UMLPackage.eINSTANCE.getAction_LocalPrecondition());
 			elements.put(ActionLocalPostcondition_4002, UMLPackage.eINSTANCE.getAction_LocalPostcondition());
 			elements.put(ObjectFlow_4003, UMLPackage.eINSTANCE.getObjectFlow());
@@ -880,6 +928,14 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(InputPin_3133);
 			KNOWN_ELEMENT_TYPES.add(ValuePin_3146);
 			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3159);
+			KNOWN_ELEMENT_TYPES.add(TestIdentityAction_3114);
+			KNOWN_ELEMENT_TYPES.add(OutputPin_3126);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3134);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3135);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3147);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3148);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3160);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3161);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPrecondition_4001);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPostcondition_4002);
 			KNOWN_ELEMENT_TYPES.add(ObjectFlow_4003);
@@ -1104,6 +1160,22 @@ public class UMLElementTypes {
 			return ValuePin_3146;
 		case ActionPinInStartObjectBehaviorActionAsArgumentEditPart.VISUAL_ID:
 			return ActionInputPin_3159;
+		case TestIdentityActionEditPart.VISUAL_ID:
+			return TestIdentityAction_3114;
+		case OutputPinInTestIdentityActionEditPart.VISUAL_ID:
+			return OutputPin_3126;
+		case InputPinInTestIdentityActionAsFirstEditPart.VISUAL_ID:
+			return InputPin_3134;
+		case InputPinInTestIdentityActionAsSecondEditPart.VISUAL_ID:
+			return InputPin_3135;
+		case ValuePinInTestIdentityActionAsFirstEditPart.VISUAL_ID:
+			return ValuePin_3147;
+		case ValuePinInTestIdentityActionAsSecondEditPart.VISUAL_ID:
+			return ValuePin_3148;
+		case ActionPinInTestIdentityActionAsFirstEditPart.VISUAL_ID:
+			return ActionInputPin_3160;
+		case ActionPinInTestIdentityActionAsSecondEditPart.VISUAL_ID:
+			return ActionInputPin_3161;
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
 			return ActionLocalPrecondition_4001;
 		case ActionLocalPostconditionEditPart.VISUAL_ID:

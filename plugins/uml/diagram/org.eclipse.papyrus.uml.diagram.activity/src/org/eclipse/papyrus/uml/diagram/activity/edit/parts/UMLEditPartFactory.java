@@ -677,6 +677,62 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new ActionPinInStartObjectBehaviorActionAsArgumentValueEditPart(view);
 			case ActionPinInStartObjectBehaviorActionAsArgumentAppliedStereotypeLabelEditPart.VISUAL_ID:
 				return new ActionPinInStartObjectBehaviorActionAsArgumentAppliedStereotypeLabelEditPart(view);
+			case TestIdentityActionEditPart.VISUAL_ID:
+				return new TestIdentityActionEditPart(view);
+			case TestIdentityActionNameEditPart.VISUAL_ID:
+				return new TestIdentityActionNameEditPart(view);
+			case TestIdentityActionFloatingNameEditPart.VISUAL_ID:
+				return new TestIdentityActionFloatingNameEditPart(view);
+			case OutputPinInTestIdentityActionEditPart.VISUAL_ID:
+				return new OutputPinInTestIdentityActionEditPart(view);
+			case OutputPinInTestIdentityActionItemLabelEditPart.VISUAL_ID:
+				return new OutputPinInTestIdentityActionItemLabelEditPart(view);
+			case OutputPinInTestIdentityActionItemAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new OutputPinInTestIdentityActionItemAppliedStereotypeLabelEditPart(view);
+			case InputPinInTestIdentityActionAsFirstEditPart.VISUAL_ID:
+				return new InputPinInTestIdentityActionAsFirstEditPart(view);
+			case InputPinInTestIdentityActionAsFirstLabelEditPart.VISUAL_ID:
+				return new InputPinInTestIdentityActionAsFirstLabelEditPart(view);
+			case InputPinInTestIdentityActionAsFirstAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new InputPinInTestIdentityActionAsFirstAppliedStereotypeLabelEditPart(view);
+			case InputPinInTestIdentityActionAsSecondEditPart.VISUAL_ID:
+				return new InputPinInTestIdentityActionAsSecondEditPart(view);
+			case InputPinInTestIdentityActionAsSecondLabelEditPart.VISUAL_ID:
+				return new InputPinInTestIdentityActionAsSecondLabelEditPart(view);
+			case InputPinInTestIdentityActionAsSecondAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new InputPinInTestIdentityActionAsSecondAppliedStereotypeLabelEditPart(view);
+			case ValuePinInTestIdentityActionAsFirstEditPart.VISUAL_ID:
+				return new ValuePinInTestIdentityActionAsFirstEditPart(view);
+			case ValuePinInTestIdentityActionAsFirstLabelEditPart.VISUAL_ID:
+				return new ValuePinInTestIdentityActionAsFirstLabelEditPart(view);
+			case ValuePinInTestIdentityActionAsFirstValueEditPart.VISUAL_ID:
+				return new ValuePinInTestIdentityActionAsFirstValueEditPart(view);
+			case ValuePinInTestIdentityActionAsFirstAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ValuePinInTestIdentityActionAsFirstAppliedStereotypeLabelEditPart(view);
+			case ValuePinInTestIdentityActionAsSecondEditPart.VISUAL_ID:
+				return new ValuePinInTestIdentityActionAsSecondEditPart(view);
+			case ValuePinInTestIdentityActionAsSecondLabelEditPart.VISUAL_ID:
+				return new ValuePinInTestIdentityActionAsSecondLabelEditPart(view);
+			case ValuePinInTestIdentityActionAsSecondValueEditPart.VISUAL_ID:
+				return new ValuePinInTestIdentityActionAsSecondValueEditPart(view);
+			case ValuePinInTestIdentityActionAsSecondAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ValuePinInTestIdentityActionAsSecondAppliedStereotypeLabelEditPart(view);
+			case ActionPinInTestIdentityActionAsFirstEditPart.VISUAL_ID:
+				return new ActionPinInTestIdentityActionAsFirstEditPart(view);
+			case ActionPinInTestIdentityActionAsFirstLabelEditPart.VISUAL_ID:
+				return new ActionPinInTestIdentityActionAsFirstLabelEditPart(view);
+			case ActionPinInTestIdentityActionAsFirstValueEditPart.VISUAL_ID:
+				return new ActionPinInTestIdentityActionAsFirstValueEditPart(view);
+			case ActionPinInTestIdentityActionAsFirstAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ActionPinInTestIdentityActionAsFirstAppliedStereotypeLabelEditPart(view);
+			case ActionPinInTestIdentityActionAsSecondEditPart.VISUAL_ID:
+				return new ActionPinInTestIdentityActionAsSecondEditPart(view);
+			case ActionPinInTestIdentityActionAsSecondLabelEditPart.VISUAL_ID:
+				return new ActionPinInTestIdentityActionAsSecondLabelEditPart(view);
+			case ActionPinInTestIdentityActionAsSecondValueEditPart.VISUAL_ID:
+				return new ActionPinInTestIdentityActionAsSecondValueEditPart(view);
+			case ActionPinInTestIdentityActionAsSecondAppliedStereotypeLabelEditPart.VISUAL_ID:
+				return new ActionPinInTestIdentityActionAsSecondAppliedStereotypeLabelEditPart(view);
 			case ActivityActivityParametersCompartmentEditPart.VISUAL_ID:
 				return new ActivityActivityParametersCompartmentEditPart(view);
 			case ActivityActivityPreConditionsCompartmentEditPart.VISUAL_ID:

@@ -52,6 +52,7 @@ import org.eclipse.uml2.uml.SendSignalAction;
 import org.eclipse.uml2.uml.SequenceNode;
 import org.eclipse.uml2.uml.StartObjectBehaviorAction;
 import org.eclipse.uml2.uml.StructuredActivityNode;
+import org.eclipse.uml2.uml.TestIdentityAction;
 import org.eclipse.uml2.uml.TimeConstraint;
 import org.eclipse.uml2.uml.TimeInterval;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -1542,6 +1543,118 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_TestIdentityAction_3114(TestIdentityAction instance) {
+		try {
+			Object value_0 = name_TestIdentityAction_3114(instance);
+			if (value_0 != null) {
+				instance.setName((String) value_0);
+			}
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_OutputPin_3126(OutputPin instance) {
+		try {
+			Object value_0 = name_OutputPin_3126(instance);
+			if (value_0 != null) {
+				instance.setName((String) value_0);
+			}
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_InputPin_3134(InputPin instance) {
+		try {
+			Object value_0 = name_InputPin_3134(instance);
+			if (value_0 != null) {
+				instance.setName((String) value_0);
+			}
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_InputPin_3135(InputPin instance) {
+		try {
+			Object value_0 = name_InputPin_3135(instance);
+			if (value_0 != null) {
+				instance.setName((String) value_0);
+			}
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_ValuePin_3147(ValuePin instance) {
+		try {
+			Object value_0 = name_ValuePin_3147(instance);
+			if (value_0 != null) {
+				instance.setName((String) value_0);
+			}
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_ValuePin_3148(ValuePin instance) {
+		try {
+			Object value_0 = name_ValuePin_3148(instance);
+			if (value_0 != null) {
+				instance.setName((String) value_0);
+			}
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_ActionInputPin_3160(ActionInputPin instance) {
+		try {
+			Object value_0 = name_ActionInputPin_3160(instance);
+			if (value_0 != null) {
+				instance.setName((String) value_0);
+			}
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_ActionInputPin_3161(ActionInputPin instance) {
+		try {
+			Object value_0 = name_ActionInputPin_3161(instance);
+			if (value_0 != null) {
+				instance.setName((String) value_0);
+			}
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public void init_ObjectFlow_4003(ObjectFlow instance) {
 		try {
 			Object value_0 = name_ObjectFlow_4003(instance);
@@ -2342,6 +2455,62 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	private String name_ActionInputPin_3159(ActionInputPin it) {
+		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String name_TestIdentityAction_3114(TestIdentityAction it) {
+		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String name_OutputPin_3126(OutputPin it) {
+		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String name_InputPin_3134(InputPin it) {
+		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String name_InputPin_3135(InputPin it) {
+		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String name_ValuePin_3147(ValuePin it) {
+		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String name_ValuePin_3148(ValuePin it) {
+		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String name_ActionInputPin_3160(ActionInputPin it) {
+		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String name_ActionInputPin_3161(ActionInputPin it) {
 		return LabelHelper.INSTANCE.findName(it.eContainer(), it);
 	}
 
