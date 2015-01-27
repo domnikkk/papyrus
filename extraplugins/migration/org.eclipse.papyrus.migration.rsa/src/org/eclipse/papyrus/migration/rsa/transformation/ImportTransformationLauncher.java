@@ -45,7 +45,6 @@ import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.utils.DiResourceSet;
 import org.eclipse.papyrus.infra.emf.resource.DependencyManagementHelper;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
-import org.eclipse.papyrus.infra.gmfdiag.common.utils.GMFUnsafe;
 import org.eclipse.papyrus.migration.rsa.Activator;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters;
@@ -531,12 +530,20 @@ public class ImportTransformationLauncher {
 
 			final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
 
-			GMFUnsafe.write(domain, new Runnable() {
-				@Override
-				public void run() {
-					EMFHelper.unload(modelSet);
-				}
-			});
+			InternalTransactionalEditingDomain internalDomain = (InternalTransactionalEditingDomain) domain;
+
+			Map<String, Object> options = new HashMap<String, Object>();
+			options.put(Transaction.OPTION_NO_UNDO, true);
+			options.put(Transaction.OPTION_NO_VALIDATION, true);
+			options.put(Transaction.OPTION_NO_TRIGGERS, true);
+
+			// We're in a batch environment, with no undo/redo support. Run a vanilla transaction to improve performances
+			Transaction fastTransaction = internalDomain.startTransaction(false, options);
+			try {
+				EMFHelper.unload(modelSet);
+			} finally {
+				fastTransaction.commit();
+			}
 
 			domain.dispose();
 
