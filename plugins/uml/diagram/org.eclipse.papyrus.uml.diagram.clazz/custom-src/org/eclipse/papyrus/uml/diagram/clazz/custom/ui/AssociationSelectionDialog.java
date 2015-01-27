@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 382954
  */
 package org.eclipse.papyrus.uml.diagram.clazz.custom.ui;
 
@@ -17,8 +18,10 @@ import java.util.HashSet;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.events.MouseEvent;
@@ -59,7 +62,6 @@ public class AssociationSelectionDialog extends AbstractAssociationSelectionDial
 	 */
 	@Override
 	protected void createContents() {
-		// TODO Auto-generated method stub
 		super.createContents();
 		final ILabelProvider labelProvider = new AdapterFactoryLabelProvider(org.eclipse.papyrus.uml.diagram.clazz.part.UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 		final IStructuredContentProvider associationContentProvider = new IStructuredContentProvider() {
@@ -81,6 +83,17 @@ public class AssociationSelectionDialog extends AbstractAssociationSelectionDial
 		tableViewer.setLabelProvider(labelProvider);
 		tableViewer.setContentProvider(associationContentProvider);
 		tableViewer.setInput(commonAssociations);
+
+		tableViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				btnOk.setEnabled(true);
+
+			}
+		});
+
+		btnOk.setEnabled(false);
 		btnOk.addMouseListener(new MouseListener() {
 
 			@Override
@@ -100,7 +113,29 @@ public class AssociationSelectionDialog extends AbstractAssociationSelectionDial
 			public void mouseDoubleClick(MouseEvent e) {
 			}
 		});
-		btnCancel.setVisible(false);
+
+		btnCancel.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseUp(MouseEvent e) {
+				selectedAssociation = null;
+				shlAssociationselection.close();
+
+			}
+
+			@Override
+			public void mouseDown(MouseEvent e) {
+
+
+			}
+
+			@Override
+			public void mouseDoubleClick(MouseEvent e) {
+
+
+			}
+		});
+
 	}
 
 	/**

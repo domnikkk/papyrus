@@ -8640,11 +8640,11 @@
       <implementations
           xsi:type="gmfgen:CustomParser"
           uses="/0/@diagram/@links.20/@labels.0/@modelFacet"
-          qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.RoleInstanceSpecificationSourceLinkParser"/>
+          qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.RoleInstanceSpecificationLinkParser"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
           uses="/0/@diagram/@links.20/@labels.1/@modelFacet"
-          qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.RoleInstanceSpecificationTargetLinkParser"/>
+          qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.RoleInstanceSpecificationLinkParser"/>
     </labelParsers>
     <contextMenus
         context="/0/@diagram">
