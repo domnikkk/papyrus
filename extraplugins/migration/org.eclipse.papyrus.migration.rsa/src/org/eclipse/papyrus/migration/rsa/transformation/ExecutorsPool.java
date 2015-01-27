@@ -97,6 +97,9 @@ public class ExecutorsPool {
 	 * @param executor
 	 */
 	public void releaseExecutor(TransformationExecutor executor) {
+		if (!cacheTransformations) {
+			return;
+		}
 		URI transformationURI = executorsURIs.get(executor);
 		Pool pool = executors.get(transformationURI);
 		pool.release(executor);

@@ -137,7 +137,7 @@ public class ImportTransformation {
 
 	protected List<Diagram> diagramsToDelete = new LinkedList<Diagram>();
 
-	protected static final ExecutorsPool executorsPool = new ExecutorsPool(4);
+	protected static final ExecutorsPool executorsPool = new ExecutorsPool(2);
 
 	/** EPackages corresponding to source native profiles with specific support in the transformation */
 	protected static final Set<EPackage> sourceEPackages = new HashSet<EPackage>();
@@ -1167,7 +1167,8 @@ public class ImportTransformation {
 				getTransformationURI("RSAStructureDiagram"),
 				getTransformationURI("RSAActivityDiagram"),
 				getTransformationURI("RSAStateMachineDiagram"),
-				getTransformationURI("RSAProfileDiagram")
+				getTransformationURI("RSAProfileDiagram"),
+				getTransformationURI("RSAUsecaseDiagram")
 		});
 	}
 
