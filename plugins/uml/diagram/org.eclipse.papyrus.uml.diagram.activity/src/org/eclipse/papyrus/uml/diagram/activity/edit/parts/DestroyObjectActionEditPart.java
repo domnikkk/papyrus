@@ -123,6 +123,8 @@ public class DestroyObjectActionEditPart extends RoundedCompartmentEditPart {
 						}
 					};
 				case InputPinInDestroyObjectActionEditPart.VISUAL_ID:
+				case ValuePinInDestroyObjectActionEditPart.VISUAL_ID:
+				case ActionPinInDestroyObjectActionEditPart.VISUAL_ID:
 					return new BorderItemResizableEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
@@ -195,6 +197,18 @@ public class DestroyObjectActionEditPart extends RoundedCompartmentEditPart {
 			getBorderedFigure().getBorderItemContainer().add(((InputPinInDestroyObjectActionEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
+		// Papyrus Gencode :Affixed Pin locator for Actions
+		if (childEditPart instanceof ValuePinInDestroyObjectActionEditPart) {
+			IBorderItemLocator locator = new PinPositionLocator(getMainFigure(), PositionConstants.NORTH);
+			getBorderedFigure().getBorderItemContainer().add(((ValuePinInDestroyObjectActionEditPart) childEditPart).getFigure(), locator);
+			return true;
+		}
+		// Papyrus Gencode :Affixed Pin locator for Actions
+		if (childEditPart instanceof ActionPinInDestroyObjectActionEditPart) {
+			IBorderItemLocator locator = new PinPositionLocator(getMainFigure(), PositionConstants.NORTH);
+			getBorderedFigure().getBorderItemContainer().add(((ActionPinInDestroyObjectActionEditPart) childEditPart).getFigure(), locator);
+			return true;
+		}
 		return false;
 	}
 
@@ -207,6 +221,14 @@ public class DestroyObjectActionEditPart extends RoundedCompartmentEditPart {
 		}
 		if (childEditPart instanceof InputPinInDestroyObjectActionEditPart) {
 			getBorderedFigure().getBorderItemContainer().remove(((InputPinInDestroyObjectActionEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof ValuePinInDestroyObjectActionEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ValuePinInDestroyObjectActionEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof ActionPinInDestroyObjectActionEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ActionPinInDestroyObjectActionEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;

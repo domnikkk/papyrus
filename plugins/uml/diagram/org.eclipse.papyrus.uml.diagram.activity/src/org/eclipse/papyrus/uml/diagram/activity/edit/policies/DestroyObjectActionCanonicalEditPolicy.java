@@ -20,7 +20,9 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActionPinInDestroyObjectActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInDestroyObjectActionEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ValuePinInDestroyObjectActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLNodeDescriptor;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
@@ -79,7 +81,8 @@ public class DestroyObjectActionCanonicalEditPolicy extends CanonicalEditPolicy 
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return InputPinInDestroyObjectActionEditPart.VISUAL_ID == UMLVisualIDRegistry.getVisualID(view);
+		int visualID = UMLVisualIDRegistry.getVisualID(view);
+		return visualID == InputPinInDestroyObjectActionEditPart.VISUAL_ID || visualID == ValuePinInDestroyObjectActionEditPart.VISUAL_ID || visualID == ActionPinInDestroyObjectActionEditPart.VISUAL_ID;
 	}
 
 	/**
