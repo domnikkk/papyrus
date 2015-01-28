@@ -536,6 +536,7 @@ public class ImportTransformationLauncher {
 			options.put(Transaction.OPTION_NO_UNDO, true);
 			options.put(Transaction.OPTION_NO_VALIDATION, true);
 			options.put(Transaction.OPTION_NO_TRIGGERS, true);
+			options.put(Transaction.OPTION_UNPROTECTED, true);
 
 			// We're in a batch environment, with no undo/redo support. Run a vanilla transaction to improve performances
 			Transaction fastTransaction = internalDomain.startTransaction(false, options);
