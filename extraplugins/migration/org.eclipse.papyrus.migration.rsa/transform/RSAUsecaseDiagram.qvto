@@ -219,7 +219,7 @@ mapping ExtensionPoint::toExtensionPointInUseCase(node : Node) : Shape inherits 
 query View::getDecorationType(element : Element) : String{
 	var res := self.doGetDecorationType(element);
 
-	log('Get papyrus ID for'+ element.oclAsType(EObject).eClass().name+', '+self.type);
+	/*log('Get papyrus ID for'+ element.oclAsType(EObject).eClass().name+', '+self.type);
 	
 	log(res);
 	
@@ -227,7 +227,7 @@ query View::getDecorationType(element : Element) : String{
 		log('IsNode')
 	else 
 		log('IsEdge')
-	endif;
+	endif;*/
 	
 	return res;	
 }
