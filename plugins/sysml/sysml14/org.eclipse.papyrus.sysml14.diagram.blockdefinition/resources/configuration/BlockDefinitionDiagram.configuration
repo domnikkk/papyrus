@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration:PapyrusConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration" xmi:id="_ko07IErbEeSdQKzSRatBjg">
   <viewpoints xsi:type="configuration:PapyrusViewpoint" xmi:id="_xogdoErbEeSdQKzSRatBjg" name="Default Papyrus Viewpoint">
-    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_ZrBf4JaBEeS8eNvSwD0lgA" name="SysML 1.4 Block Definition" icon="platform:/plugin/org.eclipse.papyrus.sysml.diagram.blockdefinition/icons/obj16/Diagram_BlockDefinition.gif" implementationID="PapyrusUMLClassDiagram" customPalette="platform:/plugin/org.eclipse.papyrus.sysml14.diagram.blockdefinition/resources/palette/blockDiagramPalette.xml">
+    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_ZrBf4JaBEeS8eNvSwD0lgA" name="SysML 1.4 Block Definition" icon="platform:/plugin/org.eclipse.papyrus.sysml.diagram.blockdefinition/icons/obj16/Diagram_BlockDefinition.gif" implementationID="PapyrusUMLClassDiagram" customPalette="platform:/plugin/org.eclipse.papyrus.sysml14.diagram.blockdefinition/resources/palette/blockDiagramPalette.xml" customStyle="platform:/plugin/org.eclipse.papyrus.sysml14.diagram.blockdefinition/resources/style/blockdiagram.css">
       <profiles href="http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks"/>
       <profiles href="http://www.eclipse.org/papyrus/0.7.0/SysML#//portandflows"/>
       <modelRules xmi:id="_ZrBf4ZaBEeS8eNvSwD0lgA">

@@ -1,0 +1,56 @@
+/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr
+ *****************************************************************************/
+Class{
+	fontName: "Segoe UI";
+	fillColor: #C3D7DD;
+	transparency: 0;
+	gradient: #FFFFFF vertical;
+	lineColor: #000000;
+	elementIcon: false;
+}
+
+Compartment {
+	visible:false;
+}
+
+Class[appliedStereotypes~="Block"] > Compartment[kind="attributes"] {
+    visible:true;
+    showTitle:true;
+}
+
+Class[appliedStereotypes~="Block"] > Compartment[kind="operations"] {
+    visible:true;
+    showTitle:true;
+    elementIcon: false;
+}
+
+Signal  > Compartment {
+	visible:false;
+}
+
+Enumeration  > Compartment {
+	visible:false;
+}
+
+Enumeration > Compartment[kind="literals"] {
+    visible:true;
+    showTitle:true;
+}	
+
+DataType  > Compartment {
+	visible:false;
+}
+
+DataType > Compartment[kind="properties"] {
+    visible:true;
+    showTitle:true;
+}
