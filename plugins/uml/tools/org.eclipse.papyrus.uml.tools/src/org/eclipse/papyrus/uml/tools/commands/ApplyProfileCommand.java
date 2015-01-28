@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011, 2014 CEA LIST, Christian W. Damus, and others.
+ * Copyright (c) 2011, 2015 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -11,9 +11,11 @@
  *  Gabriel Pascual	(ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
  *  Christian W. Damus - bug 399859
  *  Christian W. Damus - bug 451557
- *  
+ *  Christian W. Damus - bug 458643
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.commands;
+
+import static org.eclipse.papyrus.uml.tools.profile.definition.IPapyrusVersionConstants.PAPYRUS_EANNOTATION_SOURCE;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -24,7 +26,6 @@ import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.uml.tools.helper.IProfileApplicationDelegate;
 import org.eclipse.papyrus.uml.tools.helper.ProfileApplicationDelegateRegistry;
-import org.eclipse.papyrus.uml.tools.profile.definition.IPapyrusVersionConstants;
 import org.eclipse.papyrus.uml.tools.utils.CustomUMLUtil;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
@@ -131,12 +132,11 @@ public class ApplyProfileCommand extends RecordingCommand {
 			// Save version of applied profile if necessary
 			if (saveProfileApplicationVersion) {
 				// Get version annotation in case it is a Papyrus profile
-				EAnnotation versionAnnotation = profile.getDefinition().getEAnnotation(IPapyrusVersionConstants.PAPYRUS_EANNOTATION_SOURCE);
+				EAnnotation versionAnnotation = profile.getDefinition().getEAnnotation(PAPYRUS_EANNOTATION_SOURCE);
 				if (versionAnnotation != null) {
-					EAnnotation existing = profileApplication.getEAnnotation(IPapyrusVersionConstants.PAPYRUS_EANNOTATION_SOURCE);
 					int index = 0;
 
-					if (existing != null) {
+					for (EAnnotation existing = profileApplication.getEAnnotation(PAPYRUS_EANNOTATION_SOURCE); existing != null; existing = profileApplication.getEAnnotation(PAPYRUS_EANNOTATION_SOURCE)) {
 						// Replace this; don't just add to the existing ones
 						index = profileApplication.getEAnnotations().indexOf(existing);
 						CustomUMLUtil.destroy(existing);
