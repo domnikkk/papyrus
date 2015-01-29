@@ -163,7 +163,7 @@ public class ValidationPluginGenerator {
 
 					// is this a Java constraint?
 					if (Utils.hasSpecificationForJava(constraint.getConstraint())) {
-						createExtensionForConstraint(pluginID, constraint, extElForConstraintsCategory, editor);
+						createJavaExtensionForConstraint(pluginID, constraint, extElForConstraintsCategory, editor);
 					}
 
 					// is this an OCL constraint?
@@ -186,45 +186,53 @@ public class ValidationPluginGenerator {
 		}
 	}
 
-	@SuppressWarnings("nls")
-	private Element createExtensionForConstraint(String pluginID, IValidationRule constraint,
+	private Element createExtensionForConstraint(IValidationRule validationRule,
 			Element parentElement, PluginEditor editor) {
 
 		Element extElForConstraint = editor.getPluginEditor().addChild(
 				parentElement, EMF_VALIDATION_CONSTRAINT_CHILD);
 
-		extElForConstraint.setAttribute(ID, constraint.getID());
-		extElForConstraint.setAttribute(XML_CONSTRAINT_NAME, constraint.getName());
-		extElForConstraint.setAttribute(XML_CONSTRAINT_LANG, JAVA_LANGUAGE);
-		extElForConstraint.setAttribute(XML_CONSTRAINT_STATUS_CODE, constraint.getStatusCode().toString());
-		extElForConstraint.setAttribute(XML_CONSTRAINT_SEVERITY, constraint.getSeverity().name());
+		extElForConstraint.setAttribute(ID, validationRule.getID());
+		extElForConstraint.setAttribute(XML_CONSTRAINT_NAME, validationRule.getName());
+		extElForConstraint.setAttribute(XML_CONSTRAINT_STATUS_CODE, validationRule.getStatusCode().toString());
+		extElForConstraint.setAttribute(XML_CONSTRAINT_SEVERITY, validationRule.getSeverity().name());
 
-		extElForConstraint.setAttribute(XML_CONSTRAINT_CLASS, pluginID + SEPARATOR + constraint.getImplementingClass());
-
-		extElForConstraint.setAttribute(XML_CONSTRAINT_MODE, constraint.getMode().name());
+		extElForConstraint.setAttribute(XML_CONSTRAINT_MODE, validationRule.getMode().name());
 		extElForConstraint.setAttribute(XML_CONSTRAINT_IS_ENABLED_BY_DEFAULT,
-				String.valueOf(constraint.isEnabledByDefault()));
+				String.valueOf(validationRule.isEnabledByDefault()));
 
-		if (constraint.getTargets() != null) {
-			for (String target : constraint.getTargets()) {
+		if (validationRule.getTargets() != null) {
+			for (String target : validationRule.getTargets()) {
 				Element targetExtension = editor.addChild(extElForConstraint, XML_CONSTRAINT_TARGET);
 				targetExtension.setAttribute(XML_CONSTRAINT_CLASS, target);
 			}
 		}
 
-		if (constraint.getMessage() != null) {
+		String validationMsg = validationRule.getMessage();
+		if ((validationMsg != null) && (validationMsg.length() > 0)) {
 			Element message = editor.addChild(extElForConstraint, XML_CONSTRAINT_MESSAGE);
-			message.setTextContent(constraint.getMessage());
+			message.setTextContent(validationMsg);
 		}
 		else {
 			Element message = editor.addChild(extElForConstraint, XML_CONSTRAINT_MESSAGE);
-			message.setTextContent(constraint.getName() + " not validated");
+			message.setTextContent(validationRule.getName() + " not valid"); //$NON-NLS-1$
 		}
 
-		if (constraint.getDescription() != null) {
-			Element description = editor.addChild(extElForConstraint, "description");
-			description.setTextContent(constraint.getDescription());
+		if (validationRule.getDescription() != null) {
+			Element description = editor.addChild(extElForConstraint, "description"); //$NON-NLS-1$
+			description.setTextContent(validationRule.getDescription());
 		}
+
+		return extElForConstraint;
+	}
+
+	private Element createJavaExtensionForConstraint(String pluginID, IValidationRule validationRule,
+			Element parentElement, PluginEditor editor) {
+
+		Element extElForConstraint = createExtensionForConstraint(validationRule, parentElement, editor);
+
+		extElForConstraint.setAttribute(XML_CONSTRAINT_LANG, JAVA_LANGUAGE);
+		extElForConstraint.setAttribute(XML_CONSTRAINT_CLASS, pluginID + SEPARATOR + validationRule.getImplementingClass());
 
 		return extElForConstraint;
 
@@ -233,57 +241,28 @@ public class ValidationPluginGenerator {
 	/**
 	 * create the extension point for constraint of emf validation
 	 *
-	 * @param validation
+	 * @param validationRule
 	 *            the validation rule
 	 * @param parentElement
 	 * @param editor
 	 * @return the extension point
 	 */
-	private Element createOCLExtensionForConstraint(IValidationRule validation,
+	private Element createOCLExtensionForConstraint(IValidationRule validationRule,
 			Element parentElement, PluginEditor editor) {
 
-		Element extElForConstraint = editor.getPluginEditor().addChild(
-				parentElement, EMF_VALIDATION_CONSTRAINT_CHILD);
+		Element extElForConstraint = createExtensionForConstraint(validationRule, parentElement, editor);
 
-		extElForConstraint.setAttribute(ID, validation.getID());
-		extElForConstraint.setAttribute(XML_CONSTRAINT_NAME, validation.getName());
 		extElForConstraint.setAttribute(XML_CONSTRAINT_LANG, OCL_LANGUAGE);
-		extElForConstraint.setAttribute(XML_CONSTRAINT_STATUS_CODE, validation
-				.getStatusCode().toString());
-		extElForConstraint.setAttribute(XML_CONSTRAINT_SEVERITY, validation.getSeverity()
-				.name());
+		extElForConstraint.setAttribute(XML_CONSTRAINT_STATUS_CODE, validationRule.getStatusCode().toString());
+		extElForConstraint.setAttribute(XML_CONSTRAINT_SEVERITY, validationRule.getSeverity().name());
 
-		extElForConstraint.setAttribute(XML_CONSTRAINT_MODE, validation.getMode().name());
-		extElForConstraint.setAttribute(XML_CONSTRAINT_IS_ENABLED_BY_DEFAULT,
-				String.valueOf(validation.isEnabledByDefault()));
-
-		if (validation.getTargets() != null) {
-			for (String target : validation.getTargets()) {
-				Element targetExtension = editor.addChild(extElForConstraint,
-						XML_CONSTRAINT_TARGET);
-				targetExtension.setAttribute(XML_CONSTRAINT_CLASS, target);
-			}
-		}
-
-		if (validation.getMessage() != null) {
-			Element message = editor.addChild(extElForConstraint, XML_CONSTRAINT_MESSAGE);
-			message.setTextContent(validation.getMessage());
-		}
-
-		if (validation.getDescription() != null) {
-			Element description = editor.addChild(extElForConstraint, "description"); //$NON-NLS-1$
-			description.setTextContent(validation.getDescription());
-		}
-
-		if (Utils.getOCLConstraintBody(validation.getConstraint()) != null) {
+		if (Utils.getOCLConstraintBody(validationRule.getConstraint()) != null) {
 			Document doc = editor.getDocument();
 
 			CDATASection cdata = doc.createCDATASection(Utils
-					.getOCLConstraintBody(validation.getConstraint()));
+					.getOCLConstraintBody(validationRule.getConstraint()));
 			extElForConstraint.appendChild(cdata);
 		}
-
-		parentElement.appendChild(extElForConstraint);
 
 		return extElForConstraint;
 
