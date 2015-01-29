@@ -105,6 +105,8 @@ public class SelectFilesWizardPage extends WizardPage {
 	 *            is the max length of the selection
 	 * @param extensions
 	 *            is a table of extensions
+	 * @param iPath
+	 * 			is the path
 	 */
 	public SelectFilesWizardPage(final String pageName, final int lower, final int upper, final String[] extensions, IPath iPath) {
 		super(pageName);
@@ -124,7 +126,7 @@ public class SelectFilesWizardPage extends WizardPage {
 	}
 
 	/**
-	 * @param uri the iPath to set
+	 * @param iPath the iPath to set
 	 */
 	public void setUri(IPath iPath) {
 		this.iPath = iPath;

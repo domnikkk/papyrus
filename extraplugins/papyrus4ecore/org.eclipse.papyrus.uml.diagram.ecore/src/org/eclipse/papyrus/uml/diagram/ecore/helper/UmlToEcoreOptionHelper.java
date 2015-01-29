@@ -57,8 +57,8 @@ public class UmlToEcoreOptionHelper {
 
 	/**
 	 * Create contents of the wizard.
-	 *
 	 * @param parent
+	 * @return
 	 */
 	public Composite createControl(Composite parent) {
 		Composite container = new Composite(parent, SWT.NONE);
