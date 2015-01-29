@@ -12,7 +12,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.migration.rsa.tests;
 
-import org.eclipse.papyrus.migration.rsa.concurrent.ThreadSafeResourceSet;
+import org.eclipse.papyrus.migration.rsa.tests.concurrent.ThreadSafeResourceSetTest;
 import org.eclipse.papyrus.migration.rsa.tests.qvt.BatchImportTest;
 import org.eclipse.papyrus.migration.rsa.tests.qvt.ImportDiagramTest;
 import org.eclipse.papyrus.migration.rsa.tests.qvt.ImportModelsTest;
@@ -24,7 +24,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 
 @RunWith(Suite.class)
-@SuiteClasses({ ImportDiagramTest.class, ImportModelsTest.class, BatchImportTest.class, ImportProfilesTest.class, ThreadSafeResourceSet.class })
+@SuiteClasses({ ImportDiagramTest.class, ImportModelsTest.class, BatchImportTest.class, ImportProfilesTest.class, ThreadSafeResourceSetTest.class })
 public class AllTests {
 	// Test suite
 }
