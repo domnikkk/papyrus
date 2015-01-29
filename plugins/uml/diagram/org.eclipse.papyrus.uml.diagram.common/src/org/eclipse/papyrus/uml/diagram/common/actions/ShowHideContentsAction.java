@@ -53,6 +53,7 @@ import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.eclipse.ui.dialogs.CheckedTreeSelectionDialog;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Type;
 
@@ -110,9 +111,10 @@ public class ShowHideContentsAction extends AbstractShowHideAction implements IA
 	protected void initAction() {
 		super.initAction();
 		for (IGraphicalEditPart current : this.selectedElements) {
-			// the selected elements which aren't Classifier are ignored
-			if (((View) current.getModel()).getElement() instanceof Classifier) {
-				this.representations.add(new RootEditPartRepresentation(current, (Classifier) ((View) current.getModel()).getElement()));
+			// the selected elements which aren't Classifier and InstanceSpecification are ignored
+			EObject element = ((View) current.getModel()).getElement();
+			if (element instanceof Classifier || element instanceof InstanceSpecification) {
+				this.representations.add(new RootEditPartRepresentation(current, element));
 			}
 		}
 		// this.setEditorLabelProvider(new CustomEditorLabelProvider());
@@ -583,19 +585,11 @@ public class ShowHideContentsAction extends AbstractShowHideAction implements IA
 		 *
 		 * @param representedEditPart
 		 *            the edit part managed by this representation
-		 * @param classifier
+		 * @param element
 		 *            the classifier managed by the represented edit part
 		 */
-		public RootEditPartRepresentation(IGraphicalEditPart representedEditPart, Classifier classifier) {
-			super(representedEditPart, classifier);
-		}
-
-		/**
-		 * {@inheritDoc}
-		 */
-		@Override
-		public Classifier getSemanticElement() {
-			return (Classifier) super.getSemanticElement();
+		public RootEditPartRepresentation(IGraphicalEditPart representedEditPart, EObject element) {
+			super(representedEditPart, element);
 		}
 
 		/**
@@ -631,13 +625,13 @@ public class ShowHideContentsAction extends AbstractShowHideAction implements IA
 		 *
 		 * @param compartmentEditPart
 		 *            the compartment edit part managed by this representation
-		 * @param classifier
+		 * @param element
 		 *            the classifier managed by the represented edit part
 		 * @param parentRepresentation
 		 *            parent presentation of this parent
 		 */
-		public CompartmentEditPartRepresentation(IResizableCompartmentEditPart compartmentEditPart, Classifier classifier, EditPartRepresentation parentRepresentation) {
-			super(compartmentEditPart, classifier, parentRepresentation);
+		public CompartmentEditPartRepresentation(IResizableCompartmentEditPart compartmentEditPart, EObject element, EditPartRepresentation parentRepresentation) {
+			super(compartmentEditPart, element, parentRepresentation);
 		}
 
 		// /**
@@ -667,9 +661,14 @@ public class ShowHideContentsAction extends AbstractShowHideAction implements IA
 		/**
 		 * {@inheritDoc}
 		 */
-		@Override
-		public Classifier getSemanticElement() {
-			return (Classifier) super.getSemanticElement();
+		protected List<Element> collectMembers() {
+			if (getSemanticElement() instanceof Classifier) {
+				return new ArrayList<Element>(((Classifier) getSemanticElement()).getMembers());
+			}
+			if (getSemanticElement() instanceof InstanceSpecification) {
+				return new ArrayList<Element>(((InstanceSpecification) getSemanticElement()).getSlots());
+			}
+			return Collections.emptyList();
 		}
 
 		/**
@@ -680,29 +679,29 @@ public class ShowHideContentsAction extends AbstractShowHideAction implements IA
 			// call super first
 			super.initRepresentation();
 
-			EList<NamedElement> members = getSemanticElement().getMembers();
-			for (NamedElement namedElement : members) {
-				if (canContain(namedElement)) {
-					// create the leaf representation
-					OptionalEditPartRepresentation editPartRepresentation = new OptionalEditPartRepresentation(null, namedElement, this);
-					this.elementsToSelect.add(editPartRepresentation);
-					// build the initial selection
-					EList<?> childrenView = getRepresentedEditPart().getNotationView().getVisibleChildren();
-					for (Object object : childrenView) {
-						if (object instanceof View) {
-							if (((View) object).getElement() == namedElement) {
-								this.initialSelection.add(editPartRepresentation);
+			for (Element nextMember : collectMembers()) {
+				if (false == canContain(nextMember)) {
+					continue;
+				}
+				// create the leaf representation
+				OptionalEditPartRepresentation editPartRepresentation = new OptionalEditPartRepresentation(null, nextMember, this);
+				this.elementsToSelect.add(editPartRepresentation);
+				// build the initial selection
+				EList<?> childrenView = getRepresentedEditPart().getNotationView().getVisibleChildren();
+				for (Object object : childrenView) {
+					if (object instanceof View) {
+						if (((View) object).getElement() == nextMember) {
+							this.initialSelection.add(editPartRepresentation);
 
-								// set the edit part in the optional edit part representation
-								for (Object o : getRepresentedEditPart().getChildren()) {
-									if (o instanceof IGraphicalEditPart) {
-										if (((View) object).equals(((IGraphicalEditPart) o).getNotationView())) {
-											editPartRepresentation.setRepresentedEditPart((IGraphicalEditPart) o);
-										}
+							// set the edit part in the optional edit part representation
+							for (Object o : getRepresentedEditPart().getChildren()) {
+								if (o instanceof IGraphicalEditPart) {
+									if (((View) object).equals(((IGraphicalEditPart) o).getNotationView())) {
+										editPartRepresentation.setRepresentedEditPart((IGraphicalEditPart) o);
 									}
 								}
-								break;
 							}
+							break;
 						}
 					}
 				}
@@ -713,13 +712,13 @@ public class ShowHideContentsAction extends AbstractShowHideAction implements IA
 		/**
 		 * REturns <code>true</code> if the associated compartment edit part can contain the given element
 		 *
-		 * @param namedElement
+		 * @param element
 		 *            the named element to show/hide
 		 * @return <code>true</code> if the compartment can display the element
 		 */
-		protected boolean canContain(NamedElement namedElement) {
+		protected boolean canContain(Element element) {
 			TransactionalEditingDomain domain = getRepresentedEditPart().getEditingDomain();
-			ViewDescriptor viewDescriptor = new ViewDescriptor(new EObjectAdapter(namedElement), Node.class, null, ViewUtil.APPEND, false, getRepresentedEditPart().getDiagramPreferencesHint());
+			ViewDescriptor viewDescriptor = new ViewDescriptor(new EObjectAdapter(element), Node.class, null, ViewUtil.APPEND, false, getRepresentedEditPart().getDiagramPreferencesHint());
 
 			CreateCommand cmd = new CreateCommand(domain, viewDescriptor, getRepresentedEditPart().getNotationView());
 			return (cmd.canExecute());
@@ -735,22 +734,22 @@ public class ShowHideContentsAction extends AbstractShowHideAction implements IA
 		/**
 		 * Constructor.
 		 *
-		 * @param classifier
+		 * @param element
 		 *            uml element linked to this representation
 		 * @param parentRepresentation
 		 *            the main edit part against which show/hide content action is performed
 		 */
-		public AffixedChildrenEditPartRepresentation(Classifier classifier, EditPartRepresentation parentRepresentation) {
-			super(null, classifier, parentRepresentation);
+		public AffixedChildrenEditPartRepresentation(EObject element, EditPartRepresentation parentRepresentation) {
+			super(null, element, parentRepresentation);
 		}
 
 		/**
 		 * {@inheritDoc}
 		 */
 		@Override
-		protected boolean canContain(NamedElement namedElement) {
+		protected boolean canContain(Element element) {
 			TransactionalEditingDomain domain = getParentRepresentation().getRepresentedEditPart().getEditingDomain();
-			ViewDescriptor viewDescriptor = new ViewDescriptor(new EObjectAdapter(namedElement), Node.class, null, ViewUtil.APPEND, false, getParentRepresentation().getRepresentedEditPart().getDiagramPreferencesHint());
+			ViewDescriptor viewDescriptor = new ViewDescriptor(new EObjectAdapter(element), Node.class, null, ViewUtil.APPEND, false, getParentRepresentation().getRepresentedEditPart().getDiagramPreferencesHint());
 
 			CreateCommand cmd = new CreateCommand(domain, viewDescriptor, getParentRepresentation().getRepresentedEditPart().getNotationView());
 			return (cmd.canExecute());
@@ -779,30 +778,30 @@ public class ShowHideContentsAction extends AbstractShowHideAction implements IA
 			this.initialSelection = new ArrayList<EditPartRepresentation>();
 			this.elementsToSelect = new ArrayList<EditPartRepresentation>();
 
-			EList<NamedElement> members = getSemanticElement().getMembers();
-			for (NamedElement namedElement : members) {
-				if (canContain(namedElement)) {
-					// create the leaf representation
-					OptionalEditPartRepresentation editPartRepresentation = new OptionalEditPartRepresentation(null, namedElement, this);
-					this.elementsToSelect.add(editPartRepresentation);
-					// build the initial selection
-					EList<?> childrenView = getParentRepresentation().getRepresentedEditPart().getNotationView().getVisibleChildren();
-					for (Object object : childrenView) {
-						if (object instanceof View) {
-							if (((View) object).getElement() == namedElement) {
-								this.initialSelection.add(editPartRepresentation);
+			for (Element nextMember : collectMembers()) {
+				if (false == canContain(nextMember)) {
+					continue;
+				}
+				// create the leaf representation
+				OptionalEditPartRepresentation editPartRepresentation = new OptionalEditPartRepresentation(null, nextMember, this);
+				this.elementsToSelect.add(editPartRepresentation);
+				// build the initial selection
+				EList<?> childrenView = getParentRepresentation().getRepresentedEditPart().getNotationView().getVisibleChildren();
+				for (Object object : childrenView) {
+					if (object instanceof View) {
+						if (((View) object).getElement() == nextMember) {
+							this.initialSelection.add(editPartRepresentation);
 
-								// set the edit part in the optional edit part representation
-								for (Object o : getParentRepresentation().getRepresentedEditPart().getChildren()) {
-									if (o instanceof IGraphicalEditPart) {
-										if (((View) object).equals(((IGraphicalEditPart) o).getNotationView())) {
-											editPartRepresentation.setRepresentedEditPart((IGraphicalEditPart) o);
-											break;
-										}
+							// set the edit part in the optional edit part representation
+							for (Object o : getParentRepresentation().getRepresentedEditPart().getChildren()) {
+								if (o instanceof IGraphicalEditPart) {
+									if (((View) object).equals(((IGraphicalEditPart) o).getNotationView())) {
+										editPartRepresentation.setRepresentedEditPart((IGraphicalEditPart) o);
+										break;
 									}
 								}
-								break;
 							}
+							break;
 						}
 					}
 				}
