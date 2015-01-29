@@ -123,6 +123,8 @@ public class BroadcastSignalActionEditPart extends RoundedCompartmentEditPart {
 						}
 					};
 				case InputPinInBroadcastSignalActionEditPart.VISUAL_ID:
+				case ValuePinInBroadcastSignalActionEditPart.VISUAL_ID:
+				case ActionPinInBroadcastSignalActionEditPart.VISUAL_ID:
 					return new BorderItemResizableEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
@@ -210,6 +212,18 @@ public class BroadcastSignalActionEditPart extends RoundedCompartmentEditPart {
 			getBorderedFigure().getBorderItemContainer().add(((InputPinInBroadcastSignalActionEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
+		// Papyrus Gencode :Affixed Pin locator for Actions
+		if (childEditPart instanceof ValuePinInBroadcastSignalActionEditPart) {
+			IBorderItemLocator locator = new PinPositionLocator(getMainFigure(), PositionConstants.NORTH);
+			getBorderedFigure().getBorderItemContainer().add(((ValuePinInBroadcastSignalActionEditPart) childEditPart).getFigure(), locator);
+			return true;
+		}
+		// Papyrus Gencode :Affixed Pin locator for Actions
+		if (childEditPart instanceof ActionPinInBroadcastSignalActionEditPart) {
+			IBorderItemLocator locator = new PinPositionLocator(getMainFigure(), PositionConstants.NORTH);
+			getBorderedFigure().getBorderItemContainer().add(((ActionPinInBroadcastSignalActionEditPart) childEditPart).getFigure(), locator);
+			return true;
+		}
 		return false;
 	}
 
@@ -222,6 +236,14 @@ public class BroadcastSignalActionEditPart extends RoundedCompartmentEditPart {
 		}
 		if (childEditPart instanceof InputPinInBroadcastSignalActionEditPart) {
 			getBorderedFigure().getBorderItemContainer().remove(((InputPinInBroadcastSignalActionEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof ValuePinInBroadcastSignalActionEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ValuePinInBroadcastSignalActionEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof ActionPinInBroadcastSignalActionEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ActionPinInBroadcastSignalActionEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;

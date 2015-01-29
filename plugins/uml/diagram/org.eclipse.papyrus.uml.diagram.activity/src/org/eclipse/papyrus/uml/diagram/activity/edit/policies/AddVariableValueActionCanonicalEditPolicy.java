@@ -32,8 +32,12 @@ import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.Size;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActionPinInAddVariableValueActionAsInsertAtEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActionPinInAddVariableValueActionAsValueEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInAddVariableValueActionAsInsertAtEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInAddVariableValueActionAsValueEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ValuePinInAddVariableValueActionAsInsertAtEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ValuePinInAddVariableValueActionAsValueEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLNodeDescriptor;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
@@ -103,7 +107,16 @@ public class AddVariableValueActionCanonicalEditPolicy extends CanonicalEditPoli
 	 */
 	private boolean isMyDiagramElement(View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
-		return visualID == InputPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID || visualID == InputPinInAddVariableValueActionAsValueEditPart.VISUAL_ID;
+		switch (visualID) {
+		case InputPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+		case InputPinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+		case ValuePinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+		case ValuePinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+		case ActionPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+		case ActionPinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**

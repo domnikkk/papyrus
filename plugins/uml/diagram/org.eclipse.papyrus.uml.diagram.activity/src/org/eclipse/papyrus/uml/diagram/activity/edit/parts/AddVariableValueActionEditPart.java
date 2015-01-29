@@ -132,6 +132,10 @@ public class AddVariableValueActionEditPart extends RoundedCompartmentEditPart {
 					};
 				case InputPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
 				case InputPinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+				case ValuePinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+				case ValuePinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+				case ActionPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+				case ActionPinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
 					return new BorderItemResizableEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
@@ -188,6 +192,30 @@ public class AddVariableValueActionEditPart extends RoundedCompartmentEditPart {
 			getBorderedFigure().getBorderItemContainer().add(((InputPinInAddVariableValueActionAsValueEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
+		// Papyrus Gencode :Affixed Pin locator for Actions
+		if (childEditPart instanceof ValuePinInAddVariableValueActionAsInsertAtEditPart) {
+			IBorderItemLocator locator = new PinPositionLocator(getMainFigure(), PositionConstants.WEST);
+			getBorderedFigure().getBorderItemContainer().add(((ValuePinInAddVariableValueActionAsInsertAtEditPart) childEditPart).getFigure(), locator);
+			return true;
+		}
+		// Papyrus Gencode :Affixed Pin locator for Actions
+		if (childEditPart instanceof ValuePinInAddVariableValueActionAsValueEditPart) {
+			IBorderItemLocator locator = new PinPositionLocator(getMainFigure(), PositionConstants.NORTH);
+			getBorderedFigure().getBorderItemContainer().add(((ValuePinInAddVariableValueActionAsValueEditPart) childEditPart).getFigure(), locator);
+			return true;
+		}
+		// Papyrus Gencode :Affixed Pin locator for Actions
+		if (childEditPart instanceof ActionPinInAddVariableValueActionAsInsertAtEditPart) {
+			IBorderItemLocator locator = new PinPositionLocator(getMainFigure(), PositionConstants.WEST);
+			getBorderedFigure().getBorderItemContainer().add(((ActionPinInAddVariableValueActionAsInsertAtEditPart) childEditPart).getFigure(), locator);
+			return true;
+		}
+		// Papyrus Gencode :Affixed Pin locator for Actions
+		if (childEditPart instanceof ActionPinInAddVariableValueActionAsValueEditPart) {
+			IBorderItemLocator locator = new PinPositionLocator(getMainFigure(), PositionConstants.NORTH);
+			getBorderedFigure().getBorderItemContainer().add(((ActionPinInAddVariableValueActionAsValueEditPart) childEditPart).getFigure(), locator);
+			return true;
+		}
 		return false;
 	}
 
@@ -204,6 +232,22 @@ public class AddVariableValueActionEditPart extends RoundedCompartmentEditPart {
 		}
 		if (childEditPart instanceof InputPinInAddVariableValueActionAsValueEditPart) {
 			getBorderedFigure().getBorderItemContainer().remove(((InputPinInAddVariableValueActionAsValueEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof ValuePinInAddVariableValueActionAsInsertAtEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ValuePinInAddVariableValueActionAsInsertAtEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof ValuePinInAddVariableValueActionAsValueEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ValuePinInAddVariableValueActionAsValueEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof ActionPinInAddVariableValueActionAsInsertAtEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ActionPinInAddVariableValueActionAsInsertAtEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof ActionPinInAddVariableValueActionAsValueEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ActionPinInAddVariableValueActionAsValueEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;

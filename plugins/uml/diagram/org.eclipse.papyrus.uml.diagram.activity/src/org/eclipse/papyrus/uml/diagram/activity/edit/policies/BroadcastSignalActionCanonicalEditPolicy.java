@@ -20,7 +20,9 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActionPinInBroadcastSignalActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInBroadcastSignalActionEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ValuePinInBroadcastSignalActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLNodeDescriptor;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
@@ -79,7 +81,8 @@ public class BroadcastSignalActionCanonicalEditPolicy extends CanonicalEditPolic
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return InputPinInBroadcastSignalActionEditPart.VISUAL_ID == UMLVisualIDRegistry.getVisualID(view);
+		int visualID = UMLVisualIDRegistry.getVisualID(view);
+		return visualID == InputPinInBroadcastSignalActionEditPart.VISUAL_ID || visualID == ValuePinInBroadcastSignalActionEditPart.VISUAL_ID || visualID == ActionPinInBroadcastSignalActionEditPart.VISUAL_ID;
 	}
 
 	/**

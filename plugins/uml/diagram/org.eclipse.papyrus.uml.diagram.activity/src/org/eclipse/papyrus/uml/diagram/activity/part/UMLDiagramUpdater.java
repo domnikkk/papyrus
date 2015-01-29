@@ -685,6 +685,12 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 			if (visualID == InputPinInDestroyObjectActionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
+			if (visualID == ValuePinInDestroyObjectActionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+			}
+			if (visualID == ActionPinInDestroyObjectActionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+			}
 		}
 		return result;
 	}
@@ -723,11 +729,23 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 			if (visualID == InputPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
+			if (visualID == ValuePinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+			}
+			if (visualID == ActionPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+			}
 		}
 		{
 			InputPin childElement = modelElement.getValue();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == InputPinInAddVariableValueActionAsValueEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+			}
+			if (visualID == ValuePinInAddVariableValueActionAsValueEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+			}
+			if (visualID == ActionPinInAddVariableValueActionAsValueEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
@@ -747,6 +765,14 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 			InputPin childElement = (InputPin) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == InputPinInBroadcastSignalActionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == ValuePinInBroadcastSignalActionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == ActionPinInBroadcastSignalActionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -3129,6 +3155,10 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 			return getDestroyObjectAction_3095ContainedLinks(view);
 		case InputPinInDestroyObjectActionEditPart.VISUAL_ID:
 			return getInputPin_3096ContainedLinks(view);
+		case ValuePinInDestroyObjectActionEditPart.VISUAL_ID:
+			return getValuePin_3173ContainedLinks(view);
+		case ActionPinInDestroyObjectActionEditPart.VISUAL_ID:
+			return getActionInputPin_3174ContainedLinks(view);
 		case ReadVariableActionEditPart.VISUAL_ID:
 			return getReadVariableAction_3097ContainedLinks(view);
 		case OutputPinInReadVariableActionAsResultEditPart.VISUAL_ID:
@@ -3139,10 +3169,22 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 			return getInputPin_3100ContainedLinks(view);
 		case InputPinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
 			return getInputPin_3101ContainedLinks(view);
+		case ValuePinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+			return getValuePin_3175ContainedLinks(view);
+		case ValuePinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+			return getValuePin_3176ContainedLinks(view);
+		case ActionPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+			return getActionInputPin_3177ContainedLinks(view);
+		case ActionPinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+			return getActionInputPin_3178ContainedLinks(view);
 		case BroadcastSignalActionEditPart.VISUAL_ID:
 			return getBroadcastSignalAction_3102ContainedLinks(view);
 		case InputPinInBroadcastSignalActionEditPart.VISUAL_ID:
 			return getInputPin_3103ContainedLinks(view);
+		case ValuePinInBroadcastSignalActionEditPart.VISUAL_ID:
+			return getValuePin_3179ContainedLinks(view);
+		case ActionPinInBroadcastSignalActionEditPart.VISUAL_ID:
+			return getActionInputPin_3180ContainedLinks(view);
 		case CentralBufferNodeEditPart.VISUAL_ID:
 			return getCentralBufferNode_3104ContainedLinks(view);
 		case ConstraintEditPartCN.VISUAL_ID:
@@ -3450,6 +3492,10 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 			return getDestroyObjectAction_3095IncomingLinks(view);
 		case InputPinInDestroyObjectActionEditPart.VISUAL_ID:
 			return getInputPin_3096IncomingLinks(view);
+		case ValuePinInDestroyObjectActionEditPart.VISUAL_ID:
+			return getValuePin_3173IncomingLinks(view);
+		case ActionPinInDestroyObjectActionEditPart.VISUAL_ID:
+			return getActionInputPin_3174IncomingLinks(view);
 		case ReadVariableActionEditPart.VISUAL_ID:
 			return getReadVariableAction_3097IncomingLinks(view);
 		case OutputPinInReadVariableActionAsResultEditPart.VISUAL_ID:
@@ -3460,10 +3506,22 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 			return getInputPin_3100IncomingLinks(view);
 		case InputPinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
 			return getInputPin_3101IncomingLinks(view);
+		case ValuePinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+			return getValuePin_3175IncomingLinks(view);
+		case ValuePinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+			return getValuePin_3176IncomingLinks(view);
+		case ActionPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+			return getActionInputPin_3177IncomingLinks(view);
+		case ActionPinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+			return getActionInputPin_3178IncomingLinks(view);
 		case BroadcastSignalActionEditPart.VISUAL_ID:
 			return getBroadcastSignalAction_3102IncomingLinks(view);
 		case InputPinInBroadcastSignalActionEditPart.VISUAL_ID:
 			return getInputPin_3103IncomingLinks(view);
+		case ValuePinInBroadcastSignalActionEditPart.VISUAL_ID:
+			return getValuePin_3179IncomingLinks(view);
+		case ActionPinInBroadcastSignalActionEditPart.VISUAL_ID:
+			return getActionInputPin_3180IncomingLinks(view);
 		case CentralBufferNodeEditPart.VISUAL_ID:
 			return getCentralBufferNode_3104IncomingLinks(view);
 		case ConstraintEditPartCN.VISUAL_ID:
@@ -3771,6 +3829,10 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 			return getDestroyObjectAction_3095OutgoingLinks(view);
 		case InputPinInDestroyObjectActionEditPart.VISUAL_ID:
 			return getInputPin_3096OutgoingLinks(view);
+		case ValuePinInDestroyObjectActionEditPart.VISUAL_ID:
+			return getValuePin_3173OutgoingLinks(view);
+		case ActionPinInDestroyObjectActionEditPart.VISUAL_ID:
+			return getActionInputPin_3174OutgoingLinks(view);
 		case ReadVariableActionEditPart.VISUAL_ID:
 			return getReadVariableAction_3097OutgoingLinks(view);
 		case OutputPinInReadVariableActionAsResultEditPart.VISUAL_ID:
@@ -3781,10 +3843,22 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 			return getInputPin_3100OutgoingLinks(view);
 		case InputPinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
 			return getInputPin_3101OutgoingLinks(view);
+		case ValuePinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+			return getValuePin_3175OutgoingLinks(view);
+		case ValuePinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+			return getValuePin_3176OutgoingLinks(view);
+		case ActionPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+			return getActionInputPin_3177OutgoingLinks(view);
+		case ActionPinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+			return getActionInputPin_3178OutgoingLinks(view);
 		case BroadcastSignalActionEditPart.VISUAL_ID:
 			return getBroadcastSignalAction_3102OutgoingLinks(view);
 		case InputPinInBroadcastSignalActionEditPart.VISUAL_ID:
 			return getInputPin_3103OutgoingLinks(view);
+		case ValuePinInBroadcastSignalActionEditPart.VISUAL_ID:
+			return getValuePin_3179OutgoingLinks(view);
+		case ActionPinInBroadcastSignalActionEditPart.VISUAL_ID:
+			return getActionInputPin_3180OutgoingLinks(view);
 		case CentralBufferNodeEditPart.VISUAL_ID:
 			return getCentralBufferNode_3104OutgoingLinks(view);
 		case ConstraintEditPartCN.VISUAL_ID:
@@ -4484,6 +4558,20 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public List<UMLLinkDescriptor> getValuePin_3173ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getActionInputPin_3174ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public List<UMLLinkDescriptor> getReadVariableAction_3097ContainedLinks(View view) {
 		ReadVariableAction modelElement = (ReadVariableAction) view.getElement();
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
@@ -4529,6 +4617,34 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public List<UMLLinkDescriptor> getValuePin_3175ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getValuePin_3176ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getActionInputPin_3177ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getActionInputPin_3178ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public List<UMLLinkDescriptor> getBroadcastSignalAction_3102ContainedLinks(View view) {
 		BroadcastSignalAction modelElement = (BroadcastSignalAction) view.getElement();
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
@@ -4542,6 +4658,20 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	 * @generated
 	 */
 	public List<UMLLinkDescriptor> getInputPin_3103ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getValuePin_3179ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getActionInputPin_3180ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -6178,6 +6308,36 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public List<UMLLinkDescriptor> getValuePin_3173IncomingLinks(View view) {
+		ValuePin modelElement = (ValuePin) view.getElement();
+		CrossReferenceAdapter crossReferencer = CrossReferenceAdapter.getCrossReferenceAdapter(view.eResource().getResourceSet());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4003(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4004(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4006(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4007(modelElement, crossReferencer));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getActionInputPin_3174IncomingLinks(View view) {
+		ActionInputPin modelElement = (ActionInputPin) view.getElement();
+		CrossReferenceAdapter crossReferencer = CrossReferenceAdapter.getCrossReferenceAdapter(view.eResource().getResourceSet());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4003(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4004(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4006(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4007(modelElement, crossReferencer));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public List<UMLLinkDescriptor> getReadVariableAction_3097IncomingLinks(View view) {
 		ReadVariableAction modelElement = (ReadVariableAction) view.getElement();
 		CrossReferenceAdapter crossReferencer = CrossReferenceAdapter.getCrossReferenceAdapter(view.eResource().getResourceSet());
@@ -6251,6 +6411,66 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public List<UMLLinkDescriptor> getValuePin_3175IncomingLinks(View view) {
+		ValuePin modelElement = (ValuePin) view.getElement();
+		CrossReferenceAdapter crossReferencer = CrossReferenceAdapter.getCrossReferenceAdapter(view.eResource().getResourceSet());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4003(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4004(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4006(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4007(modelElement, crossReferencer));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getValuePin_3176IncomingLinks(View view) {
+		ValuePin modelElement = (ValuePin) view.getElement();
+		CrossReferenceAdapter crossReferencer = CrossReferenceAdapter.getCrossReferenceAdapter(view.eResource().getResourceSet());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4003(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4004(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4006(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4007(modelElement, crossReferencer));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getActionInputPin_3177IncomingLinks(View view) {
+		ActionInputPin modelElement = (ActionInputPin) view.getElement();
+		CrossReferenceAdapter crossReferencer = CrossReferenceAdapter.getCrossReferenceAdapter(view.eResource().getResourceSet());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4003(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4004(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4006(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4007(modelElement, crossReferencer));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getActionInputPin_3178IncomingLinks(View view) {
+		ActionInputPin modelElement = (ActionInputPin) view.getElement();
+		CrossReferenceAdapter crossReferencer = CrossReferenceAdapter.getCrossReferenceAdapter(view.eResource().getResourceSet());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4003(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4004(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4006(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4007(modelElement, crossReferencer));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public List<UMLLinkDescriptor> getBroadcastSignalAction_3102IncomingLinks(View view) {
 		BroadcastSignalAction modelElement = (BroadcastSignalAction) view.getElement();
 		CrossReferenceAdapter crossReferencer = CrossReferenceAdapter.getCrossReferenceAdapter(view.eResource().getResourceSet());
@@ -6267,6 +6487,36 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	 */
 	public List<UMLLinkDescriptor> getInputPin_3103IncomingLinks(View view) {
 		InputPin modelElement = (InputPin) view.getElement();
+		CrossReferenceAdapter crossReferencer = CrossReferenceAdapter.getCrossReferenceAdapter(view.eResource().getResourceSet());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4003(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4004(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4006(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4007(modelElement, crossReferencer));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getValuePin_3179IncomingLinks(View view) {
+		ValuePin modelElement = (ValuePin) view.getElement();
+		CrossReferenceAdapter crossReferencer = CrossReferenceAdapter.getCrossReferenceAdapter(view.eResource().getResourceSet());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4003(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4004(modelElement, crossReferencer));
+		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4006(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4007(modelElement, crossReferencer));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getActionInputPin_3180IncomingLinks(View view) {
+		ActionInputPin modelElement = (ActionInputPin) view.getElement();
 		CrossReferenceAdapter crossReferencer = CrossReferenceAdapter.getCrossReferenceAdapter(view.eResource().getResourceSet());
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4003(modelElement, crossReferencer));
@@ -8211,6 +8461,28 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public List<UMLLinkDescriptor> getValuePin_3173OutgoingLinks(View view) {
+		ValuePin modelElement = (ValuePin) view.getElement();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getActionInputPin_3174OutgoingLinks(View view) {
+		ActionInputPin modelElement = (ActionInputPin) view.getElement();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public List<UMLLinkDescriptor> getReadVariableAction_3097OutgoingLinks(View view) {
 		ReadVariableAction modelElement = (ReadVariableAction) view.getElement();
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
@@ -8272,6 +8544,50 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public List<UMLLinkDescriptor> getValuePin_3175OutgoingLinks(View view) {
+		ValuePin modelElement = (ValuePin) view.getElement();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getValuePin_3176OutgoingLinks(View view) {
+		ValuePin modelElement = (ValuePin) view.getElement();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getActionInputPin_3177OutgoingLinks(View view) {
+		ActionInputPin modelElement = (ActionInputPin) view.getElement();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getActionInputPin_3178OutgoingLinks(View view) {
+		ActionInputPin modelElement = (ActionInputPin) view.getElement();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public List<UMLLinkDescriptor> getBroadcastSignalAction_3102OutgoingLinks(View view) {
 		BroadcastSignalAction modelElement = (BroadcastSignalAction) view.getElement();
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
@@ -8288,6 +8604,28 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	 */
 	public List<UMLLinkDescriptor> getInputPin_3103OutgoingLinks(View view) {
 		InputPin modelElement = (InputPin) view.getElement();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getValuePin_3179OutgoingLinks(View view) {
+		ValuePin modelElement = (ValuePin) view.getElement();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<UMLLinkDescriptor> getActionInputPin_3180OutgoingLinks(View view) {
+		ActionInputPin modelElement = (ActionInputPin) view.getElement();
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4003(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4004(modelElement));

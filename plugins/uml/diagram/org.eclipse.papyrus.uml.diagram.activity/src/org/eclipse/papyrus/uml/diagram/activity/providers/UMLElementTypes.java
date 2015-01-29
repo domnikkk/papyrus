@@ -404,6 +404,16 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ValuePin_3173 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3173"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3174 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3174"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ReadVariableAction_3097 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ReadVariableAction_3097"); //$NON-NLS-1$
 
 	/**
@@ -429,12 +439,42 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ValuePin_3175 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3175"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValuePin_3176 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3176"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3177 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActoinInputPin_3177"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3178 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3178"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType BroadcastSignalAction_3102 = getElementType("org.eclipse.papyrus.uml.diagram.activity.BroadcastSignalAction_3102"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType InputPin_3103 = getElementType("org.eclipse.papyrus.uml.diagram.activity.InputPin_3103"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValuePin_3179 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ValuePin_3179"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActionInputPin_3180 = getElementType("org.eclipse.papyrus.uml.diagram.activity.ActionInputPin_3180"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -985,13 +1025,21 @@ public class UMLElementTypes {
 			elements.put(OutputPin_3094, UMLPackage.eINSTANCE.getOutputPin());
 			elements.put(DestroyObjectAction_3095, UMLPackage.eINSTANCE.getDestroyObjectAction());
 			elements.put(InputPin_3096, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(ValuePin_3173, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ActionInputPin_3174, UMLPackage.eINSTANCE.getActionInputPin());
 			elements.put(ReadVariableAction_3097, UMLPackage.eINSTANCE.getReadVariableAction());
 			elements.put(OutputPin_3098, UMLPackage.eINSTANCE.getOutputPin());
 			elements.put(AddVariableValueAction_3099, UMLPackage.eINSTANCE.getAddVariableValueAction());
 			elements.put(InputPin_3100, UMLPackage.eINSTANCE.getInputPin());
 			elements.put(InputPin_3101, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(ValuePin_3175, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ValuePin_3176, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ActionInputPin_3177, UMLPackage.eINSTANCE.getActionInputPin());
+			elements.put(ActionInputPin_3178, UMLPackage.eINSTANCE.getActionInputPin());
 			elements.put(BroadcastSignalAction_3102, UMLPackage.eINSTANCE.getBroadcastSignalAction());
 			elements.put(InputPin_3103, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(ValuePin_3179, UMLPackage.eINSTANCE.getValuePin());
+			elements.put(ActionInputPin_3180, UMLPackage.eINSTANCE.getActionInputPin());
 			elements.put(CentralBufferNode_3104, UMLPackage.eINSTANCE.getCentralBufferNode());
 			elements.put(Constraint_3112, UMLPackage.eINSTANCE.getConstraint());
 			elements.put(StartObjectBehaviorAction_3113, UMLPackage.eINSTANCE.getStartObjectBehaviorAction());
@@ -1163,13 +1211,21 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(OutputPin_3094);
 			KNOWN_ELEMENT_TYPES.add(DestroyObjectAction_3095);
 			KNOWN_ELEMENT_TYPES.add(InputPin_3096);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3173);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3174);
 			KNOWN_ELEMENT_TYPES.add(ReadVariableAction_3097);
 			KNOWN_ELEMENT_TYPES.add(OutputPin_3098);
 			KNOWN_ELEMENT_TYPES.add(AddVariableValueAction_3099);
 			KNOWN_ELEMENT_TYPES.add(InputPin_3100);
 			KNOWN_ELEMENT_TYPES.add(InputPin_3101);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3175);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3176);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3177);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3178);
 			KNOWN_ELEMENT_TYPES.add(BroadcastSignalAction_3102);
 			KNOWN_ELEMENT_TYPES.add(InputPin_3103);
+			KNOWN_ELEMENT_TYPES.add(ValuePin_3179);
+			KNOWN_ELEMENT_TYPES.add(ActionInputPin_3180);
 			KNOWN_ELEMENT_TYPES.add(CentralBufferNode_3104);
 			KNOWN_ELEMENT_TYPES.add(Constraint_3112);
 			KNOWN_ELEMENT_TYPES.add(StartObjectBehaviorAction_3113);
@@ -1420,6 +1476,10 @@ public class UMLElementTypes {
 			return DestroyObjectAction_3095;
 		case InputPinInDestroyObjectActionEditPart.VISUAL_ID:
 			return InputPin_3096;
+		case ValuePinInDestroyObjectActionEditPart.VISUAL_ID:
+			return ValuePin_3173;
+		case ActionPinInDestroyObjectActionEditPart.VISUAL_ID:
+			return ActionInputPin_3174;
 		case ReadVariableActionEditPart.VISUAL_ID:
 			return ReadVariableAction_3097;
 		case OutputPinInReadVariableActionAsResultEditPart.VISUAL_ID:
@@ -1430,10 +1490,22 @@ public class UMLElementTypes {
 			return InputPin_3100;
 		case InputPinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
 			return InputPin_3101;
+		case ValuePinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+			return ValuePin_3175;
+		case ValuePinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+			return ValuePin_3176;
+		case ActionPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+			return ActionInputPin_3177;
+		case ActionPinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+			return ActionInputPin_3178;
 		case BroadcastSignalActionEditPart.VISUAL_ID:
 			return BroadcastSignalAction_3102;
 		case InputPinInBroadcastSignalActionEditPart.VISUAL_ID:
 			return InputPin_3103;
+		case ValuePinInBroadcastSignalActionEditPart.VISUAL_ID:
+			return ValuePin_3179;
+		case ActionPinInBroadcastSignalActionEditPart.VISUAL_ID:
+			return ActionInputPin_3180;
 		case CentralBufferNodeEditPart.VISUAL_ID:
 			return CentralBufferNode_3104;
 		case ConstraintEditPartCN.VISUAL_ID:

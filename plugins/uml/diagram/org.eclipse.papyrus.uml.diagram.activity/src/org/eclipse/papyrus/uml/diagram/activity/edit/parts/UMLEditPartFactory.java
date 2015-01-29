@@ -563,6 +563,22 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new InputPinInDestroyObjectActionLabelEditPart(view);
 			case InputPinInDestroyObjectActionAppliedStereotypeWrappingLabelEditPart.VISUAL_ID:
 				return new InputPinInDestroyObjectActionAppliedStereotypeWrappingLabelEditPart(view);
+			case ValuePinInDestroyObjectActionEditPart.VISUAL_ID:
+				return new ValuePinInDestroyObjectActionEditPart(view);
+			case ValuePinInDestroyObjectActionLabelEditPart.VISUAL_ID:
+				return new ValuePinInDestroyObjectActionLabelEditPart(view);
+			case ValuePinInDestroyObjectActionValueEditPart.VISUAL_ID:
+				return new ValuePinInDestroyObjectActionValueEditPart(view);
+			case ValuePinInDestroyObjectActionAppliedStereotypeWrappingLabelEditPart.VISUAL_ID:
+				return new ValuePinInDestroyObjectActionAppliedStereotypeWrappingLabelEditPart(view);
+			case ActionPinInDestroyObjectActionEditPart.VISUAL_ID:
+				return new ActionPinInDestroyObjectActionEditPart(view);
+			case ActionPinInDestroyObjectActionLabelEditPart.VISUAL_ID:
+				return new ActionPinInDestroyObjectActionLabelEditPart(view);
+			case ActionPinInDestroyObjectActionValueEditPart.VISUAL_ID:
+				return new ActionPinInDestroyObjectActionValueEditPart(view);
+			case ActionPinInDestroyObjectActionAppliedStereotypeWrappingLabelEditPart.VISUAL_ID:
+				return new ActionPinInDestroyObjectActionAppliedStereotypeWrappingLabelEditPart(view);
 			case ReadVariableActionEditPart.VISUAL_ID:
 				return new ReadVariableActionEditPart(view);
 			case ReadVariableActionNameEditPart.VISUAL_ID:
@@ -593,6 +609,38 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new InputPinInAddVariableValueActionAsValueLabelEditPart(view);
 			case InputPinInAddVariableValueActionAsValueAppliedStereotypeWrappingLabelEditPart.VISUAL_ID:
 				return new InputPinInAddVariableValueActionAsValueAppliedStereotypeWrappingLabelEditPart(view);
+			case ValuePinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+				return new ValuePinInAddVariableValueActionAsInsertAtEditPart(view);
+			case ValuePinInAddVariableValueActionAsInsertAtLabelEditPart.VISUAL_ID:
+				return new ValuePinInAddVariableValueActionAsInsertAtLabelEditPart(view);
+			case ValuePinInAddVariableValueActionAsInsertAtValueEditPart.VISUAL_ID:
+				return new ValuePinInAddVariableValueActionAsInsertAtValueEditPart(view);
+			case ValuePinInAddVariableValueActionAsInsertAtAppliedStereotypeWrappingLabelEditPart.VISUAL_ID:
+				return new ValuePinInAddVariableValueActionAsInsertAtAppliedStereotypeWrappingLabelEditPart(view);
+			case ValuePinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+				return new ValuePinInAddVariableValueActionAsValueEditPart(view);
+			case ValuePinInAddVariableValueActionAsValueLabelEditPart.VISUAL_ID:
+				return new ValuePinInAddVariableValueActionAsValueLabelEditPart(view);
+			case ValuePinInAddVariableValueActionAsValueValueEditPart.VISUAL_ID:
+				return new ValuePinInAddVariableValueActionAsValueValueEditPart(view);
+			case ValuePinInAddVariableValueActionAsValueAppliedStereotypeWrappingLabelEditPart.VISUAL_ID:
+				return new ValuePinInAddVariableValueActionAsValueAppliedStereotypeWrappingLabelEditPart(view);
+			case ActionPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+				return new ActionPinInAddVariableValueActionAsInsertAtEditPart(view);
+			case ActionPinInAddVariableValueActionAsInsertAtLabelEditPart.VISUAL_ID:
+				return new ActionPinInAddVariableValueActionAsInsertAtLabelEditPart(view);
+			case ActionPinInAddVariableValueActionAsInsertAtValueEditPart.VISUAL_ID:
+				return new ActionPinInAddVariableValueActionAsInsertAtValueEditPart(view);
+			case ActionPinInAddVariableValueActionAsInsertAtAppliedStereotypeWrappingLabelEditPart.VISUAL_ID:
+				return new ActionPinInAddVariableValueActionAsInsertAtAppliedStereotypeWrappingLabelEditPart(view);
+			case ActionPinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+				return new ActionPinInAddVariableValueActionAsValueEditPart(view);
+			case ActionPinInAddVariableValueActionAsValueLabelEditPart.VISUAL_ID:
+				return new ActionPinInAddVariableValueActionAsValueLabelEditPart(view);
+			case ActionPinInAddVariableValueActionAsValueValueEditPart.VISUAL_ID:
+				return new ActionPinInAddVariableValueActionAsValueValueEditPart(view);
+			case ActionPinInAddVariableValueActionAsValueAppliedStereotypeWrappingLabelEditPart.VISUAL_ID:
+				return new ActionPinInAddVariableValueActionAsValueAppliedStereotypeWrappingLabelEditPart(view);
 			case BroadcastSignalActionEditPart.VISUAL_ID:
 				return new BroadcastSignalActionEditPart(view);
 			case BroadcastSignalActionNameEditPart.VISUAL_ID:
@@ -607,6 +655,22 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new InputPinInBroadcastSignalActionValueLabelEditPart(view);
 			case InputPinInBroadcastSignalActionAppliedStereotypeWrappingLabelEditPart.VISUAL_ID:
 				return new InputPinInBroadcastSignalActionAppliedStereotypeWrappingLabelEditPart(view);
+			case ValuePinInBroadcastSignalActionEditPart.VISUAL_ID:
+				return new ValuePinInBroadcastSignalActionEditPart(view);
+			case ValuePinInBroadcastSignalActionLabelEditPart.VISUAL_ID:
+				return new ValuePinInBroadcastSignalActionLabelEditPart(view);
+			case ValuePinInBroadcastSignalActionValueLabelEditPart.VISUAL_ID:
+				return new ValuePinInBroadcastSignalActionValueLabelEditPart(view);
+			case ValuePinInBroadcastSignalActionAppliedStereotypeWrappingLabelEditPart.VISUAL_ID:
+				return new ValuePinInBroadcastSignalActionAppliedStereotypeWrappingLabelEditPart(view);
+			case ActionPinInBroadcastSignalActionEditPart.VISUAL_ID:
+				return new ActionPinInBroadcastSignalActionEditPart(view);
+			case ActionPinInBroadcastSignalActionLabelEditPart.VISUAL_ID:
+				return new ActionPinInBroadcastSignalActionLabelEditPart(view);
+			case ActionPinInBroadcastSignalActionValueLabelEditPart.VISUAL_ID:
+				return new ActionPinInBroadcastSignalActionValueLabelEditPart(view);
+			case ActionPinInBroadcastSignalActionAppliedStereotypeWrappingLabelEditPart.VISUAL_ID:
+				return new ActionPinInBroadcastSignalActionAppliedStereotypeWrappingLabelEditPart(view);
 			case CentralBufferNodeEditPart.VISUAL_ID:
 				return new CentralBufferNodeEditPart(view);
 			case CentralBufferNodeLabelEditPart.VISUAL_ID:

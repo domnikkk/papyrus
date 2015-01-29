@@ -294,6 +294,12 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3096((InputPin) domainElement)) {
 				return InputPinInDestroyObjectActionEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3173((ValuePin) domainElement)) {
+				return ValuePinInDestroyObjectActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3174((ActionInputPin) domainElement)) {
+				return ActionPinInDestroyObjectActionEditPart.VISUAL_ID;
+			}
 			break;
 		case ReadVariableActionEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass()) && isOutputPin_3098((OutputPin) domainElement)) {
@@ -307,10 +313,28 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3101((InputPin) domainElement)) {
 				return InputPinInAddVariableValueActionAsValueEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3175((ValuePin) domainElement)) {
+				return ValuePinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3176((ValuePin) domainElement)) {
+				return ValuePinInAddVariableValueActionAsValueEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3177((ActionInputPin) domainElement)) {
+				return ActionPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3178((ActionInputPin) domainElement)) {
+				return ActionPinInAddVariableValueActionAsValueEditPart.VISUAL_ID;
+			}
 			break;
 		case BroadcastSignalActionEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass()) && isInputPin_3103((InputPin) domainElement)) {
 				return InputPinInBroadcastSignalActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getValuePin().isSuperTypeOf(domainElement.eClass()) && isValuePin_3179((ValuePin) domainElement)) {
+				return ValuePinInBroadcastSignalActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActionInputPin().isSuperTypeOf(domainElement.eClass()) && isActionInputPin_3180((ActionInputPin) domainElement)) {
+				return ActionPinInBroadcastSignalActionEditPart.VISUAL_ID;
 			}
 			break;
 		case StartObjectBehavoiurActionEditPart.VISUAL_ID:
@@ -3023,12 +3047,40 @@ public class UMLVisualIDRegistry {
 			if (InputPinInDestroyObjectActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ValuePinInDestroyObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInDestroyObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case InputPinInDestroyObjectActionEditPart.VISUAL_ID:
 			if (InputPinInDestroyObjectActionLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (InputPinInDestroyObjectActionAppliedStereotypeWrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ValuePinInDestroyObjectActionEditPart.VISUAL_ID:
+			if (ValuePinInDestroyObjectActionLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInDestroyObjectActionValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInDestroyObjectActionAppliedStereotypeWrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActionPinInDestroyObjectActionEditPart.VISUAL_ID:
+			if (ActionPinInDestroyObjectActionLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInDestroyObjectActionValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInDestroyObjectActionAppliedStereotypeWrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -3064,6 +3116,18 @@ public class UMLVisualIDRegistry {
 			if (InputPinInAddVariableValueActionAsValueEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ValuePinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInAddVariableValueActionAsValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInAddVariableValueActionAsValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case InputPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
 			if (InputPinInAddVariableValueActionAsInsertAtLabelEditPart.VISUAL_ID == nodeVisualID) {
@@ -3081,6 +3145,50 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ValuePinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+			if (ValuePinInAddVariableValueActionAsInsertAtLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInAddVariableValueActionAsInsertAtValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInAddVariableValueActionAsInsertAtAppliedStereotypeWrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ValuePinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+			if (ValuePinInAddVariableValueActionAsValueLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInAddVariableValueActionAsValueValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInAddVariableValueActionAsValueAppliedStereotypeWrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActionPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+			if (ActionPinInAddVariableValueActionAsInsertAtLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInAddVariableValueActionAsInsertAtValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInAddVariableValueActionAsInsertAtAppliedStereotypeWrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActionPinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+			if (ActionPinInAddVariableValueActionAsValueLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInAddVariableValueActionAsValueValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInAddVariableValueActionAsValueAppliedStereotypeWrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case BroadcastSignalActionEditPart.VISUAL_ID:
 			if (BroadcastSignalActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -3089,6 +3197,12 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (InputPinInBroadcastSignalActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInBroadcastSignalActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInBroadcastSignalActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -3100,6 +3214,28 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (InputPinInBroadcastSignalActionAppliedStereotypeWrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ValuePinInBroadcastSignalActionEditPart.VISUAL_ID:
+			if (ValuePinInBroadcastSignalActionLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInBroadcastSignalActionValueLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValuePinInBroadcastSignalActionAppliedStereotypeWrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActionPinInBroadcastSignalActionEditPart.VISUAL_ID:
+			if (ActionPinInBroadcastSignalActionLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInBroadcastSignalActionValueLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActionPinInBroadcastSignalActionAppliedStereotypeWrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -5521,7 +5657,23 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isInputPin_3096(InputPin domainElement) {
-		Object result = UMLOCLFactory.getExpression(31, UMLPackage.eINSTANCE.getInputPin(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(127, UMLPackage.eINSTANCE.getInputPin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isValuePin_3173(ValuePin domainElement) {
+		Object result = UMLOCLFactory.getExpression(126, UMLPackage.eINSTANCE.getValuePin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isActionInputPin_3174(ActionInputPin domainElement) {
+		Object result = UMLOCLFactory.getExpression(128, UMLPackage.eINSTANCE.getActionInputPin(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -5551,7 +5703,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isInputPin_3100(InputPin domainElement) {
-		Object result = UMLOCLFactory.getExpression(33, UMLPackage.eINSTANCE.getInputPin(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(133, UMLPackage.eINSTANCE.getInputPin(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -5566,7 +5718,39 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isInputPin_3101(InputPin domainElement) {
-		Object result = UMLOCLFactory.getExpression(34, UMLPackage.eINSTANCE.getInputPin(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(130, UMLPackage.eINSTANCE.getInputPin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isValuePin_3175(ValuePin domainElement) {
+		Object result = UMLOCLFactory.getExpression(134, UMLPackage.eINSTANCE.getValuePin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isValuePin_3176(ValuePin domainElement) {
+		Object result = UMLOCLFactory.getExpression(131, UMLPackage.eINSTANCE.getValuePin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isActionInputPin_3177(ActionInputPin domainElement) {
+		Object result = UMLOCLFactory.getExpression(132, UMLPackage.eINSTANCE.getActionInputPin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isActionInputPin_3178(ActionInputPin domainElement) {
+		Object result = UMLOCLFactory.getExpression(129, UMLPackage.eINSTANCE.getActionInputPin(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -5581,7 +5765,23 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isInputPin_3103(InputPin domainElement) {
-		Object result = UMLOCLFactory.getExpression(35, UMLPackage.eINSTANCE.getInputPin(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(135, UMLPackage.eINSTANCE.getInputPin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isValuePin_3179(ValuePin domainElement) {
+		Object result = UMLOCLFactory.getExpression(137, UMLPackage.eINSTANCE.getValuePin(), null).evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isActionInputPin_3180(ActionInputPin domainElement) {
+		Object result = UMLOCLFactory.getExpression(136, UMLPackage.eINSTANCE.getActionInputPin(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -6060,6 +6260,14 @@ public class UMLVisualIDRegistry {
 		case ActionPinInReadIsClassifiedObjectActionAsObjectEditPart.VISUAL_ID:
 		case ActionPinInReduceActionAsCollectionEditPart.VISUAL_ID:
 		case ActionPinInStartClassifierBehaviorActionAsObjectEditPart.VISUAL_ID:
+		case ValuePinInDestroyObjectActionEditPart.VISUAL_ID:
+		case ActionPinInDestroyObjectActionEditPart.VISUAL_ID:
+		case ValuePinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+		case ValuePinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+		case ActionPinInAddVariableValueActionAsInsertAtEditPart.VISUAL_ID:
+		case ActionPinInAddVariableValueActionAsValueEditPart.VISUAL_ID:
+		case ValuePinInBroadcastSignalActionEditPart.VISUAL_ID:
+		case ActionPinInBroadcastSignalActionEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
