@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013, 2014 CEA LIST, Christian W. Damus, and others.
+ * Copyright (c) 2013, 2015 CEA LIST, Christian W. Damus, and others.
  *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,7 @@
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) - Initial API and implementation
  *  Christian W. Damus - bug 399859
+ *  Christian W. Damus - bug 458655
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.decoratormodel.model;
@@ -19,11 +20,15 @@ import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.impl.InternalTransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.papyrus.infra.core.resource.AbstractBaseModel;
 import org.eclipse.papyrus.infra.core.resource.AbstractModel;
 import org.eclipse.papyrus.infra.core.resource.IModelSnippet;
@@ -31,6 +36,7 @@ import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.ModelUtils;
 import org.eclipse.papyrus.uml.decoratormodel.Activator;
 import org.eclipse.papyrus.uml.decoratormodel.helper.DecoratorModelUtils;
+import org.eclipse.uml2.common.util.CacheAdapter;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -194,6 +200,13 @@ public class DecoratorModel extends AbstractModel {
 
 		if (!result.isLoaded()) {
 			try {
+				// First, ensure that the transaction's change-recorder is attached to the resource and gets all notifications
+				// ahead of anything but the CacheAdapter so that it will propagate first to elements as they are loaded and
+				// will, therefore, have an opportunity to catch the base_Xyz reference proxy resolution events that trigger
+				// eventual diagram updates.
+				ensureTransactionChangeRecorder(result);
+
+				// Now load it
 				result.load(resourceSet.getLoadOptions());
 
 				// Ensure that references to base elements resolve so that the diagrams
@@ -205,6 +218,22 @@ public class DecoratorModel extends AbstractModel {
 		}
 
 		return result;
+	}
+
+	private void ensureTransactionChangeRecorder(Resource resource) {
+		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(resource);
+		if (domain != null) {
+			Adapter recorder = ((InternalTransactionalEditingDomain) domain).getChangeRecorder();
+			if (recorder != null) {
+				int afterCacheAdapter = resource.eAdapters().indexOf(CacheAdapter.getCacheAdapter(resource)) + 1;
+				int index = resource.eAdapters().indexOf(recorder);
+				if (index < 0) {
+					resource.eAdapters().add(afterCacheAdapter, recorder);
+				} else {
+					resource.eAdapters().move(afterCacheAdapter, index);
+				}
+			}
+		}
 	}
 
 	public static boolean isDecoratorModel(Resource resource) {
