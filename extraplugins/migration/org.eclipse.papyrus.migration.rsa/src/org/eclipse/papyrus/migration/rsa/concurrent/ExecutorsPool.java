@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *****************************************************************************/
-package org.eclipse.papyrus.migration.rsa.transformation;
+package org.eclipse.papyrus.migration.rsa.concurrent;
 
 import java.util.HashMap;
 import java.util.LinkedList;

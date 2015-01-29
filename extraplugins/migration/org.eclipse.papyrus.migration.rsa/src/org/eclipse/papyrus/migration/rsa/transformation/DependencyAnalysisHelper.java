@@ -33,6 +33,7 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersFactory;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping;
+import org.eclipse.papyrus.migration.rsa.concurrent.ThreadSafeResourceSet;
 import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.profile.IRegisteredProfile;
@@ -50,7 +51,7 @@ public class DependencyAnalysisHelper {
 	protected final static String rsaProfileExtension = "epx"; //$NON-NLS-1$
 
 	// ResourceSet used to load and explore Static Libraries
-	protected final ResourceSet localResourceSet = new ResourceSetImpl();
+	protected final ResourceSet localResourceSet = new ThreadSafeResourceSet();
 
 	// Store the broken URIs without trying to resolve them. We don't have enough information to resolve them during the first phase of the model import
 	// The Key is the resource URI, the value is the Set of each individual EObject Fragment (We need the EObject fragments to find potential matches)

@@ -73,6 +73,9 @@ import org.eclipse.papyrus.migration.rsa.Activator;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersFactory;
 import org.eclipse.papyrus.migration.rsa.blackbox.ProfileBaseHelper;
+import org.eclipse.papyrus.migration.rsa.concurrent.ExecutorsPool;
+import org.eclipse.papyrus.migration.rsa.concurrent.ResourceAccessHelper;
+import org.eclipse.papyrus.migration.rsa.concurrent.ThreadSafeResourceSet;
 import org.eclipse.papyrus.migration.rsa.default_.DefaultPackage;
 import org.eclipse.papyrus.migration.rsa.profilebase.ProfileBasePackage;
 import org.eclipse.papyrus.uml.documentation.Documentation.DocumentationPackage;
@@ -271,7 +274,7 @@ public class ImportTransformation {
 	 * Initializes the resource set, and resolve all dependencies
 	 */
 	protected void initResourceSet(IProgressMonitor monitor) {
-		resourceSet = new ResourceSetImpl();
+		resourceSet = new ThreadSafeResourceSet();
 		resourceSet.getLoadOptions().put(XMLResource.OPTION_DEFER_ATTACHMENT, true);
 		resourceSet.getLoadOptions().put(XMLResource.OPTION_DEFER_IDREF_RESOLUTION, true);
 		resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
@@ -450,7 +453,6 @@ public class ImportTransformation {
 			monitor.subTask("Cleaning-up target model...");
 			URI notationModelURI = null;
 			URI sashModelURI = null;
-			// ResourceSet resourceSet = new ResourceSetImpl();
 
 			targetURI = convertToPapyrus(sourceURI, UMLResource.FILE_EXTENSION);
 			notationModelURI = convertToPapyrus(sourceURI, "notation"); // TODO use constant
@@ -559,7 +561,7 @@ public class ImportTransformation {
 
 			for (Resource resource : resourcesToSave) {
 				try {
-					resource.save(null);
+					ResourceAccessHelper.INSTANCE.saveResource(resource, null);
 				} catch (Exception ex) {
 					Activator.log.error(ex);
 					generationStatus.add(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "An exception occurred during save", ex));

@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.locks.Lock;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -49,6 +50,8 @@ import org.eclipse.papyrus.migration.rsa.Activator;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping;
+import org.eclipse.papyrus.migration.rsa.concurrent.ResourceAccessHelper;
+import org.eclipse.papyrus.migration.rsa.concurrent.ThreadSafeModelSet;
 import org.eclipse.papyrus.migration.rsa.internal.schedule.JobWrapper;
 import org.eclipse.papyrus.migration.rsa.internal.schedule.Schedulable;
 import org.eclipse.papyrus.migration.rsa.internal.schedule.Scheduler;
@@ -469,7 +472,7 @@ public class ImportTransformationLauncher {
 
 	protected IStatus fixDependencies(ImportTransformation transformation, IProgressMonitor monitor, Map<URI, URI> urisToReplace, Map<URI, URI> profileUrisToReplace) {
 		monitor.subTask("Importing dependencies for " + transformation.getModelName());
-		final ModelSet modelSet = new DiResourceSet();
+		final ModelSet modelSet = new ThreadSafeModelSet();
 
 		final Collection<Resource> resourcesToRepair;
 		try {
@@ -524,8 +527,9 @@ public class ImportTransformationLauncher {
 		try {
 
 			for (Resource resource : resourcesToRepair) {
-				resource.save(null);
+				ResourceAccessHelper.INSTANCE.saveResource(resource, null);
 			}
+			
 			monitor.worked(1);
 
 			final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
