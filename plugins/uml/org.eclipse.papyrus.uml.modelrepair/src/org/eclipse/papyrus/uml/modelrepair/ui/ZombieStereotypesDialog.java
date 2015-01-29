@@ -13,6 +13,7 @@
  *   Christian W. Damus - bug 451557
  *   Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - bug 454997
  *   Christian W. Damus - bug 436666
+ *   Christian W. Damus - bug 458736
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.ui;
@@ -36,11 +37,13 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.RollbackException;
 import org.eclipse.emf.transaction.Transaction;
 import org.eclipse.emf.transaction.TransactionalCommandStack;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.TrayDialog;
@@ -62,7 +65,6 @@ import org.eclipse.jface.window.IShellProvider;
 import org.eclipse.jface.window.SameShellProvider;
 import org.eclipse.jface.wizard.ProgressMonitorPart;
 import org.eclipse.osgi.util.NLS;
-import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
@@ -120,17 +122,17 @@ public class ZombieStereotypesDialog extends TrayDialog {
 	/**
 	 * @param shell
 	 */
-	public ZombieStereotypesDialog(Shell shell, ModelSet modelSet, Iterable<? extends ZombieStereotypesDescriptor> zombies) throws ServiceException {
+	public ZombieStereotypesDialog(Shell shell, ResourceSet modelSet, Iterable<? extends ZombieStereotypesDescriptor> zombies) throws ServiceException {
 		this(new SameShellProvider(shell), modelSet, zombies);
 	}
 
 	/**
 	 * @param parentShell
 	 */
-	public ZombieStereotypesDialog(IShellProvider parentShell, ModelSet modelSet, Iterable<? extends ZombieStereotypesDescriptor> zombies) throws ServiceException {
+	public ZombieStereotypesDialog(IShellProvider parentShell, ResourceSet modelSet, Iterable<? extends ZombieStereotypesDescriptor> zombies) throws ServiceException {
 		super(parentShell);
 
-		this.editingDomain = modelSet.getTransactionalEditingDomain();
+		this.editingDomain = TransactionUtil.getEditingDomain(modelSet);
 		this.zombieDescriptors = Lists.newArrayList(zombies);
 		this.labelProviderService = ServiceUtilsForResourceSet.getInstance().getService(LabelProviderService.class, modelSet);
 		this.actionsToApply = createActionsToApply();

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014, 2015 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Christian W. Damus - bug 458736
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.ui;
@@ -26,11 +27,11 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.window.Window;
-import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.providers.AdapterFactoryHierarchicContentProvider;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
@@ -56,17 +57,19 @@ import com.google.common.collect.Lists;
 /**
  * This is the ZombieStereotypeDialogPresenter type. Enjoy.
  */
-public class ZombieStereotypeDialogPresenter {
+public class ZombieStereotypeDialogPresenter implements IZombieStereotypePresenter {
 
 	private final Shell parentShell;
 
-	private final ModelSet modelSet;
+	private final ResourceSet modelSet;
 
 	private final List<ZombieStereotypesDescriptor> zombieDescriptors = Lists.newArrayListWithExpectedSize(1);
 
 	private final BrowseProfileSupplier dynamicProfileSupplier = new BrowseProfileSupplier();
 
-	private Runnable presentation;
+	private volatile Runnable presentation;
+
+	private Future<?> presentationFuture;
 
 	private final Lock lock = new ReentrantLock();
 
@@ -78,7 +81,7 @@ public class ZombieStereotypeDialogPresenter {
 
 	private ExecutorService pendingExecutor;
 
-	public ZombieStereotypeDialogPresenter(Shell parentShell, ModelSet modelSet) {
+	public ZombieStereotypeDialogPresenter(Shell parentShell, ResourceSet modelSet) {
 		super();
 
 		this.parentShell = parentShell;
@@ -90,6 +93,9 @@ public class ZombieStereotypeDialogPresenter {
 	public void dispose() {
 		detachPresentation();
 		uiExecutor.shutdown();
+		if (pendingExecutor != null) {
+			pendingExecutor.shutdown();
+		}
 	}
 
 	void detachPresentation() {
@@ -102,7 +108,7 @@ public class ZombieStereotypeDialogPresenter {
 		}
 	}
 
-	public Function<EPackage, Profile> getDynamicProfileSupplier() {
+	public Function<? super EPackage, Profile> getDynamicProfileSupplier() {
 		return dynamicProfileSupplier;
 	}
 
@@ -110,50 +116,76 @@ public class ZombieStereotypeDialogPresenter {
 		lock.lock();
 		try {
 			zombieDescriptors.add(zombies);
-
-			if (presentation == null) {
-				internalSetPending(true);
-
-				presentation = new Runnable() {
-
-					public void run() {
-						List<ZombieStereotypesDescriptor> zombies;
-
-						lock.lock();
-						try {
-							if (presentation != this) {
-								internalSetPending(false);
-								return;
-							}
-							zombies = ImmutableList.copyOf(zombieDescriptors);
-							detachPresentation();
-						} finally {
-							lock.unlock();
-						}
-
-						try {
-							if (!zombies.isEmpty()) {
-								try {
-									ZombieStereotypesDialog zombieDialog = new ZombieStereotypesDialog(parentShell, modelSet, zombies);
-									dynamicProfileSupplier.setParentWindow(zombieDialog);
-									zombieDialog.setBlockOnOpen(true);
-									zombieDialog.open();
-								} catch (ServiceException e) {
-									StatusManager.getManager().handle(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to open model repair dialog.", e), StatusManager.SHOW);
-								} finally {
-									dynamicProfileSupplier.setParentWindow(null);
-								}
-							}
-						} finally {
-							internalSetPending(false);
-						}
-					}
-				};
-
-				uiExecutor.submit(presentation);
-			}
+			engagePresentation();
 		} finally {
 			lock.unlock();
+		}
+	}
+
+	public void asyncAddZombies(Runnable runnable) {
+		lock.lock();
+		try {
+			uiExecutor.execute(runnable);
+
+			// Bump the presentation along until after this runnable has executed
+			if (presentationFuture != null) {
+				presentationFuture.cancel(false);
+				presentation = null;
+			}
+			engagePresentation();
+		} finally {
+			lock.unlock();
+		}
+	}
+
+	/**
+	 * Engages the presentation of zombies if it is not already engaged.
+	 * 
+	 * @precondition The {@link #lock} is locked
+	 */
+	private void engagePresentation() {
+		if (presentation == null) {
+			if (!isPending()) {
+				internalSetPending(true);
+			}
+
+			presentation = new Runnable() {
+
+				public void run() {
+					List<ZombieStereotypesDescriptor> zombies;
+
+					lock.lock();
+					try {
+						if (presentation != this) {
+							internalSetPending(false);
+							return;
+						}
+						zombies = ImmutableList.copyOf(zombieDescriptors);
+						detachPresentation();
+					} finally {
+						lock.unlock();
+					}
+
+					try {
+						if (!zombies.isEmpty()) {
+							try {
+								ZombieStereotypesDialog zombieDialog = new ZombieStereotypesDialog(parentShell, modelSet, zombies);
+								dynamicProfileSupplier.setParentWindow(zombieDialog);
+								zombieDialog.setBlockOnOpen(true);
+								zombieDialog.open();
+							} catch (ServiceException e) {
+								StatusManager.getManager().handle(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to open model repair dialog.", e), StatusManager.SHOW);
+							} finally {
+								dynamicProfileSupplier.setParentWindow(null);
+							}
+						}
+					} finally {
+						internalSetPending(false);
+					}
+				}
+			};
+
+			presentationFuture = uiExecutor.submit(presentation);
 		}
 	}
 

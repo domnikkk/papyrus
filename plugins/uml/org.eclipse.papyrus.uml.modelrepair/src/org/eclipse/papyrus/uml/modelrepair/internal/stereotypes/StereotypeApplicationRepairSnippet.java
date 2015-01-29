@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA, Christian W. Damus, and others.
+ * Copyright (c) 2014, 2015 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -10,6 +10,7 @@
  *   Christian W. Damus (CEA) - Initial API and implementation
  *   Christian W. Damus - bug 455248
  *   Christian W. Damus - bug 455329
+ *   Christian W. Damus - bug 458736
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -38,6 +39,7 @@ import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.infra.services.labelprovider.service.impl.LabelProviderServiceImpl;
 import org.eclipse.papyrus.uml.modelrepair.Activator;
+import org.eclipse.papyrus.uml.modelrepair.ui.IZombieStereotypePresenter;
 import org.eclipse.papyrus.uml.modelrepair.ui.ZombieStereotypeDialogPresenter;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.uml2.uml.Component;
@@ -60,21 +62,32 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 
 	private final UMLResourceLoadAdapter adapter = new UMLResourceLoadAdapter();
 
+	private final Function<? super ModelSet, ? extends IZombieStereotypePresenter> presenterFunction;
+
 	private final Function<? super EPackage, Profile> dynamicProfileSupplier;
 
-	private ZombieStereotypeDialogPresenter presenter;
+	private IZombieStereotypePresenter presenter;
 
 	private LabelProviderService labelProviderService;
 
 	private boolean localLabelProvider;
 
 	public StereotypeApplicationRepairSnippet() {
-		this(null);
+		this(null, null);
 	}
 
-	protected StereotypeApplicationRepairSnippet(Function<? super EPackage, Profile> dynamicProfileSupplier) {
+	public StereotypeApplicationRepairSnippet(Function<? super ModelSet, ? extends IZombieStereotypePresenter> presenterFunction) {
+		this(presenterFunction, null);
+	}
+
+	protected StereotypeApplicationRepairSnippet(Function<? super ModelSet, ? extends IZombieStereotypePresenter> presenterFunction, Function<? super EPackage, Profile> dynamicProfileSupplier) {
 		super();
 
+		if (presenterFunction == null) {
+			presenterFunction = new DefaultPresenterFunction();
+		}
+
+		this.presenterFunction = presenterFunction;
 		this.dynamicProfileSupplier = dynamicProfileSupplier;
 	}
 
@@ -115,6 +128,17 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 	protected void handleResourceLoaded(final Resource resource) {
 		final ModelSet modelSet = (ModelSet) resource.getResourceSet();
 
+		if (presenter != null) {
+			// Because we could possibly be looking for zombies in a sub-model unit that has not yet been connected
+			// to its parent, wait until after loading the resource and resolving proxies is complete before
+			// looking for zombies
+			asyncComputeZombies(modelSet, resource);
+		} else {
+			computeZombies(modelSet, resource);
+		}
+	}
+
+	private void computeZombies(final ModelSet modelSet, final Resource resource) {
 		StereotypeRepairService.startedRepairing(modelSet, resource);
 		boolean presented = false;
 
@@ -136,6 +160,17 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 				StereotypeRepairService.finishedRepairing(modelSet, resource);
 			}
 		}
+	}
+
+	private void asyncComputeZombies(final ModelSet modelSet, final Resource resource) {
+		Runnable block = new Runnable() {
+
+			public void run() {
+				computeZombies(modelSet, resource);
+			}
+		};
+
+		presenter.asyncAddZombies(block);
 	}
 
 	protected ZombieStereotypesDescriptor getZombieStereotypes(Resource resource) {
@@ -246,16 +281,10 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 	//
 
 	public void start(ModelSet modelsManager) {
-		try {
-			IEditorPart editor = ServiceUtilsForResourceSet.getInstance().getService(IMultiDiagramEditor.class, modelsManager);
-
-			if (editor != null) {
-				// this model is opened in an editor. That is the context in which we want to provide our services
-				presenter = new ZombieStereotypeDialogPresenter(editor.getSite().getShell(), modelsManager);
-				adapter.adapt(modelsManager);
-			}
-		} catch (ServiceException e) {
-			// OK, there is no editor, so we aren't needed
+		presenter = presenterFunction.apply(modelsManager);
+		if (presenter != null) {
+			// Start listener for zombies to present
+			adapter.adapt(modelsManager);
 		}
 	}
 
@@ -375,6 +404,25 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 				}
 				break;
 			}
+		}
+	}
+
+	private static final class DefaultPresenterFunction implements Function<ResourceSet, IZombieStereotypePresenter> {
+		public IZombieStereotypePresenter apply(ResourceSet input) {
+			IZombieStereotypePresenter result = null;
+
+			try {
+				IEditorPart editor = ServiceUtilsForResourceSet.getInstance().getService(IMultiDiagramEditor.class, input);
+
+				if (editor != null) {
+					// this model is opened in an editor. That is the context in which we want to provide our services
+					result = new ZombieStereotypeDialogPresenter(editor.getSite().getShell(), input);
+				}
+			} catch (ServiceException e) {
+				// OK, there is no editor, so we aren't needed
+			}
+
+			return result;
 		}
 	}
 }

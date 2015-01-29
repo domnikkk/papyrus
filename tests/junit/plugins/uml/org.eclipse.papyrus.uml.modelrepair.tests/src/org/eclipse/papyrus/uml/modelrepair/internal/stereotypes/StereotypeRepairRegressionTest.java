@@ -11,6 +11,7 @@
  *   Christian W. Damus - bug 455248
  *   Christian W. Damus - bug 455329
  *   Christian W. Damus - bug 436666
+ *   Christian W. Damus - bug 458736
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -27,16 +28,22 @@ import java.lang.annotation.Target;
 import java.lang.reflect.Method;
 import java.util.Collection;
 import java.util.Set;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.rules.ModelSetFixture;
 import org.eclipse.papyrus.junit.utils.rules.PluginResource;
+import org.eclipse.papyrus.uml.modelrepair.ui.IZombieStereotypePresenter;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
@@ -49,7 +56,9 @@ import org.junit.Test;
 
 import com.google.common.base.Function;
 import com.google.common.base.Functions;
+import com.google.common.base.Predicates;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Iterables;
 
 
 /**
@@ -64,6 +73,8 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 	public final ModelSetFixture modelSet = new ModelSetFixture();
 
 	private StereotypeApplicationRepairSnippet fixture;
+
+	private TestPresenter presenter; // For tests that use it
 
 	private ZombieStereotypesDescriptor zombies;
 
@@ -274,6 +285,45 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 		assertThat(model.eResource().getContents(), is(ECollections.singletonEList((EObject) model)));
 	}
 
+	/**
+	 * Tests that a sub-united model in which package units do not repeat profile applications,
+	 * but rather just inherit them from parent units, such as might be imported from some other
+	 * UML tool, does not falsely trigger repair in the case where sub-units are lazily loaded
+	 * by cross-references after the main model has been loaded.
+	 * 
+	 * @see https://bugs.eclipse.org/bugs/show_bug.cgi?id=458736
+	 */
+	@Test
+	@Bug("458736")
+	@PluginResource("/resources/regression/bug458736/container.uml")
+	public void crossReferencedPackageUnitWithoutOwnProfileApplication_bug458736() throws InterruptedException {
+		// Resolving the imported package with its sub-unit shouldn't find zombies.
+		// The transaction context is crucial for ensuring asynchronous calculation of zombies because
+		// our test presenter relies on runExclusive for mutual exclusion
+		modelSet.getEditingDomain().runExclusive(new Runnable() {
+
+			@Override
+			public void run() {
+				// Ensure that we don't get a false positive
+				zombies = null;
+
+				// Make sure the sub-units aren't loaded
+				for (Resource next : Iterables.filter(modelSet.getResourceSet().getResources(), Predicates.not(Predicates.equalTo(modelSet.getModelResource())))) {
+					next.unload();
+				}
+
+				EcoreUtil.resolveAll(modelSet.getResourceSet());
+			}
+		});
+
+		// Wait for the asynchronous analysis to finish
+		Synchronizer sync = new Synchronizer();
+		presenter.asyncAddZombies(sync);
+		sync.await();
+
+		assertThat("Should not have found zombie stereotypes after resolving cross-references", zombies, nullValue());
+	}
+
 	//
 	// Test framework
 	//
@@ -313,7 +363,7 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 		final Profile nested1 = model.getNestedPackage("Package1").getAppliedProfile("Profile::Nested1");
 		final Profile nested2 = model.getNestedPackage("Package2").getAppliedProfile("Profile::Nested2");
 
-		return houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(new Function<EPackage, Profile>() {
+		return houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(null, new Function<EPackage, Profile>() {
 
 			@Override
 			public Profile apply(EPackage input) {
@@ -338,7 +388,7 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 		final Profile rootProfile = model.getAppliedProfile("Profile");
 		final Profile nestedProfile = model.getAppliedProfile("Profile::Profile1");
 
-		return houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(new Function<EPackage, Profile>() {
+		return houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(null, new Function<EPackage, Profile>() {
 
 			@Override
 			public Profile apply(EPackage input) {
@@ -358,7 +408,13 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 
 	@Bug({ "436666bis", "455248", "455329" })
 	protected StereotypeApplicationRepairSnippet createSimpleFixture() {
-		return houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(Functions.constant((Profile) null)), "dispose", modelSet.getResourceSet());
+		return houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(null, Functions.constant((Profile) null)), "dispose", modelSet.getResourceSet());
+	}
+
+	@Bug("458736")
+	protected StereotypeApplicationRepairSnippet createPresenterFixture() {
+		TestPresenter presenter = houseKeeper.setField("presenter", new TestPresenter());
+		return houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(Functions.constant(presenter)), "dispose", modelSet.getResourceSet());
 	}
 
 	void repair(final IAdaptable schema, final IRepairAction action) {
@@ -390,5 +446,80 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 	@Retention(RetentionPolicy.RUNTIME)
 	private @interface Bug {
 		String[] value();
+	}
+
+	class TestPresenter implements IZombieStereotypePresenter {
+
+		private ExecutorService executor;
+
+		@Override
+		public void dispose() {
+			if (executor != null) {
+				executor.shutdown();
+				executor = null;
+			}
+		}
+
+		@Override
+		public Function<? super EPackage, Profile> getDynamicProfileSupplier() {
+			return Functions.constant((Profile) null);
+		}
+
+		@Override
+		public void addZombies(ZombieStereotypesDescriptor zombies) {
+			// Not much of a presentation!
+			StereotypeRepairRegressionTest.this.zombies = zombies;
+		}
+
+		@Override
+		public void asyncAddZombies(final Runnable runnable) {
+			if (executor == null) {
+				executor = Executors.newSingleThreadExecutor();
+			}
+
+			Runnable transactionWrapper = new Runnable() {
+
+				@Override
+				public void run() {
+					try {
+						modelSet.getEditingDomain().runExclusive(runnable);
+					} catch (InterruptedException e) {
+						fail("Test interrupted");
+					}
+				}
+			};
+
+			executor.execute(transactionWrapper);
+		}
+
+		@Override
+		public boolean isPending() {
+			// We never actually engage a repair session
+			return false;
+		}
+
+		@Override
+		public void awaitPending(boolean expected) throws InterruptedException {
+			// Pass
+		}
+
+		@Override
+		public void onPendingDone(Runnable runnable) {
+			// Never pending, so do it now
+			runnable.run();
+		}
+	}
+
+	private static class Synchronizer implements Runnable {
+		private final CountDownLatch latch = new CountDownLatch(1);
+
+		@Override
+		public void run() {
+			latch.countDown();
+		}
+
+		void await() throws InterruptedException {
+			latch.await();
+		}
 	}
 }

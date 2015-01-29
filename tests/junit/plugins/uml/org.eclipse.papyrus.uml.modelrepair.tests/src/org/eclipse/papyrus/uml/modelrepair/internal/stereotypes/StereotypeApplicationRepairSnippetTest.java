@@ -9,6 +9,7 @@
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
  *   Christian W. Damus - bug 436666
+ *   Christian W. Damus - bug 458736
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -180,7 +181,7 @@ public class StereotypeApplicationRepairSnippetTest extends AbstractPapyrusTest 
 		stereotype = profile.getOwnedStereotype("Stereo");
 		class1 = (Class) modelSet.getModel().getOwnedType("Class1");
 
-		fixture = houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(Functions.constant(profile)), "dispose", modelSet.getResourceSet());
+		fixture = houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(null, Functions.constant(profile)), "dispose", modelSet.getResourceSet());
 		fixture.start(modelSet.getResourceSet());
 		houseKeeper.setField("zombies", fixture.getZombieStereotypes(modelSet.getModelResource(), modelSet.getModel()));
 	}

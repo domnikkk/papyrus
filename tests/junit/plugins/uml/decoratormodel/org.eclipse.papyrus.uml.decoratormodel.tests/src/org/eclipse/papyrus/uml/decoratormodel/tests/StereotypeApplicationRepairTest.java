@@ -10,6 +10,7 @@
  *   Christian W. Damus (CEA) - Initial API and implementation
  *   Christian W. Damus - bug 399859
  *   Christian W. Damus - bug 436666
+ *   Christian W. Damus - bug 458736
  *
  */
 package org.eclipse.papyrus.uml.decoratormodel.tests;
@@ -190,7 +191,7 @@ public class StereotypeApplicationRepairTest extends AbstractProfileExternalizat
 
 	static class SnippetFixture extends StereotypeApplicationRepairSnippet {
 		SnippetFixture(Function<? super EPackage, Profile> dynamicProfileSupplier) {
-			super(dynamicProfileSupplier);
+			super(null, dynamicProfileSupplier);
 		}
 
 		@Override
