@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -9,6 +9,7 @@
 package org.eclipse.papyrus.umlrt.UMLRealTime;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.uml2.uml.Port;
 
 /**
@@ -18,23 +19,23 @@ import org.eclipse.uml2.uml.Port;
  *
  * <!-- begin-model-doc -->
  * isWired implies not isPublish
- * (base_Port.visibility = UML::VisibilityKind::public)
- * implies base_Port.isService
- * (not isWired and not isPublish)
- * implies (base_Port.visibility = UML::VisibilityKind::protected)
- * (not isWired and isPublish) implies
- * (base_Port.visibility = UML::VisibilityKind::public)
+ * (base_Port.visibility = UML::VisibilityKind::public) 
+ *     implies base_Port.isService  
+ * (not isWired and not isPublish) 
+ *    implies (base_Port.visibility = UML::VisibilityKind::protected)
+ * (not isWired and isPublish) implies 
+ *    (base_Port.visibility = UML::VisibilityKind::public)
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#isNotification <em>Is Notification</em>}</li>
- * <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#isPublish <em>Is Publish</em>}</li>
- * <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#isWired <em>Is Wired</em>}</li>
- * <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#getRegistration <em>Registration</em>}</li>
- * <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#getRegistrationOverride <em>Registration Override</em>}</li>
- * <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#getBase_Port <em>Base Port</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#isNotification <em>Is Notification</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#isPublish <em>Is Publish</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#isWired <em>Is Wired</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#getRegistration <em>Registration</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#getRegistrationOverride <em>Registration Override</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#getBase_Port <em>Base Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,10 +49,10 @@ public interface RTPort extends EObject {
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Notification</em>' attribute isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Is Notification</em>' attribute isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Is Notification</em>' attribute.
 	 * @see #setIsNotification(boolean)
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage#getRTPort_IsNotification()
@@ -64,9 +65,7 @@ public interface RTPort extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#isNotification <em>Is Notification</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Is Notification</em>' attribute.
+	 * @param value the new value of the '<em>Is Notification</em>' attribute.
 	 * @see #isNotification()
 	 * @generated
 	 */
@@ -77,10 +76,10 @@ public interface RTPort extends EObject {
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Publish</em>' attribute isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Is Publish</em>' attribute isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Is Publish</em>' attribute.
 	 * @see #setIsPublish(boolean)
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage#getRTPort_IsPublish()
@@ -93,9 +92,7 @@ public interface RTPort extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#isPublish <em>Is Publish</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Is Publish</em>' attribute.
+	 * @param value the new value of the '<em>Is Publish</em>' attribute.
 	 * @see #isPublish()
 	 * @generated
 	 */
@@ -106,10 +103,10 @@ public interface RTPort extends EObject {
 	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Wired</em>' attribute isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Is Wired</em>' attribute isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Is Wired</em>' attribute.
 	 * @see #setIsWired(boolean)
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage#getRTPort_IsWired()
@@ -122,9 +119,7 @@ public interface RTPort extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#isWired <em>Is Wired</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Is Wired</em>' attribute.
+	 * @param value the new value of the '<em>Is Wired</em>' attribute.
 	 * @see #isWired()
 	 * @generated
 	 */
@@ -135,10 +130,10 @@ public interface RTPort extends EObject {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.umlrt.UMLRealTime.PortRegistrationType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Registration</em>' attribute isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Registration</em>' attribute isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Registration</em>' attribute.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.PortRegistrationType
 	 * @see #setRegistration(PortRegistrationType)
@@ -152,9 +147,7 @@ public interface RTPort extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#getRegistration <em>Registration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Registration</em>' attribute.
+	 * @param value the new value of the '<em>Registration</em>' attribute.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.PortRegistrationType
 	 * @see #getRegistration()
 	 * @generated
@@ -166,10 +159,10 @@ public interface RTPort extends EObject {
 	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Registration Override</em>' attribute isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Registration Override</em>' attribute isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Registration Override</em>' attribute.
 	 * @see #setRegistrationOverride(String)
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage#getRTPort_RegistrationOverride()
@@ -182,9 +175,7 @@ public interface RTPort extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#getRegistrationOverride <em>Registration Override</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Registration Override</em>' attribute.
+	 * @param value the new value of the '<em>Registration Override</em>' attribute.
 	 * @see #getRegistrationOverride()
 	 * @generated
 	 */
@@ -194,10 +185,10 @@ public interface RTPort extends EObject {
 	 * Returns the value of the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Port</em>' reference isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Base Port</em>' reference isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Base Port</em>' reference.
 	 * @see #setBase_Port(Port)
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage#getRTPort_Base_Port()
@@ -210,9 +201,7 @@ public interface RTPort extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#getBase_Port <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Base Port</em>' reference.
+	 * @param value the new value of the '<em>Base Port</em>' reference.
 	 * @see #getBase_Port()
 	 * @generated
 	 */

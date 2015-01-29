@@ -4,7 +4,7 @@
     nsPrefix="UMLRealTimeStateMach">
   <eClassifiers xsi:type="ecore:EClass" name="RTStateMachine">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="base_StateMachine.region->size() = 1&#xD;&#xA;not base_StateMachine.isReentrant&#xD;&#xA;(base_StateMachine.ownedParameter->size()=0) and &#xD;&#xA;(base_StateMachine.ownedParameterSet->size() = 0)&#xD;&#xA;(base_StateMachine.behavioredClassifier->size()=1) &#xD;&#xA;and (base_StateMachine.behavioredClassifier.oclIsKindOf(Class))&#xD;&#xA;isPassive = not (base_StateMachine.behavioredClassifier.oclAsType(Class).isActive) "/>
+      <details key="documentation" value="base_StateMachine.region->size() = 1&#xD;&#xA;not base_StateMachine.isReentrant&#xD;&#xA;(base_StateMachine.ownedParameter->size()=0) and &#xD;&#xA;(base_StateMachine.ownedParameterSet->size() = 0)&#xD;&#xA;(base_StateMachine.behavioredClassifier->size()=1) &#xD;&#xA;and (base_StateMachine.behavioredClassifier.oclIsKindOf(Class))&#xD;&#xA;isPassive = not (base_StateMachine.behavioredClassifier.oclAsType(Class).isActive) &#xD;&#xA;isPassive implies not (base_StateMachine.isReentrant)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_StateMachine" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//StateMachine"/>
@@ -13,9 +13,6 @@
         defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RTRegion">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="base_Region.subvertex->forAll&#xD;&#xA;      (v | not v.oclIsKindOf(FinalState))"/>
-    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Region" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Region"/>
   </eClassifiers>

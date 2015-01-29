@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="UMLRealTime" nsURI="http://www.eclipse.org/papyrus/umlrt" nsPrefix="UMLRealTime">
   <eClassifiers xsi:type="ecore:EClass" name="Capsule">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="base_Class.isActive&#xD;&#xA;base_Class.ownedReception->isEmpty()&#xD;&#xA;not(base_Class.isFinalSpecialization)&#xD;&#xA;(base_Class.generalization->size()) &lt;= 1&#xD;&#xA;(base_Class.generalization->notEmpty()) implies (base_Class.generalization->forAll (g | g.isSubstitutable))&#xD;&#xA;base_Class.ownedAttribute->forAll(at | at.type->size() = 1)&#xD;&#xA;base_Class.feature->forAll (f | f.visibility &lt;> UML::VisibilityKind::private)&#xD;&#xA;base_Class.nestedClassifier->isEmpty()&#xD;&#xA;base_Class.ownedOperation->notEmpty() implies &#xD;&#xA;   (base_Class.ownedOperation->forAll(op | op.concurrency = UML::CallConcurrencyKind::sequential))"/>
+      <details key="documentation" value="base_Class.isActive&#xD;&#xA;base_Class.ownedReception->isEmpty()&#xD;&#xA;not(base_Class.isFinalSpecialization)&#xD;&#xA;(base_Class.generalization->size()) &lt;= 1&#xD;&#xA;(base_Class.generalization->notEmpty()) implies (base_Class.generalization->forAll (g | g.isSubstitutable))&#xD;&#xA;base_Class.ownedAttribute->forAll(at | at.type->size() = 1)&#xD;&#xA;base_Class.feature->forAll (f | f.visibility &lt;> UML::VisibilityKind::private)&#xD;&#xA;base_Class.nestedClassifier->isEmpty()&#xD;&#xA;base_Class.ownedOperation->notEmpty() implies &#xD;&#xA;   (base_Class.ownedOperation->forAll(op | op.concurrency = UML::CallConcurrencyKind::guarded))"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
@@ -56,12 +56,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RTRExcludedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="RTRedefinedElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="let el = base_RedefinableElement in&#xD;&#xA;(el.oclIsKindOf(UML::Port) or&#xD;&#xA; el.oclIsKindOf(UML::Property) or&#xD;&#xA; el.oclIsKindOf(UML::Operation) or&#xD;&#xA; el.oclIsKindOf(UML::Behavior) or&#xD;&#xA;el.oclIsKindOf(UML::State) or&#xD;&#xA;el.oclIsKindOf(UML::Transition))"/>
+      <details key="documentation" value="let el = base_RedefinableElement in&#xD;&#xA;(el.oclIsKindOf(UML::Port) or&#xD;&#xA; el.oclIsKindOf(UML::Property) or&#xD;&#xA; el.oclIsKindOf(UML::Operation) or&#xD;&#xA; el.oclIsKindOf(UML::Behavior) or&#xD;&#xA; el.oclIsKindOf(UML::Region) or&#xD;&#xA; el.oclIsKindOf(UML::State) or&#xD;&#xA; el.oclIsKindOf(UML::StateMachine) or&#xD;&#xA; el.oclIsKindOf(UML::Transition))"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_RedefinableElement"
         ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//RedefinableElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootFragment" ordered="false"
+        eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//RedefinableElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RTMessageSet">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Interface" ordered="false"

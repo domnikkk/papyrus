@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -19,14 +19,13 @@ import org.eclipse.emf.ecore.EReference;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- * <li>each class,</li>
- * <li>each feature of each class,</li>
- * <li>each operation of each class,</li>
- * <li>each enum,</li>
- * <li>and each data type</li>
+ *   <li>each class,</li>
+ *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
+ *   <li>each enum,</li>
+ *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- *
  * @see org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimeFactory
  * @model kind="package"
  * @generated
@@ -36,7 +35,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	String eNAME = "UMLRealTime"; //$NON-NLS-1$
@@ -45,7 +43,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/umlrt"; //$NON-NLS-1$
@@ -54,7 +51,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "UMLRealTime"; //$NON-NLS-1$
@@ -63,7 +59,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	UMLRealTimePackage eINSTANCE = org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl.init();
@@ -72,7 +67,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.CapsuleImpl <em>Capsule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.CapsuleImpl
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getCapsule()
 	 * @generated
@@ -83,7 +77,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -93,7 +86,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The number of structural features of the '<em>Capsule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -103,7 +95,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The number of operations of the '<em>Capsule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -113,7 +104,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.CapsulePartImpl <em>Capsule Part</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.CapsulePartImpl
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getCapsulePart()
 	 * @generated
@@ -124,7 +114,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -134,7 +123,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The number of structural features of the '<em>Capsule Part</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -144,7 +132,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The number of operations of the '<em>Capsule Part</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -154,7 +141,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolImpl <em>Protocol</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolImpl
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getProtocol()
 	 * @generated
@@ -165,7 +151,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Collaboration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -175,7 +160,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The number of structural features of the '<em>Protocol</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -185,7 +169,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The number of operations of the '<em>Protocol</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -195,7 +178,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTPortImpl <em>RT Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTPortImpl
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTPort()
 	 * @generated
@@ -206,7 +188,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Notification</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -216,7 +197,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Publish</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -226,7 +206,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Wired</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -236,7 +215,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The feature id for the '<em><b>Registration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -246,7 +224,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The feature id for the '<em><b>Registration Override</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -256,7 +233,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -266,7 +242,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The number of structural features of the '<em>RT Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -276,7 +251,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The number of operations of the '<em>RT Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -286,7 +260,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTConnectorImpl <em>RT Connector</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTConnectorImpl
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTConnector()
 	 * @generated
@@ -297,7 +270,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -307,7 +279,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The number of structural features of the '<em>RT Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -317,7 +288,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The number of operations of the '<em>RT Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -327,7 +297,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolContainerImpl <em>Protocol Container</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolContainerImpl
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getProtocolContainer()
 	 * @generated
@@ -338,7 +307,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -348,7 +316,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The number of structural features of the '<em>Protocol Container</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -358,58 +325,61 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The number of operations of the '<em>Protocol Container</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
 	int PROTOCOL_CONTAINER_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTRExcludedElementImpl <em>RTR Excluded Element</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTRedefinedElementImpl <em>RT Redefined Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTRExcludedElementImpl
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTRExcludedElement()
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTRedefinedElementImpl
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTRedefinedElement()
 	 * @generated
 	 */
-	int RTR_EXCLUDED_ELEMENT = 6;
+	int RT_REDEFINED_ELEMENT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Base Redefinable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
-	int RTR_EXCLUDED_ELEMENT__BASE_REDEFINABLE_ELEMENT = 0;
+	int RT_REDEFINED_ELEMENT__BASE_REDEFINABLE_ELEMENT = 0;
 
 	/**
-	 * The number of structural features of the '<em>RTR Excluded Element</em>' class.
+	 * The feature id for the '<em><b>Root Fragment</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
-	int RTR_EXCLUDED_ELEMENT_FEATURE_COUNT = 1;
+	int RT_REDEFINED_ELEMENT__ROOT_FRAGMENT = 1;
 
 	/**
-	 * The number of operations of the '<em>RTR Excluded Element</em>' class.
+	 * The number of structural features of the '<em>RT Redefined Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
-	int RTR_EXCLUDED_ELEMENT_OPERATION_COUNT = 0;
+	int RT_REDEFINED_ELEMENT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>RT Redefined Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RT_REDEFINED_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTMessageSetImpl <em>RT Message Set</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTMessageSetImpl
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTMessageSet()
 	 * @generated
@@ -420,7 +390,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -430,7 +399,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The feature id for the '<em><b>Rt Msg Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -440,7 +408,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The number of structural features of the '<em>RT Message Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -450,7 +417,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The number of operations of the '<em>RT Message Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -460,7 +426,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.PortRegistrationType <em>Port Registration Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.PortRegistrationType
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getPortRegistrationType()
 	 * @generated
@@ -471,7 +436,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind <em>RT Message Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTMessageKind()
 	 * @generated
@@ -483,7 +447,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.Capsule <em>Capsule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Capsule</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.Capsule
 	 * @generated
@@ -494,7 +457,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.Capsule#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.Capsule#getBase_Class()
 	 * @see #getCapsule()
@@ -506,7 +468,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.CapsulePart <em>Capsule Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Capsule Part</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.CapsulePart
 	 * @generated
@@ -517,7 +478,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.CapsulePart#getBase_Property <em>Base Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Base Property</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.CapsulePart#getBase_Property()
 	 * @see #getCapsulePart()
@@ -529,7 +489,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.Protocol <em>Protocol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Protocol</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.Protocol
 	 * @generated
@@ -540,7 +499,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.Protocol#getBase_Collaboration <em>Base Collaboration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Base Collaboration</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.Protocol#getBase_Collaboration()
 	 * @see #getProtocol()
@@ -552,7 +510,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort <em>RT Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>RT Port</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTPort
 	 * @generated
@@ -563,7 +520,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#isNotification <em>Is Notification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Is Notification</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#isNotification()
 	 * @see #getRTPort()
@@ -575,7 +531,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#isPublish <em>Is Publish</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Is Publish</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#isPublish()
 	 * @see #getRTPort()
@@ -587,7 +542,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#isWired <em>Is Wired</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Is Wired</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#isWired()
 	 * @see #getRTPort()
@@ -599,7 +553,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#getRegistration <em>Registration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Registration</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#getRegistration()
 	 * @see #getRTPort()
@@ -611,7 +564,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#getRegistrationOverride <em>Registration Override</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Registration Override</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#getRegistrationOverride()
 	 * @see #getRTPort()
@@ -623,7 +575,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#getBase_Port <em>Base Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Base Port</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTPort#getBase_Port()
 	 * @see #getRTPort()
@@ -635,7 +586,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTConnector <em>RT Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>RT Connector</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTConnector
 	 * @generated
@@ -646,7 +596,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTConnector#getBase_Connector <em>Base Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Base Connector</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTConnector#getBase_Connector()
 	 * @see #getRTConnector()
@@ -658,7 +607,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolContainer <em>Protocol Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Protocol Container</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolContainer
 	 * @generated
@@ -669,7 +617,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolContainer#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolContainer#getBase_Package()
 	 * @see #getProtocolContainer()
@@ -678,33 +625,41 @@ public interface UMLRealTimePackage extends EPackage {
 	EReference getProtocolContainer_Base_Package();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTRExcludedElement <em>RTR Excluded Element</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTRedefinedElement <em>RT Redefined Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for class '<em>RTR Excluded Element</em>'.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTRExcludedElement
+	 * @return the meta object for class '<em>RT Redefined Element</em>'.
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTRedefinedElement
 	 * @generated
 	 */
-	EClass getRTRExcludedElement();
+	EClass getRTRedefinedElement();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTRExcludedElement#getBase_RedefinableElement <em>Base Redefinable Element</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTRedefinedElement#getBase_RedefinableElement <em>Base Redefinable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Base Redefinable Element</em>'.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTRExcludedElement#getBase_RedefinableElement()
-	 * @see #getRTRExcludedElement()
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTRedefinedElement#getBase_RedefinableElement()
+	 * @see #getRTRedefinedElement()
 	 * @generated
 	 */
-	EReference getRTRExcludedElement_Base_RedefinableElement();
+	EReference getRTRedefinedElement_Base_RedefinableElement();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTRedefinedElement#getRootFragment <em>Root Fragment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Root Fragment</em>'.
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTRedefinedElement#getRootFragment()
+	 * @see #getRTRedefinedElement()
+	 * @generated
+	 */
+	EReference getRTRedefinedElement_RootFragment();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet <em>RT Message Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>RT Message Set</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet
 	 * @generated
@@ -715,7 +670,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getBase_Interface <em>Base Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Base Interface</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getBase_Interface()
 	 * @see #getRTMessageSet()
@@ -727,7 +681,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getRtMsgKind <em>Rt Msg Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Rt Msg Kind</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getRtMsgKind()
 	 * @see #getRTMessageSet()
@@ -739,7 +692,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.umlrt.UMLRealTime.PortRegistrationType <em>Port Registration Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for enum '<em>Port Registration Type</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.PortRegistrationType
 	 * @generated
@@ -750,7 +702,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind <em>RT Message Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for enum '<em>RT Message Kind</em>'.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind
 	 * @generated
@@ -761,7 +712,6 @@ public interface UMLRealTimePackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -771,14 +721,13 @@ public interface UMLRealTimePackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 * <li>each class,</li>
-	 * <li>each feature of each class,</li>
-	 * <li>each operation of each class,</li>
-	 * <li>each enum,</li>
-	 * <li>and each data type</li>
+	 *   <li>each class,</li>
+	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
+	 *   <li>each enum,</li>
+	 *   <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -786,7 +735,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.CapsuleImpl <em>Capsule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.CapsuleImpl
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getCapsule()
 		 * @generated
@@ -797,7 +745,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference CAPSULE__BASE_CLASS = eINSTANCE.getCapsule_Base_Class();
@@ -806,7 +753,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.CapsulePartImpl <em>Capsule Part</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.CapsulePartImpl
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getCapsulePart()
 		 * @generated
@@ -817,7 +763,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference CAPSULE_PART__BASE_PROPERTY = eINSTANCE.getCapsulePart_Base_Property();
@@ -826,7 +771,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolImpl <em>Protocol</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolImpl
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getProtocol()
 		 * @generated
@@ -837,7 +781,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Collaboration</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PROTOCOL__BASE_COLLABORATION = eINSTANCE.getProtocol_Base_Collaboration();
@@ -846,7 +789,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTPortImpl <em>RT Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTPortImpl
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTPort()
 		 * @generated
@@ -857,7 +799,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Notification</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute RT_PORT__IS_NOTIFICATION = eINSTANCE.getRTPort_IsNotification();
@@ -866,7 +807,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Publish</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute RT_PORT__IS_PUBLISH = eINSTANCE.getRTPort_IsPublish();
@@ -875,7 +815,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Wired</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute RT_PORT__IS_WIRED = eINSTANCE.getRTPort_IsWired();
@@ -884,7 +823,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Registration</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute RT_PORT__REGISTRATION = eINSTANCE.getRTPort_Registration();
@@ -893,7 +831,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Registration Override</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute RT_PORT__REGISTRATION_OVERRIDE = eINSTANCE.getRTPort_RegistrationOverride();
@@ -902,7 +839,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Port</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference RT_PORT__BASE_PORT = eINSTANCE.getRTPort_Base_Port();
@@ -911,7 +847,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTConnectorImpl <em>RT Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTConnectorImpl
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTConnector()
 		 * @generated
@@ -922,7 +857,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Connector</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference RT_CONNECTOR__BASE_CONNECTOR = eINSTANCE.getRTConnector_Base_Connector();
@@ -931,7 +865,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolContainerImpl <em>Protocol Container</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolContainerImpl
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getProtocolContainer()
 		 * @generated
@@ -942,36 +875,40 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PROTOCOL_CONTAINER__BASE_PACKAGE = eINSTANCE.getProtocolContainer_Base_Package();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTRExcludedElementImpl <em>RTR Excluded Element</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTRedefinedElementImpl <em>RT Redefined Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
-		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTRExcludedElementImpl
-		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTRExcludedElement()
+		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTRedefinedElementImpl
+		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTRedefinedElement()
 		 * @generated
 		 */
-		EClass RTR_EXCLUDED_ELEMENT = eINSTANCE.getRTRExcludedElement();
+		EClass RT_REDEFINED_ELEMENT = eINSTANCE.getRTRedefinedElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Redefinable Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
-		EReference RTR_EXCLUDED_ELEMENT__BASE_REDEFINABLE_ELEMENT = eINSTANCE.getRTRExcludedElement_Base_RedefinableElement();
+		EReference RT_REDEFINED_ELEMENT__BASE_REDEFINABLE_ELEMENT = eINSTANCE.getRTRedefinedElement_Base_RedefinableElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Root Fragment</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RT_REDEFINED_ELEMENT__ROOT_FRAGMENT = eINSTANCE.getRTRedefinedElement_RootFragment();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTMessageSetImpl <em>RT Message Set</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTMessageSetImpl
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTMessageSet()
 		 * @generated
@@ -982,7 +919,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference RT_MESSAGE_SET__BASE_INTERFACE = eINSTANCE.getRTMessageSet_Base_Interface();
@@ -991,7 +927,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Rt Msg Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute RT_MESSAGE_SET__RT_MSG_KIND = eINSTANCE.getRTMessageSet_RtMsgKind();
@@ -1000,7 +935,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.PortRegistrationType <em>Port Registration Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.PortRegistrationType
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getPortRegistrationType()
 		 * @generated
@@ -1011,7 +945,6 @@ public interface UMLRealTimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind <em>RT Message Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind
 		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTMessageKind()
 		 * @generated
@@ -1020,4 +953,4 @@ public interface UMLRealTimePackage extends EPackage {
 
 	}
 
-} // UMLRealTimePackage
+} //UMLRealTimePackage

@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -12,26 +12,17 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.umlrt.UMLRealTime.Capsule;
-import org.eclipse.papyrus.umlrt.UMLRealTime.CapsulePart;
-import org.eclipse.papyrus.umlrt.UMLRealTime.PortRegistrationType;
-import org.eclipse.papyrus.umlrt.UMLRealTime.Protocol;
-import org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolContainer;
-import org.eclipse.papyrus.umlrt.UMLRealTime.RTConnector;
-import org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind;
-import org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet;
-import org.eclipse.papyrus.umlrt.UMLRealTime.RTPort;
-import org.eclipse.papyrus.umlrt.UMLRealTime.RTRExcludedElement;
-import org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimeFactory;
-import org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage;
+
+import org.eclipse.papyrus.umlrt.UMLRealTime.*;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeFactory {
@@ -39,16 +30,16 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public static UMLRealTimeFactory init() {
 		try {
-			UMLRealTimeFactory theUMLRealTimeFactory = (UMLRealTimeFactory) EPackage.Registry.INSTANCE.getEFactory(UMLRealTimePackage.eNS_URI);
+			UMLRealTimeFactory theUMLRealTimeFactory = (UMLRealTimeFactory)EPackage.Registry.INSTANCE.getEFactory(UMLRealTimePackage.eNS_URI);
 			if (theUMLRealTimeFactory != null) {
 				return theUMLRealTimeFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new UMLRealTimeFactoryImpl();
@@ -58,7 +49,6 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public UMLRealTimeFactoryImpl() {
@@ -68,73 +58,61 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case UMLRealTimePackage.CAPSULE:
-			return createCapsule();
-		case UMLRealTimePackage.CAPSULE_PART:
-			return createCapsulePart();
-		case UMLRealTimePackage.PROTOCOL:
-			return createProtocol();
-		case UMLRealTimePackage.RT_PORT:
-			return createRTPort();
-		case UMLRealTimePackage.RT_CONNECTOR:
-			return createRTConnector();
-		case UMLRealTimePackage.PROTOCOL_CONTAINER:
-			return createProtocolContainer();
-		case UMLRealTimePackage.RTR_EXCLUDED_ELEMENT:
-			return createRTRExcludedElement();
-		case UMLRealTimePackage.RT_MESSAGE_SET:
-			return createRTMessageSet();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			case UMLRealTimePackage.CAPSULE: return createCapsule();
+			case UMLRealTimePackage.CAPSULE_PART: return createCapsulePart();
+			case UMLRealTimePackage.PROTOCOL: return createProtocol();
+			case UMLRealTimePackage.RT_PORT: return createRTPort();
+			case UMLRealTimePackage.RT_CONNECTOR: return createRTConnector();
+			case UMLRealTimePackage.PROTOCOL_CONTAINER: return createProtocolContainer();
+			case UMLRealTimePackage.RT_REDEFINED_ELEMENT: return createRTRedefinedElement();
+			case UMLRealTimePackage.RT_MESSAGE_SET: return createRTMessageSet();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case UMLRealTimePackage.PORT_REGISTRATION_TYPE:
-			return createPortRegistrationTypeFromString(eDataType, initialValue);
-		case UMLRealTimePackage.RT_MESSAGE_KIND:
-			return createRTMessageKindFromString(eDataType, initialValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			case UMLRealTimePackage.PORT_REGISTRATION_TYPE:
+				return createPortRegistrationTypeFromString(eDataType, initialValue);
+			case UMLRealTimePackage.RT_MESSAGE_KIND:
+				return createRTMessageKindFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case UMLRealTimePackage.PORT_REGISTRATION_TYPE:
-			return convertPortRegistrationTypeToString(eDataType, instanceValue);
-		case UMLRealTimePackage.RT_MESSAGE_KIND:
-			return convertRTMessageKindToString(eDataType, instanceValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			case UMLRealTimePackage.PORT_REGISTRATION_TYPE:
+				return convertPortRegistrationTypeToString(eDataType, instanceValue);
+			case UMLRealTimePackage.RT_MESSAGE_KIND:
+				return convertRTMessageKindToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +124,6 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +135,6 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +146,6 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +157,6 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +168,6 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -206,19 +179,17 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public RTRExcludedElement createRTRExcludedElement() {
-		RTRExcludedElementImpl rtrExcludedElement = new RTRExcludedElementImpl();
-		return rtrExcludedElement;
+	public RTRedefinedElement createRTRedefinedElement() {
+		RTRedefinedElementImpl rtRedefinedElement = new RTRedefinedElementImpl();
+		return rtRedefinedElement;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -230,22 +201,17 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PortRegistrationType createPortRegistrationTypeFromString(EDataType eDataType, String initialValue) {
 		PortRegistrationType result = PortRegistrationType.get(initialValue);
-		if (result == null)
-		 {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		}
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String convertPortRegistrationTypeToString(EDataType eDataType, Object instanceValue) {
@@ -255,22 +221,17 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public RTMessageKind createRTMessageKindFromString(EDataType eDataType, String initialValue) {
 		RTMessageKind result = RTMessageKind.get(initialValue);
-		if (result == null)
-		 {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		}
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String convertRTMessageKindToString(EDataType eDataType, Object instanceValue) {
@@ -280,18 +241,16 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public UMLRealTimePackage getUMLRealTimePackage() {
-		return (UMLRealTimePackage) getEPackage();
+		return (UMLRealTimePackage)getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -300,4 +259,4 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 		return UMLRealTimePackage.eINSTANCE;
 	}
 
-} // UMLRealTimeFactoryImpl
+} //UMLRealTimeFactoryImpl

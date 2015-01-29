@@ -33,8 +33,8 @@
     <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
   </genAnnotations>
   <foreignModel>UMLRealTimeSM-addendum.profile.uml</foreignModel>
-  <genPackages xsi:type="genmodel:GenPackage" prefix="UMLRealTimeStateMach" basePackage="org.eclipse.papyrus.umlrt.statemachine"
-      disposableProviderFactory="true" ecorePackage="UMLRealTimeStateMach.ecore#/">
+  <genPackages xsi:type="genmodel:GenPackage" prefix="UMLRealTimeStateMach" basePackage="org.eclipse.papyrus.umlrt.statemachine" disposableProviderFactory="true"
+      ecorePackage="UMLRealTimeStateMach.ecore#/">
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLRealTimeStateMach.ecore#//RTStateMachine">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference UMLRealTimeStateMach.ecore#//RTStateMachine/base_StateMachine"/>

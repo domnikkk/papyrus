@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -9,6 +9,7 @@
 package org.eclipse.papyrus.umlrt.UMLRealTime;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.uml2.uml.Interface;
 
 /**
@@ -19,8 +20,8 @@ import org.eclipse.uml2.uml.Interface;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getBase_Interface <em>Base Interface</em>}</li>
- * <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getRtMsgKind <em>Rt Msg Kind</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getBase_Interface <em>Base Interface</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getRtMsgKind <em>Rt Msg Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,10 +34,10 @@ public interface RTMessageSet extends EObject {
 	 * Returns the value of the '<em><b>Base Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Interface</em>' reference isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Base Interface</em>' reference isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Base Interface</em>' reference.
 	 * @see #setBase_Interface(Interface)
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage#getRTMessageSet_Base_Interface()
@@ -49,9 +50,7 @@ public interface RTMessageSet extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getBase_Interface <em>Base Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Base Interface</em>' reference.
+	 * @param value the new value of the '<em>Base Interface</em>' reference.
 	 * @see #getBase_Interface()
 	 * @generated
 	 */
@@ -63,10 +62,10 @@ public interface RTMessageSet extends EObject {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Rt Msg Kind</em>' attribute isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Rt Msg Kind</em>' attribute isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Rt Msg Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind
 	 * @see #setRtMsgKind(RTMessageKind)
@@ -80,9 +79,7 @@ public interface RTMessageSet extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getRtMsgKind <em>Rt Msg Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Rt Msg Kind</em>' attribute.
+	 * @param value the new value of the '<em>Rt Msg Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind
 	 * @see #getRtMsgKind()
 	 * @generated

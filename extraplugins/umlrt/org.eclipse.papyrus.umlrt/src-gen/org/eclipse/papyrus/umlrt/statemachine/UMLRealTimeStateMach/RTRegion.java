@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -9,6 +9,7 @@
 package org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.uml2.uml.Region;
 
 /**
@@ -16,15 +17,10 @@ import org.eclipse.uml2.uml.Region;
  * A representation of the model object '<em><b>RT Region</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * base_Region.subvertex->forAll
- * (v | not v.oclIsKindOf(FinalState))
- * <!-- end-model-doc -->
- *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTRegion#getBase_Region <em>Base Region</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTRegion#getBase_Region <em>Base Region</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,10 +33,10 @@ public interface RTRegion extends EObject {
 	 * Returns the value of the '<em><b>Base Region</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Region</em>' reference isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Base Region</em>' reference isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Base Region</em>' reference.
 	 * @see #setBase_Region(Region)
 	 * @see org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage#getRTRegion_Base_Region()
@@ -53,9 +49,7 @@ public interface RTRegion extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTRegion#getBase_Region <em>Base Region</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Base Region</em>' reference.
+	 * @param value the new value of the '<em>Base Region</em>' reference.
 	 * @see #getBase_Region()
 	 * @generated
 	 */

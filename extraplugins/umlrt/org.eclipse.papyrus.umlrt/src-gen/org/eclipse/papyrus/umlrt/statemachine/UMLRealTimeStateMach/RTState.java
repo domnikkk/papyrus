@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -9,6 +9,7 @@
 package org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.uml2.uml.State;
 
 /**
@@ -17,8 +18,8 @@ import org.eclipse.uml2.uml.State;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * base_State.isComposite implies
- * (base_State.region->size() = 1)
+ * base_State.isComposite implies 
+ *            (base_State.region->size() = 1)
  * not base_State.isSubmachineState
  * base_State.doActivity->size() = 0
  * base_State.deferrableTrigger->size() = 0
@@ -27,7 +28,7 @@ import org.eclipse.uml2.uml.State;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTState#getBase_State <em>Base State</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTState#getBase_State <em>Base State</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,10 +41,10 @@ public interface RTState extends EObject {
 	 * Returns the value of the '<em><b>Base State</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base State</em>' reference isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Base State</em>' reference isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Base State</em>' reference.
 	 * @see #setBase_State(State)
 	 * @see org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage#getRTState_Base_State()
@@ -56,9 +57,7 @@ public interface RTState extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTState#getBase_State <em>Base State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Base State</em>' reference.
+	 * @param value the new value of the '<em>Base State</em>' reference.
 	 * @see #getBase_State()
 	 * @generated
 	 */
