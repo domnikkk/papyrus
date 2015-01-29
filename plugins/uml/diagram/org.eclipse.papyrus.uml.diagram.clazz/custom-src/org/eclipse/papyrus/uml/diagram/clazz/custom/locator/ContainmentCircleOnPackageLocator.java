@@ -19,6 +19,8 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SVGNodePlateFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.PackageFigure;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.PackageNodePlateFigure;
 
 /**
@@ -91,9 +93,9 @@ public class ContainmentCircleOnPackageLocator extends BorderItemLocator {
 	 */
 	@Override
 	protected Point locateOnParent(Point suggestedLocation, int suggestedSide, IFigure borderItem) {
-		PackageNodePlateFigure parent = (PackageNodePlateFigure) getParentFigure();
-		Rectangle headerBounds = parent.getPackageFigure().getHeader();
-		if (suggestedSide == PositionConstants.NORTH && !isOnHeader(suggestedLocation, headerBounds)) {
+		PackageFigure parent = getParentPackageFigure();
+		Rectangle headerBounds = parent == null ? null : parent.getHeader();
+		if (headerBounds != null && suggestedSide == PositionConstants.NORTH && !isOnHeader(suggestedLocation, headerBounds)) {
 			setBorderItemOffset(new Dimension(originalBorderItemOffset.width, headerBounds.height));
 		} else {
 			setBorderItemOffset(originalBorderItemOffset);
@@ -101,6 +103,20 @@ public class ContainmentCircleOnPackageLocator extends BorderItemLocator {
 		Point result = super.locateOnParent(suggestedLocation, suggestedSide, borderItem);
 		setBorderItemOffset(originalBorderItemOffset);
 		return result;
+	}
+
+	private PackageFigure getParentPackageFigure() {
+		IFigure parentFigure = getParentFigure();
+		if (parentFigure instanceof PackageNodePlateFigure) {
+			return ((PackageNodePlateFigure) parentFigure).getPackageFigure();
+		}
+		if (parentFigure instanceof SVGNodePlateFigure) {
+			SVGNodePlateFigure svgNodePlateFigure = (SVGNodePlateFigure) parentFigure;
+			if (svgNodePlateFigure.getChildren().size() > 0 && svgNodePlateFigure.getChildren().get(0) instanceof PackageFigure) {
+				return (PackageFigure) svgNodePlateFigure.getChildren().get(0);
+			}
+		}
+		return null;
 	}
 
 	/**
