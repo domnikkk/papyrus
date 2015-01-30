@@ -102,7 +102,10 @@ public class Util {
 		tmpResourceSet.getLoadOptions().put(XMLResource.OPTION_LAX_FEATURE_PROCESSING, Boolean.TRUE);
 		tmpResourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 
-		UMLUtil.init(tmpResourceSet);
+		// UMLUtil.init is not thread-safe since it may write in the EMF Metadata
+		synchronized (UMLUtil.class) {
+			UMLUtil.init(tmpResourceSet);
+		}
 
 		return tmpResourceSet;
 	}

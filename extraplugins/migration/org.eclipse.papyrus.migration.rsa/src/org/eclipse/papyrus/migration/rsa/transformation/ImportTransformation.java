@@ -88,6 +88,7 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.resource.UMLResource;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * Executes a single RSA-to-Papyrus transformation
@@ -275,6 +276,9 @@ public class ImportTransformation {
 	 */
 	protected void initResourceSet(IProgressMonitor monitor) {
 		resourceSet = new ThreadSafeResourceSet();
+		synchronized (UMLUtil.class) {
+			UMLUtil.init(resourceSet);
+		}
 		resourceSet.getLoadOptions().put(XMLResource.OPTION_DEFER_ATTACHMENT, true);
 		resourceSet.getLoadOptions().put(XMLResource.OPTION_DEFER_IDREF_RESOLUTION, true);
 		resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
@@ -400,8 +404,6 @@ public class ImportTransformation {
 
 		monitor.subTask("Loading transformations (This may take a few seconds for the first import)...");
 		loadTransformations(monitor);
-		long endLoad = System.nanoTime();
-		loadingTime = endLoad - startLoad;
 
 
 		List<ModelExtent> extents = getModelExtents();
@@ -410,6 +412,11 @@ public class ImportTransformation {
 		MultiStatus generationStatus = new MultiStatus(Activator.PLUGIN_ID, IStatus.OK, statusMessage, null);
 
 		ExecutionContext context = createExecutionContext(monitor, generationStatus);
+		
+		getInPapyrusProfiles(); //Preload profiles
+		
+		long endLoad = System.nanoTime();
+		loadingTime = endLoad - startLoad;
 
 		//
 		// TRANSFORMATIONS
@@ -801,6 +808,7 @@ public class ImportTransformation {
 	}
 
 	protected void checkResource(Resource resource) {
+		Assert.isNotNull(resource);
 		Assert.isTrue(!resource.getContents().isEmpty(), "The resource " + resource.getURI() + " is empty");
 		for (EObject rootElement : resource.getContents()) {
 			Assert.isTrue(!rootElement.eIsProxy());

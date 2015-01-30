@@ -418,7 +418,7 @@ public class DependencyManagementHelper {
 
 					Collection<?> collection = (Collection<?>) value;
 
-					for (Object collectionElement : (Collection<?>) value) {
+					for (Object collectionElement : collection) {
 						if (collectionElement instanceof EObject) {
 							EObject eObjectToReplace = (EObject) collectionElement;
 							EObject newEObject = checkAndReplace(eObjectToReplace, urisToReplace);

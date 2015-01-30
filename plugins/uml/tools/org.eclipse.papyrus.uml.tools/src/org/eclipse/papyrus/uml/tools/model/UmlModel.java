@@ -52,7 +52,10 @@ public class UmlModel extends EMFLogicalModel implements IModel {
 	@Override
 	public void init(ModelSet modelManager) {
 		super.init(modelManager);
-		UMLUtil.init(modelManager);
+		// UMLUtil.init is not thread-safe since it may write in the EMF Metadata
+		synchronized (UMLUtil.class) {
+			UMLUtil.init(modelManager);
+		}
 	}
 
 	/**
