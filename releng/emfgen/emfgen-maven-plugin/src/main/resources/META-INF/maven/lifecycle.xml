@@ -1,0 +1,17 @@
+<lifecycles>
+    <lifecycle>
+        <id>emfgen4mvn</id>
+        <phases>
+            <phase>
+                <id>emfgen</id>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>emfgen</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </phase>
+        </phases>
+    </lifecycle>
+</lifecycles>

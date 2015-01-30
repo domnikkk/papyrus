@@ -492,8 +492,8 @@
 				<artifactId>tycho-compiler-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-					<source>${java.source.version}</source>
-					<target>${java.target.version}</target>
+					<source>1.6</source>
+					<target>1.6</target>
 					<optimize>true</optimize>
 					<showWarnings>true</showWarnings>
 				</configuration>

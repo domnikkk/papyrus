@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1">
+	<test name="constraints">
+		<parameter name="genModel"
+			value="../emfgen-parent/src/test/resources/models/constraints/Constraints.genmodel" />
+		<parameter name="ecoreModel"
+			value="../emfgen-parent/src/test/resources/models/constraints/Constraints.ecore" />
+		<parameter name="outputDirectory" value="${project.emfgen.outdir}/" />
+		<parameter name="isRelocate" value="true" />
+		<parameter name="isGenModel" value="true" />
+		<parameter name="isGenEdit" value="true" />
+		<parameter name="isGenEditor" value="true" />
+		<parameter name="isGenTests" value="true" />
+		<classes>
+			<class name="fr.cea.list.lise.emfgen.maven.test.EmfGenMojoTest" />
+		</classes>
+	</test>
+	<test name="extlibrary">
+		<parameter name="genModel"
+			value="../emfgen-parent/src/test/resources/models/extlibrary/extlibrary.genmodel" />
+		<parameter name="ecoreModel"
+			value="../emfgen-parent/src/test/resources/models/extlibrary/extlibrary.ecore" />
+		<parameter name="outputDirectory" value="${project.emfgen.outdir}/" />
+		<parameter name="isRelocate" value="true" />
+		<parameter name="isGenModel" value="true" />
+		<parameter name="isGenEdit" value="true" />
+		<parameter name="isGenEditor" value="true" />
+		<parameter name="isGenTests" value="true" />
+		<classes>
+			<class name="fr.cea.list.lise.emfgen.maven.test.EmfGenMojoTest" />
+		</classes>
+	</test>
+</suite>

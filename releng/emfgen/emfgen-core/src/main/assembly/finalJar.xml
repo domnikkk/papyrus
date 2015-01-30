@@ -1,0 +1,33 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0">
+	<id>distribution</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+<!--  to include the main jar in non transitive manner and without base directory and in expanded way -->
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<dependencySets>
+		<dependencySet>
+			<useProjectArtifact>true</useProjectArtifact>
+			<useTransitiveDependencies>true</useTransitiveDependencies>
+			<unpack>true</unpack>
+			<scope>runtime</scope>
+			<fileMode>0755</fileMode>
+			<directoryMode>0755</directoryMode>
+			<includes>
+				<include>fr.cea.list.lise.emfgen:emfgen-core</include>
+			</includes>
+		</dependencySet>
+		<!--to include the dependent jars in transitive manner -->
+		<dependencySet>
+			<useProjectArtifact>false</useProjectArtifact>
+			<useTransitiveDependencies>true</useTransitiveDependencies>
+			<unpack>false</unpack>
+			<scope>runtime</scope>
+			<fileMode>0644</fileMode>
+			<directoryMode>0755</directoryMode>
+			<outputDirectory>lib</outputDirectory>
+
+			<includes></includes>
+		</dependencySet>
+	</dependencySets>
+</assembly>
