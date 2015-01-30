@@ -13,6 +13,23 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	
+	<!--  It is important to ensure your ID s are repo.eclipse.org as the Hudson instance is configured to use these IDs. -->
+	<distributionManagement>
+		<repository>
+			<id>repo.eclipse.org</id>
+			<name>Papyrus Repository - Releases</name>
+			<url>https://repo.eclipse.org/content/repositories/papyrus-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>repo.eclipse.org</id>
+			<name>Papyrus Repository - Snapshots</name>
+			<url>https://repo.eclipse.org/content/repositories/papyrus-snapshots/</url>
+			<!-- If you want to keep several snapshot versions use -->
+			<uniqueVersion>true</uniqueVersion>
+		</snapshotRepository>
+	</distributionManagement>
+	
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
