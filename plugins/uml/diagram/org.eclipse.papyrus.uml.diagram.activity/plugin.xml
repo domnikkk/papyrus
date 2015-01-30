@@ -2183,7 +2183,7 @@
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateInitialNode_validateNoIncomingEdges"
             lang="OCL"
             name="validateNoIncomingEdges"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.incoming->isEmpty()]]>
             <description><![CDATA[An initial node has no incoming edge]]></description>
@@ -2193,7 +2193,7 @@
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateInitialNode_validateControlEdges"
             lang="OCL"
             name="validateControlEdges"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[not self.source.oclIsKindOf(InitialNode)]]>
             <description><![CDATA[Only control edges can have initial nodes as source]]></description>
@@ -2205,7 +2205,7 @@
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateFinalNode_validateNoOutgoingEdges"
             lang="OCL"
             name="validateNoOutgoingEdges"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.outgoing->isEmpty()]]>
             <description><![CDATA[A fianl node has no outgoing edge]]></description>
@@ -2233,7 +2233,7 @@
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectNode_validateNotUnique"
             lang="OCL"
             name="validateNotUnique"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[-- must be applied on corresponding parameter, if only it exists
 true
@@ -2283,7 +2283,7 @@ true
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validatePin_validateControlPins"
             lang="OCL"
             name="validateControlPins"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.isControl implies self.isControlType]]>
             <description><![CDATA[Control pins have a control type]]></description>
@@ -2295,7 +2295,7 @@ true
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateInputPin_validateOutgoingEdgesStructuredOnly"
             lang="OCL"
             name="validateOutgoingEdgesStructuredOnly"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.outgoing.target->forAll(inStructuredNode=self.owner)]]>
             <description><![CDATA[Input pins may have outgoing edges only when they are on actions that are structured nodes, and these edges must target a node contained by the structured node.]]></description>
@@ -2307,7 +2307,7 @@ true
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin_validateOneOutputPin"
             lang="OCL"
             name="validateOneOutputPin"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.fromAction.oclIsUndefined()) implies
 self.fromAction.output->size() = 1]]>
@@ -2318,7 +2318,7 @@ self.fromAction.output->size() = 1]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin_validateInputPin"
             lang="OCL"
             name="validateInputPin"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.fromAction.oclIsUndefined()) implies
 self.fromAction.input->forAll(oclIsKindOf(ActionInputPin))]]>
@@ -2329,7 +2329,7 @@ self.fromAction.input->forAll(oclIsKindOf(ActionInputPin))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin_validateNoControlOrDataFlow"
             lang="OCL"
             name="validateNoControlOrDataFlow"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.fromAction.oclIsUndefined()) implies
 (self.fromAction.incoming->isEmpty() and self.fromAction.outgoing->isEmpty()
@@ -2344,7 +2344,7 @@ and self.fromAction.output->forAll(incoming->isEmpty() and outgoing->isEmpty()))
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateValuePin_validateCompatibleType"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter13"
             name="validateCompatibleType"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[The type of value specification must be compatible with the type of the value pin.]]></description>
@@ -2354,7 +2354,7 @@ and self.fromAction.output->forAll(incoming->isEmpty() and outgoing->isEmpty()))
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateValuePin_validateNoIncomingEdges"
             lang="OCL"
             name="validateNoIncomingEdges"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.incoming->isEmpty()]]>
             <description><![CDATA[Value pins have no incoming edges.]]></description>
@@ -2366,7 +2366,7 @@ and self.fromAction.output->forAll(incoming->isEmpty() and outgoing->isEmpty()))
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateOutputPin_validateIncomingEdgesStructuredOnly"
             lang="OCL"
             name="validateIncomingEdgesStructuredOnly"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.incoming.source->forAll(inStructuredNode=self.owner)]]>
             <description><![CDATA[Output pins may have incoming edges only when they are on actions that are structured nodes, and these edges may not target a node contained by the structured node.]]></description>
@@ -2378,7 +2378,7 @@ and self.fromAction.output->forAll(incoming->isEmpty() and outgoing->isEmpty()))
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge_validateSourceAndTarget"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter16"
             name="validateSourceAndTarget"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[The source and target of an edge must be in the same activity as the edge.]]></description>
@@ -2388,7 +2388,7 @@ and self.fromAction.output->forAll(incoming->isEmpty() and outgoing->isEmpty()))
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge_validateOwned"
             lang="OCL"
             name="validateOwned"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.owner.oclIsKindOf(Activity)
 or self.owner.oclIsKindOf(ActivityGroup)]]>
@@ -2399,7 +2399,7 @@ or self.owner.oclIsKindOf(ActivityGroup)]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge_validateStructuredNode"
             lang="OCL"
             name="validateStructuredNode"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[true
 -- constraint is checked by the model structure]]>
@@ -2434,7 +2434,7 @@ not self.source.oclIsUndefined() and not self.target.oclIsUndefined()]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateNoActions"
             lang="OCL"
             name="validateNoActions"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(self.source.oclIsUndefined() or not self.source.oclIsKindOf(Action))
 and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
@@ -2445,7 +2445,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateCompatibleTypes"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter21"
             name="validateCompatibleTypes"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[Object nodes connected by an object flow, with optionally intervening control nodes, must have compatible types. In particular, the downstream object node type must be the same or a supertype of the upstream object node type]]></description>
@@ -2455,7 +2455,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateSameUpperBounds"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter22"
             name="validateSameUpperBounds"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[Object nodes connected by an object flow, with optionally intervening control nodes, must have the same upper bounds.]]></description>
@@ -2465,7 +2465,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateTarget"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter23"
             name="validateTarget"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[An edge with constant weight may not target an object node, or lead to an object node downstream with no intervening actions, that has an upper bound less than the weight.]]></description>
@@ -2475,7 +2475,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateTransformationBehaviour"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter24"
             name="validateTransformationBehaviour"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[A transformation behavior has one input parameter and one output parameter. The input parameter must be the same as or a supertype of the type of object token coming from the source end. The output parameter must be the same or a subtype of the type of object token expected downstream. The behavior cannot have side effects.]]></description>
@@ -2485,7 +2485,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateSelectionBehaviour"
             lang="OCL"
             name="validateSelectionBehaviour"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.selection.oclIsUndefined()) implies self.source.oclIsKindOf(ObjectNode)]]>
             <description><![CDATA[An object flow may have a selection behavior only if it has an object node as a source.]]></description>
@@ -2495,7 +2495,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateInputAndOutputParameter"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter26"
             name="validateInputAndOutputParameter"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[A selection behavior has one input parameter and one output parameter. The input parameter must be a bag of elements of the same as or a supertype of the type of source object node. The output parameter must be the same or a subtype of the type of source object node. The behavior cannot have side effects.]]></description>
@@ -2505,7 +2505,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateIsMulticastOrIsMultireceive"
             lang="OCL"
             name="validateIsMulticastOrIsMultireceive"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[self.isMulticast implies not self.isMultireceive]]>
             <description><![CDATA[isMulticast and isMultireceive cannot both be true.]]></description>
@@ -2517,7 +2517,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateControlFlow_validateObjectNodes"
             lang="OCL"
             name="validateObjectNodes"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(self.source.oclIsUndefined() or
 	(self.source.oclIsKindOf(ObjectNode) implies
@@ -2561,7 +2561,7 @@ self.incoming->size() <= 2]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateDecisionNode_validateDecisionInputFlowIncoming"
             lang="OCL"
             name="validateDecisionInputFlowIncoming"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.decisionInputFlow.oclIsUndefined()) implies
 self.incoming->includes(self.decisionInputFlow)]]>
@@ -2572,7 +2572,7 @@ self.incoming->includes(self.decisionInputFlow)]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateDecisionNode_validateParameters"
             lang="OCL"
             name="validateParameters"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.decisionInput.oclIsUndefined()) implies (
 self.decisionInput.ownedParameter->select(
@@ -2711,7 +2711,7 @@ and self.decisionInput.ownedParameter->select(
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityParameterNode_validateIncomingOrOutgoing"
             lang="OCL"
             name="validateIncomingOrOutgoing"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(self.incoming->notEmpty() implies self.outgoing->isEmpty()) and
 (self.outgoing->notEmpty() implies self.incoming->isEmpty())]]>
@@ -2724,7 +2724,7 @@ and self.decisionInput.ownedParameter->select(
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateCreateObjectActionClassifier_notAbstract"
             lang="OCL"
             name="validateNotAbstract"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.classifier.oclIsUndefined()) implies (self.classifier.isAbstract = false)]]>
             <description><![CDATA[Check that the classifier is not abstract]]></description>
@@ -2734,7 +2734,7 @@ and self.decisionInput.ownedParameter->select(
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateCreateObjectActionClassifier_notClassifier"
             lang="OCL"
             name="valideNotAssociationClass"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.classifier.oclIsUndefined()) implies (not self.classifier.oclIsKindOf(uml::AssociationClass))]]>
             <description><![CDATA[Check that the classifier is not an association class]]></description>
@@ -2800,7 +2800,7 @@ and self.decisionInput.ownedParameter->select(
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateDestroyObjectAction_InputPinHasNotType"
             lang="OCL"
             name="validateInputPinHasNoType"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[if self.target.oclIsUndefined() then true else self.target.type->size() = 0 endif]]>
             <description><![CDATA[Check that the input pin has no type]]></description>
@@ -2812,7 +2812,7 @@ and self.decisionInput.ownedParameter->select(
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateStructuralFeatureAction_FeatureNotStatic"
             lang="OCL"
             name="validateFeatureNotStatic"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.structuralFeature.oclIsUndefined()) implies (self.structuralFeature.isStatic = false)]]>
             <description><![CDATA[Check that the structural feature must not be static.]]></description>
@@ -2925,7 +2925,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateException_HandlerBody_Constraint4"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter62"
             name="validateException_HandlerBody_Constraint4"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[The handler body has one input, and that input is the same as the exception input.]]></description>
@@ -2935,7 +2935,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateException_StructuredActivityNode_Constraint3"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter64"
             name="validateException_StructuredActivityNode_Constraint3"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[If the protected node is a StructuredActivityNode with output pins, then the exception handler body must also be a StructuredActivityNode with output pins that correspond in number and types to those of the protected node.]]></description>
@@ -2945,7 +2945,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateException_SourceAndTargetEdge_Constraint1"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter65"
             name="validateException_SourceAndTargetEdge_Constraint1"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[The exception handler and its input object node are not the source or target of any edge.]]></description>
@@ -2957,7 +2957,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateInterruptibleEdge_validateEdge"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter63"
             name="validateInterruptibleEdge"
-            mode="Live"
+            mode="Batch"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[Validate the constraint for interruptible Edge]]></description>

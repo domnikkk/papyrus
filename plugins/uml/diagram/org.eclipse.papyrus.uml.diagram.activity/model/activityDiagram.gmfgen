@@ -40,22 +40,22 @@
       <categories id="org.eclipse.uml2.uml.util.UMLValidator.validateBroacastSignalAction" name="validateBroadcastSignalActionTODO" description="Constraint for BraodcastSignalAction" path="/0/@audits/@categories.0 /0/@audits/@categories.35"/>
       <categories id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateExceptionHandler" name="validateExceptionHandler" description="Constraint Exception Handler" path="/0/@audits/@categories.10" audits="/0/@audits/@rules.61 /0/@audits/@rules.63 /0/@audits/@rules.64"/>
       <categories id="org.eclipse.uml2.uml.util.UMLValidator.validateInterruptibleEdge" name="validateInterruptibleEdge" description="Constraint for interruptible Edge" path="/0/@audits/@categories.10" audits="/0/@audits/@rules.62"/>
-      <rules name="validateNoIncomingEdges" description="An initial node has no incoming edge" id="org.eclipse.uml2.uml.util.UMLValidator.validateInitialNode_validateNoIncomingEdges" rule="/0/@expressionProviders/@providers.1/@expressions.36" message="An initial node must have no incoming edge" useInLiveMode="true" category="/0/@audits/@categories.1">
+      <rules name="validateNoIncomingEdges" description="An initial node has no incoming edge" id="org.eclipse.uml2.uml.util.UMLValidator.validateInitialNode_validateNoIncomingEdges" rule="/0/@expressionProviders/@providers.1/@expressions.36" message="An initial node must have no incoming edge" category="/0/@audits/@categories.1">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/InitialNode"/>
         </target>
       </rules>
-      <rules name="validateControlEdges" description="Only control edges can have initial nodes as source" id="org.eclipse.uml2.uml.util.UMLValidator.validateInitialNode_validateControlEdges" rule="/0/@expressionProviders/@providers.1/@expressions.37" message="Source of an object flow must not be an initial node" useInLiveMode="true" category="/0/@audits/@categories.1">
+      <rules name="validateControlEdges" description="Only control edges can have initial nodes as source" id="org.eclipse.uml2.uml.util.UMLValidator.validateInitialNode_validateControlEdges" rule="/0/@expressionProviders/@providers.1/@expressions.37" message="Source of an object flow must not be an initial node" category="/0/@audits/@categories.1">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectFlow"/>
         </target>
       </rules>
-      <rules name="validateNoOutgoingEdges" description="A fianl node has no outgoing edge" id="org.eclipse.uml2.uml.util.UMLValidator.validateFinalNode_validateNoOutgoingEdges" rule="/0/@expressionProviders/@providers.1/@expressions.38" message="A final node must have no outgoing edge" useInLiveMode="true" category="/0/@audits/@categories.2">
+      <rules name="validateNoOutgoingEdges" description="A fianl node has no outgoing edge" id="org.eclipse.uml2.uml.util.UMLValidator.validateFinalNode_validateNoOutgoingEdges" rule="/0/@expressionProviders/@providers.1/@expressions.38" message="A final node must have no outgoing edge" category="/0/@audits/@categories.2">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/FinalNode"/>
         </target>
       </rules>
-      <rules name="validateNotUnique" description="Object nodes are not unique typed elements" id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectNode_validateNotUnique" rule="/0/@expressionProviders/@providers.1/@expressions.39" message="isUnique must be false for object nodes." useInLiveMode="true" category="/0/@audits/@categories.11">
+      <rules name="validateNotUnique" description="Object nodes are not unique typed elements" id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectNode_validateNotUnique" rule="/0/@expressionProviders/@providers.1/@expressions.39" message="isUnique must be false for object nodes." category="/0/@audits/@categories.11">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode"/>
         </target>
@@ -75,57 +75,57 @@
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode"/>
         </target>
       </rules>
-      <rules name="validateControlPins" description="Control pins have a control type" id="org.eclipse.uml2.uml.util.UMLValidator.validatePin_validateControlPins" rule="/0/@expressionProviders/@providers.1/@expressions.42" message="isControl muts imply isControlType for pins." useInLiveMode="true" category="/0/@audits/@categories.13">
+      <rules name="validateControlPins" description="Control pins have a control type" id="org.eclipse.uml2.uml.util.UMLValidator.validatePin_validateControlPins" rule="/0/@expressionProviders/@providers.1/@expressions.42" message="isControl muts imply isControlType for pins." category="/0/@audits/@categories.13">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pin"/>
         </target>
       </rules>
-      <rules name="validateOutgoingEdgesStructuredOnly" description="Input pins may have outgoing edges only when they are on actions that are structured nodes, and these edges must target a node contained by the structured node." id="org.eclipse.uml2.uml.util.UMLValidator.validateInputPin_validateOutgoingEdgesStructuredOnly" rule="/0/@expressionProviders/@providers.1/@expressions.43" message="Input pins may have outgoing edges only when they are on actions that are structured nodes, and these edges must target a node contained by the structured node." useInLiveMode="true" category="/0/@audits/@categories.14">
+      <rules name="validateOutgoingEdgesStructuredOnly" description="Input pins may have outgoing edges only when they are on actions that are structured nodes, and these edges must target a node contained by the structured node." id="org.eclipse.uml2.uml.util.UMLValidator.validateInputPin_validateOutgoingEdgesStructuredOnly" rule="/0/@expressionProviders/@providers.1/@expressions.43" message="Input pins may have outgoing edges only when they are on actions that are structured nodes, and these edges must target a node contained by the structured node." category="/0/@audits/@categories.14">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/InputPin"/>
         </target>
       </rules>
-      <rules name="validateOneOutputPin" description="The fromAction of an action input pin must have exactly one output pin." id="org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin_validateOneOutputPin" rule="/0/@expressionProviders/@providers.1/@expressions.44" message="The fromAction of an action input pin must have exactly one output pin." useInLiveMode="true" category="/0/@audits/@categories.15">
+      <rules name="validateOneOutputPin" description="The fromAction of an action input pin must have exactly one output pin." id="org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin_validateOneOutputPin" rule="/0/@expressionProviders/@providers.1/@expressions.44" message="The fromAction of an action input pin must have exactly one output pin." category="/0/@audits/@categories.15">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActionInputPin"/>
         </target>
       </rules>
-      <rules name="validateInputPin" description="The fromAction of an action input pin must only have action input pins as input pins." id="org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin_validateInputPin" rule="/0/@expressionProviders/@providers.1/@expressions.45" message="The fromAction of an action input pin must only have action input pins as input pins." useInLiveMode="true" category="/0/@audits/@categories.15">
+      <rules name="validateInputPin" description="The fromAction of an action input pin must only have action input pins as input pins." id="org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin_validateInputPin" rule="/0/@expressionProviders/@providers.1/@expressions.45" message="The fromAction of an action input pin must only have action input pins as input pins." category="/0/@audits/@categories.15">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActionInputPin"/>
         </target>
       </rules>
-      <rules name="validateNoControlOrDataFlow" description="The fromAction of an action input pin cannot have control or data flows coming into or out of it or its pins." id="org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin_validateNoControlOrDataFlow" rule="/0/@expressionProviders/@providers.1/@expressions.46" message="The fromAction of an action input pin cannot have control or data flows coming into or out of it or its pins." useInLiveMode="true" category="/0/@audits/@categories.15">
+      <rules name="validateNoControlOrDataFlow" description="The fromAction of an action input pin cannot have control or data flows coming into or out of it or its pins." id="org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin_validateNoControlOrDataFlow" rule="/0/@expressionProviders/@providers.1/@expressions.46" message="The fromAction of an action input pin cannot have control or data flows coming into or out of it or its pins." category="/0/@audits/@categories.15">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActionInputPin"/>
         </target>
       </rules>
-      <rules name="validateCompatibleType" description="The type of value specification must be compatible with the type of the value pin." id="org.eclipse.uml2.uml.util.UMLValidator.validateValuePin_validateCompatibleType" rule="/0/@expressionProviders/@providers.0/@expressions.102" message="The type of value specification must be compatible with the type of the value pin." useInLiveMode="true" category="/0/@audits/@categories.16">
+      <rules name="validateCompatibleType" description="The type of value specification must be compatible with the type of the value pin." id="org.eclipse.uml2.uml.util.UMLValidator.validateValuePin_validateCompatibleType" rule="/0/@expressionProviders/@providers.0/@expressions.102" message="The type of value specification must be compatible with the type of the value pin." category="/0/@audits/@categories.16">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ValuePin"/>
         </target>
       </rules>
-      <rules name="validateNoIncomingEdges" description="Value pins have no incoming edges." id="org.eclipse.uml2.uml.util.UMLValidator.validateValuePin_validateNoIncomingEdges" rule="/0/@expressionProviders/@providers.1/@expressions.47" message="Value pins have no incoming edges." useInLiveMode="true" category="/0/@audits/@categories.16">
+      <rules name="validateNoIncomingEdges" description="Value pins have no incoming edges." id="org.eclipse.uml2.uml.util.UMLValidator.validateValuePin_validateNoIncomingEdges" rule="/0/@expressionProviders/@providers.1/@expressions.47" message="Value pins have no incoming edges." category="/0/@audits/@categories.16">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ValuePin"/>
         </target>
       </rules>
-      <rules name="validateIncomingEdgesStructuredOnly" description="Output pins may have incoming edges only when they are on actions that are structured nodes, and these edges may not target a node contained by the structured node." id="org.eclipse.uml2.uml.util.UMLValidator.validateOutputPin_validateIncomingEdgesStructuredOnly" rule="/0/@expressionProviders/@providers.1/@expressions.48" message="Output pins may have incoming edges only when they are on actions that are structured nodes, and these edges may not target a node contained by the structured node." useInLiveMode="true" category="/0/@audits/@categories.17">
+      <rules name="validateIncomingEdgesStructuredOnly" description="Output pins may have incoming edges only when they are on actions that are structured nodes, and these edges may not target a node contained by the structured node." id="org.eclipse.uml2.uml.util.UMLValidator.validateOutputPin_validateIncomingEdgesStructuredOnly" rule="/0/@expressionProviders/@providers.1/@expressions.48" message="Output pins may have incoming edges only when they are on actions that are structured nodes, and these edges may not target a node contained by the structured node." category="/0/@audits/@categories.17">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/OutputPin"/>
         </target>
       </rules>
-      <rules name="validateSourceAndTarget" description="The source and target of an edge must be in the same activity as the edge." id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge_validateSourceAndTarget" rule="/0/@expressionProviders/@providers.0/@expressions.103" message="The source and target of an edge must be in the same activity as the edge." useInLiveMode="true" category="/0/@audits/@categories.18">
+      <rules name="validateSourceAndTarget" description="The source and target of an edge must be in the same activity as the edge." id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge_validateSourceAndTarget" rule="/0/@expressionProviders/@providers.0/@expressions.103" message="The source and target of an edge must be in the same activity as the edge." category="/0/@audits/@categories.18">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityEdge"/>
         </target>
       </rules>
-      <rules name="validateOwned" description="Activity edges may be owned only by activities or groups." id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge_validateOwned" rule="/0/@expressionProviders/@providers.1/@expressions.49" message="Activity edges may be owned only by activities or groups." useInLiveMode="true" category="/0/@audits/@categories.18">
+      <rules name="validateOwned" description="Activity edges may be owned only by activities or groups." id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge_validateOwned" rule="/0/@expressionProviders/@providers.1/@expressions.49" message="Activity edges may be owned only by activities or groups." category="/0/@audits/@categories.18">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityEdge"/>
         </target>
       </rules>
-      <rules name="validateStructuredNode" description="Activity edges may be owned by at most one structured node." id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge_validateStructuredNode" rule="/0/@expressionProviders/@providers.1/@expressions.50" message="Activity edges may be owned by at most one structured node." useInLiveMode="true" category="/0/@audits/@categories.18">
+      <rules name="validateStructuredNode" description="Activity edges may be owned by at most one structured node." id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge_validateStructuredNode" rule="/0/@expressionProviders/@providers.1/@expressions.50" message="Activity edges may be owned by at most one structured node." category="/0/@audits/@categories.18">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityEdge"/>
         </target>
@@ -135,47 +135,47 @@
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityEdge"/>
         </target>
       </rules>
-      <rules name="validateNoActions" description="Object flows may not have actions at either end." id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateNoActions" rule="/0/@expressionProviders/@providers.1/@expressions.52" message="You can not link an action with an object flow" useInLiveMode="true" category="/0/@audits/@categories.19">
+      <rules name="validateNoActions" description="Object flows may not have actions at either end." id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateNoActions" rule="/0/@expressionProviders/@providers.1/@expressions.52" message="You can not link an action with an object flow" category="/0/@audits/@categories.19">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectFlow"/>
         </target>
       </rules>
-      <rules name="validateCompatibleTypes" description="Object nodes connected by an object flow, with optionally intervening control nodes, must have compatible types. In particular, the downstream object node type must be the same or a supertype of the upstream object node type" id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateCompatibleTypes" rule="/0/@expressionProviders/@providers.0/@expressions.104" message="The object flow must link object nodes with compatible types (target type must be a supertype of the source type)." useInLiveMode="true" category="/0/@audits/@categories.19">
+      <rules name="validateCompatibleTypes" description="Object nodes connected by an object flow, with optionally intervening control nodes, must have compatible types. In particular, the downstream object node type must be the same or a supertype of the upstream object node type" id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateCompatibleTypes" rule="/0/@expressionProviders/@providers.0/@expressions.104" message="The object flow must link object nodes with compatible types (target type must be a supertype of the source type)." category="/0/@audits/@categories.19">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectFlow"/>
         </target>
       </rules>
-      <rules name="validateSameUpperBounds" description="Object nodes connected by an object flow, with optionally intervening control nodes, must have the same upper bounds." id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateSameUpperBounds" rule="/0/@expressionProviders/@providers.0/@expressions.105" message="The object flow must link object nodes with the same upper bounds." useInLiveMode="true" category="/0/@audits/@categories.19">
+      <rules name="validateSameUpperBounds" description="Object nodes connected by an object flow, with optionally intervening control nodes, must have the same upper bounds." id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateSameUpperBounds" rule="/0/@expressionProviders/@providers.0/@expressions.105" message="The object flow must link object nodes with the same upper bounds." category="/0/@audits/@categories.19">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectFlow"/>
         </target>
       </rules>
-      <rules name="validateTarget" description="An edge with constant weight may not target an object node, or lead to an object node downstream with no intervening actions, that has an upper bound less than the weight." id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateTarget" rule="/0/@expressionProviders/@providers.0/@expressions.106" message="The target object node's upper bounds must be less than the object flow weight" useInLiveMode="true" category="/0/@audits/@categories.19">
+      <rules name="validateTarget" description="An edge with constant weight may not target an object node, or lead to an object node downstream with no intervening actions, that has an upper bound less than the weight." id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateTarget" rule="/0/@expressionProviders/@providers.0/@expressions.106" message="The target object node's upper bounds must be less than the object flow weight" category="/0/@audits/@categories.19">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectFlow"/>
         </target>
       </rules>
-      <rules name="validateTransformationBehaviour" description="A transformation behavior has one input parameter and one output parameter. The input parameter must be the same as or a supertype of the type of object token coming from the source end. The output parameter must be the same or a subtype of the type of object token expected downstream. The behavior cannot have side effects." id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateTransformationBehaviour" rule="/0/@expressionProviders/@providers.0/@expressions.107" message="A transformation behavior has one input parameter and one output parameter. The input parameter must be the same as or a supertype of the type of object token coming from the source end. The output parameter must be the same or a subtype of the type of object token expected downstream. The behavior cannot have side effects." useInLiveMode="true" category="/0/@audits/@categories.19">
+      <rules name="validateTransformationBehaviour" description="A transformation behavior has one input parameter and one output parameter. The input parameter must be the same as or a supertype of the type of object token coming from the source end. The output parameter must be the same or a subtype of the type of object token expected downstream. The behavior cannot have side effects." id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateTransformationBehaviour" rule="/0/@expressionProviders/@providers.0/@expressions.107" message="A transformation behavior has one input parameter and one output parameter. The input parameter must be the same as or a supertype of the type of object token coming from the source end. The output parameter must be the same or a subtype of the type of object token expected downstream. The behavior cannot have side effects." category="/0/@audits/@categories.19">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectFlow"/>
         </target>
       </rules>
-      <rules name="validateSelectionBehaviour" description="An object flow may have a selection behavior only if it has an object node as a source." id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateSelectionBehaviour" rule="/0/@expressionProviders/@providers.1/@expressions.53" message="Selection behavior is authorized only when the object flow's source is an object node." useInLiveMode="true" category="/0/@audits/@categories.19">
+      <rules name="validateSelectionBehaviour" description="An object flow may have a selection behavior only if it has an object node as a source." id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateSelectionBehaviour" rule="/0/@expressionProviders/@providers.1/@expressions.53" message="Selection behavior is authorized only when the object flow's source is an object node." category="/0/@audits/@categories.19">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectFlow"/>
         </target>
       </rules>
-      <rules name="validateInputAndOutputParameter" description="A selection behavior has one input parameter and one output parameter. The input parameter must be a bag of elements of the same as or a supertype of the type of source object node. The output parameter must be the same or a subtype of the type of source object node. The behavior cannot have side effects." id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateInputAndOutputParameter" rule="/0/@expressionProviders/@providers.0/@expressions.108" message="A selection behavior has one input parameter and one output parameter. The input parameter must be a bag of elements of the same as or a supertype of the type of source object node. The output parameter must be the same or a subtype of the type of source object node. The behavior cannot have side effects." useInLiveMode="true" category="/0/@audits/@categories.19">
+      <rules name="validateInputAndOutputParameter" description="A selection behavior has one input parameter and one output parameter. The input parameter must be a bag of elements of the same as or a supertype of the type of source object node. The output parameter must be the same or a subtype of the type of source object node. The behavior cannot have side effects." id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateInputAndOutputParameter" rule="/0/@expressionProviders/@providers.0/@expressions.108" message="A selection behavior has one input parameter and one output parameter. The input parameter must be a bag of elements of the same as or a supertype of the type of source object node. The output parameter must be the same or a subtype of the type of source object node. The behavior cannot have side effects." category="/0/@audits/@categories.19">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectFlow"/>
         </target>
       </rules>
-      <rules name="validateIsMulticastOrIsMultireceive" description="isMulticast and isMultireceive cannot both be true." id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateIsMulticastOrIsMultireceive" rule="/0/@expressionProviders/@providers.1/@expressions.54" message="isMulticast and isMultireceive cannot both be true." useInLiveMode="true" category="/0/@audits/@categories.19">
+      <rules name="validateIsMulticastOrIsMultireceive" description="isMulticast and isMultireceive cannot both be true." id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateIsMulticastOrIsMultireceive" rule="/0/@expressionProviders/@providers.1/@expressions.54" message="isMulticast and isMultireceive cannot both be true." category="/0/@audits/@categories.19">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectFlow"/>
         </target>
       </rules>
-      <rules name="validateObjectNodes" description="Control flows may not have object nodes at either end, except for object nodes with control type" id="org.eclipse.uml2.uml.util.UMLValidator.validateControlFlow_validateObjectNodes" rule="/0/@expressionProviders/@providers.1/@expressions.55" message="You can not link an object node with a control flow (except if its control type is true)." useInLiveMode="true" category="/0/@audits/@categories.20">
+      <rules name="validateObjectNodes" description="Control flows may not have object nodes at either end, except for object nodes with control type" id="org.eclipse.uml2.uml.util.UMLValidator.validateControlFlow_validateObjectNodes" rule="/0/@expressionProviders/@providers.1/@expressions.55" message="You can not link an object node with a control flow (except if its control type is true)." category="/0/@audits/@categories.20">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ControlFlow"/>
         </target>
@@ -190,12 +190,12 @@
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/DecisionNode"/>
         </target>
       </rules>
-      <rules name="validateDecisionInputFlowIncoming" description="The decisionInputFlow of a decision node must be an incoming edge of the decision node." id="org.eclipse.uml2.uml.util.UMLValidator.validateDecisionNode_validateDecisionInputFlowIncoming" rule="/0/@expressionProviders/@providers.1/@expressions.58" message="The decisionInputFlow of a decision node must be an incoming edge of the decision node." useInLiveMode="true" category="/0/@audits/@categories.21">
+      <rules name="validateDecisionInputFlowIncoming" description="The decisionInputFlow of a decision node must be an incoming edge of the decision node." id="org.eclipse.uml2.uml.util.UMLValidator.validateDecisionNode_validateDecisionInputFlowIncoming" rule="/0/@expressionProviders/@providers.1/@expressions.58" message="The decisionInputFlow of a decision node must be an incoming edge of the decision node." category="/0/@audits/@categories.21">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/DecisionNode"/>
         </target>
       </rules>
-      <rules name="validateParameters" description="A decision input behavior has no output parameters, no in-out parameters and one return parameter." id="org.eclipse.uml2.uml.util.UMLValidator.validateDecisionNode_validateParameters" rule="/0/@expressionProviders/@providers.1/@expressions.59" message="A decision input behavior has no output parameters, no in-out parameters and one return parameter." useInLiveMode="true" category="/0/@audits/@categories.21">
+      <rules name="validateParameters" description="A decision input behavior has no output parameters, no in-out parameters and one return parameter." id="org.eclipse.uml2.uml.util.UMLValidator.validateDecisionNode_validateParameters" rule="/0/@expressionProviders/@providers.1/@expressions.59" message="A decision input behavior has no output parameters, no in-out parameters and one return parameter." category="/0/@audits/@categories.21">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/DecisionNode"/>
         </target>
@@ -250,17 +250,17 @@
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/JoinNode"/>
         </target>
       </rules>
-      <rules name="validateIncomingOrOutgoing" description="An activity parameter node must not have both incoming and outgoing edges." id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityParameterNode_validateIncomingOrOutgoing" rule="/0/@expressionProviders/@providers.1/@expressions.67" message="An activity parameter node must not have both incoming and outgoing edges." useInLiveMode="true" category="/0/@audits/@categories.25">
+      <rules name="validateIncomingOrOutgoing" description="An activity parameter node must not have both incoming and outgoing edges." id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityParameterNode_validateIncomingOrOutgoing" rule="/0/@expressionProviders/@providers.1/@expressions.67" message="An activity parameter node must not have both incoming and outgoing edges." category="/0/@audits/@categories.25">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityParameterNode"/>
         </target>
       </rules>
-      <rules name="validateNotAbstract" description="Check that the classifier is not abstract" id="org.eclipse.uml2.uml.util.UMLValidator.validateCreateObjectActionClassifier_notAbstract" rule="/0/@expressionProviders/@providers.1/@expressions.68" message="The classifier cannot be abstract." useInLiveMode="true" category="/0/@audits/@categories.26">
+      <rules name="validateNotAbstract" description="Check that the classifier is not abstract" id="org.eclipse.uml2.uml.util.UMLValidator.validateCreateObjectActionClassifier_notAbstract" rule="/0/@expressionProviders/@providers.1/@expressions.68" message="The classifier cannot be abstract." category="/0/@audits/@categories.26">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/CreateObjectAction"/>
         </target>
       </rules>
-      <rules name="valideNotAssociationClass" description="Check that the classifier is not an association class" id="org.eclipse.uml2.uml.util.UMLValidator.validateCreateObjectActionClassifier_notClassifier" rule="/0/@expressionProviders/@providers.1/@expressions.69" message="The classifier cannot be an association class." useInLiveMode="true" category="/0/@audits/@categories.26">
+      <rules name="valideNotAssociationClass" description="Check that the classifier is not an association class" id="org.eclipse.uml2.uml.util.UMLValidator.validateCreateObjectActionClassifier_notClassifier" rule="/0/@expressionProviders/@providers.1/@expressions.69" message="The classifier cannot be an association class." category="/0/@audits/@categories.26">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/CreateObjectAction"/>
         </target>
@@ -290,12 +290,12 @@
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/AddStructuralFeatureValueAction"/>
         </target>
       </rules>
-      <rules name="validateInputPinHasNoType" description="Check that the input pin has no type" id="org.eclipse.uml2.uml.util.UMLValidator.validateDestroyObjectAction_InputPinHasNotType" rule="/0/@expressionProviders/@providers.1/@expressions.75" message="The input pin has no type" useInLiveMode="true" category="/0/@audits/@categories.29">
+      <rules name="validateInputPinHasNoType" description="Check that the input pin has no type" id="org.eclipse.uml2.uml.util.UMLValidator.validateDestroyObjectAction_InputPinHasNotType" rule="/0/@expressionProviders/@providers.1/@expressions.75" message="The input pin has no type" category="/0/@audits/@categories.29">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/DestroyObjectAction"/>
         </target>
       </rules>
-      <rules name="validateFeatureNotStatic" description="Check that the structural feature must not be static." id="org.eclipse.uml2.uml.util.UMLValidator.validateStructuralFeatureAction_FeatureNotStatic" rule="/0/@expressionProviders/@providers.1/@expressions.76" message="The structural feature must not be static." useInLiveMode="true" category="/0/@audits/@categories.30">
+      <rules name="validateFeatureNotStatic" description="Check that the structural feature must not be static." id="org.eclipse.uml2.uml.util.UMLValidator.validateStructuralFeatureAction_FeatureNotStatic" rule="/0/@expressionProviders/@providers.1/@expressions.76" message="The structural feature must not be static." category="/0/@audits/@categories.30">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuralFeatureAction"/>
         </target>
@@ -345,22 +345,22 @@
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ReadVariableAction"/>
         </target>
       </rules>
-      <rules name="validateException_HandlerBody_Constraint4" description="The handler body has one input, and that input is the same as the exception input." id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateException_HandlerBody_Constraint4" rule="/0/@expressionProviders/@providers.0/@expressions.113" message="The handler body has one input, and that input is the same as the exception input." useInLiveMode="true" category="/0/@audits/@categories.36">
+      <rules name="validateException_HandlerBody_Constraint4" description="The handler body has one input, and that input is the same as the exception input." id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateException_HandlerBody_Constraint4" rule="/0/@expressionProviders/@providers.0/@expressions.113" message="The handler body has one input, and that input is the same as the exception input." category="/0/@audits/@categories.36">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ExceptionHandler"/>
         </target>
       </rules>
-      <rules name="validateInterruptibleEdge" description="Validate the constraint for interruptible Edge" id="org.eclipse.uml2.uml.util.UMLValidator.validateInterruptibleEdge_validateEdge" rule="/0/@expressionProviders/@providers.0/@expressions.112" message="Interrupting edges of a region must have their source node in the region and their target node outside the region in the" useInLiveMode="true" category="/0/@audits/@categories.37">
+      <rules name="validateInterruptibleEdge" description="Validate the constraint for interruptible Edge" id="org.eclipse.uml2.uml.util.UMLValidator.validateInterruptibleEdge_validateEdge" rule="/0/@expressionProviders/@providers.0/@expressions.112" message="Interrupting edges of a region must have their source node in the region and their target node outside the region in the" category="/0/@audits/@categories.37">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityEdge"/>
         </target>
       </rules>
-      <rules name="validateException_StructuredActivityNode_Constraint3" description="If the protected node is a StructuredActivityNode with output pins, then the exception handler body must also be a StructuredActivityNode with output pins that correspond in number and types to those of the protected node." id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateException_StructuredActivityNode_Constraint3" rule="/0/@expressionProviders/@providers.0/@expressions.116" message="If the protected node is a StructuredActivityNode with output pins, then the exception handler body must also be a StructuredActivityNode with output pins that correspond in number and types to those of the protected node." useInLiveMode="true" category="/0/@audits/@categories.36">
+      <rules name="validateException_StructuredActivityNode_Constraint3" description="If the protected node is a StructuredActivityNode with output pins, then the exception handler body must also be a StructuredActivityNode with output pins that correspond in number and types to those of the protected node." id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateException_StructuredActivityNode_Constraint3" rule="/0/@expressionProviders/@providers.0/@expressions.116" message="If the protected node is a StructuredActivityNode with output pins, then the exception handler body must also be a StructuredActivityNode with output pins that correspond in number and types to those of the protected node." category="/0/@audits/@categories.36">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ExceptionHandler"/>
         </target>
       </rules>
-      <rules name="validateException_SourceAndTargetEdge_Constraint1" description="The exception handler and its input object node are not the source or target of any edge." id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateException_SourceAndTargetEdge_Constraint1" rule="/0/@expressionProviders/@providers.0/@expressions.115" message="The exception handler and its input object node are not the source or target of any edge." useInLiveMode="true" category="/0/@audits/@categories.36">
+      <rules name="validateException_SourceAndTargetEdge_Constraint1" description="The exception handler and its input object node are not the source or target of any edge." id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateException_SourceAndTargetEdge_Constraint1" rule="/0/@expressionProviders/@providers.0/@expressions.115" message="The exception handler and its input object node are not the source or target of any edge." category="/0/@audits/@categories.36">
         <target xsi:type="gmfgen:GenDomainElementTarget" contextSelector="/0/@audits/@clientContexts.0">
           <element href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ExceptionHandler"/>
         </target>
