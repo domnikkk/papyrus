@@ -47,6 +47,7 @@
 		<module>../plugins/doc/org.eclipse.papyrus.infra.services.controlmode.doc</module>
 		<module>../plugins/doc/org.eclipse.papyrus.layers.documentation</module>
         <module>../plugins/doc/org.eclipse.papyrus.uml.decoratormodel.doc</module>
+        <module>../plugins/doc/org.eclipse.papyrus.uml.modelrepair.doc</module>
 		<module>../plugins/customization/org.eclipse.papyrus.customization.palette</module>
 		<module>../plugins/customization/org.eclipse.papyrus.customization.paletteconfiguration</module>
 		<module>../plugins/customization/org.eclipse.papyrus.customization.properties</module>

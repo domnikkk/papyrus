@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc label="Repairing UML Models" link_to="../org.eclipse.papyrus.uml.diagram.profile.doc/resource/users/profile-main-toc.xml#profiles">
+   <anchor id="model-repair-start"/>
+   <topic href="resource/stereotype-repair.html" label="Repairing Stereotype Applications">
+      <link toc="resource/stereotype-repair-toc.xml"/>
+      <anchor id="stereotype-repair"/>
+   </topic>
+   <anchor id="model-repair-end"/>
+	
+</toc>
