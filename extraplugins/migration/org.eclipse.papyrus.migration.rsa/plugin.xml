@@ -442,5 +442,20 @@
    			</description>
    		</wizard>
    	</extension>
+   <extension
+         point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            location="platform:/plugin/org.eclipse.papyrus.migration.rsa/model/profiles/RealTime.uml#_1FAMEKiFEeSPtOio57ufig"
+            uri="http://www.eclipse.org/papyrus/profile/umlrt">
+      </profile>
+      <profile
+            location="platform:/plugin/org.eclipse.papyrus.migration.rsa/model/profiles/Default.uml#_Nfp9EKiGEeSPtOio57ufig"
+            uri="http://www.eclipse.org/papyrus/profile/default">
+      </profile>
+      <profile
+            location="platform:/plugin/org.eclipse.papyrus.migration.rsa/model/profiles/ProfileBase.uml#_YFn2MKiGEeSPtOio57ufig"
+            uri="http://www.eclipse.org/papyrus/profile/profilebase">
+      </profile>
+   </extension>
 	
 </plugin>
