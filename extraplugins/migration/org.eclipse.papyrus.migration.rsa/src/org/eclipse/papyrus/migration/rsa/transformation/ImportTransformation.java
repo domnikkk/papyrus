@@ -48,7 +48,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.XMLResource;
@@ -75,7 +74,6 @@ import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusPara
 import org.eclipse.papyrus.migration.rsa.blackbox.ProfileBaseHelper;
 import org.eclipse.papyrus.migration.rsa.concurrent.ExecutorsPool;
 import org.eclipse.papyrus.migration.rsa.concurrent.ResourceAccessHelper;
-import org.eclipse.papyrus.migration.rsa.concurrent.ThreadSafeResourceSet;
 import org.eclipse.papyrus.migration.rsa.default_.DefaultPackage;
 import org.eclipse.papyrus.migration.rsa.profilebase.ProfileBasePackage;
 import org.eclipse.papyrus.uml.documentation.Documentation.DocumentationPackage;
@@ -109,7 +107,7 @@ public class ImportTransformation {
 
 	protected ModelExtent outUML, outNotation, outSashModel, inParameters, inPapyrusProfiles;
 
-	protected ResourceSet resourceSet;
+	protected MigrationResourceSet resourceSet;
 
 	protected Job job;
 
@@ -275,7 +273,7 @@ public class ImportTransformation {
 	 * Initializes the resource set, and resolve all dependencies
 	 */
 	protected void initResourceSet(IProgressMonitor monitor) {
-		resourceSet = new ThreadSafeResourceSet();
+		resourceSet = new MigrationResourceSetImpl();
 		synchronized (UMLUtil.class) {
 			UMLUtil.init(resourceSet);
 		}
@@ -412,9 +410,9 @@ public class ImportTransformation {
 		MultiStatus generationStatus = new MultiStatus(Activator.PLUGIN_ID, IStatus.OK, statusMessage, null);
 
 		ExecutionContext context = createExecutionContext(monitor, generationStatus);
-		
-		getInPapyrusProfiles(); //Preload profiles
-		
+
+		getInPapyrusProfiles(); // Preload profiles
+
 		long endLoad = System.nanoTime();
 		loadingTime = endLoad - startLoad;
 
@@ -590,7 +588,12 @@ public class ImportTransformation {
 
 	protected void handleDanglingURIs(Collection<Resource> resourcesToSave) {
 		if (analysisHelper != null) {
-			analysisHelper.computeURIMappings(resourcesToSave);
+			resourceSet.freeze();
+			try {
+				analysisHelper.computeURIMappings(resourcesToSave);
+			} finally {
+				resourceSet.unfreeze();
+			}
 		}
 	}
 
@@ -910,7 +913,7 @@ public class ImportTransformation {
 	/*
 	 * Bug 447097: [Model Import] Importing a fragmented model causes stereotype applications to be lost in resulting submodel
 	 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=447097
-	 *
+	 * 
 	 * Before the transformation, We moved all root elements from the fragment resources to the main
 	 * resource, then we transformed some of them to Papyrus Stereotype Applications. We need to move
 	 * these stereotype applications back to the proper fragment resource
@@ -1097,7 +1100,7 @@ public class ImportTransformation {
 				/*
 				 * Bug 447097: [Model Import] Importing a fragmented model causes stereotype applications to be lost in resulting submodel
 				 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=447097
-				 *
+				 * 
 				 * StereotypeApplications from Fragments are not considered "rootElements" by QVTo, and
 				 * there is no logical link between UML Elements and stereotype applications in fragments
 				 * We need to make all root Elements available to the QVTo ModelExtent (Including the ones
