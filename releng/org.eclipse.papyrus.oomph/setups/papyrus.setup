@@ -2317,6 +2317,25 @@
           </repositoryList>
         </targlet>
       </setupTask>
+      <setupTask
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus Java">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.layers.stackmodel"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.java\..*"/>
+          </predicate>
+        </workingSet>
+        <description>Projects related to Java code generation/reverse.</description>
+      </setupTask>
       <stream
           name="master"
           label="master (Mars/1.1)">
@@ -2346,6 +2365,46 @@
           xsi:type="setup:VariableTask"
           name="papyrus.extrafeature"
           value="layers"/>
+      <setupTask
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus Layers">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.layers.stackmodel"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.layers\..*"/>
+          </predicate>
+        </workingSet>
+        <description>Projects related to Papyrus Layers.</description>
+      </setupTask>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask"
+          id="">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/integration/plugins}/org.eclipse.papyrus.integrationtests.editor"/>
+        <description>Import plugin requested by Layers</description>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.targlets:TargletTask">
+        <targlet
+            name="Layers dependencies"
+            activeRepositoryList="${eclipse.target.platform}">
+          <requirement
+              name="org.eclipse.emf.query.sdk.feature.group"/>
+          <repositoryList
+              name="Mars">
+            <repository
+                url="http://download.eclipse.org/modeling/emf/query/updates/releases/"/>
+          </repositoryList>
+        </targlet>
+      </setupTask>
       <stream
           name="master"
           label="master (Mars/1.1)">
