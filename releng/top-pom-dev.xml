@@ -26,7 +26,6 @@
 		<module>../plugins/developer/org.eclipse.papyrus.infra.extendedtypes.elementtypeview</module>
 		<module>../plugins/developer/org.eclipse.papyrus.mwe2.utils</module>
 	 	<module>../plugins/developer/org.eclipse.papyrus.releng.tools</module>
-	<!--  	<module>../plugins/developer/org.eclipse.papyrus.sysml.sysmloveruml.codegen</module> -->
 		<module>../plugins/developer/org.eclipse.papyrus.uml.developer.mde</module>
 		<module>../plugins/infra/gmfdiag/css/org.eclipse.papyrus.infra.gmfdiag.css.debug</module>
 		<module>../features/papyrus-dev-features/org.eclipse.papyrus.dev.feature</module>
