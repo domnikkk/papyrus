@@ -22,7 +22,7 @@
 		<module>../plugins/developer/org.eclipse.papyrus.gmf.editpoliciesstates</module>
 		<module>../plugins/developer/org.eclipse.papyrus.gmf.figureview</module>
 		<module>../plugins/developer/org.eclipse.papyrus.gmfgenextension</module>
-	<!--  	<module>../plugins/developer/org.eclipse.papyrus.infra.emf.commandstack</module>-->
+	 	<module>../plugins/developer/org.eclipse.papyrus.infra.emf.commandstack</module>
 		<module>../plugins/developer/org.eclipse.papyrus.infra.extendedtypes.elementtypeview</module>
 		<module>../plugins/developer/org.eclipse.papyrus.mwe2.utils</module>
 	 	<module>../plugins/developer/org.eclipse.papyrus.releng.tools</module>
