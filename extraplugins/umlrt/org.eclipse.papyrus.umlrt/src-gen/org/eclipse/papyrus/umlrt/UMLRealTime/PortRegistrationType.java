@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -19,7 +19,6 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Port Registration Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- *
  * @see org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage#getPortRegistrationType()
  * @model
  * @generated
@@ -29,7 +28,6 @@ public enum PortRegistrationType implements Enumerator {
 	 * The '<em><b>Automatic</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #AUTOMATIC_VALUE
 	 * @generated
 	 * @ordered
@@ -40,7 +38,6 @@ public enum PortRegistrationType implements Enumerator {
 	 * The '<em><b>Application</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #APPLICATION_VALUE
 	 * @generated
 	 * @ordered
@@ -51,7 +48,6 @@ public enum PortRegistrationType implements Enumerator {
 	 * The '<em><b>Application Locked</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #APPLICATION_LOCKED_VALUE
 	 * @generated
 	 * @ordered
@@ -62,10 +58,10 @@ public enum PortRegistrationType implements Enumerator {
 	 * The '<em><b>Automatic</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Automatic</b></em>' literal object isn't clear, there really should be more of a description here...
+	 * If the meaning of '<em><b>Automatic</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #AUTOMATIC
 	 * @model name="Automatic"
 	 * @generated
@@ -77,10 +73,10 @@ public enum PortRegistrationType implements Enumerator {
 	 * The '<em><b>Application</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Application</b></em>' literal object isn't clear, there really should be more of a description here...
+	 * If the meaning of '<em><b>Application</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #APPLICATION
 	 * @model name="Application"
 	 * @generated
@@ -92,10 +88,10 @@ public enum PortRegistrationType implements Enumerator {
 	 * The '<em><b>Application Locked</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Application Locked</b></em>' literal object isn't clear, there really should be more of a description here...
+	 * If the meaning of '<em><b>Application Locked</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #APPLICATION_LOCKED
 	 * @model name="ApplicationLocked"
 	 * @generated
@@ -107,21 +103,19 @@ public enum PortRegistrationType implements Enumerator {
 	 * An array of all the '<em><b>Port Registration Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private static final PortRegistrationType[] VALUES_ARRAY =
-			new PortRegistrationType[] {
-					AUTOMATIC,
-					APPLICATION,
-					APPLICATION_LOCKED,
-			};
+		new PortRegistrationType[] {
+			AUTOMATIC,
+			APPLICATION,
+			APPLICATION_LOCKED,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Port Registration Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public static final List<PortRegistrationType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -130,7 +124,8 @@ public enum PortRegistrationType implements Enumerator {
 	 * Returns the '<em><b>Port Registration Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static PortRegistrationType get(String literal) {
@@ -147,7 +142,8 @@ public enum PortRegistrationType implements Enumerator {
 	 * Returns the '<em><b>Port Registration Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static PortRegistrationType getByName(String name) {
@@ -164,17 +160,15 @@ public enum PortRegistrationType implements Enumerator {
 	 * Returns the '<em><b>Port Registration Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static PortRegistrationType get(int value) {
 		switch (value) {
-		case AUTOMATIC_VALUE:
-			return AUTOMATIC;
-		case APPLICATION_VALUE:
-			return APPLICATION;
-		case APPLICATION_LOCKED_VALUE:
-			return APPLICATION_LOCKED;
+			case AUTOMATIC_VALUE: return AUTOMATIC;
+			case APPLICATION_VALUE: return APPLICATION;
+			case APPLICATION_LOCKED_VALUE: return APPLICATION_LOCKED;
 		}
 		return null;
 	}
@@ -182,7 +176,6 @@ public enum PortRegistrationType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private final int value;
@@ -190,7 +183,6 @@ public enum PortRegistrationType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private final String name;
@@ -198,7 +190,6 @@ public enum PortRegistrationType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -207,7 +198,6 @@ public enum PortRegistrationType implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private PortRegistrationType(int value, String name, String literal) {
@@ -219,46 +209,42 @@ public enum PortRegistrationType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-
-} // PortRegistrationType
+	
+} //PortRegistrationType

@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -9,12 +9,16 @@
 package org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTRegion;
 import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage;
+
 import org.eclipse.uml2.uml.Region;
 
 /**
@@ -24,7 +28,7 @@ import org.eclipse.uml2.uml.Region;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.impl.RTRegionImpl#getBase_Region <em>Base Region</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.impl.RTRegionImpl#getBase_Region <em>Base Region</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,7 +39,6 @@ public class RTRegionImpl extends MinimalEObjectImpl.Container implements RTRegi
 	 * The cached value of the '{@link #getBase_Region() <em>Base Region</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getBase_Region()
 	 * @generated
 	 * @ordered
@@ -45,7 +48,6 @@ public class RTRegionImpl extends MinimalEObjectImpl.Container implements RTRegi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected RTRegionImpl() {
@@ -55,7 +57,6 @@ public class RTRegionImpl extends MinimalEObjectImpl.Container implements RTRegi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -66,18 +67,16 @@ public class RTRegionImpl extends MinimalEObjectImpl.Container implements RTRegi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Region getBase_Region() {
 		if (base_Region != null && base_Region.eIsProxy()) {
-			InternalEObject oldBase_Region = (InternalEObject) base_Region;
-			base_Region = (Region) eResolveProxy(oldBase_Region);
+			InternalEObject oldBase_Region = (InternalEObject)base_Region;
+			base_Region = (Region)eResolveProxy(oldBase_Region);
 			if (base_Region != oldBase_Region) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UMLRealTimeStateMachPackage.RT_REGION__BASE_REGION, oldBase_Region, base_Region));
-				}
 			}
 		}
 		return base_Region;
@@ -86,7 +85,6 @@ public class RTRegionImpl extends MinimalEObjectImpl.Container implements RTRegi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Region basicGetBase_Region() {
@@ -96,32 +94,27 @@ public class RTRegionImpl extends MinimalEObjectImpl.Container implements RTRegi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setBase_Region(Region newBase_Region) {
 		Region oldBase_Region = base_Region;
 		base_Region = newBase_Region;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLRealTimeStateMachPackage.RT_REGION__BASE_REGION, oldBase_Region, base_Region));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UMLRealTimeStateMachPackage.RT_REGION__BASE_REGION:
-			if (resolve) {
-				return getBase_Region();
-			}
-			return basicGetBase_Region();
+			case UMLRealTimeStateMachPackage.RT_REGION__BASE_REGION:
+				if (resolve) return getBase_Region();
+				return basicGetBase_Region();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -129,15 +122,14 @@ public class RTRegionImpl extends MinimalEObjectImpl.Container implements RTRegi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UMLRealTimeStateMachPackage.RT_REGION__BASE_REGION:
-			setBase_Region((Region) newValue);
-			return;
+			case UMLRealTimeStateMachPackage.RT_REGION__BASE_REGION:
+				setBase_Region((Region)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -145,15 +137,14 @@ public class RTRegionImpl extends MinimalEObjectImpl.Container implements RTRegi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UMLRealTimeStateMachPackage.RT_REGION__BASE_REGION:
-			setBase_Region((Region) null);
-			return;
+			case UMLRealTimeStateMachPackage.RT_REGION__BASE_REGION:
+				setBase_Region((Region)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -161,16 +152,15 @@ public class RTRegionImpl extends MinimalEObjectImpl.Container implements RTRegi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UMLRealTimeStateMachPackage.RT_REGION__BASE_REGION:
-			return base_Region != null;
+			case UMLRealTimeStateMachPackage.RT_REGION__BASE_REGION:
+				return base_Region != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} // RTRegionImpl
+} //RTRegionImpl

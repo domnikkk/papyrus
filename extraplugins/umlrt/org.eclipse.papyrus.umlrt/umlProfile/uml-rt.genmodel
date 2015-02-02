@@ -33,8 +33,8 @@
     <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
   </genAnnotations>
   <foreignModel>uml-rt.profile.uml</foreignModel>
-  <genPackages xsi:type="genmodel:GenPackage" prefix="UMLRealTime" basePackage="org.eclipse.papyrus.umlrt"
-      disposableProviderFactory="true" ecorePackage="UMLRealTime.ecore#/">
+  <genPackages xsi:type="genmodel:GenPackage" prefix="UMLRealTime" basePackage="org.eclipse.papyrus.umlrt" disposableProviderFactory="true"
+      ecorePackage="UMLRealTime.ecore#/">
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="UMLRealTime.ecore#//PortRegistrationType">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="UMLRealTime.ecore#//PortRegistrationType/Automatic"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="UMLRealTime.ecore#//PortRegistrationType/Application"/>
@@ -74,9 +74,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference UMLRealTime.ecore#//ProtocolContainer/base_Package"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLRealTime.ecore#//RTRExcludedElement">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLRealTime.ecore#//RTRedefinedElement">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference UMLRealTime.ecore#//RTRExcludedElement/base_RedefinableElement"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLRealTime.ecore#//RTRedefinedElement/base_RedefinableElement"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLRealTime.ecore#//RTRedefinedElement/rootFragment"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLRealTime.ecore#//RTMessageSet">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -12,7 +12,9 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTPseudostate;
 import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTRegion;
 import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTState;
@@ -20,21 +22,21 @@ import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTStateMachin
 import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTTrigger;
 import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachFactory;
 import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage;
+
 import org.eclipse.uml2.types.TypesPackage;
+
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UMLRealTimeStateMachPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass rtStateMachineEClass = null;
@@ -42,7 +44,6 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass rtRegionEClass = null;
@@ -50,7 +51,6 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass rtStateEClass = null;
@@ -58,7 +58,6 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass rtPseudostateEClass = null;
@@ -66,17 +65,20 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass rtTriggerEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>
-	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * <p>Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage#eNS_URI
 	 * @see #init()
@@ -89,31 +91,27 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 *
-	 * <p>
-	 * This method is used to initialize {@link UMLRealTimeStateMachPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
+	 * 
+	 * <p>This method is used to initialize {@link UMLRealTimeStateMachPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static UMLRealTimeStateMachPackage init() {
-		if (isInited) {
-			return (UMLRealTimeStateMachPackage) EPackage.Registry.INSTANCE.getEPackage(UMLRealTimeStateMachPackage.eNS_URI);
-		}
+		if (isInited) return (UMLRealTimeStateMachPackage)EPackage.Registry.INSTANCE.getEPackage(UMLRealTimeStateMachPackage.eNS_URI);
 
 		// Obtain or create and register package
-		UMLRealTimeStateMachPackageImpl theUMLRealTimeStateMachPackage = (UMLRealTimeStateMachPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof UMLRealTimeStateMachPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-				: new UMLRealTimeStateMachPackageImpl());
+		UMLRealTimeStateMachPackageImpl theUMLRealTimeStateMachPackage = (UMLRealTimeStateMachPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof UMLRealTimeStateMachPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new UMLRealTimeStateMachPackageImpl());
 
 		isInited = true;
 
@@ -129,7 +127,7 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 		// Mark meta-data to indicate it can't be changed
 		theUMLRealTimeStateMachPackage.freeze();
 
-
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(UMLRealTimeStateMachPackage.eNS_URI, theUMLRealTimeStateMachPackage);
 		return theUMLRealTimeStateMachPackage;
@@ -138,7 +136,6 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -149,29 +146,26 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EReference getRTStateMachine_Base_StateMachine() {
-		return (EReference) rtStateMachineEClass.getEStructuralFeatures().get(0);
+		return (EReference)rtStateMachineEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EAttribute getRTStateMachine_IsPassive() {
-		return (EAttribute) rtStateMachineEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)rtStateMachineEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -182,18 +176,16 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EReference getRTRegion_Base_Region() {
-		return (EReference) rtRegionEClass.getEStructuralFeatures().get(0);
+		return (EReference)rtRegionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -204,18 +196,16 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EReference getRTState_Base_State() {
-		return (EReference) rtStateEClass.getEStructuralFeatures().get(0);
+		return (EReference)rtStateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -226,18 +216,16 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EReference getRTPseudostate_Base_Pseudostate() {
-		return (EReference) rtPseudostateEClass.getEStructuralFeatures().get(0);
+		return (EReference)rtPseudostateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -248,45 +236,39 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EReference getRTTrigger_Base_Operation() {
-		return (EReference) rtTriggerEClass.getEStructuralFeatures().get(0);
+		return (EReference)rtTriggerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public UMLRealTimeStateMachFactory getUMLRealTimeStateMachFactory() {
-		return (UMLRealTimeStateMachFactory) getEFactoryInstance();
+		return (UMLRealTimeStateMachFactory)getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package. This method is
+	 * Creates the meta-model objects for the package.  This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) {
-			return;
-		}
+		if (isCreated) return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -310,23 +292,19 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model. This
+	 * Complete the initialization of the package and its meta-model.  This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) {
-			return;
-		}
+		if (isInitialized) return;
 		isInitialized = true;
 
 		// Initialize package
@@ -335,8 +313,8 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		UMLPackage theUMLPackage = (UMLPackage) EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
-		TypesPackage theTypesPackage = (TypesPackage) EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -346,8 +324,7 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(rtStateMachineEClass, RTStateMachine.class, "RTStateMachine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getRTStateMachine_Base_StateMachine(), theUMLPackage.getStateMachine(), null,
-				"base_StateMachine", null, 1, 1, RTStateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getRTStateMachine_Base_StateMachine(), theUMLPackage.getStateMachine(), null, "base_StateMachine", null, 1, 1, RTStateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getRTStateMachine_IsPassive(), theTypesPackage.getBoolean(), "isPassive", "false", 1, 1, RTStateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 
 		initEClass(rtRegionEClass, RTRegion.class, "RTRegion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -357,15 +334,13 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 		initEReference(getRTState_Base_State(), theUMLPackage.getState(), null, "base_State", null, 1, 1, RTState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(rtPseudostateEClass, RTPseudostate.class, "RTPseudostate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getRTPseudostate_Base_Pseudostate(), theUMLPackage.getPseudostate(), null,
-				"base_Pseudostate", null, 1, 1, RTPseudostate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getRTPseudostate_Base_Pseudostate(), theUMLPackage.getPseudostate(), null, "base_Pseudostate", null, 1, 1, RTPseudostate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(rtTriggerEClass, RTTrigger.class, "RTTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getRTTrigger_Base_Operation(), theUMLPackage.getOperation(), null,
-				"base_Operation", null, 1, 1, RTTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getRTTrigger_Base_Operation(), theUMLPackage.getOperation(), null, "base_Operation", null, 1, 1, RTTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		// Create resource
 		createResource(eNS_URI);
 	}
 
-} // UMLRealTimeStateMachPackageImpl
+} //UMLRealTimeStateMachPackageImpl

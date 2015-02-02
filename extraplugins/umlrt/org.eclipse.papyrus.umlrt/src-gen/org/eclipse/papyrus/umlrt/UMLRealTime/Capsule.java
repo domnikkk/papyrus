@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -24,14 +24,14 @@ import org.eclipse.emf.ecore.EObject;
  * base_Class.ownedAttribute->forAll(at | at.type->size() = 1)
  * base_Class.feature->forAll (f | f.visibility <> UML::VisibilityKind::private)
  * base_Class.nestedClassifier->isEmpty()
- * base_Class.ownedOperation->notEmpty() implies
- * (base_Class.ownedOperation->forAll(op | op.concurrency = UML::CallConcurrencyKind::sequential))
+ * base_Class.ownedOperation->notEmpty() implies 
+ *    (base_Class.ownedOperation->forAll(op | op.concurrency = UML::CallConcurrencyKind::guarded))
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.Capsule#getBase_Class <em>Base Class</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.Capsule#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,10 +44,10 @@ public interface Capsule extends EObject {
 	 * Returns the value of the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Base Class</em>' reference isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage#getCapsule_Base_Class()
@@ -60,9 +60,7 @@ public interface Capsule extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.Capsule#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Base Class</em>' reference.
+	 * @param value the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */
