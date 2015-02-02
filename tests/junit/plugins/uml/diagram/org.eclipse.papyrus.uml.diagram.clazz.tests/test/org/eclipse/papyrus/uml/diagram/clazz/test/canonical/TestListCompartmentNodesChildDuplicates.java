@@ -13,7 +13,6 @@
 
 package org.eclipse.papyrus.uml.diagram.clazz.test.canonical;
 
-import org.eclipse.papyrus.junit.framework.classification.FailingTest;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationClassAttributeCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationClassEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationClassOperationCompartmentEditPart;
@@ -272,7 +271,7 @@ public class TestListCompartmentNodesChildDuplicates extends AbstractPapyrusTest
 		getHelper().checkDuplicate(SignalEditPart.VISUAL_ID, SignalAttributeCompartmentEditPart.VISUAL_ID, PropertyForSignalEditPart.VISUAL_ID);
 	}
 
-	@FailingTest
+	@Test
 	public void testEnumerationVsEnumerationLiteral() throws Exception {
 		getHelper().checkDuplicate(EnumerationEditPart.VISUAL_ID, EnumerationEnumerationLiteralCompartmentEditPart.VISUAL_ID, EnumerationLiteralEditPart.VISUAL_ID);
 	}
