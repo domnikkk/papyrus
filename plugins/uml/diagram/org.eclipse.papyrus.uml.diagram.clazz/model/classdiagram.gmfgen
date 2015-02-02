@@ -3559,7 +3559,8 @@
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.gef.EditPolicy.LAYOUT_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.GetChildLayoutEditPolicy"/>
-        <modelFacet>
+        <modelFacet
+        	modelElementSelector="/0/@expressionProviders/@providers.1/@expressions.1">
           <metaClass
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/InstanceSpecification"/>
           <containmentMetaFeature
@@ -6779,7 +6780,8 @@
             key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.policies.CustomGraphicalNodeEditPolicy"/>
         <modelFacet
-            xsi:type="gmfgen:TypeLinkModelFacet">
+            xsi:type="gmfgen:TypeLinkModelFacet"
+            modelElementSelector="/0/@expressionProviders/@providers.1/@expressions.1">
           <metaClass
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/InstanceSpecification"/>
           <containmentMetaFeature
@@ -8576,6 +8578,9 @@
           xsi:type="gmfgen:GenExpressionInterpreter">
         <expressions
             body="' '"/>
+        <expressions
+            xsi:type="gmfgen:GenConstraint"
+            body="not self.oclIsTypeOf(EnumerationLiteral)"/>
       </providers>
       <providers
           xsi:type="gmfgen:GenJavaExpressionProvider"
