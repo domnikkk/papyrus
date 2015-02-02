@@ -17,6 +17,8 @@ import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -77,12 +79,14 @@ public class AbstractTransformationTest extends AbstractPapyrusTest {
 			launcher.waitForCompletion();
 
 			Assert.assertTrue("The transformation didn't complete normally", launcher.getResult().isOK());
+			checkResultFile(mainModelFile);
 		} else {
 			ImportTransformation transformation = new ImportTransformation(sourceURI);
 			transformation.run(false);
 			transformation.waitForCompletion();
 
 			Assert.assertTrue("The transformation didn't complete normally", transformation.getStatus().isOK());
+			checkResultFile(mainModelFile);
 		}
 
 	}
@@ -129,6 +133,24 @@ public class AbstractTransformationTest extends AbstractPapyrusTest {
 		launcher.waitForCompletion();
 
 		Assert.assertTrue("The transformation didn't complete normally", launcher.getResult().isOK());
+		
+		for (IFile sourceFile : mainModelFiles){
+			checkResultFile(sourceFile);
+		}
+	}
+	
+	protected void checkResultFile(IFile sourceFile){
+		IPath targetPath;
+		if ("emx".equals(sourceFile.getFullPath().getFileExtension())){
+			targetPath = sourceFile.getFullPath().removeFileExtension().addFileExtension("uml"); 
+		} else if ("epx".equals(sourceFile.getFullPath().getFileExtension())){
+			targetPath = sourceFile.getFullPath().removeFileExtension().addFileExtension("profile.uml");
+		} else {
+			return;
+		}
+	
+		IFile targetFile = ResourcesPlugin.getWorkspace().getRoot().getFile(targetPath);
+		Assert.assertTrue(targetFile.exists());
 	}
 
 	protected void assertRSAModelsRemoved(boolean resolveAll) {
