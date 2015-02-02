@@ -52,7 +52,7 @@ main() {
 	semantics.rootObjects()[sourcert::RTConnector].map toRTConnector();
 	semantics.rootObjects()[sourcert::RTHistorystate].map toHistorystate();
 	semantics.rootObjects()[sourcert::RTPort].map toRTPort();
-	semantics.rootObjects()[sourcert::RTRedefinableElement].map toRTRExcludedElement();
+	semantics.rootObjects()[sourcert::RTRedefinableElement].map toRTRedefinedElement();
 	semantics.rootObjects()[sourcert::Trigger].map toRTTrigger();
 }
 
@@ -174,7 +174,7 @@ mapping sourcert::RTPort::toRTPort() : umlrt::RTPort when {
 	result.base_Port.isConjugated := self.isConjugate;
 }
 
-mapping sourcert::RTRedefinableElement::toRTRExcludedElement() : umlrt::RTRExcludedElement when {
+mapping sourcert::RTRedefinableElement::toRTRedefinedElement() : umlrt::RTRedefinedElement when {
 	self.oclIsTypeOf(sourcert::RTRedefinableElement) /* Workaround for Bug 445083/445198 */
 }{
 	result.base_RedefinableElement := self.base_RedefinableElement;
