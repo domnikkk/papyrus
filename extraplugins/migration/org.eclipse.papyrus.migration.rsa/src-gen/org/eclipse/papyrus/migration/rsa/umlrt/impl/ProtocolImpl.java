@@ -25,11 +25,12 @@ import org.eclipse.uml2.uml.Collaboration;
  * An implementation of the model object '<em><b>Protocol</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.ProtocolImpl#getBase_Collaboration <em>Base Collaboration</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

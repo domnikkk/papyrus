@@ -21,10 +21,10 @@ import org.eclipse.uml2.uml.Operation;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.Trigger#getBase_Operation <em>Base Operation</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage#getTrigger()
  * @model

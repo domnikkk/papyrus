@@ -32,6 +32,7 @@ import org.eclipse.papyrus.migration.rsa.umlrt.RTConnector;
 import org.eclipse.papyrus.migration.rsa.umlrt.RTHistorystate;
 import org.eclipse.papyrus.migration.rsa.umlrt.RTPort;
 import org.eclipse.papyrus.migration.rsa.umlrt.RTRedefinableElement;
+import org.eclipse.papyrus.migration.rsa.umlrt.RTStereotype;
 import org.eclipse.papyrus.migration.rsa.umlrt.Trigger;
 import org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimeFactory;
 import org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage;
@@ -45,6 +46,14 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimePackage {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass rtStereotypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,8 +176,7 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	private EEnum historyKindEEnum = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
-	 * package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -227,6 +235,17 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(UMLRealTimePackage.eNS_URI, theUMLRealTimePackage);
 		return theUMLRealTimePackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getRTStereotype() {
+		return rtStereotypeEClass;
 	}
 
 	/**
@@ -544,6 +563,17 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	 * @generated
 	 */
 	@Override
+	public EReference getRTRedefinableElement_RootFragment() {
+		return (EReference) rtRedefinableElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getTrigger() {
 		return triggerEClass;
 	}
@@ -615,6 +645,8 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 		isCreated = true;
 
 		// Create classes and their features
+		rtStereotypeEClass = createEClass(RT_STEREOTYPE);
+
 		abstractEventEClass = createEClass(ABSTRACT_EVENT);
 		createEReference(abstractEventEClass, ABSTRACT_EVENT__BASE_CALL_EVENT);
 
@@ -654,6 +686,7 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 
 		rtRedefinableElementEClass = createEClass(RT_REDEFINABLE_ELEMENT);
 		createEReference(rtRedefinableElementEClass, RT_REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT);
+		createEReference(rtRedefinableElementEClass, RT_REDEFINABLE_ELEMENT__ROOT_FRAGMENT);
 
 		triggerEClass = createEClass(TRIGGER);
 		createEReference(triggerEClass, TRIGGER__BASE_OPERATION);
@@ -703,6 +736,8 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 		outEventEClass.getESuperTypes().add(this.getAbstractEvent());
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(rtStereotypeEClass, RTStereotype.class, "RTStereotype", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(abstractEventEClass, AbstractEvent.class, "AbstractEvent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAbstractEvent_Base_CallEvent(), theUMLPackage.getCallEvent(), null, "base_CallEvent", null, 1, 1, AbstractEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -749,6 +784,8 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 		initEClass(rtRedefinableElementEClass, RTRedefinableElement.class, "RTRedefinableElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRTRedefinableElement_Base_RedefinableElement(), theUMLPackage.getRedefinableElement(), null, "base_RedefinableElement", null, 1, 1, RTRedefinableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRTRedefinableElement_RootFragment(), theUMLPackage.getRedefinableElement(), null, "rootFragment", null, 0, 1, RTRedefinableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(triggerEClass, Trigger.class, "Trigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTrigger_Base_Operation(), theUMLPackage.getOperation(), null, "base_Operation", null, 1, 1, Trigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,

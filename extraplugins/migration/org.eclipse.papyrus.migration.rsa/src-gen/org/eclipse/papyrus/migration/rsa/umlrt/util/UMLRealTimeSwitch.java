@@ -14,6 +14,7 @@ package org.eclipse.papyrus.migration.rsa.umlrt.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.eclipse.papyrus.migration.rsa.umlrt.*;
 import org.eclipse.papyrus.migration.rsa.umlrt.AbstractEvent;
 import org.eclipse.papyrus.migration.rsa.umlrt.Capsule;
 import org.eclipse.papyrus.migration.rsa.umlrt.CapsulePart;
@@ -70,7 +71,8 @@ public class UMLRealTimeSwitch<T> extends Switch<T> {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @parameter ePackage the package in question.
+	 * @param ePackage
+	 *            the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -90,6 +92,14 @@ public class UMLRealTimeSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+		case UMLRealTimePackage.RT_STEREOTYPE: {
+			RTStereotype rtStereotype = (RTStereotype) theEObject;
+			T result = caseRTStereotype(rtStereotype);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		case UMLRealTimePackage.ABSTRACT_EVENT: {
 			AbstractEvent abstractEvent = (AbstractEvent) theEObject;
 			T result = caseAbstractEvent(abstractEvent);
@@ -203,6 +213,23 @@ public class UMLRealTimeSwitch<T> extends Switch<T> {
 		default:
 			return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>RT Stereotype</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>RT Stereotype</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRTStereotype(RTStereotype object) {
+		return null;
 	}
 
 	/**

@@ -21,10 +21,11 @@ import org.eclipse.uml2.uml.RedefinableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.RTRedefinableElement#getBase_RedefinableElement <em>Base Redefinable Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.RTRedefinableElement#getRootFragment <em>Root Fragment</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage#getRTRedefinableElement()
  * @model
@@ -58,5 +59,33 @@ public interface RTRedefinableElement extends EObject {
 	 * @generated
 	 */
 	void setBase_RedefinableElement(RedefinableElement value);
+
+	/**
+	 * Returns the value of the '<em><b>Root Fragment</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Root Fragment</em>' reference isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Root Fragment</em>' reference.
+	 * @see #setRootFragment(RedefinableElement)
+	 * @see org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage#getRTRedefinableElement_RootFragment()
+	 * @model
+	 * @generated
+	 */
+	RedefinableElement getRootFragment();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.migration.rsa.umlrt.RTRedefinableElement#getRootFragment <em>Root Fragment</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Root Fragment</em>' reference.
+	 * @see #getRootFragment()
+	 * @generated
+	 */
+	void setRootFragment(RedefinableElement value);
 
 } // RTRedefinableElement

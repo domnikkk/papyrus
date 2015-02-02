@@ -25,11 +25,12 @@ import org.eclipse.uml2.uml.Connector;
  * An implementation of the model object '<em><b>RT Connector</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.RTConnectorImpl#getBase_Connector <em>Base Connector</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

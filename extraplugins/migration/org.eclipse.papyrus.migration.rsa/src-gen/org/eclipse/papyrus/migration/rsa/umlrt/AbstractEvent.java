@@ -21,10 +21,10 @@ import org.eclipse.uml2.uml.CallEvent;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.AbstractEvent#getBase_CallEvent <em>Base Call Event</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage#getAbstractEvent()
  * @model abstract="true"

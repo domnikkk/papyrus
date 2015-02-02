@@ -15,6 +15,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.migration.rsa.umlrt.*;
 import org.eclipse.papyrus.migration.rsa.umlrt.AbstractEvent;
 import org.eclipse.papyrus.migration.rsa.umlrt.Capsule;
 import org.eclipse.papyrus.migration.rsa.umlrt.CapsulePart;
@@ -91,6 +92,11 @@ public class UMLRealTimeAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected UMLRealTimeSwitch<Adapter> modelSwitch =
 			new UMLRealTimeSwitch<Adapter>() {
+				@Override
+				public Adapter caseRTStereotype(RTStereotype object) {
+					return createRTStereotypeAdapter();
+				}
+
 				@Override
 				public Adapter caseAbstractEvent(AbstractEvent object) {
 					return createAbstractEventAdapter();
@@ -177,6 +183,21 @@ public class UMLRealTimeAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject) target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.migration.rsa.umlrt.RTStereotype <em>RT Stereotype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.migration.rsa.umlrt.RTStereotype
+	 * @generated
+	 */
+	public Adapter createRTStereotypeAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.migration.rsa.umlrt.AbstractEvent <em>Abstract Event</em>}'.

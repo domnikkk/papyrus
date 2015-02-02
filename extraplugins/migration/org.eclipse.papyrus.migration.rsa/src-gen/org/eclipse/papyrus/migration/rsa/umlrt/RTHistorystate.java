@@ -21,11 +21,11 @@ import org.eclipse.uml2.uml.Pseudostate;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.RTHistorystate#getBase_Pseudostate <em>Base Pseudostate</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.RTHistorystate#getHistoryKind <em>History Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage#getRTHistorystate()
  * @model

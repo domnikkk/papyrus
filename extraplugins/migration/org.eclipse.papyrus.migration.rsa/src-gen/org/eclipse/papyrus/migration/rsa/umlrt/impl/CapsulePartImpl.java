@@ -25,11 +25,12 @@ import org.eclipse.uml2.uml.Property;
  * An implementation of the model object '<em><b>Capsule Part</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.CapsulePartImpl#getBase_Property <em>Base Property</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
