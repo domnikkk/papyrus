@@ -2778,6 +2778,41 @@
       </stream>
       <description>Release engineering tools, including the POM and Oomph Setup dependencies updater actions.</description>
     </project>
+    <project
+        name="devtools"
+        label="Developer Tools">
+      <stream
+          name="master"
+          label="master (Mars/1.1)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0&amp;version=1.0.1&amp;version=1.0.2&amp;version=1.1.0"/>
+        <setupTask
+            xsi:type="setup.p2:P2Task">
+          <requirement
+              name="org.eclipse.papyrus.dev.feature.feature.group"/>
+          <repository
+              url="https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Developer/lastSuccessfulBuild/artifact/releng/dev/target/repository/"/>
+        </setupTask>
+      </stream>
+      <stream
+          name="streams/1.0-maintenance"
+          label="streams/1.0-maintenance (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0&amp;version=1.0.1&amp;version=1.0.2"/>
+        <setupTask
+            xsi:type="setup.p2:P2Task">
+          <requirement
+              name="org.eclipse.papyrus.dev.feature.feature.group"/>
+          <repository
+              url="https://hudson.eclipse.org/papyrus/job/Papyrus-Luna-Developer/lastSuccessfulBuild/artifact/releng/dev/target/repository/"/>
+        </setupTask>
+      </stream>
+      <description>Installs developer tools, including the code generator for Papyrus diagram plug-ins and various debugging aids such as &quot;spy&quot; views.  Source code is not included.</description>
+    </project>
     <stream
         name="master"
         label="master (Mars/1.1)">
@@ -2794,7 +2829,7 @@
           name="papyrus.bugzilla.version"
           value="1.0.0&amp;version=1.0.1&amp;version=1.0.2"/>
     </stream>
-    <description>Sources and tools required for working on the Papyrus developer tools (not part of the product).</description>
+    <description>Sources and tools required for working on the Papyrus developer tools (not part of the product).  Does not install the developer tools in your IDE:  use the Developer Tools sub-project for that.</description>
   </project>
   <stream name="master"
       label="master (Mars/1.1)">
