@@ -109,10 +109,12 @@ public class ImportDiagramTest extends AbstractPapyrusTest {
 		fileProfile = URI.createPlatformResourceURI(Activator.PLUGIN_ID + ".testProject" + "/Profile.epx", true);
 		ImportTransformation transfoProfile = new ImportTransformation(fileProfile);
 
+		//Run in sequence, since individual transformations are not thread safe
+		
 		transfoDiagram.run(false);
-		transfoProfile.run(false);
-
 		transfoDiagram.waitForCompletion();
+		
+		transfoProfile.run(false);	
 		transfoProfile.waitForCompletion();
 		
 		URI umlModelURI = fileDiagram.trimFileExtension().appendFileExtension("uml");
