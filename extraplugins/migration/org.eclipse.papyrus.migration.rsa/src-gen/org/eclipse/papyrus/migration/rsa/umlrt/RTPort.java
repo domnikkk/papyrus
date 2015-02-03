@@ -21,6 +21,7 @@ import org.eclipse.uml2.uml.Port;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.RTPort#getBase_Port <em>Base Port</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.RTPort#isIsConjugate <em>Is Conjugate</em>}</li>
@@ -30,7 +31,6 @@ import org.eclipse.uml2.uml.Port;
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.RTPort#getRegistration <em>Registration</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.RTPort#getRegistrationOverride <em>Registration Override</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage#getRTPort()
  * @model

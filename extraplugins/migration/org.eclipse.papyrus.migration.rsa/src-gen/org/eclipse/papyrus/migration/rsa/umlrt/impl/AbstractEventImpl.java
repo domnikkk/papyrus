@@ -25,11 +25,12 @@ import org.eclipse.uml2.uml.CallEvent;
  * An implementation of the model object '<em><b>Abstract Event</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.AbstractEventImpl#getBase_CallEvent <em>Base Call Event</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

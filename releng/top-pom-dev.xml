@@ -8,7 +8,7 @@
 	<modules>
 	<module>../plugins/developer/org.eclipse.papyrus.codegen</module>
 		<module>../plugins/developer/org.eclipse.papyrus.dev.java.utils</module>
-	<!--  	<module>../plugins/developer/org.eclipse.papyrus.dev.project.management</module> -->
+	 	<module>../plugins/developer/org.eclipse.papyrus.dev.project.management</module>
 		<module>../plugins/developer/org.eclipse.papyrus.dev.view.services.edit.request</module>
 		<module>../plugins/developer/org.eclipse.papyrus.developer.profile</module>
 	<!--  	<module>../plugins/developer/org.eclipse.papyrus.diagramdev.modelexplorer</module> -->
@@ -22,11 +22,10 @@
 		<module>../plugins/developer/org.eclipse.papyrus.gmf.editpoliciesstates</module>
 		<module>../plugins/developer/org.eclipse.papyrus.gmf.figureview</module>
 		<module>../plugins/developer/org.eclipse.papyrus.gmfgenextension</module>
-	<!--  	<module>../plugins/developer/org.eclipse.papyrus.infra.emf.commandstack</module>-->
+	 	<module>../plugins/developer/org.eclipse.papyrus.infra.emf.commandstack</module>
 		<module>../plugins/developer/org.eclipse.papyrus.infra.extendedtypes.elementtypeview</module>
 		<module>../plugins/developer/org.eclipse.papyrus.mwe2.utils</module>
-	<!--  	<module>../plugins/developer/org.eclipse.papyrus.releng.tools</module>-->
-	<!--  	<module>../plugins/developer/org.eclipse.papyrus.sysml.sysmloveruml.codegen</module> -->
+	 	<module>../plugins/developer/org.eclipse.papyrus.releng.tools</module>
 		<module>../plugins/developer/org.eclipse.papyrus.uml.developer.mde</module>
 		<module>../plugins/infra/gmfdiag/css/org.eclipse.papyrus.infra.gmfdiag.css.debug</module>
 		<module>../features/papyrus-dev-features/org.eclipse.papyrus.dev.feature</module>
@@ -35,13 +34,14 @@
 	<properties>
 		<tycho-version>0.22.0</tycho-version>
 		<tychoExtrasVersion>0.22.0</tychoExtrasVersion>
-		<papyrus.repo.main>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/mars</papyrus.repo.main>
+		<papyrus.repo.main>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/mars/main</papyrus.repo.main>
+		<papyrus.repo.extra>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/mars/extra</papyrus.repo.extra>
 	</properties>
 	<repositories>
 		<repository>
 			<id>eclipse</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/staging</url>
+			<url>http://download.eclipse.org/releases/mars</url>
 		</repository>
 		<repository>
 			<id>ep</id>
@@ -56,9 +56,20 @@
 			<url>http://download.eclipse.org/modeling/emf/cdo/drops/R20140610-0212</url>
 		</repository>
 		<repository>
+			<id>b3</id>
+			<layout>p2</layout>
+			<!-- B3 is not in the release train. Always targets the latest released version (i.e. Luna for Mars Development) -->
+			<url>http://download.eclipse.org/modeling/emft/b3/updates-4.4</url>
+		</repository>
+		<repository>
 			<id>papyrus-main</id>
 			<layout>p2</layout>
 			<url>${papyrus.repo.main}</url>
+		</repository>
+		<repository>
+			<id>papyrus-extra</id>
+			<layout>p2</layout>
+			<url>${papyrus.repo.extra}</url>
 		</repository>
 	</repositories>
 	<build>
@@ -76,8 +87,8 @@
 				<artifactId>tycho-compiler-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.7</source>
+					<target>1.7</target>
 					<optimize>true</optimize>
 					<showWarnings>true</showWarnings>
 				</configuration>

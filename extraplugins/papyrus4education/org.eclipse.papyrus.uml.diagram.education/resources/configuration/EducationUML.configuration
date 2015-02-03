@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration:PapyrusConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration" xmi:id="_oa8yUBP7EeSS0oyATXohNA" defaultStakeholder="_dBfdEKCgEeSNKqx5mKuydQ">
+  <stakeholders xmi:id="_dBfdEKCgEeSNKqx5mKuydQ" name="Student" viewpoints="_WwNWIKCpEeSNKqx5mKuydQ _3T-cEBP7EeSS0oyATXohNA"/>
+  <viewpoints xsi:type="configuration:PapyrusViewpoint" xmi:id="_3T-cEBP7EeSS0oyATXohNA" name="Basics Education UML Viewpoint">
+    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_75O3MKCpEeSNKqx5mKuydQ" name="Basic UML UseCase Diagram" icon="platform:/plugin/org.eclipse.papyrus.uml.diagram.usecase/icons/obj16/Diagram_UseCase.gif" implementationID="UseCase">
+      <modelRules xmi:id="_3VnsoKCqEeSNKqx5mKuydQ">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </modelRules>
+      <owningRules xmi:id="_5QwjoKCqEeSNKqx5mKuydQ">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </owningRules>
+      <childRules xmi:id="_6x-ewKCqEeSNKqx5mKuydQ"/>
+      <paletteRules xmi:id="_57UuIKCrEeSNKqx5mKuydQ" element="usecase.tool.include"/>
+      <paletteRules xmi:id="_jImkQKCrEeSNKqx5mKuydQ" element="usecase.tool.extend"/>
+      <paletteRules xmi:id="_RFCbsKCsEeSNKqx5mKuydQ" element="usecase.tool.actor"/>
+      <paletteRules xmi:id="_Z02rgKCsEeSNKqx5mKuydQ" element="usecase.tool.usecase"/>
+      <paletteRules xmi:id="_5a_BMKCrEeSNKqx5mKuydQ" permit="false" element="usecase.tool.*"/>
+    </modelKinds>
+  </viewpoints>
+  <viewpoints xsi:type="configuration:PapyrusViewpoint" xmi:id="_WwNWIKCpEeSNKqx5mKuydQ" name="Initial Education UML Viewpoint">
+    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_d-6jEKCqEeSNKqx5mKuydQ" name="Initial UML UseCase Diagram" icon="platform:/plugin/org.eclipse.papyrus.uml.diagram.usecase/icons/obj16/Diagram_UseCase.gif" parent="_75O3MKCpEeSNKqx5mKuydQ" implementationID="UseCase" customStyle="">
+      <modelRules xmi:id="_qAsA8KCsEeSNKqx5mKuydQ">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </modelRules>
+      <owningRules xmi:id="_qAsA8aCsEeSNKqx5mKuydQ">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </owningRules>
+      <childRules xmi:id="_qAsA8qCsEeSNKqx5mKuydQ"/>
+      <paletteRules xmi:id="_qAsA96CsEeSNKqx5mKuydQ" permit="false" element="usecase.tool.extend"/>
+    </modelKinds>
+  </viewpoints>
+  <metamodel href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
+  <categories xmi:id="_vUL7ABP7EeSS0oyATXohNA" name="uml"/>
+</configuration:PapyrusConfiguration>

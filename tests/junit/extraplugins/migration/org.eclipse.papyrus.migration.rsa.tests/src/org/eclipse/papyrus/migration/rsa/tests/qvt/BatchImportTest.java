@@ -86,6 +86,9 @@ public class BatchImportTest extends AbstractTransformationTest {
 		launcher.waitForCompletion();
 
 		Assert.assertTrue("The transformation didn't complete normally", launcher.getResult().isOK());
+		for (IFile sourceFile : mainModelFiles){
+			checkResultFile(sourceFile);
+		}
 
 		// ///////////////////////////////////////////
 	}

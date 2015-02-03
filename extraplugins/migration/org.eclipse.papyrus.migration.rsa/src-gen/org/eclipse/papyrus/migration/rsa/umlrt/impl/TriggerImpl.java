@@ -25,11 +25,12 @@ import org.eclipse.uml2.uml.Operation;
  * An implementation of the model object '<em><b>Trigger</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.TriggerImpl#getBase_Operation <em>Base Operation</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

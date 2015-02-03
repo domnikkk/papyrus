@@ -25,11 +25,13 @@ import org.eclipse.uml2.uml.RedefinableElement;
  * An implementation of the model object '<em><b>RT Redefinable Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.RTRedefinableElementImpl#getBase_RedefinableElement <em>Base Redefinable Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.RTRedefinableElementImpl#getRootFragment <em>Root Fragment</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -44,6 +46,17 @@ public class RTRedefinableElementImpl extends MinimalEObjectImpl.Container imple
 	 * @ordered
 	 */
 	protected RedefinableElement base_RedefinableElement;
+
+	/**
+	 * The cached value of the '{@link #getRootFragment() <em>Root Fragment</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getRootFragment()
+	 * @generated
+	 * @ordered
+	 */
+	protected RedefinableElement rootFragment;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,6 +131,51 @@ public class RTRedefinableElementImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	@Override
+	public RedefinableElement getRootFragment() {
+		if (rootFragment != null && rootFragment.eIsProxy()) {
+			InternalEObject oldRootFragment = (InternalEObject) rootFragment;
+			rootFragment = (RedefinableElement) eResolveProxy(oldRootFragment);
+			if (rootFragment != oldRootFragment) {
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UMLRealTimePackage.RT_REDEFINABLE_ELEMENT__ROOT_FRAGMENT, oldRootFragment, rootFragment));
+				}
+			}
+		}
+		return rootFragment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public RedefinableElement basicGetRootFragment() {
+		return rootFragment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setRootFragment(RedefinableElement newRootFragment) {
+		RedefinableElement oldRootFragment = rootFragment;
+		rootFragment = newRootFragment;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UMLRealTimePackage.RT_REDEFINABLE_ELEMENT__ROOT_FRAGMENT, oldRootFragment, rootFragment));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case UMLRealTimePackage.RT_REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT:
@@ -125,6 +183,11 @@ public class RTRedefinableElementImpl extends MinimalEObjectImpl.Container imple
 				return getBase_RedefinableElement();
 			}
 			return basicGetBase_RedefinableElement();
+		case UMLRealTimePackage.RT_REDEFINABLE_ELEMENT__ROOT_FRAGMENT:
+			if (resolve) {
+				return getRootFragment();
+			}
+			return basicGetRootFragment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -140,6 +203,9 @@ public class RTRedefinableElementImpl extends MinimalEObjectImpl.Container imple
 		switch (featureID) {
 		case UMLRealTimePackage.RT_REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT:
 			setBase_RedefinableElement((RedefinableElement) newValue);
+			return;
+		case UMLRealTimePackage.RT_REDEFINABLE_ELEMENT__ROOT_FRAGMENT:
+			setRootFragment((RedefinableElement) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -157,6 +223,9 @@ public class RTRedefinableElementImpl extends MinimalEObjectImpl.Container imple
 		case UMLRealTimePackage.RT_REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT:
 			setBase_RedefinableElement((RedefinableElement) null);
 			return;
+		case UMLRealTimePackage.RT_REDEFINABLE_ELEMENT__ROOT_FRAGMENT:
+			setRootFragment((RedefinableElement) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -172,6 +241,8 @@ public class RTRedefinableElementImpl extends MinimalEObjectImpl.Container imple
 		switch (featureID) {
 		case UMLRealTimePackage.RT_REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT:
 			return base_RedefinableElement != null;
+		case UMLRealTimePackage.RT_REDEFINABLE_ELEMENT__ROOT_FRAGMENT:
+			return rootFragment != null;
 		}
 		return super.eIsSet(featureID);
 	}

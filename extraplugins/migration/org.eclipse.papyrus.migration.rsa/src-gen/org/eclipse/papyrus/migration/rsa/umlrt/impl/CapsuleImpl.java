@@ -24,11 +24,12 @@ import org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage;
  * An implementation of the model object '<em><b>Capsule</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.CapsuleImpl#getBase_Class <em>Base Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

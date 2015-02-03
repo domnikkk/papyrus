@@ -26,7 +26,9 @@ import org.eclipse.uml2.uml.Port;
  * An implementation of the model object '<em><b>RT Port</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.RTPortImpl#getBase_Port <em>Base Port</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.RTPortImpl#isIsConjugate <em>Is Conjugate</em>}</li>
@@ -36,7 +38,6 @@ import org.eclipse.uml2.uml.Port;
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.RTPortImpl#getRegistration <em>Registration</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.RTPortImpl#getRegistrationOverride <em>Registration Override</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

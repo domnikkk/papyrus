@@ -72,6 +72,37 @@ public interface UMLRealTimePackage extends EPackage {
 	UMLRealTimePackage eINSTANCE = org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.RTStereotypeImpl <em>RT Stereotype</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.RTStereotypeImpl
+	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getRTStereotype()
+	 * @generated
+	 */
+	int RT_STEREOTYPE = 0;
+
+	/**
+	 * The number of structural features of the '<em>RT Stereotype</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int RT_STEREOTYPE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>RT Stereotype</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int RT_STEREOTYPE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.AbstractEventImpl <em>Abstract Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80,7 +111,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getAbstractEvent()
 	 * @generated
 	 */
-	int ABSTRACT_EVENT = 0;
+	int ABSTRACT_EVENT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Base Call Event</b></em>' reference.
@@ -121,7 +152,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getCapsule()
 	 * @generated
 	 */
-	int CAPSULE = 1;
+	int CAPSULE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -162,7 +193,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getCapsulePart()
 	 * @generated
 	 */
-	int CAPSULE_PART = 2;
+	int CAPSULE_PART = 3;
 
 	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
@@ -203,7 +234,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getCoregion()
 	 * @generated
 	 */
-	int COREGION = 3;
+	int COREGION = 4;
 
 	/**
 	 * The number of structural features of the '<em>Coregion</em>' class.
@@ -234,7 +265,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getInEvent()
 	 * @generated
 	 */
-	int IN_EVENT = 4;
+	int IN_EVENT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Base Call Event</b></em>' reference.
@@ -275,7 +306,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getOutEvent()
 	 * @generated
 	 */
-	int OUT_EVENT = 5;
+	int OUT_EVENT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Base Call Event</b></em>' reference.
@@ -316,7 +347,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getProtocol()
 	 * @generated
 	 */
-	int PROTOCOL = 6;
+	int PROTOCOL = 7;
 
 	/**
 	 * The feature id for the '<em><b>Base Collaboration</b></em>' reference.
@@ -357,7 +388,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getProtocolContainer()
 	 * @generated
 	 */
-	int PROTOCOL_CONTAINER = 7;
+	int PROTOCOL_CONTAINER = 8;
 
 	/**
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
@@ -398,7 +429,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getRTConnector()
 	 * @generated
 	 */
-	int RT_CONNECTOR = 8;
+	int RT_CONNECTOR = 9;
 
 	/**
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
@@ -439,7 +470,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getRTHistorystate()
 	 * @generated
 	 */
-	int RT_HISTORYSTATE = 9;
+	int RT_HISTORYSTATE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Base Pseudostate</b></em>' reference.
@@ -490,7 +521,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getRTPort()
 	 * @generated
 	 */
-	int RT_PORT = 10;
+	int RT_PORT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
@@ -591,7 +622,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getRTRedefinableElement()
 	 * @generated
 	 */
-	int RT_REDEFINABLE_ELEMENT = 11;
+	int RT_REDEFINABLE_ELEMENT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Base Redefinable Element</b></em>' reference.
@@ -604,6 +635,16 @@ public interface UMLRealTimePackage extends EPackage {
 	int RT_REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT = 0;
 
 	/**
+	 * The feature id for the '<em><b>Root Fragment</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int RT_REDEFINABLE_ELEMENT__ROOT_FRAGMENT = 1;
+
+	/**
 	 * The number of structural features of the '<em>RT Redefinable Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -611,7 +652,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RT_REDEFINABLE_ELEMENT_FEATURE_COUNT = 1;
+	int RT_REDEFINABLE_ELEMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>RT Redefinable Element</em>' class.
@@ -632,7 +673,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getTrigger()
 	 * @generated
 	 */
-	int TRIGGER = 12;
+	int TRIGGER = 13;
 
 	/**
 	 * The feature id for the '<em><b>Base Operation</b></em>' reference.
@@ -673,7 +714,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getPortRegistrationType()
 	 * @generated
 	 */
-	int PORT_REGISTRATION_TYPE = 13;
+	int PORT_REGISTRATION_TYPE = 14;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.migration.rsa.umlrt.HistoryKind <em>History Kind</em>}' enum.
@@ -684,8 +725,19 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getHistoryKind()
 	 * @generated
 	 */
-	int HISTORY_KIND = 14;
+	int HISTORY_KIND = 15;
 
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.migration.rsa.umlrt.RTStereotype <em>RT Stereotype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>RT Stereotype</em>'.
+	 * @see org.eclipse.papyrus.migration.rsa.umlrt.RTStereotype
+	 * @generated
+	 */
+	EClass getRTStereotype();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.migration.rsa.umlrt.AbstractEvent <em>Abstract Event</em>}'.
@@ -1012,6 +1064,18 @@ public interface UMLRealTimePackage extends EPackage {
 	EReference getRTRedefinableElement_Base_RedefinableElement();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.migration.rsa.umlrt.RTRedefinableElement#getRootFragment <em>Root Fragment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the reference '<em>Root Fragment</em>'.
+	 * @see org.eclipse.papyrus.migration.rsa.umlrt.RTRedefinableElement#getRootFragment()
+	 * @see #getRTRedefinableElement()
+	 * @generated
+	 */
+	EReference getRTRedefinableElement_RootFragment();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.migration.rsa.umlrt.Trigger <em>Trigger</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1081,6 +1145,17 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.RTStereotypeImpl <em>RT Stereotype</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.RTStereotypeImpl
+		 * @see org.eclipse.papyrus.migration.rsa.umlrt.impl.UMLRealTimePackageImpl#getRTStereotype()
+		 * @generated
+		 */
+		EClass RT_STEREOTYPE = eINSTANCE.getRTStereotype();
+
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.AbstractEventImpl <em>Abstract Event</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -1356,6 +1431,15 @@ public interface UMLRealTimePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RT_REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT = eINSTANCE.getRTRedefinableElement_Base_RedefinableElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Root Fragment</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference RT_REDEFINABLE_ELEMENT__ROOT_FRAGMENT = eINSTANCE.getRTRedefinableElement_RootFragment();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.TriggerImpl <em>Trigger</em>}' class.

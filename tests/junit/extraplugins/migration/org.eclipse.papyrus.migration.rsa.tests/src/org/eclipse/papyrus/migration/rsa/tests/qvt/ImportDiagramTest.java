@@ -21,6 +21,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -108,11 +109,21 @@ public class ImportDiagramTest extends AbstractPapyrusTest {
 		fileProfile = URI.createPlatformResourceURI(Activator.PLUGIN_ID + ".testProject" + "/Profile.epx", true);
 		ImportTransformation transfoProfile = new ImportTransformation(fileProfile);
 
+		//Run in sequence, since individual transformations are not thread safe
+		
 		transfoDiagram.run(false);
-		transfoProfile.run(false);
-
 		transfoDiagram.waitForCompletion();
+		
+		transfoProfile.run(false);	
 		transfoProfile.waitForCompletion();
+		
+		URI umlModelURI = fileDiagram.trimFileExtension().appendFileExtension("uml");
+		IFile umlModelFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(umlModelURI.toPlatformString(true)));
+		Assert.assertTrue(umlModelFile.exists());
+		
+		URI umlProfileURI = fileProfile.trimFileExtension().appendFileExtension("profile.uml");
+		IFile umlProfileFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(umlProfileURI.toPlatformString(true)));
+		Assert.assertTrue(umlProfileFile.exists());
 	}
 
 

@@ -5,7 +5,7 @@
     editorDirectory="/org.eclipse.papyrus.migration.rsa.editor/src-gen" modelPluginID="org.eclipse.papyrus.migration.rsa"
     modelName="PapyrusRT" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     testsDirectory="/org.eclipse.papyrus.migration.rsa.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.uml2.types/model/Types.genmodel#//types platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml"
     operationReflection="true" importOrganizing="true">
   <foreignModel>PapyrusRT.ecore</foreignModel>
   <genPackages prefix="UMLRealTime" basePackage="org.eclipse.papyrus.migration.rsa"
@@ -19,6 +19,7 @@
       <genEnumLiterals ecoreEnumLiteral="PapyrusRT.ecore#//HistoryKind/Deep"/>
       <genEnumLiterals ecoreEnumLiteral="PapyrusRT.ecore#//HistoryKind/Shallow"/>
     </genEnums>
+    <genClasses image="false" ecoreClass="PapyrusRT.ecore#//RTStereotype"/>
     <genClasses image="false" ecoreClass="PapyrusRT.ecore#//AbstractEvent">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//AbstractEvent/base_CallEvent"/>
     </genClasses>
@@ -55,6 +56,7 @@
     </genClasses>
     <genClasses ecoreClass="PapyrusRT.ecore#//RTRedefinableElement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//RTRedefinableElement/base_RedefinableElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//RTRedefinableElement/rootFragment"/>
     </genClasses>
     <genClasses ecoreClass="PapyrusRT.ecore#//Trigger">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//Trigger/base_Operation"/>

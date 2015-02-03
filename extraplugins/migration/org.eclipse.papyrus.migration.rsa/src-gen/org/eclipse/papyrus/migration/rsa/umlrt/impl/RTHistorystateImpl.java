@@ -26,12 +26,13 @@ import org.eclipse.uml2.uml.Pseudostate;
  * An implementation of the model object '<em><b>RT Historystate</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.RTHistorystateImpl#getBase_Pseudostate <em>Base Pseudostate</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.RTHistorystateImpl#getHistoryKind <em>History Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

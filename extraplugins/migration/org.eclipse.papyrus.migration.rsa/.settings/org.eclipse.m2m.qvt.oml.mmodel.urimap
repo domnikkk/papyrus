@@ -2,5 +2,8 @@
 <uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
   <mapping sourceURI="http://www.eclipse.org/papyrus/umlnotation" targetURI="platform:/resource/org.eclipse.papyrus.migration.rsa/model/PapyrusUMLNotation.ecore"/>
   <mapping sourceURI="http://www.eclipse.org/papyrus/0.7.0/sashdi" targetURI="platform:/resource/org.eclipse.papyrus.infra.core.sasheditor.di/model/di.ecore"/>
-  <mapping sourceURI="http:///RSAToPapyrusParameters.ecore" targetURI="platform:/resource/org.eclipse.papyrus.migration.rsa/model/ui/RSAToPapyrusParameters.ecore"/>  
+  <mapping sourceURI="http:///RSAToPapyrusParameters.ecore" targetURI="platform:/resource/org.eclipse.papyrus.migration.rsa/model/ui/RSAToPapyrusParameters.ecore"/>
+  <mapping sourceURI="http://www.eclipse.org/papyrus/profile/umlrt" targetURI="platform:/resource/org.eclipse.papyrus.migration.rsa/model/PapyrusRT.ecore"/>
+  <mapping sourceURI="http://www.eclipse.org/papyrus/profile/default" targetURI="platform:/resource/org.eclipse.papyrus.migration.rsa/model/PapyrusDefault.ecore"/>
+  <mapping sourceURI="http://www.eclipse.org/papyrus/profile/profilebase" targetURI="platform:/resource/org.eclipse.papyrus.migration.rsa/model/PapyrusProfileBase.ecore"/>
 </uriMap:MappingContainer>

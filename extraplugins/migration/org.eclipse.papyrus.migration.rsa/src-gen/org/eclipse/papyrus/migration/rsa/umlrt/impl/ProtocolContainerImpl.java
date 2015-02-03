@@ -24,11 +24,12 @@ import org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage;
  * An implementation of the model object '<em><b>Protocol Container</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlrt.impl.ProtocolContainerImpl#getBase_Package <em>Base Package</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -20,7 +20,6 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.papyrus.junit.framework.classification.FailingTest;
 import org.eclipse.papyrus.umlrt.UMLRealTime.Capsule;
 import org.eclipse.papyrus.umlrt.UMLRealTime.Protocol;
 import org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolContainer;
@@ -120,7 +119,6 @@ public class ImportProfilesTest extends AbstractTransformationTest {
 
 	// resources/rt+fragments/*
 	@Test
-	@FailingTest("Bug 457430/457433")
 	// Fragmented StateMachines are not found in QVTo, thus are not stereotyped
 	public void testFragmentedRTModel() throws Exception {
 		String path = "resources/rt+fragments/";

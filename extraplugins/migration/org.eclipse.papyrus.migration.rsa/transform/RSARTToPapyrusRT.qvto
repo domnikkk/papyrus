@@ -178,6 +178,7 @@ mapping sourcert::RTRedefinableElement::toRTRedefinedElement() : umlrt::RTRedefi
 	self.oclIsTypeOf(sourcert::RTRedefinableElement) /* Workaround for Bug 445083/445198 */
 }{
 	result.base_RedefinableElement := self.base_RedefinableElement;
+	result.rootFragment := self.rootFragment;
 }
 
 mapping sourcert::Trigger::toRTTrigger() : RTTrigger when {
