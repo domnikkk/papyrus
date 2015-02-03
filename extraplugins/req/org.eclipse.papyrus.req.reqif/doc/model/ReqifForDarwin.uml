@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Document="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0" xmlns:Requirements="http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:structure="http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1" xmlns:trace="http://DeveloperProcess/schemas/trace/_VBAtMMcPEeO9CYUoXDRplw/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0 pathmap://DEVELOPER_PROFILES/Document.profile.uml#_qR44IMn0EeO9CYUoXDRplw http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1 pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA-4AMcPEeO9CYUoXDRplw http://DeveloperProcess/schemas/trace/_VBAtMMcPEeO9CYUoXDRplw/1 pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VBAtMccPEeO9CYUoXDRplw">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Document="http:///schemas/Document/_RQrLoGwBEeSIYu1Ih2FYyQ/10" xmlns:Requirements="http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:structure="http://DeveloperProcess/schemas/structure/_rpmLUHVxEeSZ-fQGFkyJeQ/6" xmlns:trace="http://DeveloperProcess/schemas/trace/_rpnZcHVxEeSZ-fQGFkyJeQ/6" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/Document/_RQrLoGwBEeSIYu1Ih2FYyQ/10 pathmap://DEVELOPER_PROFILES/Document.profile.uml#_RQrLoWwBEeSIYu1Ih2FYyQ http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements http://DeveloperProcess/schemas/structure/_rpmLUHVxEeSZ-fQGFkyJeQ/6 pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_rpmyYHVxEeSZ-fQGFkyJeQ http://DeveloperProcess/schemas/trace/_rpnZcHVxEeSZ-fQGFkyJeQ/6 pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_rpnZcXVxEeSZ-fQGFkyJeQ">
   <uml:Model xmi:id="_M7ibgA2HEeSkbsvlP0s7pA" name="ReqIFModule">
     <ownedComment xmi:type="uml:Comment" xmi:id="_nfyuMC0AEeS1XdXKGPJRfg" annotatedElement="_M7ibgA2HEeSkbsvlP0s7pA">
       <body>This model explains the functionality in Papyrus Req in order to import or export ReqIF files into Papyrus (OMG Document Number: formal/2013-10-01 Standard document URL: http://www.omg.org/spec/ReqIF/1.1)&#xD;
@@ -9,7 +9,12 @@
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packagedElement xmi:type="uml:Model" xmi:id="_M7ibgg2HEeSkbsvlP0s7pA" name="Requirements">
-      <packagedElement xmi:type="uml:Class" xmi:id="_Q00aMA2HEeSkbsvlP0s7pA" name="ReqIfImport"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Q00aMA2HEeSkbsvlP0s7pA" name="ReqIfImport">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_78mKQKrbEeSnGqTeJBKaqQ" name="Import Spec Objects"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_WUsp8KrdEeSnGqTeJBKaqQ" name="Two  Kind of Users"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_diJvIKrdEeSnGqTeJBKaqQ" name="Import DataType Enumeration"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_WizQAKrgEeSnGqTeJBKaqQ" name="ImportSpecTypes"/>
+      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_bslN8A2HEeSkbsvlP0s7pA" name="ReqIFExport"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_mlYjgA2HEeSkbsvlP0s7pA" name="ControlMode"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_Jf-egBx4EeSlI-4RKfFQuw" name="WihtoutUI"/>
@@ -18,7 +23,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_M7ibgw2HEeSkbsvlP0s7pA" name="UseCases">
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_M7ibhA2HEeSkbsvlP0s7pA" name="useCasesAbstraction" client="_M7ibgw2HEeSkbsvlP0s7pA" supplier="_M7ibgg2HEeSkbsvlP0s7pA"/>
-      <packagedElement xmi:type="uml:Component" xmi:id="_M7ibhQ2HEeSkbsvlP0s7pA" name="ReqIfModule" useCase="_RrUH4A2IEeSkbsvlP0s7pA _UBKk8A2IEeSkbsvlP0s7pA _6UJ0QCeeEeSjdJiE6np9EA _APZDoCefEeSjdJiE6np9EA _J-LD0CekEeSjdJiE6np9EA _OQz9sCekEeSjdJiE6np9EA _H53pUC0AEeS1XdXKGPJRfg _KAbGIC0AEeS1XdXKGPJRfg _7DBvEC6GEeSaMrdXMag_Yg _Dxy2AC6HEeSaMrdXMag_Yg">
+      <packagedElement xmi:type="uml:Component" xmi:id="_M7ibhQ2HEeSkbsvlP0s7pA" name="ReqIfModule" useCase="_RrUH4A2IEeSkbsvlP0s7pA _UBKk8A2IEeSkbsvlP0s7pA _6UJ0QCeeEeSjdJiE6np9EA _APZDoCefEeSjdJiE6np9EA _J-LD0CekEeSjdJiE6np9EA _OQz9sCekEeSjdJiE6np9EA _H53pUC0AEeS1XdXKGPJRfg _KAbGIC0AEeS1XdXKGPJRfg _7DBvEC6GEeSaMrdXMag_Yg _Dxy2AC6HEeSaMrdXMag_Yg _u3BPYKrAEeSnGqTeJBKaqQ">
         <ownedUseCase xmi:type="uml:UseCase" xmi:id="_RrUH4A2IEeSkbsvlP0s7pA" name="Import ReqIF file" subject="_M7ibhQ2HEeSkbsvlP0s7pA">
           <ownedComment xmi:type="uml:Comment" xmi:id="_o9NR8C0BEeS1XdXKGPJRfg" annotatedElement="_RrUH4A2IEeSkbsvlP0s7pA">
             <body>In order to import ReqFile into UMLModel, first analysis will be done:&#xD;
@@ -75,17 +80,20 @@ Each SpecRelation becomes a stereotyped dependency. if the souce or target of th
 </body>
             </ownedComment>
           </ownedUseCase>
-          <ownedBehavior xmi:type="uml:Activity" xmi:id="_CouOMBM1EeSkbsvlP0s7pA" name="ImportActivity" node="_Ewo88BM1EeSkbsvlP0s7pA _FwfQYBM1EeSkbsvlP0s7pA _QThKQBM1EeSkbsvlP0s7pA _fOIvcBM1EeSkbsvlP0s7pA _ocIJABM1EeSkbsvlP0s7pA _CedpgBM2EeSkbsvlP0s7pA _HJUPEBM2EeSkbsvlP0s7pA _MJYPoBM2EeSkbsvlP0s7pA _e4vSkBfoEeSufZ1epFirrQ _9fcWIBfoEeSufZ1epFirrQ _KKeeUBfpEeSufZ1epFirrQ _dzy1ABfuEeSufZ1epFirrQ">
+          <ownedBehavior xmi:type="uml:Activity" xmi:id="_CouOMBM1EeSkbsvlP0s7pA" name="ImportActivity" node="_Ewo88BM1EeSkbsvlP0s7pA _FwfQYBM1EeSkbsvlP0s7pA _QThKQBM1EeSkbsvlP0s7pA _fOIvcBM1EeSkbsvlP0s7pA _ocIJABM1EeSkbsvlP0s7pA _CedpgBM2EeSkbsvlP0s7pA _HJUPEBM2EeSkbsvlP0s7pA _MJYPoBM2EeSkbsvlP0s7pA _e4vSkBfoEeSufZ1epFirrQ _9fcWIBfoEeSufZ1epFirrQ _KKeeUBfpEeSufZ1epFirrQ _dzy1ABfuEeSufZ1epFirrQ _paAKEKrhEeSnGqTeJBKaqQ _C6SQ8KrjEeSnGqTeJBKaqQ">
             <ownedComment xmi:type="uml:Comment" xmi:id="_gh0k4BM1EeSkbsvlP0s7pA" annotatedElement="_fOIvcBM1EeSkbsvlP0s7pA">
               <body>Test if stereotype must be created to map with specObjectType</body>
             </ownedComment>
             <ownedComment xmi:type="uml:Comment" xmi:id="_fkflUBfoEeSufZ1epFirrQ" annotatedElement="_e4vSkBfoEeSufZ1epFirrQ">
               <body>Create or update profile</body>
             </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sYTuQKrhEeSnGqTeJBKaqQ" annotatedElement="_paAKEKrhEeSnGqTeJBKaqQ">
+              <body>Test if this advanced User or Simple User</body>
+            </ownedComment>
             <edge xmi:type="uml:ControlFlow" xmi:id="_Ni4OoBM1EeSkbsvlP0s7pA" name="ControlFlow" target="_FwfQYBM1EeSkbsvlP0s7pA" source="_QThKQBM1EeSkbsvlP0s7pA"/>
             <edge xmi:type="uml:ControlFlow" xmi:id="_XeSu4BM1EeSkbsvlP0s7pA" name="ControlFlow1" target="_QThKQBM1EeSkbsvlP0s7pA" source="_Ewo88BM1EeSkbsvlP0s7pA"/>
             <edge xmi:type="uml:ControlFlow" xmi:id="_nMz2MBM1EeSkbsvlP0s7pA" name="ControlFlow2" target="_fOIvcBM1EeSkbsvlP0s7pA" source="_FwfQYBM1EeSkbsvlP0s7pA"/>
-            <edge xmi:type="uml:ControlFlow" xmi:id="_t5AocBM1EeSkbsvlP0s7pA" name="ControlFlow3" target="_dzy1ABfuEeSufZ1epFirrQ" source="_fOIvcBM1EeSkbsvlP0s7pA">
+            <edge xmi:type="uml:ControlFlow" xmi:id="_t5AocBM1EeSkbsvlP0s7pA" name="ControlFlow3" target="_paAKEKrhEeSnGqTeJBKaqQ" source="_fOIvcBM1EeSkbsvlP0s7pA">
               <guard xmi:type="uml:LiteralString" xmi:id="_4xfN4BM1EeSkbsvlP0s7pA" name="true" value="stereotype must be created"/>
             </edge>
             <edge xmi:type="uml:ControlFlow" xmi:id="_Dl_5UBM2EeSkbsvlP0s7pA" name="ControlFlow4" target="_CedpgBM2EeSkbsvlP0s7pA" source="_ocIJABM1EeSkbsvlP0s7pA"/>
@@ -103,22 +111,27 @@ Each SpecRelation becomes a stereotyped dependency. if the souce or target of th
             <edge xmi:type="uml:ControlFlow" xmi:id="_NJi3gBfpEeSufZ1epFirrQ" name="ControlFlow10" target="_KKeeUBfpEeSufZ1epFirrQ" source="_9fcWIBfoEeSufZ1epFirrQ"/>
             <edge xmi:type="uml:ControlFlow" xmi:id="_NqQX4BfpEeSufZ1epFirrQ" name="ControlFlow11" target="_CedpgBM2EeSkbsvlP0s7pA" source="_KKeeUBfpEeSufZ1epFirrQ"/>
             <edge xmi:type="uml:ControlFlow" xmi:id="_wgpVsBfuEeSufZ1epFirrQ" name="ControlFlow12" target="_e4vSkBfoEeSufZ1epFirrQ" source="_dzy1ABfuEeSufZ1epFirrQ"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_9ZuA0KrhEeSnGqTeJBKaqQ" target="_dzy1ABfuEeSufZ1epFirrQ" source="_paAKEKrhEeSnGqTeJBKaqQ">
+              <guard xmi:type="uml:LiteralString" xmi:id="_GxEKsKriEeSnGqTeJBKaqQ" name="Advanced User" value="user=AdvancedUser"/>
+            </edge>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_IyxuUKrjEeSnGqTeJBKaqQ" target="_C6SQ8KrjEeSnGqTeJBKaqQ" source="_paAKEKrhEeSnGqTeJBKaqQ"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_LfP7oKrjEeSnGqTeJBKaqQ" target="_CedpgBM2EeSkbsvlP0s7pA" source="_C6SQ8KrjEeSnGqTeJBKaqQ"/>
             <node xmi:type="uml:InitialNode" xmi:id="_Ewo88BM1EeSkbsvlP0s7pA" name="InitialNode" outgoing="_XeSu4BM1EeSkbsvlP0s7pA"/>
             <node xmi:type="uml:OpaqueAction" xmi:id="_FwfQYBM1EeSkbsvlP0s7pA" name="Get All stereotypes that represents Requirements from UML File " incoming="_Ni4OoBM1EeSkbsvlP0s7pA" outgoing="_nMz2MBM1EeSkbsvlP0s7pA"/>
             <node xmi:type="uml:OpaqueAction" xmi:id="_QThKQBM1EeSkbsvlP0s7pA" name="Select SpecObjectTypes contained in ReqIF file" incoming="_XeSu4BM1EeSkbsvlP0s7pA" outgoing="_Ni4OoBM1EeSkbsvlP0s7pA"/>
             <node xmi:type="uml:DecisionNode" xmi:id="_fOIvcBM1EeSkbsvlP0s7pA" name="DecisionNode" incoming="_nMz2MBM1EeSkbsvlP0s7pA" outgoing="_t5AocBM1EeSkbsvlP0s7pA _E0BysBM2EeSkbsvlP0s7pA"/>
             <node xmi:type="uml:OpaqueAction" xmi:id="_ocIJABM1EeSkbsvlP0s7pA" name="CreateProfile with new Stereotypes" incoming="_FiRkIBfpEeSufZ1epFirrQ" outgoing="_Dl_5UBM2EeSkbsvlP0s7pA"/>
-            <node xmi:type="uml:MergeNode" xmi:id="_CedpgBM2EeSkbsvlP0s7pA" name="MergeNode" incoming="_Dl_5UBM2EeSkbsvlP0s7pA _E0BysBM2EeSkbsvlP0s7pA _NqQX4BfpEeSufZ1epFirrQ" outgoing="_LIuD4BM2EeSkbsvlP0s7pA"/>
+            <node xmi:type="uml:MergeNode" xmi:id="_CedpgBM2EeSkbsvlP0s7pA" name="MergeNode" incoming="_Dl_5UBM2EeSkbsvlP0s7pA _E0BysBM2EeSkbsvlP0s7pA _NqQX4BfpEeSufZ1epFirrQ _LfP7oKrjEeSnGqTeJBKaqQ" outgoing="_LIuD4BM2EeSkbsvlP0s7pA"/>
             <node xmi:type="uml:OpaqueAction" xmi:id="_HJUPEBM2EeSkbsvlP0s7pA" name="Create stereotyped Class by set the same id in ecore object" incoming="_LIuD4BM2EeSkbsvlP0s7pA" outgoing="_NJMt4BM2EeSkbsvlP0s7pA"/>
             <node xmi:type="uml:ActivityFinalNode" xmi:id="_MJYPoBM2EeSkbsvlP0s7pA" name="ActivityFinalNode" incoming="_NJMt4BM2EeSkbsvlP0s7pA"/>
             <node xmi:type="uml:DecisionNode" xmi:id="_e4vSkBfoEeSufZ1epFirrQ" name="DecisionNode1" incoming="_wgpVsBfuEeSufZ1epFirrQ" outgoing="_uw76UBfoEeSufZ1epFirrQ _FiRkIBfpEeSufZ1epFirrQ"/>
             <node xmi:type="uml:OpaqueAction" xmi:id="_9fcWIBfoEeSufZ1epFirrQ" name="Updateprofile with new stereotypes" incoming="_uw76UBfoEeSufZ1epFirrQ" outgoing="_NJi3gBfpEeSufZ1epFirrQ"/>
             <node xmi:type="uml:OpaqueAction" xmi:id="_KKeeUBfpEeSufZ1epFirrQ" name="Update stereotyped class" incoming="_NJi3gBfpEeSufZ1epFirrQ" outgoing="_NqQX4BfpEeSufZ1epFirrQ"/>
-            <node xmi:type="uml:OpaqueAction" xmi:id="_dzy1ABfuEeSufZ1epFirrQ" name="Ask if a local profile must be updated or create a new profile" incoming="_t5AocBM1EeSkbsvlP0s7pA" outgoing="_wgpVsBfuEeSufZ1epFirrQ"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_dzy1ABfuEeSufZ1epFirrQ" name="Ask if a local profile must be updated or create a new profile" incoming="_9ZuA0KrhEeSnGqTeJBKaqQ" outgoing="_wgpVsBfuEeSufZ1epFirrQ"/>
+            <node xmi:type="uml:DecisionNode" xmi:id="_paAKEKrhEeSnGqTeJBKaqQ" name="Test User Kind" incoming="_t5AocBM1EeSkbsvlP0s7pA" outgoing="_9ZuA0KrhEeSnGqTeJBKaqQ _IyxuUKrjEeSnGqTeJBKaqQ"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_C6SQ8KrjEeSnGqTeJBKaqQ" name="Choose Profile to apply" incoming="_IyxuUKrjEeSnGqTeJBKaqQ" outgoing="_LfP7oKrjEeSnGqTeJBKaqQ"/>
           </ownedBehavior>
           <extend xmi:type="uml:Extend" xmi:id="_-13ukC6GEeSaMrdXMag_Yg" extendedCase="_7DBvEC6GEeSaMrdXMag_Yg" extensionLocation="_-4HxUC6GEeSaMrdXMag_Yg"/>
-          <include xmi:type="uml:Include" xmi:id="__UdFYCeeEeSjdJiE6np9EA" addition="_6UJ0QCeeEeSjdJiE6np9EA"/>
-          <include xmi:type="uml:Include" xmi:id="_NshkcC0AEeS1XdXKGPJRfg" addition="_H53pUC0AEeS1XdXKGPJRfg"/>
           <include xmi:type="uml:Include" xmi:id="_OMW7EC0AEeS1XdXKGPJRfg" name="" addition="_KAbGIC0AEeS1XdXKGPJRfg"/>
         </ownedUseCase>
         <ownedUseCase xmi:type="uml:UseCase" xmi:id="_UBKk8A2IEeSkbsvlP0s7pA" name="Export UML Model to ReqIF File" subject="_M7ibhQ2HEeSkbsvlP0s7pA">
@@ -213,6 +226,11 @@ Moreover, all Enumerations in applied profiles become DataTypeDefinitionEnumerat
           </ownedComment>
           <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_FAqc4C6HEeSaMrdXMag_Yg" name="ExtensionPoint1"/>
         </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_u3BPYKrAEeSnGqTeJBKaqQ" name="Adavanced ReqIFile Import" subject="_M7ibhQ2HEeSkbsvlP0s7pA">
+          <include xmi:type="uml:Include" xmi:id="_NshkcC0AEeS1XdXKGPJRfg" addition="_H53pUC0AEeS1XdXKGPJRfg"/>
+          <include xmi:type="uml:Include" xmi:id="__UdFYCeeEeSjdJiE6np9EA" addition="_6UJ0QCeeEeSjdJiE6np9EA"/>
+          <include xmi:type="uml:Include" xmi:id="_7LHeQKrAEeSnGqTeJBKaqQ" addition="_RrUH4A2IEeSkbsvlP0s7pA"/>
+        </ownedUseCase>
       </packagedElement>
       <packagedElement xmi:type="uml:Actor" xmi:id="_Vfnf8A2IEeSkbsvlP0s7pA" name="User"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_WwkKcA2IEeSkbsvlP0s7pA" name="A_importreqif file_user" memberEnd="_WwkKcQ2IEeSkbsvlP0s7pA _WwkKdA2IEeSkbsvlP0s7pA">
@@ -245,6 +263,19 @@ Moreover, all Enumerations in applied profiles become DataTypeDefinitionEnumerat
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_8KEIQC6JEeSaMrdXMag_Yg" name="SatisfactionOf_ReqIfImport" client="_H53pUC0AEeS1XdXKGPJRfg" supplier="_Q00aMA2HEeSkbsvlP0s7pA"/>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_-VihUC6JEeSaMrdXMag_Yg" name="SatisfactionOf_Re-Export" client="_Dxy2AC6HEeSaMrdXMag_Yg" supplier="_g-4QsC6GEeSaMrdXMag_Yg"/>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_CV3jMC6KEeSaMrdXMag_Yg" name="SatisfactionOf_ReqIFExport" client="_OQz9sCekEeSjdJiE6np9EA" supplier="_bslN8A2HEeSkbsvlP0s7pA"/>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_O30SYKrBEeSnGqTeJBKaqQ" name="AdvancedUser">
+        <generalization xmi:type="uml:Generalization" xmi:id="_ReARgKrBEeSnGqTeJBKaqQ" general="_Vfnf8A2IEeSkbsvlP0s7pA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_U6rMsKrBEeSnGqTeJBKaqQ" name="A_advanceduser_adavanced reqifile import" memberEnd="_U6rMsarBEeSnGqTeJBKaqQ _U6rMtKrBEeSnGqTeJBKaqQ">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_U6rMsarBEeSnGqTeJBKaqQ" name="advanceduser" type="_O30SYKrBEeSnGqTeJBKaqQ" association="_U6rMsKrBEeSnGqTeJBKaqQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_U6rMsqrBEeSnGqTeJBKaqQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_U6rMs6rBEeSnGqTeJBKaqQ" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_U6rMtKrBEeSnGqTeJBKaqQ" name="adavanced reqifile import" type="_u3BPYKrAEeSnGqTeJBKaqQ" association="_U6rMsKrBEeSnGqTeJBKaqQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_U6rMtarBEeSnGqTeJBKaqQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_U6rMtqrBEeSnGqTeJBKaqQ" value="1"/>
+        </ownedEnd>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_M7ibhg2HEeSkbsvlP0s7pA" name="Design">
       <ownedComment xmi:type="uml:Comment" xmi:id="_Sil8sC0aEeS1XdXKGPJRfg" annotatedElement="_M7ibhg2HEeSkbsvlP0s7pA">
@@ -715,41 +746,41 @@ All attributes must also generated.&#xD;
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_M7ibiw2HEeSkbsvlP0s7pA">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_P_WcUCz4EeS1XdXKGPJRfg" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_P_WcUSz4EeS1XdXKGPJRfg" key="Version" value="0.0.2"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_P_WcUiz4EeS1XdXKGPJRfg" key="Comment" value="add title property"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_P_WcUyz4EeS1XdXKGPJRfg" key="Copyright" value="CEA LIST"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_P_WcVCz4EeS1XdXKGPJRfg" key="Date" value="2014-04-18"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_P_WcVSz4EeS1XdXKGPJRfg" key="Author" value="P. Tessier"/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fwvMwKrAEeSnGqTeJBKaqQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fwvMwarAEeSnGqTeJBKaqQ" key="Version" value="0.0.7"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fwvMwqrAEeSnGqTeJBKaqQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fwvMw6rAEeSnGqTeJBKaqQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fwvMxKrAEeSnGqTeJBKaqQ" key="Date" value="2014-11-26"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fwvMxarAEeSnGqTeJBKaqQ" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M7ibjA2HEeSkbsvlP0s7pA" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA6mkMcPEeO9CYUoXDRplw"/>
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_rplkQXVxEeSZ-fQGFkyJeQ"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_kWqjAMbXEeO09JBvNFZRNw"/>
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_M7ibjQ2HEeSkbsvlP0s7pA">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QARCUCz4EeS1XdXKGPJRfg" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QARCUSz4EeS1XdXKGPJRfg" key="Version" value="0.0.2"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QARCUiz4EeS1XdXKGPJRfg" key="Comment" value="add title property"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QARCUyz4EeS1XdXKGPJRfg" key="Copyright" value="CEA LIST"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QARCVCz4EeS1XdXKGPJRfg" key="Date" value="2014-04-18"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QARCVSz4EeS1XdXKGPJRfg" key="Author" value="P. Tessier"/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_f2R0EKrAEeSnGqTeJBKaqQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f2R0EarAEeSnGqTeJBKaqQ" key="Version" value="0.0.7"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f2R0EqrAEeSnGqTeJBKaqQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f2R0E6rAEeSnGqTeJBKaqQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f2R0FKrAEeSnGqTeJBKaqQ" key="Date" value="2014-11-26"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f2R0FarAEeSnGqTeJBKaqQ" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M7ibjg2HEeSkbsvlP0s7pA" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA-4AMcPEeO9CYUoXDRplw"/>
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_rpmyYHVxEeSZ-fQGFkyJeQ"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_qCT3MMbXEeO09JBvNFZRNw"/>
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_M7ibjw2HEeSkbsvlP0s7pA">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QAV60Cz4EeS1XdXKGPJRfg" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QAV60Sz4EeS1XdXKGPJRfg" key="Version" value="0.0.2"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QAV60iz4EeS1XdXKGPJRfg" key="Comment" value="add title property"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QAV60yz4EeS1XdXKGPJRfg" key="Copyright" value="CEA LIST"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QAV61Cz4EeS1XdXKGPJRfg" key="Date" value="2014-04-18"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QAV61Sz4EeS1XdXKGPJRfg" key="Author" value="P. Tessier"/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_f2lWEKrAEeSnGqTeJBKaqQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f2lWEarAEeSnGqTeJBKaqQ" key="Version" value="0.0.7"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f2lWEqrAEeSnGqTeJBKaqQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f2lWE6rAEeSnGqTeJBKaqQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f2lWFKrAEeSnGqTeJBKaqQ" key="Date" value="2014-11-26"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f2lWFarAEeSnGqTeJBKaqQ" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M7ibkA2HEeSkbsvlP0s7pA" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VBAtMccPEeO9CYUoXDRplw"/>
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_rpnZcXVxEeSZ-fQGFkyJeQ"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_2LNtQMbYEeO09JBvNFZRNw"/>
     </profileApplication>
@@ -760,8 +791,15 @@ All attributes must also generated.&#xD;
       <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_OOJC4LX8EduFmqQsrNB9lw"/>
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_M7ibkw2HEeSkbsvlP0s7pA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_f4ASYKrAEeSnGqTeJBKaqQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f4ASYarAEeSnGqTeJBKaqQ" key="Version" value="0.0.11"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f4ASYqrAEeSnGqTeJBKaqQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f4ASY6rAEeSnGqTeJBKaqQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f4ASZKrAEeSnGqTeJBKaqQ" key="Date" value="2014-11-14"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f4ASZarAEeSnGqTeJBKaqQ" key="Author" value=""/>
+      </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M7iblA2HEeSkbsvlP0s7pA" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_qR44IMn0EeO9CYUoXDRplw"/>
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_RQrLoWwBEeSIYu1Ih2FYyQ"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_D0JcUMnzEeO9CYUoXDRplw"/>
     </profileApplication>
@@ -783,10 +821,10 @@ All attributes must also generated.&#xD;
   <structure:UseCases xmi:id="_M7iblw2HEeSkbsvlP0s7pA" base_Model="_M7ibgw2HEeSkbsvlP0s7pA"/>
   <structure:Design xmi:id="_M7ibmA2HEeSkbsvlP0s7pA" base_Model="_M7ibhg2HEeSkbsvlP0s7pA"/>
   <structure:Tests xmi:id="_M7ibmQ2HEeSkbsvlP0s7pA" base_Model="_M7ibiA2HEeSkbsvlP0s7pA"/>
-  <Requirements:Requirement xmi:id="_Q4muAA2HEeSkbsvlP0s7pA" text="Darwin shall allow importation of Reqif elements to SysML Model" id="Req_001" base_Class="_Q00aMA2HEeSkbsvlP0s7pA"/>
-  <Requirements:Requirement xmi:id="_bsoRQA2HEeSkbsvlP0s7pA" text="Darwin shall enable export of SysML requirement to ReqIF Model" id="Req_002" base_Class="_bslN8A2HEeSkbsvlP0s7pA"/>
-  <Requirements:Requirement xmi:id="_mlaYsA2HEeSkbsvlP0s7pA" text="The managment with ReqIf must support Control Mode" id="Req_003" base_Class="_mlYjgA2HEeSkbsvlP0s7pA"/>
-  <Requirements:Requirement xmi:id="_Jmf9QBx4EeSlI-4RKfFQuw" text="The export can be done programmatically, without GUI, in order to test it, or to be enable to pilot it programmatically" id="Req_004" base_Class="_Jf-egBx4EeSlI-4RKfFQuw"/>
+  <Requirements:Requirement xmi:id="_Q4muAA2HEeSkbsvlP0s7pA" text="Darwin shall allow importation of Reqif elements to SysML Model" id="ReqIF_001" base_Class="_Q00aMA2HEeSkbsvlP0s7pA"/>
+  <Requirements:Requirement xmi:id="_bsoRQA2HEeSkbsvlP0s7pA" text="Darwin shall enable export of SysML requirement to ReqIF Model" id="ReqIF_002" base_Class="_bslN8A2HEeSkbsvlP0s7pA"/>
+  <Requirements:Requirement xmi:id="_mlaYsA2HEeSkbsvlP0s7pA" text="The managment with ReqIf must support Control Mode" id="ReqIF_003" base_Class="_mlYjgA2HEeSkbsvlP0s7pA"/>
+  <Requirements:Requirement xmi:id="_Jmf9QBx4EeSlI-4RKfFQuw" text="The export can be done programmatically, without GUI, in order to test it, or to be enable to pilot it programmatically" id="ReqIF_004" base_Class="_Jf-egBx4EeSlI-4RKfFQuw"/>
   <trace:UseCaseTest xmi:id="_RSGvwC0bEeS1XdXKGPJRfg" base_UseCase="_2fkgkA2NEeSkbsvlP0s7pA"/>
   <trace:UseCaseTest xmi:id="_S3sNgC0bEeS1XdXKGPJRfg" base_UseCase="_EcyCUA2OEeSkbsvlP0s7pA"/>
   <trace:UseCaseTest xmi:id="_jXExEC0bEeS1XdXKGPJRfg" base_UseCase="_fvp-cC0bEeS1XdXKGPJRfg"/>
@@ -816,8 +854,8 @@ All attributes must also generated.&#xD;
   <structure:UserDoc xmi:id="_PxPjgC0nEeS1XdXKGPJRfg" base_Comment="_LZ7acC0mEeS1XdXKGPJRfg"/>
   <structure:UserDoc xmi:id="_QWC5sC0nEeS1XdXKGPJRfg" base_Comment="_Lh4ckC0mEeS1XdXKGPJRfg"/>
   <structure:UserDoc xmi:id="_110G0C0nEeS1XdXKGPJRfg" base_Comment="_g8fHgC0nEeS1XdXKGPJRfg"/>
-  <Requirements:Requirement xmi:id="_g-_lcC6GEeSaMrdXMag_Yg" text="Papyrus shall re-export requirements in existing reqIF file" id="Req_005" base_Class="_g-4QsC6GEeSaMrdXMag_Yg"/>
-  <Requirements:Requirement xmi:id="_zBOb0C6GEeSaMrdXMag_Yg" text="Papyrus shall re-Import requirement from a ReqIF file" id="Req_006" base_Class="_zBL_kC6GEeSaMrdXMag_Yg"/>
+  <Requirements:Requirement xmi:id="_g-_lcC6GEeSaMrdXMag_Yg" text="Papyrus shall re-export requirements in existing reqIF file" id="ReqIF_005" base_Class="_g-4QsC6GEeSaMrdXMag_Yg"/>
+  <Requirements:Requirement xmi:id="_zBOb0C6GEeSaMrdXMag_Yg" text="Papyrus shall re-Import requirement from a ReqIF file" id="ReqIF_006" base_Class="_zBL_kC6GEeSaMrdXMag_Yg"/>
   <Requirements:Satisfy xmi:id="_KJY_UC6JEeSaMrdXMag_Yg" base_Abstraction="_KJS4sC6JEeSaMrdXMag_Yg"/>
   <Requirements:Satisfy xmi:id="_NWOuwC6JEeSaMrdXMag_Yg" base_Abstraction="_NWLEYC6JEeSaMrdXMag_Yg"/>
   <Requirements:Satisfy xmi:id="_RbJ8wC6JEeSaMrdXMag_Yg" base_Abstraction="_RbG5cC6JEeSaMrdXMag_Yg"/>
@@ -925,4 +963,8 @@ All attributes must also generated.&#xD;
   <Document:Content xmi:id="_hYTggC6KEeSaMrdXMag_Yg" base_Comment="_hYRrUS6KEeSaMrdXMag_Yg"/>
   <Document:Section xmi:id="_hYVVsC6KEeSaMrdXMag_Yg" base_Package="_hYUHkC6KEeSaMrdXMag_Yg"/>
   <Document:Content xmi:id="_hYXK4C6KEeSaMrdXMag_Yg" base_Comment="_hYVVsS6KEeSaMrdXMag_Yg"/>
+  <Requirements:Requirement xmi:id="_78rp0KrbEeSnGqTeJBKaqQ" text="The user shall be able to import spec object" id="ReqIF_001_001" base_Class="_78mKQKrbEeSnGqTeJBKaqQ"/>
+  <Requirements:Requirement xmi:id="_WUsp8ardEeSnGqTeJBKaqQ" text="The simple User can only import SpecObject by choosing domain. The AdvancedUser can import Types and DataTypes. " id="ReqIF_001_002" base_Class="_WUsp8KrdEeSnGqTeJBKaqQ"/>
+  <Requirements:Requirement xmi:id="_diJvIardEeSnGqTeJBKaqQ" text="The advanced user shall be able to import DataType and enumeration" id="ReqIF_001_003" base_Class="_diJvIKrdEeSnGqTeJBKaqQ"/>
+  <Requirements:Requirement xmi:id="_WizQAargEeSnGqTeJBKaqQ" text="The advanced user shall be able to import specObjectType" id="ReqIF_001_004" base_Class="_WizQAKrgEeSnGqTeJBKaqQ"/>
 </xmi:XMI>

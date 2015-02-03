@@ -33,9 +33,12 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.papyrus.req.reqif.Activator;
 import org.eclipse.papyrus.req.reqif.I_SysMLStereotype;
 import org.eclipse.papyrus.req.reqif.assistant.CreateOrSelectProfilDialog;
 import org.eclipse.papyrus.req.reqif.integration.assistant.ChooseAttributeEnumerationDialog;
+import org.eclipse.papyrus.req.reqif.preference.ReqIFPreferenceConstants;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.rmf.reqif10.AttributeDefinition;
 import org.eclipse.rmf.reqif10.AttributeDefinitionBoolean;
@@ -302,25 +305,32 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 
 		//test if a profile must be updated or created
 		if( specObjectTypesToCreate.size()>0||specificationTypesToCreate.size()>0||specRelationTypesToCreate.size()>0||dataTypeDefinitionToCreate.size()>0){
-			CreateOrSelectProfilDialog profilDialog= new CreateOrSelectProfilDialog(new Shell(), getAllLocalProfiles(UMLModel));
-			profilDialog.open();
-			String profileName=profilDialog.getProfileName();
-			Profile profile=getProfile(UMLModel, profileName);
-			importReqIFHeader(reqIFModel, profile);
-			importDataTypeDefinition(profile, dataTypeDefinitionToCreate);
-			importReqIFSpecificationType(profile, specificationTypesToCreate);
-			importReqIFSpecObjectTypes(profile, specObjectTypesToCreate);
-			importReqIFspecRelationTypes(profile,specRelationTypesToCreate);
-			postProcessProfile(profile);
-			defineProfile(profile);
-			UMLModel.applyProfile(profile);
+			//stereotype must be created
+			//testKind User
+			IPreferenceStore store = Activator.getDefault().getPreferenceStore();
+			String userkind_value=store.getString(ReqIFPreferenceConstants.USER_KIND);
+			if(userkind_value.equals(ReqIFPreferenceConstants.ADVANCED_USER)){
+				// Advanced USER
+				CreateOrSelectProfilDialog profilDialog= new CreateOrSelectProfilDialog(new Shell(), getAllLocalProfiles(UMLModel));
+				profilDialog.open();
+				String profileName=profilDialog.getProfileName();
+				Profile profile=getProfile(UMLModel, profileName);
+				importReqIFHeader(reqIFModel, profile);
+				importDataTypeDefinition(profile, dataTypeDefinitionToCreate);
+				importReqIFSpecificationType(profile, specificationTypesToCreate);
+				importReqIFSpecObjectTypes(profile, specObjectTypesToCreate);
+				importReqIFspecRelationTypes(profile,specRelationTypesToCreate);
+				postProcessProfile(profile);
+				defineProfile(profile);
+				UMLModel.applyProfile(profile);
+			}
 		}
 
 		//all types has been created so import elspecifications and specObjects
 		reqStereotypes=getAllPossibleRequirementType(UMLModel);
-		
-		 HashMap<String,Stereotype> filteredreqStereotypes=new HashMap<String, Stereotype>();
-		
+
+		HashMap<String,Stereotype> filteredreqStereotypes=new HashMap<String, Stereotype>();
+
 		//filter Type to import, because reqstereotype may be too large
 		for(SpecType specObjectType : reqiFTypeMap.values()) {
 			if( reqStereotypes.containsKey(specObjectType.getLongName())){

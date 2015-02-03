@@ -29,10 +29,20 @@
          id="com.cea.darwin.reqif.exportWizard"
          name="Export ReqIF">
    </wizard>
+       
 
    
 </extension>
    <extension point="org.eclipse.papyrus.emf.facet.util.emf.core.modeldeclaration">
   <modeldeclaration file="resource/ReqDisplay.custom"/>
 </extension>
+ <extension
+           point="org.eclipse.ui.preferencePages">
+        <page
+              category="org.eclipse.papyrus.infra.core.sasheditor.preferences.generalcategory"
+              class="org.eclipse.papyrus.req.reqif.preference.ReqIFPreferencePage"
+              id="org.eclipse.papyrus.req.reqif"
+              name="ReqIF Import">
+        </page>
+     </extension>
 </plugin>
